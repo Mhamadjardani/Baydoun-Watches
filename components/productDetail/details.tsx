@@ -1,14 +1,12 @@
 "use client";
 
-import products from "@/data/products.json";
+import { Product } from "@/lib/type";
 import { useCommerceStore } from "@/store/useCommerceStore";
 import { motion } from "framer-motion";
 import { Check, Heart, ShieldCheck, ShoppingBag } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 import toast from "react-hot-toast";
-
-type Product = (typeof products)[number];
 
 const formatPrice = (price: Product["price"]) =>
   new Intl.NumberFormat("en-US", {
@@ -17,10 +15,10 @@ const formatPrice = (price: Product["price"]) =>
     maximumFractionDigits: 0,
   }).format(price);
 
-const ProductDetails = ({ product = products[0] }: { product?: Product }) => {
+const ProductDetails = ({ product }: { product: Product }) => {
   const [activeImage, setActiveImage] = useState(product.images[0]);
   const [failedImages, setFailedImages] = useState<Set<string>>(new Set());
-  const wishlistIds = useCommerceStore((state) => state.wishlistIds);
+  const wishlistItems = useCommerceStore((state) => state.wishlistItems);
   const cartItems = useCommerceStore((state) => state.cartItems);
   const hasHydrated = useCommerceStore((state) => state.hasHydrated);
   const addToCart = useCommerceStore((state) => state.addToCart);
@@ -29,9 +27,15 @@ const ProductDetails = ({ product = products[0] }: { product?: Product }) => {
   const activeDisplayImage = failedImages.has(activeImage)
     ? fallbackImage
     : activeImage;
-  const isWishlisted = hasHydrated && wishlistIds.includes(product.id);
+  const isWishlisted =
+    hasHydrated &&
+    wishlistItems.some(
+      (item) =>
+        item.productSlug === product.slug &&
+        item.productBrand === product.brand,
+    );
   const cartQuantity =
-    cartItems.find((item) => item.productId === product.id)?.quantity ?? 0;
+    cartItems.find((item) => item.productSlug === product.slug)?.quantity ?? 0;
 
   const markImageFailed = (image: string) => {
     setFailedImages((currentFailedImages) => {
@@ -44,7 +48,7 @@ const ProductDetails = ({ product = products[0] }: { product?: Product }) => {
   const productDetails = [
     { label: "Brand", value: product.brand },
     { label: "Category", value: product.category },
-    { label: "Collection", value: product.subCategory },
+    // { label: "Collection", value: product.subCategory },
     { label: "Gender", value: product.gender },
     { label: "Display", value: product.display },
     { label: "SKU", value: product.sku },
@@ -127,7 +131,8 @@ const ProductDetails = ({ product = products[0] }: { product?: Product }) => {
                 {product.brand}
               </span>
               <span className="text-xs uppercase tracking-widest text-secondary/70">
-                {product.category} / {product.subCategory}
+                {product.category}
+                {/* / {product.subCategory} */}
               </span>
             </div>
 
@@ -218,7 +223,7 @@ const ProductDetails = ({ product = products[0] }: { product?: Product }) => {
             <button
               type="button"
               onClick={() => {
-                addToCart(product.id);
+                addToCart(product.brand, product.slug);
                 toast.success(`${product.title} added to cart`, {
                   icon: "🛒",
                 });
@@ -233,7 +238,7 @@ const ProductDetails = ({ product = products[0] }: { product?: Product }) => {
             <button
               type="button"
               onClick={() => {
-                toggleWishlist(product.id);
+                toggleWishlist(product.brand, product.slug);
                 toast.success(
                   `${product.title} ${isWishlisted ? "removed from" : "added to"} wishlist`,
                   {

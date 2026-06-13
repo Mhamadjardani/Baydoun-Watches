@@ -1,21 +1,25 @@
 "use client";
 
-import products from "@/data/products.json";
+import { Product } from "@/lib/type";
 import { useCommerceStore } from "@/store/useCommerceStore";
 import { ChevronDown, Heart, SlidersHorizontal } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 
-type Product = (typeof products)[number];
-type FilterKey = "brand" | "category" | "subCategory" | "gender" | "display";
+type FilterKey =
+  | "brand"
+  | "category"
+  // | "subCategory"
+  | "gender"
+  | "display";
 type SortKey = "featured" | "price-low" | "price-high";
 export type CollectionFilterState = Record<FilterKey, string[]>;
 
 const filters: { key: FilterKey; label: string }[] = [
   { key: "brand", label: "Brand" },
   { key: "category", label: "Category" },
-  { key: "subCategory", label: "Collection" },
+  // { key: "subCategory", label: "Collection" },
   { key: "gender", label: "Gender" },
   { key: "display", label: "Display" },
 ];
@@ -29,21 +33,20 @@ const formatPrice = (price: Product["price"]) =>
     maximumFractionDigits: 0,
   }).format(price);
 
-const getOptions = (key: FilterKey) =>
-  Array.from(new Set(products.map((product) => product[key]))).filter(Boolean);
-
 const emptyFilters: CollectionFilterState = {
   brand: [],
   category: [],
-  subCategory: [],
+  // subCategory: [],
   gender: [],
   display: [],
 };
 
 const ProductsCollection = ({
   initialFilters = emptyFilters,
+  products,
 }: {
   initialFilters?: CollectionFilterState;
+  products: Product[];
 }) => {
   const [openFilters, setOpenFilters] = useState<FilterKey[]>([
     "brand",
@@ -54,7 +57,7 @@ const ProductsCollection = ({
   const [sortBy, setSortBy] = useState<SortKey>("featured");
   const [page, setPage] = useState(1);
   const [failedImages, setFailedImages] = useState<Set<string>>(new Set());
-  const wishlistIds = useCommerceStore((state) => state.wishlistIds);
+  const wishlistItems = useCommerceStore((state) => state.wishlistItems);
   const hasHydrated = useCommerceStore((state) => state.hasHydrated);
   const toggleWishlist = useCommerceStore((state) => state.toggleWishlist);
 
@@ -76,6 +79,11 @@ const ProductsCollection = ({
     }, 0);
     return () => clearTimeout(id);
   }, [initialFilters]);
+
+  const getOptions = (key: FilterKey) =>
+    Array.from(new Set(products.map((product) => product[key]))).filter(
+      Boolean,
+    );
 
   const activeFilterCount = Object.values(selectedFilters).reduce(
     (count, values) => count + values.length,
@@ -259,7 +267,7 @@ const ProductsCollection = ({
 
             <div className="grid gap-5 grid-cols-2 sm:grid-cols-3">
               {pageProducts.map((product, index) => {
-                const productKey = `${product.id}-${index}`;
+                const productKey = `${product.slug}-${index}`;
                 const productImage = failedImages.has(product.images[0])
                   ? "/test.png"
                   : product.images[0];
@@ -272,9 +280,16 @@ const ProductsCollection = ({
                     <button
                       type="button"
                       aria-label={`Add ${product.title} to wishlist`}
-                      onClick={() => toggleWishlist(product.id)}
+                      onClick={() =>
+                        toggleWishlist(product.brand, product.slug)
+                      }
                       className={`hidden absolute right-4 top-4 z-10 sm:flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border backdrop-blur transition duration-300 ${
-                        hasHydrated && wishlistIds.includes(product.id)
+                        hasHydrated &&
+                        wishlistItems.some(
+                          (item) =>
+                            item.productSlug === product.slug &&
+                            item.productBrand === product.brand,
+                        )
                           ? "border-primary bg-primary text-neutral"
                           : "border-white/15 bg-neutral/60 text-primary hover:bg-primary hover:text-neutral"
                       }`}
@@ -282,7 +297,12 @@ const ProductsCollection = ({
                       <Heart
                         size={19}
                         fill={
-                          hasHydrated && wishlistIds.includes(product.id)
+                          hasHydrated &&
+                          wishlistItems.some(
+                            (item) =>
+                              item.productSlug === product.slug &&
+                              item.productBrand === product.brand,
+                          )
                             ? "currentColor"
                             : "none"
                         }
@@ -290,7 +310,7 @@ const ProductsCollection = ({
                     </button>
 
                     <Link
-                      href={`/collections/${product.id}`}
+                      href={`/collections/${product.brand}/${product.slug}`}
                       className="block focus:outline-none focus:ring-2 focus:ring-primary/40"
                     >
                       <div className="relative aspect-4/5 overflow-hidden bg-neutral">

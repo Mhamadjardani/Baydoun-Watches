@@ -3,7 +3,7 @@ import Footer from "@/components/footer/footer";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
-import "./globals.css";
+import "../globals.css";
 import { Toaster } from "react-hot-toast";
 
 const geistSans = Geist({
@@ -19,12 +19,12 @@ const geistMono = Geist_Mono({
 const playfair = localFont({
   src: [
     {
-      path: "../fonts/Playfair_Display/static/PlayfairDisplay-Medium.ttf",
+      path: "../../fonts/Playfair_Display/static/PlayfairDisplay-Medium.ttf",
       weight: "700",
       style: "normal",
     },
     {
-      path: "../fonts/Playfair_Display/static/PlayfairDisplay-Black.ttf",
+      path: "../../fonts/Playfair_Display/static/PlayfairDisplay-Black.ttf",
       weight: "800",
       style: "normal",
     },

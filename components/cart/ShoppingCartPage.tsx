@@ -1,13 +1,11 @@
 "use client";
 
-import products from "@/data/products.json";
+import { Product } from "@/lib/type";
 import { useCommerceStore } from "@/store/useCommerceStore";
 import { ArrowRight, Minus, Plus, ShoppingBag, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
-
-type Product = (typeof products)[number];
 
 const formatPrice = (price: number) =>
   new Intl.NumberFormat("en-US", {
@@ -18,7 +16,7 @@ const formatPrice = (price: number) =>
 
 const shippingEstimate = 12;
 
-const ShoppingCartPage = () => {
+const ShoppingCartPage = ({ products }: { products: Product[] }) => {
   const cartItems = useCommerceStore((state) => state.cartItems);
   const hasHydrated = useCommerceStore((state) => state.hasHydrated);
   const addToCart = useCommerceStore((state) => state.addToCart);
@@ -41,7 +39,9 @@ const ShoppingCartPage = () => {
       cartItems
         .map((item) => {
           const product = products.find(
-            (currentProduct) => currentProduct.id === item.productId,
+            (currentProduct) =>
+              currentProduct.slug === item.productSlug &&
+              currentProduct.brand === item.productBrand,
           );
 
           return product ? { product, quantity: item.quantity } : null;
@@ -64,18 +64,31 @@ const ShoppingCartPage = () => {
   const shipping = subtotal > 0 ? shippingEstimate : 0;
   const total = subtotal + shipping;
 
+  const makeKey = (brand: string, slug: string) =>
+    `${brand.toLowerCase()}:${slug}`;
+
   const recommendedProducts = useMemo(() => {
+    const cartKeys = new Set(
+      cartProducts.map((item) =>
+        makeKey(item.product.brand, item.product.slug),
+      ),
+    );
+
     const cartBrands = new Set(
       cartProducts.map((item) => item.product.brand.toLowerCase()),
     );
-    const cartIds = new Set(cartProducts.map((item) => item.product.id));
-    const sameBrandProducts = products.filter(
-      (product) =>
-        !cartIds.has(product.id) && cartBrands.has(product.brand.toLowerCase()),
-    );
-    const fallbackProducts = products.filter(
-      (product) => !cartIds.has(product.id),
-    );
+
+    const sameBrandProducts = products.filter((product) => {
+      const key = makeKey(product.brand, product.slug);
+
+      return !cartKeys.has(key) && cartBrands.has(product.brand.toLowerCase());
+    });
+
+    const fallbackProducts = products.filter((product) => {
+      const key = makeKey(product.brand, product.slug);
+      return !cartKeys.has(key);
+    });
+
     const recommendationPool =
       sameBrandProducts.length > 0
         ? sameBrandProducts
@@ -84,7 +97,7 @@ const ShoppingCartPage = () => {
           : products;
 
     return recommendationPool.slice(0, 6);
-  }, [cartProducts]);
+  }, [cartProducts, products]);
 
   const markImageFailed = (image: string) => {
     setFailedImages((currentFailedImages) => {
@@ -164,13 +177,13 @@ const ShoppingCartPage = () => {
         ) : (
           <div className="grid gap-8 lg:grid-cols-[minmax(0,3fr)_minmax(320px,1fr)]">
             <div className="space-y-4">
-              {cartProducts.map(({ product, quantity }) => (
+              {cartProducts.map(({ product, quantity }, index) => (
                 <article
-                  key={product.id}
+                  key={product.slug + index}
                   className="relative grid gap-4 p-4 sm:grid-cols-[150px_minmax(0,1fr)_auto] sm:p-5 border-b last:border-0 border-white/10"
                 >
                   <Link
-                    href={`/collections/${product.id}`}
+                    href={`/collections/${product.brand}/${product.slug}`}
                     className="relative aspect-square overflow-hidden bg-neutral sm:h-38 sm:w-38"
                   >
                     <Image
@@ -189,7 +202,7 @@ const ShoppingCartPage = () => {
                         {product.brand} / {product.category}
                       </p>
                       <Link
-                        href={`/collections/${product.id}`}
+                        href={`/collections/${product.brand}/${product.slug}`}
                         className="block text-xl font-bold uppercase tracking-widest text-white transition hover:text-primary font-playfair"
                       >
                         {product.title}
@@ -204,7 +217,11 @@ const ShoppingCartPage = () => {
                         type="button"
                         aria-label={`Decrease ${product.title} quantity`}
                         onClick={() =>
-                          setCartQuantity(product.id, quantity - 1)
+                          setCartQuantity(
+                            product.brand,
+                            product.slug,
+                            quantity - 1,
+                          )
                         }
                         className="flex h-10 w-10 cursor-pointer items-center justify-center text-primary transition hover:bg-white/10"
                       >
@@ -216,7 +233,7 @@ const ShoppingCartPage = () => {
                       <button
                         type="button"
                         aria-label={`Increase ${product.title} quantity`}
-                        onClick={() => addToCart(product.id)}
+                        onClick={() => addToCart(product.brand, product.slug)}
                         className="flex h-10 w-10 cursor-pointer items-center justify-center text-primary transition hover:bg-white/10"
                       >
                         <Plus size={16} />
@@ -228,7 +245,9 @@ const ShoppingCartPage = () => {
                     <button
                       type="button"
                       aria-label={`Remove ${product.title} from cart`}
-                      onClick={() => removeFromCart(product.id)}
+                      onClick={() =>
+                        removeFromCart(product.brand, product.slug)
+                      }
                       className="absolute right-4 top-4 flex h-9 w-9 cursor-pointer items-center justify-center border border-white/10 text-secondary transition hover:border-primary/40 hover:text-primary"
                     >
                       <X size={18} />
@@ -311,7 +330,10 @@ const ShoppingCartPage = () => {
                 className="grid gap-6 rounded-3xl border border-white/10 bg-light-neutral/40 p-6 sm:p-8 md:grid-cols-2"
               >
                 <div className="space-y-2">
-                  <label htmlFor="firstName" className="block text-xs uppercase tracking-[0.35em] text-secondary/70">
+                  <label
+                    htmlFor="firstName"
+                    className="block text-xs uppercase tracking-[0.35em] text-secondary/70"
+                  >
                     First Name
                   </label>
                   <input
@@ -327,7 +349,10 @@ const ShoppingCartPage = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <label htmlFor="lastName" className="block text-xs uppercase tracking-[0.35em] text-secondary/70">
+                  <label
+                    htmlFor="lastName"
+                    className="block text-xs uppercase tracking-[0.35em] text-secondary/70"
+                  >
                     Last Name
                   </label>
                   <input
@@ -343,7 +368,10 @@ const ShoppingCartPage = () => {
                 </div>
 
                 <div className="space-y-2 md:col-span-2">
-                  <label htmlFor="address" className="block text-xs uppercase tracking-[0.35em] text-secondary/70">
+                  <label
+                    htmlFor="address"
+                    className="block text-xs uppercase tracking-[0.35em] text-secondary/70"
+                  >
                     Street Address
                   </label>
                   <input
@@ -359,7 +387,10 @@ const ShoppingCartPage = () => {
                 </div>
 
                 <div className="space-y-2 md:col-span-2">
-                  <label htmlFor="apartment" className="block text-xs uppercase tracking-[0.35em] text-secondary/70">
+                  <label
+                    htmlFor="apartment"
+                    className="block text-xs uppercase tracking-[0.35em] text-secondary/70"
+                  >
                     Apartment, Suite, etc. (Optional)
                   </label>
                   <input
@@ -374,7 +405,10 @@ const ShoppingCartPage = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <label htmlFor="city" className="block text-xs uppercase tracking-[0.35em] text-secondary/70">
+                  <label
+                    htmlFor="city"
+                    className="block text-xs uppercase tracking-[0.35em] text-secondary/70"
+                  >
                     City
                   </label>
                   <input
@@ -390,7 +424,10 @@ const ShoppingCartPage = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <label htmlFor="email" className="block text-xs uppercase tracking-[0.35em] text-secondary/70">
+                  <label
+                    htmlFor="email"
+                    className="block text-xs uppercase tracking-[0.35em] text-secondary/70"
+                  >
                     Email Address
                   </label>
                   <input
@@ -406,7 +443,10 @@ const ShoppingCartPage = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <label htmlFor="mobileNumber" className="block text-xs uppercase tracking-[0.35em] text-secondary/70">
+                  <label
+                    htmlFor="mobileNumber"
+                    className="block text-xs uppercase tracking-[0.35em] text-secondary/70"
+                  >
                     Mobile Number
                   </label>
                   <input
@@ -455,8 +495,8 @@ const ShoppingCartPage = () => {
             <div className="flex gap-4 overflow-x-auto pb-3">
               {recommendedProducts.map((product, index) => (
                 <Link
-                  key={`${product.id}-recommended-${index}`}
-                  href={`/collections/${product.id}`}
+                  key={`${product.slug}-recommended-${index}`}
+                  href={`/collections/${product.brand}/${product.slug}`}
                   className="group w-56 shrink-0 border border-white/10 bg-white/3 transition hover:border-primary/30"
                 >
                   <div className="relative aspect-4/5 overflow-hidden bg-neutral">

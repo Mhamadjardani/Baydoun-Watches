@@ -1,14 +1,12 @@
 "use client";
 
-import products from "@/data/products.json";
+import { Product } from "@/lib/type";
 import { useCommerceStore } from "@/store/useCommerceStore";
 import { ArrowRight, Heart, ShoppingBag, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import toast from "react-hot-toast";
-
-type Product = (typeof products)[number];
 
 const formatPrice = (price: number) =>
   new Intl.NumberFormat("en-US", {
@@ -17,8 +15,8 @@ const formatPrice = (price: number) =>
     maximumFractionDigits: 0,
   }).format(price);
 
-const WishlistPage = () => {
-  const wishlistIds = useCommerceStore((state) => state.wishlistIds);
+const WishlistPage = ({ products }: { products: Product[] }) => {
+  const wishlistItems = useCommerceStore((state) => state.wishlistItems);
   const hasHydrated = useCommerceStore((state) => state.hasHydrated);
   const addToCart = useCommerceStore((state) => state.addToCart);
   const removeFromWishlist = useCommerceStore(
@@ -28,12 +26,16 @@ const WishlistPage = () => {
 
   const wishlistProducts = useMemo(
     () =>
-      wishlistIds
-        .map((productId) =>
-          products.find((product) => product.id === productId),
+      wishlistItems
+        .map((item) =>
+          products.find(
+            (product) =>
+              product.slug === item.productSlug &&
+              product.brand === item.productBrand,
+          ),
         )
         .filter((product): product is Product => Boolean(product)),
-    [wishlistIds],
+    [wishlistItems, products],
   );
 
   const markImageFailed = (image: string) => {
@@ -102,22 +104,24 @@ const WishlistPage = () => {
           </div>
         ) : (
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {wishlistProducts.map((product) => (
+            {wishlistProducts.map((product, index) => (
               <article
-                key={product.id}
+                key={product.slug + index}
                 className="group relative overflow-hidden border border-primary/10 bg-light-neutral shadow-[0_30px_90px_rgba(0,0,0,0.35)] transition duration-500 hover:-translate-y-1 hover:border-primary/30 hover:shadow-[0_40px_120px_rgba(0,0,0,0.5)]"
               >
                 <button
                   type="button"
                   aria-label={`Remove ${product.title} from wishlist`}
-                  onClick={() => removeFromWishlist(product.id)}
+                  onClick={() =>
+                    removeFromWishlist(product.brand, product.slug)
+                  }
                   className="absolute right-4 top-4 z-10 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-white/15 bg-neutral/70 text-secondary backdrop-blur transition hover:border-primary/50 hover:text-primary"
                 >
                   <X size={18} />
                 </button>
 
                 <Link
-                  href={`/collections/${product.id}`}
+                  href={`/collections/${product.brand}/${product.slug}`}
                   className="block focus:outline-none focus:ring-2 focus:ring-primary/40"
                 >
                   <div className="relative aspect-4/5 overflow-hidden bg-neutral">
@@ -163,7 +167,7 @@ const WishlistPage = () => {
                   <button
                     type="button"
                     onClick={() => {
-                      addToCart(product.id);
+                      addToCart(product.brand, product.slug);
                       toast.success(`${product.title} added to bag`, {
                         icon: "🛍️",
                       });

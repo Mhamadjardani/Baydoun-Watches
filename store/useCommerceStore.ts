@@ -4,85 +4,146 @@ import { create } from "zustand";
 import { createJSONStorage, persist } from "zustand/middleware";
 
 export type CartItem = {
-  productId: string;
+  productBrand: string;
+  productSlug: string;
   quantity: number;
 };
 
+export type WishlistItem = {
+  productBrand: string;
+  productSlug: string;
+};
+
 type CommerceState = {
-  wishlistIds: string[];
+  wishlistItems: WishlistItem[];
   cartItems: CartItem[];
   hasHydrated: boolean;
-  addToCart: (productId: string, quantity?: number) => void;
-  removeFromCart: (productId: string) => void;
-  setCartQuantity: (productId: string, quantity: number) => void;
+  addToCart: (
+    productBrand: string,
+    productSlug: string,
+    quantity?: number,
+  ) => void;
+  removeFromCart: (productBrand: string, productSlug: string) => void;
+  setCartQuantity: (
+    productBrand: string,
+    productSlug: string,
+    quantity: number,
+  ) => void;
   clearCart: () => void;
-  toggleWishlist: (productId: string) => void;
-  removeFromWishlist: (productId: string) => void;
+  toggleWishlist: (productBrand: string, productSlug: string) => void;
+  removeFromWishlist: (productBrand: string, productSlug: string) => void;
   setHasHydrated: (hasHydrated: boolean) => void;
 };
 
 export const useCommerceStore = create<CommerceState>()(
   persist(
     (set) => ({
-      wishlistIds: [],
+      wishlistItems: [],
       cartItems: [],
       hasHydrated: false,
-      addToCart: (productId, quantity = 1) =>
+
+      addToCart: (productBrand, productSlug, quantity = 1) =>
         set((state) => {
           const existingItem = state.cartItems.find(
-            (item) => item.productId === productId,
+            (item) =>
+              item.productSlug === productSlug &&
+              item.productBrand === productBrand,
           );
 
           if (!existingItem) {
             return {
               cartItems: [
                 ...state.cartItems,
-                { productId, quantity: Math.max(1, quantity) },
+                {
+                  productBrand,
+                  productSlug,
+                  quantity: Math.max(1, quantity),
+                },
               ],
             };
           }
 
           return {
             cartItems: state.cartItems.map((item) =>
-              item.productId === productId
+              item.productSlug === productSlug &&
+              item.productBrand === productBrand
                 ? { ...item, quantity: item.quantity + Math.max(1, quantity) }
                 : item,
             ),
           };
         }),
-      removeFromCart: (productId) =>
+
+      removeFromCart: (productBrand, productSlug) =>
         set((state) => ({
           cartItems: state.cartItems.filter(
-            (item) => item.productId !== productId,
+            (item) =>
+              !(
+                item.productSlug === productSlug &&
+                item.productBrand === productBrand
+              ),
           ),
         })),
-      setCartQuantity: (productId, quantity) =>
+
+      setCartQuantity: (productBrand, productSlug, quantity) =>
         set((state) => ({
           cartItems:
             quantity <= 0
-              ? state.cartItems.filter((item) => item.productId !== productId)
+              ? state.cartItems.filter(
+                  (item) =>
+                    !(
+                      item.productSlug === productSlug &&
+                      item.productBrand === productBrand
+                    ),
+                )
               : state.cartItems.map((item) =>
-                  item.productId === productId ? { ...item, quantity } : item,
+                  item.productSlug === productSlug &&
+                  item.productBrand === productBrand
+                    ? { ...item, quantity }
+                    : item,
                 ),
         })),
+
       clearCart: () => set({ cartItems: [] }),
-      toggleWishlist: (productId) =>
+
+      toggleWishlist: (productBrand, productSlug) =>
+        set((state) => {
+          const exists = state.wishlistItems.some(
+            (item) =>
+              item.productSlug === productSlug &&
+              item.productBrand === productBrand,
+          );
+
+          return {
+            wishlistItems: exists
+              ? state.wishlistItems.filter(
+                  (item) =>
+                    !(
+                      item.productSlug === productSlug &&
+                      item.productBrand === productBrand
+                    ),
+                )
+              : [...state.wishlistItems, { productBrand, productSlug }],
+          };
+        }),
+
+      removeFromWishlist: (productBrand, productSlug) =>
         set((state) => ({
-          wishlistIds: state.wishlistIds.includes(productId)
-            ? state.wishlistIds.filter((id) => id !== productId)
-            : [...state.wishlistIds, productId],
+          wishlistItems: state.wishlistItems.filter(
+            (item) =>
+              !(
+                item.productSlug === productSlug &&
+                item.productBrand === productBrand
+              ),
+          ),
         })),
-      removeFromWishlist: (productId) =>
-        set((state) => ({
-          wishlistIds: state.wishlistIds.filter((id) => id !== productId),
-        })),
+
       setHasHydrated: (hasHydrated) => set({ hasHydrated }),
     }),
     {
       name: "baydoun-commerce",
       storage: createJSONStorage(() => localStorage),
       partialize: (state) => ({
-        wishlistIds: state.wishlistIds,
+        wishlistItems: state.wishlistItems,
         cartItems: state.cartItems,
       }),
       onRehydrateStorage: () => (state) => {

@@ -1,11 +1,12 @@
 import ProductsCollection, {
   type CollectionFilterState,
 } from "@/components/collections/ProductsCollection";
+import { getAllProducts } from "@/lib/products";
 
 const filterKeys = [
   "brand",
   "category",
-  "subCategory",
+  // "subCategory",
   "gender",
   "display",
 ] as const;
@@ -20,6 +21,8 @@ export default async function CollectionsPage({
 }: {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
+  const products = await getAllProducts();
+
   const params = await searchParams;
   const initialFilters = filterKeys.reduce<CollectionFilterState>(
     (filters, key) => ({
@@ -29,11 +32,13 @@ export default async function CollectionsPage({
     {
       brand: [],
       category: [],
-      subCategory: [],
+      // subCategory: [],
       gender: [],
       display: [],
     },
   );
 
-  return <ProductsCollection initialFilters={initialFilters} />;
+  return (
+    <ProductsCollection initialFilters={initialFilters} products={products} />
+  );
 }

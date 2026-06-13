@@ -1,14 +1,13 @@
 "use client";
 
-import products from "@/data/products.json";
+import { Product } from "@/lib/type";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-type Product = (typeof products)[number];
 type DirectoryKey = "category" | "brand";
 
-const buildGroups = (key: DirectoryKey) =>
+const buildGroups = (key: DirectoryKey, products: Product[]) =>
   Array.from(new Set(products.map((product) => product[key]))).map((value) => {
     const groupProducts = products.filter((product) => product[key] === value);
     const featuredProduct =
@@ -61,9 +60,9 @@ const DirectoryCard = ({
   </Link>
 );
 
-const CategoriesPage = () => {
-  const categoryGroups = buildGroups("category");
-  const brandGroups = buildGroups("brand");
+const CategoriesPage = ({ products }: { products: Product[] }) => {
+  const categoryGroups = buildGroups("category", products);
+  const brandGroups = buildGroups("brand", products);
 
   return (
     <main className="min-h-screen bg-neutral px-4 py-24 text-white sm:px-8 lg:px-16">
