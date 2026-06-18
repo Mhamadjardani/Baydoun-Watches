@@ -116,7 +116,8 @@ const ProductsCollection = ({
       filters.every(({ key }) => {
         const selectedValues = selectedFilters[key];
         return (
-          selectedValues.length === 0 || selectedValues.includes(product[key])
+          selectedValues.length === 0 ||
+          (product[key] && selectedValues.includes(product[key]))
         );
       }),
     );
@@ -129,7 +130,7 @@ const ProductsCollection = ({
 
       return Number(secondProduct.isFeatured) - Number(firstProduct.isFeatured);
     });
-  }, [selectedFilters, sortBy]);
+  }, [selectedFilters, sortBy, products]);
 
   const totalPages = Math.max(1, Math.ceil(filteredProducts.length / pageSize));
   const pageProducts = filteredProducts.slice(
