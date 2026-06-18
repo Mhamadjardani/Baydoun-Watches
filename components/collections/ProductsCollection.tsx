@@ -18,13 +18,13 @@ export type CollectionFilterState = Record<FilterKey, string[]>;
 
 const filters: { key: FilterKey; label: string }[] = [
   { key: "brand", label: "Brand" },
-  { key: "category", label: "Category" },
+  // { key: "category", label: "Category" },
   // { key: "subCategory", label: "Collection" },
   { key: "gender", label: "Gender" },
   { key: "display", label: "Display" },
 ];
 
-const pageSize = 6;
+const pageSize = 16;
 
 const formatPrice = (price: Product["price"]) =>
   new Intl.NumberFormat("en-US", {
@@ -79,6 +79,27 @@ const ProductsCollection = ({
     }, 0);
     return () => clearTimeout(id);
   }, [initialFilters]);
+
+  const getPagination = () => {
+    const delta = 1;
+    const range: (number | "...")[] = [];
+
+    for (
+      let i = Math.max(2, page - delta);
+      i <= Math.min(totalPages - 1, page + delta);
+      i++
+    ) {
+      range.push(i);
+    }
+
+    if (page - delta > 2) range.unshift("...");
+    if (page + delta < totalPages - 1) range.push("...");
+
+    range.unshift(1);
+    if (totalPages > 1) range.push(totalPages);
+
+    return range;
+  };
 
   const getOptions = (key: FilterKey) =>
     Array.from(new Set(products.map((product) => product[key]))).filter(
@@ -265,11 +286,11 @@ const ProductsCollection = ({
               </label>
             </div>
 
-            <div className="grid gap-5 grid-cols-2 sm:grid-cols-3">
+            <div className="grid gap-5 grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
               {pageProducts.map((product, index) => {
                 const productKey = `${product.slug}-${index}`;
                 const productImage = failedImages.has(product.images[0])
-                  ? "/test.png"
+                  ? "/baydoun-logo.webp"
                   : product.images[0];
 
                 return (
@@ -315,7 +336,7 @@ const ProductsCollection = ({
                     >
                       <div className="relative aspect-4/5 overflow-hidden bg-neutral">
                         <Image
-                          src={productImage}
+                          src={productImage || "/baydoun-logo.webp"}
                           alt={product.title}
                           fill
                           sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
@@ -367,24 +388,31 @@ const ProductsCollection = ({
               <p className="text-xs uppercase tracking-widest text-secondary/60">
                 Page {page} of {totalPages}
               </p>
+
               <div className="flex items-center gap-2">
-                {Array.from(
-                  { length: totalPages },
-                  (_, index) => index + 1,
-                ).map((pageNumber) => (
-                  <button
-                    key={pageNumber}
-                    type="button"
-                    onClick={() => setPage(pageNumber)}
-                    className={`h-10 w-10 cursor-pointer border text-sm font-bold transition ${
-                      pageNumber === page
-                        ? "border-primary bg-primary text-neutral"
-                        : "border-white/10 text-primary hover:border-primary/40"
-                    }`}
-                  >
-                    {pageNumber}
-                  </button>
-                ))}
+                {getPagination().map((item, index) =>
+                  item === "..." ? (
+                    <span
+                      key={`dots-${index}`}
+                      className="px-2 text-secondary/40"
+                    >
+                      ...
+                    </span>
+                  ) : (
+                    <button
+                      key={item}
+                      type="button"
+                      onClick={() => setPage(item)}
+                      className={`h-10 w-10 cursor-pointer border text-sm font-bold transition ${
+                        item === page
+                          ? "border-primary bg-primary text-neutral"
+                          : "border-white/10 text-primary hover:border-primary/40"
+                      }`}
+                    >
+                      {item}
+                    </button>
+                  ),
+                )}
               </div>
             </div>
           </div>

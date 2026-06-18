@@ -1,0 +1,46 @@
+{
+  "title": "Casio Men 3H Watch MTP-VT01G-5BUDF",
+  "sku": "MTP-VT01G-5BUDF",
+  "display": "Analog 3H",
+  "gender": "Men",
+  "price": 66,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "88 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "46 × 40 × 8.2 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Gold Plated"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Special Feature",
+      "value": "LTP-MTP"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [
+    "Water resistant",
+    "Stainless steel band",
+    "Accuracy: ±20 seconds per month",
+    "Analog: 3 hands (hour, minute, second)"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

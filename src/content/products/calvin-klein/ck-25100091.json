@@ -1,0 +1,49 @@
+{
+  "title": "CALVIN KLEIN, CK MERIDIAN",
+  "sku": "CK 25100091",
+  "display": "",
+  "gender": "Women",
+  "price": 175,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "MOVEMENT",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "BAND MATERIAL",
+      "value": "BRACELET"
+    },
+    {
+      "label": "BAND COLOR",
+      "value": "BLACK STAINLESS STEEL"
+    },
+    {
+      "label": "DIAL COLOR",
+      "value": "BLACK"
+    },
+    {
+      "label": "CASE DIAMETER",
+      "value": "22 MM"
+    },
+    {
+      "label": "CASE COLOR",
+      "value": "BLACK STAINLESS STEEL"
+    },
+    {
+      "label": "BEZEL",
+      "value": "BLACK STAINLESS STEEL"
+    },
+    {
+      "label": "WATER RESISTANT",
+      "value": "3 ATM"
+    }
+  ],
+  "features": [],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

@@ -1,0 +1,44 @@
+{
+  "title": "G-Shock Casual Men Watch GX-56UBB-1DR",
+  "sku": "GX-56UBB-1DR",
+  "display": "Digital",
+  "gender": "Men",
+  "price": 225,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "88 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "55.5 × 53.6 × 17.5 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Black"
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "200m"
+    }
+  ],
+  "features": [
+    "5 alarms (daily or one-time); LED backlight (Super Illuminator) Auto light switch, selectable illumination duration, afterglow; LED:White; Full auto-calendar (to year 2099); Button operation tone on/off; Accuracy: ±15 seconds per month; 12/24-hour format; Regular timekeeping: Hour, minute, second, pm, month, date, day",
+    "Multi Time (4 different cities)",
+    "World time 31 time zones (48 cities + coordinated universal time), daylight saving on/off, Home city/World time city swapping",
+    "1/100-second stopwatch Measuring capacity: 23:59’59.99” Measuring modes: Elapsed time, split time, 1st-2nd place times",
+    "Countdown timer Measuring unit: 1/10 second Countdown range: 24 hours Countdown start time setting range: 1 second to 24 hours (1-second increments, 1-minute increments and 1-hour increments)",
+    "Hourly time signal"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

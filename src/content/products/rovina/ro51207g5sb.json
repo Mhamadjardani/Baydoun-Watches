@@ -1,0 +1,49 @@
+{
+  "title": "ROVINA MEN`S WATCH",
+  "sku": "RO51207G5SB",
+  "display": "",
+  "gender": "Men",
+  "price": 185,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "MOVEMENT",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "BAND MATERIAL",
+      "value": "LEATHER"
+    },
+    {
+      "label": "BAND COLOR",
+      "value": "BROWN LEATHER"
+    },
+    {
+      "label": "DIAL COLOR",
+      "value": "BLACK"
+    },
+    {
+      "label": "CASE DIAMETER",
+      "value": "50 MM"
+    },
+    {
+      "label": "CASE COLOR",
+      "value": "BLACK STAINLESS STEEL"
+    },
+    {
+      "label": "BEZEL",
+      "value": "BLACK"
+    },
+    {
+      "label": "WATER RESISTANT",
+      "value": "5 ATM"
+    }
+  ],
+  "features": [],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

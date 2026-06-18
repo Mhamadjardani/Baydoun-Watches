@@ -1,0 +1,45 @@
+{
+  "title": "Casio men 3H Watch MTP-1374L-7A1VDF",
+  "sku": "MTP-1374L-7A1VDF",
+  "display": "Chronograph",
+  "gender": "Men",
+  "price": 90,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "66 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "47 × 43.5 × 10.4 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Brown, Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Genuine Leather"
+    },
+    {
+      "label": "Special Feature",
+      "value": "LTP-MTP"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [
+    "Regular timekeeping Analog: 3 hands (hour, minute, second), 3 dials (date, day, 24-hour)",
+    "Accuracy: 20 seconds per month",
+    "Approx. battery life: 3 years on SR927SW"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

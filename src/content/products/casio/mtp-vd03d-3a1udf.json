@@ -1,0 +1,45 @@
+{
+  "title": "Casio Men 3H Watch MTP-VD03D-3A1UDF",
+  "sku": "MTP-VD03D-3A1UDF",
+  "display": "Analog 3H",
+  "gender": "Men",
+  "price": 56,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "106 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "48 × 41 × 9.6 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Green, Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Special Feature",
+      "value": "LTP-MTP"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [
+    "Regular timekeeping:; 3 hands (hour, minute, second); Date display",
+    "Mineral Glass",
+    "Accuracy: ±20 seconds per month"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

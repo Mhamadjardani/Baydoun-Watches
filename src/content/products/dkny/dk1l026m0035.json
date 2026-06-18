@@ -1,0 +1,33 @@
+{
+  "title": "DKNY Women Parsons Midi Watch DK1L026M0035",
+  "sku": "DK1L026M0035",
+  "display": "Analog 3H",
+  "gender": "Women",
+  "price": 180,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Dimensions",
+      "value": "30 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Gold Plated"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "50m"
+    }
+  ],
+  "features": [],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Edifice Watch EFV-550D-1AVUDF",
+  "sku": "EFV-550D-1AVUDF",
+  "display": "Chronograph",
+  "gender": "Men",
+  "price": 165,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "156 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "53 × 47 × 12.1 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "100m"
+    }
+  ],
+  "features": [
+    "1/10-second stopwatch Measuring capacity: 59’59.9” Measuring modes: Elapsed time, split time, 1st-2nd place times Date display Regular timekeeping Analog: 3 hands (hour, minute, second), 3 dials (stopwatch 1/10 seconds, stopwatch minutes, stopwatch seconds) Accuracy: 20 seconds per month Approx. battery life: 3 years on SR920SW."
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

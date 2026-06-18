@@ -1,0 +1,49 @@
+{
+  "title": "CALVIN KLEIN, TWISTED BEZEL",
+  "sku": "CK 25100056",
+  "display": "",
+  "gender": "Women",
+  "price": 185,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "MOVEMENT",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "BAND MATERIAL",
+      "value": "BANGLE"
+    },
+    {
+      "label": "BAND COLOR",
+      "value": "GOLD PLATED"
+    },
+    {
+      "label": "DIAL COLOR",
+      "value": "GOLD"
+    },
+    {
+      "label": "CASE DIAMETER",
+      "value": "26 MM"
+    },
+    {
+      "label": "CASE COLOR",
+      "value": "GOLD PLATED"
+    },
+    {
+      "label": "BEZEL",
+      "value": "GOLD PLATED"
+    },
+    {
+      "label": "WATER RESISTANT",
+      "value": "3 ATM"
+    }
+  ],
+  "features": [],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

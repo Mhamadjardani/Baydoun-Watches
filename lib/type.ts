@@ -19,5 +19,18 @@ export type Product = {
   arrivalDate: string | null;
   createdAt: string | null;
   slug: string;
-  brand: "casio" | "rolex" | "seiko" | "citizen" | "omega" | "tagHeuer";
+  brand:
+    | "calvinKlein"
+    | "casio"
+    | "cityTime"
+    | "curren"
+    | "dkny"
+    | "gadgets"
+    | "lacoste"
+    | "nano"
+    | "omorfia"
+    | "polit"
+    | "qq"
+    | "rovina"
+    | "tommyHilfiger";
 };

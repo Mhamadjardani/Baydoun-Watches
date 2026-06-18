@@ -1,11 +1,12 @@
 "use client";
+import { Product } from "@/lib/type";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import DesktopNavbar from "./DesktopNavbar";
 import { MenuIcon, menuIcons, menuItems, type MenuItem } from "./menuItem";
 import MobileNavbar from "./MobileNavbar";
 
-const Navbar: React.FC = () => {
+const Navbar = ({ products }: { products: Product[] }) => {
   const [scrolled, setScrolled] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
@@ -91,6 +92,7 @@ const Navbar: React.FC = () => {
     <div className="relative z-50">
       {isSmallScreen ? (
         <MobileNavbar
+          products={products}
           openMenu={openMenu}
           setOpenMenu={setOpenMenu}
           handleMenuItemClick={handleMenuItemClick}
@@ -102,6 +104,7 @@ const Navbar: React.FC = () => {
         />
       ) : (
         <DesktopNavbar
+          products={products}
           handleMenuItemClick={handleMenuItemClick}
           handleLogoClick={handleLogoClick}
           menuItems={menuItems}

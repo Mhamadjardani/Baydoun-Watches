@@ -1,0 +1,49 @@
+{
+  "title": "OMORFIA WOMEN`S WATCH",
+  "sku": "OM20137F3BY",
+  "display": "",
+  "gender": "Women",
+  "price": 145,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "MOVEMENT",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "BAND MATERIAL",
+      "value": "BRACELET"
+    },
+    {
+      "label": "BAND COLOR",
+      "value": "GOLD STAINLESS STEEL"
+    },
+    {
+      "label": "DIAL COLOR",
+      "value": "GOLD"
+    },
+    {
+      "label": "CASE DIAMETER",
+      "value": "21 MM"
+    },
+    {
+      "label": "CASE COLOR",
+      "value": "GOLD STAINLESS STEEL"
+    },
+    {
+      "label": "BEZEL",
+      "value": "GOLD STAINLESS STEEL"
+    },
+    {
+      "label": "WATER RESISTANT",
+      "value": "3 ATM"
+    }
+  ],
+  "features": [],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

@@ -1,0 +1,45 @@
+{
+  "title": "Casio men 3H Watch MTP-VD01D-1CVUDF",
+  "sku": "MTP-VD01D-1CVUDF",
+  "display": "Analog 3H",
+  "gender": "Men",
+  "price": 55,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "118 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "49 × 45 × 10.3 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Special Feature",
+      "value": "LTP-MTP"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [
+    "50-meter water resistance",
+    "Date display",
+    "Stainless steel band"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

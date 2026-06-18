@@ -1,0 +1,49 @@
+{
+  "title": "CALVIN KLEIN, CK ICONIC",
+  "sku": "CK 25300026",
+  "display": "",
+  "gender": "Men",
+  "price": 205,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "MOVEMENT",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "BAND MATERIAL",
+      "value": "BRACELET"
+    },
+    {
+      "label": "BAND COLOR",
+      "value": "DARK BLUE STAINLESS STEEL"
+    },
+    {
+      "label": "DIAL COLOR",
+      "value": "DARK BLUE"
+    },
+    {
+      "label": "CASE DIAMETER",
+      "value": "40 MM"
+    },
+    {
+      "label": "CASE COLOR",
+      "value": "DARK BLUE"
+    },
+    {
+      "label": "BEZEL",
+      "value": "DARK BLUE"
+    },
+    {
+      "label": "WATER RESISTANT",
+      "value": "5 ATM"
+    }
+  ],
+  "features": [],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

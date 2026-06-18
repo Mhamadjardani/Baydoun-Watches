@@ -1,0 +1,46 @@
+{
+  "title": "Casio Vintage Digital Men Watch W-59-1VQ",
+  "sku": "W-59-1VQ",
+  "display": "Digital",
+  "gender": "Men",
+  "price": 32,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "22 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "37.1 × 33.6 × 8.7 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Black"
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [
+    "12/24-hour format; Regular timekeeping: Hour, minute, second, pm, date, day",
+    "LED light",
+    "1/100-second stopwatch Measuring capacity: 59’59.99″ Measuring modes: Net time, split time, 1st-2nd place times",
+    "Daily alarm",
+    "Hourly time signal",
+    "Auto-calendar (set at 28 days for February)",
+    "Accuracy: ±30 seconds per month",
+    "Approx. battery life: 7 years on CR2016"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

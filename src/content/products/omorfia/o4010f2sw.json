@@ -1,0 +1,49 @@
+{
+  "title": "OMORFIA WOMEN`S WATCH",
+  "sku": "O4010F2SW",
+  "display": "",
+  "gender": "Women",
+  "price": 110,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "MOVEMENT",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "BAND MATERIAL",
+      "value": "RUBBER"
+    },
+    {
+      "label": "BAND COLOR",
+      "value": "WHITE RUBBER"
+    },
+    {
+      "label": "DIAL COLOR",
+      "value": "WHITE"
+    },
+    {
+      "label": "CASE DIAMETER",
+      "value": "39 MM"
+    },
+    {
+      "label": "CASE COLOR",
+      "value": "TWO TONE STAINLESS STEEL"
+    },
+    {
+      "label": "BEZEL",
+      "value": "GOLD"
+    },
+    {
+      "label": "WATER RESISTANT",
+      "value": "5 ATM"
+    }
+  ],
+  "features": [],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

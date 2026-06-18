@@ -5,7 +5,7 @@ import { useCommerceStore } from "@/store/useCommerceStore";
 import { ArrowRight, Minus, Plus, ShoppingBag, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 const formatPrice = (price: number) =>
   new Intl.NumberFormat("en-US", {
@@ -64,6 +64,48 @@ const ShoppingCartPage = ({ products }: { products: Product[] }) => {
   const shipping = subtotal > 0 ? shippingEstimate : 0;
   const total = subtotal + shipping;
 
+  const buildWhatsAppMessage = () => {
+    const customerInfo = `
+🧾 *New Order Request*
+
+👤 *Customer Details*
+• Name: ${formData.firstName} ${formData.lastName}
+• Email: ${formData.email}
+• Phone: ${formData.mobileNumber}
+
+📍 *Delivery Address*
+• Address: ${formData.address}
+• Apartment: ${formData.apartment || "-"}
+• City: ${formData.city}
+`;
+
+    const items = cartProducts
+      .map(
+        (item, index) => `
+🛒 *Item ${index + 1}*
+• Product: ${item.product.title}
+• Brand: ${item.product.brand}
+• SKU: ${item.product.sku}
+• Qty: ${item.quantity}
+• Price: $${item.product.price}
+`,
+      )
+      .join("\n");
+
+    const total = cartProducts.reduce(
+      (sum, item) => sum + item.product.price * item.quantity,
+      0,
+    );
+
+    const summary = `
+💰 *Order Summary*
+• Total Items: ${cartProducts.length}
+• Total Price: $${total}
+`;
+
+    return encodeURIComponent(`${customerInfo}\n${items}\n${summary}`);
+  };
+
   const makeKey = (brand: string, slug: string) =>
     `${brand.toLowerCase()}:${slug}`;
 
@@ -78,11 +120,15 @@ const ShoppingCartPage = ({ products }: { products: Product[] }) => {
       cartProducts.map((item) => item.product.brand.toLowerCase()),
     );
 
-    const sameBrandProducts = products.filter((product) => {
-      const key = makeKey(product.brand, product.slug);
+    const sameBrandProducts = products
+      .filter((product) => {
+        const key = makeKey(product.brand, product.slug);
 
-      return !cartKeys.has(key) && cartBrands.has(product.brand.toLowerCase());
-    });
+        return (
+          !cartKeys.has(key) && cartBrands.has(product.brand.toLowerCase())
+        );
+      })
+      .slice(0, 8);
 
     const fallbackProducts = products.filter((product) => {
       const key = makeKey(product.brand, product.slug);
@@ -99,6 +145,33 @@ const ShoppingCartPage = ({ products }: { products: Product[] }) => {
     return recommendationPool.slice(0, 6);
   }, [cartProducts, products]);
 
+  const scrollRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    let animationFrame: number;
+    const speed = 0.5;
+
+    const step = () => {
+      if (!container) return;
+
+      container.scrollLeft += speed;
+
+      // seamless reset (half because duplicated list)
+      if (container.scrollLeft >= container.scrollWidth / 2) {
+        container.scrollLeft = 0;
+      }
+
+      animationFrame = requestAnimationFrame(step);
+    };
+
+    animationFrame = requestAnimationFrame(step);
+
+    return () => cancelAnimationFrame(animationFrame);
+  }, []);
+
   const markImageFailed = (image: string) => {
     setFailedImages((currentFailedImages) => {
       const nextFailedImages = new Set(currentFailedImages);
@@ -108,17 +181,37 @@ const ShoppingCartPage = ({ products }: { products: Product[] }) => {
   };
 
   const getImage = (product: Product) =>
-    failedImages.has(product.images[0]) ? "/test.png" : product.images[0];
+    failedImages.has(product.images[0])
+      ? "/baydoun-logo.webp"
+      : product.images[0];
 
   const handleFormChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleCheckoutSubmit = (e: React.FormEvent) => {
+  const handleCheckoutSubmit = (e: React.SubmitEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log("Checkout data:", formData);
+    const phoneNumber = "96171210071";
+
+    const message = buildWhatsAppMessage();
+
+    const url = `https://wa.me/${phoneNumber}?text=${message}`;
+
+    setFormData({
+      address: "",
+      apartment: "",
+      city: "",
+      email: "",
+      firstName: "",
+      lastName: "",
+      mobileNumber: "",
+    });
+    cartProducts.map((product) =>
+      removeFromCart(product.product.brand, product.product.slug),
+    );
+
+    window.open(url, "_blank");
   };
 
   if (!hasHydrated) {
@@ -187,7 +280,7 @@ const ShoppingCartPage = ({ products }: { products: Product[] }) => {
                     className="relative aspect-square overflow-hidden bg-neutral sm:h-38 sm:w-38"
                   >
                     <Image
-                      src={getImage(product)}
+                      src={getImage(product) || "/baydoun-logo.webp"}
                       alt={product.title}
                       fill
                       sizes="160px"
@@ -391,7 +484,7 @@ const ShoppingCartPage = ({ products }: { products: Product[] }) => {
                     htmlFor="apartment"
                     className="block text-xs uppercase tracking-[0.35em] text-secondary/70"
                   >
-                    Apartment, Suite, etc. (Optional)
+                    Apartment, Suite, etc.
                   </label>
                   <input
                     type="text"
@@ -399,6 +492,7 @@ const ShoppingCartPage = ({ products }: { products: Product[] }) => {
                     name="apartment"
                     value={formData.apartment}
                     onChange={handleFormChange}
+                    required
                     className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:border-primary/50 focus:bg-white/10 focus:outline-none focus:ring-1 focus:ring-primary/30 transition"
                     placeholder="Unit 1200"
                   />
@@ -463,7 +557,7 @@ const ShoppingCartPage = ({ products }: { products: Product[] }) => {
 
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center gap-3 rounded-lg bg-primary px-6 py-4 text-sm font-bold uppercase tracking-[0.35em] text-neutral transition hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-primary/40 md:col-span-2"
+                  className="cursor-pointer inline-flex items-center justify-center gap-3 rounded-lg bg-primary px-6 py-4 text-sm font-bold uppercase tracking-[0.35em] text-neutral transition hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-primary/40 md:col-span-2"
                 >
                   Complete Order
                   <ArrowRight size={18} />
@@ -473,7 +567,7 @@ const ShoppingCartPage = ({ products }: { products: Product[] }) => {
           </section>
         )}
 
-        {recommendedProducts.length > 0 && (
+        {recommendedProducts.length > 0 && cartProducts.length > 0 && (
           <section className="space-y-5 border-t border-white/10 pt-8">
             <div className="flex items-end justify-between gap-4">
               <div>
@@ -492,36 +586,42 @@ const ShoppingCartPage = ({ products }: { products: Product[] }) => {
               </Link>
             </div>
 
-            <div className="flex gap-4 overflow-x-auto pb-3">
-              {recommendedProducts.map((product, index) => (
-                <Link
-                  key={`${product.slug}-recommended-${index}`}
-                  href={`/collections/${product.brand}/${product.slug}`}
-                  className="group w-56 shrink-0 border border-white/10 bg-white/3 transition hover:border-primary/30"
-                >
-                  <div className="relative aspect-4/5 overflow-hidden bg-neutral">
-                    <Image
-                      src={getImage(product)}
-                      alt={product.title}
-                      fill
-                      sizes="224px"
-                      className="object-cover transition duration-500 group-hover:scale-105"
-                      onError={() => markImageFailed(product.images[0])}
-                    />
-                  </div>
-                  <div className="space-y-2 p-4">
-                    <p className="text-xs uppercase tracking-widest text-primary">
-                      {product.brand}
-                    </p>
-                    <p className="min-h-11 text-sm font-bold uppercase leading-5 tracking-widest text-white font-playfair">
-                      {product.title}
-                    </p>
-                    <p className="text-sm font-bold text-primary">
-                      {formatPrice(product.price)}
-                    </p>
-                  </div>
-                </Link>
-              ))}
+            <div
+              ref={scrollRef}
+              className="flex flex-nowrap gap-4 overflow-x-auto pb-3 no-scrollbar"
+              style={{ scrollBehavior: "auto" }}
+            >
+              {[...recommendedProducts, ...recommendedProducts].map(
+                (product, index) => (
+                  <Link
+                    key={`${product.slug}-recommended-${index}`}
+                    href={`/collections/${product.brand}/${product.slug}`}
+                    className="group w-56 shrink-0 border border-white/10 bg-white/3 transition hover:border-primary/30"
+                  >
+                    <div className="relative aspect-4/5 overflow-hidden bg-neutral">
+                      <Image
+                        src={getImage(product) || "/baydoun-logo.webp"}
+                        alt={product.title}
+                        fill
+                        sizes="224px"
+                        className="object-cover transition duration-500 group-hover:scale-105"
+                        onError={() => markImageFailed(product.images[0])}
+                      />
+                    </div>
+                    <div className="space-y-2 p-4">
+                      <p className="text-xs uppercase tracking-widest text-primary">
+                        {product.brand}
+                      </p>
+                      <p className="min-h-11 text-sm font-bold uppercase leading-5 tracking-widest text-white font-playfair">
+                        {product.title}
+                      </p>
+                      <p className="text-sm font-bold text-primary">
+                        {formatPrice(product.price)}
+                      </p>
+                    </div>
+                  </Link>
+                ),
+              )}
             </div>
           </section>
         )}

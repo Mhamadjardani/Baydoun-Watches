@@ -1,0 +1,39 @@
+{
+  "title": "Casio Men 3H Watch MTP-1303DD-7AVDF",
+  "sku": "MTP-1303DD-7AVDF",
+  "display": "Analog 3H",
+  "gender": "Men",
+  "price": 54,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "102 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "47 × 40 × 8.1 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "50m"
+    }
+  ],
+  "features": [
+    "50-meter water resistance 3-hand analog watch Accuracy: ±20 seconds per month"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

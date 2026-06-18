@@ -1,0 +1,43 @@
+{
+  "title": "Casio Men 3H Watch MTP-B146G-3AVDF",
+  "sku": "MTP-B146G-3AVDF",
+  "display": "Analog 3H",
+  "gender": "Men",
+  "price": 120,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "85 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "40.8 × 35 × 8 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Gold Plated, Green"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Special Feature",
+      "value": "LTP-MTP"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "50m"
+    }
+  ],
+  "features": [
+    "Accuracy: ±20 seconds per month; Regular timekeeping: Analog: 3 hands (hour, minute, second); Day and date display"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

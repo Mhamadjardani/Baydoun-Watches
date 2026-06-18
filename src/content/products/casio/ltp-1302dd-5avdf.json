@@ -1,0 +1,45 @@
+{
+  "title": "Casio Women 3H Watch LTP-1302DD-5AVDF",
+  "sku": "LTP-1302DD-5AVDF",
+  "display": "Analog 3H",
+  "gender": "Women",
+  "price": 63,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "67 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "34.5 × 30.2 × 8.8 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Special Feature",
+      "value": "LTP-MTP"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "50m"
+    }
+  ],
+  "features": [
+    "Analog: 3 hands (hour, minute, second); Date display; Accuracy: ±20 seconds per month",
+    "Regular timekeeping:",
+    "Approx. battery life: 3 years on SR626SW"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

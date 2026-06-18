@@ -1,0 +1,49 @@
+{
+  "title": "TOMMY HILFIGER, TH85 CHRONO",
+  "sku": "TH 1792156",
+  "display": "",
+  "gender": "Men",
+  "price": 230,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "MOVEMENT",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "BAND MATERIAL",
+      "value": "BRACELET"
+    },
+    {
+      "label": "BAND COLOR",
+      "value": "STAINLESS STEEL"
+    },
+    {
+      "label": "DIAL COLOR",
+      "value": "BLACK"
+    },
+    {
+      "label": "CASE DIAMETER",
+      "value": "41 MM"
+    },
+    {
+      "label": "CASE COLOR",
+      "value": "STAINLESS STEEL"
+    },
+    {
+      "label": "BEZEL",
+      "value": "BLACK ALUMINIUM"
+    },
+    {
+      "label": "WATER RESISTANT",
+      "value": "5 ATM"
+    }
+  ],
+  "features": [],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

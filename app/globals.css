@@ -64,3 +64,12 @@ body {
   scrollbar-width: thin; /* width of the scrollbar */
   scrollbar-color: #c9a84c #1f1e1e; /* color of the thumb and track */
 }
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

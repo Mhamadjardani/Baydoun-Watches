@@ -1,0 +1,33 @@
+{
+  "title": "DKNY Men Active Watch DK1G130M0075",
+  "sku": "DK1G130M0075",
+  "display": "Analog 3H",
+  "gender": "Men",
+  "price": 159,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Dimensions",
+      "value": "43 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Blue, Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "100m"
+    }
+  ],
+  "features": [],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

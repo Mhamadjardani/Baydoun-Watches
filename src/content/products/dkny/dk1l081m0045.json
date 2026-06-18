@@ -1,0 +1,33 @@
+{
+  "title": "DKNY Women City Glitz Watch DK1L081M0045",
+  "sku": "DK1L081M0045",
+  "display": "Analog 3H",
+  "gender": "Women",
+  "price": 245,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Dimensions",
+      "value": "27 × 34.5 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Rose Gold Plated"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "30m"
+    }
+  ],
+  "features": [],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

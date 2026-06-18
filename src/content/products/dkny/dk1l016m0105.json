@@ -1,0 +1,33 @@
+{
+  "title": "DKNY Women Chambers Midi Watch DK1L016M0105",
+  "sku": "DK1L016M0105",
+  "display": "Analog 3H",
+  "gender": "Women",
+  "price": 179,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Dimensions",
+      "value": "34 mm"
+    },
+    {
+      "label": "Color",
+      "value": "2-tone Rose Gold"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "50m"
+    }
+  ],
+  "features": [],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

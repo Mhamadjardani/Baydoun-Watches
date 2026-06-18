@@ -1,0 +1,49 @@
+{
+  "title": "LACOSTE, RIGA",
+  "sku": "LC 2001369",
+  "display": "",
+  "gender": "Women",
+  "price": 155,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "MOVEMENT",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "BAND MATERIAL",
+      "value": "BRACELET"
+    },
+    {
+      "label": "BAND COLOR",
+      "value": "TWO-TONE"
+    },
+    {
+      "label": "DIAL COLOR",
+      "value": "GREY"
+    },
+    {
+      "label": "CASE DIAMETER",
+      "value": "34 MM"
+    },
+    {
+      "label": "CASE COLOR",
+      "value": "YELLOW GOLD"
+    },
+    {
+      "label": "BEZEL",
+      "value": "GREY"
+    },
+    {
+      "label": "WATER RESISTANT",
+      "value": "5 ATM"
+    }
+  ],
+  "features": [],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

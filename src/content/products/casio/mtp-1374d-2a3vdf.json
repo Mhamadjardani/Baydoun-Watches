@@ -1,0 +1,46 @@
+{
+  "title": "Casio Men 3H Watch MTP-1374D-2A3VDF",
+  "sku": "MTP-1374D-2A3VDF",
+  "display": "Chronograph",
+  "gender": "Men",
+  "price": 95,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "124 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "47 × 43.5 × 11.1 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Blue, Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Special Feature",
+      "value": "LTP-MTP"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "50m"
+    }
+  ],
+  "features": [
+    "Regular timekeeping Analog: 3 hands (hour, minute, second), 3 dials (date, day, 24-hour)",
+    "50-meter water resistance",
+    "Accuracy: ±20 seconds per month",
+    "Approx. battery life: 3 years on SR927SW"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

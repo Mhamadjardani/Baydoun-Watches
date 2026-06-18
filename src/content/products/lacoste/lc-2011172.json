@@ -1,0 +1,49 @@
+{
+  "title": "LACOSTE, L.12.12",
+  "sku": "LC 2011172",
+  "display": "",
+  "gender": "Men",
+  "price": 85,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "MOVEMENT",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "BAND MATERIAL",
+      "value": "RUBBER"
+    },
+    {
+      "label": "BAND COLOR",
+      "value": "BLUE"
+    },
+    {
+      "label": "DIAL COLOR",
+      "value": "BLUE"
+    },
+    {
+      "label": "CASE DIAMETER",
+      "value": "42 MM"
+    },
+    {
+      "label": "CASE COLOR",
+      "value": "BLUE"
+    },
+    {
+      "label": "BEZEL",
+      "value": "BLUE"
+    },
+    {
+      "label": "WATER RESISTANT",
+      "value": "5 ATM"
+    }
+  ],
+  "features": [],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

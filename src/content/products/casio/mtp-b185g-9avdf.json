@@ -1,0 +1,43 @@
+{
+  "title": "Casio Men 3H Watch MTP-B185G-9AVDF",
+  "sku": "MTP-B185G-9AVDF",
+  "display": "Analog 3H",
+  "gender": "Men",
+  "price": 140,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "80 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "40 × 32.5 × 7.3 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Gold Plated"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Special Feature",
+      "value": "LTP-MTP"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "50m"
+    }
+  ],
+  "features": [
+    "Accuracy: ±20 seconds per month; Regular timekeeping: 3 hands (hour, minute, second); Date display"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

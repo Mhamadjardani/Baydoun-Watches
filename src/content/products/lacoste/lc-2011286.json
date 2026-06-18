@@ -1,0 +1,49 @@
+{
+  "title": "LACOSTE, FINN",
+  "sku": "LC 2011286",
+  "display": "",
+  "gender": "Men",
+  "price": 140,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "MOVEMENT",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "BAND MATERIAL",
+      "value": "STAINLESS STEEL"
+    },
+    {
+      "label": "BAND COLOR",
+      "value": "STAINLESS STEEL"
+    },
+    {
+      "label": "DIAL COLOR",
+      "value": "DARK BLUE"
+    },
+    {
+      "label": "CASE DIAMETER",
+      "value": "44 MM"
+    },
+    {
+      "label": "CASE COLOR",
+      "value": "STAINLESS STEEL"
+    },
+    {
+      "label": "BEZEL",
+      "value": "BLUE AND STAINLESS STEEL"
+    },
+    {
+      "label": "WATER RESISTANT",
+      "value": "5 ATM"
+    }
+  ],
+  "features": [],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

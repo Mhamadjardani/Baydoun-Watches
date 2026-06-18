@@ -1,0 +1,49 @@
+{
+  "title": "LACOSTE, REPLAY",
+  "sku": "LC 2011256",
+  "display": "",
+  "gender": "Men",
+  "price": 175,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "MOVEMENT",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "BAND MATERIAL",
+      "value": "MESH"
+    },
+    {
+      "label": "BAND COLOR",
+      "value": "STAINLESS STEEL"
+    },
+    {
+      "label": "DIAL COLOR",
+      "value": "DARK BLUE"
+    },
+    {
+      "label": "CASE DIAMETER",
+      "value": "45MM"
+    },
+    {
+      "label": "CASE COLOR",
+      "value": "STAINLESS STEEL"
+    },
+    {
+      "label": "BEZEL",
+      "value": "STAINLESS STEEL"
+    },
+    {
+      "label": "WATER RESISTANT",
+      "value": "5 ATM"
+    }
+  ],
+  "features": [],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

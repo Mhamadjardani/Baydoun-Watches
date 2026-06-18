@@ -1,0 +1,46 @@
+{
+  "title": "Casio Vintage Digital women Metal Watch LA670WGA-9DF",
+  "sku": "LA670WGA-9DF",
+  "display": "Digital",
+  "gender": "Women",
+  "price": 60,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "27.8 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "30.3 × 24.6 × 7.3 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Gold Plated"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [
+    "1/10-second stopwatch Measuring capacity: 59’59.9” Measuring mode: Elapsed time",
+    "Countdown timer Countdown range: 30 minutes Preset countdown start times: 1, 3, 5, 10, 15, 20, 30 minutes",
+    "Daily alarm",
+    "Hourly time signal",
+    "Auto-calendar (set at 28 days for February)",
+    "Regular timekeeping: Hour, minute, second, pm, month, date, day",
+    "Accuracy: 30 seconds per month",
+    "Approx. battery life: 2 years on CR1216"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

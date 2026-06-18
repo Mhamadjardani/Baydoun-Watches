@@ -1,0 +1,49 @@
+{
+  "title": "LACOSTE, L.12.12",
+  "sku": "LC 2011243",
+  "display": "",
+  "gender": "Men",
+  "price": 145,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "MOVEMENT",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "BAND MATERIAL",
+      "value": "RUBBER"
+    },
+    {
+      "label": "BAND COLOR",
+      "value": "BLACK"
+    },
+    {
+      "label": "DIAL COLOR",
+      "value": "BLACK"
+    },
+    {
+      "label": "CASE DIAMETER",
+      "value": "43 MM"
+    },
+    {
+      "label": "CASE COLOR",
+      "value": "BLACK"
+    },
+    {
+      "label": "BEZEL",
+      "value": "BLACK"
+    },
+    {
+      "label": "WATER RESISTANT",
+      "value": "5 ATM"
+    }
+  ],
+  "features": [],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

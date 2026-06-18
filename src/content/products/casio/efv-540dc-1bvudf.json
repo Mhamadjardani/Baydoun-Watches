@@ -1,0 +1,40 @@
+{
+  "title": "Edifice Watch EFV-540DC-1BVUDF",
+  "sku": "EFV-540DC-1BVUDF",
+  "display": "Chronograph",
+  "gender": "Men",
+  "price": 220,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "144 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "48.5 × 43.8 × 11.6 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Black"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "100m"
+    }
+  ],
+  "features": [
+    "Accuracy: ±20 seconds per month; Regular timekeeping: Analog: 3 hands (hour, minute, second), 3 dials (stopwatch minutes, stopwatch seconds, 24-hour); Date display.",
+    "1-second stopwatch Measuring capacity: 9’59 Measuring modes: Elapsed time, split time, 1st-2nd place times"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

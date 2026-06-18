@@ -1,0 +1,34 @@
+{
+  "title": "Edifice Watch EFR-552D-1AVUDF",
+  "sku": "EFR-552D-1AVUDF",
+  "display": "Chronograph",
+  "gender": "Men",
+  "price": 165,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Color",
+      "value": "Black, Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "100m"
+    }
+  ],
+  "features": [
+    "1-second stopwatch Measuring capacity: 9’59 Measuring modes: Elapsed time, split time, 1st-2nd place times",
+    "Accuracy: ±20 seconds per month",
+    "Regular timekeeping: Analog: 3 hands (hour, minute, second), 3 dials (stopwatch minutes, stopwatch seconds, 24-hour)",
+    "Date display."
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

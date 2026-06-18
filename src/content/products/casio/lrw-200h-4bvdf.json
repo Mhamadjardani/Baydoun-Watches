@@ -1,0 +1,46 @@
+{
+  "title": "Casio girl’s Watch LRW-200H-4BVDF",
+  "sku": "LRW-200H-4BVDF",
+  "display": "Analog 3H",
+  "gender": "Unisex",
+  "price": 37,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "25 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "38.9 × 34.2 × 11.5 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Pink, White"
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin"
+    },
+    {
+      "label": "Special Feature",
+      "value": "Analog"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "100m"
+    }
+  ],
+  "features": [
+    "Date display",
+    "Regular timekeeping Analog: 3 hands (hour, minute, second)",
+    "Accuracy: 20 seconds per month",
+    "Approx. battery life: 3 years on SR626SW"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

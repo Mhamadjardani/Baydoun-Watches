@@ -1,0 +1,49 @@
+{
+  "title": "TOMMY HILFIGER, TEA",
+  "sku": "TH 1782791",
+  "display": "",
+  "gender": "Women",
+  "price": 140,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "MOVEMENT",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "BAND MATERIAL",
+      "value": "MESH"
+    },
+    {
+      "label": "BAND COLOR",
+      "value": "GOLD PLATED"
+    },
+    {
+      "label": "DIAL COLOR",
+      "value": "MATCHA GREEN"
+    },
+    {
+      "label": "CASE DIAMETER",
+      "value": "21.3 MM x 24.3 MM"
+    },
+    {
+      "label": "CASE COLOR",
+      "value": "GOLD PLATED"
+    },
+    {
+      "label": "BEZEL",
+      "value": "GOLD PLATED"
+    },
+    {
+      "label": "WATER RESISTANT",
+      "value": "5 ATM"
+    }
+  ],
+  "features": [],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

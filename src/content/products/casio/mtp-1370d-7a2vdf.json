@@ -1,0 +1,43 @@
+{
+  "title": "Casio Men 3H Watch MTP-1370D-7A2VDF",
+  "sku": "MTP-1370D-7A2VDF",
+  "display": "Analog 3H",
+  "gender": "Men",
+  "price": 70,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "95 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "45 × 39.8 × 8.8 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Special Feature",
+      "value": "LTP-MTP"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "50m"
+    }
+  ],
+  "features": [
+    "Accuracy: ±20 seconds per month Additional Information:"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

@@ -1,0 +1,44 @@
+{
+  "title": "Casio men 3H Watch MTP-V005D-7B5UDF",
+  "sku": "MTP-V005D-7B5UDF",
+  "display": "Analog 3H",
+  "gender": "Men",
+  "price": 36,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "90 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "47 × 40 × 8.1 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Special Feature",
+      "value": "LTP-MTP"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [
+    "Water resistant",
+    "Stainless steel band"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

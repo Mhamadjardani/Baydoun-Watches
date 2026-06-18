@@ -1,0 +1,39 @@
+{
+  "title": "Casio Vintage Digital Unisex Mesh Watch A700WG-9ADF",
+  "sku": "A700WG-9ADF",
+  "display": "Digital",
+  "gender": "Unisex",
+  "price": 94,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "50 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "37.4 × 35.5 × 6 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Gold Plated"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [
+    "Stopwatch 1/100-second stopwatch Measuring capacity: 59’59.99” Measuring modes: Split time, 1st-2nd place times Alarm/hourly time signal Daily alarm Hourly time signal Light LED backlight Light color LED:Amber Calendar Auto-calendar (set at 28 days for February) Accuracy Accuracy: ±30 seconds per month Other features 12/24-hour format Regular timekeeping: Hour, minute, second, pm, date, day"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

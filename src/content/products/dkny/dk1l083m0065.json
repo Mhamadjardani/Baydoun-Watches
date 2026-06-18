@@ -1,0 +1,33 @@
+{
+  "title": "DKNY Women Evening Watch DK1L083M0065",
+  "sku": "DK1L083M0065",
+  "display": "Analog 3H",
+  "gender": "Women",
+  "price": 189,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Dimensions",
+      "value": "30 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Gold Plated"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "30m"
+    }
+  ],
+  "features": [],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

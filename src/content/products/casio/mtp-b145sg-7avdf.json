@@ -1,0 +1,46 @@
+{
+  "title": "Casio men 3H Watch MTP-B145SG-7AVDF",
+  "sku": "MTP-B145SG-7AVDF",
+  "display": "Analog 3H",
+  "gender": "Men",
+  "price": 112,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "82 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "40 × 35 × 7.4 mm"
+    },
+    {
+      "label": "Color",
+      "value": "2-tone Gold"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Special Feature",
+      "value": "LTP-MTP"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "50m"
+    }
+  ],
+  "features": [
+    "50-meter water resistance",
+    "Date display",
+    "Stainless-steel case and band",
+    "3-hand analog watch Accuracy: ±20 seconds per month MTP-B145SG-7AVDFRegular timekeeping: Analog: 3 hands (hour, minute, second) Date display"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

@@ -1,0 +1,47 @@
+{
+  "title": "Casio men 3H Watch MTP-V004G-1CUDF",
+  "sku": "MTP-V004G-1CUDF",
+  "display": "Analog 3H",
+  "gender": "Men",
+  "price": 58,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "96 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "47 × 41.5 × 8.3 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Gold Plated"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Special Feature",
+      "value": "LTP-MTP"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [
+    "Water resistant",
+    "Date display",
+    "Regular timekeeping 3 hands (hour, minute, second)",
+    "Accuracy: 20 seconds per month",
+    "Approx. battery life: 3 years on SR626SW"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

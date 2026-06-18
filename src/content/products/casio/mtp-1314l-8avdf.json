@@ -1,0 +1,46 @@
+{
+  "title": "MTP-1314D-2AVDF",
+  "sku": "MTP-1314L-8AVDF",
+  "display": "Analog 3H",
+  "gender": "Men",
+  "price": 55,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "64 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "50 × 44.9 × 9.4 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Black, Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Genuine Leather"
+    },
+    {
+      "label": "Special Feature",
+      "value": "LTP-MTP"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [
+    "Date display",
+    "Regular timekeeping Analog: 3 hands (hour, minute, second)",
+    "Accuracy: 20 seconds per month",
+    "Approx. battery life: 3 years on SR626SW"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

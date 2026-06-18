@@ -1,0 +1,39 @@
+{
+  "title": "Casio Men 3H Watch MTP-E515D-8AVDF",
+  "sku": "MTP-E515D-8AVDF",
+  "display": "Chronograph",
+  "gender": "Men",
+  "price": 136,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "116 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "48 × 41 × 10.6 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Blue, Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "50m"
+    }
+  ],
+  "features": [
+    "1-second stopwatch Measuring capacity: 59’59 Measuring modes: Elapsed time, split time, 1st-2nd place times; Accuracy: ±20 seconds per month; Regular timekeeping: Analog: 3 hands (hour, minute, second), 3 dials (24-hour, stopwatch minutes, stopwatch seconds); Date display"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

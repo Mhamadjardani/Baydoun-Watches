@@ -1,0 +1,49 @@
+{
+  "title": "Casio Men 3H Watch MTP-1381D-1AVDF",
+  "sku": "MTP-1381D-1AVDF",
+  "display": "Analog 3H",
+  "gender": "Men",
+  "price": 75,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "104 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "46.6 × 39.9 × 8.9 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Special Feature",
+      "value": "LTP-MTP"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "50m"
+    }
+  ],
+  "features": [
+    "Analog: 3 hands (hour, minute, second); Date display; Day of the week wide display",
+    "50-meter water resistance",
+    "Day and date display",
+    "Simple, easy-to-use design",
+    "Regular timekeeping",
+    "Accuracy: ±20 seconds per month",
+    "Approx. battery life: 3 years on SR920SW"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

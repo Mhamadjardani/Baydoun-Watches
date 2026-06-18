@@ -4,10 +4,11 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
-import products from "@/data/products.json";
 import { menuIcons, menuItems, type MenuItem } from "./menuItem";
+import { Product } from "@/lib/type";
 
 const MobileNavbar: React.FC<{
+  products: Product[];
   openMenu: boolean;
   setOpenMenu: (value: boolean) => void;
   handleMenuItemClick: (item: MenuItem) => void;
@@ -17,6 +18,7 @@ const MobileNavbar: React.FC<{
   pathname: string;
   scrolled: boolean;
 }> = ({
+  products,
   openMenu,
   setOpenMenu,
   handleMenuItemClick,
@@ -35,7 +37,8 @@ const MobileNavbar: React.FC<{
 
     return products
       .filter((product) => {
-        const searchable = `${product.title} ${product.brand} ${product.category} ${product.subCategory}`.toLowerCase();
+        const searchable =
+          `${product.title} ${product.brand} ${product.category}`.toLowerCase();
         return searchable.includes(query);
       })
       .slice(0, 6);
@@ -51,12 +54,14 @@ const MobileNavbar: React.FC<{
   const onSearchSelect = (product: (typeof products)[number]) => {
     setSearchValue("");
     setIsSearch(false);
-    router.push(`/collections/${product.id}`);
+    router.push(`/collections/${product.brand}/${product.slug}`);
   };
 
   const onSearchSubmit = () => {
     if (!searchResults.length) return;
-    router.push(`/collections/${searchResults[0].id}`);
+    router.push(
+      `/collections/${searchResults[0].brand}/${searchResults[0].slug}`,
+    );
     setSearchValue("");
     setIsSearch(false);
   };
@@ -79,7 +84,9 @@ const MobileNavbar: React.FC<{
               type="button"
               aria-label={index === 0 ? "Search" : "Open shortcut"}
               onClick={() =>
-                index === 0 ? setIsSearch((prev) => !prev) : handleIconClick(icon)
+                index === 0
+                  ? setIsSearch((prev) => !prev)
+                  : handleIconClick(icon)
               }
               className={`flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border text-primary transition duration-300 ease-in-out focus:outline-none ${
                 index === 0 && isSearch
@@ -131,19 +138,23 @@ const MobileNavbar: React.FC<{
                   {searchResults.length > 0 ? (
                     searchResults.map((product) => (
                       <button
-                        key={`${product.id}-${product.title}`}
+                        key={`${product.slug}-${product.title}`}
                         type="button"
                         onClick={() => onSearchSelect(product)}
                         className="w-full px-4 py-3 text-left text-sm text-white transition hover:bg-white/5"
                       >
-                        <span className="block font-semibold text-white">{product.title}</span>
+                        <span className="block font-semibold text-white">
+                          {product.title}
+                        </span>
                         <span className="block text-xs uppercase tracking-[0.3em] text-secondary/80">
                           {product.brand} · {product.category}
                         </span>
                       </button>
                     ))
                   ) : (
-                    <div className="px-4 py-3 text-sm text-secondary">No watches found. Try another term.</div>
+                    <div className="px-4 py-3 text-sm text-secondary">
+                      No watches found. Try another term.
+                    </div>
                   )}
                 </div>
               )}
@@ -214,19 +225,23 @@ const MobileNavbar: React.FC<{
                       {searchResults.length > 0 ? (
                         searchResults.map((product) => (
                           <button
-                            key={`${product.id}-${product.title}`}
+                            key={`${product.slug}-${product.title}`}
                             type="button"
                             onClick={() => onSearchSelect(product)}
                             className="w-full px-4 py-3 text-left text-sm text-white transition hover:bg-white/5"
                           >
-                            <span className="block font-semibold text-white">{product.title}</span>
+                            <span className="block font-semibold text-white">
+                              {product.title}
+                            </span>
                             <span className="block text-xs uppercase tracking-[0.3em] text-secondary/80">
                               {product.brand} · {product.category}
                             </span>
                           </button>
                         ))
                       ) : (
-                        <div className="px-4 py-3 text-sm text-secondary">No watches found. Try another term.</div>
+                        <div className="px-4 py-3 text-sm text-secondary">
+                          No watches found. Try another term.
+                        </div>
                       )}
                     </div>
                   )}

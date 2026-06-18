@@ -1,0 +1,49 @@
+{
+  "title": "OMORFIA MEN`S WATCH",
+  "sku": "OM887H1SN",
+  "display": "",
+  "gender": "Men",
+  "price": 140,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "MOVEMENT",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "BAND MATERIAL",
+      "value": "RUBBER"
+    },
+    {
+      "label": "BAND COLOR",
+      "value": "NAVY RUBBER"
+    },
+    {
+      "label": "DIAL COLOR",
+      "value": "NAVY"
+    },
+    {
+      "label": "CASE DIAMETER",
+      "value": "43 MM"
+    },
+    {
+      "label": "CASE COLOR",
+      "value": "SILVER STAINLESS STEEL"
+    },
+    {
+      "label": "BEZEL",
+      "value": "SILVER STAINLESS STEEL"
+    },
+    {
+      "label": "WATER RESISTANT",
+      "value": "3 ATM"
+    }
+  ],
+  "features": [],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

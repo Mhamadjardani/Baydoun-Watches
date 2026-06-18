@@ -1,0 +1,47 @@
+{
+  "title": "Casio Digital men Watch W-217H-9AVDF",
+  "sku": "W-217H-9AVDF",
+  "display": "Digital",
+  "gender": "Men",
+  "price": 31,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "32 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "43.1 × 41.2 × 10.5 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Black"
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "50m"
+    }
+  ],
+  "features": [
+    "LED backlight",
+    "1/100-second stopwatch Measuring capacity: 59’59.99” Measuring modes: Elapsed time, split time, 1st-2nd place times",
+    "Daily alarm",
+    "Hourly time signal",
+    "Auto-calendar (set at 28 days for February)",
+    "12/24-hour format",
+    "Regular timekeeping: Hour, minute, second, pm, date, day",
+    "Accuracy:30 seconds per month",
+    "Approx. battery life: 7 years on CR2016"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

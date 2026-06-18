@@ -1,0 +1,45 @@
+{
+  "title": "Casio Men 3H Watch MTP-VD01BL-5BVUDF",
+  "sku": "MTP-VD01BL-5BVUDF",
+  "display": "Analog 3H",
+  "gender": "Men",
+  "price": 51,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "70 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "49 × 45 × 10.3 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Black"
+    },
+    {
+      "label": "Band Material",
+      "value": "Genuine Leather"
+    },
+    {
+      "label": "Special Feature",
+      "value": "LTP-MTP"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [
+    "50-meter water resistance",
+    "Date display",
+    "Stainless steel band"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

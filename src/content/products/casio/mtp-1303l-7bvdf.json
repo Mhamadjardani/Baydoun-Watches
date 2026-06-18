@@ -1,0 +1,47 @@
+{
+  "title": "Casio men 3H Watch MTP-1303L-7BVDF",
+  "sku": "MTP-1303L-7BVDF",
+  "display": "Analog 3H",
+  "gender": "Men",
+  "price": 50,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "46 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "47 × 40 × 8.1 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Black, Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Genuine Leather"
+    },
+    {
+      "label": "Special Feature",
+      "value": "LTP-MTP"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [
+    "50-meter water resistance",
+    "Date display at 3 o’clock",
+    "Regular timekeeping Analog: 3 hands (hour, minute, second)",
+    "Accuracy: 20 seconds per month",
+    "Approx. battery life: 3 years on SR626SW"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

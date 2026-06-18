@@ -47,7 +47,9 @@ const WishlistPage = ({ products }: { products: Product[] }) => {
   };
 
   const getImage = (product: Product) =>
-    failedImages.has(product.images[0]) ? "/test.png" : product.images[0];
+    failedImages.has(product.images[0])
+      ? "/baydoun-logo.webp"
+      : product.images[0];
 
   if (!hasHydrated) {
     return (
@@ -141,12 +143,19 @@ const WishlistPage = ({ products }: { products: Product[] }) => {
 
                   <div className="space-y-4 p-5">
                     <div className="space-y-2">
-                      <p className="w-fit bg-primary/10 px-2 py-1 text-xs uppercase tracking-widest text-primary">
-                        {product.brand}
-                      </p>
-                      <h2 className="min-h-14 text-lg font-bold uppercase leading-7 tracking-widest text-white font-playfair">
+                      <div className="w-full flex items-center justify-between flex-wrap">
+                        <p className="w-fit bg-primary/10 px-2 py-1 text-xs uppercase tracking-widest text-primary">
+                          {product.brand}
+                        </p>
+                        {product.stock == 0 && (
+                          <p className="w-fit bg-primary/10 px-2 py-1 text-xs tracking-widest text-primary">
+                            Out of Stock
+                          </p>
+                        )}
+                      </div>
+                      <p className="min-h-14 text-lg font-bold uppercase leading-7 tracking-widest text-white font-playfair">
                         {product.title}
-                      </h2>
+                      </p>
                       <p className="line-clamp-2 text-sm leading-6 text-secondary">
                         {product.description}
                       </p>
@@ -167,12 +176,14 @@ const WishlistPage = ({ products }: { products: Product[] }) => {
                   <button
                     type="button"
                     onClick={() => {
-                      addToCart(product.brand, product.slug);
-                      toast.success(`${product.title} added to bag`, {
-                        icon: "🛍️",
-                      });
+                      if (product.stock > 0) {
+                        addToCart(product.brand, product.slug);
+                        toast.success(`${product.title} added to bag`, {
+                          icon: "🛍️",
+                        });
+                      }
                     }}
-                    className="inline-flex w-full cursor-pointer items-center justify-center gap-3 border border-primary/30 bg-primary/10 px-5 py-3 text-xs font-bold uppercase tracking-widest text-primary transition hover:border-primary/60 hover:bg-primary hover:text-neutral"
+                    className={`inline-flex w-full items-center justify-center gap-3 border border-primary/30 ${product.stock > 0 ? `bg-primary/10 cursor-pointer hover:border-primary/60 hover:bg-primary hover:text-neutral` : `opacity-50 bg-primary/10`} px-5 py-3 text-xs font-bold uppercase tracking-widest text-primary transition`}
                   >
                     <ShoppingBag size={17} />
                     Add to bag

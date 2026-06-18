@@ -1,0 +1,46 @@
+{
+  "title": "Casio men 3H Watch MTP-V002GL-7B2UDF",
+  "sku": "MTP-V002GL-7B2UDF",
+  "display": "Analog 3H",
+  "gender": "Men",
+  "price": 36,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "44 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "44 × 37 × 9.6 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Gold Plated"
+    },
+    {
+      "label": "Band Material",
+      "value": "Genuine Leather"
+    },
+    {
+      "label": "Special Feature",
+      "value": "LTP-MTP"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [
+    "Regular timekeeping",
+    "Analog: 3 hands (hour, minute, second)",
+    "Accuracy: 20 seconds per month",
+    "Water Resistant"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

@@ -1,0 +1,33 @@
+{
+  "title": "DKNY Women Evening Watch DK1L122M0075",
+  "sku": "DK1L122M0075",
+  "display": "Analog 2H",
+  "gender": "Women",
+  "price": 189,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Dimensions",
+      "value": "23 × 30 mm"
+    },
+    {
+      "label": "Color",
+      "value": "2-tone Gold, MOP White"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "30m"
+    }
+  ],
+  "features": [],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

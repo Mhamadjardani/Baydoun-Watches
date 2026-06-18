@@ -1,0 +1,44 @@
+{
+  "title": "Casio men 3H Watch MDV-107D-1A3VDF",
+  "sku": "MDV-107D-1A3VDF",
+  "display": "Analog 3H",
+  "gender": "Men",
+  "price": 130,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "144 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "49.5 × 44.2 × 12.1 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Blue, Pink"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Special Feature",
+      "value": "Diver"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "200m"
+    }
+  ],
+  "features": [
+    "Accuracy: 20 seconds per month; Analog: 3 hands (hour, minute, second); Date display",
+    "200-meter water resistance"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

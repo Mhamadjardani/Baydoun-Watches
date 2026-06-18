@@ -1,0 +1,47 @@
+{
+  "title": "Casio Digital Unisex Watch LA-20WH-1CDF",
+  "sku": "LA-20WH-1CDF",
+  "display": "Digital",
+  "gender": "Unisex",
+  "price": 29,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "16 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "34.5 × 30.4 × 8.6 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Black"
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [
+    "LED light",
+    "1/100-second stopwatch Measuring capacity: 59’59.99″ Measuring modes: Elapsed time, split time, 1st-2nd place times",
+    "Daily alarm",
+    "Hourly time signal",
+    "Auto-calendar (auto calendar set at 28 days for February)",
+    "12/24-hour format",
+    "Regular timekeeping: Hour, minute, second, pm, date, day",
+    "Accuracy: 30 seconds per month",
+    "Approx. battery life: 5 years on CR1616"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

@@ -1,0 +1,49 @@
+{
+  "title": "OMORFIA WOMEN`S WATCH",
+  "sku": "OM10099F2BY",
+  "display": "",
+  "gender": "Women",
+  "price": 120,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "MOVEMENT",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "BAND MATERIAL",
+      "value": "BRACELET"
+    },
+    {
+      "label": "BAND COLOR",
+      "value": "TWO TONE STAINLESS STEEL"
+    },
+    {
+      "label": "DIAL COLOR",
+      "value": "GOLD"
+    },
+    {
+      "label": "CASE DIAMETER",
+      "value": "32 MM"
+    },
+    {
+      "label": "CASE COLOR",
+      "value": "SILVER STAINLESS STEEL"
+    },
+    {
+      "label": "BEZEL",
+      "value": "GOLD STAINLESS STEEL"
+    },
+    {
+      "label": "WATER RESISTANT",
+      "value": "3 ATM"
+    }
+  ],
+  "features": [],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

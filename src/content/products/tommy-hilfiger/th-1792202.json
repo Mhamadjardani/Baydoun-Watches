@@ -1,0 +1,49 @@
+{
+  "title": "TOMMY HILFIGER, OCEANIC",
+  "sku": "TH 1792202",
+  "display": "",
+  "gender": "Men",
+  "price": 130,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "MOVEMENT",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "BAND MATERIAL",
+      "value": "BRACELET"
+    },
+    {
+      "label": "BAND COLOR",
+      "value": "STAINLESS STEEL"
+    },
+    {
+      "label": "DIAL COLOR",
+      "value": "BLUE ALUMNIUM"
+    },
+    {
+      "label": "CASE DIAMETER",
+      "value": "42 MM"
+    },
+    {
+      "label": "CASE COLOR",
+      "value": "STAINLESS STEEL"
+    },
+    {
+      "label": "BEZEL",
+      "value": "BLUE ALUMINIUM"
+    },
+    {
+      "label": "WATER RESISTANT",
+      "value": "10 ATM"
+    }
+  ],
+  "features": [],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

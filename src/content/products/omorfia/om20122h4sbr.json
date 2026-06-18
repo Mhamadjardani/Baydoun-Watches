@@ -1,0 +1,49 @@
+{
+  "title": "OMORFIA MEN`S WATCH",
+  "sku": "OM20122H4SBR",
+  "display": "",
+  "gender": "Men",
+  "price": 145,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "MOVEMENT",
+      "value": "DIGITAL"
+    },
+    {
+      "label": "BAND MATERIAL",
+      "value": "LEATHER"
+    },
+    {
+      "label": "BAND COLOR",
+      "value": "BLACK LEATHER"
+    },
+    {
+      "label": "DIAL COLOR",
+      "value": "BRWON"
+    },
+    {
+      "label": "CASE DIAMETER",
+      "value": "43 MM"
+    },
+    {
+      "label": "CASE COLOR",
+      "value": "ROSE GOLD"
+    },
+    {
+      "label": "BEZEL",
+      "value": "ROSE GOLD"
+    },
+    {
+      "label": "WATER RESISTANT",
+      "value": "5 ATM"
+    }
+  ],
+  "features": [],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

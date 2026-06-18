@@ -1,0 +1,45 @@
+{
+  "title": "Casio Men 3H Watch MTP-V300L-1AUDF",
+  "sku": "MTP-V300L-1AUDF",
+  "display": "Chronograph",
+  "gender": "Men",
+  "price": 70,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "49 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "47 × 41.5 × 8.6 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Black"
+    },
+    {
+      "label": "Band Material",
+      "value": "Genuine Leather"
+    },
+    {
+      "label": "Special Feature",
+      "value": "LTP-MTP"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [
+    "Regular timekeeping: Analog: 3 hands (hour, minute, second), 3 dials (date, day, 24-hour)",
+    "Accuracy: ±20 seconds per month",
+    "Approx. battery life: 3 years on SR920SW"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

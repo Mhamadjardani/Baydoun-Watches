@@ -1,0 +1,49 @@
+{
+  "title": "TOMMY HILFIGER, WALKER",
+  "sku": "TH 1710622",
+  "display": "",
+  "gender": "Men",
+  "price": 225,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "MOVEMENT",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "BAND MATERIAL",
+      "value": "BRACELET"
+    },
+    {
+      "label": "BAND COLOR",
+      "value": "BLUE IP"
+    },
+    {
+      "label": "DIAL COLOR",
+      "value": "BLUE IP"
+    },
+    {
+      "label": "CASE DIAMETER",
+      "value": "44 MM"
+    },
+    {
+      "label": "CASE COLOR",
+      "value": "BLUE IP"
+    },
+    {
+      "label": "BEZEL",
+      "value": "BLUE IP"
+    },
+    {
+      "label": "WATER RESISTANT",
+      "value": "5 ATM"
+    }
+  ],
+  "features": [],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

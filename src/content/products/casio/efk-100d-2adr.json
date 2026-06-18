@@ -1,0 +1,40 @@
+{
+  "title": "Edifice Automatic Watch EFK-100D-2ADR",
+  "sku": "EFK-100D-2ADR",
+  "display": "Automatic",
+  "gender": "Men",
+  "price": 430,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "148 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "43.5 × 39 × 12.5 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Blue, Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "100m"
+    }
+  ],
+  "features": [
+    "Power reserve: Approximately 40 hours; Mean daily rate: -35 to +45 seconds; Date display; Hacking function (seconds hand); Number of jewels: 24; Vibrations: 21,600 vibrations per hour.",
+    "Winding mechanism: Automatic with manual winding"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

@@ -1,0 +1,49 @@
+{
+  "title": "LACOSTE, BOSTON",
+  "sku": "LC 2011380",
+  "display": "",
+  "gender": "Men",
+  "price": 190,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "MOVEMENT",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "BAND MATERIAL",
+      "value": "BRACELETE"
+    },
+    {
+      "label": "BAND COLOR",
+      "value": "STAINLESS STEEL"
+    },
+    {
+      "label": "DIAL COLOR",
+      "value": "DARK BLUE & ROSE GOLD"
+    },
+    {
+      "label": "CASE DIAMETER",
+      "value": "42 MM"
+    },
+    {
+      "label": "CASE COLOR",
+      "value": "STAINLESS STEEL"
+    },
+    {
+      "label": "BEZEL",
+      "value": "DARK BLUE & ROSE GOLD"
+    },
+    {
+      "label": "WATER RESISTANT",
+      "value": "5 ATM"
+    }
+  ],
+  "features": [],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

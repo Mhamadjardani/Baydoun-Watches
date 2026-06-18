@@ -1,0 +1,49 @@
+{
+  "title": "ROVINA MEN`S WATCH",
+  "sku": "RO22185G1BN",
+  "display": "",
+  "gender": "Men",
+  "price": 375,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "MOVEMENT",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "BAND MATERIAL",
+      "value": "BRACELET"
+    },
+    {
+      "label": "BAND COLOR",
+      "value": "SILVER STAINLESS STEEL"
+    },
+    {
+      "label": "DIAL COLOR",
+      "value": "DARK BLUE"
+    },
+    {
+      "label": "CASE DIAMETER",
+      "value": "43 MM"
+    },
+    {
+      "label": "CASE COLOR",
+      "value": "SILVER STAINLESS STEEL"
+    },
+    {
+      "label": "BEZEL",
+      "value": "SILVER"
+    },
+    {
+      "label": "WATER RESISTANT",
+      "value": "5 ATM"
+    }
+  ],
+  "features": [],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

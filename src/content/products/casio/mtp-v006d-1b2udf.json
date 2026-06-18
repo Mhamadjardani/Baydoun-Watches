@@ -1,0 +1,47 @@
+{
+  "title": "Casio men 3H Watch MTP-V006D-1B2UDF",
+  "sku": "MTP-V006D-1B2UDF",
+  "display": "Analog 3H",
+  "gender": "Men",
+  "price": 41,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "93 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "45.1 × 38 × 9.4 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Special Feature",
+      "value": "LTP-MTP"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [
+    "Water resistant",
+    "Stainless steel band",
+    "Date display",
+    "Simple, easy to use design",
+    "Japan movement"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

@@ -1,0 +1,49 @@
+{
+  "title": "ROVINA MEN`S WATCH",
+  "sku": "RO70138G2BW",
+  "display": "",
+  "gender": "Men",
+  "price": 245,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "MOVEMENT",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "BAND MATERIAL",
+      "value": "BRACELET"
+    },
+    {
+      "label": "BAND COLOR",
+      "value": "TWO TONE STAINLESS STEEL"
+    },
+    {
+      "label": "DIAL COLOR",
+      "value": "WHITE- ROSE GOLD"
+    },
+    {
+      "label": "CASE DIAMETER",
+      "value": "45 MM"
+    },
+    {
+      "label": "CASE COLOR",
+      "value": "TWO TONE STAINLESS STEEL"
+    },
+    {
+      "label": "BEZEL",
+      "value": "ROSE GOLD"
+    },
+    {
+      "label": "WATER RESISTANT",
+      "value": "5 ATM"
+    }
+  ],
+  "features": [],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

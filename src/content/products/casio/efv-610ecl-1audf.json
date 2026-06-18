@@ -1,0 +1,40 @@
+{
+  "title": "Edifice Watch EFV-610ECL-1AUDF",
+  "sku": "EFV-610ECL-1AUDF",
+  "display": "Chronograph",
+  "gender": "Men",
+  "price": 185,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "72 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "48.6 × 43.8 × 11 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Black, Rose Gold Plated"
+    },
+    {
+      "label": "Band Material",
+      "value": "Genuine Leather"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "100m"
+    }
+  ],
+  "features": [
+    "Regular timekeeping:; Analog: 3 hands (hour, minute, second), 3 dials (stopwatch 1/10 seconds, stopwatch minutes, stopwatch seconds); Date display.",
+    "Accuracy: ±20 seconds per month"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

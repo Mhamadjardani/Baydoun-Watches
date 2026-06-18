@@ -1,0 +1,49 @@
+{
+  "title": "OMORFIA MEN`S WATCH",
+  "sku": "OM10088H4SN",
+  "display": "",
+  "gender": "Women",
+  "price": 95,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "MOVEMENT",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "BAND MATERIAL",
+      "value": "LEATHER"
+    },
+    {
+      "label": "BAND COLOR",
+      "value": "DARK BLUE LEATHER"
+    },
+    {
+      "label": "DIAL COLOR",
+      "value": "DARK BLUE"
+    },
+    {
+      "label": "CASE DIAMETER",
+      "value": "44.5 MM"
+    },
+    {
+      "label": "CASE COLOR",
+      "value": "ROSE GOLD"
+    },
+    {
+      "label": "BEZEL",
+      "value": "ROSE GOLD"
+    },
+    {
+      "label": "WATER RESISTANT",
+      "value": "3 ATM"
+    }
+  ],
+  "features": [],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

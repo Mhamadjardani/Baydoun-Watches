@@ -1,0 +1,43 @@
+{
+  "title": "Casio men 3H Watch MTP-B145D-4AVDF",
+  "sku": "MTP-B145D-4AVDF",
+  "display": "Analog 3H",
+  "gender": "Men",
+  "price": 99,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "82 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "40 × 35 × 7.4 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Pink, Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Special Feature",
+      "value": "LTP-MTP"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "50m"
+    }
+  ],
+  "features": [
+    "Accuracy: 20 seconds per month; Stainless Steel Band; One-touch 3-fold Clasp; 50-meter water resistance; Regular timekeeping: Analog: 3 hands (hour, minute, second); Date display"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

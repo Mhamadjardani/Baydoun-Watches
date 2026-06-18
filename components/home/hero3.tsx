@@ -1,8 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 const Hero3 = () => {
+  const router = useRouter();
   return (
     <section
       className="relative min-h-screen overflow-hidden bg-background"
@@ -47,16 +49,19 @@ const Hero3 = () => {
             Haute Horlogerie
           </motion.p>
 
-          <motion.button
+          {/* <motion.button
             type="button"
             className="mx-auto group cursor-pointer inline-flex items-center justify-center gap-3 rounded-full border border-primary/30 bg-primary/10 px-8 py-3 text-sm uppercase tracking-widest text-primary transition duration-300 hover:border-primary/50 hover:bg-primary/15 focus:outline-none"
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.18 }}
+            onClick={() => {
+              router.push("/heritage");
+            }}
           >
             explore heritage
             <span className="inline-block h-px w-10 bg-primary transition-all duration-300 group-hover:w-16" />
-          </motion.button>
+          </motion.button> */}
         </motion.div>
       </div>
     </section>

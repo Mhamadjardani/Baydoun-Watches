@@ -1,0 +1,43 @@
+{
+  "title": "Casio Men 3H Watch MTP-VD01-3EVUDF",
+  "sku": "MTP-VD01-3EVUDF",
+  "display": "Analog 3H",
+  "gender": "Men",
+  "price": 51,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "79 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "49 × 45 × 10.3 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Green"
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin"
+    },
+    {
+      "label": "Special Feature",
+      "value": "LTP-MTP"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "50m"
+    }
+  ],
+  "features": [
+    "Date display Regular timekeeping Analog: 3 hands (hour, minute, second) Accuracy: ±20 seconds per month Approx. battery life: 3 years on SR626SW"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

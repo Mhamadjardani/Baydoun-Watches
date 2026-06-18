@@ -5,12 +5,19 @@ import keystaticConfig from "../keystatic.config";
 const reader = createReader(process.cwd(), keystaticConfig);
 
 const BRANDS = [
+  "calvinKlein",
   "casio",
-  "rolex",
-  "seiko",
-  "citizen",
-  "omega",
-  "tagHeuer",
+  "cityTime",
+  "curren",
+  "dkny",
+  "gadgets",
+  "lacoste",
+  "nano",
+  "omorfia",
+  "polit",
+  "qq",
+  "rovina",
+  "tommyHilfiger",
 ] as const;
 
 export type Brand = (typeof BRANDS)[number];

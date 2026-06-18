@@ -1,0 +1,47 @@
+{
+  "title": "Casio Men Watch MTP-E321D-1AVDF",
+  "sku": "MTP-E321D-1AVDF",
+  "display": "Analog 3H",
+  "gender": "Men",
+  "price": 125,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "109 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "50 × 44.7 × 10 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Special Feature",
+      "value": "LTP-MTP"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "50m"
+    }
+  ],
+  "features": [
+    "Accuracy: ±20 seconds per month",
+    "50-meter water resistance",
+    "Date, day and 24-hour indicator",
+    "Stainless steelband",
+    "Regular timekeeping: Analog: 3 hands (hour, minute, second), 3 dials (date, day, 24-hour)"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

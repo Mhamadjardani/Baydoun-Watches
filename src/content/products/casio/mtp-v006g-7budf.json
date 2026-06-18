@@ -1,0 +1,46 @@
+{
+  "title": "Casio men 3H Watch MTP-V006G-7BUDF",
+  "sku": "MTP-V006G-7BUDF",
+  "display": "Day-Date",
+  "gender": "Men",
+  "price": 58,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "93 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "45.1 × 38 × 9.4 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Gold Plated"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Special Feature",
+      "value": "LTP-MTP"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [
+    "?Water resistant",
+    "Day and Date display",
+    "Analog: 3 hands (hour, minute, second)",
+    "Accuracy: 20 seconds per month"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

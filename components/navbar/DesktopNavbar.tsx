@@ -2,16 +2,18 @@
 
 import React, { useMemo, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
-import products from "@/data/products.json";
 import { MenuIcon, menuIcons, menuItems, type MenuItem } from "./menuItem";
+import { Product } from "@/lib/type";
 
 const DesktopNavbar: React.FC<{
+  products: Product[];
   handleMenuItemClick: (item: MenuItem | MenuIcon) => void;
   handleLogoClick: () => void;
   menuItems: typeof menuItems;
   menuIcons: typeof menuIcons;
   scrolled: boolean;
 }> = ({
+  products,
   handleMenuItemClick,
   handleLogoClick,
   menuItems,
@@ -30,7 +32,7 @@ const DesktopNavbar: React.FC<{
     return products
       .filter((product) => {
         const searchable =
-          `${product.title} ${product.brand} ${product.category} ${product.subCategory}`.toLowerCase();
+          `${product.title} ${product.brand} ${product.category}`.toLowerCase();
         return searchable.includes(query);
       })
       .slice(0, 6);
@@ -38,13 +40,15 @@ const DesktopNavbar: React.FC<{
 
   const onSearchSubmit = () => {
     if (!searchResults.length) return;
-    router.push(`/collections/${searchResults[0].id}`);
+    router.push(
+      `/collections/${searchResults[0].brand}/${searchResults[0].slug}`,
+    );
     setSearchValue("");
     setIsSearch(false);
   };
 
   const onSearchSelect = (product: (typeof products)[number]) => {
-    router.push(`/collections/${product.id}`);
+    router.push(`/collections/${product.brand}/${product.slug}`);
     setSearchValue("");
     setIsSearch(false);
   };
@@ -126,9 +130,9 @@ const DesktopNavbar: React.FC<{
               {isSearch && searchValue.trim() && (
                 <div className="absolute left-0 top-full z-50 mt-2 w-full max-h-80 overflow-y-auto rounded-3xl border border-white/10 bg-neutral/95 shadow-[0_20px_80px_rgba(0,0,0,0.45)] backdrop-blur-xl">
                   {searchResults.length > 0 ? (
-                    searchResults.map((product) => (
+                    searchResults.map((product, index) => (
                       <button
-                        key={product.id}
+                        key={product.slug + index}
                         type="button"
                         onClick={() => onSearchSelect(product)}
                         className="w-full px-4 py-3 text-left text-sm text-white transition hover:bg-white/5"

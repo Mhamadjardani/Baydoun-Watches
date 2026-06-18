@@ -1,0 +1,49 @@
+{
+  "title": "LACOSTE, CAPUCINE",
+  "sku": "LC 2001403",
+  "display": "",
+  "gender": "Women",
+  "price": 180,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "MOVEMENT",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "BAND MATERIAL",
+      "value": "BRACELET"
+    },
+    {
+      "label": "BAND COLOR",
+      "value": "YELLOW GOLD IP"
+    },
+    {
+      "label": "DIAL COLOR",
+      "value": "GREEN"
+    },
+    {
+      "label": "CASE DIAMETER",
+      "value": "36 MM"
+    },
+    {
+      "label": "CASE COLOR",
+      "value": "YELLOW GOLD IP"
+    },
+    {
+      "label": "BEZEL",
+      "value": "YELLOW GOLD IP"
+    },
+    {
+      "label": "WATER RESISTANT",
+      "value": "3 ATM"
+    }
+  ],
+  "features": [],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

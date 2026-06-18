@@ -1,0 +1,53 @@
+{
+  "title": "Casio Digital Men Watch AE-1000W-4AVDF",
+  "sku": "AE-1000W-4AVDF",
+  "display": "Digital",
+  "gender": "Men",
+  "price": 45,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "40 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "48.2 × 45 × 13.8 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Red"
+    },
+    {
+      "label": "Band Material",
+      "value": "Rubber"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "100m"
+    }
+  ],
+  "features": [
+    "World time: Multi Time (4 different cities); World time 31 time zones (48 cities + coordinated universal time), daylight saving on/off, Home city/World time city swapping",
+    "Stopwatch: 1/100-second stopwatch Measuring capacity: 23:59’59.99” Measuring modes: Elapsed time, split time, 1st-2nd place times",
+    "Timer: Countdown timer Measuring unit: 1/10 second Countdown range: 24 hours Countdown start time setting range: 1 second to 24 hours (1-second increments, 1-minute increments and 1-hour increments)",
+    "Alarm/hourly time signal: 5 daily alarms or one-time alarms; Hourly time signal",
+    "Light: LED light Selectable illumination duration, afterglow",
+    "Light color: LED:Amber",
+    "Calendar: Full auto-calendar (to year 2099)",
+    "Mute feature: Button operation tone on/off",
+    "Accuracy: ±30 seconds per month",
+    "Other features: 12/24-hour format; Regular timekeeping: Digital: Hour, minute, second, pm, month, date, day",
+    "10-YEAR BATTERY LIFE",
+    "Face design resembles an aircraft cockpit instrument",
+    "World map for World Time",
+    "LC Analog display (Home city time)",
+    "100-meter water resistance"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

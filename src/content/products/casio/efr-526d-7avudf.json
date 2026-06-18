@@ -1,0 +1,33 @@
+{
+  "title": "Edifice Watch EFR-526D-7AVUDF",
+  "sku": "EFR-526D-7AVUDF",
+  "display": "Chronograph",
+  "gender": "Men",
+  "price": 165,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Color",
+      "value": "Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "100m"
+    }
+  ],
+  "features": [
+    "Regular timekeeping: Analog: 3 hands (hour, minute, stopwatch seconds), 3 dials (timekeeping second, stopwatch hours, stopwatch minutes); Day and date display",
+    "1-second stopwatch Measuring capacity: 4:59’59 Measuring mode: Elapsed time",
+    "Accuracy: ±20 seconds per month"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

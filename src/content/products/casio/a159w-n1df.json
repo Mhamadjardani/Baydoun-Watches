@@ -1,0 +1,47 @@
+{
+  "title": "Casio Vintage Digital Unisex Metal Watch A159W-N1DF",
+  "sku": "A159W-N1DF",
+  "display": "Digital",
+  "gender": "Unisex",
+  "price": 42,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "44 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "36.8 × 33.2 × 8.2 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "50m"
+    }
+  ],
+  "features": [
+    "LED light",
+    "1/100-second stopwatch Measuring capacity: 59’59.99″ Measuring modes: Net time, split time, 1st-2nd place times",
+    "Daily alarm",
+    "Hourly time signal",
+    "Auto-calendar (set at 28 days for February)",
+    "12/24-hour format",
+    "Regular time keeping: Hour, minute, second, pm, date, day",
+    "Accuracy: 30 seconds per month",
+    "Approx. battery life: 7 years on CR2016"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

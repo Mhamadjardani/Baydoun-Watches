@@ -1,0 +1,39 @@
+{
+  "title": "Edifice Watch EFR-539BK-1AVUDF",
+  "sku": "EFR-539BK-1AVUDF",
+  "display": "Chronograph",
+  "gender": "Men",
+  "price": 275,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "185 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "54.1 × 49.5 × 11.7 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Black, Gold"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "100m"
+    }
+  ],
+  "features": [
+    "1/10-second stopwatch Measuring capacity: 59’59.9” Measuring modes: Elapsed time, split time, 1st-2nd place times; Accuracy: ±20 seconds per month; Analog: 3 hands (hour, minute, second), 3 dials (stopwatch 1/10 seconds, stopwatch minutes, stopwatch seconds); Date display."
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

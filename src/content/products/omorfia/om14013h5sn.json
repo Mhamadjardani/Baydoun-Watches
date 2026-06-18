@@ -1,0 +1,49 @@
+{
+  "title": "OMORFIA MEN`S WATCH",
+  "sku": "OM14013H5SN",
+  "display": "",
+  "gender": "Men",
+  "price": 190,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "MOVEMENT",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "BAND MATERIAL",
+      "value": "RUBBER"
+    },
+    {
+      "label": "BAND COLOR",
+      "value": "NAVY RUBBER"
+    },
+    {
+      "label": "DIAL COLOR",
+      "value": "BLACK AND NAVY"
+    },
+    {
+      "label": "CASE DIAMETER",
+      "value": "45 MM"
+    },
+    {
+      "label": "CASE COLOR",
+      "value": "BLACK AND NAVY STAINLESS STEEL"
+    },
+    {
+      "label": "BEZEL",
+      "value": "NAVY"
+    },
+    {
+      "label": "WATER RESISTANT",
+      "value": "5 ATM"
+    }
+  ],
+  "features": [],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

@@ -1,0 +1,46 @@
+{
+  "title": "Casio men 3H Watch MTP-V001L-7BUDF",
+  "sku": "MTP-V001L-7BUDF",
+  "display": "Analog 3H",
+  "gender": "Men",
+  "price": 29,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "42 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "45 × 38 × 8 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Black, Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Genuine Leather"
+    },
+    {
+      "label": "Special Feature",
+      "value": "LTP-MTP"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [
+    "Water resistant Stainless steel band Simple, easy to use design",
+    "Regular timekeeping Analog: 3 hands (hour, minute, second)",
+    "Accuracy: 20 seconds per month",
+    "Approx. battery life: 3 years on SR626SW"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

@@ -1,0 +1,47 @@
+{
+  "title": "Casio Vintage Digital Unisex Metal Watch A168WGG-1BDF",
+  "sku": "A168WGG-1BDF",
+  "display": "Digital",
+  "gender": "Unisex",
+  "price": 86,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "49 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "38.6 × 36.3 × 9.6 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Black"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "50m"
+    }
+  ],
+  "features": [
+    "Electro-luminescent backlight",
+    "1/100-second stopwatch Measuring capacity: 59’59.99″ Measuring modes: Elapsed time, split time, 1st-2nd place times",
+    "Daily alarm",
+    "Hourly time signal",
+    "Auto-calendar (28 days for February)",
+    "12/24-hour format",
+    "Regular timekeeping: Digital: Hour, minute, second, pm, date, day",
+    "Accuracy: 30 seconds per month",
+    "Approx. battery life: 7 years on CR2016"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

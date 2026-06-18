@@ -1,0 +1,41 @@
+{
+  "title": "Casio men 3H Watch MTP-1335D-7AVDF",
+  "sku": "MTP-1335D-7AVDF",
+  "display": "Analog 3H",
+  "gender": "Men",
+  "price": 65,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "107 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "44.3 × 38 × 10 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Special Feature",
+      "value": "LTP-MTP"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

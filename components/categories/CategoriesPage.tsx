@@ -38,7 +38,7 @@ const DirectoryCard = ({
     className="group relative min-h-80 overflow-hidden border border-primary/10 bg-light-neutral shadow-[0_30px_90px_rgba(0,0,0,0.35)] transition duration-500 hover:-translate-y-1 hover:border-primary/35 hover:shadow-[0_40px_120px_rgba(0,0,0,0.5)]"
   >
     <Image
-      src={group.product.images[0]}
+      src={group.product.images[0] || "/baydoun-logo.webp"}
       alt={group.value}
       fill
       sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
@@ -52,10 +52,10 @@ const DirectoryCard = ({
         </p>
       </div>
 
-      <span className="inline-flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-primary transition group-hover:text-secondary">
+      {/* <span className="inline-flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-primary transition group-hover:text-secondary">
         View collection
         <ArrowRight size={16} />
-      </span>
+      </span> */}
     </div>
   </Link>
 );
@@ -82,7 +82,7 @@ const CategoriesPage = ({ products }: { products: Product[] }) => {
           </div>
         </div>
 
-        <div className="space-y-6">
+        {/* <div className="space-y-6">
           <div className="flex items-end justify-between gap-4">
             <p className="text-xs uppercase tracking-[0.35em] text-primary">
               Categories
@@ -100,7 +100,7 @@ const CategoriesPage = ({ products }: { products: Product[] }) => {
               <DirectoryCard key={group.value} group={group} label="Category" />
             ))}
           </div>
-        </div>
+        </div> */}
 
         <div className="space-y-6 border-t border-white/10 pt-10">
           <p className="text-xs uppercase tracking-[0.35em] text-primary">

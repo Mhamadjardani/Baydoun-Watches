@@ -1,0 +1,49 @@
+{
+  "title": "TOMMY HILFIGER, LEXI",
+  "sku": "TH 1782656",
+  "display": "",
+  "gender": "Women",
+  "price": 195,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "MOVEMENT",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "BAND MATERIAL",
+      "value": "BRACELET"
+    },
+    {
+      "label": "BAND COLOR",
+      "value": "BLUE"
+    },
+    {
+      "label": "DIAL COLOR",
+      "value": "BLUE"
+    },
+    {
+      "label": "CASE DIAMETER",
+      "value": "36 MM"
+    },
+    {
+      "label": "CASE COLOR",
+      "value": "BLUE"
+    },
+    {
+      "label": "BEZEL",
+      "value": "BLUE"
+    },
+    {
+      "label": "WATER RESISTANT",
+      "value": "3 ATM"
+    }
+  ],
+  "features": [],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

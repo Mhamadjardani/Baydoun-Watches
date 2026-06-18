@@ -1,0 +1,39 @@
+{
+  "title": "Casio Digital Men Watch WS-1500H-2AVDF",
+  "sku": "WS-1500H-2AVDF",
+  "display": "Digital",
+  "gender": "Men",
+  "price": 52,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "58 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "54.5 × 50.1 × 16.8 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Blue"
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "100m"
+    }
+  ],
+  "features": [
+    "LED light Selectable illumination duration (1.5 seconds or 3 seconds), afterglow LED:Amber Moon data (Moon age of the input data, Moon phase graph) Countdown timer Measuring unit: 1 second Countdown range: 24 hours Countdown start time setting range: 1 minute to 24 hours (1-minute increments and 1-hour increments) Others: Auto-repeat, time up alarm Dual time Daylight saving on/off Hourly time signal Multi-function alarms 3 independent multi-function alarms (2 one-time alarms and 1 snooze/one-time alarm) Alarm type: Daily alarm, date alarm, 1-month alarm, monthly alarm Full auto-calendar (to year 2099) Button operation tone on/off Fishing mode The suitability of a specific date and time for fishing is indicated as one of four levels. 12/24-hour format Regular timekeeping: Hour, minute, second, pm, month, date, day Accuracy: ±30 seconds per month Approx. battery life: 10 years on CR2032"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

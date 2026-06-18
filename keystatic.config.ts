@@ -5,7 +5,7 @@ import { collection, config, fields } from "@keystatic/core";
 function brandCollection(label: string, folder: string) {
   return collection({
     label,
-    slugField: "title",
+    slugField: "sku",
 
     // e.g. src/content/products/casio/royale-ae1200.json
     path: `src/content/products/${folder}/*`,
@@ -15,10 +15,13 @@ function brandCollection(label: string, folder: string) {
 
     schema: {
       // ── Identity ────────────────────────────────────────────────────────────
-      title: fields.slug({
-        name: {
-          label: "Product Name",
-        },
+      title: fields.text({
+        label: "Product Name",
+      }),
+
+      category: fields.text({ label: "Category" }),
+      sku: fields.slug({
+        name: { label: "SKU" },
         slug: {
           generate: (name) =>
             name
@@ -28,12 +31,12 @@ function brandCollection(label: string, folder: string) {
         },
       }),
 
-      category: fields.text({ label: "Category" }),
-      sku: fields.text({ label: "SKU" }),
-
       // ── Details ─────────────────────────────────────────────────────────────
       description: fields.text({ label: "Description", multiline: true }),
-      display: fields.text({ label: "Display Type" }),
+      display: fields.text({
+        label: "Display Type",
+        description: "Analog /Digital",
+      }),
 
       gender: fields.select({
         label: "Gender",
@@ -108,14 +111,27 @@ function brandCollection(label: string, folder: string) {
 
 // ── Config ────────────────────────────────────────────────────────────────────
 export default config({
-  storage: { kind: "local" },
+  storage: {
+    kind: "github",
+    repo: {
+      owner: "Mhamadjardani",
+      name: "Baydoun-Watches",
+    },
+  },
   collections: {
     // To add a new brand: one line here + the folder is created automatically
+    calvinKlein: brandCollection("Calvin Klein", "calvin-klein"),
     casio: brandCollection("Casio", "casio"),
-    rolex: brandCollection("Rolex", "rolex"),
-    seiko: brandCollection("Seiko", "seiko"),
-    citizen: brandCollection("Citizen", "citizen"),
-    omega: brandCollection("Omega", "omega"),
-    tagHeuer: brandCollection("TAG Heuer", "tag-heuer"),
+    cityTime: brandCollection("City Time", "city-time"),
+    curren: brandCollection("Curren", "curren"),
+    dkny: brandCollection("DKNY", "dkny"),
+    gadgets: brandCollection("Gadgets", "gadgets"),
+    lacoste: brandCollection("Lacoste", "lacoste"),
+    nano: brandCollection("Nano", "nano"),
+    omorfia: brandCollection("Omorfia", "omorfia"),
+    polit: brandCollection("Polit", "polit"),
+    qq: brandCollection("Q&Q", "q-q"),
+    rovina: brandCollection("Rovina", "rovina"),
+    tommyHilfiger: brandCollection("Tommy Hilfiger", "tommy-hilfiger"),
   },
 });

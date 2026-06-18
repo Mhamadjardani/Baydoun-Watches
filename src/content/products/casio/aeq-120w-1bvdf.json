@@ -1,0 +1,45 @@
+{
+  "title": "Casio Digital Men Watch AEQ-120W-1BVDF",
+  "sku": "AEQ-120W-1BVDF",
+  "display": "Ana-Digi",
+  "gender": "Men",
+  "price": 68,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "58 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "53.3 × 52.2 × 16.8 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Black"
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "100m"
+    }
+  ],
+  "features": [
+    "World time Current time in 30 cities (29 time zones), daylight saving on/off",
+    "Stopwatch: 1/100-second stopwatch Measuring capacity: 23:59’59.99” Measuring modes: Elapsed time, split time, 1st-2nd place times",
+    "Timer: Countdown timer Measuring unit: 1 second Countdown range: 24 hours Countdown start time setting range: 1 minute to 24 hours (1-minute increments and 1-hour increments)",
+    "Alarm/hourly time signal: 3 daily alarms (with 1 snooze alarm); Hourly time signal",
+    "Calendar: Full auto-calendar (to year 2099)",
+    "Accuracy: ±30 seconds per month",
+    "Other features: Telememo Memory capacity: Up to 30 sets of data, with 8-character name and 16-digit telephone number Others: Remaining memory screen, auto-sort; 12/24-hour format; Regular timekeeping: Analog: 2 hands (hour, minute; hands move every 20 seconds) Digital: Hour, minute, second, am/pm, month, date, day"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

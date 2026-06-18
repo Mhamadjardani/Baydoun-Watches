@@ -1,0 +1,46 @@
+{
+  "title": "Casio Digital Unisex Watch W-800H-5AVDF",
+  "sku": "W-800H-5AVDF",
+  "display": "Digital",
+  "gender": "Men",
+  "price": 37,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "37 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "44.2 × 36.8 × 13.4 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Brown"
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "100m"
+    }
+  ],
+  "features": [
+    "World time: Dual time",
+    "Stopwatch: 1/100-second stopwatch Measuring capacity: 23:59’59.99” Measuring mode: split time",
+    "Alarm/hourly time signal: Hourly time signal; Multi-function alarm (with 1 snooze alarm)",
+    "Light: LED backlight Afterglow",
+    "Light color: LED:Green",
+    "Calendar: Full auto-calendar (to year 2099)",
+    "Accuracy: ±30 seconds per month",
+    "Other features: 12/24-hour format; Regular timekeeping: Hour, minute, second, pm, year, month, date, day"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

@@ -1,0 +1,41 @@
+{
+  "title": "Casio Men 3H Watch MTP-V004L-7AUDF",
+  "sku": "MTP-V004L-7AUDF",
+  "display": "Analog 3H",
+  "gender": "Men",
+  "price": 35,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "28 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "35.2 × 30.2 × 7.8 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Black"
+    },
+    {
+      "label": "Band Material",
+      "value": "Genuine Leather"
+    },
+    {
+      "label": "Special Feature",
+      "value": "LTP-MTP"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

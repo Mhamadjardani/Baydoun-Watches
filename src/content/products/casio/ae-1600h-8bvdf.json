@@ -1,0 +1,47 @@
+{
+  "title": "Casio Men Digital Watch AE-1600H-8BVDF",
+  "sku": "AE-1600H-8BVDF",
+  "display": "Digital",
+  "gender": "Men",
+  "price": 56,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "52 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "54.1 × 49.7 × 15.9 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Grey"
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "100m"
+    }
+  ],
+  "features": [
+    "World time: Dual time",
+    "Stopwatch: 1/100-second stopwatch Measuring capacity: 23:59’59.99” Measuring modes: Elapsed time, split time, 1st-2nd place times",
+    "Timer: Countdown timer Measuring unit: 1 second Countdown range: 24 hours Countdown start time setting range: 1 minute to 24 hours (1-minute increments and 1-hour increments) Other: Auto-repeat",
+    "Alarm/hourly time signal: Hourly time signal; 5 multi-function alarms (with 1 snooze alarm)",
+    "Light: LED backlight Afterglow",
+    "Light color: LED:Amber",
+    "Calendar: Full auto-calendar (to year 2099)",
+    "Accuracy: ±30 seconds per month",
+    "Other features: 12/24-hour format; Regular timekeeping: Hour, minute, second, pm, month, date, day"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

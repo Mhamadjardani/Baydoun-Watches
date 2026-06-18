@@ -5,7 +5,8 @@ import { useCommerceStore } from "@/store/useCommerceStore";
 import { motion } from "framer-motion";
 import { Check, Heart, ShieldCheck, ShoppingBag } from "lucide-react";
 import Image from "next/image";
-import { useState } from "react";
+import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 import toast from "react-hot-toast";
 
 const formatPrice = (price: Product["price"]) =>
@@ -15,15 +16,23 @@ const formatPrice = (price: Product["price"]) =>
     maximumFractionDigits: 0,
   }).format(price);
 
-const ProductDetails = ({ product }: { product: Product }) => {
-  const [activeImage, setActiveImage] = useState(product.images[0]);
+const ProductDetails = ({
+  product,
+  products,
+}: {
+  product: Product;
+  products: Product[];
+}) => {
+  const fallbackImage = "/baydoun-logo.webp";
+  const [activeImage, setActiveImage] = useState(
+    product.images[0] ?? fallbackImage,
+  );
   const [failedImages, setFailedImages] = useState<Set<string>>(new Set());
   const wishlistItems = useCommerceStore((state) => state.wishlistItems);
   const cartItems = useCommerceStore((state) => state.cartItems);
   const hasHydrated = useCommerceStore((state) => state.hasHydrated);
   const addToCart = useCommerceStore((state) => state.addToCart);
   const toggleWishlist = useCommerceStore((state) => state.toggleWishlist);
-  const fallbackImage = product.images[0];
   const activeDisplayImage = failedImages.has(activeImage)
     ? fallbackImage
     : activeImage;
@@ -45,6 +54,38 @@ const ProductDetails = ({ product }: { product: Product }) => {
     });
   };
 
+  const getImage = (product: Product) =>
+    failedImages.has(product.images[0])
+      ? "/baydoun-logo.webp"
+      : product.images[0];
+
+  const scrollRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    let animationFrame: number;
+    const speed = 0.5;
+
+    const step = () => {
+      if (!container) return;
+
+      container.scrollLeft += speed;
+
+      // seamless reset (half because duplicated list)
+      if (container.scrollLeft >= container.scrollWidth / 2) {
+        container.scrollLeft = 0;
+      }
+
+      animationFrame = requestAnimationFrame(step);
+    };
+
+    animationFrame = requestAnimationFrame(step);
+
+    return () => cancelAnimationFrame(animationFrame);
+  }, []);
+
   const productDetails = [
     { label: "Brand", value: product.brand },
     { label: "Category", value: product.category },
@@ -55,7 +96,7 @@ const ProductDetails = ({ product }: { product: Product }) => {
   ];
 
   return (
-    <section className="min-h-screen overflow-hidden bg-neutral px-4 py-24 text-white sm:px-8 lg:px-16">
+    <section className="min-h-screen overflow-hidden bg-neutral px-4 py-24 text-white sm:px-8 lg:px-16 space-y-10">
       <div className="mx-auto grid max-w-screen-2xl gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(420px,0.95fr)] lg:gap-16">
         <motion.div
           className="space-y-4"
@@ -106,7 +147,10 @@ const ProductDetails = ({ product }: { product: Product }) => {
                   }`}
                 >
                   <Image
-                    src={failedImages.has(image) ? fallbackImage : image}
+                    src={
+                      (failedImages.has(image) ? fallbackImage : image) ||
+                      "baydoun-logo/webp"
+                    }
                     alt={`${product.title} thumbnail ${index + 1}`}
                     fill
                     sizes="112px"
@@ -137,9 +181,9 @@ const ProductDetails = ({ product }: { product: Product }) => {
             </div>
 
             <div className="space-y-4">
-              <h1 className="text-4xl font-black uppercase leading-tight tracking-widest text-white font-playfair md:text-6xl">
+              <p className="text-4xl font-black uppercase leading-tight tracking-widest text-white font-playfair md:text-5xl">
                 {product.title}
-              </h1>
+              </p>
               <p className="max-w-2xl text-sm leading-7 tracking-wide text-secondary/80 md:text-base">
                 {product.description}
               </p>
@@ -164,19 +208,21 @@ const ProductDetails = ({ product }: { product: Product }) => {
           </div>
 
           <div className="grid gap-3 sm:grid-cols-2">
-            {productDetails.map((detail) => (
-              <div
-                key={detail.label}
-                className="border border-white/10 bg-white/3 px-4 py-3"
-              >
-                <p className="text-xs uppercase tracking-widest text-secondary/50">
-                  {detail.label}
-                </p>
-                <p className="mt-1 text-sm font-semibold tracking-wide text-white">
-                  {detail.value}
-                </p>
-              </div>
-            ))}
+            {productDetails
+              .filter((detail) => detail.value)
+              .map((detail) => (
+                <div
+                  key={detail.label}
+                  className="border border-white/10 bg-white/3 px-4 py-3"
+                >
+                  <p className="text-xs uppercase tracking-widest text-secondary/50">
+                    {detail.label}
+                  </p>
+                  <p className="mt-1 text-sm font-semibold tracking-wide text-white">
+                    {detail.value}
+                  </p>
+                </div>
+              ))}
           </div>
 
           <div className="grid gap-8 xl:grid-cols-2">
@@ -223,12 +269,14 @@ const ProductDetails = ({ product }: { product: Product }) => {
             <button
               type="button"
               onClick={() => {
-                addToCart(product.brand, product.slug);
-                toast.success(`${product.title} added to cart`, {
-                  icon: "🛒",
-                });
+                if (product.stock > 0) {
+                  addToCart(product.brand, product.slug);
+                  toast.success(`${product.title} added to cart`, {
+                    icon: "🛒",
+                  });
+                }
               }}
-              className="inline-flex h-13 flex-1 cursor-pointer items-center justify-center gap-3 bg-primary px-6 py-2 text-sm font-bold uppercase tracking-widest text-neutral transition duration-300 hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-primary/40"
+              className={`inline-flex h-13 flex-1 items-center justify-center gap-3 ${product.stock > 0 ? `bg-primary cursor-pointer` : `bg-secondary opacity-50`} px-6 py-2 text-sm font-bold uppercase tracking-widest text-neutral transition duration-300 hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-primary/40`}
             >
               <ShoppingBag size={19} />
               {hasHydrated && cartQuantity > 0
@@ -254,6 +302,63 @@ const ProductDetails = ({ product }: { product: Product }) => {
           </div>
         </motion.div>
       </div>
+
+      {products.filter((prod) => prod.brand == product.brand).length > 0 && (
+        <section className="space-y-5 border-t border-white/10 pt-8">
+          <div className="flex items-end justify-between gap-4">
+            <div>
+              <p className="text-xs uppercase tracking-[0.35em] text-primary">
+                You may also like
+              </p>
+            </div>
+            <Link
+              href={`/collections?brand=${product.brand}`}
+              className="hidden text-xs font-bold uppercase tracking-widest text-primary transition hover:text-secondary sm:inline"
+            >
+              View all
+            </Link>
+          </div>
+
+          <div
+            ref={scrollRef}
+            className="flex flex-nowrap gap-4 overflow-x-auto pb-3 no-scrollbar"
+            style={{ scrollBehavior: "auto" }}
+          >
+            {[
+              ...products.filter((prod) => prod.brand == product.brand),
+              ...products.filter((prod) => prod.brand == product.brand),
+            ].map((product, index) => (
+              <Link
+                key={`${product.slug}-recommended-${index}`}
+                href={`/collections/${product.brand}/${product.slug}`}
+                className="group w-56 shrink-0 border border-white/10 bg-white/3 transition hover:border-primary/30"
+              >
+                <div className="relative aspect-4/5 overflow-hidden bg-neutral">
+                  <Image
+                    src={getImage(product) || "/baydoun-logo.webp"}
+                    alt={product.title}
+                    fill
+                    sizes="224px"
+                    className="object-cover transition duration-500 group-hover:scale-105"
+                    onError={() => markImageFailed(product.images[0])}
+                  />
+                </div>
+                <div className="space-y-2 p-4">
+                  <p className="text-xs uppercase tracking-widest text-primary">
+                    {product.brand}
+                  </p>
+                  <p className="min-h-11 text-sm font-bold uppercase leading-5 tracking-widest text-white font-playfair">
+                    {product.title}
+                  </p>
+                  <p className="text-sm font-bold text-primary">
+                    {formatPrice(product.price)}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
     </section>
   );
 };

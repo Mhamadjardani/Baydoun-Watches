@@ -1,0 +1,48 @@
+{
+  "title": "Casio Vintage Digital Unisex Metal Watch A178WA-1ADF",
+  "sku": "A178WA-1ADF",
+  "display": "Digital",
+  "gender": "Men",
+  "price": 36,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "51 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "41.2 × 34 × 10.8 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel Mesh"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "50m"
+    }
+  ],
+  "features": [
+    "LED backlight Afterglow",
+    "Dual time",
+    "1/100-second stopwatch Measuring capacity: 23:59’59.99” Measuring modes: Elapsed time, split time, 1st-2nd place times",
+    "Multi-function alarm (One-time or 7-time snooze)",
+    "Hourly time signal",
+    "Full auto-calendar (to year 2099)",
+    "12/24-hour format",
+    "Regular timekeeping: Hour, minutes, seconds, pm, month, date, day",
+    "Accuracy: 30 seconds per month",
+    "Approx. battery life: 10 years on CR2025"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

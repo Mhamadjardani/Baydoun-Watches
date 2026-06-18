@@ -1,0 +1,41 @@
+{
+  "title": "Casio Men 3H Watch MTP-1384D-2AVDF",
+  "sku": "MTP-1384D-2AVDF",
+  "display": "Analog 3H",
+  "gender": "Men",
+  "price": 99,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "109 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "47 × 41 × 10 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Special Feature",
+      "value": "LTP-MTP"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

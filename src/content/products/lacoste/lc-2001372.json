@@ -1,0 +1,49 @@
+{
+  "title": "LACOSTE, SANTORINI",
+  "sku": "LC 2001372",
+  "display": "",
+  "gender": "Women",
+  "price": 175,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "MOVEMENT",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "BAND MATERIAL",
+      "value": "BRACELET"
+    },
+    {
+      "label": "BAND COLOR",
+      "value": "CARNATION GOLD"
+    },
+    {
+      "label": "DIAL COLOR",
+      "value": "GREEN"
+    },
+    {
+      "label": "CASE DIAMETER",
+      "value": "36 MM"
+    },
+    {
+      "label": "CASE COLOR",
+      "value": "CARNATION GOLD"
+    },
+    {
+      "label": "BEZEL",
+      "value": "GREEN"
+    },
+    {
+      "label": "WATER RESISTANT",
+      "value": "5 ATM"
+    }
+  ],
+  "features": [],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

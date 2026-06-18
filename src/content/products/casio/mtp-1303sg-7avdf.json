@@ -1,0 +1,45 @@
+{
+  "title": "Casio men 3H Watch MTP-1303SG-7AVDF",
+  "sku": "MTP-1303SG-7AVDF",
+  "display": "Analog 3H",
+  "gender": "Men",
+  "price": 78,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "101 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "47 × 40 × 8.1 mm"
+    },
+    {
+      "label": "Color",
+      "value": "2-tone Gold"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Special Feature",
+      "value": "LTP-MTP"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [
+    "Regular timekeeping Analog: 3 hands (hour, minute, second)",
+    "Accuracy: 20 seconds per month",
+    "Approx. battery life: 3 years on SR626SW"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

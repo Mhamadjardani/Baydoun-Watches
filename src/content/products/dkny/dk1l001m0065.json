@@ -1,0 +1,33 @@
+{
+  "title": "DKNY Women City Maxi Watch DK1L001M0065",
+  "sku": "DK1L001M0065",
+  "display": "Analog 3H",
+  "gender": "Women",
+  "price": 180,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Dimensions",
+      "value": "29 × 37 mm"
+    },
+    {
+      "label": "Color",
+      "value": "2-tone Gold, Green"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "30m"
+    }
+  ],
+  "features": [],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

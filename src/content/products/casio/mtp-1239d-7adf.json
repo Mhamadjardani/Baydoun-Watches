@@ -1,0 +1,44 @@
+{
+  "title": "Casio men 3H Watch MTP-1239D-7ADF",
+  "sku": "MTP-1239D-7ADF",
+  "display": "Analog 3H",
+  "gender": "Men",
+  "price": 55,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "95 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "42.6 × 38.5 × 9.2 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Special Feature",
+      "value": "LTP-MTP"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [
+    "Accuracy: ±20 seconds per month",
+    "Other features: Regular timekeeping: Analog: 3 hands (hour, minute, second); Day and date display"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

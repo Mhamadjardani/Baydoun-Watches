@@ -1,0 +1,45 @@
+{
+  "title": "Casio men 3H Watch MTP-VD300D-1EUDF",
+  "sku": "MTP-VD300D-1EUDF",
+  "display": "Multifunction",
+  "gender": "Men",
+  "price": 74,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "110 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "49 × 45 × 8.7 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Special Feature",
+      "value": "LTP-MTP"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [
+    "Regular timekeeping Analog: 3 hands (hour, minute, second), 3 dials (date, day, 24-hour)",
+    "Accuracy: 20 seconds per month",
+    "Approx. battery life: 3 years on SR920SW"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

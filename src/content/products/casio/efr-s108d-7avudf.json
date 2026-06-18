@@ -1,0 +1,39 @@
+{
+  "title": "Edifice Watch EFR-S108D-7AVUD",
+  "sku": "EFR-S108D-7AVUDF",
+  "display": "Analog 3H",
+  "gender": "Men",
+  "price": 215,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "110 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "44.8 × 39.9 × 7.8 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Silver, White"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "100m"
+    }
+  ],
+  "features": [
+    "Approx. battery life: 3 years on SR916SW; Accuracy: ±20 seconds per month; Regular timekeeping: Analog: 3 hands (hour, minute, second) Date display"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

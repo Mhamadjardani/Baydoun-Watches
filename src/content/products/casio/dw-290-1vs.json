@@ -1,0 +1,46 @@
+{
+  "title": "Casio Digital Men Watch DW-290-1VS",
+  "sku": "DW-290-1VS",
+  "display": "Digital",
+  "gender": "Men",
+  "price": 79,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "56 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "50.6 × 46.8 × 14.3 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Black"
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "200m"
+    }
+  ],
+  "features": [
+    "Stopwatch: 1/100-second stopwatch Measuring capacity: 00’00”00~59’59”99 (for the first 60 minutes) 1:00’00~23:59’59 (after 60 minutes) Measuring unit: 1/100 second (for the first 60 minutes) 1 second (after 60 minutes) Measuring modes: Elapsed time, split time, 1st-2nd place times",
+    "Timer: Countdown timer Measuring unit: 1 second Countdown range: 24 hours Countdown start time setting range: 1 second to 24 hours (1-second increments, 1-minute increments and 1-hour increments) Other: Auto-repeat",
+    "Alarm/hourly time signal: Hourly time signal Multi-function alarm",
+    "Light: Electro-luminescent backlight Afterglow",
+    "Light color: EL: Blue",
+    "Calendar: Full auto-calendar (to year 2099)",
+    "Accuracy: ±15 seconds per month",
+    "Other features: 12/24-hour format Regular timekeeping: Hour, minute, second, pm, month, date, day"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 const Hero5 = () => {
   return (
@@ -42,10 +43,13 @@ const Hero5 = () => {
             represents hundreds of hours of meticulous craftsmanship.
           </p>
 
-          <button className="group cursor-pointer inline-flex items-center justify-center w-fit rounded-full border border-primary/25 bg-primary/10 px-8 py-3 text-sm uppercase tracking-widest text-primary transition duration-300 hover:border-primary/50 hover:bg-primary/20 hover:text-secondary focus:outline-none gap-2">
+          <Link
+            href="/heritage"
+            className="group cursor-pointer inline-flex items-center justify-center w-fit rounded-full border border-primary/25 bg-primary/10 px-8 py-3 text-sm uppercase tracking-widest text-primary transition duration-300 hover:border-primary/50 hover:bg-primary/20 hover:text-secondary focus:outline-none gap-2"
+          >
             read our story
             <span className="inline-block h-px w-10 bg-primary transition-all duration-300 group-hover:w-16" />
-          </button>
+          </Link>
         </motion.div>
       </div>
     </section>

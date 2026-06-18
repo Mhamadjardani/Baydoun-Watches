@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const features = [
   "Complimentary Worldwide Shipping",
@@ -53,8 +54,8 @@ const Hero1 = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
           >
-            A symphony of precision engineering and uncompromising craftsmanship.
-            Discover horology elevated to high art
+            A symphony of precision engineering and uncompromising
+            craftsmanship. Discover horology elevated to high art
           </motion.p>
 
           <motion.div
@@ -63,12 +64,15 @@ const Hero1 = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.18 }}
           >
-            <button className="cursor-pointer inline-flex items-center justify-center rounded-full bg-primary px-0.5 sm:px-8 py-3 text-xs sm:text-sm uppercase tracking-widest sm:tracking-[0.35em] text-background transition duration-300 hover:bg-primary/95">
+            <Link
+              href="/collections"
+              className="cursor-pointer inline-flex items-center justify-center rounded-full bg-primary px-0.5 sm:px-8 py-3 text-xs sm:text-sm uppercase tracking-widest sm:tracking-[0.35em] text-background transition duration-300 hover:bg-primary/95"
+            >
               explore the collection
-            </button>
-            <button className="cursor-pointer inline-flex items-center justify-center rounded-full border border-primary bg-transparent px-0.5 sm:px-8 py-3 text-xs sm:text-sm uppercase tracking-widest sm:tracking-[0.35em] text-primary transition duration-300 hover:border-primary/40 hover:bg-primary/10">
+            </Link>
+            <Link href="/categories" className="cursor-pointer inline-flex items-center justify-center rounded-full border border-primary bg-transparent px-0.5 sm:px-8 py-3 text-xs sm:text-sm uppercase tracking-widest sm:tracking-[0.35em] text-primary transition duration-300 hover:border-primary/40 hover:bg-primary/10">
               discover more
-            </button>
+            </Link>
           </motion.div>
         </motion.div>
       </div>

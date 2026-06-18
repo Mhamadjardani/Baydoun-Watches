@@ -1,0 +1,44 @@
+{
+  "title": "Casio Unisex Vintage Watch AQ-230A-3AMQYDF",
+  "sku": "AQ-230A-3AMQYDF",
+  "display": "Ana-Digi",
+  "gender": "Unisex",
+  "price": 58,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "47 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "38.8 × 29.8 × 8.1 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Green, Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [
+    "World time: Dual time",
+    "Stopwatch: 1/100-second stopwatch Measuring capacity: 59’59.99” Measuring mode: Elapsed time",
+    "Alarm/hourly time signal: Daily alarm; Hourly time signal",
+    "Calendar: Auto-calendar (28 days for February)",
+    "Accuracy: ±30 seconds per month",
+    "Other features: 12/24-hour format; Regular timekeeping: Analog: 2 hands (hour, minute) Digital: Hour, minute, second, pm, month, date, day"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

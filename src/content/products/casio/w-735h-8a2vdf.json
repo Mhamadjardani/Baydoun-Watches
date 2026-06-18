@@ -1,0 +1,50 @@
+{
+  "title": "Casio Digital Men Watch W-735H-8A2VDF",
+  "sku": "W-735H-8A2VDF",
+  "display": "Digital",
+  "gender": "Men",
+  "price": 62,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "50 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "51.4 × 47.1 × 16.1 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Beige"
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "50m"
+    }
+  ],
+  "features": [
+    "LED backlight (Super Illuminator) Afterglow",
+    "Dual time",
+    "1/100-second stopwatch Measuring capacity: 23:59’59.99” Measuring modes: Elapsed time, split time, 1st-2nd place times Other: 5-second countdown auto start",
+    "Countdown timer Measuring unit: 1 second Countdown range: 24 hours Countdown start time setting range: 1 second to 24 hours (1-second increments, 1-minute increments and 1-hour increments)",
+    "Daily alarm",
+    "Hourly time signal",
+    "Vibe alert (daily alarm, hourly time signal, countdown timer time up, stopwatch auto start countdown)",
+    "Full auto-calendar (to year 2099)",
+    "12/24-hour format",
+    "Regular timekeeping: Hour, minute, second, pm, month, date, day",
+    "Accuracy: 30 seconds per month",
+    "Approx. battery life: 10 years on CR2032"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

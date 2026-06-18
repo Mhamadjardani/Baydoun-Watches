@@ -1,0 +1,49 @@
+{
+  "title": "TOMMY HILFIGER, LARS",
+  "sku": "TH 1710649",
+  "display": "",
+  "gender": "Men",
+  "price": 160,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "MOVEMENT",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "BAND MATERIAL",
+      "value": "RUBBER"
+    },
+    {
+      "label": "BAND COLOR",
+      "value": "BLUE"
+    },
+    {
+      "label": "DIAL COLOR",
+      "value": "BLUE"
+    },
+    {
+      "label": "CASE DIAMETER",
+      "value": "46 MM"
+    },
+    {
+      "label": "CASE COLOR",
+      "value": "SILVER"
+    },
+    {
+      "label": "BEZEL",
+      "value": "SILVER"
+    },
+    {
+      "label": "WATER RESISTANT",
+      "value": "5 ATM"
+    }
+  ],
+  "features": [],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

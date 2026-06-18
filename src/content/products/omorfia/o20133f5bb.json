@@ -1,0 +1,49 @@
+{
+  "title": "OMORFIA WOMEN`S WATCH",
+  "sku": "O20133F5BB",
+  "display": "",
+  "gender": "Women",
+  "price": 145,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "MOVEMENT",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "BAND MATERIAL",
+      "value": "MESH"
+    },
+    {
+      "label": "BAND COLOR",
+      "value": "BLACK STAINLESS STEEL"
+    },
+    {
+      "label": "DIAL COLOR",
+      "value": "BLACK"
+    },
+    {
+      "label": "CASE DIAMETER",
+      "value": "32 MM"
+    },
+    {
+      "label": "CASE COLOR",
+      "value": "BLACK STAINLESS STEEL"
+    },
+    {
+      "label": "BEZEL",
+      "value": "BLACK"
+    },
+    {
+      "label": "WATER RESISTANT",
+      "value": "3 ATM"
+    }
+  ],
+  "features": [],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

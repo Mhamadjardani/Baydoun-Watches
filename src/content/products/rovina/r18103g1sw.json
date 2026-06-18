@@ -1,0 +1,49 @@
+{
+  "title": "ROVINA MEN`S WATCH",
+  "sku": "R18103G1SW",
+  "display": "",
+  "gender": "Men",
+  "price": 185,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "MOVEMENT",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "BAND MATERIAL",
+      "value": "LEATHER"
+    },
+    {
+      "label": "BAND COLOR",
+      "value": "BLACK LEATHER"
+    },
+    {
+      "label": "DIAL COLOR",
+      "value": "WHITE"
+    },
+    {
+      "label": "CASE DIAMETER",
+      "value": "39 MM"
+    },
+    {
+      "label": "CASE COLOR",
+      "value": "SILVER STAINLESS STEEL"
+    },
+    {
+      "label": "BEZEL",
+      "value": "SILVER"
+    },
+    {
+      "label": "WATER RESISTANT",
+      "value": "5 ATM"
+    }
+  ],
+  "features": [],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

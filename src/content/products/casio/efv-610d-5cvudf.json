@@ -1,0 +1,39 @@
+{
+  "title": "Edifice Watch EFV-610D-5CVUDF",
+  "sku": "EFV-610D-5CVUDF",
+  "display": "Chronograph",
+  "gender": "Men",
+  "price": 165,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "128 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "48.6 × 43.8 × 11 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Grey, Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "100m"
+    }
+  ],
+  "features": [
+    "Strike just the right chord with a mid-sized classic EDIFICE chronograph featuring a bold pairing of fine detail and design. A wider dial with thinner bezel makes for a simple, streamlined, sporty design, in colors inspired by cool urban driving styles.; 1/10-second stopwatch Measuring capacity: 59’59.9” Measuring modes: Elapsed time, split time, 1st-2nd place times; Accuracy: ±20 seconds per month; Regular timekeeping: Analog: 3 hands (hour, minute, second), 3 dials (stopwatch 1/10 seconds, stopwatch minutes, stopwatch seconds); Date display"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

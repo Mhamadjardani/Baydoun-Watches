@@ -1,0 +1,48 @@
+{
+  "title": "Casio Men 3H Watch MTP-1302DA-2A1VDF",
+  "sku": "MTP-1302DA-2A1VDF",
+  "display": "Analog 3H",
+  "gender": "Men",
+  "price": 75,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "104 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "44.2 × 38.5 × 9.4 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Blue, Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Special Feature",
+      "value": "LTP-MTP"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "50m"
+    }
+  ],
+  "features": [
+    "Accuracy: ±20 seconds per month",
+    "Other features: Regular timekeeping: Analog: 3 hands (hour, minute, second); Date display",
+    "Matte dial with textured finish",
+    "Stainless-steel band",
+    "Date display",
+    "50-meter water resistance"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

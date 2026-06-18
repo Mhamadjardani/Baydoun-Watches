@@ -1,0 +1,47 @@
+{
+  "title": "Casio Digital men Watch W-219HC-2BVDF",
+  "sku": "W-219HC-2BVDF",
+  "display": "Digital",
+  "gender": "Men",
+  "price": 36,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "40 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "48.1 × 47.1 × 13.9 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Blue"
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "50m"
+    }
+  ],
+  "features": [
+    "LED backlight",
+    "1/100-second stopwatch Measuring capacity: 59’59.99″ Measuring modes: Elapsed time, split time, 1st-2nd place times",
+    "Daily alarm",
+    "Hourly time signal",
+    "Auto-calendar (29 days for February)",
+    "12/24-hour format",
+    "Regular timekeeping: Hour, minute, second, pm, date, day",
+    "Accuracy: 30 seconds per month",
+    "Approx. battery life: 7 years on CR2016"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

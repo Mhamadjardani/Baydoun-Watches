@@ -1,0 +1,45 @@
+{
+  "title": "Casio Unisex Vintage Digital Watch B650WD-1ADF",
+  "sku": "B650WD-1ADF",
+  "display": "Digital",
+  "gender": "Unisex",
+  "price": 47,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "63 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "43.1 × 41.2 × 10.5 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "50m"
+    }
+  ],
+  "features": [
+    "Stopwatch: 1/100-second stopwatch Measuring capacity: 59’59.99” Measuring modes: Elapsed time, split time, 1st-2nd place times",
+    "Alarm/hourly time signal: Daily alarm; Hourly time signal",
+    "Light: LED backlight",
+    "Light color: LED:Amber",
+    "Calendar: Auto-calendar (set at 28 days for February)",
+    "Accuracy: ±30 seconds per month",
+    "Other features: 12/24-hour format; Regular timekeeping: Hour, minute, second, pm, date, day"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}

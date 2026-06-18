@@ -1,0 +1,49 @@
+{
+  "title": "Casio Vintage Digital Unisex Metal Watch B640WD-1AVDF",
+  "sku": "B640WD-1AVDF",
+  "display": "Digital",
+  "gender": "Women",
+  "price": 45,
+  "stock": 0,
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "49 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "38.9 × 35 × 9.4 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "50m"
+    }
+  ],
+  "features": [
+    "LED Backlight Afterglow",
+    "Flash alert Flashes with buzzer that sounds for alarms, hourly time signal",
+    "1/100-second stopwatch Measuring capacity: 00’00″00~59’59″99 (for the first 60 minutes) 1:00’00~23:59’59 (after 60 minutes) Measuring unit: 1/100 second (for the first 60 minutes) 1 second (after 60 minutes) Measuring modes: Elapsed time, split time, 1st-2nd place times",
+    "Countdown timer Measuring unit: 1 second Countdown range: 24 hours Countdown start time setting range: 1 second to 24 hours (1-second increments, 1-minute increments and 1-hour increments) Other: Auto-repeat",
+    "Multi-function alarm",
+    "Hourly time signal",
+    "Full auto-calendar (to year 2039)",
+    "12/24-hour format",
+    "Regular timekeeping: Hour, minute, second, pm, month, date, day",
+    "Accuracy: 30 seconds per month",
+    "Approx. battery life: 3 years on CR2016"
+  ],
+  "images": [],
+  "arrivalDate": "2026-06-17",
+  "createdAt": "2026-06-17"
+}
