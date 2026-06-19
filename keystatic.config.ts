@@ -11,7 +11,7 @@ function brandCollection(label: string, folder: string) {
     path: `src/content/products/${folder}/*`,
     format: { data: "json" },
 
-    columns: ["title", "category", "price", "stock", "createdAt"],
+    columns: ["title", "category", "price", "createdAt"],
 
     schema: {
       // ── Identity ────────────────────────────────────────────────────────────
@@ -53,10 +53,10 @@ function brandCollection(label: string, folder: string) {
         label: "Price",
         validation: { isRequired: true },
       }),
-      stock: fields.number({
-        label: "Stock",
-        validation: { isRequired: true },
-      }),
+      // stock: fields.number({
+      //   label: "Stock",
+      //   validation: { isRequired: true },
+      // }),
 
       // ── Flags ────────────────────────────────────────────────────────────────
       isNewArrival: fields.checkbox({

@@ -6,7 +6,7 @@ export type Product = {
   display: string;
   gender: "Men" | "Women" | "Unisex";
   price: number;
-  stock: number;
+  // stock: number;
   isNewArrival: boolean;
   isFeatured: boolean;
   isLimitedEdition: boolean;

@@ -200,9 +200,9 @@ const ProductDetails = ({
               </div>
               <div className="inline-flex items-center gap-2 text-sm uppercase tracking-widest text-secondary">
                 <ShieldCheck size={18} className="text-primary" />
-                {product.stock > 0
+                {/* {product.stock > 0
                   ? `${product.stock} in stock`
-                  : "Out of stock"}
+                  : "Out of stock"} */}
               </div>
             </div>
           </div>
@@ -269,14 +269,14 @@ const ProductDetails = ({
             <button
               type="button"
               onClick={() => {
-                if (product.stock > 0) {
-                  addToCart(product.brand, product.slug);
-                  toast.success(`${product.title} added to cart`, {
-                    icon: "🛒",
-                  });
-                }
+                // if (product.stock > 0) {
+                addToCart(product.brand, product.slug);
+                toast.success(`${product.title} added to cart`, {
+                  icon: "🛒",
+                });
+                // }
               }}
-              className={`inline-flex h-13 flex-1 items-center justify-center gap-3 ${product.stock > 0 ? `bg-primary cursor-pointer` : `bg-secondary opacity-50`} px-6 py-2 text-sm font-bold uppercase tracking-widest text-neutral transition duration-300 hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-primary/40`}
+              className={`inline-flex h-13 flex-1 items-center justify-center gap-3 bg-primary cursor-pointer px-6 py-2 text-sm font-bold uppercase tracking-widest text-neutral transition duration-300 hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-primary/40`}
             >
               <ShoppingBag size={19} />
               {hasHydrated && cartQuantity > 0

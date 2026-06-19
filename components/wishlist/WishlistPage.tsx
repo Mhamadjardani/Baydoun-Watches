@@ -147,11 +147,11 @@ const WishlistPage = ({ products }: { products: Product[] }) => {
                         <p className="w-fit bg-primary/10 px-2 py-1 text-xs uppercase tracking-widest text-primary">
                           {product.brand}
                         </p>
-                        {product.stock == 0 && (
+                        {/* {product.stock == 0 && (
                           <p className="w-fit bg-primary/10 px-2 py-1 text-xs tracking-widest text-primary">
                             Out of Stock
                           </p>
-                        )}
+                        )} */}
                       </div>
                       <p className="min-h-14 text-lg font-bold uppercase leading-7 tracking-widest text-white font-playfair">
                         {product.title}
@@ -176,14 +176,14 @@ const WishlistPage = ({ products }: { products: Product[] }) => {
                   <button
                     type="button"
                     onClick={() => {
-                      if (product.stock > 0) {
-                        addToCart(product.brand, product.slug);
-                        toast.success(`${product.title} added to bag`, {
-                          icon: "🛍️",
-                        });
-                      }
+                      // if (product.stock > 0) {
+                      addToCart(product.brand, product.slug);
+                      toast.success(`${product.title} added to bag`, {
+                        icon: "🛍️",
+                      });
+                      // }
                     }}
-                    className={`inline-flex w-full items-center justify-center gap-3 border border-primary/30 ${product.stock > 0 ? `bg-primary/10 cursor-pointer hover:border-primary/60 hover:bg-primary hover:text-neutral` : `opacity-50 bg-primary/10`} px-5 py-3 text-xs font-bold uppercase tracking-widest text-primary transition`}
+                    className={`inline-flex w-full items-center justify-center gap-3 border border-primary/30 bg-primary/10 cursor-pointer hover:border-primary/60 hover:bg-primary hover:text-neutral px-5 py-3 text-xs font-bold uppercase tracking-widest text-primary transition`}
                   >
                     <ShoppingBag size={17} />
                     Add to bag
