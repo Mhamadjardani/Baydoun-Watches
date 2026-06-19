@@ -8,8 +8,8 @@ const Hero4 = ({ products }: { products: Product[] }) => {
   const router = useRouter();
 
   return (
-    <section className="min-h-screen overflow-hidden py-24">
-      <div className="mx-auto flex w-full max-w-screen-2xl flex-col gap-16 px-6 sm:px-10 md:px-16">
+    <section className="min-h-screen overflow-hidden py-16 md:py-24">
+      <div className="mx-auto flex w-full max-w-screen-2xl flex-col gap-12 md:gap-16 px-4 sm:px-8 md:px-16">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-center">
           <motion.div
             className="space-y-4 text-center"
@@ -17,10 +17,10 @@ const Hero4 = ({ products }: { products: Product[] }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <p className="text-4xl font-black uppercase tracking-widest leading-tight text-white font-playfair md:text-6xl">
+            <p className="font-playfair text-3xl font-black uppercase tracking-[0.2em] leading-tight text-white sm:text-5xl md:text-6xl">
               Discover Casio
             </p>
-            <p className="text-sm tracking-widest text-secondary md:text-base">
+            <p className="mx-auto max-w-xl text-xs sm:text-sm md:text-base tracking-[0.25em] text-secondary">
               Curated selections representing the pinnacle of our horological
               achievements
             </p>
@@ -40,9 +40,8 @@ const Hero4 = ({ products }: { products: Product[] }) => {
             </motion.button>
           </motion.div>
         </div>
-
         <motion.div
-          className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+          className="grid grid-cols-2 gap-4 md:gap-6 lg:grid-cols-4"
           initial="hidden"
           animate="show"
           variants={{
@@ -72,26 +71,27 @@ const Hero4 = ({ products }: { products: Product[] }) => {
                   router.push(`/collections/${product.brand}/${product.slug}`);
                 }}
               >
-                <div className="relative h-96 overflow-hidden bg-neutral">
+                <div className="relative aspect-4/5 overflow-hidden bg-neutral">
                   <motion.img
                     src={product.images[0] || "/baydoun-logo.webp"}
                     alt={product.title}
-                    className="h-full w-full object-cover transition duration-700 ease-out group-hover:scale-110"
+                    className="h-full w-full object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:rotate-1"
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-neutral/60 via-neutral/20 to-transparent" />
                 </div>
 
-                <div className="flex flex-1 flex-col justify-between p-6 text-left">
+                <div className="flex flex-1 flex-col justify-between p-4 md:p-6 text-left">
                   <div className="space-y-2">
-                    <p className="text-xs uppercase tracking-widest text-primary py-1 px-2 bg-primary/10 w-fit rounded-full">
+                    <p className="inline-flex w-fit rounded-full bg-primary/10 px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.25em] text-primary md:text-xs">
                       {product.brand}
                     </p>
-                    <p className="text-lg font-bold uppercase tracking-widest text-white font-playfair">
+                    <p className="font-playfair mt-3 line-clamp-2 text-sm font-bold uppercase tracking-[0.15em] text-white sm:text-base md:text-lg">
                       {product.title}
                     </p>
                   </div>
-                  <div className="mt-4 pt-4 border-t border-white/10">
-                    <p className="text-sm text-primary font-bold tracking-wide">
+
+                  <div className="mt-5 flex items-center justify-between border-t border-white/10 pt-4">
+                    <p className="text-base font-bold tracking-wide text-primary md:text-lg">
                       ${product.price || "0"}
                     </p>
                   </div>

@@ -6,10 +6,10 @@ import Link from "next/link";
 
 const Hero2 = ({ products }: { products: Product[] }) => {
   return (
-    <section className="min-h-screen overflow-hidden py-20">
+    <section className="min-h-screen overflow-hidden py-16 md:py-24">
       <div className="mx-auto flex w-full max-w-screen-2xl flex-col gap-10 px-4 text-center md:px-8">
         <motion.p
-          className="text-4xl font-black uppercase tracking-widest text-white md:text-6xl font-playfair"
+          className="font-playfair text-3xl font-black uppercase tracking-[0.25em] text-white sm:text-5xl md:text-6xl"
           initial={{ opacity: 0, y: 32 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -18,7 +18,7 @@ const Hero2 = ({ products }: { products: Product[] }) => {
         </motion.p>
 
         <motion.p
-          className="mx-auto max-w-2xl text-sm tracking-widest text-secondary md:text-lg"
+          className="mx-auto max-w-2xl text-sm leading-relaxed text-secondary md:text-lg"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
@@ -28,7 +28,7 @@ const Hero2 = ({ products }: { products: Product[] }) => {
         </motion.p>
 
         <motion.div
-          className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          className="grid grid-cols-2 gap-4 md:gap-6 lg:grid-cols-4"
           initial="hidden"
           animate="show"
           variants={{
@@ -40,44 +40,55 @@ const Hero2 = ({ products }: { products: Product[] }) => {
             },
           }}
         >
-          {products.slice(0, 3).map((product, index) => (
+          {products.slice(0, 4).map((product, index) => (
             <motion.article
-              key={`hero2-product-${index}`}
-              className="group relative overflow-hidden border border-white/10 rounded-3xl bg-primary/10 shadow-[0_30px_90px_rgba(0,0,0,0.45)] transition-transform duration-500 ease-out hover:shadow-[0_40px_120px_rgba(0,0,0,0.55)]"
-              initial={{ opacity: 0, y: 32 }}
+              key={product.slug}
+              className="group relative overflow-hidden rounded-2xl md:rounded-3xl border border-white/10 bg-black/20 backdrop-blur-sm"
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
-                duration: 0.7,
-                ease: "easeOut",
+                duration: 0.6,
                 delay: index * 0.08,
               }}
             >
-              <motion.img
-                src={product.images[0] || "/baydoun-logo.webp"}
-                alt={product.title}
-                className="h-105 w-full object-cover transition duration-700 ease-out group-hover:scale-105"
-              />
+              <Link href={`/collections/${product.brand}/${product.slug}`}>
+                <div className="relative aspect-3/4 md:aspect-4/5 overflow-hidden">
+                  <motion.img
+                    src={product.images[0] || "/baydoun-logo.webp"}
+                    alt={product.title}
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
 
-              <div className="absolute inset-0 bg-linear-to-t from-neutral to-neutral/30" />
+                  {/* overlay */}
+                  <div className="absolute inset-0 bg-linear-to-t from-black via-black/35 to-transparent" />
 
-              <div className="absolute inset-x-0 bottom-0 p-6 text-left">
-                <p className="text-xs uppercase tracking-widest text-primary py-1 px-2 bg-primary/10 w-fit rounded-full">
-                  {product.category}
-                </p>
-                <p className="mt-3 text-2xl font-bold uppercase tracking-widest text-white font-playfair">
-                  {product.brand}
-                </p>
-                <p className="mt-2 max-w-48 text-sm text-secondary">
-                  {product.title}
-                </p>
-                <Link
-                  href={`/collections/${product.brand}/${product.slug}`}
-                  className="cursor-pointer mt-6 inline-flex items-center gap-2 text-sm uppercase tracking-widest text-primary transition hover:text-secondary"
-                >
-                  Explore
-                  <span className="inline-block h-px w-10 bg-primary transition-all duration-300 group-hover:w-16" />
-                </Link>
-              </div>
+                  {/* category */}
+                  {/* <div className="absolute left-3 top-3 md:left-5 md:top-5">
+                    <span className="rounded-full border border-white/10 bg-black/35 px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.25em] text-white backdrop-blur-md md:px-3 md:text-xs">
+                      {product.category}
+                    </span>
+                  </div> */}
+
+                  {/* content */}
+                  <div className="absolute inset-x-0 bottom-0 p-3 md:p-6">
+                    {/* <p className="font-playfair text-base font-bold uppercase tracking-[0.15em] text-white sm:text-lg md:text-2xl">
+                      {product.brand}
+                    </p> */}
+
+                    <p className="mt-1 line-clamp-1 text-xs text-secondary sm:text-sm md:mt-2 md:line-clamp-2">
+                      {product.title}
+                    </p>
+
+                    <div className="mt-3 flex items-center justify-between md:mt-5">
+                      <span className="text-[11px] uppercase tracking-[0.3em] text-primary md:text-xs">
+                        Explore
+                      </span>
+
+                      <span className="inline-block h-px w-10 bg-primary transition-all duration-300 group-hover:w-16" />
+                    </div>
+                  </div>
+                </div>
+              </Link>
             </motion.article>
           ))}
         </motion.div>

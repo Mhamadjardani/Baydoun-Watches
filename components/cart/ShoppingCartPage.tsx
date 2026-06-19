@@ -14,7 +14,7 @@ const formatPrice = (price: number) =>
     maximumFractionDigits: 0,
   }).format(price);
 
-const shippingEstimate = 12;
+const shippingEstimate = 5;
 
 const ShoppingCartPage = ({ products }: { products: Product[] }) => {
   const cartItems = useCommerceStore((state) => state.cartItems);
