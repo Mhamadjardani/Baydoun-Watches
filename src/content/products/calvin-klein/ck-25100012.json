@@ -1,10 +1,9 @@
 {
   "title": "CALVIN KLEIN, CK GLEAM",
   "sku": "CK 25100012",
-  "display": "",
   "gender": "Women",
   "price": 185,
-  "stock": 0,
+  "stock": 10,
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
