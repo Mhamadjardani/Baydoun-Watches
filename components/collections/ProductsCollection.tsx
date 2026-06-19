@@ -5,6 +5,7 @@ import { useCommerceStore } from "@/store/useCommerceStore";
 import { ChevronDown, Heart, SlidersHorizontal } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 
 type FilterKey =
@@ -41,6 +42,23 @@ const emptyFilters: CollectionFilterState = {
   display: [],
 };
 
+const filterKeys = [
+  "brand",
+  "category",
+  // "subCategory",
+  "gender",
+  "display",
+] as const;
+
+const buildFiltersFromSearchParams = (searchParams: URLSearchParams) =>
+  filterKeys.reduce<CollectionFilterState>(
+    (currentFilters, key) => ({
+      ...currentFilters,
+      [key]: searchParams.getAll(key).filter(Boolean),
+    }),
+    emptyFilters,
+  );
+
 const ProductsCollection = ({
   initialFilters = emptyFilters,
   products,
@@ -48,12 +66,21 @@ const ProductsCollection = ({
   initialFilters?: CollectionFilterState;
   products: Product[];
 }) => {
+  const searchParams = useSearchParams();
+  const searchParamsString = searchParams.toString();
+  const urlFilters = useMemo(
+    () =>
+      searchParamsString
+        ? buildFiltersFromSearchParams(new URLSearchParams(searchParamsString))
+        : initialFilters,
+    [initialFilters, searchParamsString],
+  );
   const [openFilters, setOpenFilters] = useState<FilterKey[]>([
     "brand",
     "category",
   ]);
   const [selectedFilters, setSelectedFilters] =
-    useState<CollectionFilterState>(initialFilters);
+    useState<CollectionFilterState>(urlFilters);
   const [sortBy, setSortBy] = useState<SortKey>("featured");
   const [page, setPage] = useState(1);
   const [failedImages, setFailedImages] = useState<Set<string>>(new Set());
@@ -64,13 +91,13 @@ const ProductsCollection = ({
   useEffect(() => {
     // Defer state updates to avoid synchronous setState inside effect
     const id = setTimeout(() => {
-      setSelectedFilters(initialFilters);
+      setSelectedFilters(urlFilters);
       setOpenFilters((currentFilters) =>
         Array.from(
           new Set([
             ...currentFilters,
             ...filters
-              .filter(({ key }) => initialFilters[key].length > 0)
+              .filter(({ key }) => urlFilters[key].length > 0)
               .map(({ key }) => key),
           ]),
         ),
@@ -78,7 +105,7 @@ const ProductsCollection = ({
       setPage(1);
     }, 0);
     return () => clearTimeout(id);
-  }, [initialFilters]);
+  }, [urlFilters]);
 
   const getPagination = () => {
     const delta = 1;
