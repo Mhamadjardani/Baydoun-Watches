@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const Hero1 = () => {
   return (
     <motion.section
-      className="relative min-h-screen overflow-hidden bg-background"
+      className="relative min-h-screen overflow-hidden bg-light-neutral"
       style={{
         backgroundImage: "url(/heritage.png)",
         backgroundAttachment: "fixed",
@@ -17,7 +17,7 @@ const Hero1 = () => {
       transition={{ duration: 1.2, ease: "easeOut" }}
     >
       <motion.div
-        className="absolute inset-0 bg-neutral"
+        className="absolute inset-0 bg-neutral/50"
         initial={{ opacity: 0.88 }}
         animate={{ opacity: 0.68 }}
         transition={{ duration: 1 }}

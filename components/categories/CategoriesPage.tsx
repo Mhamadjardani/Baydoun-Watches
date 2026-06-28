@@ -92,7 +92,7 @@ const CategoriesPage = ({ products }: { products: ProductCard[] }) => {
   const brandGroups = buildGroups("brand", products);
 
   return (
-    <main className="min-h-screen bg-neutral px-4 py-24 text-white sm:px-8 lg:px-16">
+    <main className="min-h-screen bg-light-neutral px-4 py-24 text-white sm:px-8 lg:px-16">
       <section className="mx-auto flex max-w-screen-2xl flex-col gap-12">
         {/* HEADER */}
         <div className="flex flex-col gap-4 border-b border-white/10 pb-8">

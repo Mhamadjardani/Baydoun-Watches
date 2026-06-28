@@ -29,7 +29,7 @@ const fadeUp: Variants = {
 
 const Contact: React.FC = () => {
   return (
-    <main className="min-h-screen bg-background px-6 py-24 text-white sm:px-10 lg:px-24">
+    <main className="min-h-screen bg-light-neutral px-6 py-24 text-white sm:px-10 lg:px-24">
       <section className="mx-auto max-w-screen-2xl">
         {/* HEADER */}
         <motion.header
