@@ -39,11 +39,12 @@ const MobileNavbar: React.FC<{
 
     return products
       .filter((product) => {
-        const searchable = `${product.title} ${product.brand} `.toLowerCase();
+        const searchable =
+          `${product.title} ${product.subCategory} ${product.brand} `.toLowerCase();
         return searchable.includes(query);
       })
       .slice(0, 6);
-  }, [products, searchValue]);
+  }, [searchValue]);
 
   const cartProducts = useMemo(
     () =>

@@ -5,6 +5,7 @@ import { useCommerceStore } from "@/store/useCommerceStore";
 import { Heart, Search } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { useMemo, useState } from "react";
 import toast from "react-hot-toast";
 
@@ -20,6 +21,7 @@ const matchesSearch = (product: ProductCard, query: string) => {
     product.title,
     product.brand,
     // product.category,
+    product.subCategory,
     product.sku,
     product.display,
     product.gender,
@@ -31,13 +33,9 @@ const matchesSearch = (product: ProductCard, query: string) => {
   return searchable.includes(query);
 };
 
-const SearchResultsPage = ({
-  products,
-  query,
-}: {
-  products: ProductCard[];
-  query: string;
-}) => {
+const SearchResultsPage = ({ products }: { products: ProductCard[] }) => {
+  const searchParams = useSearchParams();
+  const query = searchParams.get("query") || "";
   const [page, setPage] = useState(1);
   const [failedImages, setFailedImages] = useState<Set<string>>(new Set());
   const wishlistItems = useCommerceStore((state) => state.wishlistItems);
