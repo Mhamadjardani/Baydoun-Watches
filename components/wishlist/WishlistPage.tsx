@@ -1,8 +1,8 @@
 "use client";
 
-import { Product } from "@/lib/type";
+import { ProductCard } from "@/lib/type";
 import { useCommerceStore } from "@/store/useCommerceStore";
-import { ArrowRight, Heart, ShoppingBag, X } from "lucide-react";
+import { ArrowRight, Heart, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
@@ -15,10 +15,9 @@ const formatPrice = (price: number) =>
     maximumFractionDigits: 0,
   }).format(price);
 
-const WishlistPage = ({ products }: { products: Product[] }) => {
+const WishlistPage = ({ products }: { products: ProductCard[] }) => {
   const wishlistItems = useCommerceStore((state) => state.wishlistItems);
   const hasHydrated = useCommerceStore((state) => state.hasHydrated);
-  const addToCart = useCommerceStore((state) => state.addToCart);
   const removeFromWishlist = useCommerceStore(
     (state) => state.removeFromWishlist,
   );
@@ -34,7 +33,7 @@ const WishlistPage = ({ products }: { products: Product[] }) => {
               product.brand === item.productBrand,
           ),
         )
-        .filter((product): product is Product => Boolean(product)),
+        .filter((product): product is ProductCard => Boolean(product)),
     [wishlistItems, products],
   );
 
@@ -45,11 +44,6 @@ const WishlistPage = ({ products }: { products: Product[] }) => {
       return nextFailedImages;
     });
   };
-
-  const getImage = (product: Product) =>
-    failedImages.has(product.images[0])
-      ? "/baydoun-logo.webp"
-      : product.images[0];
 
   if (!hasHydrated) {
     return (
@@ -72,9 +66,9 @@ const WishlistPage = ({ products }: { products: Product[] }) => {
           </p>
           <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-3xl space-y-4">
-              <h1 className="text-4xl font-black uppercase leading-tight tracking-widest text-white font-playfair md:text-6xl">
+              <p className="text-4xl font-black uppercase leading-tight tracking-widest text-white font-playfair md:text-6xl">
                 Wishlist
-              </h1>
+              </p>
               <p className="text-sm leading-7 tracking-wide text-secondary md:text-base">
                 Keep your preferred timepieces close, compare them at your pace,
                 and move favourites into your shopping bag when ready.
@@ -100,97 +94,110 @@ const WishlistPage = ({ products }: { products: Product[] }) => {
               href="/collections"
               className="mt-8 inline-flex items-center justify-center gap-3 bg-primary px-8 py-3 text-sm font-bold uppercase tracking-widest text-neutral transition hover:bg-secondary"
             >
-              Browse collections
+              Browse collection
               <ArrowRight size={18} />
             </Link>
           </div>
         ) : (
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {wishlistProducts.map((product, index) => (
-              <article
-                key={product.slug + index}
-                className="group relative overflow-hidden border border-primary/10 bg-light-neutral shadow-[0_30px_90px_rgba(0,0,0,0.35)] transition duration-500 hover:-translate-y-1 hover:border-primary/30 hover:shadow-[0_40px_120px_rgba(0,0,0,0.5)]"
-              >
-                <button
-                  type="button"
-                  aria-label={`Remove ${product.title} from wishlist`}
-                  onClick={() =>
-                    removeFromWishlist(product.brand, product.slug)
-                  }
-                  className="absolute right-4 top-4 z-10 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-white/15 bg-neutral/70 text-secondary backdrop-blur transition hover:border-primary/50 hover:text-primary"
+          <div className="grid gap-5 grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {wishlistProducts.map((product, index) => {
+              const productKey = `${product.slug}-${index}`;
+              const productImage = failedImages.has(product.image)
+                ? "/baydoun-logo.webp"
+                : product.image;
+
+              return (
+                <article
+                  key={productKey}
+                  className="group relative overflow-hidden border border-primary/10 bg-light-neutral shadow-[0_30px_90px_rgba(0,0,0,0.35)] transition duration-500 hover:-translate-y-1 hover:border-primary/30 hover:shadow-[0_40px_120px_rgba(0,0,0,0.5)]"
                 >
-                  <X size={18} />
-                </button>
-
-                <Link
-                  href={`/collections/${product.brand}/${product.slug}`}
-                  className="block focus:outline-none focus:ring-2 focus:ring-primary/40"
-                >
-                  <div className="relative aspect-4/5 overflow-hidden bg-neutral">
-                    <Image
-                      src={getImage(product)}
-                      alt={product.title}
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                      className="object-cover transition duration-700 ease-out group-hover:scale-105"
-                      onError={() => markImageFailed(product.images[0])}
-                    />
-                    <div className="absolute inset-0 bg-linear-to-t from-neutral/70 via-transparent to-transparent" />
-                    <span className="absolute left-4 top-4 border border-primary/30 bg-neutral/70 px-3 py-1 text-xs uppercase tracking-widest text-primary backdrop-blur">
-                      Saved
-                    </span>
-                  </div>
-
-                  <div className="space-y-4 p-5">
-                    <div className="space-y-2">
-                      <div className="w-full flex items-center justify-between flex-wrap">
-                        <p className="w-fit bg-primary/10 px-2 py-1 text-xs uppercase tracking-widest text-primary">
-                          {product.brand}
-                        </p>
-                        {/* {product.stock == 0 && (
-                          <p className="w-fit bg-primary/10 px-2 py-1 text-xs tracking-widest text-primary">
-                            Out of Stock
-                          </p>
-                        )} */}
-                      </div>
-                      <p className="min-h-14 text-lg font-bold uppercase leading-7 tracking-widest text-white font-playfair">
-                        {product.title}
-                      </p>
-                      <p className="line-clamp-2 text-sm leading-6 text-secondary">
-                        {product.description}
-                      </p>
-                    </div>
-
-                    <div className="flex items-center justify-between border-t border-white/10 pt-4">
-                      <p className="text-lg font-bold tracking-wide text-primary">
-                        {formatPrice(product.price)}
-                      </p>
-                      <span className="text-xs uppercase tracking-widest text-secondary/70">
-                        Details
-                      </span>
-                    </div>
-                  </div>
-                </Link>
-
-                <div className="px-5 pb-5">
+                  {/* Wishlist Button */}
                   <button
                     type="button"
+                    aria-label={`Remove ${product.title} from wishlist`}
                     onClick={() => {
-                      // if (product.stock > 0) {
-                      addToCart(product.brand, product.slug);
-                      toast.success(`${product.title} added to bag`, {
-                        icon: "🛍️",
+                      removeFromWishlist(product.brand, product.slug);
+                      if (hasHydrated) {
+                      }
+                      toast.success(`${product.title} removed from wishlist`, {
+                        icon: "❤️",
                       });
-                      // }
                     }}
-                    className={`inline-flex w-full items-center justify-center gap-3 border border-primary/30 bg-primary/10 cursor-pointer hover:border-primary/60 hover:bg-primary hover:text-neutral px-5 py-3 text-xs font-bold uppercase tracking-widest text-primary transition`}
+                    className="absolute right-4 top-4 z-10 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-white/15 bg-neutral/70 text-secondary backdrop-blur transition hover:border-primary/50 hover:text-primary"
                   >
-                    <ShoppingBag size={17} />
-                    Add to bag
+                    <X size={18} />
                   </button>
-                </div>
-              </article>
-            ))}
+
+                  <Link
+                    href={`/collections/${product.brand}/${product.slug}`}
+                    className="block focus:outline-none focus:ring-2 focus:ring-primary/40"
+                  >
+                    <div className="relative aspect-4/5 overflow-hidden bg-neutral">
+                      <Image
+                        src={productImage || "/baydoun-logo.webp"}
+                        alt={product.title}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                        className="object-cover transition duration-700 ease-out group-hover:scale-105"
+                        onError={() => markImageFailed(product.image)}
+                      />
+                      <div className="absolute inset-0 bg-linear-to-t from-neutral/70 via-transparent to-transparent" />
+
+                      {/* Status Badges Container */}
+                      <div className="absolute left-4 top-4 z-10 flex flex-col gap-2">
+                        {product.isFeatured && (
+                          <span className="hidden sm:inline-block border border-primary/30 bg-neutral/70 px-3 py-1 text-xs uppercase tracking-widest text-white backdrop-blur">
+                            Featured
+                          </span>
+                        )}
+                        {product.discount && product.discount > 0 && (
+                          <span className="inline-block border border-red-500/30 bg-red-950/60 px-3 py-1 text-xs uppercase tracking-widest font-bold text-red-400 backdrop-blur">
+                            Sale -{product.discount}%
+                          </span>
+                        )}
+                      </div>
+                    </div>
+
+                    <div className="space-y-4 p-5">
+                      <div className="space-y-2">
+                        <p className="text-xs uppercase tracking-widest text-primary bg-primary/10 px-2 py-1 w-fit rounded-full">
+                          {product.brand}
+                        </p>
+                        <p className="min-h-14 text-sm sm:text-lg font-bold uppercase sm:leading-7 sm:tracking-widest text-white font-playfair">
+                          {product.title}
+                        </p>
+                      </div>
+
+                      <div className="flex flex-col space-y-3 sm:space-y-0 sm:flex-row sm:items-center sm:justify-between border-t border-white/10 pt-4">
+                        <div className="flex flex-wrap items-baseline gap-1">
+                          {product.discount && product.discount > 0 ? (
+                            <>
+                              <span className="relative inline-block before:content-[''] before:absolute before:left-0 before:top-1/2 before:w-full before:h-0.5 before:bg-secondary before:-rotate-12">
+                                {formatPrice(product.price)}
+                              </span>
+
+                              <p className="text-lg font-black tracking-wide text-primary">
+                                {formatPrice(
+                                  product.price * (1 - product.discount / 100),
+                                )}
+                              </p>
+                            </>
+                          ) : (
+                            <p className="text-lg font-bold tracking-wide text-primary">
+                              {formatPrice(product.price)}
+                            </p>
+                          )}
+                        </div>
+
+                        <span className="text-xs uppercase tracking-widest text-secondary bg-secondary/10 px-2 py-1 w-fit">
+                          View details
+                        </span>
+                      </div>
+                    </div>
+                  </Link>
+                </article>
+              );
+            })}
           </div>
         )}
       </section>

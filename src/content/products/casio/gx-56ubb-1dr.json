@@ -38,7 +38,7 @@
     "Countdown timer Measuring unit: 1/10 second Countdown range: 24 hours Countdown start time setting range: 1 second to 24 hours (1-second increments, 1-minute increments and 1-hour increments)",
     "Hourly time signal"
   ],
-  "images": [],
+  "imageCount": 1,
   "arrivalDate": "2026-06-17",
   "createdAt": "2026-06-17"
 }

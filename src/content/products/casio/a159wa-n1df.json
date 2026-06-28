@@ -1,10 +1,10 @@
 {
   "title": "Casio Vintage Digital Unisex Metal Watch A159WA-N1DF",
   "sku": "A159WA-N1DF",
+  "subCategory": "edifice",
   "display": "Digital",
   "gender": "Men",
   "price": 42,
-  
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
@@ -41,7 +41,7 @@
     "Accuracy: 30 seconds per month",
     "Approx. battery life: 7 years on CR2016"
   ],
-  "images": [],
+  "imageCount": 1,
   "arrivalDate": "2026-06-17",
   "createdAt": "2026-06-17"
 }

@@ -38,19 +38,19 @@ const Hero2 = () => {
 
             <div className="space-y-6 text-neutral/75 leading-relaxed text-base md:text-lg">
               <p>
-                Founded in the heart of the Swiss Jura mountains, HOROLOGUE was
-                born from an uncompromising pursuit of perfection. We do not
-                merely assemble components; we orchestrate mechanical
-                symphonies. Every bridge, every jewel, and every pinion is
-                finished to standards that border on the obsessive.
+                For more than four decades, Baydoun Watches has been at the
+                centre of Beirut, offering a curated selection of high-quality
+                watches, bracelets, and wallets. Our experience and dedication
+                have made us a trusted destination for watch enthusiasts and
+                first-time buyers alike, combining expert advice with a passion
+                for exceptional products.
               </p>
 
               <p>
-                Our dedication to traditional craftsmanship is balanced by a
-                rigorous application of modern metallurgical science. The result
-                is a timepiece that transcends temporary aesthetic trends,
-                offering a tangible legacy meant to be passed across
-                generations.
+                We combine precision, style, and passion to offer the finest
+                timepieces. Our mission is to provide quality watches,
+                bracelets, and wallets that meet the highest standards of
+                craftsmanship, while delivering exceptional customer service.
               </p>
             </div>
 

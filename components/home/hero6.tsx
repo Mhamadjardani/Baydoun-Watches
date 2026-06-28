@@ -22,12 +22,12 @@ const collections = [
     url: "/collections?gender=Women",
   },
   {
-    title: "Best Sellers",
-    subtitle: "Editor's Pick",
+    title: "For the little ones",
+    subtitle: "Collection",
     description:
-      "Explore our most loved watches chosen by customers for their timeless appeal.",
-    image: "/best-seller.jpg",
-    url: "/collections?featured=true",
+      "Fun, durable, and vibrant watches designed to keep up with their biggest adventures.",
+    image: "/For-the-Little-Ones.jpg",
+    url: "/collections?gender=kids",
   },
 ];
 
@@ -47,20 +47,20 @@ export default function Hero6() {
             Discover
           </p>
 
-          <h2 className="mt-5 font-playfair text-4xl uppercase tracking-[0.12em] text-white sm:text-5xl lg:text-6xl">
-            Curated Collections
-          </h2>
+          <p className="mt-5 font-playfair text-4xl uppercase tracking-[0.12em] text-white sm:text-5xl lg:text-6xl">
+            Curated Collection
+          </p>
 
           <div className="mx-auto mt-8 h-px w-24 bg-primary" />
 
           <p className="mt-8 text-lg leading-8 text-secondary/70">
-            Explore carefully selected collections designed for every style,
+            Explore carefully selected collection designed for every style,
             occasion, and personality.
           </p>
         </motion.div>
 
         {/* Cards */}
-        <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr_1.1fr]">
+        <div className="grid gap-8 lg:grid-cols-3">
           {collections.map((item, index) => (
             <motion.article
               key={item.title}
@@ -72,7 +72,7 @@ export default function Hero6() {
                 delay: index * 0.12,
               }}
               whileHover={{ y: -8 }}
-              className="group relative overflow-hidden rounded-4xl border border-white/10 bg-neutral shadow-[0_35px_80px_rgba(0,0,0,0.45)]"
+              className="cursor-pointer group relative overflow-hidden rounded-4xl border border-white/10 bg-neutral shadow-[0_35px_80px_rgba(0,0,0,0.45)]"
             >
               <div className="relative h-155 overflow-hidden">
                 <Image

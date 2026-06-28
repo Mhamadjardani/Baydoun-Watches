@@ -1,6 +1,6 @@
 "use client";
 
-import { Product } from "@/lib/type";
+import { ProductCard } from "@/lib/type";
 import { useCommerceStore } from "@/store/useCommerceStore";
 import { ArrowRight, Minus, Plus, ShoppingBag, X } from "lucide-react";
 import Image from "next/image";
@@ -16,7 +16,7 @@ const formatPrice = (price: number) =>
 
 const shippingEstimate = 5;
 
-const ShoppingCartPage = ({ products }: { products: Product[] }) => {
+const ShoppingCartPage = ({ products }: { products: ProductCard[] }) => {
   const cartItems = useCommerceStore((state) => state.cartItems);
   const hasHydrated = useCommerceStore((state) => state.hasHydrated);
   const addToCart = useCommerceStore((state) => state.addToCart);
@@ -44,21 +44,31 @@ const ShoppingCartPage = ({ products }: { products: Product[] }) => {
               currentProduct.brand === item.productBrand,
           );
 
-          return product ? { product, quantity: item.quantity } : null;
+          if (!product) return null;
+
+          // Calculate final price based on discount existence and value
+          const currentPrice =
+            product.discount && product.discount > 0
+              ? product.price * (1 - product.discount / 100)
+              : product.price;
+
+          return { product, quantity: item.quantity, currentPrice };
         })
         .filter(
           (
             item,
           ): item is {
-            product: Product;
+            product: ProductCard;
             quantity: number;
+            currentPrice: number;
           } => Boolean(item),
         ),
-    [cartItems],
+    [cartItems, products], // Added products to dependencies
   );
 
+  // subtotal now correctly utilizes the discounted or original price
   const subtotal = cartProducts.reduce(
-    (total, item) => total + item.product.price * item.quantity,
+    (total, item) => total + item.currentPrice * item.quantity,
     0,
   );
   const shipping = subtotal > 0 ? shippingEstimate : 0;
@@ -80,27 +90,29 @@ const ShoppingCartPage = ({ products }: { products: Product[] }) => {
 `;
 
     const items = cartProducts
-      .map(
-        (item, index) => `
+      .map((item, index) => {
+        // Determine if we should display the discount breakdown in text
+        const hasDiscount = item.product.discount && item.product.discount > 0;
+        const priceDisplay = hasDiscount
+          ? `~~$${item.product.price}~~ *$${item.currentPrice.toFixed(2)}* (${item.product.discount}% OFF)`
+          : `$${item.product.price}`;
+
+        return `
 🛒 *Item ${index + 1}*
 • Product: ${item.product.title}
 • Brand: ${item.product.brand}
 • SKU: ${item.product.sku}
 • Qty: ${item.quantity}
-• Price: $${item.product.price}
-`,
-      )
+• Price: ${priceDisplay}
+`;
+      })
       .join("\n");
-
-    const total = cartProducts.reduce(
-      (sum, item) => sum + item.product.price * item.quantity,
-      0,
-    );
 
     const summary = `
 💰 *Order Summary*
-• Total Items: ${cartProducts.length}
-• Total Price: $${total}
+• Subtotal: $${subtotal.toFixed(2)}
+• Shipping: $${shipping.toFixed(2)}
+• *Total Price: $${total.toFixed(2)}*
 `;
 
     return encodeURIComponent(`${customerInfo}\n${items}\n${summary}`);
@@ -180,10 +192,8 @@ const ShoppingCartPage = ({ products }: { products: Product[] }) => {
     });
   };
 
-  const getImage = (product: Product) =>
-    failedImages.has(product.images[0])
-      ? "/baydoun-logo.webp"
-      : product.images[0];
+  const getImage = (product: ProductCard) =>
+    failedImages.has(product.image) ? "/baydoun-logo.webp" : product.image;
 
   const handleFormChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -256,14 +266,14 @@ const ShoppingCartPage = ({ products }: { products: Product[] }) => {
               Your bag is empty
             </p>
             <p className="mx-auto mt-3 max-w-xl text-sm leading-7 tracking-wide text-secondary">
-              Add a watch from the collections page and it will stay here even
+              Add a watch from the collection page and it will stay here even
               after refresh.
             </p>
             <Link
               href="/collections"
               className="mt-8 inline-flex items-center justify-center gap-3 bg-primary px-8 py-3 text-sm font-bold uppercase tracking-widest text-neutral transition hover:bg-secondary"
             >
-              Explore collections
+              Explore collection
               <ArrowRight size={18} />
             </Link>
           </div>
@@ -285,14 +295,14 @@ const ShoppingCartPage = ({ products }: { products: Product[] }) => {
                       fill
                       sizes="160px"
                       className="object-cover transition duration-500 hover:scale-105"
-                      onError={() => markImageFailed(product.images[0])}
+                      onError={() => markImageFailed(product.image)}
                     />
                   </Link>
 
                   <div className="flex min-w-0 flex-col justify-between gap-5 pr-10 sm:pr-0">
                     <div className="space-y-2">
                       <p className="w-fit bg-primary/10 px-2 py-1 text-xs uppercase tracking-widest text-primary">
-                        {product.brand} / {product.category}
+                        {product.brand}
                       </p>
                       <Link
                         href={`/collections/${product.brand}/${product.slug}`}
@@ -346,9 +356,29 @@ const ShoppingCartPage = ({ products }: { products: Product[] }) => {
                       <X size={18} />
                     </button>
                     <div className="ml-auto mt-2 border border-primary/20 bg-primary/10 px-2 py-1 text-right sm:mt-auto">
-                      <p className="mt-1 text-lg font-bold text-primary">
-                        {formatPrice(product.price * quantity)}
-                      </p>
+                      <div>
+                        {product.discount && product.discount > 0 ? (
+                          <div className="flex items-center gap-2 mt-1">
+                            {/* Discounted Price */}
+                            <p className="text-lg font-bold text-primary">
+                              {formatPrice(
+                                product.price *
+                                  (1 - product.discount / 100) *
+                                  quantity,
+                              )}
+                            </p>
+                            {/* Original Scratched Price */}
+                            <span className="relative inline-block before:content-[''] before:absolute before:left-0 before:top-1/2 before:w-full before:h-0.5 before:bg-secondary before:-rotate-12 text-sm">
+                              {formatPrice(product.price * quantity)}
+                            </span>
+                          </div>
+                        ) : (
+                          /* Regular Price (No Discount) */
+                          <p className="mt-1 text-lg font-bold text-primary">
+                            {formatPrice(product.price * quantity)}
+                          </p>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </article>
@@ -605,8 +635,20 @@ const ShoppingCartPage = ({ products }: { products: Product[] }) => {
                         fill
                         sizes="224px"
                         className="object-cover transition duration-500 group-hover:scale-105"
-                        onError={() => markImageFailed(product.images[0])}
+                        onError={() => markImageFailed(product.image)}
                       />
+                      <div className="absolute left-4 top-4 z-10 flex flex-col gap-2">
+                        {product.isFeatured && (
+                          <span className="hidden sm:inline-block border border-primary/30 bg-neutral/70 px-3 py-1 text-xs uppercase tracking-widest text-white backdrop-blur">
+                            Featured
+                          </span>
+                        )}
+                        {product.discount && product.discount > 0 && (
+                          <span className="inline-block border border-red-500/30 bg-red-950/60 px-3 py-1 text-xs uppercase tracking-widest font-bold text-red-400 backdrop-blur">
+                            Sale -{product.discount}%
+                          </span>
+                        )}
+                      </div>
                     </div>
                     <div className="space-y-2 p-4">
                       <p className="text-xs uppercase tracking-widest text-primary">
@@ -615,9 +657,25 @@ const ShoppingCartPage = ({ products }: { products: Product[] }) => {
                       <p className="min-h-11 text-sm font-bold uppercase leading-5 tracking-widest text-white font-playfair">
                         {product.title}
                       </p>
-                      <p className="text-sm font-bold text-primary">
-                        {formatPrice(product.price)}
-                      </p>
+                      <div className="flex flex-wrap items-baseline gap-1">
+                        {product.discount && product.discount > 0 ? (
+                          <>
+                            <span className="relative inline-block before:content-[''] before:absolute before:left-0 before:top-1/2 before:w-full before:h-0.5 before:bg-secondary before:-rotate-12">
+                              {formatPrice(product.price)}
+                            </span>
+
+                            <p className="text-lg font-black tracking-wide text-primary">
+                              {formatPrice(
+                                product.price * (1 - product.discount / 100),
+                              )}
+                            </p>
+                          </>
+                        ) : (
+                          <p className="text-lg font-bold tracking-wide text-primary">
+                            {formatPrice(product.price)}
+                          </p>
+                        )}
+                      </div>
                     </div>
                   </Link>
                 ),

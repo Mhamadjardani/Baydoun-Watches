@@ -4,6 +4,7 @@ import React, { useMemo, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { MenuIcon, menuIcons, menuItems, type MenuItem } from "./menuItem";
 import { Product } from "@/lib/type";
+import { useCommerceStore } from "@/store/useCommerceStore";
 
 const DesktopNavbar: React.FC<{
   products: Product[];
@@ -24,6 +25,8 @@ const DesktopNavbar: React.FC<{
   const pathname = usePathname();
   const [isSearch, setIsSearch] = useState(false);
   const [searchValue, setSearchValue] = useState("");
+  const cartItems = useCommerceStore((state) => state.cartItems);
+  const wishlistItems = useCommerceStore((state) => state.wishlistItems);
 
   const searchResults = useMemo(() => {
     const query = searchValue.trim().toLowerCase();
@@ -31,18 +34,17 @@ const DesktopNavbar: React.FC<{
 
     return products
       .filter((product) => {
-        const searchable =
-          `${product.title} ${product.brand} ${product.category}`.toLowerCase();
+        const searchable = `${product.title} ${product.brand}`.toLowerCase();
         return searchable.includes(query);
       })
       .slice(0, 6);
-  }, [searchValue]);
+  }, [products, searchValue]);
 
   const onSearchSubmit = () => {
-    if (!searchResults.length) return;
-    router.push(
-      `/collections/${searchResults[0].brand}/${searchResults[0].slug}`,
-    );
+    const query = searchValue.trim();
+    if (!query) return;
+
+    router.push(`/search?query=${encodeURIComponent(query)}`);
     setSearchValue("");
     setIsSearch(false);
   };
@@ -53,6 +55,43 @@ const DesktopNavbar: React.FC<{
     setIsSearch(false);
   };
 
+  const cartProducts = useMemo(
+    () =>
+      cartItems
+        .map((item) => {
+          const product = products.find(
+            (currentProduct) =>
+              currentProduct.slug === item.productSlug &&
+              currentProduct.brand === item.productBrand,
+          );
+
+          return product ? { product, quantity: item.quantity } : null;
+        })
+        .filter(
+          (
+            item,
+          ): item is {
+            product: Product;
+            quantity: number;
+          } => Boolean(item),
+        ),
+    [cartItems],
+  );
+
+  const wishlistProducts = useMemo(
+    () =>
+      wishlistItems
+        .map((item) =>
+          products.find(
+            (product) =>
+              product.slug === item.productSlug &&
+              product.brand === item.productBrand,
+          ),
+        )
+        .filter((product): product is Product => Boolean(product)),
+    [wishlistItems, products],
+  );
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-500 ease-in-out border-primary/10 backdrop-blur`}
@@ -61,7 +100,7 @@ const DesktopNavbar: React.FC<{
         <button
           type="button"
           onClick={handleLogoClick}
-          className="cursor-pointer text-2xl uppercase tracking-wide text-primary font-playfair"
+          className="cursor-pointer text-2xl uppercase tracking-wide text-secondary font-playfair"
         >
           baydoun watches
         </button>
@@ -95,6 +134,7 @@ const DesktopNavbar: React.FC<{
           >
             <button
               type="button"
+              title="search for items"
               onClick={() => {
                 setIsSearch((prev) => !prev);
                 if (!isSearch)
@@ -130,25 +170,43 @@ const DesktopNavbar: React.FC<{
               {isSearch && searchValue.trim() && (
                 <div className="absolute left-0 top-full z-50 mt-2 w-full max-h-80 overflow-y-auto rounded-3xl border border-white/10 bg-neutral/95 shadow-[0_20px_80px_rgba(0,0,0,0.45)] backdrop-blur-xl">
                   {searchResults.length > 0 ? (
-                    searchResults.map((product, index) => (
+                    <>
+                      {searchResults.map((product, index) => (
+                        <button
+                          key={product.slug + index}
+                          type="button"
+                          onClick={() => onSearchSelect(product)}
+                          className="w-full px-4 py-3 text-left text-sm text-white transition hover:bg-white/5"
+                        >
+                          <span className="block font-semibold text-white">
+                            {product.title}
+                          </span>
+                          <span className="block text-xs uppercase tracking-[0.3em] text-secondary/80">
+                            {product.brand}
+                          </span>
+                        </button>
+                      ))}
                       <button
-                        key={product.slug + index}
                         type="button"
-                        onClick={() => onSearchSelect(product)}
-                        className="w-full px-4 py-3 text-left text-sm text-white transition hover:bg-white/5"
+                        onClick={onSearchSubmit}
+                        className="w-full border-t border-white/10 px-4 py-3 text-left text-xs font-bold uppercase tracking-[0.25em] text-primary transition hover:bg-primary/10"
                       >
-                        <span className="block font-semibold text-white">
-                          {product.title}
-                        </span>
-                        <span className="block text-xs uppercase tracking-[0.3em] text-secondary/80">
-                          {product.brand} · {product.category}
-                        </span>
+                        See all results for &quot;{searchValue.trim()}&quot;
                       </button>
-                    ))
+                    </>
                   ) : (
-                    <div className="px-4 py-3 text-sm text-secondary">
-                      No watches found. Try another term.
-                    </div>
+                    <>
+                      <div className="px-4 py-3 text-sm text-secondary">
+                        No watches found. Try another term.
+                      </div>
+                      <button
+                        type="button"
+                        onClick={onSearchSubmit}
+                        className="w-full border-t border-white/10 px-4 py-3 text-left text-xs font-bold uppercase tracking-[0.25em] text-primary transition hover:bg-primary/10"
+                      >
+                        Search all for &quot;{searchValue.trim()}&quot;
+                      </button>
+                    </>
                   )}
                 </div>
               )}
@@ -156,18 +214,35 @@ const DesktopNavbar: React.FC<{
           </div>
 
           <div className="flex items-center gap-2">
-            {menuIcons.slice(1).map((icon, index) => (
-              <button
-                key={`icon-${index}`}
-                type="button"
-                onClick={() => {
-                  if ("href" in icon) handleMenuItemClick(icon);
-                }}
-                className="flex cursor-pointer h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-primary transition duration-300 ease-in-out hover:-translate-y-0.5 hover:bg-white/15 focus:outline-none"
-              >
-                {icon.icon}
-              </button>
-            ))}
+            {menuIcons.slice(1).map((icon, index) => {
+              const isCart = "href" in icon && icon.href === "/cart";
+              const isWish = "href" in icon && icon.href === "/wishlist";
+
+              return (
+                <button
+                  key={`icon-${index}`}
+                  type="button"
+                  title={"href" in icon ? icon.href.substring(1) : ""}
+                  onClick={() => {
+                    if ("href" in icon) handleMenuItemClick(icon);
+                  }}
+                  className="relative flex cursor-pointer h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-primary transition duration-300 ease-in-out hover:-translate-y-0.5 hover:bg-white/15 focus:outline-none"
+                >
+                  {icon.icon}
+
+                  {isCart && cartProducts.length > 0 && (
+                    <div className="absolute -top-1 -right-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-primary px-1 text-[10px] font-bold text-background animate-in fade-in zoom-in duration-200">
+                      {cartProducts.length}
+                    </div>
+                  )}
+                  {isWish && wishlistProducts.length > 0 && (
+                    <div className="absolute -top-1 -right-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-primary px-1 text-[10px] font-bold text-background animate-in fade-in zoom-in duration-200">
+                      {wishlistProducts.length}
+                    </div>
+                  )}
+                </button>
+              );
+            })}
           </div>
         </div>
       </div>

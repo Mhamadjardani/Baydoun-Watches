@@ -33,7 +33,7 @@
   "features": [
     "LED backlight 1/100-second stopwatch Measuring capacity: 59’59.99” Measuring modes: Split time, 1st-2nd place times Daily alarm Hourly time signal Auto-calendar (set at 28 days for February) 12/24-hour format Regular time keeping: Hour, minute, second, pm, date, day Accuracy: 30 seconds per month Approx. battery life: 3 years on CR1616"
   ],
-  "images": [],
+  "imageCount": 1,
   "arrivalDate": "2026-06-17",
   "createdAt": "2026-06-17"
 }

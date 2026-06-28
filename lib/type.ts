@@ -1,11 +1,13 @@
 export type Product = {
   title: string;
-  category: string;
+  // category: string;
+  subCategory: string | null;
   sku: string;
   description: string;
   display: string;
   gender: "Men" | "Women" | "Unisex";
   price: number;
+  discount: number | null;
   // stock: number;
   isNewArrival: boolean;
   isFeatured: boolean;
@@ -15,7 +17,8 @@ export type Product = {
     readonly value: string;
   }[];
   features: readonly string[];
-  images: readonly string[];
+  // images: readonly string[];
+  imageCount: number;
   arrivalDate: string | null;
   createdAt: string | null;
   slug: string;
@@ -33,4 +36,12 @@ export type Product = {
     | "qq"
     | "rovina"
     | "tommyHilfiger";
+};
+
+export type ProductCard = Omit<Product, "images"> & {
+  image: string;
+};
+
+export type ProductDetails = Product & {
+  images: string[];
 };

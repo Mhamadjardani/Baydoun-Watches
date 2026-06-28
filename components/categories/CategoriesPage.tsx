@@ -1,12 +1,14 @@
 "use client";
 
-import { Product } from "@/lib/type";
+import { ProductCard } from "@/lib/type";
 import Image from "next/image";
 import Link from "next/link";
 
-type DirectoryKey = "category" | "brand";
+type DirectoryKey =
+  // "category" |
+  "brand";
 
-const buildGroups = (key: DirectoryKey, products: Product[]) =>
+const buildGroups = (key: DirectoryKey, products: ProductCard[]) =>
   Array.from(new Set(products.map((product) => product[key]))).map((value) => {
     const groupProducts = products.filter((product) => product[key] === value);
 
@@ -18,10 +20,10 @@ const buildGroups = (key: DirectoryKey, products: Product[]) =>
       count: groupProducts.length,
       product: featuredProduct,
       href: `/collections?${key}=${encodeURIComponent(value)}`,
+      image:
+        value == "omorfia" ? `/brands/${value}.webp` : `/brands/${value}.png`,
     };
   });
-
-/* ---------------- CLEAN BRAND CARD ---------------- */
 
 const DirectoryCard = ({
   group,
@@ -30,51 +32,63 @@ const DirectoryCard = ({
   group: {
     value: string;
     count: number;
-    product: Product;
+    product: ProductCard;
     href: string;
+    image: string;
   };
   label: string;
 }) => (
   <Link
     href={group.href}
-    className="group relative flex flex-col justify-between rounded-2xl border border-black/10 bg-white p-6 transition hover:-translate-y-1 hover:border-black/20 hover:shadow-md"
+    className="group relative block aspect-[4/3] overflow-hidden rounded-3xl border border-white/10 bg-linear-to-br from-neutral-950 via-neutral-900 to-black transition-all duration-500 hover:-translate-y-1 hover:border-primary/30 hover:shadow-2xl"
   >
-    {/* TOP: label */}
-    <div className="flex items-center justify-between">
-      <span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-black/40">
-        {/* {label} */}
-      </span>
-
-      <span className="rounded-full bg-black/5 px-3 py-1 text-[10px] font-medium text-black/60">
-        {group.count} item
-      </span>
+    {/* Count badge */}
+    <div className="absolute right-3 top-3 z-20 rounded-full bg-black/60 px-3 py-1 text-[11px] font-medium text-white backdrop-blur">
+      {group.count} {group.count === 1 ? "Item" : "Items"}
     </div>
 
-    {/* CENTER: brand name */}
-    <div className="mt-10">
-      <p className="font-playfair text-xl sm:text-2xl font-bold uppercase tracking-widest text-black">
-        {group.value}
-      </p>
-
-      {/* <p className="mt-2 text-xs sm:text-sm text-black/50">
-        Explore collection
-      </p> */}
+    {/* CENTER LOGO WRAPPER (FIXED FOR MOBILE) */}
+    <div className="absolute inset-0 flex items-center justify-center p-3 sm:p-5 md:p-6">
+      <div
+        className="
+        w-full max-w-[85%]
+        h-30 sm:h-35 md:h-40
+        rounded-2xl bg-white
+        flex items-center justify-center
+        shadow-[0_20px_60px_rgba(0,0,0,0.5)]
+        transition-all duration-500
+        group-hover:scale-[1.03]
+      "
+      >
+        {group.image && (
+          <div className="relative w-[85%] h-[70%]">
+            <Image
+              src={group.image}
+              alt={group.value}
+              fill
+              sizes="(max-width:640px) 180px, 260px"
+              className="object-contain"
+              priority
+            />
+          </div>
+        )}
+      </div>
     </div>
 
-    {/* BOTTOM: subtle CTA line */}
-    <div className="mt-8 flex items-center gap-3">
-      <span className="h-px w-10 bg-black/20 transition-all group-hover:w-16 group-hover:bg-black/40" />
-      <span className="text-[10px] uppercase tracking-[0.3em] text-black/50">
-        View
-      </span>
+    {/* Bottom fade for depth */}
+    <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent" />
+
+    {/* Bottom label hint (optional but helps UX) */}
+    <div className="absolute bottom-3 left-4 z-20 text-xs tracking-wide text-white/60">
+      Tap to explore
     </div>
   </Link>
 );
 
 /* ---------------- PAGE ---------------- */
 
-const CategoriesPage = ({ products }: { products: Product[] }) => {
-  const categoryGroups = buildGroups("category", products);
+const CategoriesPage = ({ products }: { products: ProductCard[] }) => {
+  // const categoryGroups = buildGroups("category", products);
   const brandGroups = buildGroups("brand", products);
 
   return (
@@ -123,9 +137,9 @@ const CategoriesPage = ({ products }: { products: Product[] }) => {
 
         {/* BRAND SECTION (NEW CLEAN STYLE) */}
         <div className="space-y-6 border-t border-white/10 pt-10">
-          <p className="text-xs uppercase tracking-[0.35em] text-primary">
+          {/* <p className="text-xs uppercase tracking-[0.35em] text-primary">
             Brands
-          </p>
+          </p> */}
 
           <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-3 xl:grid-cols-4">
             {brandGroups.map((group) => (

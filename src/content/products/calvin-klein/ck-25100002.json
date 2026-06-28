@@ -4,7 +4,7 @@
   "description": "this is a test description about this calvin klein product",
   "gender": "Women",
   "price": 195,
-
+  "discount": 40,
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
@@ -43,11 +43,7 @@
     }
   ],
   "features": [],
-  "images": [
-    "https://vdvpakmvwxqluewztbfk.supabase.co/storage/v1/object/public/products/Casio/test.png",
-    "https://vdvpakmvwxqluewztbfk.supabase.co/storage/v1/object/public/products/Casio/test.png",
-    "https://vdvpakmvwxqluewztbfk.supabase.co/storage/v1/object/public/products/Casio/test.png"
-  ],
+  "imageCount": 3,
   "arrivalDate": "2026-06-17",
   "createdAt": "2026-06-17"
 }

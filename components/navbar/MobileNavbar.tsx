@@ -1,11 +1,12 @@
 "use client";
 
+import { Product } from "@/lib/type";
+import { useCommerceStore } from "@/store/useCommerceStore";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
 import { menuIcons, menuItems, type MenuItem } from "./menuItem";
-import { Product } from "@/lib/type";
 
 const MobileNavbar: React.FC<{
   products: Product[];
@@ -30,19 +31,56 @@ const MobileNavbar: React.FC<{
   const router = useRouter();
   const [isSearch, setIsSearch] = useState(false);
   const [searchValue, setSearchValue] = useState("");
-
+  const cartItems = useCommerceStore((state) => state.cartItems);
+  const wishlistItems = useCommerceStore((state) => state.wishlistItems);
   const searchResults = useMemo(() => {
     const query = searchValue.trim().toLowerCase();
     if (!query) return [];
 
     return products
       .filter((product) => {
-        const searchable =
-          `${product.title} ${product.brand} ${product.category}`.toLowerCase();
+        const searchable = `${product.title} ${product.brand} `.toLowerCase();
         return searchable.includes(query);
       })
       .slice(0, 6);
-  }, [searchValue]);
+  }, [products, searchValue]);
+
+  const cartProducts = useMemo(
+    () =>
+      cartItems
+        .map((item) => {
+          const product = products.find(
+            (currentProduct) =>
+              currentProduct.slug === item.productSlug &&
+              currentProduct.brand === item.productBrand,
+          );
+
+          return product ? { product, quantity: item.quantity } : null;
+        })
+        .filter(
+          (
+            item,
+          ): item is {
+            product: Product;
+            quantity: number;
+          } => Boolean(item),
+        ),
+    [cartItems],
+  );
+
+  const wishlistProducts = useMemo(
+    () =>
+      wishlistItems
+        .map((item) =>
+          products.find(
+            (product) =>
+              product.slug === item.productSlug &&
+              product.brand === item.productBrand,
+          ),
+        )
+        .filter((product): product is Product => Boolean(product)),
+    [wishlistItems, products],
+  );
 
   const handleIconClick = (icon: (typeof menuIcons)[number]) => {
     if ("href" in icon) {
@@ -58,12 +96,13 @@ const MobileNavbar: React.FC<{
   };
 
   const onSearchSubmit = () => {
-    if (!searchResults.length) return;
-    router.push(
-      `/collections/${searchResults[0].brand}/${searchResults[0].slug}`,
-    );
+    const query = searchValue.trim();
+    if (!query) return;
+
+    router.push(`/search?query=${encodeURIComponent(query)}`);
     setSearchValue("");
     setIsSearch(false);
+    setOpenMenu(false);
   };
 
   return (
@@ -78,25 +117,40 @@ const MobileNavbar: React.FC<{
         </button>
 
         <div className="flex shrink-0 items-center gap-2">
-          {menuIcons.map((icon, index) => (
-            <button
-              key={`mobile-icon-${index}`}
-              type="button"
-              aria-label={index === 0 ? "Search" : "Open shortcut"}
-              onClick={() =>
-                index === 0
-                  ? setIsSearch((prev) => !prev)
-                  : handleIconClick(icon)
-              }
-              className={`flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border text-primary transition duration-300 ease-in-out focus:outline-none ${
-                index === 0 && isSearch
-                  ? "border-primary/30 bg-primary/10"
-                  : "border-white/10 bg-white/5 hover:bg-white/15"
-              }`}
-            >
-              {icon.icon}
-            </button>
-          ))}
+          {menuIcons.map((icon, index) => {
+            const isCart = "href" in icon && icon.href === "/cart";
+            const isWish = "href" in icon && icon.href === "/wishlist";
+
+            return (
+              <button
+                key={`mobile-icon-${index}`}
+                type="button"
+                aria-label={index === 0 ? "Search" : "Open shortcut"}
+                onClick={() =>
+                  index === 0
+                    ? setIsSearch((prev) => !prev)
+                    : handleIconClick(icon)
+                }
+                className={`relative flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border text-primary transition duration-300 ease-in-out focus:outline-none ${
+                  index === 0 && isSearch
+                    ? "border-primary/30 bg-primary/10"
+                    : "border-white/10 bg-white/5 hover:bg-white/15"
+                }`}
+              >
+                {icon.icon}
+                {isCart && cartProducts.length > 0 && (
+                  <div className="absolute -top-1 -right-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-primary px-1 text-[10px] font-bold text-background animate-in fade-in zoom-in duration-200">
+                    {cartProducts.length}
+                  </div>
+                )}
+                {isWish && wishlistProducts.length > 0 && (
+                  <div className="absolute -top-1 -right-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-primary px-1 text-[10px] font-bold text-background animate-in fade-in zoom-in duration-200">
+                    {wishlistProducts.length}
+                  </div>
+                )}
+              </button>
+            );
+          })}
 
           <button
             type="button"
@@ -136,25 +190,43 @@ const MobileNavbar: React.FC<{
               {searchValue.trim() && (
                 <div className="absolute inset-x-0 top-full z-50 mt-2 overflow-hidden rounded-3xl border border-white/10 bg-neutral/95 shadow-[0_20px_80px_rgba(0,0,0,0.45)] backdrop-blur-xl">
                   {searchResults.length > 0 ? (
-                    searchResults.map((product) => (
+                    <>
+                      {searchResults.map((product) => (
+                        <button
+                          key={`${product.slug}-${product.title}`}
+                          type="button"
+                          onClick={() => onSearchSelect(product)}
+                          className="w-full px-4 py-3 text-left text-sm text-white transition hover:bg-white/5"
+                        >
+                          <span className="block font-semibold text-white">
+                            {product.title}
+                          </span>
+                          <span className="block text-xs uppercase tracking-[0.3em] text-secondary/80">
+                            {product.brand}
+                          </span>
+                        </button>
+                      ))}
                       <button
-                        key={`${product.slug}-${product.title}`}
                         type="button"
-                        onClick={() => onSearchSelect(product)}
-                        className="w-full px-4 py-3 text-left text-sm text-white transition hover:bg-white/5"
+                        onClick={onSearchSubmit}
+                        className="w-full border-t border-white/10 px-4 py-3 text-left text-xs font-bold uppercase tracking-[0.25em] text-primary transition hover:bg-primary/10"
                       >
-                        <span className="block font-semibold text-white">
-                          {product.title}
-                        </span>
-                        <span className="block text-xs uppercase tracking-[0.3em] text-secondary/80">
-                          {product.brand} · {product.category}
-                        </span>
+                        See all results for &quot;{searchValue.trim()}&quot;
                       </button>
-                    ))
+                    </>
                   ) : (
-                    <div className="px-4 py-3 text-sm text-secondary">
-                      No watches found. Try another term.
-                    </div>
+                    <>
+                      <div className="px-4 py-3 text-sm text-secondary">
+                        No watches found. Try another term.
+                      </div>
+                      <button
+                        type="button"
+                        onClick={onSearchSubmit}
+                        className="w-full border-t border-white/10 px-4 py-3 text-left text-xs font-bold uppercase tracking-[0.25em] text-primary transition hover:bg-primary/10"
+                      >
+                        Search all for &quot;{searchValue.trim()}&quot;
+                      </button>
+                    </>
                   )}
                 </div>
               )}
@@ -223,25 +295,43 @@ const MobileNavbar: React.FC<{
                   {searchValue.trim() && (
                     <div className="absolute inset-x-0 top-full z-50 mt-2 overflow-hidden rounded-3xl border border-white/10 bg-neutral/95 shadow-[0_20px_80px_rgba(0,0,0,0.45)] backdrop-blur-xl">
                       {searchResults.length > 0 ? (
-                        searchResults.map((product) => (
+                        <>
+                          {searchResults.map((product) => (
+                            <button
+                              key={`${product.slug}-${product.title}`}
+                              type="button"
+                              onClick={() => onSearchSelect(product)}
+                              className="w-full px-4 py-3 text-left text-sm text-white transition hover:bg-white/5"
+                            >
+                              <span className="block font-semibold text-white">
+                                {product.title}
+                              </span>
+                              <span className="block text-xs uppercase tracking-[0.3em] text-secondary/80">
+                                {product.brand}
+                              </span>
+                            </button>
+                          ))}
                           <button
-                            key={`${product.slug}-${product.title}`}
                             type="button"
-                            onClick={() => onSearchSelect(product)}
-                            className="w-full px-4 py-3 text-left text-sm text-white transition hover:bg-white/5"
+                            onClick={onSearchSubmit}
+                            className="w-full border-t border-white/10 px-4 py-3 text-left text-xs font-bold uppercase tracking-[0.25em] text-primary transition hover:bg-primary/10"
                           >
-                            <span className="block font-semibold text-white">
-                              {product.title}
-                            </span>
-                            <span className="block text-xs uppercase tracking-[0.3em] text-secondary/80">
-                              {product.brand} · {product.category}
-                            </span>
+                            See all results for &quot;{searchValue.trim()}&quot;
                           </button>
-                        ))
+                        </>
                       ) : (
-                        <div className="px-4 py-3 text-sm text-secondary">
-                          No watches found. Try another term.
-                        </div>
+                        <>
+                          <div className="px-4 py-3 text-sm text-secondary">
+                            No watches found. Try another term.
+                          </div>
+                          <button
+                            type="button"
+                            onClick={onSearchSubmit}
+                            className="w-full border-t border-white/10 px-4 py-3 text-left text-xs font-bold uppercase tracking-[0.25em] text-primary transition hover:bg-primary/10"
+                          >
+                            Search all for &quot;{searchValue.trim()}&quot;
+                          </button>
+                        </>
                       )}
                     </div>
                   )}
@@ -269,17 +359,33 @@ const MobileNavbar: React.FC<{
               </nav>
 
               <div className="flex items-center gap-2 border-t border-primary/10 px-4 py-4">
-                {menuIcons.slice(1).map((icon, index) => (
-                  <button
-                    key={`mobile-drawer-icon-${index}`}
-                    type="button"
-                    aria-label="Open shortcut"
-                    onClick={() => handleIconClick(icon)}
-                    className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border border-white/10 bg-white/5 text-primary transition duration-300 ease-in-out hover:bg-white/15 focus:outline-none"
-                  >
-                    {icon.icon}
-                  </button>
-                ))}
+                {menuIcons.slice(1).map((icon, index) => {
+                  const isCart = "href" in icon && icon.href === "/cart";
+                  const isWish = "href" in icon && icon.href === "/wishlist";
+
+                  return (
+                    <button
+                      key={`mobile-drawer-icon-${index}`}
+                      type="button"
+                      aria-label="Open shortcut"
+                      onClick={() => handleIconClick(icon)}
+                      className="relative flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border border-white/10 bg-white/5 text-primary transition duration-300 ease-in-out hover:bg-white/15 focus:outline-none"
+                    >
+                      {icon.icon}
+
+                      {isCart && cartProducts.length > 0 && (
+                        <div className="absolute -top-1 -right-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-primary px-1 text-[10px] font-bold text-background animate-in fade-in zoom-in duration-200">
+                          {cartProducts.length}
+                        </div>
+                      )}
+                      {isWish && wishlistProducts.length > 0 && (
+                        <div className="absolute -top-1 -right-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-primary px-1 text-[10px] font-bold text-background animate-in fade-in zoom-in duration-200">
+                          {wishlistProducts.length}
+                        </div>
+                      )}
+                    </button>
+                  );
+                })}
               </div>
             </motion.aside>
           </>

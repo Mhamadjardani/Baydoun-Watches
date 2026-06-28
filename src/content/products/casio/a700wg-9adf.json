@@ -33,7 +33,7 @@
   "features": [
     "Stopwatch 1/100-second stopwatch Measuring capacity: 59’59.99” Measuring modes: Split time, 1st-2nd place times Alarm/hourly time signal Daily alarm Hourly time signal Light LED backlight Light color LED:Amber Calendar Auto-calendar (set at 28 days for February) Accuracy Accuracy: ±30 seconds per month Other features 12/24-hour format Regular timekeeping: Hour, minute, second, pm, date, day"
   ],
-  "images": [],
+  "imageCount": 1,
   "arrivalDate": "2026-06-17",
   "createdAt": "2026-06-17"
 }

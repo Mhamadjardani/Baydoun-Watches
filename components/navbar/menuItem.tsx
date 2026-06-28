@@ -19,11 +19,11 @@ export type MenuIcon =
 
 export const menuItems: MenuItem[] = [
   {
-    label: "Collections",
+    label: "Collection",
     href: "/collections",
   },
   {
-    label: "Heritage",
+    label: "About Us",
     href: "/heritage",
   },
   {
@@ -31,7 +31,7 @@ export const menuItems: MenuItem[] = [
     href: "/categories",
   },
   {
-    label: "Experience",
+    label: "Contact Us",
     href: "/contact",
   },
 ];

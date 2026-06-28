@@ -1,10 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useRouter } from "next/navigation";
 
 const Hero3 = () => {
-  const router = useRouter();
   return (
     <section
       className="relative min-h-screen overflow-hidden bg-background"

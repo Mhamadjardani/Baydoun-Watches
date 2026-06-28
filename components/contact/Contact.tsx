@@ -165,7 +165,15 @@ const Contact: React.FC = () => {
                 <p className="mt-4 text-sm font-semibold uppercase tracking-[0.28em] text-secondary/80">
                   Phone
                 </p>
-                <p className="mt-2 text-sm text-white/80">+961 3 558 657</p>
+                <Link
+                  href={`https://wa.me/9613558657`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Contact on WhatsApp"
+                  className="mt-2 text-sm text-white/80 hover:underline hover:text-primary"
+                >
+                  +961 3 558 657
+                </Link>
 
                 <p className="mt-4 text-sm font-semibold uppercase tracking-[0.28em] text-secondary/80">
                   Opening hours

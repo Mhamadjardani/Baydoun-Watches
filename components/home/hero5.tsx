@@ -42,9 +42,9 @@ const Hero5 = () => {
           </p>
 
           <p className="max-w-xl text-xs sm:text-sm md:text-base tracking-widest text-secondary/80 leading-relaxed">
-            Since 1924, our master watchmakers have dedicated themselves to
-            pushing the boundaries of mechanical horology. Each timepiece
-            represents hundreds of hours of meticulous craftsmanship.
+            For more than four decades, Baydoun Watches has been at the centre
+            of Beirut, offering a curated selection of high-quality watches,
+            bracelets, and wallets.
           </p>
 
           <Link

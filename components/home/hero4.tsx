@@ -1,11 +1,38 @@
 "use client";
 
-import { Product } from "@/lib/type";
+import { ProductCard } from "@/lib/type";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 
-const Hero4 = ({ products }: { products: Product[] }) => {
+const Hero4 = ({ products }: { products: ProductCard[] }) => {
   const router = useRouter();
+
+  const [failedImages, setFailedImages] = useState<Set<string>>(new Set());
+
+  const getImage = (product: ProductCard) =>
+    failedImages.has(product.image) ? "/baydoun-logo.webp" : product.image;
+
+  const markImageFailed = (image: string) => {
+    setFailedImages((currentFailedImages) => {
+      const nextFailedImages = new Set(currentFailedImages);
+      nextFailedImages.add(image);
+      return nextFailedImages;
+    });
+  };
+
+  const casioSubcategories = Array.from(
+    new Map(
+      products
+        .filter((p) => p.brand === "casio")
+        .sort(
+          (a, b) =>
+            new Date(b.createdAt ?? Date()).getTime() -
+            new Date(a.createdAt ?? Date()).getTime(),
+        )
+        .map((p) => [p.subCategory, p]),
+    ).values(),
+  );
 
   return (
     <section className="min-h-screen overflow-hidden py-16 md:py-24">
@@ -53,51 +80,59 @@ const Hero4 = ({ products }: { products: Product[] }) => {
             },
           }}
         >
-          {products
-            .filter((p) => p.brand == "casio")
-            .slice(0, 4)
-            .map((product, index) => (
-              <motion.article
-                key={`hero4-product-${index}`}
-                className="group flex flex-col overflow-hidden rounded-3xl border border-primary/10 bg-light-neutral shadow-[0_30px_90px_rgba(0,0,0,0.45)] transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-[0_40px_120px_rgba(0,0,0,0.55)]"
-                initial={{ opacity: 0, y: 32 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.7,
-                  ease: "easeOut",
-                  delay: index * 0.08,
-                }}
-                onClick={() => {
-                  router.push(`/collections/${product.brand}/${product.slug}`);
-                }}
-              >
-                <div className="relative aspect-4/5 overflow-hidden bg-neutral">
-                  <motion.img
-                    src={product.images[0] || "/baydoun-logo.webp"}
-                    alt={product.title}
-                    className="h-full w-full object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:rotate-1"
-                  />
-                  <div className="absolute inset-0 bg-linear-to-t from-neutral/60 via-neutral/20 to-transparent" />
+          {casioSubcategories.map((product, index) => (
+            <motion.article
+              key={`hero4-product-${index}`}
+              className="cursor-pointer group flex flex-col overflow-hidden rounded-3xl border border-primary/10 bg-light-neutral shadow-[0_30px_90px_rgba(0,0,0,0.45)] transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-[0_40px_120px_rgba(0,0,0,0.55)]"
+              initial={{ opacity: 0, y: 32 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.7,
+                ease: "easeOut",
+                delay: index * 0.08,
+              }}
+              onClick={() => {
+                router.push(
+                  `/collections?brand=casio&subCategory=${product.subCategory}`,
+                );
+              }}
+            >
+              <div className="relative aspect-4/5 overflow-hidden bg-neutral">
+                <motion.img
+                  src={getImage(product) || "/baydoun-logo.webp"}
+                  alt={product.title}
+                  className="h-full w-full object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:rotate-1"
+                  onError={() => markImageFailed(product.image)}
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-neutral/60 via-neutral/20 to-transparent" />
+              </div>
+
+              <div className="flex flex-1 flex-col justify-between p-4 md:p-6 text-left">
+                <div className="space-y-2">
+                  {/* <p className="inline-flex w-fit rounded-full bg-primary/10 px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.25em] text-primary md:text-xs">
+                    {product.brand}
+                  </p> */}
+                  <p className="font-playfair mt-3 line-clamp-2 text-sm font-bold uppercase tracking-[0.15em] text-white sm:text-base md:text-lg">
+                    {(product.subCategory &&
+                      product.subCategory
+                        .split("-")
+                        .map(
+                          (word) =>
+                            word.charAt(0).toUpperCase() + word.slice(1),
+                        )
+                        .join(" ")) ||
+                      ""}
+                  </p>
                 </div>
 
-                <div className="flex flex-1 flex-col justify-between p-4 md:p-6 text-left">
-                  <div className="space-y-2">
-                    <p className="inline-flex w-fit rounded-full bg-primary/10 px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.25em] text-primary md:text-xs">
-                      {product.brand}
-                    </p>
-                    <p className="font-playfair mt-3 line-clamp-2 text-sm font-bold uppercase tracking-[0.15em] text-white sm:text-base md:text-lg">
-                      {product.title}
-                    </p>
-                  </div>
-
-                  <div className="mt-5 flex items-center justify-between border-t border-white/10 pt-4">
-                    <p className="text-base font-bold tracking-wide text-primary md:text-lg">
-                      ${product.price || "0"}
-                    </p>
-                  </div>
-                </div>
-              </motion.article>
-            ))}
+                {/* <div className="mt-5 flex items-center justify-between border-t border-white/10 pt-4">
+                  <p className="text-base font-bold tracking-wide text-primary md:text-lg">
+                    ${product.price || "0"}
+                  </p>
+                </div> */}
+              </div>
+            </motion.article>
+          ))}
         </motion.div>
       </div>
     </section>

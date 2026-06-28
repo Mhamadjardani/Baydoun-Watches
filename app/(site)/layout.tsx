@@ -6,6 +6,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import { Toaster } from "react-hot-toast";
 import "../globals.css";
+import FloatingButtons from "@/components/floatingButtons";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -70,6 +71,7 @@ export default async function RootLayout({
             duration: 5000,
           }}
         />
+        <FloatingButtons />
         <Footer />
       </body>
     </html>

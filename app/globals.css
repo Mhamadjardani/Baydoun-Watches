@@ -8,7 +8,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-primary: #c9a84c;
+  --color-primary: #e8d49a;
   --color-primary-hover: #1f1e1e;
   --color-secondary: #e8d49a;
   --color-light-neutral: #131313;
@@ -51,7 +51,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #c9a84c; /* color of the thumb */
+  background-color: #e8d49a; /* color of the thumb */
   border-radius: 6px; /* roundness of the thumb */
 }
 
@@ -62,7 +62,7 @@ body {
 /* For Firefox */
 .scrollbar {
   scrollbar-width: thin; /* width of the scrollbar */
-  scrollbar-color: #c9a84c #1f1e1e; /* color of the thumb and track */
+  scrollbar-color: #e8d49a #1f1e1e; /* color of the thumb and track */
 }
 
 .no-scrollbar::-webkit-scrollbar {

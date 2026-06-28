@@ -1,6 +1,6 @@
 "use client";
 
-import { Product } from "@/lib/type";
+import type { ProductCard, ProductDetails } from "@/lib/type";
 import { useCommerceStore } from "@/store/useCommerceStore";
 import { motion } from "framer-motion";
 import { Check, Heart, ShieldCheck, ShoppingBag } from "lucide-react";
@@ -9,7 +9,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import toast from "react-hot-toast";
 
-const formatPrice = (price: Product["price"]) =>
+const formatPrice = (price: ProductDetails["price"]) =>
   new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
@@ -20,8 +20,8 @@ const ProductDetails = ({
   product,
   products,
 }: {
-  product: Product;
-  products: Product[];
+  product: ProductDetails;
+  products: ProductCard[];
 }) => {
   const fallbackImage = "/baydoun-logo.webp";
   const [activeImage, setActiveImage] = useState(
@@ -54,10 +54,8 @@ const ProductDetails = ({
     });
   };
 
-  const getImage = (product: Product) =>
-    failedImages.has(product.images[0])
-      ? "/baydoun-logo.webp"
-      : product.images[0];
+  const getImage = (product: ProductCard) =>
+    failedImages.has(product.image) ? "/baydoun-logo.webp" : product.image;
 
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
@@ -88,7 +86,7 @@ const ProductDetails = ({
 
   const productDetails = [
     { label: "Brand", value: product.brand },
-    { label: "Category", value: product.category },
+    // { label: "Category", value: product.category },
     // { label: "Collection", value: product.subCategory },
     { label: "Gender", value: product.gender },
     { label: "Display", value: product.display },
@@ -96,7 +94,7 @@ const ProductDetails = ({
   ];
 
   return (
-    <section className="min-h-screen overflow-hidden bg-neutral px-4 py-24 text-white sm:px-8 lg:px-16 space-y-10">
+    <section className="min-h-screen overflow-hidden bg-light-neutral px-4 py-24 text-white sm:px-8 lg:px-16 space-y-10">
       <div className="mx-auto grid max-w-screen-2xl gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(420px,0.95fr)] lg:gap-16">
         <motion.div
           className="space-y-4"
@@ -125,6 +123,11 @@ const ProductDetails = ({
               {product.isFeatured && (
                 <span className="border border-white/15 bg-white/10 px-3 py-1 text-xs uppercase tracking-widest text-secondary backdrop-blur">
                   Featured
+                </span>
+              )}
+              {product.discount && product.discount > 0 && (
+                <span className="inline-block border border-red-500/30 bg-red-950/60 px-3 py-1 text-sm uppercase tracking-widest font-bold text-red-400 backdrop-blur">
+                  Sale -{product.discount}%
                 </span>
               )}
             </div>
@@ -174,14 +177,14 @@ const ProductDetails = ({
               <span className="border border-primary/25 bg-primary/10 px-3 py-1 text-xs uppercase tracking-widest text-primary">
                 {product.brand}
               </span>
-              <span className="text-xs uppercase tracking-widest text-secondary/70">
+              {/* <span className="text-xs uppercase tracking-widest text-secondary/70">
                 {product.category}
-                {/* / {product.subCategory} */}
-              </span>
+                / {product.subCategory}
+              </span> */}
             </div>
 
             <div className="space-y-4">
-              <p className="text-4xl font-black uppercase leading-tight tracking-widest text-white font-playfair md:text-5xl">
+              <p className="text-4xl uppercase leading-tight tracking-wide text-white md:text-5xl">
                 {product.title}
               </p>
               <p className="max-w-2xl text-sm leading-7 tracking-wide text-secondary/80 md:text-base">
@@ -194,9 +197,23 @@ const ProductDetails = ({
                 <p className="text-xs uppercase tracking-widest text-secondary/60">
                   Price
                 </p>
-                <p className="mt-1 text-3xl font-bold tracking-wide text-primary">
-                  {formatPrice(product.price)}
-                </p>
+                {product.discount && product.discount > 0 ? (
+                  <>
+                    <span className="relative inline-block before:content-[''] before:absolute before:left-0 before:top-1/2 before:w-full before:h-0.5 before:bg-secondary before:-rotate-12">
+                      {formatPrice(product.price)}
+                    </span>
+
+                    <p className="text-3xl font-black tracking-wide text-primary">
+                      {formatPrice(
+                        product.price * (1 - product.discount / 100),
+                      )}
+                    </p>
+                  </>
+                ) : (
+                  <p className="text-3xl font-bold tracking-wide text-primary">
+                    {formatPrice(product.price)}
+                  </p>
+                )}
               </div>
               <div className="inline-flex items-center gap-2 text-sm uppercase tracking-widest text-secondary">
                 <ShieldCheck size={18} className="text-primary" />
@@ -234,7 +251,7 @@ const ProductDetails = ({
                 {product.features.map((feature) => (
                   <li
                     key={feature}
-                    className="flex items-start gap-3 text-sm leading-6 text-secondary/85"
+                    className="flex items-start gap-3 text-sm leading-6 text-white"
                   >
                     <Check size={18} className="mt-0.5 shrink-0 text-primary" />
                     <span>{feature}</span>
@@ -331,7 +348,7 @@ const ProductDetails = ({
               <Link
                 key={`${product.slug}-recommended-${index}`}
                 href={`/collections/${product.brand}/${product.slug}`}
-                className="group w-56 shrink-0 border border-white/10 bg-white/3 transition hover:border-primary/30"
+                className="group w-72 shrink-0 border border-white/10 bg-white/3 transition hover:border-primary/30"
               >
                 <div className="relative aspect-4/5 overflow-hidden bg-neutral">
                   <Image
@@ -340,7 +357,7 @@ const ProductDetails = ({
                     fill
                     sizes="224px"
                     className="object-cover transition duration-500 group-hover:scale-105"
-                    onError={() => markImageFailed(product.images[0])}
+                    onError={() => markImageFailed(product.image)}
                   />
                 </div>
                 <div className="space-y-2 p-4">

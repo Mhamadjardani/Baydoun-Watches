@@ -2,7 +2,11 @@ import { collection, config, fields } from "@keystatic/core";
 
 // ── Shared product schema + collection factory ────────────────────────────────
 // One function → zero repetition. Adding a brand = one line in the config below.
-function brandCollection(label: string, folder: string) {
+function brandCollection(
+  label: string,
+  folder: string,
+  subcategories?: string[],
+) {
   return collection({
     label,
     slugField: "sku",
@@ -11,7 +15,13 @@ function brandCollection(label: string, folder: string) {
     path: `src/content/products/${folder}/*`,
     format: { data: "json" },
 
-    columns: ["title", "category", "price", "createdAt"],
+    columns: [
+      "title",
+      // "category",
+      "subCategory",
+      "price",
+      "createdAt",
+    ],
 
     schema: {
       // ── Identity ────────────────────────────────────────────────────────────
@@ -19,7 +29,8 @@ function brandCollection(label: string, folder: string) {
         label: "Product Name",
       }),
 
-      category: fields.text({ label: "Category" }),
+      // category: fields.text({ label: "Category" }),
+
       sku: fields.slug({
         name: { label: "SKU" },
         slug: {
@@ -30,6 +41,17 @@ function brandCollection(label: string, folder: string) {
               .replace(/[^a-z0-9]+/g, "-"),
         },
       }),
+
+      subCategory: subcategories
+        ? fields.select({
+            label: "subCategory",
+            options: subcategories.map((s) => ({
+              label: s,
+              value: s.toLowerCase().replace(/\s+/g, "-"),
+            })),
+            defaultValue: subcategories[0].toLowerCase().replace(/\s+/g, "-"),
+          })
+        : fields.empty(),
 
       // ── Details ─────────────────────────────────────────────────────────────
       description: fields.text({ label: "Description", multiline: true }),
@@ -52,6 +74,10 @@ function brandCollection(label: string, folder: string) {
       price: fields.number({
         label: "Price",
         validation: { isRequired: true },
+      }),
+      discount: fields.number({
+        label: "Discount %",
+        validation: { isRequired: false },
       }),
       // stock: fields.number({
       //   label: "Stock",
@@ -89,9 +115,18 @@ function brandCollection(label: string, folder: string) {
         itemLabel: (p) => p.value || "New Feature",
       }),
 
-      images: fields.array(fields.text({ label: "Image URL" }), {
-        label: "Images",
-        itemLabel: (p) => p.value || "New Image",
+      // images: fields.array(fields.text({ label: "Image URL" }), {
+      //   label: "Images",
+      //   itemLabel: (p) => p.value || "New Image",
+      // }),
+
+      imageCount: fields.number({
+        label: "Image Count",
+        defaultValue: 1,
+        validation: {
+          isRequired: true,
+          min: 1,
+        },
       }),
 
       arrivalDate: fields.date({
@@ -121,7 +156,13 @@ export default config({
   collections: {
     // To add a new brand: one line here + the folder is created automatically
     calvinKlein: brandCollection("Calvin Klein", "calvin-klein"),
-    casio: brandCollection("Casio", "casio"),
+    casio: brandCollection("Casio", "casio", [
+      "G-Shock",
+      "Edifice",
+      "Vintage",
+      "Baby-G",
+      "Pro Trek",
+    ]),
     cityTime: brandCollection("City Time", "city-time"),
     curren: brandCollection("Curren", "curren"),
     dkny: brandCollection("DKNY", "dkny"),
