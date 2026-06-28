@@ -2,12 +2,20 @@ import SearchResultsPage from "@/components/search/SearchResultsPage";
 import { getAllProducts } from "@/lib/products";
 import { Suspense } from "react";
 
+// 1. Force production to fetch fresh data on every request
+export const dynamic = "force-dynamic";
+
+// 2. Separate component to handle data fetching inside Suspense
+async function SearchResultsWrapper({ searchQuery }: { searchQuery: string }) {
+  const products = await getAllProducts();
+  return <SearchResultsPage products={products} query={searchQuery} />;
+}
+
 export default async function SearchPage({
   searchParams,
 }: {
   searchParams: Promise<{ query?: string | string[] }>;
 }) {
-  const products = await getAllProducts();
   const { query = "" } = await searchParams;
   const searchQuery = Array.isArray(query) ? query[0] : query;
 
@@ -17,13 +25,14 @@ export default async function SearchPage({
         <main className="min-h-screen bg-light-neutral px-4 py-24 text-white sm:px-8 lg:px-16">
           <section className="mx-auto max-w-screen-2xl border border-white/10 bg-white/3 px-6 py-16 text-center">
             <p className="text-sm uppercase tracking-widest text-secondary">
-              Loading collection
+              Loading collection...
             </p>
           </section>
         </main>
       }
     >
-      <SearchResultsPage products={products} query={searchQuery ?? ""} />{" "}
+      {/* 3. Pass the query down; data loading happens inside here now */}
+      <SearchResultsWrapper searchQuery={searchQuery ?? ""} />
     </Suspense>
   );
 }
