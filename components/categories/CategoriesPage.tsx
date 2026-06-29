@@ -96,7 +96,7 @@ const CategoriesPage = ({ products }: { products: ProductCard[] }) => {
       <section className="mx-auto flex max-w-screen-2xl flex-col gap-12">
         {/* HEADER */}
         <div className="flex flex-col gap-4 border-b border-white/10 pb-8">
-          <p className="text-xs uppercase tracking-[0.35em] text-primary">
+          <p className="text-xs uppercase text-primary">
             Browse by selection
           </p>
 

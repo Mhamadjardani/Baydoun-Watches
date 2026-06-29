@@ -8,11 +8,11 @@ const Footer = () => {
     <footer className="relative bg-light-neutral text-white shadow-2xl shadow-primary">
       <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-primary/50 via-75% to-transparent shadow-[0_-4px_20px_rgba(var(--primary-rgb),0.6)]" />
 
-      <div className="mx-auto max-w-screen-2xl px-6 py-10 sm:px-10 lg:px-16">
+      <div className="mx-auto max-w-screen-2xl px-6 pb-1 sm:py-5 sm:py-10 sm:px-10 lg:px-16">
         {/* Adjusted grid column count to 4 on large screens to cleanly fit the new column */}
-        <div className="grid gap-8 sm:gap-12 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-4 sm:gap-12 md:grid-cols-4">
           {/* Column 1: Logo */}
-          <div className="space-y-4">
+          <div className="col-span-2 md:col-span-1 space-y-4">
             <div className="flex items-center gap-3">
               <Image
                 src="/baydoun-logo.webp"
@@ -23,7 +23,6 @@ const Footer = () => {
               />
             </div>
           </div>
-
           {/* Column 2: Explore */}
           <div className="space-y-3 text-sm">
             <p className="sm:text-base uppercase tracking-wide text-primary font-semibold">
@@ -56,7 +55,6 @@ const Footer = () => {
               </Link>
             </nav>
           </div>
-
           {/* Column 3: Contact */}
           <div className="space-y-3 text-sm">
             <p className="sm:text-base uppercase tracking-wide text-primary font-semibold">
@@ -72,7 +70,6 @@ const Footer = () => {
               </p>
             </address>
           </div>
-
           {/* Column 4: Follow Us */}
           <div className="space-y-3 text-sm">
             <p className="sm:text-base uppercase tracking-wide text-primary font-semibold">

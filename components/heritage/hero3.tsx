@@ -36,7 +36,7 @@ const Hero3 = () => {
           transition={{ duration: 0.8 }}
           className="mb-20 text-center"
         >
-          <p className="uppercase tracking-[0.35em] text-primary text-xs mb-4">
+          <p className="uppercase text-primary text-xs mb-4">
             Craftsmanship Without Compromise
           </p>
 

@@ -47,7 +47,7 @@ const Hero4 = ({ products }: { products: ProductCard[] }) => {
             <p className="font-playfair text-3xl font-black uppercase tracking-[0.2em] leading-tight text-white sm:text-5xl md:text-6xl">
               Discover Casio
             </p>
-            <p className="mx-auto max-w-xl text-xs sm:text-sm md:text-base tracking-[0.25em] text-secondary">
+            <p className="mx-auto max-w-xl text-xs sm:text-sm md:text-base text-secondary">
               Curated selections representing the pinnacle of our horological
               achievements
             </p>

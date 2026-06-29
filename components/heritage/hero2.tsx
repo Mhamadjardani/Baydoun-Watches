@@ -59,7 +59,7 @@ const Hero2 = () => {
                 <p className="font-playfair text-3xl md:text-4xl font-bold text-primary">
                   30+
                 </p>
-                <p className="text-xs uppercase tracking-[0.2em] text-neutral/60 mt-1">
+                <p className="text-xs uppercase text-neutral/60 mt-1">
                   Years Heritage
                 </p>
               </div>
@@ -68,7 +68,7 @@ const Hero2 = () => {
                 <p className="font-playfair text-3xl md:text-4xl font-bold text-primary">
                   100%
                 </p>
-                <p className="text-xs uppercase tracking-[0.2em] text-neutral/60 mt-1">
+                <p className="text-xs uppercase text-neutral/60 mt-1">
                   Authentic
                 </p>
               </div>
@@ -77,7 +77,7 @@ const Hero2 = () => {
                 <p className="font-playfair text-3xl md:text-4xl font-bold text-primary">
                   Swiss
                 </p>
-                <p className="text-xs uppercase tracking-[0.2em] text-neutral/60 mt-1">
+                <p className="text-xs uppercase text-neutral/60 mt-1">
                   Precision
                 </p>
               </div>

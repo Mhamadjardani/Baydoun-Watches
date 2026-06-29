@@ -13,7 +13,7 @@ const Hero4 = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <p className="uppercase tracking-[0.35em] text-primary text-xs mb-6">
+          <p className="uppercase text-primary text-xs mb-6">
             Exclusive Collection
           </p>
 

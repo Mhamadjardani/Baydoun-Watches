@@ -40,14 +40,14 @@ const Contact: React.FC = () => {
         >
           <motion.h1
             variants={fadeUp}
-            className="text-4xl font-black uppercase tracking-[0.3em] text-primary font-playfair md:text-5xl"
+            className="text-4xl font-black uppercase text-primary font-playfair md:text-5xl"
           >
             Get in touch
           </motion.h1>
 
           <motion.p
             variants={fadeUp}
-            className="mt-4 text-sm tracking-[0.28em] text-secondary/90"
+            className="mt-4 text-sm text-secondary/90"
           >
             Send us a message or visit our boutique — we’re here to assist you
             with every detail of your experience.
@@ -67,7 +67,7 @@ const Contact: React.FC = () => {
               whileHover={{ y: -6 }}
               className="rounded-[1.25rem] border border-white/10 bg-white/4 p-6 shadow-[0_20px_80px_rgba(0,0,0,0.45)] backdrop-blur-md"
             >
-              <p className="text-lg font-semibold uppercase tracking-[0.28em] text-primary">
+              <p className="text-lg font-semibold uppercase text-primary">
                 Send a message
               </p>
 
@@ -101,7 +101,7 @@ const Contact: React.FC = () => {
                   { label: "Subject", name: "subject", type: "text" },
                 ].map((field) => (
                   <motion.div key={field.name} variants={fadeUp}>
-                    <label className="text-xs uppercase tracking-[0.28em] text-secondary/80">
+                    <label className="text-xs uppercase text-secondary/80">
                       {field.label}
                     </label>
                     <input
@@ -115,7 +115,7 @@ const Contact: React.FC = () => {
                 ))}
 
                 <motion.div variants={fadeUp}>
-                  <label className="text-xs uppercase tracking-[0.28em] text-secondary/80">
+                  <label className="text-xs uppercase text-secondary/80">
                     Message
                   </label>
                   <textarea
@@ -153,7 +153,7 @@ const Contact: React.FC = () => {
                 whileHover={{ y: -6 }}
                 className="rounded-2xl border border-white/6 bg-white/3 p-6"
               >
-                <p className="text-sm font-semibold uppercase tracking-[0.28em] text-secondary/80">
+                <p className="text-sm font-semibold uppercase text-secondary/80">
                   Our location
                 </p>
                 <p className="mt-3 text-sm text-white/80">
@@ -162,7 +162,7 @@ const Contact: React.FC = () => {
                   Algeria Street, Facing Croissant Saab
                 </p>
 
-                <p className="mt-4 text-sm font-semibold uppercase tracking-[0.28em] text-secondary/80">
+                <p className="mt-4 text-sm font-semibold uppercase text-secondary/80">
                   Phone
                 </p>
                 <Link
@@ -175,7 +175,7 @@ const Contact: React.FC = () => {
                   +961 3 558 657
                 </Link>
 
-                <p className="mt-4 text-sm font-semibold uppercase tracking-[0.28em] text-secondary/80">
+                <p className="mt-4 text-sm font-semibold uppercase text-secondary/80">
                   Opening hours
                 </p>
                 <div className="mt-2 text-sm text-white/80 space-y-1">
