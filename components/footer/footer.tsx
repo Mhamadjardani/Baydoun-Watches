@@ -8,7 +8,7 @@ const Footer = () => {
     <footer className="relative bg-light-neutral text-white shadow-2xl shadow-primary">
       <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-primary/50 via-75% to-transparent shadow-[0_-4px_20px_rgba(var(--primary-rgb),0.6)]" />
 
-      <div className="mx-auto max-w-screen-2xl px-6 pb-1 sm:py-5 sm:py-10 sm:px-10 lg:px-16">
+      <div className="mx-auto max-w-screen-2xl px-6 pb-1 sm:py-10 sm:px-10 lg:px-16">
         {/* Adjusted grid column count to 4 on large screens to cleanly fit the new column */}
         <div className="grid grid-cols-2 gap-4 sm:gap-12 md:grid-cols-4">
           {/* Column 1: Logo */}
