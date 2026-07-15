@@ -55,7 +55,7 @@ const Hero2 = ({ products }: { products: ProductCard[] }) => {
           }}
         >
           {products
-            .filter((p) => (p.isFeatured = true))
+            .filter((p) => p.isFeatured)
             .slice(0, 4)
             .map((product, index) => (
               <motion.article
