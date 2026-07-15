@@ -348,17 +348,19 @@ const ProductDetails = ({
               <Link
                 key={`${product.slug}-recommended-${index}`}
                 href={`/collections/${product.brand}/${product.slug}`}
-                className="group w-72 shrink-0 border border-white/10 bg-white/3 transition hover:border-primary/30"
+                className="group w-72 shrink-0 overflow-hidden rounded-3xl border border-primary/10 bg-[#101010] shadow-[0_20px_60px_rgba(0,0,0,0.3)] transition hover:-translate-y-1 hover:border-primary/25"
               >
-                <div className="relative aspect-4/5 overflow-hidden bg-neutral">
+                <div className="relative aspect-4/5 overflow-hidden bg-[#101010] p-2">
                   <Image
                     src={getImage(product) || "/baydoun-logo.webp"}
                     alt={product.title}
                     fill
                     sizes="224px"
-                    className="object-cover transition duration-500 group-hover:scale-105"
+                    className="rounded-2xl object-contain bg-[linear-gradient(145deg,#f8efe0_0%,#e4d7b5_100%)] p-3 transition duration-500 group-hover:scale-105"
                     onError={() => markImageFailed(product.image)}
                   />
+                  <div className="absolute inset-0 rounded-3xl bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.16),transparent_60%)]" />
+                  <div className="absolute inset-0 rounded-3xl bg-linear-to-t from-black/85 via-black/10 to-transparent" />
                 </div>
                 <div className="space-y-2 p-4">
                   <p className="text-xs uppercase tracking-widest text-primary">

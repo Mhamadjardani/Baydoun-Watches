@@ -1,49 +1,48 @@
 {
-  "title": "OMORFIA WOMEN`S WATCH",
+  "title": "Omorfia Women's Watch OM10101F1BN",
   "sku": "OM10101F1BN",
-  "display": "",
+  "display": "Analog",
   "gender": "Women",
   "price": 110,
-  
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
   "specifications": [
     {
-      "label": "MOVEMENT",
+      "label": "Movement",
       "value": "QUARTZ"
     },
     {
-      "label": "BAND MATERIAL",
+      "label": "Band Material",
       "value": "BRACELET"
     },
     {
-      "label": "BAND COLOR",
+      "label": "Band Color",
       "value": "SILVER STAINLESS STEEL"
     },
     {
-      "label": "DIAL COLOR",
+      "label": "Dial Color",
       "value": "DARK BLUE"
     },
     {
-      "label": "CASE DIAMETER",
+      "label": "Case Diameter",
       "value": "34 MM"
     },
     {
-      "label": "CASE COLOR",
+      "label": "Case Color",
       "value": "SILVER STAINLESS STEEL"
     },
     {
-      "label": "BEZEL",
+      "label": "Bezel",
       "value": "SILVER STAINLESS STEEL"
     },
     {
-      "label": "WATER RESISTANT",
+      "label": "Water Resistant",
       "value": "3 ATM"
     }
   ],
   "features": [],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

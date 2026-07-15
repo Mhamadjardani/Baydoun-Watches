@@ -4,7 +4,6 @@
   "display": "Digital",
   "gender": "Men",
   "price": 46,
-  
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
@@ -31,7 +30,6 @@
     }
   ],
   "features": [
-    "LED backlight afterglow Dual time 1/100-second stopwatch Measuring capacity: 23:5959.99?? Measuring modes: Elapsed time, split time, 1st-2nd place times Countdown timer Measuring unit: 1 second Countdown range: 24 hours Countdown start time setting range: 1 minute to 24 hours (1-minute increments and 1-hour increments) Other: Auto-repeat 5 multi-function alarms (with 1 snooze alarm) Hourly time signal Full auto-calendar (to year 2099) 12/24-hour format Regular timekeeping: Hour, minute, second, pm, month, date, day Accuracy: 30 seconds per month Approx. battery life: 10 years on CR2032",
     "10-year battery life",
     "1/100-second stopwatch",
     "Dual time",
@@ -40,9 +38,19 @@
     "LED backlight",
     "Wide face",
     "Extra-Long Strap",
-    "Additional Information"
+    "LED backlight afterglow Dual time 1/100-second stopwatch Measuring capacity: 23:59?59.99?? Measuring modes: Elapsed time, split time, 1st-2nd place times Countdown timer Measuring unit: 1 second Countdown range: 24 hours Countdown start time setting range: 1 minute to 24 hours (1-minute increments and 1-hour increments) Other: Auto-repeat 5 multi-function alarms (with 1 snooze alarm) Hourly time signal Full auto-calendar (to year 2099) 12/24-hour format Regular timekeeping: Hour, minute, second, pm, month, date, day Accuracy: ?30 seconds per month Approx. battery life: 10 years on CR2032 Additional Information Weight 61 g Dimensions 54.4 × 51.3 × 15.8 mm Gender Boys, Men Color Green Band Material Resin Display Type Digital Water Resistance 100m",
+    "LED backlight afterglow",
+    "1/100-second stopwatch Measuring capacity: 23:59?59.99?? Measuring modes: Elapsed time, split time, 1st-2nd place times",
+    "Countdown timer Measuring unit: 1 second Countdown range: 24 hours Countdown start time setting range: 1 minute to 24 hours (1-minute increments and 1-hour increments) Other: Auto-repeat",
+    "5 multi-function alarms (with 1 snooze alarm)",
+    "Hourly time signal",
+    "Full auto-calendar (to year 2099)",
+    "12/24-hour format",
+    "Regular timekeeping: Hour, minute, second, pm, month, date, day",
+    "Accuracy: ?30 seconds per month",
+    "Approx. battery life: 10 years on CR2032"
   ],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

@@ -1,10 +1,9 @@
 {
   "title": "Casio men 3H Watch MTP-V006D-1BUDF",
   "sku": "MTP-V006D-1BUDF",
-  "display": "Analog 3H",
+  "display": "Analog",
   "gender": "Men",
   "price": 41,
-  
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
@@ -42,6 +41,6 @@
     "Japan movement"
   ],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

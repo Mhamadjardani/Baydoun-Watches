@@ -1,10 +1,9 @@
 {
   "title": "Casio men Analog Watch MTP-1302D-1A1VDF",
   "sku": "MTP-1302D-1A1VDF",
-  "display": "Analog 3H",
+  "display": "Analog",
   "gender": "Men",
   "price": 60,
-  
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
@@ -38,10 +37,10 @@
     "50-meter water resistance",
     "Date display at 3 o’clock",
     "Regular timekeeping Analog: 3 hands (hour, minute, second)",
-    "Accuracy: 20 seconds per month",
+    "Accuracy: ?20 seconds per month",
     "Approx. battery life: 3 years on SR626SW"
   ],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

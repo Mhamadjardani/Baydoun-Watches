@@ -27,7 +27,7 @@ const collections = [
     description:
       "Fun, durable, and vibrant watches designed to keep up with their biggest adventures.",
     image: "/For-the-Little-Ones.jpg",
-    url: "/collections?gender=kids",
+    url: "/collections?gender=Kids",
   },
 ];
 

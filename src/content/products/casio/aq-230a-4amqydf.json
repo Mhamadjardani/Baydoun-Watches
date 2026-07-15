@@ -1,10 +1,10 @@
 {
   "title": "Casio Unisex Vintage Watch AQ-230A-4AMQYDF",
   "sku": "AQ-230A-4AMQYDF",
-  "display": "Ana-Digi",
-  "gender": "Women",
+  "display": "Ana/Dig",
+  "gender": "Unisex",
   "price": 58,
-  
+  "subCategory": "vintage",
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
@@ -33,12 +33,12 @@
   "features": [
     "World time: Dual time",
     "Stopwatch: 1/100-second stopwatch Measuring capacity: 59’59.99” Measuring mode: Elapsed time",
-    "Alarm/hourly time signal: Daily alarm; Hourly time signal",
+    "Alarm/hourly time signal: Daily alarm Hourly time signal",
     "Calendar: Auto-calendar (28 days for February)",
-    "Accuracy: ±30 seconds per month",
-    "Other features: 12/24-hour format; Regular timekeeping: Analog: 2 hands (hour, minute) Digital: Hour, minute, second, pm, month, date, day"
+    "Accuracy: Accuracy: ±30 seconds per month",
+    "Other features: 12/24-hour format Regular timekeeping: Analog: 2 hands (hour, minute) Digital: Hour, minute, second, pm, month, date, day"
   ],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

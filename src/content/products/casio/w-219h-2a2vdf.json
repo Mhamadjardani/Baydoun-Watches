@@ -1,10 +1,10 @@
 {
   "title": "Casio Digital men Watch W-219H-2A2VDF",
   "sku": "W-219H-2A2VDF",
-  "display": "",
+  "display": "Digital",
   "gender": "Men",
   "price": 36,
-  
+  "description": "50-meter water resistance 1/100-second stopwatch Daily alarm LED backlight",
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
@@ -17,10 +17,10 @@
     "Auto-calendar (29 days for February)",
     "12/24-hour format",
     "Regular timekeeping: Hour, minute, second, pm, date, day",
-    "Accuracy: 30 seconds per month",
+    "Accuracy: ?30 seconds per month",
     "Approx. battery life: 7 years on CR2016"
   ],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

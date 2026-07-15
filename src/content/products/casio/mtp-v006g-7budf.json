@@ -1,10 +1,9 @@
 {
   "title": "Casio men 3H Watch MTP-V006G-7BUDF",
   "sku": "MTP-V006G-7BUDF",
-  "display": "Day-Date",
+  "display": "Analog",
   "gender": "Men",
   "price": 58,
-  
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
@@ -38,9 +37,9 @@
     "?Water resistant",
     "Day and Date display",
     "Analog: 3 hands (hour, minute, second)",
-    "Accuracy: 20 seconds per month"
+    "Accuracy: ?20 seconds per month"
   ],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

@@ -1,49 +1,48 @@
 {
-  "title": "TOMMY HILFIGER, PIPER",
+  "title": "Tommy Hilfiger Piper TH 1782725",
   "sku": "TH 1782725",
-  "display": "",
+  "display": "Analog",
   "gender": "Women",
   "price": 170,
-  
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
   "specifications": [
     {
-      "label": "MOVEMENT",
+      "label": "Movement",
       "value": "QUARTZ"
     },
     {
-      "label": "BAND MATERIAL",
+      "label": "Band Material",
       "value": "BRACELET"
     },
     {
-      "label": "BAND COLOR",
+      "label": "Band Color",
       "value": "GOLD"
     },
     {
-      "label": "DIAL COLOR",
+      "label": "Dial Color",
       "value": "BROWN"
     },
     {
-      "label": "CASE DIAMETER",
+      "label": "Case Diameter",
       "value": "36 MM"
     },
     {
-      "label": "CASE COLOR",
+      "label": "Case Color",
       "value": "GOLD"
     },
     {
-      "label": "BEZEL",
+      "label": "Bezel",
       "value": "GOLD"
     },
     {
-      "label": "WATER RESISTANT",
+      "label": "Water Resistant",
       "value": "3 ATM"
     }
   ],
   "features": [],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

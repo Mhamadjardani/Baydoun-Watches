@@ -415,7 +415,7 @@ const ProductsCollection = ({
               </label>
             </div>
 
-            <div className="grid gap-5 grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
+            <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 md:grid-cols-4">
               {pageProducts.map((product, index) => {
                 const productKey = `${product.slug}-${index}`;
                 const productImage = failedImages.has(product.image)
@@ -425,14 +425,15 @@ const ProductsCollection = ({
                 return (
                   <article
                     key={productKey}
-                    className="group relative overflow-hidden border border-primary/10 bg-light-neutral shadow-[0_30px_90px_rgba(0,0,0,0.35)] transition duration-500 hover:-translate-y-1 hover:border-primary/30 hover:shadow-[0_40px_120px_rgba(0,0,0,0.5)]"
+                    className="group relative overflow-hidden rounded-3xl transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(0,0,0,0.35)]"
                   >
-                    {/* Wishlist Button */}
+                    {/* Wishlist */}
                     <button
                       type="button"
                       aria-label={`Add ${product.title} to wishlist`}
                       onClick={() => {
                         toggleWishlist(product.brand, product.slug);
+
                         toast.success(
                           `${product.title} ${
                             hasHydrated &&
@@ -449,19 +450,19 @@ const ProductsCollection = ({
                           },
                         );
                       }}
-                      className={`hidden absolute right-4 top-4 z-10 sm:flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border backdrop-blur transition duration-300 ${
+                      className={`absolute right-3 top-3 z-20 hidden h-10 w-10 items-center justify-center rounded-full backdrop-blur transition-all duration-300 sm:flex ${
                         hasHydrated &&
                         wishlistItems.some(
                           (item) =>
                             item.productSlug === product.slug &&
                             item.productBrand === product.brand,
                         )
-                          ? "border-primary bg-primary text-neutral"
-                          : "border-white/15 bg-neutral/60 text-primary hover:bg-primary hover:text-neutral"
+                          ? "bg-primary text-neutral"
+                          : "bg-black/45 text-white hover:bg-primary hover:text-neutral"
                       }`}
                     >
                       <Heart
-                        size={19}
+                        size={18}
                         fill={
                           hasHydrated &&
                           wishlistItems.some(
@@ -477,72 +478,76 @@ const ProductsCollection = ({
 
                     <Link
                       href={`/collections/${product.brand}/${product.slug}`}
-                      className="block focus:outline-none focus:ring-2 focus:ring-primary/40"
+                      className="block"
                     >
-                      <div className="relative aspect-4/5 overflow-hidden bg-neutral">
+                      <div className="relative aspect-4/5 overflow-hidden rounded-3xl bg-[#101010]">
                         <Image
                           src={productImage || "/baydoun-logo.webp"}
                           alt={product.title}
                           fill
-                          sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
-                          className="object-cover transition duration-700 ease-out group-hover:scale-105"
+                          sizes="(max-width:640px)100vw,(max-width:1280px)50vw,33vw"
+                          className="object-contain p-3 transition-transform duration-1000 ease-out group-hover:scale-105"
                           onError={() => markImageFailed(product.image)}
                         />
-                        <div className="absolute inset-0 bg-linear-to-t from-neutral/70 via-transparent to-transparent" />
 
-                        {/* Status Badges Container */}
-                        <div className="absolute left-4 top-4 z-10 flex flex-col gap-2">
+                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.16),transparent_60%)]" />
+                        <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/10 to-transparent" />
+
+                        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+                          <div className="absolute left-[-140%] top-0 h-full w-1/3 rotate-12 bg-white/10 blur-3xl transition-all duration-1000 group-hover:left-[140%]" />
+                        </div>
+
+                        <div className="absolute left-3 top-3 z-20 flex flex-col gap-2">
                           {product.isFeatured && (
-                            <span className="hidden sm:inline-block border border-primary/30 bg-neutral/70 px-3 py-1 text-xs uppercase tracking-widest text-white backdrop-blur">
+                            <span className="rounded-full bg-black/50 px-3 py-1 text-[10px] uppercase tracking-[0.3em] text-white backdrop-blur">
                               Featured
                             </span>
                           )}
+
                           {product.discount && product.discount > 0 && (
-                            <span className="inline-block border border-red-500/30 bg-red-950/60 px-3 py-1 text-xs uppercase tracking-widest font-bold text-red-400 backdrop-blur">
-                              Sale -{product.discount}%
+                            <span className="rounded-full bg-red-600 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.25em] text-white">
+                              -{product.discount}%
                             </span>
                           )}
                         </div>
                       </div>
+                    </Link>
 
-                      <div className="space-y-4 p-5">
-                        <div className="space-y-2">
-                          <p className="text-xs uppercase tracking-widest text-primary bg-primary/10 px-2 py-1 w-fit rounded-full">
-                            {product.brand}
-                          </p>
-                          <p className="min-h-14 text-sm sm:text-lg font-bold uppercase sm:leading-7 sm:tracking-widest text-white font-playfair">
-                            {product.title}
-                          </p>
-                        </div>
+                    <div className="space-y-2 px-1 pt-3">
+                      <p className="text-[11px] uppercase tracking-[0.3em] text-primary/80">
+                        {product.brand}
+                      </p>
 
-                        <div className="flex flex-col space-y-3 sm:space-y-0 sm:flex-row sm:items-center sm:justify-between border-t border-white/10 pt-4">
-                          <div className="flex flex-wrap items-baseline gap-1">
-                            {product.discount && product.discount > 0 ? (
-                              <>
-                                <span className="relative inline-block before:content-[''] before:absolute before:left-0 before:top-1/2 before:w-full before:h-0.5 before:bg-secondary before:-rotate-12">
-                                  {formatPrice(product.price)}
-                                </span>
+                      <h3 className="line-clamp-2 font-playfair text-base font-semibold leading-tight text-white">
+                        {product.title}
+                      </h3>
 
-                                <p className="text-lg font-black tracking-wide text-primary">
-                                  {formatPrice(
-                                    product.price *
-                                      (1 - product.discount / 100),
-                                  )}
-                                </p>
-                              </>
-                            ) : (
-                              <p className="text-lg font-bold tracking-wide text-primary">
+                      <div className="flex items-center justify-between gap-3">
+                        <div>
+                          {product.discount && product.discount > 0 ? (
+                            <>
+                              <p className="text-sm text-white/50 line-through">
                                 {formatPrice(product.price)}
                               </p>
-                            )}
-                          </div>
 
-                          <span className="text-xs uppercase tracking-widest text-secondary bg-secondary/10 px-2 py-1 w-fit">
-                            View details
-                          </span>
+                              <p className="text-lg font-bold text-primary">
+                                {formatPrice(
+                                  product.price * (1 - product.discount / 100),
+                                )}
+                              </p>
+                            </>
+                          ) : (
+                            <p className="text-lg font-bold text-primary">
+                              {formatPrice(product.price)}
+                            </p>
+                          )}
                         </div>
+
+                        <span className="text-[11px] uppercase tracking-[0.3em] text-primary transition group-hover:text-secondary">
+                          View
+                        </span>
                       </div>
-                    </Link>
+                    </div>
                   </article>
                 );
               })}

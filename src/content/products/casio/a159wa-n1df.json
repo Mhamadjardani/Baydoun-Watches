@@ -1,10 +1,11 @@
 {
   "title": "Casio Vintage Digital Unisex Metal Watch A159WA-N1DF",
   "sku": "A159WA-N1DF",
-  "subCategory": "edifice",
   "display": "Digital",
-  "gender": "Men",
+  "gender": "Unisex",
   "price": 42,
+  "subCategory": "vintage",
+  "description": "The Casio A159WA-N1DF is a reliable digital watch that seamlessly blends function and style. The watch boasts a stainless steel case and band that gives it a sleek and polished look. The large, easy-to-read display features the time, date, and stopwatch functions, making it perfect for keeping you on schedule. The LED light allows you to check the time even in low-light conditions. It’s water-resistant design makes it suitable for a variety of activities and it has a battery life of up to 7 years, so you don’t have to worry about constantly replacing it. The Casio A159WA-N1DF is a great option for those who want a dependable watch that looks good too.",
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
@@ -38,10 +39,10 @@
     "Auto-calendar (set at 28 days for February)",
     "12/24-hour format",
     "Regular time keeping: Hour, minute, second, pm, date, day",
-    "Accuracy: 30 seconds per month",
+    "Accuracy: ?30 seconds per month",
     "Approx. battery life: 7 years on CR2016"
   ],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

@@ -2,9 +2,9 @@
   "title": "Casio Vintage Digital Unisex Metal Watch A178WA-1ADF",
   "sku": "A178WA-1ADF",
   "display": "Digital",
-  "gender": "Men",
+  "gender": "Unisex",
   "price": 36,
-  
+  "subCategory": "vintage",
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
@@ -39,10 +39,10 @@
     "Full auto-calendar (to year 2099)",
     "12/24-hour format",
     "Regular timekeeping: Hour, minutes, seconds, pm, month, date, day",
-    "Accuracy: 30 seconds per month",
+    "Accuracy: ?30 seconds per month",
     "Approx. battery life: 10 years on CR2025"
   ],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

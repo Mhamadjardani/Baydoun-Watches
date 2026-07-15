@@ -1,10 +1,10 @@
 {
   "title": "Casio Men 3H Watch MTP-1374D-5A2VDF",
   "sku": "MTP-1374D-5A2VDF",
-  "display": "Chronograph",
+  "display": "Analog",
   "gender": "Men",
   "price": 95,
-  
+  "description": "A metal analog CASIO MTP-1374D-5A2VDF watch with a cool, sporty design. Water resistant up to 50 meters for peace of mind, even on rainy days. Perfect Timing is the official distributor of CASIO in Lebanon .",
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
@@ -41,6 +41,6 @@
     "Approx. battery life: 3 years on SR927SW"
   ],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

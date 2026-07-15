@@ -1,49 +1,48 @@
 {
-  "title": "LACOSTE, SWING",
+  "title": "Lacoste Swing LC 2001300",
   "sku": "LC 2001300",
-  "display": "",
+  "display": "Analog",
   "gender": "Women",
   "price": 135,
-  
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
   "specifications": [
     {
-      "label": "MOVEMENT",
+      "label": "Movement",
       "value": "QUARTZ"
     },
     {
-      "label": "BAND MATERIAL",
+      "label": "Band Material",
       "value": "SILICONE"
     },
     {
-      "label": "BAND COLOR",
+      "label": "Band Color",
       "value": "PURPLE"
     },
     {
-      "label": "DIAL COLOR",
+      "label": "Dial Color",
       "value": "SILVER"
     },
     {
-      "label": "CASE DIAMETER",
+      "label": "Case Diameter",
       "value": "35 MM"
     },
     {
-      "label": "CASE COLOR",
+      "label": "Case Color",
       "value": "STAINLESS STEEL"
     },
     {
-      "label": "BEZEL",
+      "label": "Bezel",
       "value": "PURPLE"
     },
     {
-      "label": "WATER RESISTANT",
+      "label": "Water Resistant",
       "value": "5 ATM"
     }
   ],
   "features": [],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

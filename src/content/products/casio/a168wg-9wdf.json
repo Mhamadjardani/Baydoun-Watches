@@ -4,7 +4,8 @@
   "display": "Digital",
   "gender": "Unisex",
   "price": 67,
-  
+  "subCategory": "vintage",
+  "description": "The Casio A168WG-9WDF is a vintage-inspired best-selling watch that combines style and functionality. With a stainless steel case and band, it features a gold tone dial with digital display and a variety of functions such as stopwatch, alarm, and chronograph. It’s water-resistant and has a long-lasting battery life, making it perfect for everyday wear. The watch is perfect for those who want a vintage-inspired timepiece that is both dependable and fashionable, and can keep up with their busy lifestyle",
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
@@ -42,6 +43,6 @@
     "Approx. battery life: 7 years on CR2016"
   ],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

@@ -1,49 +1,48 @@
 {
-  "title": "TOMMY HILFIGER, JADE",
+  "title": "Tommy Hilfiger Jade TH 1782771",
   "sku": "TH 1782771",
-  "display": "",
+  "display": "Analog",
   "gender": "Women",
   "price": 140,
-  
   "isNewArrival": false,
-  "isFeatured": false,
+  "isFeatured": true,
   "isLimitedEdition": false,
   "specifications": [
     {
-      "label": "MOVEMENT",
+      "label": "Movement",
       "value": "QUARTZ"
     },
     {
-      "label": "BAND MATERIAL",
+      "label": "Band Material",
       "value": "BRACELET"
     },
     {
-      "label": "BAND COLORSILVER",
+      "label": "Band Colorsilver",
       "value": "STAINLESS STEEL"
     },
     {
-      "label": "DIAL COLOR",
+      "label": "Dial Color",
       "value": "BLUE"
     },
     {
-      "label": "CASE DIAMETER",
+      "label": "Case Diameter",
       "value": "36 MM"
     },
     {
-      "label": "CASE COLOR",
+      "label": "Case Color",
       "value": "STAINLESS STEEL"
     },
     {
-      "label": "BEZEL",
+      "label": "Bezel",
       "value": "STAINLESS STEEL"
     },
     {
-      "label": "WATER RESISTANT",
+      "label": "Water Resistant",
       "value": "3 ATM"
     }
   ],
   "features": [],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

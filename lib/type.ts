@@ -5,7 +5,7 @@ export type Product = {
   sku: string;
   description: string;
   display: string;
-  gender: "Men" | "Women" | "Unisex";
+  gender: "Men" | "Women" | "Kids" | "Unisex";
   price: number;
   discount: number | null;
   // stock: number;
@@ -25,15 +25,9 @@ export type Product = {
   brand:
     | "calvinKlein"
     | "casio"
-    | "cityTime"
-    | "curren"
     | "dkny"
-    | "gadgets"
     | "lacoste"
-    | "nano"
     | "omorfia"
-    | "polit"
-    | "qq"
     | "rovina"
     | "tommyHilfiger";
 };

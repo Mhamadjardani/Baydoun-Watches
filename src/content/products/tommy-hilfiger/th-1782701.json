@@ -1,49 +1,48 @@
 {
-  "title": "TOMMY HILFIGER, EMILY",
+  "title": "Tommy Hilfiger Emily TH 1782701",
   "sku": "TH 1782701",
-  "display": "",
+  "display": "Analog",
   "gender": "Women",
   "price": 165,
-  
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
   "specifications": [
     {
-      "label": "MOVEMENT",
+      "label": "Movement",
       "value": "QUARTZ"
     },
     {
-      "label": "BAND MATERIAL",
+      "label": "Band Material",
       "value": "BRACELET"
     },
     {
-      "label": "BAND COLOR",
+      "label": "Band Color",
       "value": "STAINLESS STEEL"
     },
     {
-      "label": "DIAL COLOR",
+      "label": "Dial Color",
       "value": "SILVER WHITE"
     },
     {
-      "label": "CASE DIAMETER",
+      "label": "Case Diameter",
       "value": "38 MM"
     },
     {
-      "label": "CASE COLOR",
+      "label": "Case Color",
       "value": "STAINLESS STEEL"
     },
     {
-      "label": "BEZEL",
+      "label": "Bezel",
       "value": "STAINLESS STEEL"
     },
     {
-      "label": "WATER RESISTANT",
+      "label": "Water Resistant",
       "value": "5 ATM"
     }
   ],
   "features": [],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

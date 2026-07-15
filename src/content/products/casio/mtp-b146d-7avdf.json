@@ -1,10 +1,9 @@
 {
   "title": "Casio Men 3H Watch MTP-B146D-7AVDF",
   "sku": "MTP-B146D-7AVDF",
-  "display": "Analog 3H",
+  "display": "Analog",
   "gender": "Men",
   "price": 104,
-  
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
@@ -35,9 +34,10 @@
     }
   ],
   "features": [
-    "Accuracy: ±20 seconds per month; Regular timekeeping: Analog: 3 hands (hour, minute, second); Day and date display"
+    "Accuracy: ±20 seconds per month",
+    "Regular timekeeping: Analog: 3 hands (hour, minute, second) Day and date display"
   ],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

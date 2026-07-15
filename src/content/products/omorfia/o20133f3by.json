@@ -1,49 +1,48 @@
 {
-  "title": "OMORFIA WOMEN`S WATCH",
+  "title": "Omorfia Women's Watch O20133F3BY",
   "sku": "O20133F3BY",
-  "display": "",
+  "display": "Analog",
   "gender": "Women",
   "price": 145,
-  
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
   "specifications": [
     {
-      "label": "MOVEMENT",
+      "label": "Movement",
       "value": "QUARTZ"
     },
     {
-      "label": "BAND MATERIAL",
+      "label": "Band Material",
       "value": "MESH"
     },
     {
-      "label": "BAND COLOR",
+      "label": "Band Color",
       "value": "GOLD STAINLESS STEEL"
     },
     {
-      "label": "DIAL COLOR",
+      "label": "Dial Color",
       "value": "GOLD"
     },
     {
-      "label": "CASE DIAMETER",
+      "label": "Case Diameter",
       "value": "32 MM"
     },
     {
-      "label": "CASE COLOR",
+      "label": "Case Color",
       "value": "GOLD STAINLESS STEEL"
     },
     {
-      "label": "BEZEL",
+      "label": "Bezel",
       "value": "GOLD"
     },
     {
-      "label": "WATER RESISTANT",
+      "label": "Water Resistant",
       "value": "5 ATM"
     }
   ],
   "features": [],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

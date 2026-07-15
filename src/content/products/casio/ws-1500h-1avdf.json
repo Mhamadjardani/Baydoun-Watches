@@ -4,7 +4,6 @@
   "display": "Digital",
   "gender": "Men",
   "price": 52,
-  
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
@@ -31,9 +30,18 @@
     }
   ],
   "features": [
-    "World time Dual time Daylight saving on/off Moon data Moon data (moon age of the specific date, moon phase graph) Stopwatch 1/100-second stopwatch Measuring capacity: 23:59’59.99” Measuring modes: Elapsed time, split time, 1st-2nd place times Timer Countdown timer Measuring unit: 1 second Countdown range: 24 hours Countdown start time setting range: 1 minute to 24 hours (1-minute increments and 1-hour increments) Others: Auto-repeat, time up alarm Alarm/hourly time signal Hourly time signal Multi-function alarms 3 independent multi-function alarms (2 one-time alarms and 1 snooze/one-time alarm) Alarm type: Daily alarm, date alarm, 1-month alarm, monthly alarm Light LED backlight Selectable illumination duration (1.5 seconds or 3 seconds), afterglow Light color LED:Amber Calendar Full auto-calendar (to year 2099) Accuracy Accuracy: 30 seconds per month Other features Fishing mode The suitability of a specific date and time for fishing is indicated as one of four levels. 12/24-hour format Regular timekeeping: Hour, minute, second, pm, month, date, day"
+    "World time: Dual time Daylight saving on/off",
+    "Moon data: Moon data (moon age of the specific date, moon phase graph)",
+    "Stopwatch: 1/100-second stopwatch Measuring capacity: 23:59’59.99” Measuring modes: Elapsed time, split time, 1st-2nd place times",
+    "Timer: Countdown timer Measuring unit: 1 second Countdown range: 24 hours Countdown start time setting range: 1 minute to 24 hours (1-minute increments and 1-hour increments) Others: Auto-repeat, time up alarm",
+    "Alarm/hourly time signal: Hourly time signal Multi-function alarms 3 independent multi-function alarms (2 one-time alarms and 1 snooze/one-time alarm) Alarm type: Daily alarm, date alarm, 1-month alarm, monthly alarm",
+    "Light: LED backlight Selectable illumination duration (1.5 seconds or 3 seconds), afterglow",
+    "Light color: LED:Amber",
+    "Calendar: Full auto-calendar (to year 2099)",
+    "Accuracy: Accuracy: ?30 seconds per month",
+    "Other features: Fishing mode The suitability of a specific date and time for fishing is indicated as one of four levels. 12/24-hour format Regular timekeeping: Hour, minute, second, pm, month, date, day"
   ],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

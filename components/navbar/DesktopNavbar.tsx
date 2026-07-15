@@ -34,12 +34,21 @@ const DesktopNavbar: React.FC<{
 
     return products
       .filter((product) => {
-        const searchable =
-          `${product.title} ${product.subCategory} ${product.brand}`.toLowerCase();
+        const specifications = product.specifications
+          .map((spec) => `${spec.label} ${spec.value}`)
+          .join(" ");
+
+        const searchable = `
+        ${product.title}
+        ${product.subCategory}
+        ${product.brand}
+        ${specifications}
+      `.toLowerCase();
+
         return searchable.includes(query);
       })
       .slice(0, 6);
-  }, [searchValue]);
+  }, [products, searchValue]);
 
   const onSearchSubmit = () => {
     const query = searchValue.trim();

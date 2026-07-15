@@ -1,10 +1,9 @@
 {
   "title": "Casio Men 3H Watch MTP-V300L-1AUDF",
   "sku": "MTP-V300L-1AUDF",
-  "display": "Chronograph",
+  "display": "Analog",
   "gender": "Men",
   "price": 70,
-  
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
@@ -40,6 +39,6 @@
     "Approx. battery life: 3 years on SR920SW"
   ],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

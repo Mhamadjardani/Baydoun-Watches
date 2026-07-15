@@ -1,10 +1,10 @@
 {
   "title": "Casio men 3H Watch MTP-V004D-2BUDF",
   "sku": "MTP-V004D-2BUDF",
-  "display": "Analog 3H",
+  "display": "Analog",
   "gender": "Men",
   "price": 41,
-  
+  "description": "Date display Stainless steel band His-and hers pairs",
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
@@ -35,9 +35,12 @@
     }
   ],
   "features": [
-    "Date display Regular timekeeping 3 hands (hour, minute, second) Accuracy: 20 seconds per month Approx. battery life: 3 years on SR626SW Additional Information:"
+    "Date display",
+    "Regular timekeeping 3 hands (hour, minute, second)",
+    "Accuracy: ?20 seconds per month",
+    "Approx. battery life: 3 years on SR626SW"
   ],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

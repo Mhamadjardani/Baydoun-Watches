@@ -1,10 +1,10 @@
 {
   "title": "Casio men 3H Watch MTP-VD300BL-2EUDF",
   "sku": "MTP-VD300BL-2EUDF",
-  "display": "Multifunction",
+  "display": "Analog",
   "gender": "Men",
   "price": 78,
-  
+  "description": "A sporty look for the classic chronograph takes you seamlessly from work to play ? the perfect accessory no matter where your day takes you. These timepieces are water resistant for daily use, freeing you from worry when out in the rain or washing up.",
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
@@ -36,10 +36,10 @@
   ],
   "features": [
     "Regular timekeeping Analog: 3 hands (hour, minute, second), 3 dials (date, day, 24-hour)",
-    "Accuracy: 20 seconds per month",
+    "Accuracy: ?20 seconds per month",
     "Approx. battery life: 3 years on SR920SW"
   ],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

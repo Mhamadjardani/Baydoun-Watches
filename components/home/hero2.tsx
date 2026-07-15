@@ -60,49 +60,62 @@ const Hero2 = ({ products }: { products: ProductCard[] }) => {
             .map((product, index) => (
               <motion.article
                 key={product.slug}
-                className="group relative overflow-hidden rounded-2xl md:rounded-3xl border border-white/10 bg-black/20 backdrop-blur-sm"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
+                whileHover={{ y: -8, scale: 1.01 }}
                 transition={{
-                  duration: 0.6,
+                  duration: 0.55,
                   delay: index * 0.08,
                 }}
+                className="group relative overflow-hidden rounded-[28px] border border-primary/10 bg-[#101010] shadow-[0_20px_60px_rgba(0,0,0,0.4)] transition-all duration-500 hover:border-primary/25 hover:shadow-[0_35px_90px_rgba(0,0,0,0.6)]"
               >
                 <Link href={`/collections/${product.brand}/${product.slug}`}>
-                  <div className="relative aspect-3/4 md:aspect-4/5 overflow-hidden">
+                  <div className="relative aspect-3/4 overflow-hidden rounded-3xl p-2">
                     <motion.img
                       src={getImage(product) || "/baydoun-logo.webp"}
                       alt={product.title}
-                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      className="absolute inset-0 h-full w-full rounded-[20px] object-contain bg-[linear-gradient(145deg,#f8efe0_0%,#e4d7b5_100%)] p-3 transition-transform duration-1000 ease-out group-hover:scale-105"
                       onError={() => markImageFailed(product.image)}
                     />
 
-                    {/* overlay */}
-                    <div className="absolute inset-0 bg-linear-to-t from-black via-black/35 to-transparent" />
+                    <div className="absolute inset-0 rounded-3xl bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.18),transparent_60%)]" />
+                    <div className="absolute inset-0 rounded-3xl bg-linear-to-t from-black/90 via-black/15 to-transparent" />
 
-                    {/* category */}
-                    {/* <div className="absolute left-3 top-3 md:left-5 md:top-5">
-                    <span className="rounded-full border border-white/10 bg-black/35 px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.25em] text-white backdrop-blur-md md:px-3 md:text-xs">
-                      {product.category}
-                    </span>
-                  </div> */}
+                    <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-3xl">
+                      <div className="absolute left-[-130%] top-0 h-full w-1/3 rotate-12 bg-white/10 blur-3xl transition-all duration-1000 group-hover:left-[140%]" />
+                    </div>
 
-                    {/* content */}
-                    <div className="absolute inset-x-0 bottom-0 p-3 md:p-6">
-                      {/* <p className="font-playfair text-base font-bold uppercase tracking-[0.15em] text-white sm:text-lg md:text-2xl">
-                      {product.brand}
-                    </p> */}
-
-                      <p className="mt-1 line-clamp-1 text-xs text-secondary sm:text-sm md:mt-2 md:line-clamp-2">
-                        {product.title}
+                    <div className="absolute inset-x-0 bottom-0 p-5 transition-all duration-500 group-hover:-translate-y-2 md:p-7">
+                      <p className="text-[11px] uppercase tracking-[0.35em] text-primary">
+                        {product.brand}
                       </p>
 
-                      <div className="mt-3 flex items-center justify-between md:mt-5">
-                        <span className="text-[11px] uppercase tracking-[0.3em] text-primary md:text-xs">
-                          Explore
+                      <h3 className="mt-2 line-clamp-2 text-lg font-light tracking-wide text-white md:text-2xl">
+                        {product.title}
+                      </h3>
+
+                      <div className="mt-5 flex items-center justify-between">
+                        <span className="text-xs uppercase tracking-[0.35em] text-primary">
+                          Discover
                         </span>
 
-                        <span className="inline-block h-px w-10 bg-primary transition-all duration-300 group-hover:w-16" />
+                        <div className="flex items-center gap-3">
+                          <span className="h-px w-8 bg-primary transition-all duration-300 group-hover:w-14" />
+
+                          <svg
+                            className="h-4 w-4 translate-x-0 text-primary transition-all duration-300 group-hover:translate-x-1"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="1.8"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M5 12h14m-6-6 6 6-6 6"
+                            />
+                          </svg>
+                        </div>
                       </div>
                     </div>
                   </div>

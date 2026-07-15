@@ -1,10 +1,9 @@
 {
   "title": "Casio men 3H Watch MTP-V006L-7CUDF",
   "sku": "MTP-V006L-7CUDF",
-  "display": "Day-Date",
+  "display": "Analog",
   "gender": "Men",
   "price": 37,
-  
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
@@ -38,10 +37,10 @@
     "Water resistant",
     "Day and Date display",
     "Regular timekeeping Analog: 3 hands (hour, minute, second)",
-    "Accuracy: 20 seconds per month",
+    "Accuracy: ?20 seconds per month",
     "Approx. battery life: 3 years on SR626SW"
   ],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

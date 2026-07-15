@@ -1,10 +1,9 @@
 {
   "title": "Casio Men 3H Watch MTP-1370D-7A2VDF",
   "sku": "MTP-1370D-7A2VDF",
-  "display": "Analog 3H",
+  "display": "Analog",
   "gender": "Men",
   "price": 70,
-  
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
@@ -34,10 +33,8 @@
       "value": "50m"
     }
   ],
-  "features": [
-    "Accuracy: ±20 seconds per month Additional Information:"
-  ],
+  "features": [],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

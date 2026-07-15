@@ -1,49 +1,48 @@
 {
-  "title": "OMORFIA MEN`S WATCH",
+  "title": "Omorfia Men's Watch O3021H1B",
   "sku": "O3021H1B",
-  "display": "",
+  "display": "Digital",
   "gender": "Men",
   "price": 135,
-  
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
   "specifications": [
     {
-      "label": "MOVEMENT",
+      "label": "Movement",
       "value": "DIGITAL"
     },
     {
-      "label": "BAND MATERIAL",
+      "label": "Band Material",
       "value": "BRACELET"
     },
     {
-      "label": "BAND COLOR",
+      "label": "Band Color",
       "value": "SILVER STAINLESS STEEL"
     },
     {
-      "label": "DIAL COLOR",
+      "label": "Dial Color",
       "value": "GREEN"
     },
     {
-      "label": "CASE DIAMETER",
+      "label": "Case Diameter",
       "value": "44 MM"
     },
     {
-      "label": "CASE COLOR",
+      "label": "Case Color",
       "value": "SILVER STAINLESS STEEL"
     },
     {
-      "label": "BEZEL",
+      "label": "Bezel",
       "value": "BLACK AND GREEN"
     },
     {
-      "label": "WATER RESISTANT",
+      "label": "Water Resistant",
       "value": "5 ATM"
     }
   ],
   "features": [],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

@@ -1,10 +1,10 @@
 {
   "title": "Edifice Automatic Watch EFK-100CD-1ADR",
   "sku": "EFK-100CD-1ADR",
-  "display": "Automatic",
+  "display": "Analog",
   "gender": "Men",
   "price": 445,
-  
+  "subCategory": "edifice",
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
@@ -31,10 +31,16 @@
     }
   ],
   "features": [
-    "Power reserve: Approximately 40 hours; Mean daily rate: -35 to +45 seconds; Date display; Hacking function (seconds hand); Number of jewels: 24; Vibrations: 21,600 vibrations per hour.",
-    "Winding mechanism: Automatic with manual winding"
+    "Display Type: Automatic",
+    "Winding mechanism: Automatic with manual winding",
+    "Power reserve: Approximately 40 hours",
+    "Mean daily rate: -35 to +45 seconds",
+    "Date display",
+    "Hacking function (seconds hand)",
+    "Number of jewels: 24",
+    "Vibrations: 21,600 vibrations per hour."
   ],
-  "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "imageCount": 3,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

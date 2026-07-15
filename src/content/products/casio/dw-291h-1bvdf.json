@@ -4,7 +4,6 @@
   "display": "Digital",
   "gender": "Men",
   "price": 70,
-  
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
@@ -31,9 +30,21 @@
     }
   ],
   "features": [
-    "LED light Selectable illumination duration (1.5 seconds or 3 seconds), afterglow Multi Time (4 different cities) World time 31 time zones (48 cities + coordinated universal time), daylight saving on/off, Home city/World time city swapping 1/100-second stopwatch Measuring capacity: 23:59’59.99″ Measuring modes: Elapsed time, split time, 1st-2nd place times Countdown timer Measuring unit: 1/10 second Countdown range: 24 hours Countdown start time setting range: 1 second to 24 hours (1-second increments, 1-minute increments and 1-hour increments) 5 daily or one-time alarms Hourly time signal Full auto-calendar (to year 2099) 12/24-hour format Button operation tone on/off Regular timekeeping: Hour, minute, second, pm, month, date, day Accuracy: 30 seconds per month Approx. battery life: 10 years on CR2025"
+    "LED light Selectable illumination duration (1.5 seconds or 3 seconds), afterglow",
+    "Multi Time (4 different cities)",
+    "World time 31 time zones (48 cities + coordinated universal time), daylight saving on/off, Home city/World time city swapping",
+    "1/100-second stopwatch Measuring capacity: 23:59’59.99″ Measuring modes: Elapsed time, split time, 1st-2nd place times",
+    "Countdown timer Measuring unit: 1/10 second Countdown range: 24 hours Countdown start time setting range: 1 second to 24 hours (1-second increments, 1-minute increments and 1-hour increments)",
+    "5 daily or one-time alarms",
+    "Hourly time signal",
+    "Full auto-calendar (to year 2099)",
+    "12/24-hour format",
+    "Button operation tone on/off",
+    "Regular timekeeping: Hour, minute, second, pm, month, date, day",
+    "Accuracy: ?30 seconds per month",
+    "Approx. battery life: 10 years on CR2025"
   ],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

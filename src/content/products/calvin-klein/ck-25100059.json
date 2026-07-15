@@ -1,49 +1,48 @@
 {
-  "title": "CALVIN KLEIN, SCULPTED EMBRACE",
+  "title": "Calvin Klein Sculpted Embrace CK 25100059",
   "sku": "CK 25100059",
-  "display": "",
+  "display": "Analog",
   "gender": "Women",
   "price": 195,
-  
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
   "specifications": [
     {
-      "label": "MOVEMENT",
+      "label": "Movement",
       "value": "QUARTZ"
     },
     {
-      "label": "BAND MATERIAL",
+      "label": "Band Material",
       "value": "BANGLE"
     },
     {
-      "label": "BAND COLOR",
+      "label": "Band Color",
       "value": "GOLD PLATED"
     },
     {
-      "label": "DIAL COLOR",
+      "label": "Dial Color",
       "value": "BLACK"
     },
     {
-      "label": "CASE DIAMETER",
+      "label": "Case Diameter",
       "value": "28 MM"
     },
     {
-      "label": "CASE COLOR",
+      "label": "Case Color",
       "value": "GOLD PLATED"
     },
     {
-      "label": "BEZEL",
+      "label": "Bezel",
       "value": "GOLD PLATED"
     },
     {
-      "label": "WATER RESISTANT",
+      "label": "Water Resistant",
       "value": "3 ATM"
     }
   ],
   "features": [],
-  "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "imageCount": 2,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

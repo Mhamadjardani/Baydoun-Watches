@@ -1,49 +1,48 @@
 {
-  "title": "LACOSTE, LISBON",
+  "title": "Lacoste Lisbon LC 2011371",
   "sku": "LC 2011371",
-  "display": "",
+  "display": "Analog",
   "gender": "Men",
   "price": 160,
-  
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
   "specifications": [
     {
-      "label": "MOVEMENT",
+      "label": "Movement",
       "value": "QUARTZ"
     },
     {
-      "label": "BAND MATERIAL",
+      "label": "Band Material",
       "value": "BRACELETE"
     },
     {
-      "label": "BAND COLOR",
+      "label": "Band Color",
       "value": "GREY STAINLESS STEEL"
     },
     {
-      "label": "DIAL COLOR",
+      "label": "Dial Color",
       "value": "DARK BLUE"
     },
     {
-      "label": "CASE DIAMETER",
+      "label": "Case Diameter",
       "value": "42 MM"
     },
     {
-      "label": "CASE COLOR",
+      "label": "Case Color",
       "value": "GREY STAINLESS STEEL"
     },
     {
-      "label": "BEZEL",
+      "label": "Bezel",
       "value": "GREY STAINLESS STEEL"
     },
     {
-      "label": "WATER RESISTANT",
+      "label": "Water Resistant",
       "value": "5 ATM"
     }
   ],
   "features": [],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

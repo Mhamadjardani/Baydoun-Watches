@@ -4,7 +4,6 @@
   "display": "Digital",
   "gender": "Men",
   "price": 50,
-  
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
@@ -42,10 +41,10 @@
     "12/24-hour format",
     "Button operation tone on/off",
     "Regular timekeeping: Hour, minute, second, pm, month, date, day",
-    "Accuracy: 30 seconds per month",
+    "Accuracy: ?30 seconds per month",
     "Approx. battery life: 10 years on CR2025"
   ],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

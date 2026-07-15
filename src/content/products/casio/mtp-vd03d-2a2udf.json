@@ -1,10 +1,10 @@
 {
   "title": "Casio men 3H Watch MTP-VD03D-2A2UDF",
   "sku": "MTP-VD03D-2A2UDF",
-  "display": "Analog 3H",
+  "display": "Analog",
   "gender": "Men",
   "price": 56,
-  
+  "description": "Go for a bold touch of color with a classic analog watch featuring a dial in a singular blue or green hue. The simple, minimalist design delivers an easy read in beautiful color, while water resistance for daily use frees you from worry, even in the rain or washing up.",
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
@@ -35,11 +35,13 @@
     }
   ],
   "features": [
-    "Regular timekeeping:; 3 hands (hour, minute, second); Date display",
+    "Regular timekeeping:",
+    "3 hands (hour, minute, second)",
+    "Date display",
     "Mineral Glass",
     "Accuracy: ±20 seconds per month"
   ],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

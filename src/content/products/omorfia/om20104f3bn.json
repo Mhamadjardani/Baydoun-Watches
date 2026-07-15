@@ -1,49 +1,48 @@
 {
-  "title": "OMORFIA WOMEN`S WATCH",
+  "title": "Omorfia Women's Watch OM20104F3BN",
   "sku": "OM20104F3BN",
-  "display": "",
+  "display": "Analog",
   "gender": "Women",
   "price": 120,
-  
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
   "specifications": [
     {
-      "label": "MOVEMENT",
+      "label": "Movement",
       "value": "QUARTZ"
     },
     {
-      "label": "BAND MATERIAL",
+      "label": "Band Material",
       "value": "MESH"
     },
     {
-      "label": "BAND COLOR",
+      "label": "Band Color",
       "value": "NAVY STAINLESS STEEL"
     },
     {
-      "label": "DIAL COLOR",
+      "label": "Dial Color",
       "value": "NAVY"
     },
     {
-      "label": "CASE DIAMETER",
+      "label": "Case Diameter",
       "value": "35 MM"
     },
     {
-      "label": "CASE COLOR",
+      "label": "Case Color",
       "value": "ROSE GOLD"
     },
     {
-      "label": "BEZEL",
+      "label": "Bezel",
       "value": "ROSE GOLD"
     },
     {
-      "label": "WATER RESISTANT",
+      "label": "Water Resistant",
       "value": "3 ATM"
     }
   ],
   "features": [],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

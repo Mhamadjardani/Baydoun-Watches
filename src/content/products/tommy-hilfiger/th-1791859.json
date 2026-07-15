@@ -1,49 +1,48 @@
 {
-  "title": "TOMMY HILFIGER, BANK",
+  "title": "Tommy Hilfiger Bank TH 1791859",
   "sku": "TH 1791859",
-  "display": "",
+  "display": "Analog",
   "gender": "Men",
   "price": 175,
-  
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
   "specifications": [
     {
-      "label": "MOVEMENT",
+      "label": "Movement",
       "value": "QUARTZ"
     },
     {
-      "label": "BAND MATERIAL",
+      "label": "Band Material",
       "value": "BRACELET"
     },
     {
-      "label": "BAND COLOR",
+      "label": "Band Color",
       "value": "STAIBLESS STEEL"
     },
     {
-      "label": "DIAL COLOR",
+      "label": "Dial Color",
       "value": "BLUE RED"
     },
     {
-      "label": "CASE DIAMETER",
+      "label": "Case Diameter",
       "value": "45 MM"
     },
     {
-      "label": "CASE COLOR",
+      "label": "Case Color",
       "value": "BLUE RED"
     },
     {
-      "label": "BEZEL",
+      "label": "Bezel",
       "value": "BLUE"
     },
     {
-      "label": "WATER RESISTANT",
+      "label": "Water Resistant",
       "value": "3 ATM"
     }
   ],
   "features": [],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

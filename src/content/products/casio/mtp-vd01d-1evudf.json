@@ -1,10 +1,9 @@
 {
   "title": "Casio Men 3H Watch MTP-VD01D-1EVUDF",
   "sku": "MTP-VD01D-1EVUDF",
-  "display": "Analog 3H",
+  "display": "Analog",
   "gender": "Unisex",
   "price": 55,
-  
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
@@ -40,6 +39,6 @@
     "Stainless steel band"
   ],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

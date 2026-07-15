@@ -1,49 +1,48 @@
 {
-  "title": "OMORFIA MEN`S WATCH",
+  "title": "Omorfia Men's Watch OM2016H2BW",
   "sku": "OM2016H2BW",
-  "display": "",
+  "display": "Analog",
   "gender": "Men",
   "price": 130,
-  
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
   "specifications": [
     {
-      "label": "MOVEMENT",
+      "label": "Movement",
       "value": "QUARTZ"
     },
     {
-      "label": "BAND MATERIAL",
+      "label": "Band Material",
       "value": "BRACELET"
     },
     {
-      "label": "BAND COLOR",
+      "label": "Band Color",
       "value": "TWO TONE STAINLESS STEEL"
     },
     {
-      "label": "DIAL COLOR",
+      "label": "Dial Color",
       "value": "WHITE"
     },
     {
-      "label": "CASE DIAMETER",
+      "label": "Case Diameter",
       "value": "45 MM"
     },
     {
-      "label": "CASE COLOR",
+      "label": "Case Color",
       "value": "TWO TONE STAINLESS STEEL"
     },
     {
-      "label": "BEZEL",
+      "label": "Bezel",
       "value": "ROSE GOLD"
     },
     {
-      "label": "WATER RESISTANT",
+      "label": "Water Resistant",
       "value": "5 ATM"
     }
   ],
   "features": [],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

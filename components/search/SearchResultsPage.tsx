@@ -17,20 +17,28 @@ const formatPrice = (price: ProductCard["price"]) =>
   }).format(price);
 
 const matchesSearch = (product: ProductCard, query: string) => {
+  const specifications = product.specifications
+    .map((spec) => `${spec.label} ${spec.value}`)
+    .join(" ");
+
+  const features = product.features.join(" ");
+
   const searchable = [
     product.title,
     product.brand,
-    // product.category,
     product.subCategory,
     product.sku,
     product.display,
     product.gender,
     product.description,
+    specifications,
+    features,
   ]
+    .filter(Boolean)
     .join(" ")
     .toLowerCase();
 
-  return searchable.includes(query);
+  return searchable.includes(query.toLowerCase());
 };
 
 const SearchResultsPage = ({ products }: { products: ProductCard[] }) => {
@@ -132,7 +140,7 @@ const SearchResultsPage = ({ products }: { products: ProductCard[] }) => {
                 return (
                   <article
                     key={productKey}
-                    className="group relative overflow-hidden border border-primary/10 bg-light-neutral shadow-[0_30px_90px_rgba(0,0,0,0.35)] transition duration-500 hover:-translate-y-1 hover:border-primary/30 hover:shadow-[0_40px_120px_rgba(0,0,0,0.5)]"
+                    className="group relative overflow-hidden rounded-3xl border border-primary/10 bg-[#101010] shadow-[0_30px_90px_rgba(0,0,0,0.35)] transition duration-500 hover:-translate-y-1 hover:border-primary/25 hover:shadow-[0_40px_120px_rgba(0,0,0,0.5)]"
                   >
                     {/* Wishlist Button */}
                     <button
@@ -186,16 +194,17 @@ const SearchResultsPage = ({ products }: { products: ProductCard[] }) => {
                       href={`/collections/${product.brand}/${product.slug}`}
                       className="block focus:outline-none focus:ring-2 focus:ring-primary/40"
                     >
-                      <div className="relative aspect-4/5 overflow-hidden bg-neutral">
+                      <div className="relative aspect-4/5 overflow-hidden bg-[#101010] p-2">
                         <Image
                           src={productImage || "/baydoun-logo.webp"}
                           alt={product.title}
                           fill
                           sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
-                          className="object-cover transition duration-700 ease-out group-hover:scale-105"
+                          className="rounded-2xl object-contain bg-[linear-gradient(145deg,#f8efe0_0%,#e4d7b5_100%)] p-3 transition duration-700 ease-out group-hover:scale-105"
                           onError={() => markImageFailed(product.image)}
                         />
-                        <div className="absolute inset-0 bg-linear-to-t from-neutral/70 via-transparent to-transparent" />
+                        <div className="absolute inset-0 rounded-3xl bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.16),transparent_60%)]" />
+                        <div className="absolute inset-0 rounded-3xl bg-linear-to-t from-black/85 via-black/10 to-transparent" />
 
                         {/* Status Badges Container */}
                         <div className="absolute left-4 top-4 z-10 flex flex-col gap-2">

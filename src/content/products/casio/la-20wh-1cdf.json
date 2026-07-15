@@ -4,7 +4,6 @@
   "display": "Digital",
   "gender": "Unisex",
   "price": 29,
-  
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
@@ -38,10 +37,10 @@
     "Auto-calendar (auto calendar set at 28 days for February)",
     "12/24-hour format",
     "Regular timekeeping: Hour, minute, second, pm, date, day",
-    "Accuracy: 30 seconds per month",
+    "Accuracy: ?30 seconds per month",
     "Approx. battery life: 5 years on CR1616"
   ],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

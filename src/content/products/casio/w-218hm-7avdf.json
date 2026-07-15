@@ -4,7 +4,6 @@
   "display": "Digital",
   "gender": "Men",
   "price": 34,
-  
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
@@ -43,6 +42,6 @@
     "Approx. battery life: 7 years on CR2016"
   ],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

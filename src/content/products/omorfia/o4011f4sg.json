@@ -1,49 +1,48 @@
 {
-  "title": "OMORFIA WOMEN`S WATCH",
+  "title": "Omorfia Women's Watch O4011F4SG",
   "sku": "O4011F4SG",
-  "display": "",
+  "display": "Analog",
   "gender": "Women",
   "price": 160,
-  
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
   "specifications": [
     {
-      "label": "MOVEMENT",
+      "label": "Movement",
       "value": "QUARTZ"
     },
     {
-      "label": "BAND MATERIAL",
+      "label": "Band Material",
       "value": "RUBBER"
     },
     {
-      "label": "BAND COLOR",
+      "label": "Band Color",
       "value": "GREY RUBBER"
     },
     {
-      "label": "DIAL COLOR",
+      "label": "Dial Color",
       "value": "GREY"
     },
     {
-      "label": "CASE DIAMETER",
+      "label": "Case Diameter",
       "value": "32 MM"
     },
     {
-      "label": "CASE COLOR",
+      "label": "Case Color",
       "value": "GOLD STAINLESS STEEL"
     },
     {
-      "label": "BEZEL",
+      "label": "Bezel",
       "value": "GOLD STAINLESS STEEL"
     },
     {
-      "label": "WATER RESISTANT",
+      "label": "Water Resistant",
       "value": "5 ATM"
     }
   ],
   "features": [],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

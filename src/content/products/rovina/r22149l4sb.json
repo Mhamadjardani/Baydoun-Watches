@@ -1,49 +1,48 @@
 {
-  "title": "ROVINA WOMEN`S WATCH",
+  "title": "Rovina Women's Watch R22149L4SB",
   "sku": "R22149L4SB",
-  "display": "",
+  "display": "Analog",
   "gender": "Women",
   "price": 195,
-  
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
   "specifications": [
     {
-      "label": "MOVEMENT",
+      "label": "Movement",
       "value": "QUARTZ"
     },
     {
-      "label": "BAND MATERIAL",
+      "label": "Band Material",
       "value": "LEATHER"
     },
     {
-      "label": "BAND COLOR",
+      "label": "Band Color",
       "value": "BRWON LEATHER"
     },
     {
-      "label": "DIAL COLOR",
+      "label": "Dial Color",
       "value": "BLACK"
     },
     {
-      "label": "CASE DIAMETER",
+      "label": "Case Diameter",
       "value": "40 MM"
     },
     {
-      "label": "CASE COLOR",
+      "label": "Case Color",
       "value": "GOLD STAINLESS STEEL"
     },
     {
-      "label": "BEZEL",
+      "label": "Bezel",
       "value": "GOLD"
     },
     {
-      "label": "WATER RESISTANT",
+      "label": "Water Resistant",
       "value": "5 ATM"
     }
   ],
   "features": [],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

@@ -1,49 +1,48 @@
 {
-  "title": "OMORFIA MEN`S WATCH",
+  "title": "Omorfia Men's Watch OM887H5SB",
   "sku": "OM887H5SB",
-  "display": "",
+  "display": "Analog",
   "gender": "Men",
   "price": 150,
-  
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
   "specifications": [
     {
-      "label": "MOVEMENT",
+      "label": "Movement",
       "value": "QUARTZ"
     },
     {
-      "label": "BAND MATERIAL",
+      "label": "Band Material",
       "value": "RUBBER"
     },
     {
-      "label": "BAND COLOR",
+      "label": "Band Color",
       "value": "BLACK RUBBER"
     },
     {
-      "label": "DIAL COLOR",
+      "label": "Dial Color",
       "value": "BLACK"
     },
     {
-      "label": "CASE DIAMETER",
+      "label": "Case Diameter",
       "value": "43 MM"
     },
     {
-      "label": "CASE COLOR",
+      "label": "Case Color",
       "value": "BLACK STAINLESS STEEL"
     },
     {
-      "label": "BEZEL",
+      "label": "Bezel",
       "value": "BLACK STAINLESS STEEL"
     },
     {
-      "label": "WATER RESISTANT",
+      "label": "Water Resistant",
       "value": "3 ATM"
     }
   ],
   "features": [],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

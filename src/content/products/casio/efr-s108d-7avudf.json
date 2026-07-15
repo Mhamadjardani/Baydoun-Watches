@@ -1,10 +1,10 @@
 {
   "title": "Edifice Watch EFR-S108D-7AVUD",
   "sku": "EFR-S108D-7AVUDF",
-  "display": "Analog 3H",
+  "display": "Analog",
   "gender": "Men",
   "price": 215,
-  
+  "subCategory": "edifice",
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
@@ -31,9 +31,11 @@
     }
   ],
   "features": [
-    "Approx. battery life: 3 years on SR916SW; Accuracy: ±20 seconds per month; Regular timekeeping: Analog: 3 hands (hour, minute, second) Date display"
+    "Approx. battery life: 3 years on SR916SW",
+    "Accuracy: ±20 seconds per month",
+    "Regular timekeeping: Analog: 3 hands (hour, minute, second) Date display"
   ],
-  "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "imageCount": 2,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

@@ -1,49 +1,48 @@
 {
-  "title": "TOMMY HILFIGER, WALKER",
+  "title": "Tommy Hilfiger Walker TH 1710622",
   "sku": "TH 1710622",
-  "display": "",
+  "display": "Analog",
   "gender": "Men",
   "price": 225,
-  
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
   "specifications": [
     {
-      "label": "MOVEMENT",
+      "label": "Movement",
       "value": "QUARTZ"
     },
     {
-      "label": "BAND MATERIAL",
+      "label": "Band Material",
       "value": "BRACELET"
     },
     {
-      "label": "BAND COLOR",
+      "label": "Band Color",
       "value": "BLUE IP"
     },
     {
-      "label": "DIAL COLOR",
+      "label": "Dial Color",
       "value": "BLUE IP"
     },
     {
-      "label": "CASE DIAMETER",
+      "label": "Case Diameter",
       "value": "44 MM"
     },
     {
-      "label": "CASE COLOR",
+      "label": "Case Color",
       "value": "BLUE IP"
     },
     {
-      "label": "BEZEL",
+      "label": "Bezel",
       "value": "BLUE IP"
     },
     {
-      "label": "WATER RESISTANT",
+      "label": "Water Resistant",
       "value": "5 ATM"
     }
   ],
   "features": [],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

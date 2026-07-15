@@ -4,7 +4,6 @@
   "display": "Digital",
   "gender": "Men",
   "price": 45,
-  
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
@@ -31,16 +30,16 @@
     }
   ],
   "features": [
-    "World time: Multi Time (4 different cities); World time 31 time zones (48 cities + coordinated universal time), daylight saving on/off, Home city/World time city swapping",
+    "World time: Multi Time (4 different cities) World time 31 time zones (48 cities + coordinated universal time), daylight saving on/off, Home city/World time city swapping",
     "Stopwatch: 1/100-second stopwatch Measuring capacity: 23:59’59.99” Measuring modes: Elapsed time, split time, 1st-2nd place times",
     "Timer: Countdown timer Measuring unit: 1/10 second Countdown range: 24 hours Countdown start time setting range: 1 second to 24 hours (1-second increments, 1-minute increments and 1-hour increments)",
-    "Alarm/hourly time signal: 5 daily alarms or one-time alarms; Hourly time signal",
+    "Alarm/hourly time signal: 5 daily alarms or one-time alarms Hourly time signal",
     "Light: LED light Selectable illumination duration, afterglow",
     "Light color: LED:Amber",
     "Calendar: Full auto-calendar (to year 2099)",
     "Mute feature: Button operation tone on/off",
-    "Accuracy: ±30 seconds per month",
-    "Other features: 12/24-hour format; Regular timekeeping: Digital: Hour, minute, second, pm, month, date, day",
+    "Accuracy: Accuracy: ±30 seconds per month",
+    "Other features: 12/24-hour format Regular timekeeping: Digital: Hour, minute, second, pm, month, date, day",
     "10-YEAR BATTERY LIFE",
     "Face design resembles an aircraft cockpit instrument",
     "World map for World Time",
@@ -48,6 +47,6 @@
     "100-meter water resistance"
   ],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

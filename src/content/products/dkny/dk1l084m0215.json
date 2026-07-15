@@ -1,10 +1,9 @@
 {
   "title": "DKNY Women Evening Watch DK1L084M0215",
   "sku": "DK1L084M0215",
-  "display": "Multifunction",
+  "display": "Analog",
   "gender": "Women",
   "price": 209,
-  
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
@@ -26,8 +25,10 @@
       "value": "50m"
     }
   ],
-  "features": [],
+  "features": [
+    "Display Type: Multifunction"
+  ],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

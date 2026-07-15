@@ -1,49 +1,48 @@
 {
-  "title": "OMORFIA WOMEN`S WATCH",
+  "title": "Omorfia Women's Watch O4010F2SW",
   "sku": "O4010F2SW",
-  "display": "",
+  "display": "Analog",
   "gender": "Women",
   "price": 110,
-  
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
   "specifications": [
     {
-      "label": "MOVEMENT",
+      "label": "Movement",
       "value": "QUARTZ"
     },
     {
-      "label": "BAND MATERIAL",
+      "label": "Band Material",
       "value": "RUBBER"
     },
     {
-      "label": "BAND COLOR",
+      "label": "Band Color",
       "value": "WHITE RUBBER"
     },
     {
-      "label": "DIAL COLOR",
+      "label": "Dial Color",
       "value": "WHITE"
     },
     {
-      "label": "CASE DIAMETER",
+      "label": "Case Diameter",
       "value": "39 MM"
     },
     {
-      "label": "CASE COLOR",
+      "label": "Case Color",
       "value": "TWO TONE STAINLESS STEEL"
     },
     {
-      "label": "BEZEL",
+      "label": "Bezel",
       "value": "GOLD"
     },
     {
-      "label": "WATER RESISTANT",
+      "label": "Water Resistant",
       "value": "5 ATM"
     }
   ],
   "features": [],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

@@ -1,10 +1,10 @@
 {
   "title": "Casio Men 3H Watch MTP-VD01-3EVUDF",
   "sku": "MTP-VD01-3EVUDF",
-  "display": "Analog 3H",
+  "display": "Analog",
   "gender": "Men",
   "price": 51,
-  
+  "description": "Venture into the realm where metal and urethane meet in a sporty analog design. With water resistance up to 50 meters, you can feel free from worry whether out in the weather or at home washing up.",
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
@@ -35,9 +35,12 @@
     }
   ],
   "features": [
-    "Date display Regular timekeeping Analog: 3 hands (hour, minute, second) Accuracy: ±20 seconds per month Approx. battery life: 3 years on SR626SW"
+    "Date display",
+    "Regular timekeeping Analog: 3 hands (hour, minute, second)",
+    "Accuracy: ±20 seconds per month",
+    "Approx. battery life: 3 years on SR626SW"
   ],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

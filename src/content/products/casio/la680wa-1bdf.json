@@ -4,7 +4,7 @@
   "display": "Digital",
   "gender": "Women",
   "price": 49,
-  
+  "subCategory": "vintage",
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
@@ -31,15 +31,15 @@
     }
   ],
   "features": [
-    "Stopwatch: 1/100th of a second stopwatch Measuring capacity: 59’59.99″ Measuring modes: Elapsed time, split time, 1st and 2nd place times",
-    "Alarm/signaling every hour: Daily alarm; Signaling every hour",
-    "Light: LED light",
-    "Light color: LED: orange",
-    "Calendar: Automatic calendar (automatic calendar set to 28th in February)",
-    "Precision: Accuracy: ±30 seconds per month",
-    "Other features: 12/24 hour formats; Regular time display: hour, minute, second, pm, date, day"
+    "Stopwatch 1/100th of a second stopwatch Measuring capacity: 59’59.99″ Measuring modes: Elapsed time, split time, 1st and 2nd place times",
+    "Alarm/signaling every hour Daily alarm Signaling every hour",
+    "Light LED light",
+    "Light color LED: orange",
+    "Calendar Automatic calendar (automatic calendar set to 28th in February)",
+    "Precision Accuracy: ±30 seconds per month",
+    "Other features 12/24 hour formats Regular time display: hour, minute, second, pm, date, day"
   ],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

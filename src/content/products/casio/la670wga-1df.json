@@ -4,7 +4,7 @@
   "display": "Digital",
   "gender": "Women",
   "price": 60,
-  
+  "subCategory": "vintage",
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
@@ -33,12 +33,12 @@
   "features": [
     "Stopwatch: 1/10-second stopwatch Measuring capacity: 59’59.9” Measuring mode: Elapsed time",
     "Timer: Countdown timer Countdown range: 30 minutes Preset countdown start times: 1, 3, 5, 10, 15, 20, 30 minutes",
-    "Alarm/hourly time signal: Daily alarm; Hourly time signal",
+    "Alarm/hourly time signal: Daily alarm Hourly time signal",
     "Calendar: Auto-calendar (set at 28 days for February)",
-    "Accuracy: 30 seconds per month",
+    "Accuracy: Accuracy: ?30 seconds per month",
     "Other features: Regular timekeeping: Hour, minute, second, pm, month, date, day"
   ],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

@@ -5,6 +5,7 @@
   "gender": "Unisex",
   "price": 42,
   "subCategory": "vintage",
+  "description": "The Casio A159W-N1D is a versatile watch that combines style and functionality. Its stainless steel case and band give it a sleek and sophisticated look, while its large, easy-to-read display makes it easy to keep track of time. The LED light allows for easy reading in low-light conditions, and its water-resistant design makes it suitable for a variety of activities. With a battery life of up to 7 years, it is a dependable timepiece that will last for years to come. Whether you’re looking for a watch for everyday wear or a reliable companion for your adventures, the Casio A159W-N1D is a great choice.",
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
@@ -38,10 +39,10 @@
     "Auto-calendar (set at 28 days for February)",
     "12/24-hour format",
     "Regular time keeping: Hour, minute, second, pm, date, day",
-    "Accuracy: 30 seconds per month",
+    "Accuracy: ?30 seconds per month",
     "Approx. battery life: 7 years on CR2016"
   ],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

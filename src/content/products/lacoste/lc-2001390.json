@@ -1,49 +1,48 @@
 {
-  "title": "LACOSTE, ELYSE",
+  "title": "Lacoste Elyse LC 2001390",
   "sku": "LC 2001390",
-  "display": "",
+  "display": "Analog",
   "gender": "Women",
   "price": 130,
-  
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
   "specifications": [
     {
-      "label": "MOVEMENT",
+      "label": "Movement",
       "value": "QUARTZ"
     },
     {
-      "label": "BAND MATERIAL",
+      "label": "Band Material",
       "value": "MESH"
     },
     {
-      "label": "BAND COLOR",
+      "label": "Band Color",
       "value": "STAINLESS STEEL"
     },
     {
-      "label": "DIAL COLOR",
+      "label": "Dial Color",
       "value": "ROSE GOLD"
     },
     {
-      "label": "CASE DIAMETER",
+      "label": "Case Diameter",
       "value": "30 MM"
     },
     {
-      "label": "CASE COLOR",
+      "label": "Case Color",
       "value": "STAINLESS STEEL"
     },
     {
-      "label": "BEZEL",
+      "label": "Bezel",
       "value": "STAINLESS STEEL"
     },
     {
-      "label": "WATER RESISTANT",
+      "label": "Water Resistant",
       "value": "3 ATM"
     }
   ],
   "features": [],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

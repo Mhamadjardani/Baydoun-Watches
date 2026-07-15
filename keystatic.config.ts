@@ -55,9 +55,14 @@ function brandCollection(
 
       // ── Details ─────────────────────────────────────────────────────────────
       description: fields.text({ label: "Description", multiline: true }),
-      display: fields.text({
+      display: fields.select({
         label: "Display Type",
-        description: "Analog /Digital",
+        options: [
+          { label: "Analog", value: "Analog" },
+          { label: "Digital", value: "Digital" },
+          { label: "Ana/Dig", value: "Ana/Dig" },
+        ],
+        defaultValue: "Analog",
       }),
 
       gender: fields.select({
@@ -65,6 +70,7 @@ function brandCollection(
         options: [
           { label: "Men", value: "Men" },
           { label: "Women", value: "Women" },
+          { label: "Kids", value: "Kids" },
           { label: "Unisex", value: "Unisex" },
         ],
         defaultValue: "Men",
@@ -163,15 +169,9 @@ export default config({
       "Baby-G",
       "Pro Trek",
     ]),
-    cityTime: brandCollection("City Time", "city-time"),
-    curren: brandCollection("Curren", "curren"),
     dkny: brandCollection("DKNY", "dkny"),
-    gadgets: brandCollection("Gadgets", "gadgets"),
     lacoste: brandCollection("Lacoste", "lacoste"),
-    nano: brandCollection("Nano", "nano"),
     omorfia: brandCollection("Omorfia", "omorfia"),
-    polit: brandCollection("Polit", "polit"),
-    qq: brandCollection("Q&Q", "q-q"),
     rovina: brandCollection("Rovina", "rovina"),
     tommyHilfiger: brandCollection("Tommy Hilfiger", "tommy-hilfiger"),
   },

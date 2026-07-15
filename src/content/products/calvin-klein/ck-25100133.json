@@ -1,49 +1,48 @@
 {
-  "title": "CALVIN KLEIN, CK ADORE",
+  "title": "Calvin Klein Ck Adore CK 25100133",
   "sku": "CK 25100133",
-  "display": "",
+  "display": "Analog",
   "gender": "Women",
   "price": 195,
-  
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
   "specifications": [
     {
-      "label": "MOVEMENT",
+      "label": "Movement",
       "value": "QUARTZ"
     },
     {
-      "label": "BAND MATERIAL",
+      "label": "Band Material",
       "value": "ADJUSTABLE BANGLE"
     },
     {
-      "label": "BAND COLOR",
+      "label": "Band Color",
       "value": "ROSE GOLD"
     },
     {
-      "label": "DIAL COLOR",
+      "label": "Dial Color",
       "value": "ROSE GOLD"
     },
     {
-      "label": "CASE DIAMETER",
+      "label": "Case Diameter",
       "value": "24 MM"
     },
     {
-      "label": "CASE COLOR",
+      "label": "Case Color",
       "value": "ROSE GOLD"
     },
     {
-      "label": "BEZEL",
+      "label": "Bezel",
       "value": "ROSE GOLD"
     },
     {
-      "label": "WATER RESISTANT",
+      "label": "Water Resistant",
       "value": "3 ATM"
     }
   ],
   "features": [],
-  "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "imageCount": 2,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

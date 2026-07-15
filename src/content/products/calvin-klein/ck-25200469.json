@@ -1,49 +1,48 @@
 {
-  "title": "CALVIN KLEIN, FLEX",
+  "title": "Calvin Klein Flex CK 25200469",
   "sku": "CK 25200469",
-  "display": "",
+  "display": "Analog",
   "gender": "Men",
   "price": 200,
-  
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
   "specifications": [
     {
-      "label": "MOVEMENT",
+      "label": "Movement",
       "value": "QUARTZ"
     },
     {
-      "label": "BAND MATERIAL",
+      "label": "Band Material",
       "value": "RUBBER"
     },
     {
-      "label": "BAND COLOR",
+      "label": "Band Color",
       "value": "GREEN"
     },
     {
-      "label": "DIAL COLOR",
+      "label": "Dial Color",
       "value": "GREY"
     },
     {
-      "label": "CASE DIAMETER",
+      "label": "Case Diameter",
       "value": "40 MM"
     },
     {
-      "label": "CASE COLOR",
+      "label": "Case Color",
       "value": "STAINLESS STEEL"
     },
     {
-      "label": "BEZEL",
+      "label": "Bezel",
       "value": "STAINLESS STEEL"
     },
     {
-      "label": "WATER RESISTANT",
+      "label": "Water Resistant",
       "value": "3 ATM"
     }
   ],
   "features": [],
-  "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "imageCount": 2,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

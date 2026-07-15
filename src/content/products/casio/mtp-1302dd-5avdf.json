@@ -1,10 +1,10 @@
 {
   "title": "Casio Men Analog Watch MTP-1302DD-5AVDF",
   "sku": "MTP-1302DD-5AVDF",
-  "display": "Analog 3H",
+  "display": "Analog",
   "gender": "Men",
   "price": 65,
-  
+  "description": "Striking and sophisticated MTP-1302DD-5AVDF — a chic metal timepiece with classic hour, minute, and seconds hand design takes on soft, sumptuous color.",
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
@@ -35,12 +35,12 @@
     }
   ],
   "features": [
-    "Regular timekeeping: Analog: 3 hands (hour, minute, second); Date display",
     "50-meter water resistance",
+    "Regular timekeeping: Analog: 3 hands (hour, minute, second) Date display",
     "Accuracy: ±20 seconds per month",
     "Approx. battery life: 3 years on SR626SW"
   ],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

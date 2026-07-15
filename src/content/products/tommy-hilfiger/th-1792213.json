@@ -1,49 +1,48 @@
 {
-  "title": "TOMMY HILFIGER, TH85 CHRONO",
+  "title": "Tommy Hilfiger Th85 Chrono TH 1792213",
   "sku": "TH 1792213",
-  "display": "",
+  "display": "Analog",
   "gender": "Men",
   "price": 200,
-  
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
   "specifications": [
     {
-      "label": "MOVEMENT",
+      "label": "Movement",
       "value": "QUARTZ"
     },
     {
-      "label": "BAND MATERIAL",
+      "label": "Band Material",
       "value": "LEATHER"
     },
     {
-      "label": "BAND COLOR",
+      "label": "Band Color",
       "value": "BROWN"
     },
     {
-      "label": "DIAL COLOR",
+      "label": "Dial Color",
       "value": "GREY"
     },
     {
-      "label": "CASE DIAMETER",
+      "label": "Case Diameter",
       "value": "41 MM"
     },
     {
-      "label": "CASE COLOR",
+      "label": "Case Color",
       "value": "STAINLESS STEEL"
     },
     {
-      "label": "BEZEL",
+      "label": "Bezel",
       "value": "BLACK ALUMINIUM"
     },
     {
-      "label": "WATER RESISTANT",
+      "label": "Water Resistant",
       "value": "5 ATM"
     }
   ],
   "features": [],
-  "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "imageCount": 2,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

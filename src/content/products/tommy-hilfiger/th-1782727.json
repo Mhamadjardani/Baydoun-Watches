@@ -1,49 +1,48 @@
 {
-  "title": "TOMMY HILFIGER, PIPER",
+  "title": "Tommy Hilfiger Piper TH 1782727",
   "sku": "TH 1782727",
-  "display": "",
+  "display": "Analog",
   "gender": "Women",
   "price": 155,
-  
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
   "specifications": [
     {
-      "label": "MOVEMENT",
+      "label": "Movement",
       "value": "QUARTZ"
     },
     {
-      "label": "BAND MATERIAL",
+      "label": "Band Material",
       "value": "BRACELET"
     },
     {
-      "label": "BAND COLOR",
+      "label": "Band Color",
       "value": "GREY"
     },
     {
-      "label": "DIAL COLOR",
+      "label": "Dial Color",
       "value": "GREY"
     },
     {
-      "label": "CASE DIAMETER",
+      "label": "Case Diameter",
       "value": "36 MM"
     },
     {
-      "label": "CASE COLOR",
+      "label": "Case Color",
       "value": "GREY"
     },
     {
-      "label": "BEZEL",
+      "label": "Bezel",
       "value": "GREY"
     },
     {
-      "label": "WATER RESISTANT",
+      "label": "Water Resistant",
       "value": "3 ATM"
     }
   ],
   "features": [],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

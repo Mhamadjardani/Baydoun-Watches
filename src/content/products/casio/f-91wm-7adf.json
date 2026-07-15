@@ -4,7 +4,7 @@
   "display": "Digital",
   "gender": "Men",
   "price": 25,
-  
+  "subCategory": "vintage",
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
@@ -38,10 +38,10 @@
     "Auto-calendar (set at 28 days for February)",
     "12/24-hour format",
     "Regular time keeping: Hour, minute, second, pm, date, day",
-    "Accuracy: 30 seconds per month",
+    "Accuracy: ?30 seconds per month",
     "Approx. battery life: 7 years on CR2016"
   ],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

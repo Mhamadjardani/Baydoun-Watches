@@ -1,10 +1,9 @@
 {
-  "title": "MTP-1314D-2AVDF",
+  "title": "Casio Watch MTP-1314L-8AVDF",
   "sku": "MTP-1314L-8AVDF",
-  "display": "Analog 3H",
+  "display": "Analog",
   "gender": "Men",
   "price": 55,
-  
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
@@ -37,10 +36,10 @@
   "features": [
     "Date display",
     "Regular timekeeping Analog: 3 hands (hour, minute, second)",
-    "Accuracy: 20 seconds per month",
+    "Accuracy: ?20 seconds per month",
     "Approx. battery life: 3 years on SR626SW"
   ],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

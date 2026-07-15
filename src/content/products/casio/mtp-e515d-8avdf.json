@@ -1,10 +1,10 @@
 {
   "title": "Casio Men 3H Watch MTP-E515D-8AVDF",
   "sku": "MTP-E515D-8AVDF",
-  "display": "Chronograph",
+  "display": "Analog",
   "gender": "Men",
   "price": 136,
-  
+  "description": "A cool metal analog timepiece with the sporty chronograph design you love and the detailed display you need. Three inset dials display 24-hour time, second stopwatch, and minute stopwatch. Water resistance up to 50 meters frees you from worry, even on rainy days.",
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
@@ -31,9 +31,12 @@
     }
   ],
   "features": [
-    "1-second stopwatch Measuring capacity: 59’59 Measuring modes: Elapsed time, split time, 1st-2nd place times; Accuracy: ±20 seconds per month; Regular timekeeping: Analog: 3 hands (hour, minute, second), 3 dials (24-hour, stopwatch minutes, stopwatch seconds); Date display"
+    "1-second stopwatch Measuring capacity: 59’59 Measuring modes: Elapsed time, split time, 1st-2nd place times",
+    "Accuracy: ±20 seconds per month",
+    "Regular timekeeping: Analog: 3 hands (hour, minute, second), 3 dials (24-hour, stopwatch minutes, stopwatch seconds)",
+    "Date display"
   ],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

@@ -1,10 +1,9 @@
 {
   "title": "Casio men 3H watch MTP-1370D-7A3VDF",
   "sku": "MTP-1370G-1AVDF",
-  "display": "Analog 3H",
+  "display": "Analog",
   "gender": "Men",
   "price": 110,
-  
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
@@ -40,6 +39,6 @@
     "50-meter water resistance Accuracy: ±20 seconds per month"
   ],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

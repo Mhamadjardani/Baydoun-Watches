@@ -1,10 +1,10 @@
 {
-  "title": "LA670WGA-1DF",
+  "title": "Casio Watch LA670WA-1DF",
   "sku": "LA670WA-1DF",
   "display": "Digital",
   "gender": "Women",
   "price": 46,
-  
+  "description": "The Casio Vintage LA670WA-1DF is a stylish and retro-inspired digital watch that is perfect for those who appreciate classic design. The watch features a stainless steel case and band, and a large, easy-to-read display that shows the time, date, and stopwatch functions. The LED light allows you to read the time even in low-light conditions. Water resistant and with a battery life of up to 2 years, this watch is designed to last. The Casio Vintage LA670WA-1DF is the perfect choice for those who want a watch that combines vintage style with modern functionality.",
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
@@ -41,6 +41,6 @@
     "Approx. battery life: 2 years on CR1216"
   ],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

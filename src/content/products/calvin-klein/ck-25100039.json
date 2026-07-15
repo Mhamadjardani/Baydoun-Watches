@@ -1,49 +1,48 @@
 {
-  "title": "CALVIN KLEIN, CK TWISTED BEZEL",
+  "title": "Calvin Klein Ck Twisted Bezel CK 25100039",
   "sku": "CK 25100039",
-  "display": "",
+  "display": "Analog",
   "gender": "Women",
   "price": 220,
-  
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
   "specifications": [
     {
-      "label": "MOVEMENT",
+      "label": "Movement",
       "value": "QUARTZ"
     },
     {
-      "label": "BAND MATERIAL",
+      "label": "Band Material",
       "value": "BRACELET"
     },
     {
-      "label": "BAND COLOR",
+      "label": "Band Color",
       "value": "BLACK STAINLESS STEEL"
     },
     {
-      "label": "DIAL COLOR",
+      "label": "Dial Color",
       "value": "BLACK"
     },
     {
-      "label": "CASE DIAMETER",
+      "label": "Case Diameter",
       "value": "34 MM"
     },
     {
-      "label": "CASE COLOR",
+      "label": "Case Color",
       "value": "BLACK STAINLESS STEEL"
     },
     {
-      "label": "BEZEL",
+      "label": "Bezel",
       "value": "BLACK STAINLESS STEEL"
     },
     {
-      "label": "WATER RESISTANT",
+      "label": "Water Resistant",
       "value": "3 ATM"
     }
   ],
   "features": [],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

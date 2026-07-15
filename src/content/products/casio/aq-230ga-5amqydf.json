@@ -1,10 +1,10 @@
 {
   "title": "Casio Unisex Vintage 2H Watch AQ-230GA-5AMQYDF",
   "sku": "AQ-230GA-5AMQYDF",
-  "display": "Ana-Digi",
+  "display": "Ana/Dig",
   "gender": "Unisex",
   "price": 81,
-  
+  "subCategory": "vintage",
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
@@ -42,6 +42,6 @@
     "Accuracy: ±30 seconds per month"
   ],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

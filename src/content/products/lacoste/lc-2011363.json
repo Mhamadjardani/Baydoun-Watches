@@ -1,49 +1,48 @@
 {
-  "title": "LACOSTE,MAINSAIL",
+  "title": "Lacoste Mainsail LC 2011363",
   "sku": "LC 2011363",
-  "display": "",
+  "display": "Analog",
   "gender": "Men",
   "price": 170,
-  
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
   "specifications": [
     {
-      "label": "MOVEMENT",
+      "label": "Movement",
       "value": "QUARTZ"
     },
     {
-      "label": "BAND MATERIAL",
+      "label": "Band Material",
       "value": "SILICONE"
     },
     {
-      "label": "BAND COLOR",
+      "label": "Band Color",
       "value": "GREEN"
     },
     {
-      "label": "DIAL COLOR",
+      "label": "Dial Color",
       "value": "BLACK"
     },
     {
-      "label": "CASE DIAMETER",
+      "label": "Case Diameter",
       "value": "43 MM"
     },
     {
-      "label": "CASE COLOR",
+      "label": "Case Color",
       "value": "BLACK"
     },
     {
-      "label": "BEZEL",
+      "label": "Bezel",
       "value": "GREEN"
     },
     {
-      "label": "WATER RESISTANT",
+      "label": "Water Resistant",
       "value": "5 ATM"
     }
   ],
   "features": [],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }

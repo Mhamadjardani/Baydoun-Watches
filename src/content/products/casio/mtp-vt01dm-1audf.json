@@ -1,10 +1,10 @@
 {
   "title": "Casio Men 3H Watch MTP-VT01DM-1AUDF",
   "sku": "MTP-VT01DM-1AUDF",
-  "display": "Analog 3H",
+  "display": "Analog",
   "gender": "Men",
   "price": 60,
-  
+  "description": "Classic and compelling CASIO MTP-VT01DM-1AUDF analog watch with a sophisticated marble-inspired dial. Water resistance for daily use frees you from worry, even on rainy days.",
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
@@ -40,6 +40,6 @@
     "Approx. battery life: 3 years on SR626SW"
   ],
   "imageCount": 1,
-  "arrivalDate": "2026-06-17",
-  "createdAt": "2026-06-17"
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
 }
