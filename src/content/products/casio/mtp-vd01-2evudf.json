@@ -1,0 +1,41 @@
+{
+  "title": "Casio Men Watch MTP-VD01-2EVUDF",
+  "sku": "MTP-VD01-2EVUDF",
+  "display": "Analog",
+  "gender": "Men",
+  "price": 51,
+  "description": "The Casio MTP-VD01-2EVUDF features a sleek stainless steel finish with a bold blue dial and clear, easy-to-read details. Its sporty yet classic design makes it a versatile choice for everyday wear.",
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "79 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "49 x 45 x 10.3 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Black, Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin"
+    },
+    {
+      "label": "Display Type",
+      "value": "Analog"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "50 meters"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-08-29",
+  "createdAt": "2026-08-29"
+}

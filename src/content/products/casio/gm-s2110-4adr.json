@@ -1,0 +1,50 @@
+{
+  "title": "G-Shock Casual Men Watch GM-S2110-4ADR",
+  "sku": "GM-S2110-4ADR",
+  "display": "Analog",
+  "gender": "Men",
+  "price": 315,
+  "subCategory": "g-shock",
+  "description": "The G-Shock GM-S2110-4ADR features a sleek, compact octagonal design with a metal bezel. Its durable build and shock resistance make it perfect for everyday wear.",
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "56 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "45.9 x 40.5 x 11 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Pink, Grey"
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin"
+    },
+    {
+      "label": "Display Type",
+      "value": "Ana-Digi"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "200m"
+    }
+  ],
+  "features": [
+    "LED Light",
+    "World Time",
+    "Mute feature",
+    "Daily alarm",
+    "Timer",
+    "Hourly time signal",
+    "12/24-hour format"
+  ],
+  "imageCount": 1,
+  "arrivalDate": "2026-08-30",
+  "createdAt": "2026-08-30"
+}

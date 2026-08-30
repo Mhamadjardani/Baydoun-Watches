@@ -1,0 +1,41 @@
+{
+  "title": "Casio women Watch LTP-V005GL-9AUDF",
+  "sku": "LTP-V005GL-9AUDF",
+  "display": "Analog",
+  "gender": "Women",
+  "price": 33,
+  "description": "The Casio LTP-V005GL-9AUDF features a classic gold-tone case with a clean white dial and leather-style band. Its elegant design makes it ideal for everyday wear.",
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "52 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "34 x 28.2 x 7.5 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Brown, Gold Plated"
+    },
+    {
+      "label": "Band Material",
+      "value": "Genuine Leather"
+    },
+    {
+      "label": "Display Type",
+      "value": "Analog 3H"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-08-29",
+  "createdAt": "2026-08-29"
+}

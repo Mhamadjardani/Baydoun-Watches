@@ -1,0 +1,61 @@
+{
+  "title": "G-Shock Casual Men Watch GPR-H1000RY-1A9DR",
+  "sku": "GPR-H1000RY-1A9DR",
+  "display": "Digital",
+  "gender": "Men",
+  "price": 915,
+  "subCategory": "g-shock",
+  "description": "The G-Shock GPR-H1000RY-1A9DR is a rugged outdoor watch built for extreme adventures. Its durable construction and advanced digital features make it ideal for active lifestyles.",
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "92 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "60.6 x 53.2 x 20.3 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Black"
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin"
+    },
+    {
+      "label": "Display Type",
+      "value": "Digital"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "200m"
+    }
+  ],
+  "features": [
+    "Sensor Feature",
+    "Power Supply And Battery Life",
+    "Time Adjustment",
+    "Construction",
+    "SmartPhone Link Feature",
+    "App Connectivity Feature",
+    "World Time",
+    "Moon Data",
+    "Tide Graph",
+    "Sunrise / Sunset Display",
+    "Energy Saving Feature",
+    "Run Time",
+    "sensor Feature Details",
+    "Mute feature",
+    "Daily alarm",
+    "Timer",
+    "Hourly time signal",
+    "12/24-hour format"
+  ],
+  "imageCount": 3,
+  "arrivalDate": "2026-08-30",
+  "createdAt": "2026-08-30"
+}

@@ -1,0 +1,41 @@
+{
+  "title": "Casio Men Watch MTP-V002D-1B3VDF",
+  "sku": "MTP-V002D-1B3UDF",
+  "display": "Analog",
+  "gender": "Men",
+  "price": 40,
+  "description": "The Casio MTP-V002D-1B3UDF features a sleek stainless steel finish with a clean, elegant dial. Its classic design makes it a versatile choice for everyday wear.",
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "93 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "44 x 37 x 9.6 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Display Type",
+      "value": "Analog"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "yes"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-08-29",
+  "createdAt": "2026-08-29"
+}

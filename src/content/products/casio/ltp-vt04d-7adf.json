@@ -1,0 +1,41 @@
+{
+  "title": "Casio women Watch LTP-VT04D-7AUDF",
+  "sku": "LTP-VT04D-7ADF",
+  "display": "Analog",
+  "gender": "Women",
+  "price": 57,
+  "description": "The Casio LTP-VT04D-7ADF features a sleek stainless steel finish with a clean, elegant dial. Its refined design makes it a versatile choice for everyday wear.",
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "64 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "40 x 34 x 7.9 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Display Type",
+      "value": "Analog 3H"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-08-29",
+  "createdAt": "2026-08-29"
+}

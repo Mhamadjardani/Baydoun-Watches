@@ -1,0 +1,41 @@
+{
+  "title": "Casio women Watch LTP-V009D-4EUDF",
+  "sku": "LTP-V009D-4EUDF",
+  "display": "Analog",
+  "gender": "Women",
+  "price": 47,
+  "description": "The Casio LTP-V009D-4EUDF features a sleek stainless steel finish with a clean, elegant dial. Its classic design makes it a versatile choice for everyday wear.",
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "45 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "37.7 x 20.7 x 7.7 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Pink, Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Display Type",
+      "value": "Analog 3H"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-08-29",
+  "createdAt": "2026-08-29"
+}

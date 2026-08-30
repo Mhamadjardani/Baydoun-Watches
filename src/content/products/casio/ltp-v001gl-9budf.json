@@ -1,0 +1,41 @@
+{
+  "title": "Casio women Watch LTP-V001GL-9BUDF",
+  "sku": "LTP-V001GL-9BUDF",
+  "display": "Analog",
+  "gender": "Women",
+  "price": 31,
+  "description": "The Casio LTP-V001GL-9BUDF features a classic gold-tone case with a black dial and leather-style band. Its timeless design makes it ideal for everyday wear.",
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "54 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "31 x 25 x 7.6 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Brown, Gold Plated"
+    },
+    {
+      "label": "Band Material",
+      "value": "Genuine Leather"
+    },
+    {
+      "label": "Display Type",
+      "value": "Analog 3H"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-08-29",
+  "createdAt": "2026-08-29"
+}

@@ -1,0 +1,41 @@
+{
+  "title": "Casio women Watch LTP-1234DD-1ADF",
+  "sku": "LTP-1234DD-1ADF",
+  "display": "Analog",
+  "gender": "Women",
+  "price": 63,
+  "description": "The Casio LTP-1234DD-1ADF features a sleek silver-tone design with a clean, modern dial. Its elegant style makes it a versatile choice for everyday wear.",
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "58 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "32 x 21 x 7.4 mm"
+    },
+    {
+      "label": "Color",
+      "value": "BLack,Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Display Type",
+      "value": "Analog 3H"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-08-29",
+  "createdAt": "2026-08-29"
+}

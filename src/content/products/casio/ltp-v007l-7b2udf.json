@@ -1,0 +1,41 @@
+{
+  "title": "Casio women Watch LTP-V007L-7B2UDF",
+  "sku": "LTP-V007L-7B2UDF",
+  "display": "Analog",
+  "gender": "Women",
+  "price": 33,
+  "description": "The Casio LTP-V007L-7B2UDF features a sleek leather strap with a clean, elegant dial. Its classic design makes it a versatile choice for everyday wear.",
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "51 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "31 x 22 x 7.5 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Brown, Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Genuine Leather"
+    },
+    {
+      "label": "Display Type",
+      "value": "Analog 3H"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-08-29",
+  "createdAt": "2026-08-29"
+}

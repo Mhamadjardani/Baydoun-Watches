@@ -1,0 +1,44 @@
+{
+  "title": "Casio Vintage Digital Unisex Metal Watch A158WA-1DF",
+  "sku": "A158WA-1DF",
+  "display": "Digital",
+  "gender": "Unisex",
+  "price": 38,
+  "subCategory": "vintage",
+  "description": "The Casio A158WA-1DF is a vintage-inspird digital watch.Its stainless steel case and band give it a sleek and timeless look.",
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "46 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "36.8 x 33.2 x 8.2 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "50m"
+    }
+  ],
+  "features": [
+    "LED light",
+    "Daily alarm",
+    "Hourly time signal",
+    "12/24-hour format",
+    "Approx. battery life: 7 years on CR2016"
+  ],
+  "imageCount": 1,
+  "arrivalDate": "2026-08-30",
+  "createdAt": "2026-08-30"
+}

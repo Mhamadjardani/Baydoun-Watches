@@ -1,0 +1,46 @@
+{
+  "title": "Edifice Watch EFV-550D-2AVUDF",
+  "sku": "EFV-550D-2AVUDF",
+  "display": "Analog",
+  "gender": "Men",
+  "price": 165,
+  "subCategory": "edifice",
+  "description": "The Edifice EFV-550D-2AVUDF features a sophisticated blue dial with a sporty chronograph design. Its stainless steel bracelet adds a refined touch, making it perfect for both everyday and formal wear.",
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "156 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "53 x 47 x 12.1 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Display Type",
+      "value": "Chronograph"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "100m"
+    }
+  ],
+  "features": [
+    "Measuring Modes",
+    "Date Display",
+    "Approx. battery life: 3 years on SR920SW"
+  ],
+  "imageCount": 1,
+  "arrivalDate": "2026-08-29",
+  "createdAt": "2026-08-29"
+}

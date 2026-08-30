@@ -1,0 +1,50 @@
+{
+  "title": "G-Shock Casual Men Watch GA-B010-1ADR",
+  "sku": "GA-B010-1ADR",
+  "display": "Ana/Dig",
+  "gender": "Men",
+  "price": 235,
+  "subCategory": "g-shock",
+  "description": "The G-Shock GA-B010-1ADR features a sleek black design with a bold analog-digital display. Its durable build and shock-resistant construction make it ideal for everyday wear.",
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "57 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "52.3 x 49.3 x 15.2 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Black"
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin"
+    },
+    {
+      "label": "Display Type",
+      "value": "Ana-Gigi"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "200m"
+    }
+  ],
+  "features": [
+    "LED Light",
+    "Bluetooth, Solar",
+    "World Time",
+    "Daily alarm",
+    "Timer",
+    "Hourly time signal",
+    "12/24-hour format"
+  ],
+  "imageCount": 1,
+  "arrivalDate": "2026-08-30",
+  "createdAt": "2026-08-30"
+}

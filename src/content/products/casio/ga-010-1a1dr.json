@@ -1,0 +1,50 @@
+{
+  "title": "G-Shock Casual Men Watch GA-010-1A1DR",
+  "sku": "GA-010-1A1DR",
+  "display": "Ana/Dig",
+  "gender": "Men",
+  "price": 170,
+  "subCategory": "g-shock",
+  "description": "The G-Shock GA-010-1A1DR features a bold, rugged design built for durability. Its shock-resistant construction and strong digital-analog display make it ideal for active everyday wear.",
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "56 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "54.9 x 51.9 x 16.1 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Black"
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin"
+    },
+    {
+      "label": "Display Type",
+      "value": "Ana-Gigi"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "200m"
+    }
+  ],
+  "features": [
+    "LED Light",
+    "World Time",
+    "Mute Feature",
+    "Daily alarm",
+    "Timer",
+    "Hourly time signal",
+    "12/24-hour format"
+  ],
+  "imageCount": 1,
+  "arrivalDate": "2026-08-30",
+  "createdAt": "2026-08-30"
+}

@@ -1,0 +1,50 @@
+{
+  "title": "G-Shock Casual Men Watch GD-010-1A1DR",
+  "sku": "GD-010-1A1DR",
+  "display": "Digital",
+  "gender": "Men",
+  "price": 155,
+  "subCategory": "g-shock",
+  "description": "The G-Shock GD-010-1A1DR features a bold, rugged design with a clear digital display. Its shock-resistant build makes it ideal for everyday and active wear.",
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "65 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "54.9 x 51.9 x 16.1 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Black"
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin"
+    },
+    {
+      "label": "Display Type",
+      "value": "Digital"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "200m"
+    }
+  ],
+  "features": [
+    "LED Light",
+    "Mute Feature",
+    "World Time",
+    "Daily alarm",
+    "Timer",
+    "Hourly time signal",
+    "12/24-hour format"
+  ],
+  "imageCount": 1,
+  "arrivalDate": "2026-08-30",
+  "createdAt": "2026-08-30"
+}

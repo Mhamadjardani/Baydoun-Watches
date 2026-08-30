@@ -1,0 +1,41 @@
+{
+  "title": "Casio Men Watch MTP-V001GL-9BVDF",
+  "sku": "MTP-V001GL-9BUDF",
+  "display": "Analog",
+  "gender": "Men",
+  "price": 31,
+  "description": "The Casio MTP-V001GL-9BUDF features a sophisticated gold-tone finish with a clean, elegant dial. Its classic design makes it a versatile choice for everyday wear.",
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "42 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "45 x 38 x 8 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Brown, Gold Plated"
+    },
+    {
+      "label": "Band Material",
+      "value": "Genuine Leather"
+    },
+    {
+      "label": "Display Type",
+      "value": "Analog"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "yes"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-08-29",
+  "createdAt": "2026-08-29"
+}

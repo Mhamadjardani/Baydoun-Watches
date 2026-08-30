@@ -1,0 +1,41 @@
+{
+  "title": "Casio women Watch LTP-1165A-1CDF",
+  "sku": "LTP-1165A-1CDF",
+  "display": "Analog",
+  "gender": "Women",
+  "price": 57,
+  "description": "The Casio LTP-1165A-1CDF features a sleek silver-tone design with a refined black dial. Its classic look makes it an elegant choice for everyday wear.",
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "67 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "32.6 x 21 x 7.8 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Display Type",
+      "value": "Analog 3H"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-08-29",
+  "createdAt": "2026-08-29"
+}

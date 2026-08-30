@@ -1,0 +1,41 @@
+{
+  "title": "Casio Men Watch MTP-V005D-2B5UDF",
+  "sku": "MTP-V005D-2B5UDF",
+  "display": "Analog",
+  "gender": "Men",
+  "price": 36,
+  "description": "The Casio MTP-V005D-2B5UDF features a sleek stainless steel finish with a clean, elegant dial. Its classic design makes it a versatile choice for everyday wear.",
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "46 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "47 x 40 x 8.1 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Display Type",
+      "value": "Analog"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "yes"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-08-29",
+  "createdAt": "2026-08-29"
+}

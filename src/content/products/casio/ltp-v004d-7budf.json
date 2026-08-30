@@ -1,0 +1,41 @@
+{
+  "title": "Casio women Watch LTP-V004D-7BUDF",
+  "sku": "LTP-V004D-7BUDF",
+  "display": "Analog",
+  "gender": "Women",
+  "price": 41,
+  "description": "The Casio LTP-V004D-7BUDF features a sleek silver-tone design with a classic black dial. Its refined style makes it a versatile choice for everyday wear.",
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "56 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "35.2 x 30.2 x 7.8 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless steel"
+    },
+    {
+      "label": "Display Type",
+      "value": "Analog 3H"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-08-29",
+  "createdAt": "2026-08-29"
+}

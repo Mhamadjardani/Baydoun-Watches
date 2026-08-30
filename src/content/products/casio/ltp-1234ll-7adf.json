@@ -1,0 +1,41 @@
+{
+  "title": "Casio women Watch LTP-1234LL-7ADF",
+  "sku": "LTP-1234LL-7ADF",
+  "display": "Analog",
+  "gender": "Women",
+  "price": 63,
+  "description": "The Casio LTP-1234LL-7ADF features a sleek design with a clean, classic dial and a leather-style band. Its elegant look makes it a versatile choice for everyday wear.",
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "58 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "32 x 21 x 7.4 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Black,Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Genuine Leather"
+    },
+    {
+      "label": "Display Type",
+      "value": "Analog 3H"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-08-29",
+  "createdAt": "2026-08-29"
+}

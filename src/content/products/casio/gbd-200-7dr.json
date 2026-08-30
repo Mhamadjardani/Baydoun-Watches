@@ -1,0 +1,53 @@
+{
+  "title": "G-Shock Casual Men Watch GBD-200-7DR",
+  "sku": "GBD-200-7DR",
+  "display": "Digital",
+  "gender": "Men",
+  "price": 220,
+  "subCategory": "g-shock",
+  "description": "The G-Shock GBD-200-7DR combines a modern sporty design with practical digital features. Its shock-resistant build and comfortable resin band make it ideal for active everyday wear.",
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "58 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "48.4 x 45.9 x 15 mm"
+    },
+    {
+      "label": "Color",
+      "value": "White"
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin"
+    },
+    {
+      "label": "Display Type",
+      "value": "Digital"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "200m"
+    }
+  ],
+  "features": [
+    "LED Light",
+    "Bluetooth",
+    "Mute Feature",
+    "Energy Saving Feature",
+    "Sensor Feature Details",
+    "World Time",
+    "Daily alarm",
+    "Timer",
+    "Hourly time signal",
+    "12/24-hour format"
+  ],
+  "imageCount": 1,
+  "arrivalDate": "2026-08-30",
+  "createdAt": "2026-08-30"
+}

@@ -1,0 +1,41 @@
+{
+  "title": "Casio women Watch LTP-1169D-7ARDF",
+  "sku": "LTP-1169D-7ARDF",
+  "display": "Analog",
+  "gender": "Women",
+  "price": 45,
+  "description": "The Casio LTP-1169D-7ARDF features a sleek silver-tone design with a classic black dial. Its simple, timeless style makes it ideal for everyday wear.",
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "43 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "28 x 22 x 6.9 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Display Type",
+      "value": "Analog 3H"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-08-29",
+  "createdAt": "2026-08-29"
+}

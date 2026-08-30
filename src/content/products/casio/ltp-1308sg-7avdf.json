@@ -1,0 +1,41 @@
+{
+  "title": "Casio women Watch LTP-1308SG-7AVDF",
+  "sku": "LTP-1308SG-7AVDF",
+  "display": "Analog",
+  "gender": "Women",
+  "price": 83,
+  "description": "The Casio LTP-1308SG-7AVDF features a sophisticated two-tone finish with a clean, classic dial. Its elegant design makes it a stylish choice for everyday wear.",
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "68 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "35.9 x 31.2 x 8.7 mm"
+    },
+    {
+      "label": "Color",
+      "value": "2 tone-Gold"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Display Type",
+      "value": "Analog 3H"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-08-29",
+  "createdAt": "2026-08-29"
+}

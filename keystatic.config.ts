@@ -45,11 +45,14 @@ function brandCollection(
       subCategory: subcategories
         ? fields.select({
             label: "subCategory",
-            options: subcategories.map((s) => ({
-              label: s,
-              value: s.toLowerCase().replace(/\s+/g, "-"),
-            })),
-            defaultValue: subcategories[0].toLowerCase().replace(/\s+/g, "-"),
+            options: [
+              { label: "General", value: "general" },
+              ...subcategories.map((s) => ({
+                label: s,
+                value: s.toLowerCase().replace(/\s+/g, "-"),
+              })),
+            ],
+            defaultValue: "general",
           })
         : fields.empty(),
 

@@ -1,0 +1,53 @@
+{
+  "title": "G-Shock Casual Men Watch GBD-300-1DR",
+  "sku": "GBD-300-1DR",
+  "display": "Digital",
+  "gender": "Men",
+  "price": 235,
+  "subCategory": "g-shock",
+  "description": "The G-Shock GBD-300-1DR features a sleek, sporty design with a clear digital display. Its shock-resistant build and lightweight resin band make it perfect for active everyday wear.",
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "60 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "48.9 x 47.4 x 14.9 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Black"
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin"
+    },
+    {
+      "label": "Display Type",
+      "value": "Digital"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "200m"
+    }
+  ],
+  "features": [
+    "LED Light",
+    "Bluetooth",
+    "Mute Feature",
+    "Energy Saving Feature",
+    "Sensor Feature Details",
+    "World Time",
+    "Daily alarm",
+    "Timer",
+    "Hourly time signal",
+    "12/24-hour format"
+  ],
+  "imageCount": 1,
+  "arrivalDate": "2026-08-30",
+  "createdAt": "2026-08-30"
+}

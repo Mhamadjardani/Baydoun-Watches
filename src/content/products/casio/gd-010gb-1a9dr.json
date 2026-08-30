@@ -1,0 +1,50 @@
+{
+  "title": "G-Shock Casual Men Watch GD-010GB-1A9DR",
+  "sku": "GD-010GB-1A9DR",
+  "display": "Analog",
+  "gender": "Men",
+  "price": 165,
+  "subCategory": "g-shock",
+  "description": "The G-Shock GD-010GB-1A9DR features a bold, rugged design with a durable resin band and striking gold-tone details. Its sporty style makes it a versatile choice for everyday and active wear.",
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "65 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "54.9 x 51.9 x 16.1 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Black"
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin"
+    },
+    {
+      "label": "Display Type",
+      "value": "Digital"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "200m"
+    }
+  ],
+  "features": [
+    "LED Light",
+    "Mute Feature",
+    "World Time",
+    "Daily alarm",
+    "Timer",
+    "Hourly time signal",
+    "12/24-hour format"
+  ],
+  "imageCount": 1,
+  "arrivalDate": "2026-08-29",
+  "createdAt": "2026-08-29"
+}

@@ -1,0 +1,41 @@
+{
+  "title": "Casio women Watch LTP-VT01GL-1BUDF",
+  "sku": "LTP-VT01GL-1BUDF",
+  "display": "Analog",
+  "gender": "Women",
+  "price": 51,
+  "description": "The Casio LTP-VT01GL-1BUDF features a sophisticated gold-tone finish with a clean, elegant dial. Its refined design makes it a versatile choice for everyday wear.",
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "62 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "40 x 34 x 7.9 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Black, Gold Plated"
+    },
+    {
+      "label": "Band Material",
+      "value": "Genuine Leather"
+    },
+    {
+      "label": "Display Type",
+      "value": "Analog 3H"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-08-29",
+  "createdAt": "2026-08-29"
+}

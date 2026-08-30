@@ -1,0 +1,44 @@
+{
+  "title": "Casio Men Digital Watch AEQ-120W-1BV",
+  "sku": "AEQ-120W-1BV",
+  "display": "Digital",
+  "gender": "Men",
+  "price": 68,
+  "description": "The Casio AEQ-120W-1BV is a sporty digital watch designed for an active lifestyle. Its bold black design, easy-to-read display, and comfortable resin band make it a practical choice for everyday adventures.",
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "58 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "53.3 x 52.2 x 16.8 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Black"
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "100m"
+    }
+  ],
+  "features": [
+    "LED Light",
+    "World Time",
+    "Daily alarm",
+    "Timer",
+    "Hourly time signal",
+    "12/24-hour format"
+  ],
+  "imageCount": 1,
+  "arrivalDate": "2026-08-30",
+  "createdAt": "2026-08-30"
+}

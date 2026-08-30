@@ -1,0 +1,41 @@
+{
+  "title": "Casio women Watch LTP-V001D-1BUDF",
+  "sku": "LTP-V001D-1BUDF",
+  "display": "Analog",
+  "gender": "Women",
+  "price": 33,
+  "description": "The Casio LTP-V001D-1BUDF features a classic silver-tone design with a clean blue dial. Its simple, timeless style makes it perfect for everyday wear.",
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "54 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "31 x 25 x 7.6 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Display Type",
+      "value": "Analog 3H"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-08-29",
+  "createdAt": "2026-08-29"
+}

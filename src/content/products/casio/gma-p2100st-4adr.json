@@ -1,0 +1,50 @@
+{
+  "title": "G-Shock Casual Men Watch GMA-P2100ST-4ADR",
+  "sku": "GMA-P2100ST-4ADR",
+  "display": "Analog",
+  "gender": "Men",
+  "price": 195,
+  "subCategory": "g-shock",
+  "description": "The G-Shock GMA-P2100ST-4ADR features a compact octagonal design with a stylish pastel finish. Its durable, shock-resistant build makes it perfect for everyday wear.",
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "40 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "46 x 40.2 x 11.2 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Pink"
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin"
+    },
+    {
+      "label": "Display Type",
+      "value": "Ana-Digi"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "200m"
+    }
+  ],
+  "features": [
+    "LED Light",
+    "World Time",
+    "Mute feature",
+    "Daily alarm",
+    "Timer",
+    "Hourly time signal",
+    "12/24-hour format"
+  ],
+  "imageCount": 1,
+  "arrivalDate": "2026-08-30",
+  "createdAt": "2026-08-30"
+}

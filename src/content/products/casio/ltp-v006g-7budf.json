@@ -1,0 +1,41 @@
+{
+  "title": "Casio women Watch LTP-V006G-7BUDF",
+  "sku": "LTP-V006G-7BUDF",
+  "display": "Analog",
+  "gender": "Women",
+  "price": 57,
+  "description": "The Casio LTP-V006G-7BUDF features a refined gold-tone finish with a clean white dial. Its elegant design makes it a stylish choice for everyday wear.",
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "52 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "30.4 x 25 x 9.2 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Gold Plated"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Display Type",
+      "value": "Analog 3H"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-08-29",
+  "createdAt": "2026-08-29"
+}

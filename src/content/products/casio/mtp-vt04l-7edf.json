@@ -1,0 +1,41 @@
+{
+  "title": "Casio Men Watch MTP-VT04L-7EUDF",
+  "sku": "MTP-VT04L-7EDF",
+  "display": "Analog",
+  "gender": "Men",
+  "price": 52,
+  "description": "The Casio MTP-VT04L-7EDF features a classic leather strap with a clean, elegant dial. Its refined design makes it a versatile choice for everyday wear.",
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "44 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "46 x 40 x 8.2 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Genuine Leather"
+    },
+    {
+      "label": "Display Type",
+      "value": "Analog"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-08-29",
+  "createdAt": "2026-08-29"
+}

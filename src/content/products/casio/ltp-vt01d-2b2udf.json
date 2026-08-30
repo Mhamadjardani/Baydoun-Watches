@@ -1,0 +1,41 @@
+{
+  "title": "Casio women Watch LTP-VT01D-2B2UDF",
+  "sku": "LTP-VT01D-2B2UDF",
+  "display": "Analog",
+  "gender": "Women",
+  "price": 51,
+  "description": "The Casio LTP-VT01D-2B2UDF features a sleek stainless steel finish with a clean, elegant dial. Its refined design makes it a versatile choice for everyday wear.",
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "62 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "40 x 34 x 7.9 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Blue, Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Display Type",
+      "value": "Analog 3H"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-08-29",
+  "createdAt": "2026-08-29"
+}

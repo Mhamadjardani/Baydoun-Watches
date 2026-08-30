@@ -1,0 +1,45 @@
+{
+  "title": "G-Shock Casual Men Watch DW-5900BB-1DR",
+  "sku": "DW-5900BB-1DR",
+  "display": "Digital",
+  "gender": "Men",
+  "price": 130,
+  "subCategory": "g-shock",
+  "description": "The G-Shock DW-5900BB-1DR is a bold digital watch featuring a distinctive three-dimensional case design. Its shock-resistant construction, black finish, and easy-to-read display make it a strong choice for everyday wear and outdoor activities.",
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "60 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "51.4x 46.8 x 15.5 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Black"
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "200m"
+    }
+  ],
+  "features": [
+    "LED Light",
+    "World Time",
+    "Daily alarm",
+    "Timer",
+    "Hourly time signal",
+    "12/24-hour format"
+  ],
+  "imageCount": 1,
+  "arrivalDate": "2026-08-30",
+  "createdAt": "2026-08-30"
+}

@@ -1,0 +1,41 @@
+{
+  "title": "Casio women Watch LTP-1303L-1AVDF",
+  "sku": "LTP-1303L-1AVDF",
+  "display": "Analog",
+  "gender": "Women",
+  "price": 49,
+  "description": "The Casio LTP-1303L-1AVDF features a classic black dial paired with a stylish leather band. Its elegant design makes it a versatile choice for everyday wear.",
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "58 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "35.5 x 30 x 7.5 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Black, Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Genuine Leather"
+    },
+    {
+      "label": "Display Type",
+      "value": "Analog 3H"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "50 meters"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-08-29",
+  "createdAt": "2026-08-29"
+}

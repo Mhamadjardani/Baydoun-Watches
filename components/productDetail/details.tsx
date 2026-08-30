@@ -95,25 +95,25 @@ const ProductDetails = ({
 
   return (
     <section className="min-h-screen overflow-hidden bg-light-neutral px-4 py-24 text-white sm:px-8 lg:px-16 space-y-10">
-      <div className="mx-auto grid max-w-screen-2xl gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(420px,0.95fr)] lg:gap-16">
+      <div className="mx-auto grid max-w-screen-2xl gap-10 lg:grid-cols-[minmax(0,0.75fr)_minmax(360px,1fr)] lg:gap-12">
         <motion.div
-          className="space-y-4"
+          className="mx-auto w-full max-w-107.5 space-y-3"
           initial={{ opacity: 0, x: -32 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="relative aspect-4/5 overflow-hidden rounded-lg border border-primary/15 bg-light-neutral shadow-[0_40px_120px_rgba(0,0,0,0.5)] sm:aspect-5/4 lg:aspect-4/5">
+          <div className="relative aspect-[4/4.8] w-full overflow-hidden rounded-xl border border-primary/15 bg-[#f7f3ea] shadow-[0_18px_60px_rgba(0,0,0,0.24)] sm:aspect-4/4.5 lg:aspect-[4/4.8]">
             <Image
               key={activeDisplayImage}
               src={activeDisplayImage}
               alt={product.title}
               fill
               preload
-              sizes="(max-width: 1024px) 100vw, 52vw"
-              className="object-cover transition duration-700 ease-out hover:scale-105"
+              sizes="(max-width: 1024px) 100vw, 42vw"
+              className="object-contain p-5 transition duration-700 ease-out hover:scale-[1.02]"
               onError={() => markImageFailed(activeImage)}
             />
-            <div className="absolute inset-0 bg-linear-to-tr from-neutral/50 via-transparent to-primary/10" />
+            <div className="absolute inset-0 bg-linear-to-tr from-neutral/30 via-transparent to-primary/10" />
             <div className="absolute left-4 top-4 flex flex-wrap gap-2">
               {product.isNewArrival && (
                 <span className="border border-primary/30 bg-neutral/70 px-3 py-1 text-xs uppercase tracking-widest text-primary backdrop-blur">
@@ -133,7 +133,7 @@ const ProductDetails = ({
             </div>
           </div>
 
-          <div className="grid grid-cols-3 md:grid-cols-5 gap-3 overflow-x-auto pb-1">
+          <div className="grid grid-cols-3 gap-3 overflow-x-auto pb-1 md:grid-cols-5">
             {product.images.map((image, index) => {
               const isActive = image === activeImage;
 
@@ -143,10 +143,10 @@ const ProductDetails = ({
                   type="button"
                   aria-label={`View ${product.title} image ${index + 1}`}
                   onClick={() => setActiveImage(image)}
-                  className={`relative h-24 w-24 shrink-0 overflow-hidden rounded-md border bg-light-neutral transition duration-300 focus:outline-none sm:h-28 sm:w-28 ${
+                  className={`relative h-20 w-20 shrink-0 overflow-hidden rounded-md border bg-[#f7f3ea] transition duration-300 focus:outline-none sm:h-24 sm:w-24 ${
                     isActive
                       ? "border-primary shadow-[0_0_0_1px_rgba(201,168,76,0.4)]"
-                      : "border-white/10 opacity-70 hover:border-primary/50 hover:opacity-100"
+                      : "border-white/10 opacity-75 hover:border-primary/50 hover:opacity-100"
                   }`}
                 >
                   <Image
@@ -156,8 +156,8 @@ const ProductDetails = ({
                     }
                     alt={`${product.title} thumbnail ${index + 1}`}
                     fill
-                    sizes="112px"
-                    className="object-cover"
+                    sizes="96px"
+                    className="object-contain p-2"
                     onError={() => markImageFailed(image)}
                   />
                 </button>
@@ -184,7 +184,7 @@ const ProductDetails = ({
             </div>
 
             <div className="space-y-4">
-              <p className="text-4xl uppercase leading-tight tracking-wide text-white md:text-5xl">
+              <p className="text-4xl uppercase leading-tight tracking-wide text-white">
                 {product.title}
               </p>
               <p className="max-w-2xl text-sm leading-7 tracking-wide text-secondary/80 md:text-base">

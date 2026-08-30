@@ -1,0 +1,41 @@
+{
+  "title": "Casio women Watch LTP-1302D-7BVDF",
+  "sku": "LTP-1302D-7BVDF",
+  "display": "Analog",
+  "gender": "Women",
+  "price": 58,
+  "description": "The Casio LTP-1302D-7BVDF features a sleek silver-tone design with a bold black dial. Its classic style makes it a versatile choice for everyday wear.",
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "69 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "34.5 x 30.2 x 8.7 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Display Type",
+      "value": "Analog 3H"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "50 meters"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-08-29",
+  "createdAt": "2026-08-29"
+}

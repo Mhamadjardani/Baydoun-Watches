@@ -1,0 +1,41 @@
+{
+  "title": "Casio women Watch LTP-V002L-7B2UDF",
+  "sku": "LTP-V002L-7B2UDF",
+  "display": "Analog",
+  "gender": "Women",
+  "price": 33,
+  "description": "The Casio LTP-V002L-7B2UDF features a classic black dial with a comfortable leather-style band. Its simple and elegant design makes it ideal for everyday wear.",
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "53 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "31 x 25 x 9,2 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Brown, Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Genuine Leather"
+    },
+    {
+      "label": "Display Type",
+      "value": "Analog 3H"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-08-29",
+  "createdAt": "2026-08-29"
+}

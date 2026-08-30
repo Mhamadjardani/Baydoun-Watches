@@ -1,0 +1,41 @@
+{
+  "title": "Casio women Watch LTP-1128G-9ARDF",
+  "sku": "LTP-1128G-9ARDF",
+  "display": "Analog",
+  "gender": "Women",
+  "price": 56,
+  "description": "The Casio LTP-1128G-9ARDF features a delicate gold-tone design with a classic analog dial. Its elegant style makes it a perfect choice for everyday and formal wear.",
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "38 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "33 x 27 x 7.2 mm"
+    },
+    {
+      "label": "Color",
+      "value": "2- tone Gold"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Display Type",
+      "value": "Analog 3H"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-08-29",
+  "createdAt": "2026-08-29"
+}

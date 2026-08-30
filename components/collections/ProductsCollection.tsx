@@ -47,6 +47,9 @@ const filterKeys = [
   "display",
 ] as const;
 
+const normalizeSubCategoryValue = (value?: string | null) =>
+  value && value.trim().length > 0 ? value : "general";
+
 const buildFiltersFromSearchParams = (searchParams: URLSearchParams) =>
   filterKeys.reduce<CollectionFilterState>(
     (currentFilters, key) => ({
@@ -125,10 +128,19 @@ const ProductsCollection = ({
     return range;
   };
 
-  const getOptions = (key: FilterKey) =>
-    Array.from(new Set(products.map((product) => product[key]))).filter(
+  const getOptions = (key: FilterKey) => {
+    if (key === "subCategory") {
+      return Array.from(
+        new Set(
+          products.map((product) => normalizeSubCategoryValue(product.subCategory)),
+        ),
+      ).filter(Boolean);
+    }
+
+    return Array.from(new Set(products.map((product) => product[key]))).filter(
       Boolean,
     );
+  };
 
   const activeFilterCount = Object.values(selectedFilters).reduce(
     (count, values) => count + values.length,
@@ -140,9 +152,14 @@ const ProductsCollection = ({
     const matchesFilters = products.filter((product) =>
       filters.every(({ key }) => {
         const selectedValues = selectedFilters[key];
+        const productValue =
+          key === "subCategory"
+            ? normalizeSubCategoryValue(product.subCategory)
+            : product[key];
+
         return (
           selectedValues.length === 0 ||
-          (product[key] && selectedValues.includes(product[key]))
+          (productValue && selectedValues.includes(productValue))
         );
       }),
     );
@@ -271,7 +288,7 @@ const ProductsCollection = ({
                           .filter((p) =>
                             selectedFilters.brand.includes(p.brand),
                           )
-                          .map((p) => p.subCategory),
+                          .map((p) => normalizeSubCategoryValue(p.subCategory)),
                       ),
                     ).filter(Boolean);
                   }

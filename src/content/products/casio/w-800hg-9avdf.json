@@ -1,0 +1,49 @@
+{
+  "title": "Casio Digital Watch W-800HG-9AVDF",
+  "sku": "W-800HG-9AVDF",
+  "display": "Digital",
+  "gender": "Unisex",
+  "price": 37,
+  "subCategory": "vintage",
+  "description": "The Casio W-800HG-9AVDF features a sporty digital design with a durable resin band and a bold gold-tone finish. Its practical style makes it a versatile choice for everyday and active wear.",
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "37 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "44.2 x 36.8 x 13.4 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Black"
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin"
+    },
+    {
+      "label": "Display Type",
+      "value": "Digital"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "100 meters"
+    }
+  ],
+  "features": [
+    "World Time",
+    "Stop Watch",
+    "Aalarm / Hourly Time Signal",
+    "Light",
+    "Calendar",
+    "12/24- hour format"
+  ],
+  "imageCount": 1,
+  "arrivalDate": "2026-08-29",
+  "createdAt": "2026-08-29"
+}

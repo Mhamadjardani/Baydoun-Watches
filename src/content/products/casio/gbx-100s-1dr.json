@@ -1,0 +1,55 @@
+{
+  "title": "G-Shock Casual Men Watch GBX-100S-1DR",
+  "sku": "GBX-100S-1DR",
+  "display": "Digital",
+  "gender": "Men",
+  "price": 245,
+  "subCategory": "g-shock",
+  "description": "The G-Shock GBX-100S-1DR combines a rugged design with a modern digital display. Its durable construction and comfortable resin band make it a great choice for active everyday wear.",
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "66 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "50.9 x 46 x 14.7 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Black"
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin"
+    },
+    {
+      "label": "Display Type",
+      "value": "Digital"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "200m"
+    }
+  ],
+  "features": [
+    "LED Light",
+    "Bluetooth",
+    "Mute Feature",
+    "Sunrise / Sunset Display",
+    "Tide Graph",
+    "Energy Saving Feature",
+    "Sensor Feature Details",
+    "World Time",
+    "Daily alarm",
+    "Timer",
+    "Hourly time signal",
+    "12/24-hour format"
+  ],
+  "imageCount": 1,
+  "arrivalDate": "2026-08-30",
+  "createdAt": "2026-08-30"
+}

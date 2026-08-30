@@ -1,0 +1,41 @@
+{
+  "title": "Casio women Watch LTP-1314L-8AVDF",
+  "sku": "LTP-1314L-8AVDF",
+  "display": "Analog",
+  "gender": "Women",
+  "price": 54,
+  "description": "The Casio LTP-1314L-8AVDF features a classic white dial with a comfortable leather band. Its timeless design makes it an elegant choice for everyday wear.",
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "73 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "36.5 x 33.1 x 8.8 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Black, Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Genuine Leather"
+    },
+    {
+      "label": "Display Type",
+      "value": "Analog 3H"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "50 meters"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-08-29",
+  "createdAt": "2026-08-29"
+}

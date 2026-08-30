@@ -1,0 +1,41 @@
+{
+  "title": "Casio women Digital Watch LWS-1200H-7A1VDF",
+  "sku": "LWS-1200H-7A1VDF",
+  "display": "Digital",
+  "gender": "Women",
+  "price": 47,
+  "description": "The Casio LWS-1200H-7A1VDF features a sporty design with a durable resin band and a clear digital display. Its practical style makes it a versatile choice for active, everyday wear.",
+  "isNewArrival": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "30 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "45.5 x 40.5 x 12.4 mm"
+    },
+    {
+      "label": "Color",
+      "value": "white"
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin"
+    },
+    {
+      "label": "Display Type",
+      "value": "Digital"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "100m"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-08-30",
+  "createdAt": "2026-08-30"
+}
