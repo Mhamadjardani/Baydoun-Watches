@@ -47,8 +47,15 @@ const filterKeys = [
   "display",
 ] as const;
 
-const normalizeSubCategoryValue = (value?: string | null) =>
-  value && value.trim().length > 0 ? value : "general";
+const normalizeSubCategoryValue = (value?: string | null, brand?: string) => {
+  if (value && value.trim().length > 0) return value;
+
+  // Only fallback to "general" for the Casio brand. Other brands should
+  // return an empty string so they don't contribute a "general" option.
+  if (brand && brand.toLowerCase() === "casio") return "general";
+
+  return "";
+};
 
 const buildFiltersFromSearchParams = (searchParams: URLSearchParams) =>
   filterKeys.reduce<CollectionFilterState>(
@@ -130,12 +137,14 @@ const ProductsCollection = ({
 
   const getOptions = (key: FilterKey) => {
     if (key === "subCategory") {
-      return Array.from(
-        new Set(
-          products.map((product) => normalizeSubCategoryValue(product.subCategory)),
-        ),
-      ).filter(Boolean);
-    }
+        return Array.from(
+          new Set(
+            products.map((product) =>
+              normalizeSubCategoryValue(product.subCategory, product.brand),
+            ),
+          ),
+        ).filter(Boolean);
+      }
 
     return Array.from(new Set(products.map((product) => product[key]))).filter(
       Boolean,
@@ -288,7 +297,9 @@ const ProductsCollection = ({
                           .filter((p) =>
                             selectedFilters.brand.includes(p.brand),
                           )
-                          .map((p) => normalizeSubCategoryValue(p.subCategory)),
+                          .map((p) =>
+                            normalizeSubCategoryValue(p.subCategory, p.brand),
+                          ),
                       ),
                     ).filter(Boolean);
                   }
@@ -337,11 +348,18 @@ const ProductsCollection = ({
                                 ].includes(option!);
 
                                 // Calculate how many products match this option item dynamically
-                                const optionItemCount = products.filter(
-                                  (p) =>
-                                    p[filter.key] === option ||
-                                    p.brand === option,
-                                ).length;
+                                const optionItemCount = products.filter((p) => {
+                                  if (filter.key === "subCategory") {
+                                    return (
+                                      normalizeSubCategoryValue(
+                                        p.subCategory,
+                                        p.brand,
+                                      ) === option
+                                    );
+                                  }
+
+                                  return p[filter.key] === option || p.brand === option;
+                                }).length;
 
                                 return (
                                   <label

@@ -1,25 +1,25 @@
 {
-  "title": "Casio Men Watch MTP-VT04D-1EDF",
-  "sku": "MTP-VT04D-1EDF",
+  "title": "Casio women Watch LTP-V002G-9AUDF",
+  "sku": "LTP-V002G-9AUDF",
   "display": "Analog",
-  "gender": "Men",
+  "gender": "Women",
   "price": 56,
-  "description": "The Casio MTP-VT04D-1EDF features a sleek stainless steel finish with a clean, elegant dial. Its refined design makes it a versatile choice for everyday wear.",
+  "description": "The Casio LTP-V002G-9AUDF features a refined gold-tone finish with a classic black dial. Its elegant design makes it a versatile choice for everyday wear.",
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
   "specifications": [
     {
       "label": "Weight",
-      "value": "90 g"
+      "value": "53 g"
     },
     {
       "label": "Dimensions",
-      "value": "46 x 40 x 8.2 mm"
+      "value": "31 x 25 x 9,2 mm"
     },
     {
       "label": "Color",
-      "value": "Silver"
+      "value": "Gold Plated"
     },
     {
       "label": "Band Material",
@@ -27,7 +27,7 @@
     },
     {
       "label": "Display Type",
-      "value": "Analog"
+      "value": "Analog 3H"
     },
     {
       "label": "Water Resistance",
@@ -36,6 +36,6 @@
   ],
   "features": [],
   "imageCount": 1,
-  "arrivalDate": "2026-08-29",
-  "createdAt": "2026-08-29"
+  "arrivalDate": "2026-08-30",
+  "createdAt": "2026-08-30"
 }
