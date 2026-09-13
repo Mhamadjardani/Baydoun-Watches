@@ -1,16 +1,16 @@
 {
-  "title": "Rovina Women's Watch R24120L3BY",
-  "sku": "R24120L3BY",
-  "display": "Analog",
-  "gender": "Women",
-  "price": 255,
+  "title": "Omorfia Men's Watch OM3021H1B",
+  "sku": "OM3021H1B",
+  "display": "Digital",
+  "gender": "Men",
+  "price": 135,
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
   "specifications": [
     {
       "label": "Movement",
-      "value": "QUARTZ"
+      "value": "DIGITAL"
     },
     {
       "label": "Band Material",
@@ -18,23 +18,23 @@
     },
     {
       "label": "Band Color",
-      "value": "GOLD STAINLESS STEEL"
+      "value": "SILVER STAINLESS STEEL"
     },
     {
       "label": "Dial Color",
-      "value": "GOLD"
+      "value": "GREEN"
     },
     {
       "label": "Case Diameter",
-      "value": "39 MM"
+      "value": "44 MM"
     },
     {
       "label": "Case Color",
-      "value": "GOLD STAINLESS STEEL"
+      "value": "SILVER STAINLESS STEEL"
     },
     {
       "label": "Bezel",
-      "value": "GOLD"
+      "value": "BLACK AND GREEN"
     },
     {
       "label": "Water Resistant",
@@ -42,7 +42,7 @@
     }
   ],
   "features": [],
-  "imageCount": 2,
+  "imageCount": 1,
   "arrivalDate": "2026-07-04",
   "createdAt": "2026-07-04"
 }

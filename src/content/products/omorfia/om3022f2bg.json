@@ -1,9 +1,9 @@
 {
-  "title": "Rovina Women's Watch R24123L1BW",
-  "sku": "R24123L1BW",
+  "title": "Omorfia Women's Watch OM3022F2BG",
+  "sku": "OM3022F2BG",
   "display": "Analog",
   "gender": "Women",
-  "price": 260,
+  "price": 130,
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
@@ -18,27 +18,27 @@
     },
     {
       "label": "Band Color",
-      "value": "SILVER STAINLESS STEEL"
+      "value": "TWO TONE STAINLESS STEEL"
     },
     {
       "label": "Dial Color",
-      "value": "SILVER"
+      "value": "GREY"
     },
     {
       "label": "Case Diameter",
-      "value": "36 MM"
+      "value": "37 MM"
     },
     {
       "label": "Case Color",
-      "value": "STAINLESS STEEL"
+      "value": "TWO TONE STAINLESS STEEL"
     },
     {
       "label": "Bezel",
-      "value": "NAVY"
+      "value": "GOLD STAINLESS STEEL"
     },
     {
       "label": "Water Resistant",
-      "value": "3 ATM"
+      "value": "5 ATM"
     }
   ],
   "features": [],

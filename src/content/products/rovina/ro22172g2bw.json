@@ -1,16 +1,16 @@
 {
-  "title": "Omorfia Men's Watch O3021H2BB",
-  "sku": "O3021H2BB",
-  "display": "Digital",
+  "title": "Rovina Men's Watch RO22172G2BW",
+  "sku": "RO22172G2BW",
+  "display": "Analog",
   "gender": "Men",
-  "price": 145,
+  "price": 170,
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
   "specifications": [
     {
       "label": "Movement",
-      "value": "DIGITAL"
+      "value": "QUARTZ"
     },
     {
       "label": "Band Material",
@@ -22,11 +22,11 @@
     },
     {
       "label": "Dial Color",
-      "value": "BLACK"
+      "value": "WHITE"
     },
     {
       "label": "Case Diameter",
-      "value": "44 MM"
+      "value": "42 MM"
     },
     {
       "label": "Case Color",
@@ -34,11 +34,11 @@
     },
     {
       "label": "Bezel",
-      "value": "BLACK AND GOLD"
+      "value": "SILVER-GOLD"
     },
     {
       "label": "Water Resistant",
-      "value": "5 ATM"
+      "value": "3 ATM"
     }
   ],
   "features": [],

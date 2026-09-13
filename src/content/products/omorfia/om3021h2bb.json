@@ -1,8 +1,8 @@
 {
-  "title": "Omorfia Women's Watch O20133F3BY",
-  "sku": "O20133F3BY",
-  "display": "Analog",
-  "gender": "Women",
+  "title": "Omorfia Men's Watch OM3021H2BB",
+  "sku": "OM3021H2BB",
+  "display": "Digital",
+  "gender": "Men",
   "price": 145,
   "isNewArrival": false,
   "isFeatured": false,
@@ -10,31 +10,31 @@
   "specifications": [
     {
       "label": "Movement",
-      "value": "QUARTZ"
+      "value": "DIGITAL"
     },
     {
       "label": "Band Material",
-      "value": "MESH"
+      "value": "BRACELET"
     },
     {
       "label": "Band Color",
-      "value": "GOLD STAINLESS STEEL"
+      "value": "TWO TONE STAINLESS STEEL"
     },
     {
       "label": "Dial Color",
-      "value": "GOLD"
+      "value": "BLACK"
     },
     {
       "label": "Case Diameter",
-      "value": "32 MM"
+      "value": "44 MM"
     },
     {
       "label": "Case Color",
-      "value": "GOLD STAINLESS STEEL"
+      "value": "TWO TONE STAINLESS STEEL"
     },
     {
       "label": "Bezel",
-      "value": "GOLD"
+      "value": "BLACK AND GOLD"
     },
     {
       "label": "Water Resistant",

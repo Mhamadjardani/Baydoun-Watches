@@ -1,16 +1,16 @@
 {
-  "title": "Omorfia Men's Watch O3021H1B",
-  "sku": "O3021H1B",
-  "display": "Digital",
+  "title": "Rovina Men's Watch RO51200G1BW",
+  "sku": "RO51200G1BW",
+  "display": "Analog",
   "gender": "Men",
-  "price": 135,
+  "price": 280,
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
   "specifications": [
     {
       "label": "Movement",
-      "value": "DIGITAL"
+      "value": "QUARTZ"
     },
     {
       "label": "Band Material",
@@ -22,7 +22,7 @@
     },
     {
       "label": "Dial Color",
-      "value": "GREEN"
+      "value": "WHITE"
     },
     {
       "label": "Case Diameter",
@@ -34,7 +34,7 @@
     },
     {
       "label": "Bezel",
-      "value": "BLACK AND GREEN"
+      "value": "SILVER"
     },
     {
       "label": "Water Resistant",

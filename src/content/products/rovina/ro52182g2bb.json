@@ -1,44 +1,44 @@
 {
-  "title": "Omorfia Women's Watch O20133F3BGr",
-  "sku": "O20133F3BGr",
-  "display": "Analog",
-  "gender": "Women",
-  "price": 145,
+  "title": "Rovina Men's Watch RO52182G2BB",
+  "sku": "RO52182G2BB",
+  "display": "Digital",
+  "gender": "Men",
+  "price": 210,
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
   "specifications": [
     {
       "label": "Movement",
-      "value": "QUARTZ"
+      "value": "DIGITAL"
     },
     {
       "label": "Band Material",
-      "value": "MESH"
+      "value": "BRACELET"
     },
     {
       "label": "Band Color",
-      "value": "GOLD STAINLESS STEEL"
+      "value": "TWO TONE STAINLESS STEEL"
     },
     {
       "label": "Dial Color",
-      "value": "GREEN"
+      "value": "BLACK"
     },
     {
       "label": "Case Diameter",
-      "value": "32 MM"
+      "value": "40 MM"
     },
     {
       "label": "Case Color",
-      "value": "GOLD STAINLESS STEEL"
+      "value": "TWO TONE STAINLESS STEEL"
     },
     {
       "label": "Bezel",
-      "value": "GOLD"
+      "value": "GOLD-BLACK"
     },
     {
       "label": "Water Resistant",
-      "value": "3 ATM"
+      "value": "5 ATM"
     }
   ],
   "features": [],

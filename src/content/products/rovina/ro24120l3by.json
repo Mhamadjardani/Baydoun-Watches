@@ -1,9 +1,9 @@
 {
-  "title": "Omorfia Men's Watch O13053H3BB",
-  "sku": "O13053H3BB",
+  "title": "Rovina Women's Watch RO24120L3BY",
+  "sku": "RO24120L3BY",
   "display": "Analog",
-  "gender": "Men",
-  "price": 90,
+  "gender": "Women",
+  "price": 255,
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
@@ -22,11 +22,11 @@
     },
     {
       "label": "Dial Color",
-      "value": "BLACK"
+      "value": "GOLD"
     },
     {
       "label": "Case Diameter",
-      "value": "37 MM"
+      "value": "39 MM"
     },
     {
       "label": "Case Color",
@@ -42,7 +42,7 @@
     }
   ],
   "features": [],
-  "imageCount": 1,
+  "imageCount": 2,
   "arrivalDate": "2026-07-04",
   "createdAt": "2026-07-04"
 }

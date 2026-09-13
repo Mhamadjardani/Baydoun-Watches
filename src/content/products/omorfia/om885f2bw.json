@@ -1,16 +1,16 @@
 {
-  "title": "Rovina Men's Watch R51200G1BW",
-  "sku": "R51200G1BW",
-  "display": "Analog",
+  "title": "Omorfia Men's Watch OM885F2BW",
+  "sku": "OM885F2BW",
+  "display": "Digital",
   "gender": "Men",
-  "price": 280,
+  "price": 115,
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
   "specifications": [
     {
       "label": "Movement",
-      "value": "QUARTZ"
+      "value": "DIGITAL"
     },
     {
       "label": "Band Material",
@@ -22,7 +22,7 @@
     },
     {
       "label": "Dial Color",
-      "value": "WHITE"
+      "value": "SILVER"
     },
     {
       "label": "Case Diameter",
@@ -30,11 +30,11 @@
     },
     {
       "label": "Case Color",
-      "value": "SILVER STAINLESS STEEL"
+      "value": "TWO TONE STAINLESS STEEL"
     },
     {
       "label": "Bezel",
-      "value": "SILVER"
+      "value": "GOLD STAINLESS STEEL"
     },
     {
       "label": "Water Resistant",

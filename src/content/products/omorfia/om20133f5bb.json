@@ -1,9 +1,9 @@
 {
-  "title": "Rovina Women's Watch R9106L2BGr",
-  "sku": "R9106L2BGr",
+  "title": "Omorfia Women's Watch OM20133F5BB",
+  "sku": "OM20133F5BB",
   "display": "Analog",
   "gender": "Women",
-  "price": 235,
+  "price": 145,
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
@@ -14,31 +14,31 @@
     },
     {
       "label": "Band Material",
-      "value": "BRACELET"
+      "value": "MESH"
     },
     {
       "label": "Band Color",
-      "value": "TWO TONE STAINLESS STEEL"
+      "value": "BLACK STAINLESS STEEL"
     },
     {
       "label": "Dial Color",
-      "value": "GREEN"
+      "value": "BLACK"
     },
     {
       "label": "Case Diameter",
-      "value": "39 MM"
+      "value": "32 MM"
     },
     {
       "label": "Case Color",
-      "value": "TWO TONE STAINLESS STEEL"
+      "value": "BLACK STAINLESS STEEL"
     },
     {
       "label": "Bezel",
-      "value": "GOLD"
+      "value": "BLACK"
     },
     {
       "label": "Water Resistant",
-      "value": "5 ATM"
+      "value": "3 ATM"
     }
   ],
   "features": [],

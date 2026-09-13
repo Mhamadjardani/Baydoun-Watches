@@ -1,9 +1,9 @@
 {
-  "title": "Omorfia Women's Watch O3022F2BG",
-  "sku": "O3022F2BG",
+  "title": "Rovina Women's Watch RO9106L2BGr",
+  "sku": "RO9106L2BGr",
   "display": "Analog",
   "gender": "Women",
-  "price": 130,
+  "price": 235,
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
@@ -22,11 +22,11 @@
     },
     {
       "label": "Dial Color",
-      "value": "GREY"
+      "value": "GREEN"
     },
     {
       "label": "Case Diameter",
-      "value": "37 MM"
+      "value": "39 MM"
     },
     {
       "label": "Case Color",
@@ -34,7 +34,7 @@
     },
     {
       "label": "Bezel",
-      "value": "GOLD STAINLESS STEEL"
+      "value": "GOLD"
     },
     {
       "label": "Water Resistant",

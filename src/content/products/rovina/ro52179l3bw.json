@@ -1,9 +1,9 @@
 {
-  "title": "Omorfia Women's Watch O4010F2SW",
-  "sku": "O4010F2SW",
+  "title": "Rovina Women's Watch RO52179L3BW",
+  "sku": "RO52179L3BW",
   "display": "Analog",
   "gender": "Women",
-  "price": 110,
+  "price": 195,
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
@@ -14,11 +14,11 @@
     },
     {
       "label": "Band Material",
-      "value": "RUBBER"
+      "value": "BRACELET"
     },
     {
       "label": "Band Color",
-      "value": "WHITE RUBBER"
+      "value": "GOLD STAINLESS STEEL"
     },
     {
       "label": "Dial Color",
@@ -26,11 +26,11 @@
     },
     {
       "label": "Case Diameter",
-      "value": "39 MM"
+      "value": "36 MM"
     },
     {
       "label": "Case Color",
-      "value": "TWO TONE STAINLESS STEEL"
+      "value": "GOLD STAINLESS STEEL"
     },
     {
       "label": "Bezel",
@@ -38,7 +38,7 @@
     },
     {
       "label": "Water Resistant",
-      "value": "5 ATM"
+      "value": "3 ATM"
     }
   ],
   "features": [],

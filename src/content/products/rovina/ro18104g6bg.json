@@ -1,44 +1,44 @@
 {
-  "title": "Rovina Men's Watch R52182G2BB",
-  "sku": "R52182G2BB",
-  "display": "Digital",
+  "title": "Rovina Men's Watch RO18104G6BG",
+  "sku": "RO18104G6BG",
+  "display": "Analog",
   "gender": "Men",
-  "price": 210,
+  "price": 165,
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
   "specifications": [
     {
       "label": "Movement",
-      "value": "DIGITAL"
+      "value": "QUARTZ"
     },
     {
       "label": "Band Material",
-      "value": "BRACELET"
+      "value": "MESH"
     },
     {
       "label": "Band Color",
-      "value": "TWO TONE STAINLESS STEEL"
+      "value": "BLACK STAINLESS STEEL"
     },
     {
       "label": "Dial Color",
-      "value": "BLACK"
+      "value": "BLACK-ROSE GOLD"
     },
     {
       "label": "Case Diameter",
-      "value": "40 MM"
+      "value": "43 MM"
     },
     {
       "label": "Case Color",
-      "value": "TWO TONE STAINLESS STEEL"
+      "value": "BLACK STAINLESS STEEL"
     },
     {
       "label": "Bezel",
-      "value": "GOLD-BLACK"
+      "value": "BLACK"
     },
     {
       "label": "Water Resistant",
-      "value": "5 ATM"
+      "value": "3 ATM"
     }
   ],
   "features": [],

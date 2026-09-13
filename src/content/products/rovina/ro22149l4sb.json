@@ -1,6 +1,6 @@
 {
-  "title": "Rovina Women's Watch R52179L3BW",
-  "sku": "R52179L3BW",
+  "title": "Rovina Women's Watch RO22149L4SB",
+  "sku": "RO22149L4SB",
   "display": "Analog",
   "gender": "Women",
   "price": 195,
@@ -14,19 +14,19 @@
     },
     {
       "label": "Band Material",
-      "value": "BRACELET"
+      "value": "LEATHER"
     },
     {
       "label": "Band Color",
-      "value": "GOLD STAINLESS STEEL"
+      "value": "BRWON LEATHER"
     },
     {
       "label": "Dial Color",
-      "value": "WHITE"
+      "value": "BLACK"
     },
     {
       "label": "Case Diameter",
-      "value": "36 MM"
+      "value": "40 MM"
     },
     {
       "label": "Case Color",
@@ -38,7 +38,7 @@
     },
     {
       "label": "Water Resistant",
-      "value": "3 ATM"
+      "value": "5 ATM"
     }
   ],
   "features": [],

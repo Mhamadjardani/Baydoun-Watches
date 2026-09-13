@@ -1,9 +1,9 @@
 {
-  "title": "Rovina Men's Watch R18103G1SW",
-  "sku": "R18103G1SW",
+  "title": "Omorfia Women's Watch OM20124F2BW",
+  "sku": "OM20124F2BW",
   "display": "Analog",
-  "gender": "Men",
-  "price": 185,
+  "gender": "Women",
+  "price": 120,
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
@@ -14,27 +14,27 @@
     },
     {
       "label": "Band Material",
-      "value": "LEATHER"
+      "value": "MESH"
     },
     {
       "label": "Band Color",
-      "value": "BLACK LEATHER"
-    },
-    {
-      "label": "Dial Color",
-      "value": "WHITE"
-    },
-    {
-      "label": "Case Diameter",
-      "value": "39 MM"
-    },
-    {
-      "label": "Case Color",
       "value": "SILVER STAINLESS STEEL"
     },
     {
-      "label": "Bezel",
+      "label": "Dial Color",
       "value": "SILVER"
+    },
+    {
+      "label": "Case Diameter",
+      "value": "34 MM"
+    },
+    {
+      "label": "Case Color",
+      "value": "ROSE GOLD STAINLESS STEEL"
+    },
+    {
+      "label": "Bezel",
+      "value": "ROSE GOLD"
     },
     {
       "label": "Water Resistant",

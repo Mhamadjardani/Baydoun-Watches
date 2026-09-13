@@ -1,9 +1,9 @@
 {
-  "title": "Rovina Men's Watch R18104G6BG",
-  "sku": "R18104G6BG",
+  "title": "Omorfia Men's Watch OM13053H3BB",
+  "sku": "OM13053H3BB",
   "display": "Analog",
   "gender": "Men",
-  "price": 165,
+  "price": 90,
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,
@@ -14,31 +14,31 @@
     },
     {
       "label": "Band Material",
-      "value": "MESH"
+      "value": "BRACELET"
     },
     {
       "label": "Band Color",
-      "value": "BLACK STAINLESS STEEL"
+      "value": "GOLD STAINLESS STEEL"
     },
     {
       "label": "Dial Color",
-      "value": "BLACK-ROSE GOLD"
-    },
-    {
-      "label": "Case Diameter",
-      "value": "43 MM"
-    },
-    {
-      "label": "Case Color",
-      "value": "BLACK STAINLESS STEEL"
-    },
-    {
-      "label": "Bezel",
       "value": "BLACK"
     },
     {
+      "label": "Case Diameter",
+      "value": "37 MM"
+    },
+    {
+      "label": "Case Color",
+      "value": "GOLD STAINLESS STEEL"
+    },
+    {
+      "label": "Bezel",
+      "value": "GOLD"
+    },
+    {
       "label": "Water Resistant",
-      "value": "3 ATM"
+      "value": "5 ATM"
     }
   ],
   "features": [],
