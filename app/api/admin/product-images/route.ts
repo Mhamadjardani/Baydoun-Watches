@@ -9,7 +9,7 @@ import {
   PRODUCT_BUCKET,
   isSafeProductPathPart,
   productImagePath,
-  productStorage,
+  getProductStorage,
 } from "../../../../lib/productAdmin";
 import { readCloudProduct, updateCloudProductImageCount } from "../../../../lib/keystaticCloud";
 
@@ -62,7 +62,7 @@ export async function POST(request: Request) {
   }
 
   const path = productImagePath(params.brand, params.sku, params.slot);
-  const result = await productStorage.storage.from(PRODUCT_BUCKET).upload(
+  const result = await getProductStorage().storage.from(PRODUCT_BUCKET).upload(
     path,
     Buffer.from(await file.arrayBuffer()),
     { contentType: "image/webp", upsert: true },
@@ -83,7 +83,7 @@ export async function DELETE(request: Request) {
   if ("error" in params && params.error) return badRequest(params.error);
 
   const path = productImagePath(params.brand, params.sku, params.slot);
-  const result = await productStorage.storage.from(PRODUCT_BUCKET).remove([path]);
+  const result = await getProductStorage().storage.from(PRODUCT_BUCKET).remove([path]);
 
   if (result.error) {
     return NextResponse.json({ error: result.error.message }, { status: 502 });
