@@ -156,11 +156,14 @@ function brandCollection(
 // ── Config ────────────────────────────────────────────────────────────────────
 export default config({
   storage: {
-    kind: "github",
-    repo: {
-      owner: "Mhamadjardani",
-      name: "Baydoun-Watches",
-    },
+    kind: "cloud",
+    // repo: {
+    //   owner: "Mhamadjardani",
+    //   name: "Baydoun-Watches",
+    // },
+  },
+  cloud: {
+    project: "baydoun-watches/baydoun-watches",
   },
   collections: {
     // To add a new brand: one line here + the folder is created automatically
