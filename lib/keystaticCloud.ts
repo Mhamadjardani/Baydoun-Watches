@@ -1,10 +1,8 @@
 import "server-only";
 
-const CLOUD_API = "https://api.keystatic.cloud";
-const CLOUD_GRAPHQL = `${CLOUD_API}/v1/github/graphql`;
-const CLOUD_HEADERS = { "x-keystatic-version": "0.5.50" };
-const OWNER = "baydoun-watches";
-const REPOSITORY = "baydoun-watches";
+const GITHUB_API = "https://api.github.com";
+const OWNER = "Mhamadjardani";
+const REPOSITORY = "Baydoun-Watches";
 
 const PRODUCT_FOLDERS: Record<string, string> = {
   calvinKlein: "calvin-klein",
@@ -16,10 +14,12 @@ const PRODUCT_FOLDERS: Record<string, string> = {
   tommyHilfiger: "tommy-hilfiger",
 };
 
-type CloudTreeEntry = { path: string; oid: string; type: string };
-
-function authHeaders(token: string) {
-  return { Authorization: `Bearer ${token}`, ...CLOUD_HEADERS };
+function githubHeaders(token: string) {
+  return {
+    Accept: "application/vnd.github+json",
+    Authorization: `Bearer ${token}`,
+    "X-GitHub-Api-Version": "2022-11-28",
+  };
 }
 
 export function productFilePath(brand: string, sku: string) {
@@ -28,74 +28,32 @@ export function productFilePath(brand: string, sku: string) {
   return `src/content/products/${folder}/${sku}.json`;
 }
 
-async function cloudGraphql<T>(token: string, query: string, variables: Record<string, unknown>) {
-  const response = await fetch(CLOUD_GRAPHQL, {
-    method: "POST",
-    headers: { ...authHeaders(token), "Content-Type": "application/json" },
-    body: JSON.stringify({ query, variables }),
-    cache: "no-store",
-  });
-  const body = (await response.json()) as { data?: T; errors?: Array<{ message?: string }> };
-  if (!response.ok || body.errors?.length || !body.data) {
-    throw new Error(body.errors?.[0]?.message ?? "Keystatic Cloud request failed");
-  }
-  return body.data;
-}
-
-async function branchInfo(token: string) {
-  const data = await cloudGraphql<{
-    repository: { ref: { target: { oid: string; tree: { oid: string } } } | null } | null;
-  }>(token, `query ProductBranch($owner: String!, $name: String!, $ref: String!) {
-    repository(owner: $owner, name: $name) {
-      ref(qualifiedName: $ref) {
-        target { oid ... on Commit { tree { oid } } }
-      }
-    }
-  }`, { owner: OWNER, name: REPOSITORY, ref: "refs/heads/main" });
-
-  const info = data.repository?.ref?.target;
-  if (!info?.oid || !info.tree?.oid) throw new Error("Main branch is unavailable in Keystatic Cloud");
-  return info;
-}
-
 export async function readCloudProduct(token: string, brand: string, sku: string) {
   const path = productFilePath(brand, sku);
-  const branch = await branchInfo(token);
-  const treeResponse = await fetch(`${CLOUD_API}/v1/github/trees/${branch.tree.oid}`, {
-    headers: authHeaders(token),
+  const response = await fetch(`${GITHUB_API}/repos/${OWNER}/${REPOSITORY}/contents/${path}?ref=main`, {
+    headers: githubHeaders(token),
     cache: "no-store",
   });
-  if (!treeResponse.ok) throw new Error("Could not read the product tree from Keystatic Cloud");
-  const treeBody = (await treeResponse.json()) as { tree?: CloudTreeEntry[] };
-  const entry = treeBody.tree?.find((item) => item.path === path && item.type === "blob");
-  if (!entry) return null;
+  if (response.status === 404) return null;
+  if (!response.ok) throw new Error("Could not read the product file from GitHub");
 
-  const blobResponse = await fetch(`${CLOUD_API}/v1/github/blob/${entry.oid}`, {
-    headers: { ...authHeaders(token), Accept: "application/octet-stream" },
-    cache: "no-store",
-  });
-  if (!blobResponse.ok) throw new Error("Could not read the product file from Keystatic Cloud");
+  const file = (await response.json()) as { sha: string; content: string };
   return {
     path,
-    commitOid: branch.oid,
-    product: JSON.parse(await blobResponse.text()) as Record<string, unknown>,
+    sha: file.sha,
+    product: JSON.parse(Buffer.from(file.content.replace(/\s/g, ""), "base64").toString("utf8")) as Record<string, unknown>,
   };
 }
 
 export async function updateCloudProductImageCount(token: string, brand: string, sku: string, imageCount: number) {
   const current = await readCloudProduct(token, brand, sku);
-  if (!current) throw new Error("Product not found in Keystatic Cloud");
+  if (!current) throw new Error("Product not found in GitHub");
   const product = { ...current.product, imageCount };
   const content = Buffer.from(`${JSON.stringify(product, null, 2)}\n`, "utf8").toString("base64");
-
-  await cloudGraphql(token, `mutation UpdateProduct($input: CreateCommitOnBranchInput!) {
-    createCommitOnBranch(input: $input) { ref { target { oid } } }
-  }`, {
-    input: {
-      branch: { repositoryNameWithOwner: `${OWNER}/${REPOSITORY}`, branchName: "main" },
-      expectedHeadOid: current.commitOid,
-      message: { headline: `Update image count for ${sku}` },
-      fileChanges: { additions: [{ path: current.path, contents: content }], deletions: [] },
-    },
+  const response = await fetch(`${GITHUB_API}/repos/${OWNER}/${REPOSITORY}/contents/${current.path}`, {
+    method: "PUT",
+    headers: { ...githubHeaders(token), "Content-Type": "application/json" },
+    body: JSON.stringify({ message: `Update image count for ${sku}`, content, sha: current.sha }),
   });
+  if (!response.ok) throw new Error("Image deleted, but imageCount could not be updated in GitHub");
 }
