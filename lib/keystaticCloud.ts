@@ -3,8 +3,10 @@ import "server-only";
 const CLOUD_API = "https://api.keystatic.cloud";
 const CLOUD_GRAPHQL = `${CLOUD_API}/v1/github/graphql`;
 const CLOUD_HEADERS = { "x-keystatic-version": "0.5.50" };
-const OWNER = "baydoun-watches";
-const REPOSITORY = "baydoun-watches";
+// Keystatic Cloud resolves the connected repository from the Cloud session.
+// Its own client uses these proxy variables rather than the GitHub account name.
+const OWNER = "repo-owner";
+const REPOSITORY = "repo-name";
 
 const PRODUCT_FOLDERS: Record<string, string> = {
   calvinKlein: "calvin-klein",
@@ -44,7 +46,7 @@ async function cloudGraphql<T>(token: string, query: string, variables: Record<s
 
 async function branchInfo(token: string) {
   const data = await cloudGraphql<{
-    repository: { ref: { target: { oid: string; tree: { oid: string } } } | null } | null;
+    repository: { owner: { login: string }; name: string; ref: { target: { oid: string; tree: { oid: string } } } | null } | null;
   }>(token, `query ProductBranch($owner: String!, $name: String!, $ref: String!) {
     repository(owner: $owner, name: $name) {
       ref(qualifiedName: $ref) {
@@ -54,8 +56,8 @@ async function branchInfo(token: string) {
   }`, { owner: OWNER, name: REPOSITORY, ref: "refs/heads/main" });
 
   const info = data.repository?.ref?.target;
-  if (!info?.oid || !info.tree?.oid) throw new Error("Main branch is unavailable in Keystatic Cloud");
-  return info;
+  if (!info?.oid || !info.tree?.oid || !data.repository) throw new Error("Main branch is unavailable in Keystatic Cloud");
+  return { ...info, repositoryNameWithOwner: `${data.repository.owner.login}/${data.repository.name}` };
 }
 
 export async function readCloudProduct(token: string, brand: string, sku: string) {
@@ -78,6 +80,7 @@ export async function readCloudProduct(token: string, brand: string, sku: string
   return {
     path,
     commitOid: branch.oid,
+    repositoryNameWithOwner: branch.repositoryNameWithOwner,
     product: JSON.parse(await blobResponse.text()) as Record<string, unknown>,
   };
 }
@@ -92,7 +95,7 @@ export async function updateCloudProductImageCount(token: string, brand: string,
     createCommitOnBranch(input: $input) { ref { target { oid } } }
   }`, {
     input: {
-      branch: { repositoryNameWithOwner: `${OWNER}/${REPOSITORY}`, branchName: "main" },
+      branch: { repositoryNameWithOwner: current.repositoryNameWithOwner, branchName: "main" },
       expectedHeadOid: current.commitOid,
       message: { headline: `Update image count for ${sku}` },
       fileChanges: { additions: [{ path: current.path, contents: content }], deletions: [] },
