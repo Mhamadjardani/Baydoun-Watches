@@ -17,13 +17,21 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: "Invalid product" }, { status: 400 });
   }
 
-  const result = await readCloudProduct(token, brand, sku);
-  if (!result) return NextResponse.json({ error: "Product not found in Keystatic Cloud" }, { status: 404 });
+  try {
+    const result = await readCloudProduct(token, brand, sku);
+    if (!result) return NextResponse.json({ error: "Product not found in Keystatic Cloud" }, { status: 404 });
 
-  return NextResponse.json({
-    slug: sku,
-    brand,
-    ...result.product,
-    image: `${process.env.SUPABASE_URL}/storage/v1/object/public/products/${brand}/${sku}/1.webp`,
-  });
+    return NextResponse.json({
+      slug: sku,
+      brand,
+      ...result.product,
+      image: `${process.env.SUPABASE_URL}/storage/v1/object/public/products/${brand}/${sku}/1.webp`,
+    });
+  } catch (error) {
+    console.error("Keystatic Cloud product sync failed", { brand, sku, error });
+    return NextResponse.json(
+      { error: error instanceof Error ? error.message : "Keystatic Cloud product sync failed" },
+      { status: 502 },
+    );
+  }
 }

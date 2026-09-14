@@ -73,7 +73,9 @@ export async function readCloudProduct(token: string, brand: string, sku: string
   if (!entry) return null;
 
   const blobResponse = await fetch(`${CLOUD_API}/v1/github/blob/${entry.oid}`, {
-    headers: { ...authHeaders(token), Accept: "application/octet-stream" },
+    // Keystatic Cloud proxies GitHub's raw blob representation. Keep this
+    // aligned with Keystatic's own client rather than asking for generic bytes.
+    headers: { ...authHeaders(token), Accept: "application/vnd.github.raw" },
     cache: "no-store",
   });
   if (!blobResponse.ok) throw new Error("Could not read the product file from Keystatic Cloud");
