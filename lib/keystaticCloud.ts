@@ -46,24 +46,48 @@ async function cloudGraphql<T>(token: string, query: string, variables: Record<s
 
 async function branchInfo(token: string) {
   const data = await cloudGraphql<{
-    repository: { owner: { login: string }; name: string; ref: { target: { oid: string; tree: { oid: string } } } | null } | null;
-  }>(token, `query ProductBranch($owner: String!, $name: String!, $ref: String!) {
+    repository: {
+      owner: { login: string };
+      name: string;
+      defaultBranchRef: { name: string } | null;
+      refs: { nodes: Array<{ name: string; target: { oid: string; tree?: { oid: string } } | null }> };
+    } | null;
+  }>(token, `query CloudAppShell($name: String!, $owner: String!) {
     repository(owner: $owner, name: $name) {
-      ref(qualifiedName: $ref) {
-        target { oid ... on Commit { tree { oid } } }
+      id
+      owner { id login }
+      name
+      defaultBranchRef { id name }
+      refs(refPrefix: "refs/heads/", first: 100) {
+        nodes {
+          id
+          name
+          target {
+            __typename
+            id
+            oid
+            ... on Commit { tree { id oid } }
+          }
+        }
       }
     }
-  }`, { owner: OWNER, name: REPOSITORY, ref: "refs/heads/main" });
+  }`, { owner: OWNER, name: REPOSITORY });
 
-  const info = data.repository?.ref?.target;
+  const branchName = data.repository?.defaultBranchRef?.name ?? "main";
+  const info = data.repository?.refs.nodes.find((ref) => ref.name === branchName)?.target;
   if (!info?.oid || !info.tree?.oid || !data.repository) throw new Error("Main branch is unavailable in Keystatic Cloud");
-  return { ...info, repositoryNameWithOwner: `${data.repository.owner.login}/${data.repository.name}` };
+  return {
+    commitOid: info.oid,
+    treeOid: info.tree.oid,
+    branchName,
+    repositoryNameWithOwner: `${data.repository.owner.login}/${data.repository.name}`,
+  };
 }
 
 export async function readCloudProduct(token: string, brand: string, sku: string) {
   const path = productFilePath(brand, sku);
   const branch = await branchInfo(token);
-  const treeResponse = await fetch(`${CLOUD_API}/v1/github/trees/${branch.tree.oid}`, {
+  const treeResponse = await fetch(`${CLOUD_API}/v1/github/trees/${branch.treeOid}`, {
     headers: authHeaders(token),
     cache: "no-store",
   });
@@ -81,7 +105,8 @@ export async function readCloudProduct(token: string, brand: string, sku: string
   if (!blobResponse.ok) throw new Error("Could not read the product file from Keystatic Cloud");
   return {
     path,
-    commitOid: branch.oid,
+    commitOid: branch.commitOid,
+    branchName: branch.branchName,
     repositoryNameWithOwner: branch.repositoryNameWithOwner,
     product: JSON.parse(await blobResponse.text()) as Record<string, unknown>,
   };
@@ -97,7 +122,7 @@ export async function updateCloudProductImageCount(token: string, brand: string,
     createCommitOnBranch(input: $input) { ref { target { oid } } }
   }`, {
     input: {
-      branch: { repositoryNameWithOwner: current.repositoryNameWithOwner, branchName: "main" },
+      branch: { repositoryNameWithOwner: current.repositoryNameWithOwner, branchName: current.branchName },
       expectedHeadOid: current.commitOid,
       message: { headline: `Update image count for ${sku}` },
       fileChanges: { additions: [{ path: current.path, contents: content }], deletions: [] },
