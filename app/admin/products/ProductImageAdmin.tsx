@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
 
 type Product = { slug: string; brand: string; title: string; imageCount: number; price: number; image: string };
 type Props = { products: Product[]; githubLogin: string; supabaseUrl: string };
@@ -45,6 +45,47 @@ function ImageSlot({ src, slot, title, busy, onSelect }: { src: string; slot: nu
   );
 }
 
+function readSessionLabel(githubLogin: string) {
+  const cookieToken = document.cookie
+    .split("; ")
+    .some((cookie) => cookie.startsWith("keystatic-gh-access-token="));
+  if (cookieToken) return githubLogin; // server-provided githubLogin is already accurate here
+
+  try {
+    const cloudData = JSON.parse(localStorage.getItem("keystatic-cloud-access-token") ?? "null") as
+      { token?: string; project?: string; validUntil?: number } | null;
+    const valid = cloudData?.project === "baydoun-watches/baydoun-watches" && !!cloudData.token &&
+      (typeof cloudData.validUntil !== "number" || Date.now() < cloudData.validUntil);
+    return valid ? "Keystatic Cloud (signed in)" : "Not signed in";
+  } catch {
+    return "Not signed in";
+  }
+}
+
+function subscribeToSessionChanges(onChange: () => void) {
+  // "storage" only fires for changes made in OTHER tabs, not this one - fine
+  // here since we only need to react to login/logout happening elsewhere,
+  // not live-track same-tab localStorage writes.
+  window.addEventListener("storage", onChange);
+  return () => window.removeEventListener("storage", onChange);
+}
+
+/**
+ * The server can only ever see a GitHub-mode session (its cookie is sent
+ * with the page request); a Cloud token lives in the browser's localStorage
+ * and is invisible during server render. useSyncExternalStore reads that
+ * external source correctly on the client while rendering the server-passed
+ * githubLogin during SSR/hydration, avoiding a hydration mismatch and the
+ * "setState in an effect" anti-pattern a plain useEffect would need.
+ */
+function useSessionLabel(githubLogin: string) {
+  return useSyncExternalStore(
+    subscribeToSessionChanges,
+    () => readSessionLabel(githubLogin),
+    () => githubLogin,
+  );
+}
+
 export default function ProductImageAdmin({ products, githubLogin, supabaseUrl }: Props) {
   const router = useRouter();
   const [productData, setProductData] = useState(products);
@@ -56,6 +97,7 @@ export default function ProductImageAdmin({ products, githubLogin, supabaseUrl }
   const [imageVersion, setImageVersion] = useState(1);
   const [confirmDelete, setConfirmDelete] = useState<{ brand: string; sku: string; slot: number } | null>(null);
   const [dialog, setDialog] = useState<{ title: string; body: string; kind: "success" | "error" } | null>(null);
+  const sessionLabel = useSessionLabel(githubLogin);
   const brands = useMemo(() => [...new Set(productData.map((product) => product.brand))].sort(), [productData]);
   const filtered = useMemo(() => { const normalized = query.trim().toLowerCase(); return productData.filter((product) => (brand === "all" || product.brand === brand) && (!normalized || product.slug.toLowerCase().includes(normalized) || product.title.toLowerCase().includes(normalized))); }, [brand, productData, query]);
   const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
@@ -111,7 +153,7 @@ export default function ProductImageAdmin({ products, githubLogin, supabaseUrl }
       <div className="mx-auto max-w-[1500px]">
         <header className="mb-7 rounded-2xl border border-[#e8d49a]/20 bg-[#1a1a1a] p-5 shadow-2xl shadow-black/20 sm:p-7">
           <div className="flex flex-wrap items-start justify-between gap-5"><div><div className="mb-3 flex items-center gap-3"><span className="h-2 w-2 rounded-full bg-[#e8d49a] shadow-[0_0_12px_#e8d49a]" /><p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#e8d49a]">Baydoun Watches · Studio</p></div><h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">Product image library</h1><p className="mt-2 max-w-2xl text-sm leading-6 text-white/55">Replace numbered product images without renaming them. Missing images appear as upload-ready slots, and the library refreshes after Keystatic edits.</p></div><Link className="rounded-xl border border-[#e8d49a]/40 px-4 py-2.5 text-sm font-medium text-[#e8d49a] transition hover:bg-[#e8d49a] hover:text-[#131313]" href="/keystatic/">Open Keystatic ↗</Link></div>
-          <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 border-t border-white/10 pt-4 text-xs text-white/45"><span>Session: <strong className="font-medium text-white/75">{githubLogin}</strong></span><span>{products.length} products</span><span>Auto-refresh: 10 seconds</span></div>
+          <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 border-t border-white/10 pt-4 text-xs text-white/45"><span>Session: <strong className="font-medium text-white/75">{sessionLabel}</strong></span><span>{products.length} products</span><span>Auto-refresh: 10 seconds</span></div>
         </header>
         <section className="mb-6 flex flex-wrap items-center gap-3 rounded-xl border border-white/10 bg-[#1a1a1a] p-3"><input className="min-w-64 flex-1 rounded-lg border border-white/10 bg-[#0d0d0d] px-3 py-2.5 text-sm text-white outline-none placeholder:text-white/30 focus:border-[#e8d49a]" onChange={(event) => setQuery(event.target.value)} placeholder="Search by SKU or product name…" value={query} /><select className="rounded-lg border border-white/10 bg-[#0d0d0d] px-3 py-2.5 text-sm text-white outline-none focus:border-[#e8d49a]" onChange={(event) => setBrand(event.target.value)} value={brand}><option value="all">All brands</option>{brands.map((name) => <option key={name} value={name}>{name}</option>)}</select><span className="px-2 text-xs text-white/45">Showing {visibleProducts.length} of {filtered.length}</span></section>
         {message && <div className="mb-5 rounded-xl border border-[#e8d49a]/30 bg-[#e8d49a]/10 px-4 py-3 text-sm text-[#e8d49a]">{message}</div>}
