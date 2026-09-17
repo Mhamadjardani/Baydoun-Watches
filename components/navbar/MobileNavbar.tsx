@@ -99,7 +99,7 @@ const MobileNavbar: React.FC<{
     const order: Record<string, string> = {
       calvinKlein: "Calvin Klein",
       casio: "Casio",
-      dkny: "DKNY",
+      // dkny: "DKNY",
       lacoste: "Lacoste",
       omorfia: "Omorfia",
       rovina: "Rovina",

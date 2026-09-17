@@ -177,7 +177,7 @@ export default config({
       "Baby-G",
       "Pro Trek",
     ]),
-    dkny: brandCollection("DKNY", "dkny"),
+    // dkny: brandCollection("DKNY", "dkny"),
     lacoste: brandCollection("Lacoste", "lacoste"),
     omorfia: brandCollection("Omorfia", "omorfia"),
     rovina: brandCollection("Rovina", "rovina"),

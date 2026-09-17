@@ -8,7 +8,7 @@ const reader = createReader(process.cwd(), keystaticConfig);
 const BRANDS = [
   "calvinKlein",
   "casio",
-  "dkny",
+  // "dkny",
   "lacoste",
   "omorfia",
   "rovina",
