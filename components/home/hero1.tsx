@@ -6,30 +6,41 @@ import Link from "next/link";
 
 // 1. Define the structural content for each individual slide
 const slides = [
+  // {
+  //   image: "/rovina.png",
+  //   title: "Rovina",
+  //   description:
+  //     "A symphony of precision engineering and uncompromising craftsmanship. Discover horology elevated to high art.",
+  //   primaryBtn: {
+  //     text: "explore the collection",
+  //     href: "/collections?brand=rovina",
+  //   },
+  //   // secondaryBtn: { text: "discover more", href: "/categories" },
+  // },
+  // {
+  //   image: "/dkny.png",
+  //   title: "DKNY",
+  //   description:
+  //     "Capture the energy and spirit of New York. Bold, modern timepieces designed for the fast-paced contemporary lifestyle.",
+  //   primaryBtn: {
+  //     text: "view new arrivals",
+  //     href: "/collections?brand=dkny",
+  //   },
+  //   // secondaryBtn: { text: "our story", href: "/about" },
+  // },
   {
-    image: "/rovina.png",
-    title: "Rovina",
+    image: "/casio.jpg",
+    title: "Casio",
     description:
-      "A symphony of precision engineering and uncompromising craftsmanship. Discover horology elevated to high art.",
+      "Innovation meets timeless design. Explore a legacy of precision and style, from classic digital watches to cutting-edge smart timepieces.",
     primaryBtn: {
-      text: "explore the collection",
-      href: "/collections?brand=rovina",
+      text: "shop iconic styles",
+      href: "/collections?brand=casio",
     },
-    // secondaryBtn: { text: "discover more", href: "/categories" },
+    // secondaryBtn: { text: "book appointment", href: "/contact" },
   },
   {
-    image: "/dkny.png",
-    title: "DKNY",
-    description:
-      "Capture the energy and spirit of New York. Bold, modern timepieces designed for the fast-paced contemporary lifestyle.",
-    primaryBtn: {
-      text: "view new arrivals",
-      href: "/collections?brand=dkny",
-    },
-    // secondaryBtn: { text: "our story", href: "/about" },
-  },
-  {
-    image: "/ck.png",
+    image: "/ck.webp",
     title: "Calvin Klein",
     description:
       "Minimalist aesthetics meets modern sophistication. Elevate your daily look with clean lines and understated luxury.",
@@ -40,7 +51,29 @@ const slides = [
     // secondaryBtn: { text: "book appointment", href: "/contact" },
   },
   {
-    image: "/th.png",
+    image: "/lacoste.webp",
+    title: "Lacoste",
+    description:
+      "Sporty elegance for the modern lifestyle. Discover timepieces that blend performance, style, and the iconic Lacoste heritage.",
+    primaryBtn: {
+      text: "shop sporty elegance",
+      href: "/collections?brand=lacoste",
+    },
+    // secondaryBtn: { text: "book appointment", href: "/contact" },
+  },
+  {
+    image: "/omorfia.webp",
+    title: "Omorfia",
+    description:
+      "Where artistry meets horology. Experience the beauty of time with watches that are as much a statement of style as they are a testament to craftsmanship.",
+    primaryBtn: {
+      text: "shop artistic designs",
+      href: "/collections?brand=omorfia",
+    },
+    // secondaryBtn: { text: "book appointment", href: "/contact" },
+  },
+  {
+    image: "/tommy.webp",
     title: "Tommy Hilfiger",
     description:
       "Classic American cool with a fresh, modern twist. Vibrant designs crafted for an effortlessly stylish, preppy edge.",
@@ -55,7 +88,7 @@ const slides = [
 const features = [
   "Complimentary Worldwide Shipping",
   "Free Returns & Exchanges",
-  "1-Year International Warranty",
+  "Up to 2-Year International Warranty",
   "100% Certified Authenticity",
   "24/7 Dedicated Support",
 ];
@@ -94,6 +127,26 @@ const Hero1 = () => {
         </AnimatePresence>
       </div>
 
+        {/* Pagination bullets (overlayed on slider) */}
+        <div className="absolute left-1/2 bottom-14 z-20 flex -translate-x-1/2 gap-3">
+          {slides.map((_, i) => (
+            <button
+              key={`bullet-${i}`}
+              aria-label={`Go to slide ${i + 1}`}
+              onClick={() => setCurrentIdx(i)}
+              className="rounded-full p-1"
+            >
+              <motion.span
+                layout
+                transition={{ type: "spring", stiffness: 300, damping: 22 }}
+                className={`block h-2 w-2 rounded-full ${
+                  currentIdx === i ? "bg-primary scale-125" : "bg-white/40"
+                }`}
+              />
+            </button>
+          ))}
+        </div>
+
       {/* 4. Overlay */}
       <motion.div
         className="absolute inset-0 bg-black/60"
@@ -114,7 +167,7 @@ const Hero1 = () => {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 1, ease: "easeOut" }}
           >
-            <motion.p className="text-4xl font-black uppercase tracking-[0.35em] leading-tight text-white drop-shadow-[0_10px_30px_rgba(0,0,0,0.35)] font-playfair md:text-6xl">
+            <motion.p className="text-4xl font-black uppercase tracking-wide leading-tight text-white drop-shadow-[0_10px_30px_rgba(0,0,0,0.35)] font-playfair md:text-6xl">
               {currentSlide.title}
             </motion.p>
 

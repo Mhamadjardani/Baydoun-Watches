@@ -3,11 +3,12 @@
 import React, { useMemo, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { MenuIcon, menuIcons, menuItems, type MenuItem } from "./menuItem";
-import { Product } from "@/lib/type";
+import { ProductCard } from "@/lib/type";
+import Image from "next/image";
 import { useCommerceStore } from "@/store/useCommerceStore";
 
 const DesktopNavbar: React.FC<{
-  products: Product[];
+  products: ProductCard[];
   handleMenuItemClick: (item: MenuItem | MenuIcon) => void;
   handleLogoClick: () => void;
   menuItems: typeof menuItems;
@@ -77,15 +78,8 @@ const DesktopNavbar: React.FC<{
 
           return product ? { product, quantity: item.quantity } : null;
         })
-        .filter(
-          (
-            item,
-          ): item is {
-            product: Product;
-            quantity: number;
-          } => Boolean(item),
-        ),
-    [cartItems],
+        .filter((item): item is { product: ProductCard; quantity: number } => Boolean(item)),
+    [cartItems, products],
   );
 
   const wishlistProducts = useMemo(
@@ -98,7 +92,7 @@ const DesktopNavbar: React.FC<{
               product.brand === item.productBrand,
           ),
         )
-        .filter((product): product is Product => Boolean(product)),
+        .filter((product): product is ProductCard => Boolean(product)),
     [wishlistItems, products],
   );
 
@@ -178,7 +172,7 @@ const DesktopNavbar: React.FC<{
               />
 
               {isSearch && searchValue.trim() && (
-                <div className="absolute left-0 top-full z-50 mt-2 w-full max-h-80 overflow-y-auto rounded-3xl border border-white/10 bg-neutral/95 shadow-[0_20px_80px_rgba(0,0,0,0.45)] backdrop-blur-xl">
+                <div className="absolute left-1/2 top-full z-50 mt-2 w-130 max-w-[90vw] -translate-x-1/2 max-h-80 overflow-y-auto rounded-3xl border border-white/10 bg-neutral/95 shadow-[0_20px_80px_rgba(0,0,0,0.45)] backdrop-blur-xl">
                   {searchResults.length > 0 ? (
                     <>
                       {searchResults.map((product, index) => (
@@ -186,14 +180,30 @@ const DesktopNavbar: React.FC<{
                           key={product.slug + index}
                           type="button"
                           onClick={() => onSearchSelect(product)}
-                          className="w-full px-4 py-3 text-left text-sm text-white transition hover:bg-white/5"
+                          className="w-full px-4 py-2.5 text-left text-xs text-white transition hover:bg-white/5"
                         >
-                          <span className="block font-semibold text-white">
-                            {product.title}
-                          </span>
-                          <span className="block text-xs uppercase tracking-[0.3em] text-secondary/80">
-                            {product.brand}
-                          </span>
+                          <div className="flex items-center gap-3">
+                            <div className="shrink-0">
+                              <div className="relative h-10 w-10 overflow-hidden rounded-md bg-[#0b0b0b]">
+                                <Image
+                                  src={product.image || "/baydoun-logo.webp"}
+                                  alt={product.title}
+                                  fill
+                                  sizes="40px"
+                                  className="object-contain p-1"
+                                />
+                              </div>
+                            </div>
+
+                            <div className="min-w-0">
+                              <span className="block font-semibold text-sm text-white truncate">
+                                {product.title}
+                              </span>
+                              <span className="block text-[10px] uppercase tracking-[0.3em] text-secondary/80">
+                                {product.brand}
+                              </span>
+                            </div>
+                          </div>
                         </button>
                       ))}
                       <button

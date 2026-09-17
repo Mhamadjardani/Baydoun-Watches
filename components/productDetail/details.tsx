@@ -184,7 +184,7 @@ const ProductDetails = ({
             </div>
 
             <div className="space-y-4">
-              <p className="text-4xl uppercase leading-tight tracking-wide text-white">
+              <p className="sm:text-2xl uppercase text-white">
                 {product.title}
               </p>
               <p className="max-w-2xl text-sm leading-7 tracking-wide text-secondary/80 md:text-base">

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { BsWhatsapp } from "react-icons/bs";
 
 export default function FloatingButtons() {
-  const whatsappNumber = "96171210071";
+  const whatsappNumber = "96171346754";
   const mapsUrl =
     "https://www.google.com/maps/search/?api=1&query=Baydoun+Est.";
 

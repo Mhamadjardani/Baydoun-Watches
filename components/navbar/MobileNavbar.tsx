@@ -1,15 +1,16 @@
 "use client";
 
-import { Product } from "@/lib/type";
+import { ProductCard } from "@/lib/type";
 import { useCommerceStore } from "@/store/useCommerceStore";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
 import { menuIcons, menuItems, type MenuItem } from "./menuItem";
 
 const MobileNavbar: React.FC<{
-  products: Product[];
+  products: ProductCard[];
   openMenu: boolean;
   setOpenMenu: (value: boolean) => void;
   handleMenuItemClick: (item: MenuItem) => void;
@@ -44,7 +45,8 @@ const MobileNavbar: React.FC<{
         return searchable.includes(query);
       })
       .slice(0, 6);
-  }, [searchValue]);
+  }, [products, searchValue]);
+  
 
   const cartProducts = useMemo(
     () =>
@@ -62,11 +64,11 @@ const MobileNavbar: React.FC<{
           (
             item,
           ): item is {
-            product: Product;
+            product: ProductCard;
             quantity: number;
           } => Boolean(item),
         ),
-    [cartItems],
+    [cartItems, products],
   );
 
   const wishlistProducts = useMemo(
@@ -79,7 +81,7 @@ const MobileNavbar: React.FC<{
               product.brand === item.productBrand,
           ),
         )
-        .filter((product): product is Product => Boolean(product)),
+        .filter((product): product is ProductCard => Boolean(product)),
     [wishlistItems, products],
   );
 
@@ -89,6 +91,43 @@ const MobileNavbar: React.FC<{
       router.push(icon.href);
     }
   };
+
+  const [openCollection, setOpenCollection] = useState(false);
+  const [expandedBrand, setExpandedBrand] = useState<string | null>(null);
+
+  const brands = useMemo(() => {
+    const order: Record<string, string> = {
+      calvinKlein: "Calvin Klein",
+      casio: "Casio",
+      dkny: "DKNY",
+      lacoste: "Lacoste",
+      omorfia: "Omorfia",
+      rovina: "Rovina",
+      tommyHilfiger: "Tommy Hilfiger",
+    };
+
+    const seen = new Set<string>();
+    const list: { key: string; name: string }[] = [];
+
+    for (const p of products) {
+      if (!seen.has(p.brand)) {
+        seen.add(p.brand);
+        list.push({ key: p.brand, name: order[p.brand] || p.brand });
+      }
+    }
+
+    return list;
+  }, [products]);
+
+  const brandSubcategories = useMemo(() => {
+    const map: Record<string, string[]> = {};
+    for (const p of products) {
+      if (!p.subCategory) continue;
+      if (!map[p.brand]) map[p.brand] = [];
+      if (!map[p.brand].includes(p.subCategory)) map[p.brand].push(p.subCategory);
+    }
+    return map;
+  }, [products]);
 
   const onSearchSelect = (product: (typeof products)[number]) => {
     setSearchValue("");
@@ -199,12 +238,28 @@ const MobileNavbar: React.FC<{
                           onClick={() => onSearchSelect(product)}
                           className="w-full px-4 py-3 text-left text-sm text-white transition hover:bg-white/5"
                         >
-                          <span className="block font-semibold text-white">
-                            {product.title}
-                          </span>
-                          <span className="block text-xs uppercase tracking-[0.3em] text-secondary/80">
-                            {product.brand}
-                          </span>
+                          <div className="flex items-center gap-3">
+                            <div className="shrink-0">
+                              <div className="relative h-12 w-12 overflow-hidden rounded-md bg-[#0b0b0b]">
+                                <Image
+                                  src={product.image || "/baydoun-logo.webp"}
+                                  alt={product.title}
+                                  fill
+                                  sizes="48px"
+                                  className="object-contain p-1"
+                                />
+                              </div>
+                            </div>
+
+                            <div className="min-w-0">
+                              <span className="block font-semibold text-white truncate">
+                                {product.title}
+                              </span>
+                              <span className="block text-xs uppercase tracking-[0.3em] text-secondary/80">
+                                {product.brand}
+                              </span>
+                            </div>
+                          </div>
                         </button>
                       ))}
                       <button
@@ -297,21 +352,37 @@ const MobileNavbar: React.FC<{
                     <div className="absolute inset-x-0 top-full z-50 mt-2 overflow-hidden rounded-3xl border border-white/10 bg-neutral/95 shadow-[0_20px_80px_rgba(0,0,0,0.45)] backdrop-blur-xl">
                       {searchResults.length > 0 ? (
                         <>
-                          {searchResults.map((product) => (
-                            <button
-                              key={`${product.slug}-${product.title}`}
-                              type="button"
-                              onClick={() => onSearchSelect(product)}
-                              className="w-full px-4 py-3 text-left text-sm text-white transition hover:bg-white/5"
-                            >
-                              <span className="block font-semibold text-white">
-                                {product.title}
-                              </span>
-                              <span className="block text-xs uppercase tracking-[0.3em] text-secondary/80">
-                                {product.brand}
-                              </span>
-                            </button>
-                          ))}
+                              {searchResults.map((product) => (
+                                <button
+                                  key={`${product.slug}-${product.title}`}
+                                  type="button"
+                                  onClick={() => onSearchSelect(product)}
+                                  className="w-full px-4 py-3 text-left text-sm text-white transition hover:bg-white/5"
+                                >
+                                  <div className="flex items-center gap-3">
+                                      <div className="shrink-0">
+                                      <div className="relative h-12 w-12 overflow-hidden rounded-md bg-[#0b0b0b]">
+                                        <Image
+                                          src={product.image || "/baydoun-logo.webp"}
+                                          alt={product.title}
+                                          fill
+                                          sizes="48px"
+                                          className="object-contain p-1"
+                                        />
+                                      </div>
+                                    </div>
+
+                                    <div className="min-w-0">
+                                      <span className="block font-semibold text-white truncate">
+                                        {product.title}
+                                      </span>
+                                      <span className="block text-xs uppercase tracking-[0.3em] text-secondary/80">
+                                        {product.brand}
+                                      </span>
+                                    </div>
+                                  </div>
+                                </button>
+                              ))}
                           <button
                             type="button"
                             onClick={onSearchSubmit}
@@ -340,23 +411,156 @@ const MobileNavbar: React.FC<{
               </div>
 
               <nav className="flex flex-1 flex-col py-3">
-                {menuItems.map((item, index) => (
-                  <motion.button
-                    key={`${item.label}-${index}`}
-                    type="button"
-                    className="w-full px-6 py-4 text-left text-sm font-semibold uppercase tracking-[0.25em] text-primary transition-colors duration-300 hover:bg-white/10"
-                    onClick={() => handleMenuItemClick(item)}
-                    initial={{ opacity: 0, x: 24 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{
-                      delay: 0.08 + index * 0.04,
-                      duration: 0.22,
-                      ease: "easeOut",
-                    }}
-                  >
-                    {item.label}
-                  </motion.button>
-                ))}
+                {menuItems.map((item, index) => {
+                  if (item.label === "Collection") {
+                    return (
+                      <div key="collection" className="w-full">
+                        <motion.div
+                          className="w-full px-6 py-4 flex items-center justify-between"
+                          initial={{ opacity: 0, x: 24 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{
+                            delay: 0.08 + index * 0.04,
+                            duration: 0.22,
+                            ease: "easeOut",
+                          }}
+                        >
+                          <button
+                            type="button"
+                            className="text-left text-sm font-semibold uppercase tracking-[0.25em] text-primary"
+                            onClick={() => {
+                              setOpenMenu(false);
+                              router.push("/collections");
+                            }}
+                          >
+                            {item.label}
+                          </button>
+
+                          <button
+                            type="button"
+                            aria-expanded={openCollection}
+                            onClick={() => setOpenCollection((s) => !s)}
+                            className="flex items-center justify-center"
+                          >
+                            <ChevronDown
+                              className={`transition-transform duration-200 ${
+                                openCollection ? "rotate-180 text-primary" : "text-white/40"
+                              }`}
+                            />
+                          </button>
+                        </motion.div>
+
+                        <AnimatePresence initial={false}>
+                          {openCollection && (
+                            <motion.div
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: "auto", opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.28, ease: "easeInOut" }}
+                              className="flex flex-col"
+                            >
+                              {brands.map((b) => (
+                                <div key={b.key} className="w-full">
+                                  <div
+                                    role="button"
+                                    tabIndex={0}
+                                    onClick={() => {
+                                      setOpenMenu(false);
+                                      router.push(`/collections?brand=${encodeURIComponent(
+                                        b.key,
+                                      )}`);
+                                    }}
+                                    onKeyDown={(e) => {
+                                      if (e.key === "Enter") {
+                                        setOpenMenu(false);
+                                        router.push(
+                                          `/collections?brand=${encodeURIComponent(
+                                            b.key,
+                                          )}`,
+                                        );
+                                      }
+                                    }}
+                                    className="w-full px-8 py-3 flex items-center justify-between text-left text-sm font-medium uppercase tracking-[0.15em] text-white/90 hover:bg-white/5 cursor-pointer"
+                                  >
+                                    <span>{b.name}</span>
+                                    {brandSubcategories[b.key] ? (
+                                      <button
+                                        type="button"
+                                        onClick={(e) => {
+                                          e.stopPropagation();
+                                          setExpandedBrand((prev) =>
+                                            prev === b.key ? null : b.key,
+                                          );
+                                        }}
+                                        className="ml-3"
+                                      >
+                                        <ChevronRight
+                                          className={`transition-transform duration-200 transform ${
+                                            expandedBrand === b.key ? "rotate-90" : ""
+                                          }`}
+                                        />
+                                      </button>
+                                    ) : null}
+                                  </div>
+
+                                  <AnimatePresence initial={false}>
+                                    {expandedBrand === b.key && brandSubcategories[b.key] && (
+                                      <motion.div
+                                        initial={{ height: 0, opacity: 0 }}
+                                        animate={{ height: "auto", opacity: 1 }}
+                                        exit={{ height: 0, opacity: 0 }}
+                                        transition={{ duration: 0.22, ease: "easeInOut" }}
+                                        className="flex flex-col"
+                                      >
+                                        {brandSubcategories[b.key].map((sub) => (
+                                          <button
+                                            key={sub}
+                                            type="button"
+                                            onClick={() => {
+                                              setOpenMenu(false);
+                                              router.push(
+                                                `/collections?brand=${encodeURIComponent(
+                                                  b.key,
+                                                )}&subCategory=${encodeURIComponent(
+                                                  sub,
+                                                )}`,
+                                              );
+                                            }}
+                                            className="w-full px-8 py-2 text-left text-sm text-secondary hover:bg-white/5"
+                                          >
+                                            {sub}
+                                          </button>
+                                        ))}
+                                      </motion.div>
+                                    )}
+                                  </AnimatePresence>
+                                </div>
+                              ))}
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    );
+                  }
+
+                  return (
+                    <motion.button
+                      key={`${item.label}-${index}`}
+                      type="button"
+                      className="w-full px-6 py-4 text-left text-sm font-semibold uppercase tracking-[0.25em] text-primary transition-colors duration-300 hover:bg-white/10"
+                      onClick={() => handleMenuItemClick(item)}
+                      initial={{ opacity: 0, x: 24 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{
+                        delay: 0.08 + index * 0.04,
+                        duration: 0.22,
+                        ease: "easeOut",
+                      }}
+                    >
+                      {item.label}
+                    </motion.button>
+                  );
+                })}
               </nav>
 
               <div className="flex items-center gap-2 border-t border-primary/10 px-4 py-4">

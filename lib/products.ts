@@ -23,7 +23,10 @@ export async function getAllProducts() {
     BRANDS.map(async (brand) => {
       const items = await reader.collections[brand].all();
 
-      return items.map((item) => ({
+      // Respect the optional `isVisible` flag: treat missing as visible
+      const visible = items.filter((item) => item.entry.isVisible !== false);
+
+      return visible.map((item) => ({
         slug: item.slug,
         brand,
         ...item.entry,
@@ -39,7 +42,9 @@ export async function getAllProducts() {
 export async function getProductsByBrand(brand: Brand) {
   const items = await reader.collections[brand].all();
 
-  return items.map((item) => ({
+  const visible = items.filter((item) => item.entry.isVisible !== false);
+
+  return visible.map((item) => ({
     slug: item.slug,
     brand,
     ...item.entry,
@@ -52,6 +57,9 @@ export async function getProduct(brand: Brand, slug: string) {
   const entry = await reader.collections[brand].read(slug);
 
   if (!entry) return null;
+
+  // If the editor marked an item as hidden, treat it as not found
+  if (entry.isVisible === false) return null;
 
   return {
     slug,
@@ -66,7 +74,8 @@ export async function getAllProductParams() {
   const pairs = await Promise.all(
     BRANDS.map(async (brand) => {
       const items = await reader.collections[brand].all();
-      return items.map((item) => ({ brand, slug: item.slug }));
+      const visible = items.filter((item) => item.entry.isVisible !== false);
+      return visible.map((item) => ({ brand, slug: item.slug }));
     }),
   );
   return pairs.flat();

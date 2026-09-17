@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const Hero3 = () => {
   return (
     <section
-      className="relative min-h-screen overflow-hidden bg-background"
+      className="relative min-h-[70dvh] overflow-hidden bg-background"
       style={{
         backgroundImage: "url(/bg-hero3.png)",
         backgroundAttachment: "fixed",
@@ -20,7 +20,7 @@ const Hero3 = () => {
         transition={{ duration: 1 }}
       />
 
-      <div className="relative mx-auto flex min-h-screen max-w-6xl flex-col items-center justify-center px-6 py-20 text-center sm:px-10 md:px-16">
+      <div className="relative mx-auto flex min-h-[70dvh] max-w-6xl flex-col items-center justify-center px-6 py-20 text-center sm:px-10 md:px-16">
         <motion.div
           className="max-w-4xl space-y-8"
           initial={{ opacity: 0, y: 40 }}

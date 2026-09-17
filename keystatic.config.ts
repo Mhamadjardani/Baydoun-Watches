@@ -98,6 +98,11 @@ function brandCollection(
         label: "New Arrival",
         defaultValue: false,
       }),
+      isVisible: fields.checkbox({
+        label: "Visible",
+        // default true so items are visible unless explicitly hidden
+        defaultValue: true,
+      }),
       isFeatured: fields.checkbox({ label: "Featured", defaultValue: false }),
       isLimitedEdition: fields.checkbox({
         label: "Limited Edition",
