@@ -44,35 +44,45 @@ function parseImageParams(request: Request) {
 }
 
 export async function POST(request: Request) {
-  const unauthorized = await requireAdmin(request);
-  if (unauthorized) return unauthorized;
+  try {
+    const unauthorized = await requireAdmin(request);
+    if (unauthorized) return unauthorized;
 
-  const params = parseImageParams(request);
-  if ("error" in params && params.error) return badRequest(params.error);
+    const params = parseImageParams(request);
+    if ("error" in params && params.error) return badRequest(params.error);
 
-  const formData = await request.formData();
-  const file = formData.get("file");
+    const formData = await request.formData();
+    const file = formData.get("file");
 
-  if (!(file instanceof File)) return badRequest("A WebP file is required");
-  if (file.type !== "image/webp" && !file.name.toLowerCase().endsWith(".webp")) {
-    return badRequest("Only WebP images are supported");
+    // Accept File or Blob to be robust in Node runtime variations
+    if (!(file instanceof File) && !(file instanceof Blob)) return badRequest("A WebP file is required");
+    const type = (file as any).type ?? "";
+    const name = (file as any).name ?? "";
+    const size = (file as any).size ?? 0;
+
+    if (type !== "image/webp" && !name.toLowerCase().endsWith(".webp")) {
+      return badRequest("Only WebP images are supported");
+    }
+    if (size > 12 * 1024 * 1024) {
+      return badRequest("Images must be 12 MB or smaller");
+    }
+
+    const path = productImagePath(params.brand, params.sku, params.slot);
+    const arrayBuffer = await (file as Blob).arrayBuffer();
+    const result = await getProductStorage().storage.from(PRODUCT_BUCKET).upload(
+      path,
+      Buffer.from(arrayBuffer),
+      { contentType: "image/webp", upsert: true },
+    );
+
+    if (result.error) {
+      return NextResponse.json({ error: result.error.message }, { status: 502 });
+    }
+
+    return NextResponse.json({ path, replaced: result.data?.path === path });
+  } catch (error) {
+    return NextResponse.json({ error: error instanceof Error ? error.message : String(error) }, { status: 500 });
   }
-  if (file.size > 12 * 1024 * 1024) {
-    return badRequest("Images must be 12 MB or smaller");
-  }
-
-  const path = productImagePath(params.brand, params.sku, params.slot);
-  const result = await getProductStorage().storage.from(PRODUCT_BUCKET).upload(
-    path,
-    Buffer.from(await file.arrayBuffer()),
-    { contentType: "image/webp", upsert: true },
-  );
-
-  if (result.error) {
-    return NextResponse.json({ error: result.error.message }, { status: 502 });
-  }
-
-  return NextResponse.json({ path, replaced: result.data?.path === path });
 }
 
 export async function DELETE(request: Request) {
