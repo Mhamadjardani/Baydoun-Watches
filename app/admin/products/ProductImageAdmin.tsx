@@ -73,11 +73,24 @@ export default function ProductImageAdmin({ products, githubLogin, supabaseUrl, 
       const updates = new Map(latest.filter((product): product is Product => product !== null).map((product) => [`${product.brand}/${product.slug}`, product]));
       if (updates.size) setProductData((current) => current.map((product) => updates.get(`${product.brand}/${product.slug}`) ?? product));
     };
+
+    // Run once on mount
     void syncVisibleProducts();
-    const interval = window.setInterval(() => void syncVisibleProducts(), 10000);
-    window.addEventListener("focus", syncVisibleProducts);
-    document.addEventListener("visibilitychange", syncVisibleProducts);
-    return () => { window.clearInterval(interval); window.removeEventListener("focus", syncVisibleProducts); document.removeEventListener("visibilitychange", syncVisibleProducts); };
+
+    // Instead of polling every 10s, sync when the page regains focus, becomes visible, or is shown from bfcache.
+    const handleFocus = () => { void syncVisibleProducts(); };
+    const handleVisibility = () => { if (document.visibilityState === "visible") void syncVisibleProducts(); };
+    const handlePageShow = () => { void syncVisibleProducts(); };
+
+    window.addEventListener("focus", handleFocus);
+    document.addEventListener("visibilitychange", handleVisibility);
+    window.addEventListener("pageshow", handlePageShow);
+
+    return () => {
+      window.removeEventListener("focus", handleFocus);
+      document.removeEventListener("visibilitychange", handleVisibility);
+      window.removeEventListener("pageshow", handlePageShow);
+    };
   // visibleKey intentionally controls the sync target without restarting on each object refresh.
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [visibleKey]);
