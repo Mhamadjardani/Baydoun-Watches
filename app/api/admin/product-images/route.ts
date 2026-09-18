@@ -45,13 +45,16 @@ function parseImageParams(request: Request) {
 
 export async function POST(request: Request) {
   try {
+    console.log('[product-images] POST handler invoked', { url: request.url });
     const unauthorized = await requireAdmin(request);
     if (unauthorized) return unauthorized;
 
     const params = parseImageParams(request);
+    console.log('[product-images] parsed params', params);
     if ("error" in params && params.error) return badRequest(params.error);
 
     const formData = await request.formData();
+    console.log('[product-images] formData received');
     const file = formData.get("file");
 
     // Accept File or Blob to be robust in Node runtime variations
