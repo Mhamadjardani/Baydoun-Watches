@@ -73,6 +73,17 @@ const slides = [
     // secondaryBtn: { text: "book appointment", href: "/contact" },
   },
   {
+    image: "/rovina.webp",
+    title: "Rovina",
+    description:
+      "A symphony of precision engineering and uncompromising craftsmanship. Discover horology elevated to high art.",
+    primaryBtn: {
+      text: "shop precision engineering",
+      href: "/collections?brand=rovina",
+    },
+    // secondaryBtn: { text: "book appointment", href: "/contact" },
+  },
+  {
     image: "/tommy.webp",
     title: "Tommy Hilfiger",
     description:
@@ -127,25 +138,25 @@ const Hero1 = () => {
         </AnimatePresence>
       </div>
 
-        {/* Pagination bullets (overlayed on slider) */}
-        <div className="absolute left-1/2 bottom-14 z-20 flex -translate-x-1/2 gap-3">
-          {slides.map((_, i) => (
-            <button
-              key={`bullet-${i}`}
-              aria-label={`Go to slide ${i + 1}`}
-              onClick={() => setCurrentIdx(i)}
-              className="rounded-full p-1"
-            >
-              <motion.span
-                layout
-                transition={{ type: "spring", stiffness: 300, damping: 22 }}
-                className={`block h-2 w-2 rounded-full ${
-                  currentIdx === i ? "bg-primary scale-125" : "bg-white/40"
-                }`}
-              />
-            </button>
-          ))}
-        </div>
+      {/* Pagination bullets (overlayed on slider) */}
+      <div className="absolute left-1/2 bottom-14 z-20 flex -translate-x-1/2 gap-3">
+        {slides.map((_, i) => (
+          <button
+            key={`bullet-${i}`}
+            aria-label={`Go to slide ${i + 1}`}
+            onClick={() => setCurrentIdx(i)}
+            className="rounded-full p-1"
+          >
+            <motion.span
+              layout
+              transition={{ type: "spring", stiffness: 300, damping: 22 }}
+              className={`block h-2 w-2 rounded-full ${
+                currentIdx === i ? "bg-primary scale-125" : "bg-white/40"
+              }`}
+            />
+          </button>
+        ))}
+      </div>
 
       {/* 4. Overlay */}
       <motion.div
