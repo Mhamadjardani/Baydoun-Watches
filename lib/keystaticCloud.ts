@@ -7,7 +7,7 @@ const REPOSITORY = "Baydoun-Watches";
 const PRODUCT_FOLDERS: Record<string, string> = {
   calvinKlein: "calvin-klein",
   casio: "casio",
-  dkny: "dkny",
+  // dkny: "dkny",
   lacoste: "lacoste",
   omorfia: "omorfia",
   rovina: "rovina",

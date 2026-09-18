@@ -54,7 +54,7 @@ export async function getAllProductsFromFiles(): Promise<Array<{
   const folderByBrand: Record<Brand, string> = {
     calvinKlein: "calvin-klein",
     casio: "casio",
-    dkny: "dkny",
+    // dkny: "dkny",
     lacoste: "lacoste",
     omorfia: "omorfia",
     rovina: "rovina",
