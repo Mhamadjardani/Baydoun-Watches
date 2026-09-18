@@ -57,8 +57,8 @@ export async function POST(request: Request) {
     console.log('[product-images] formData received');
     const file = formData.get("file");
 
-    // Accept File or Blob to be robust in Node runtime variations
-    if (!(file instanceof File) && !(file instanceof Blob)) return badRequest("A WebP file is required");
+    // Accept File/Blob-like objects: check for arrayBuffer() method instead of `instanceof`
+    if (!file || typeof (file as any).arrayBuffer !== "function") return badRequest("A WebP file is required");
     const type = (file as any).type ?? "";
     const name = (file as any).name ?? "";
     const size = (file as any).size ?? 0;
