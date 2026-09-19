@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
     "http://127.0.0.1:3000",
   ],
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "http",
