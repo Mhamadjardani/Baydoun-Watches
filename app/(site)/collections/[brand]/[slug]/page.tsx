@@ -1,15 +1,8 @@
 import ProductDetails from "@/components/productDetail/details";
-import {
-  getAllProductParams,
-  getAllProducts,
-  getProduct,
-  type Brand,
-} from "@/lib/products";
+import { getAllProducts, getProduct, type Brand } from "@/lib/products";
 import { notFound } from "next/navigation";
 
-export async function generateStaticParams() {
-  return getAllProductParams();
-}
+export const dynamic = "force-dynamic";
 
 export default async function ProductPage({
   params,

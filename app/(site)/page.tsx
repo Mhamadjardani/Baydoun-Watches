@@ -7,6 +7,8 @@ import Hero6 from "@/components/home/hero6";
 import Hero7 from "@/components/home/hero7";
 import { getAllProducts } from "@/lib/products";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   const products = await getAllProducts();
 
