@@ -21,9 +21,9 @@ import "server-only";
  */
 
 const GITHUB_API = "https://api.github.com";
-const REPO_OWNER = process.env.GITHUB_ADMIN_REPO_OWNER ?? "Mhamadjardani";
-const REPO_NAME = process.env.GITHUB_ADMIN_REPO_NAME ?? "Baydoun-Watches";
-const BRANCH = process.env.GITHUB_ADMIN_BRANCH ?? "main";
+const REPO_OWNER = "Mhamadjardani";
+const REPO_NAME = "Baydoun-Watches";
+const BRANCH = "main";
 
 const PRODUCT_FOLDERS: Record<string, string> = {
   calvinKlein: "calvin-klein",

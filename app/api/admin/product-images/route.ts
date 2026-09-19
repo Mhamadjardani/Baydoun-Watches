@@ -11,7 +11,7 @@ import {
   productImagePath,
   getProductStorage,
 } from "../../../../lib/productAdmin";
-import { readCloudProduct, updateCloudProductImageCount } from "../../../../lib/keystaticCloud";
+import { readGitHubProduct, updateGitHubProductImageCount } from "../../../../lib/githubContent";
 
 export const runtime = "nodejs";
 
@@ -103,12 +103,10 @@ export async function DELETE(request: Request) {
   }
 
   try {
-    const token = await getKeystaticGitHubAccessToken(request);
-    if (!token) throw new Error("Keystatic session expired");
-    const current = await readCloudProduct(token, params.brand, params.sku);
+    const current = await readGitHubProduct(params.brand, params.sku);
     const currentCount = Number(current?.product.imageCount ?? 1);
     if (currentCount <= 1) throw new Error("A product must keep at least one image slot");
-    await updateCloudProductImageCount(token, params.brand, params.sku, currentCount - 1);
+    await updateGitHubProductImageCount(params.brand, params.sku, currentCount - 1);
   } catch (error) {
     return NextResponse.json(
       { error: error instanceof Error ? error.message : "Image count update failed" },
