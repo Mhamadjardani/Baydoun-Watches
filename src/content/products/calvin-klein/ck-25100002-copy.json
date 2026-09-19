@@ -1,0 +1,50 @@
+{
+  "title": "Calvin Klein Ck Timeless CK 25100002",
+  "sku": "mjey",
+  "display": "Analog",
+  "gender": "Women",
+  "price": 195,
+  "discount": 30,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": true,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Movement",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "Band Material",
+      "value": "BRACELET"
+    },
+    {
+      "label": "Band Color",
+      "value": "TWO TONE STAINLESS STEEL"
+    },
+    {
+      "label": "Dial Color",
+      "value": "SILVER AND GOLD"
+    },
+    {
+      "label": "Case Diameter",
+      "value": "38 MM"
+    },
+    {
+      "label": "Case Color",
+      "value": "SILVER STAINLESS STEEL"
+    },
+    {
+      "label": "Bezel",
+      "value": "SILVER STAINLESS STEEL"
+    },
+    {
+      "label": "Water Resistant",
+      "value": "3 ATM"
+    }
+  ],
+  "features": [],
+  "imageCount": 3,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
