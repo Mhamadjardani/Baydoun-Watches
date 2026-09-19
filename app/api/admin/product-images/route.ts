@@ -58,13 +58,13 @@ export async function POST(request: Request) {
     const file = formData.get("file");
 
     // Accept File/Blob-like objects: check for arrayBuffer() method instead of `instanceof`
-    if (!file || typeof (file as any).arrayBuffer !== "function") return badRequest("A WebP file is required");
+    if (!file || typeof (file as any).arrayBuffer !== "function") return badRequest("An image file is required");
     const type = (file as any).type ?? "";
     const name = (file as any).name ?? "";
     const size = (file as any).size ?? 0;
 
-    if (type !== "image/webp" && !name.toLowerCase().endsWith(".webp")) {
-      return badRequest("Only WebP images are supported");
+    if (!type.startsWith("image/") && !name.toLowerCase().match(/\.(png|jpg|jpeg|webp)$/i)) {
+      return badRequest("Only image files are supported");
     }
     if (size > 12 * 1024 * 1024) {
       return badRequest("Images must be 12 MB or smaller");

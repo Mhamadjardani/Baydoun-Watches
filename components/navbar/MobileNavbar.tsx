@@ -32,8 +32,27 @@ const MobileNavbar: React.FC<{
   const router = useRouter();
   const [isSearch, setIsSearch] = useState(false);
   const [searchValue, setSearchValue] = useState("");
+  const [failedImages, setFailedImages] = useState<Set<string>>(new Set());
   const cartItems = useCommerceStore((state) => state.cartItems);
   const wishlistItems = useCommerceStore((state) => state.wishlistItems);
+
+  const getProductImage = (product: ProductCard) => {
+    if (!product.image) return "/baydoun-logo.webp";
+    return failedImages.has(product.image)
+      ? "/baydoun-logo.webp"
+      : product.image;
+  };
+
+  const markImageFailed = (image: string) => {
+    if (!image) return;
+    setFailedImages((current) => {
+      if (current.has(image)) return current;
+      const next = new Set(current);
+      next.add(image);
+      return next;
+    });
+  };
+
   const searchResults = useMemo(() => {
     const query = searchValue.trim().toLowerCase();
     if (!query) return [];
@@ -242,11 +261,12 @@ const MobileNavbar: React.FC<{
                             <div className="shrink-0">
                               <div className="relative h-12 w-12 overflow-hidden rounded-md bg-[#0b0b0b]">
                                 <Image
-                                  src={product.image || "/baydoun-logo.webp"}
+                                  src={getProductImage(product)}
                                   alt={product.title}
                                   fill
                                   sizes="48px"
                                   className="object-contain p-1"
+                                  onError={() => markImageFailed(product.image ?? "")}
                                 />
                               </div>
                             </div>
@@ -363,11 +383,12 @@ const MobileNavbar: React.FC<{
                                       <div className="shrink-0">
                                       <div className="relative h-12 w-12 overflow-hidden rounded-md bg-[#0b0b0b]">
                                         <Image
-                                          src={product.image || "/baydoun-logo.webp"}
+                                          src={getProductImage(product)}
                                           alt={product.title}
                                           fill
                                           sizes="48px"
                                           className="object-contain p-1"
+                                          onError={() => markImageFailed(product.image ?? "")}
                                         />
                                       </div>
                                     </div>

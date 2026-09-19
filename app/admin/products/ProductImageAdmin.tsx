@@ -32,6 +32,49 @@ function imageUrl(base: string, brand: string, sku: string, slot: number, versio
   return `${base}/storage/v1/object/public/products/${brand}/${sku}/${slot}.webp?v=${version}`;
 }
 
+async function convertImageToWebP(file: File): Promise<File> {
+  const sourceUrl = URL.createObjectURL(file);
+
+  try {
+    const image = await new Promise<HTMLImageElement>((resolve, reject) => {
+      const img = new Image();
+      img.onload = () => resolve(img);
+      img.onerror = () => reject(new Error("Could not read selected image."));
+      img.src = sourceUrl;
+    });
+
+    const canvas = document.createElement("canvas");
+    const maxDimension = 2000;
+    const scale = Math.min(1, maxDimension / Math.max(image.width, image.height));
+    canvas.width = Math.max(1, Math.round(image.width * scale));
+    canvas.height = Math.max(1, Math.round(image.height * scale));
+
+    const context = canvas.getContext("2d");
+    if (!context) {
+      throw new Error("This browser does not support image conversion.");
+    }
+
+    context.fillStyle = "#ffffff";
+    context.fillRect(0, 0, canvas.width, canvas.height);
+    context.drawImage(image, 0, 0, canvas.width, canvas.height);
+
+    const blob = await new Promise<Blob>((resolve, reject) => {
+      canvas.toBlob((result) => {
+        if (!result) {
+          reject(new Error("Could not convert the image to WebP."));
+          return;
+        }
+        resolve(result);
+      }, "image/webp", 0.82);
+    });
+
+    const baseName = file.name.replace(/\.[^/.]+$/, "") || "product-image";
+    return new File([blob], `${baseName}.webp`, { type: "image/webp" });
+  } finally {
+    URL.revokeObjectURL(sourceUrl);
+  }
+}
+
 function ImageSlot({ src, slot, title, busy, onSelect }: { src: string; slot: number; title: string; busy: boolean; onSelect: (file: File) => void }) {
   const [missing, setMissing] = useState(false);
   return (
@@ -40,7 +83,7 @@ function ImageSlot({ src, slot, title, busy, onSelect }: { src: string; slot: nu
       <span className="absolute left-2 top-2 rounded-md bg-[#131313]/90 px-2 py-1 text-[10px] font-semibold text-[#e8d49a]">{slot}.webp</span>
       <span className="absolute inset-x-0 bottom-0 translate-y-full bg-[#131313]/90 px-2 py-2 text-center text-[10px] text-white transition group-hover:translate-y-0">Replace image {slot}</span>
       {busy && <span className="absolute inset-0 grid place-items-center bg-[#131313]/90 text-xs text-[#e8d49a]">Saving…</span>}
-      <input accept="image/webp,.webp" className="absolute inset-0 cursor-pointer opacity-0" disabled={busy} onChange={(event) => { const file = event.target.files?.[0]; if (file) onSelect(file); event.currentTarget.value = ""; }} type="file" />
+      <input accept="image/png,image/jpeg,image/webp,.png,.jpg,.jpeg,.webp" className="absolute inset-0 cursor-pointer opacity-0" disabled={busy} onChange={(event) => { const file = event.target.files?.[0]; if (file) onSelect(file); event.currentTarget.value = ""; }} type="file" />
     </label>
   );
 }
@@ -102,8 +145,31 @@ export default function ProductImageAdmin({ products, githubLogin, supabaseUrl, 
   }
 
   async function upload(brandName: string, sku: string, slot: number, file: File) {
-    const key = `${brandName}/${sku}/${slot}`; setBusy(key); setMessage(""); const formData = new FormData(); formData.set("file", file);
-    try { const response = await fetch(`/api/admin/product-images?brand=${encodeURIComponent(brandName)}&sku=${encodeURIComponent(sku)}&slot=${slot}`, { method: "POST", body: formData, credentials: "include", headers: requestHeaders() }); const data = await response.json(); if (!response.ok) { if (response.status === 401) throw new Error("Your Keystatic session was not received. Sign in again in Keystatic, then return here."); throw new Error(data.error ?? "Upload failed"); } setImageVersion((value) => value + 1); setDialog({ title: "Image saved", body: `${slot}.webp was replaced successfully. The numbered filename stayed unchanged.`, kind: "success" }); router.refresh(); } catch (error) { setDialog({ title: "Upload failed", body: error instanceof Error ? error.message : "Upload failed", kind: "error" }); } finally { setBusy(null); }
+    const key = `${brandName}/${sku}/${slot}`; setBusy(key); setMessage("");
+    try {
+      const converted = await convertImageToWebP(file);
+      const formData = new FormData();
+      formData.set("file", converted, `${slot}.webp`);
+
+      const response = await fetch(`/api/admin/product-images?brand=${encodeURIComponent(brandName)}&sku=${encodeURIComponent(sku)}&slot=${slot}`, {
+        method: "POST",
+        body: formData,
+        credentials: "include",
+        headers: requestHeaders(),
+      });
+      const data = await response.json();
+      if (!response.ok) {
+        if (response.status === 401) throw new Error("Your Keystatic session was not received. Sign in again in Keystatic, then return here.");
+        throw new Error(data.error ?? "Upload failed");
+      }
+      setImageVersion((value) => value + 1);
+      setDialog({ title: "Image saved", body: `${slot}.webp was replaced successfully. JPG/PNG uploads are automatically converted to WebP.`, kind: "success" });
+      router.refresh();
+    } catch (error) {
+      setDialog({ title: "Upload failed", body: error instanceof Error ? error.message : "Upload failed", kind: "error" });
+    } finally {
+      setBusy(null);
+    }
   }
 
   async function remove(brandName: string, sku: string, slot: number) {
