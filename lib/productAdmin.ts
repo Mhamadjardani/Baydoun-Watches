@@ -16,7 +16,7 @@ export function getProductStorage() {
 export const PRODUCT_BRANDS = new Set([
   "calvinKlein",
   "casio",
-  "dkny",
+  // "dkny",
   "lacoste",
   "omorfia",
   "rovina",

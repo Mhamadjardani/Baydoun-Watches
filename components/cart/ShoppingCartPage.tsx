@@ -202,7 +202,7 @@ const ShoppingCartPage = ({ products }: { products: ProductCard[] }) => {
 
   const handleCheckoutSubmit = (e: React.SubmitEvent) => {
     e.preventDefault();
-    const phoneNumber = "96171210071";
+    const phoneNumber = "96171346754";
 
     const message = buildWhatsAppMessage();
 

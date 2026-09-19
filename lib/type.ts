@@ -25,7 +25,7 @@ export type Product = {
   brand:
     | "calvinKlein"
     | "casio"
-    | "dkny"
+    // | "dkny"
     | "lacoste"
     | "omorfia"
     | "rovina"

@@ -86,7 +86,7 @@ const Contact: React.FC = () => {
                   const subject = formData.get("subject");
                   const message = formData.get("message");
 
-                  const mailto = `mailto:test@gmail.com?subject=${encodeURIComponent(
+                  const mailto = `mailto:baydoun.est08@gmail.com?subject=${encodeURIComponent(
                     subject as string,
                   )}&body=${encodeURIComponent(
                     `Name: ${fullName}\nEmail: ${email}\n\nMessage:\n${message}`,
@@ -132,7 +132,7 @@ const Contact: React.FC = () => {
                   whileTap={{ scale: 0.98 }}
                   whileHover={{ scale: 1.02 }}
                   type="submit"
-                  className="cursor-pointer mt-2 inline-flex w-full items-center justify-center gap-3 rounded-full bg-primary px-6 py-3 text-sm font-bold uppercase tracking-[0.35em] text-neutral transition hover:bg-secondary"
+                  className="cursor-pointer mt-2 inline-flex w-full items-center justify-center gap-3 rounded-full bg-primary px-6 py-3 text-sm font-bold uppercase text-neutral transition hover:bg-secondary"
                 >
                   Send message
                 </motion.button>
@@ -166,21 +166,20 @@ const Contact: React.FC = () => {
                   Phone
                 </p>
                 <Link
-                  href={`https://wa.me/9613558657`}
+                  href={`https://wa.me/96171346754`}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Contact on WhatsApp"
                   className="mt-2 text-sm text-white/80 hover:underline hover:text-primary"
                 >
-                  +961 3 558 657
+                  +961 71 346 754
                 </Link>
 
                 <p className="mt-4 text-sm font-semibold uppercase text-secondary/80">
                   Opening hours
                 </p>
                 <div className="mt-2 text-sm text-white/80 space-y-1">
-                  <p>Monday–Friday: 10:00 – 18:00</p>
-                  <p>Saturday: 10:00 – 15:00</p>
+                  <p>Monday–Saturday: 09:00 – 19:00</p>
                   <p>Sunday: Closed</p>
                 </div>
               </motion.div>

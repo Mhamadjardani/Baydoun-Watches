@@ -4,6 +4,8 @@ import { getAllProducts } from "@/lib/products";
 import { Toaster } from "react-hot-toast";
 import FloatingButtons from "@/components/floatingButtons";
 
+export const dynamic = "force-dynamic";
+
 export default async function RootLayout({
   children,
 }: Readonly<{

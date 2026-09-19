@@ -7,7 +7,7 @@ import { ChevronDown, Heart, SlidersHorizontal } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, useRef } from "react";
 import toast from "react-hot-toast";
 
 type FilterKey = "brand" | "subCategory" | "gender" | "display";
@@ -99,16 +99,21 @@ const ProductsCollection = ({
     // Defer state updates to avoid synchronous setState inside effect
     const id = setTimeout(() => {
       setSelectedFilters(urlFilters);
-      setOpenFilters((currentFilters) =>
-        Array.from(
-          new Set([
-            ...currentFilters,
-            ...filters
-              .filter(({ key }) => urlFilters[key].length > 0)
-              .map(({ key }) => key),
-          ]),
-        ),
-      );
+      setOpenFilters((currentFilters) => {
+        const keysFromUrl = filters
+          .filter(({ key }) => urlFilters[key].length > 0)
+          .map(({ key }) => key as FilterKey);
+
+        const nextOpen = new Set<FilterKey>([...currentFilters, ...keysFromUrl]);
+
+        // Ensure subCategory is open when casio is in the URL filters,
+        // otherwise remove it so it auto-closes when casio is deselected.
+        const casioInUrl = Boolean(urlFilters.brand && urlFilters.brand.includes("casio"));
+        if (casioInUrl) nextOpen.add("subCategory");
+        else nextOpen.delete("subCategory");
+
+        return Array.from(nextOpen);
+      });
       setPage(1);
     }, 0);
     return () => clearTimeout(id);
@@ -137,14 +142,14 @@ const ProductsCollection = ({
 
   const getOptions = (key: FilterKey) => {
     if (key === "subCategory") {
-        return Array.from(
-          new Set(
-            products.map((product) =>
-              normalizeSubCategoryValue(product.subCategory, product.brand),
-            ),
+      return Array.from(
+        new Set(
+          products.map((product) =>
+            normalizeSubCategoryValue(product.subCategory, product.brand),
           ),
-        ).filter(Boolean);
-      }
+        ),
+      ).filter(Boolean);
+    }
 
     return Array.from(new Set(products.map((product) => product[key]))).filter(
       Boolean,
@@ -216,8 +221,21 @@ const ProductsCollection = ({
         ? currentValues.filter((currentValue) => currentValue !== value)
         : [...currentValues, value];
 
-      return { ...currentFilters, [key]: nextValues };
+      const nextFilters = { ...currentFilters, [key]: nextValues } as CollectionFilterState;
+
+      // If casio was selected for brand, auto-open subCategory accordion;
+      // if casio was deselected, auto-close subCategory.
+      if (key === "brand") {
+        if (nextValues.includes("casio")) {
+          setOpenFilters((cur) => (cur.includes("subCategory") ? cur : [...cur, "subCategory"]));
+        } else {
+          setOpenFilters((cur) => cur.filter((k) => k !== "subCategory"));
+        }
+      }
+
+      return nextFilters;
     });
+
     setPage(1);
   };
 
@@ -234,13 +252,30 @@ const ProductsCollection = ({
     });
   };
 
+  const productsRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    // When user changes page, scroll the products container into view.
+    // Delay slightly and account for any fixed header so mobile scroll lands
+    // the products grid at the top of the viewport instead of the page top.
+    if (!productsRef.current) return;
+
+    const id = window.setTimeout(() => {
+      const el = productsRef.current as HTMLDivElement;
+      const header = document.querySelector("header") as HTMLElement | null;
+      const headerHeight = header ? header.getBoundingClientRect().height : 0;
+      const top = el.getBoundingClientRect().top + window.pageYOffset - headerHeight - 12;
+
+      window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+    }, 60);
+
+    return () => clearTimeout(id);
+  }, [page]);
+
   return (
     <main className="min-h-screen bg-light-neutral px-4 py-24 text-white sm:px-8 lg:px-16">
       <section className="mx-auto flex max-w-screen-2xl flex-col gap-10">
         <div className="flex flex-col gap-4 border-b border-white/10 pb-8">
-          <p className="text-xs uppercase tracking-[0.35em] text-primary">
-            Curated inventory
-          </p>
           <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-3xl space-y-4">
               <p className="text-4xl font-black uppercase leading-tight tracking-widest text-white font-playfair md:text-6xl">
@@ -358,7 +393,10 @@ const ProductsCollection = ({
                                     );
                                   }
 
-                                  return p[filter.key] === option || p.brand === option;
+                                  return (
+                                    p[filter.key] === option ||
+                                    p.brand === option
+                                  );
                                 }).length;
 
                                 return (
@@ -420,7 +458,7 @@ const ProductsCollection = ({
             </div>
           </aside>
 
-          <div className="space-y-6">
+          <div className="space-y-6" ref={productsRef}>
             <div className="flex flex-col gap-4 border border-white/10 bg-white/3 px-4 py-4 sm:flex-row sm:items-center sm:justify-between">
               <button
                 type="button"
@@ -549,7 +587,7 @@ const ProductsCollection = ({
                     </Link>
 
                     <div className="space-y-2 px-1 pt-3">
-                      <p className="text-[11px] uppercase tracking-[0.3em] text-primary/80">
+                      <p className="text-[11px] uppercase text-primary/80">
                         {product.brand}
                       </p>
 
@@ -577,10 +615,6 @@ const ProductsCollection = ({
                             </p>
                           )}
                         </div>
-
-                        <span className="text-[11px] uppercase tracking-[0.3em] text-primary transition group-hover:text-secondary">
-                          View
-                        </span>
                       </div>
                     </div>
                   </article>

@@ -5,7 +5,8 @@
   "gender": "Men",
   "price": 290,
   "isNewArrival": false,
-  "isFeatured": false,
+  "isVisible": true,
+  "isFeatured": true,
   "isLimitedEdition": false,
   "specifications": [
     {

@@ -5,7 +5,8 @@
   "gender": "Women",
   "price": 185,
   "isNewArrival": false,
-  "isFeatured": false,
+  "isVisible": true,
+  "isFeatured": true,
   "isLimitedEdition": false,
   "specifications": [
     {

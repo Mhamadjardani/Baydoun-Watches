@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { BsInstagram, BsTwitterX } from "react-icons/bs";
+import { BsInstagram } from "react-icons/bs";
 import { FiFacebook } from "react-icons/fi";
 
 const Footer = () => {
@@ -15,7 +15,7 @@ const Footer = () => {
           <div className="col-span-2 md:col-span-1 space-y-4">
             <div className="flex items-center gap-3">
               <Image
-                src="/baydoun-logo.webp"
+                src="/baydoun-logo-removebg-preview.png"
                 alt="Baydoun Watches"
                 height={240}
                 width={240}
@@ -61,12 +61,30 @@ const Footer = () => {
               Contact
             </p>
             <address className="not-italic space-y-2">
-              <p className="text-white/80">test@baydounwatches.com</p>
-              <p className="text-white/80">+961 71 210 071</p>
+              <Link
+                href="mailto:baydoun.est08@gmail.com"
+                className="text-white/80 transition duration-300 hover:text-primary"
+              >
+                baydoun.est08@gmail.com
+              </Link>
+              <div className="flex space-x-2 flex-col gap-1 sm:flex-row">
+                <Link
+                  href="tel:+96171346754"
+                  className="text-white/80 transition duration-300 hover:text-primary"
+                >
+                  +961 71 346 754
+                </Link>
+                <Link
+                  href="tel:+9611346754"
+                  className="text-white/80 transition duration-300 hover:text-primary"
+                >
+                  +961 1 346 754
+                </Link>
+              </div>
               <p className="text-white/80 text-xs">
-                Monday–Friday
+                Monday–Saturday
                 <br />
-                10:00 AM – 6:00 PM EST
+                09:00 AM – 07:00 PM
               </p>
             </address>
           </div>
@@ -78,7 +96,7 @@ const Footer = () => {
             <div className="flex items-center gap-4">
               {/* Instagram */}
               <Link
-                href="https://instagram.com"
+                href="https://www.instagram.com/baydoun_est?stkn=MnY4ZDhlZTAwM2Rk"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -89,23 +107,13 @@ const Footer = () => {
 
               {/* Facebook */}
               <Link
-                href="https://facebook.com"
+                href="https://www.facebook.com/share/19YyzjCim9/?mibextid=wwXI"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/80 transition duration-300 hover:-translate-y-0.5 hover:border-primary/30 hover:bg-white/10 hover:text-primary"
               >
                 <FiFacebook size={20} />
-              </Link>
-
-              <Link
-                href="https://x.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="X (formerly Twitter)"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/80 transition duration-300 hover:-translate-y-0.5 hover:border-primary/30 hover:bg-white/10 hover:text-primary"
-              >
-                <BsTwitterX />
               </Link>
             </div>
           </div>

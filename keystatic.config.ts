@@ -98,6 +98,11 @@ function brandCollection(
         label: "New Arrival",
         defaultValue: false,
       }),
+      isVisible: fields.checkbox({
+        label: "Visible",
+        // default true so items are visible unless explicitly hidden
+        defaultValue: true,
+      }),
       isFeatured: fields.checkbox({ label: "Featured", defaultValue: false }),
       isLimitedEdition: fields.checkbox({
         label: "Limited Edition",
@@ -156,14 +161,11 @@ function brandCollection(
 // ── Config ────────────────────────────────────────────────────────────────────
 export default config({
   storage: {
-    kind: "cloud",
-    // repo: {
-    //   owner: "Mhamadjardani",
-    //   name: "Baydoun-Watches",
-    // },
-  },
-  cloud: {
-    project: "baydoun-watches/baydoun-watches",
+    kind: "github",
+    repo: {
+      owner: "Mhamadjardani",
+      name: "Baydoun-Watches",
+    },
   },
   collections: {
     // To add a new brand: one line here + the folder is created automatically
@@ -175,7 +177,7 @@ export default config({
       "Baby-G",
       "Pro Trek",
     ]),
-    dkny: brandCollection("DKNY", "dkny"),
+    // dkny: brandCollection("DKNY", "dkny"),
     lacoste: brandCollection("Lacoste", "lacoste"),
     omorfia: brandCollection("Omorfia", "omorfia"),
     rovina: brandCollection("Rovina", "rovina"),

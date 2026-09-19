@@ -11,7 +11,7 @@ import {
   productImagePath,
   getProductStorage,
 } from "../../../../lib/productAdmin";
-import { readGitHubProduct, updateGitHubProductImageCount } from "../../../../lib/githubContent";
+import { readCloudProduct, updateCloudProductImageCount } from "../../../../lib/keystaticCloud";
 
 export const runtime = "nodejs";
 
@@ -44,35 +44,48 @@ function parseImageParams(request: Request) {
 }
 
 export async function POST(request: Request) {
-  const unauthorized = await requireAdmin(request);
-  if (unauthorized) return unauthorized;
+  try {
+    console.log('[product-images] POST handler invoked', { url: request.url });
+    const unauthorized = await requireAdmin(request);
+    if (unauthorized) return unauthorized;
 
-  const params = parseImageParams(request);
-  if ("error" in params && params.error) return badRequest(params.error);
+    const params = parseImageParams(request);
+    console.log('[product-images] parsed params', params);
+    if ("error" in params && params.error) return badRequest(params.error);
 
-  const formData = await request.formData();
-  const file = formData.get("file");
+    const formData = await request.formData();
+    console.log('[product-images] formData received');
+    const file = formData.get("file");
 
-  if (!(file instanceof File)) return badRequest("A WebP file is required");
-  if (file.type !== "image/webp" && !file.name.toLowerCase().endsWith(".webp")) {
-    return badRequest("Only WebP images are supported");
+    // Accept File/Blob-like objects: check for arrayBuffer() method instead of `instanceof`
+    if (!file || typeof (file as any).arrayBuffer !== "function") return badRequest("An image file is required");
+    const type = (file as any).type ?? "";
+    const name = (file as any).name ?? "";
+    const size = (file as any).size ?? 0;
+
+    if (!type.startsWith("image/") && !name.toLowerCase().match(/\.(png|jpg|jpeg|webp)$/i)) {
+      return badRequest("Only image files are supported");
+    }
+    if (size > 12 * 1024 * 1024) {
+      return badRequest("Images must be 12 MB or smaller");
+    }
+
+    const path = productImagePath(params.brand, params.sku, params.slot);
+    const arrayBuffer = await (file as Blob).arrayBuffer();
+    const result = await getProductStorage().storage.from(PRODUCT_BUCKET).upload(
+      path,
+      Buffer.from(arrayBuffer),
+      { contentType: "image/webp", upsert: true },
+    );
+
+    if (result.error) {
+      return NextResponse.json({ error: result.error.message }, { status: 502 });
+    }
+
+    return NextResponse.json({ path, replaced: result.data?.path === path });
+  } catch (error) {
+    return NextResponse.json({ error: error instanceof Error ? error.message : String(error) }, { status: 500 });
   }
-  if (file.size > 12 * 1024 * 1024) {
-    return badRequest("Images must be 12 MB or smaller");
-  }
-
-  const path = productImagePath(params.brand, params.sku, params.slot);
-  const result = await getProductStorage().storage.from(PRODUCT_BUCKET).upload(
-    path,
-    Buffer.from(await file.arrayBuffer()),
-    { contentType: "image/webp", upsert: true },
-  );
-
-  if (result.error) {
-    return NextResponse.json({ error: result.error.message }, { status: 502 });
-  }
-
-  return NextResponse.json({ path, replaced: result.data?.path === path });
 }
 
 export async function DELETE(request: Request) {
@@ -90,10 +103,12 @@ export async function DELETE(request: Request) {
   }
 
   try {
-    const current = await readGitHubProduct(params.brand, params.sku);
+    const token = await getKeystaticGitHubAccessToken(request);
+    if (!token) throw new Error("Keystatic session expired");
+    const current = await readCloudProduct(token, params.brand, params.sku);
     const currentCount = Number(current?.product.imageCount ?? 1);
     if (currentCount <= 1) throw new Error("A product must keep at least one image slot");
-    await updateGitHubProductImageCount(params.brand, params.sku, currentCount - 1);
+    await updateCloudProductImageCount(token, params.brand, params.sku, currentCount - 1);
   } catch (error) {
     return NextResponse.json(
       { error: error instanceof Error ? error.message : "Image count update failed" },

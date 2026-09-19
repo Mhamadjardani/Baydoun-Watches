@@ -14,6 +14,7 @@ export default async function ProductAdminPage() {
       products={products}
       githubLogin={user?.login ?? "Not signed in"}
       supabaseUrl={process.env.SUPABASE_URL ?? ""}
+      keystaticBasePath="/keystatic/branch/main"
     />
   );
 }

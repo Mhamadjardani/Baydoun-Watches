@@ -1,12 +1,12 @@
 "use client";
-import { Product } from "@/lib/type";
+import { ProductCard } from "@/lib/type";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import DesktopNavbar from "./DesktopNavbar";
 import { MenuIcon, menuIcons, menuItems, type MenuItem } from "./menuItem";
 import MobileNavbar from "./MobileNavbar";
 
-const Navbar = ({ products }: { products: Product[] }) => {
+const Navbar = ({ products }: { products: ProductCard[] }) => {
   const [scrolled, setScrolled] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);

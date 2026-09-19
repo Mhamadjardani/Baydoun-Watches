@@ -23,6 +23,10 @@ export const menuItems: MenuItem[] = [
     href: "/collections",
   },
   {
+    label: "Sales",
+    href: "/sales",
+  },
+  {
     label: "About Us",
     href: "/heritage",
   },

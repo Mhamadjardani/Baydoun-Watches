@@ -2,6 +2,8 @@ import ProductsCollection from "@/components/collections/ProductsCollection";
 import { getAllProducts } from "@/lib/products";
 import { Suspense } from "react";
 
+export const dynamic = "force-dynamic";
+
 export default async function CollectionsPage() {
   const products = await getAllProducts();
 
