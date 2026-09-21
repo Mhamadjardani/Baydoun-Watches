@@ -116,7 +116,7 @@ const CategoriesPage = ({ products }: { products: ProductCard[] }) => {
         {/*
         <div className="space-y-6">
           <div className="flex items-end justify-between gap-4">
-            <p className="text-xs uppercase tracking-[0.35em] text-primary">
+            <p className="text-xs uppercase tracking-wide text-primary">
               Categories
             </p>
             <Link
@@ -137,7 +137,7 @@ const CategoriesPage = ({ products }: { products: ProductCard[] }) => {
 
         {/* BRAND SECTION (NEW CLEAN STYLE) */}
         <div className="space-y-6 border-t border-white/10 pt-10">
-          {/* <p className="text-xs uppercase tracking-[0.35em] text-primary">
+          {/* <p className="text-xs uppercase tracking-wide text-primary">
             Brands
           </p> */}
 

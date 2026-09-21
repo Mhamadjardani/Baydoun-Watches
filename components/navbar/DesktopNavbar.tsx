@@ -218,7 +218,7 @@ const DesktopNavbar: React.FC<{
                               <span className="block font-semibold text-sm text-white truncate">
                                 {product.title}
                               </span>
-                              <span className="block text-[10px] uppercase tracking-[0.3em] text-secondary/80">
+                              <span className="block text-[10px] uppercase tracking-wide text-secondary/80">
                                 {product.brand}
                               </span>
                             </div>
@@ -228,7 +228,7 @@ const DesktopNavbar: React.FC<{
                       <button
                         type="button"
                         onClick={onSearchSubmit}
-                        className="w-full border-t border-white/10 px-4 py-3 text-left text-xs font-bold uppercase tracking-[0.25em] text-primary transition hover:bg-primary/10"
+                        className="w-full border-t border-white/10 px-4 py-3 text-left text-xs font-bold uppercase tracking-wide text-primary transition hover:bg-primary/10"
                       >
                         See all results for &quot;{searchValue.trim()}&quot;
                       </button>
@@ -241,7 +241,7 @@ const DesktopNavbar: React.FC<{
                       <button
                         type="button"
                         onClick={onSearchSubmit}
-                        className="w-full border-t border-white/10 px-4 py-3 text-left text-xs font-bold uppercase tracking-[0.25em] text-primary transition hover:bg-primary/10"
+                        className="w-full border-t border-white/10 px-4 py-3 text-left text-xs font-bold uppercase tracking-wide text-primary transition hover:bg-primary/10"
                       >
                         Search all for &quot;{searchValue.trim()}&quot;
                       </button>

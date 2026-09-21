@@ -33,11 +33,11 @@ const Hero5 = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.9, ease: "easeOut", delay: 0.1 }}
         >
-          <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-primary/90">
+          <p className="text-xs sm:text-sm uppercase text-primary/90">
             our heritage
           </p>
 
-          <p className="font-playfair text-3xl md:text-5xl lg:text-6xl font-black uppercase tracking-[0.2em] leading-tight text-white">
+          <p className="font-playfair text-3xl md:text-5xl lg:text-6xl font-black uppercase tracking-wide leading-tight text-white">
             A Century of Precision
           </p>
 
@@ -49,7 +49,7 @@ const Hero5 = () => {
 
           <Link
             href="/heritage"
-            className="group mt-2 inline-flex w-fit items-center gap-3 rounded-full border border-primary/25 bg-primary/10 px-6 py-2.5 text-xs sm:text-sm uppercase tracking-[0.3em] text-primary transition duration-300 hover:border-primary/50 hover:bg-primary/20"
+            className="group mt-2 inline-flex w-fit items-center gap-3 rounded-full border border-primary/25 bg-primary/10 px-6 py-2.5 text-xs sm:text-sm uppercase text-primary transition duration-300 hover:border-primary/50 hover:bg-primary/20"
           >
             read our story
             <span className="h-px w-8 bg-primary transition-all duration-300 group-hover:w-14" />

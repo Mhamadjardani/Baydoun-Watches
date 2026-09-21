@@ -38,7 +38,7 @@ const Hero2 = ({ products }: { products: ProductCard[] }) => {
     <section className="min-h-screen overflow-hidden py-16 md:py-24">
       <div className="mx-auto flex w-full max-w-screen-2xl flex-col gap-10 px-4 text-center md:px-8">
         <motion.p
-          className="font-playfair text-3xl font-black uppercase tracking-[0.25em] text-white sm:text-5xl md:text-6xl"
+          className="font-playfair text-3xl font-black uppercase tracking-wide text-white sm:text-5xl md:text-6xl"
           initial={{ opacity: 0, y: 32 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -98,7 +98,7 @@ const Hero2 = ({ products }: { products: ProductCard[] }) => {
                     </div>
 
                     <div className="absolute inset-x-0 bottom-0 p-3 transition-all duration-500 group-hover:-translate-y-2 md:p-7">
-                      {/* <p className="text-[11px] uppercase tracking-[0.35em] text-primary">
+                      {/* <p className="text-[11px] uppercase tracking-wide text-primary">
                         {product.brand}
                       </p> */}
 

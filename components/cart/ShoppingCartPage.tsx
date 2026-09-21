@@ -240,7 +240,7 @@ const ShoppingCartPage = ({ products }: { products: ProductCard[] }) => {
     <main className="min-h-screen bg-neutral px-4 py-24 text-white sm:px-8 lg:px-16">
       <section className="mx-auto flex max-w-screen-2xl flex-col gap-10">
         <div className="flex flex-col gap-4 border-b border-white/10 pb-8">
-          <p className="text-xs uppercase tracking-[0.35em] text-primary">
+          <p className="text-xs uppercase tracking-wide text-primary">
             Secure checkout
           </p>
           <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
@@ -440,7 +440,7 @@ const ShoppingCartPage = ({ products }: { products: ProductCard[] }) => {
           <section className="border-t border-white/10 pt-10">
             <div className="space-y-6">
               <div className="flex flex-col gap-2">
-                <p className="text-xs uppercase tracking-[0.35em] text-primary">
+                <p className="text-xs uppercase tracking-wide text-primary">
                   Shipping Information
                 </p>
                 <h3 className="text-3xl font-black uppercase tracking-widest text-white font-playfair">
@@ -455,7 +455,7 @@ const ShoppingCartPage = ({ products }: { products: ProductCard[] }) => {
                 <div className="space-y-2">
                   <label
                     htmlFor="firstName"
-                    className="block text-xs uppercase tracking-[0.35em] text-secondary/70"
+                    className="block text-xs uppercase tracking-wide text-secondary/70"
                   >
                     First Name
                   </label>
@@ -474,7 +474,7 @@ const ShoppingCartPage = ({ products }: { products: ProductCard[] }) => {
                 <div className="space-y-2">
                   <label
                     htmlFor="lastName"
-                    className="block text-xs uppercase tracking-[0.35em] text-secondary/70"
+                    className="block text-xs uppercase tracking-wide text-secondary/70"
                   >
                     Last Name
                   </label>
@@ -493,7 +493,7 @@ const ShoppingCartPage = ({ products }: { products: ProductCard[] }) => {
                 <div className="space-y-2 md:col-span-2">
                   <label
                     htmlFor="address"
-                    className="block text-xs uppercase tracking-[0.35em] text-secondary/70"
+                    className="block text-xs uppercase tracking-wide text-secondary/70"
                   >
                     Street Address
                   </label>
@@ -512,7 +512,7 @@ const ShoppingCartPage = ({ products }: { products: ProductCard[] }) => {
                 <div className="space-y-2 md:col-span-2">
                   <label
                     htmlFor="apartment"
-                    className="block text-xs uppercase tracking-[0.35em] text-secondary/70"
+                    className="block text-xs uppercase tracking-wide text-secondary/70"
                   >
                     Apartment, Suite, etc.
                   </label>
@@ -531,7 +531,7 @@ const ShoppingCartPage = ({ products }: { products: ProductCard[] }) => {
                 <div className="space-y-2">
                   <label
                     htmlFor="city"
-                    className="block text-xs uppercase tracking-[0.35em] text-secondary/70"
+                    className="block text-xs uppercase tracking-wide text-secondary/70"
                   >
                     City
                   </label>
@@ -550,7 +550,7 @@ const ShoppingCartPage = ({ products }: { products: ProductCard[] }) => {
                 <div className="space-y-2">
                   <label
                     htmlFor="email"
-                    className="block text-xs uppercase tracking-[0.35em] text-secondary/70"
+                    className="block text-xs uppercase tracking-wide text-secondary/70"
                   >
                     Email Address
                   </label>
@@ -569,7 +569,7 @@ const ShoppingCartPage = ({ products }: { products: ProductCard[] }) => {
                 <div className="space-y-2">
                   <label
                     htmlFor="mobileNumber"
-                    className="block text-xs uppercase tracking-[0.35em] text-secondary/70"
+                    className="block text-xs uppercase tracking-wide text-secondary/70"
                   >
                     Mobile Number
                   </label>
@@ -587,7 +587,7 @@ const ShoppingCartPage = ({ products }: { products: ProductCard[] }) => {
 
                 <button
                   type="submit"
-                  className="cursor-pointer inline-flex items-center justify-center gap-3 rounded-lg bg-primary px-6 py-4 text-sm font-bold uppercase tracking-[0.35em] text-neutral transition hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-primary/40 md:col-span-2"
+                  className="cursor-pointer inline-flex items-center justify-center gap-3 rounded-lg bg-primary px-6 py-4 text-sm font-bold uppercase tracking-wide text-neutral transition hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-primary/40 md:col-span-2"
                 >
                   Complete Order
                   <ArrowRight size={18} />
@@ -601,7 +601,7 @@ const ShoppingCartPage = ({ products }: { products: ProductCard[] }) => {
           <section className="space-y-5 border-t border-white/10 pt-8">
             <div className="flex items-end justify-between gap-4">
               <div>
-                <p className="text-xs uppercase tracking-[0.35em] text-primary">
+                <p className="text-xs uppercase tracking-wide text-primary">
                   You may also like
                 </p>
                 <p className="mt-3 text-2xl font-bold uppercase tracking-widest text-white font-playfair">

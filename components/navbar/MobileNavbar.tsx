@@ -275,7 +275,7 @@ const MobileNavbar: React.FC<{
                               <span className="block font-semibold text-white truncate">
                                 {product.title}
                               </span>
-                              <span className="block text-xs uppercase tracking-[0.3em] text-secondary/80">
+                              <span className="block text-xs uppercase tracking-wide text-secondary/80">
                                 {product.brand}
                               </span>
                             </div>
@@ -285,7 +285,7 @@ const MobileNavbar: React.FC<{
                       <button
                         type="button"
                         onClick={onSearchSubmit}
-                        className="w-full border-t border-white/10 px-4 py-3 text-left text-xs font-bold uppercase tracking-[0.25em] text-primary transition hover:bg-primary/10"
+                        className="w-full border-t border-white/10 px-4 py-3 text-left text-xs font-bold uppercase tracking-wide text-primary transition hover:bg-primary/10"
                       >
                         See all results for &quot;{searchValue.trim()}&quot;
                       </button>
@@ -298,7 +298,7 @@ const MobileNavbar: React.FC<{
                       <button
                         type="button"
                         onClick={onSearchSubmit}
-                        className="w-full border-t border-white/10 px-4 py-3 text-left text-xs font-bold uppercase tracking-[0.25em] text-primary transition hover:bg-primary/10"
+                        className="w-full border-t border-white/10 px-4 py-3 text-left text-xs font-bold uppercase tracking-wide text-primary transition hover:bg-primary/10"
                       >
                         Search all for &quot;{searchValue.trim()}&quot;
                       </button>
@@ -397,7 +397,7 @@ const MobileNavbar: React.FC<{
                                       <span className="block font-semibold text-white truncate">
                                         {product.title}
                                       </span>
-                                      <span className="block text-xs uppercase tracking-[0.3em] text-secondary/80">
+                                      <span className="block text-xs uppercase tracking-wide text-secondary/80">
                                         {product.brand}
                                       </span>
                                     </div>
@@ -407,7 +407,7 @@ const MobileNavbar: React.FC<{
                           <button
                             type="button"
                             onClick={onSearchSubmit}
-                            className="w-full border-t border-white/10 px-4 py-3 text-left text-xs font-bold uppercase tracking-[0.25em] text-primary transition hover:bg-primary/10"
+                            className="w-full border-t border-white/10 px-4 py-3 text-left text-xs font-bold uppercase tracking-wide text-primary transition hover:bg-primary/10"
                           >
                             See all results for &quot;{searchValue.trim()}&quot;
                           </button>
@@ -420,7 +420,7 @@ const MobileNavbar: React.FC<{
                           <button
                             type="button"
                             onClick={onSearchSubmit}
-                            className="w-full border-t border-white/10 px-4 py-3 text-left text-xs font-bold uppercase tracking-[0.25em] text-primary transition hover:bg-primary/10"
+                            className="w-full border-t border-white/10 px-4 py-3 text-left text-xs font-bold uppercase tracking-wide text-primary transition hover:bg-primary/10"
                           >
                             Search all for &quot;{searchValue.trim()}&quot;
                           </button>
@@ -448,7 +448,7 @@ const MobileNavbar: React.FC<{
                         >
                           <button
                             type="button"
-                            className="text-left text-sm font-semibold uppercase tracking-[0.25em] text-primary"
+                            className="text-left text-sm font-semibold uppercase tracking-wide text-primary"
                             onClick={() => {
                               setOpenMenu(false);
                               router.push("/collections");
@@ -501,7 +501,7 @@ const MobileNavbar: React.FC<{
                                         );
                                       }
                                     }}
-                                    className="w-full px-8 py-3 flex items-center justify-between text-left text-sm font-medium uppercase tracking-[0.15em] text-white/90 hover:bg-white/5 cursor-pointer"
+                                    className="w-full px-8 py-3 flex items-center justify-between text-left text-sm font-medium uppercase tracking-wide text-white/90 hover:bg-white/5 cursor-pointer"
                                   >
                                     <span>{b.name}</span>
                                     {brandSubcategories[b.key] ? (
@@ -568,7 +568,7 @@ const MobileNavbar: React.FC<{
                     <motion.button
                       key={`${item.label}-${index}`}
                       type="button"
-                      className="w-full px-6 py-4 text-left text-sm font-semibold uppercase tracking-[0.25em] text-primary transition-colors duration-300 hover:bg-white/10"
+                      className="w-full px-6 py-4 text-left text-sm font-semibold uppercase tracking-wide text-primary transition-colors duration-300 hover:bg-white/10"
                       onClick={() => handleMenuItemClick(item)}
                       initial={{ opacity: 0, x: 24 }}
                       animate={{ opacity: 1, x: 0 }}

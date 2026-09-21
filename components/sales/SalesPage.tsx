@@ -32,7 +32,7 @@ const SalesPage = ({ products }: { products: ProductCard[] }) => {
     <main className="min-h-screen bg-neutral px-4 py-24 text-white sm:px-8 lg:px-16">
       <section className="mx-auto flex max-w-screen-2xl flex-col gap-10">
         <div className="flex flex-col gap-4 border-b border-white/10 pb-8">
-          <p className="text-xs uppercase tracking-[0.35em] text-primary">
+          <p className="text-xs uppercase tracking-wide text-primary">
             On sale
           </p>
           <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">

@@ -68,11 +68,11 @@ const Hero7 = () => {
           transition={{ duration: 0.7 }}
           className="mb-12 text-center md:mb-16"
         >
-          <p className="text-[10px] sm:text-xs uppercase tracking-[0.4em] text-primary">
+          <p className="text-[10px] sm:text-xs uppercase tracking-wide text-primary">
             Excellence in Every Detail
           </p>
 
-          <p className="mt-3 font-playfair text-3xl sm:text-5xl md:text-6xl uppercase tracking-[0.15em] text-white">
+          <p className="mt-3 font-playfair text-3xl sm:text-5xl md:text-6xl uppercase tracking-wide text-white">
             Why Choose Us
           </p>
 

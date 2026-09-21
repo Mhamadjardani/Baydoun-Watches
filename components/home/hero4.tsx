@@ -73,7 +73,7 @@ const Hero4 = ({ products }: { products: ProductCard[] }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <p className="font-playfair text-3xl font-black uppercase tracking-[0.2em] leading-tight text-white sm:text-5xl md:text-6xl">
+            <p className="font-playfair text-3xl font-black uppercase tracking-wide leading-tight text-white sm:text-5xl md:text-6xl">
               Discover Casio
             </p>
             <p className="mx-auto max-w-xl text-xs sm:text-sm md:text-base text-secondary">
@@ -139,7 +139,7 @@ const Hero4 = ({ products }: { products: ProductCard[] }) => {
 
               <div className="flex flex-1 flex-col justify-between p-4 md:p-6 text-left">
                 <div className="space-y-2">
-                  <p className="font-playfair mt-3 line-clamp-2 text-sm font-bold uppercase tracking-[0.15em] text-white sm:text-base md:text-lg">
+                  <p className="font-playfair mt-3 line-clamp-2 text-sm font-bold uppercase tracking-wide text-white sm:text-base md:text-lg">
                     {(product.subCategory &&
                       product.subCategory
                         .split("-")

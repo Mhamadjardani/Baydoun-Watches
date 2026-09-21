@@ -43,7 +43,7 @@ export default function Hero6() {
           transition={{ duration: 0.7 }}
           className="mx-auto mb-20 max-w-3xl text-center"
         >
-          <p className="text-xs uppercase tracking-[0.45em] text-primary">
+          <p className="text-xs uppercase text-primary">
             Discover
           </p>
 
@@ -88,7 +88,7 @@ export default function Hero6() {
               </div>
 
               <div className="absolute bottom-0 left-0 right-0 p-5 lg:p-10">
-                <p className="text-xs uppercase tracking-[0.35em] text-primary">
+                <p className="text-xs uppercase text-primary">
                   {item.subtitle}
                 </p>
 

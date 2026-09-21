@@ -24,7 +24,7 @@ const Hero2 = () => {
                 transition={{ duration: 0.8 }}
               >
                 <div className="w-16 h-px bg-primary" />
-                <p className="uppercase tracking-[0.35em] text-xs text-primary font-medium">
+                <p className="uppercase tracking-wide text-xs text-primary font-medium">
                   Established Excellence
                 </p>
               </motion.div>
@@ -108,7 +108,7 @@ const Hero2 = () => {
 
               <div className="mt-10 flex items-center gap-4">
                 <div className="h-px w-16 bg-primary" />
-                <p className="uppercase tracking-[0.25em] text-xs text-primary">
+                <p className="uppercase tracking-wide text-xs text-primary">
                   HOROLOGUE • EST. 1987
                 </p>
               </div>

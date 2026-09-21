@@ -298,7 +298,7 @@ const ProductsCollection = ({
             {/* Header Section */}
             <div className="flex items-center justify-between border-b border-white/10 px-6 py-5">
               <div className="flex items-center gap-2">
-                <p className="text-sm font-black uppercase tracking-[0.2em] text-white">
+                <p className="text-sm font-black uppercase tracking-wide text-white">
                   Filters
                 </p>
                 {activeFilterCount > 0 && (
@@ -352,7 +352,7 @@ const ProductsCollection = ({
                         className="flex w-full cursor-pointer items-center justify-between px-6 py-4.5 text-left transition duration-300"
                       >
                         <div className="flex items-center gap-2">
-                          <span className="text-sm sm:text-base font-bold uppercase tracking-[0.15em] text-white/90">
+                          <span className="text-sm sm:text-base font-bold uppercase tracking-wide text-white/90">
                             {filter.label}
                           </span>
                           {groupActiveCount > 0 && (
@@ -572,13 +572,13 @@ const ProductsCollection = ({
 
                         <div className="absolute left-3 top-3 z-20 flex flex-col gap-2">
                           {product.isFeatured && (
-                            <span className="rounded-full bg-black/50 px-3 py-1 text-[10px] uppercase tracking-[0.3em] text-white backdrop-blur">
+                            <span className="rounded-full bg-black/50 px-3 py-1 text-[10px] uppercase tracking-wide text-white backdrop-blur">
                               Featured
                             </span>
                           )}
 
                           {product.discount && product.discount > 0 && (
-                            <span className="rounded-full bg-red-600 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.25em] text-white">
+                            <span className="rounded-full bg-red-600 px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-white">
                               -{product.discount}%
                             </span>
                           )}

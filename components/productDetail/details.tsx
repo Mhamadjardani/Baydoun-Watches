@@ -324,7 +324,7 @@ const ProductDetails = ({
         <section className="space-y-5 border-t border-white/10 pt-8">
           <div className="flex items-end justify-between gap-4">
             <div>
-              <p className="text-xs uppercase tracking-[0.35em] text-primary">
+              <p className="text-xs uppercase tracking-wide text-primary">
                 You may also like
               </p>
             </div>
