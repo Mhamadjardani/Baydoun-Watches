@@ -5,12 +5,9 @@ import { motion } from "framer-motion";
 const Hero1 = () => {
   return (
     <motion.section
-      className="relative min-h-screen overflow-hidden bg-light-neutral"
+      className="relative min-h-screen overflow-hidden bg-light-neutral bg-[url('/heritage.jpeg')] bg-cover bg-[85%_center] md:bg-center"
       style={{
-        backgroundImage: "url(/heritage.jpeg)",
         backgroundAttachment: "fixed",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
       }}
       initial={{ scale: 1.04 }}
       animate={{ scale: 1 }}
