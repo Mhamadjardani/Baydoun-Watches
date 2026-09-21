@@ -7,7 +7,7 @@ const Hero1 = () => {
     <motion.section
       className="relative min-h-screen overflow-hidden bg-light-neutral"
       style={{
-        backgroundImage: "url(/heritage.png)",
+        backgroundImage: "url(/heritage.jpeg)",
         backgroundAttachment: "fixed",
         backgroundSize: "cover",
         backgroundPosition: "center",
