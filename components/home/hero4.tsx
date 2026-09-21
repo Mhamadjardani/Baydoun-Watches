@@ -3,7 +3,7 @@
 import { ProductCard } from "@/lib/type";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Hero4 = ({ products }: { products: ProductCard[] }) => {
   const router = useRouter();
@@ -21,18 +21,47 @@ const Hero4 = ({ products }: { products: ProductCard[] }) => {
     });
   };
 
-  const casioSubcategories = Array.from(
-    new Map(
-      products
-        .filter((p) => p.brand === "casio")
-        .sort(
-          (a, b) =>
-            new Date(b.createdAt ?? Date()).getTime() -
-            new Date(a.createdAt ?? Date()).getTime(),
-        )
-        .map((p) => [p.subCategory, p]),
-    ).values(),
+  const initialCasio = () =>
+    Array.from(
+      new Map(
+        products
+          .filter((p) => p.brand === "casio")
+          .sort(
+            (a, b) =>
+              new Date(b.createdAt ?? Date()).getTime() -
+              new Date(a.createdAt ?? Date()).getTime(),
+          )
+          .map((p) => [p.subCategory, p]),
+      ).values(),
+    ).slice(0, 4);
+
+  const [casioSubcategories, setCasioSubcategories] = useState<ProductCard[]>(
+    initialCasio,
   );
+
+  useEffect(() => {
+    // For each casio subcategory, pick a random product from that subcategory
+    const bySub = new Map<string, ProductCard[]>();
+    for (const p of products) {
+      if (p.brand !== "casio") continue;
+      const key = p.subCategory || "";
+      const arr = bySub.get(key) ?? [];
+      arr.push(p);
+      bySub.set(key, arr);
+    }
+
+    const chosen: ProductCard[] = [];
+    for (const [, arr] of bySub) {
+      if (arr.length === 0) continue;
+      // pick random product for this subcategory
+      const idx = Math.floor(Math.random() * arr.length);
+      chosen.push(arr[idx]);
+      if (chosen.length >= 4) break;
+    }
+
+    const t = setTimeout(() => setCasioSubcategories(chosen), 0);
+    return () => clearTimeout(t);
+  }, [products]);
 
   return (
     <section className="min-h-screen overflow-hidden py-16 md:py-24">

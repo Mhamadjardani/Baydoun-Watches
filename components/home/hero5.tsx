@@ -16,7 +16,7 @@ const Hero5 = () => {
           transition={{ duration: 0.9, ease: "easeOut" }}
         >
           <Image
-            src="/hero5.png"
+            src="/hero5.jpeg"
             alt="hero5"
             fill
             className="object-cover transition duration-700 ease-out hover:scale-105"

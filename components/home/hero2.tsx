@@ -3,7 +3,7 @@
 import { ProductCard } from "@/lib/type";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Hero2 = ({ products }: { products: ProductCard[] }) => {
   const [failedImages, setFailedImages] = useState<Set<string>>(new Set());
@@ -18,6 +18,21 @@ const Hero2 = ({ products }: { products: ProductCard[] }) => {
       return nextFailedImages;
     });
   };
+
+  const [featuredRandom, setFeaturedRandom] = useState<ProductCard[]>(() =>
+    products.filter((p) => p.isFeatured).slice(0, 4)
+  );
+
+  useEffect(() => {
+    const items = [...products.filter((p) => p.isFeatured)];
+    for (let i = items.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [items[i], items[j]] = [items[j], items[i]];
+    }
+    const shuffled = items.slice(0, 4);
+    const t = setTimeout(() => setFeaturedRandom(shuffled), 0);
+    return () => clearTimeout(t);
+  }, [products]);
 
   return (
     <section className="min-h-screen overflow-hidden py-16 md:py-24">
@@ -54,10 +69,7 @@ const Hero2 = ({ products }: { products: ProductCard[] }) => {
             },
           }}
         >
-          {products
-            .filter((p) => p.isFeatured)
-            .slice(0, 4)
-            .map((product, index) => (
+          {featuredRandom.map((product, index) => (
               <motion.article
                 key={product.slug}
                 initial={{ opacity: 0, y: 30 }}
@@ -85,17 +97,17 @@ const Hero2 = ({ products }: { products: ProductCard[] }) => {
                       <div className="absolute left-[-130%] top-0 h-full w-1/3 rotate-12 bg-white/10 blur-3xl transition-all duration-1000 group-hover:left-[140%]" />
                     </div>
 
-                    <div className="absolute inset-x-0 bottom-0 p-5 transition-all duration-500 group-hover:-translate-y-2 md:p-7">
-                      <p className="text-[11px] uppercase tracking-[0.35em] text-primary">
+                    <div className="absolute inset-x-0 bottom-0 p-3 transition-all duration-500 group-hover:-translate-y-2 md:p-7">
+                      {/* <p className="text-[11px] uppercase tracking-[0.35em] text-primary">
                         {product.brand}
+                      </p> */}
+
+                      <p className="mt-2 line-clamp-2 text-xs text-start w-fit font-light tracking-wide text-white xl:text-sm bg-primary/20 px-2 py-1 rounded-md">
+                        {product.title}
                       </p>
 
-                      <h3 className="mt-2 line-clamp-2 text-lg font-light tracking-wide text-white md:text-2xl">
-                        {product.title}
-                      </h3>
-
                       <div className="mt-5 flex items-center justify-between">
-                        <span className="text-xs uppercase tracking-[0.35em] text-primary">
+                        <span className="text-xs xl:text-base tracking-wide uppercase text-primary">
                           Discover
                         </span>
 

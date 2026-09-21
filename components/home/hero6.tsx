@@ -10,7 +10,7 @@ const collections = [
     subtitle: "Collection",
     description:
       "Classic and contemporary timepieces crafted for confidence and everyday elegance.",
-    image: "/for-man.jpg",
+    image: "/him.webp",
     url: "/collections?gender=Men",
   },
   {
@@ -18,7 +18,7 @@ const collections = [
     subtitle: "Collection",
     description:
       "Graceful watches designed to complement every outfit and every occasion.",
-    image: "/for-woman.jpg",
+    image: "/her.webp",
     url: "/collections?gender=Women",
   },
   {
@@ -26,7 +26,7 @@ const collections = [
     subtitle: "Collection",
     description:
       "Fun, durable, and vibrant watches designed to keep up with their biggest adventures.",
-    image: "/For-the-Little-Ones.jpg",
+    image: "/kids.webp",
     url: "/collections?gender=Kids",
   },
 ];
@@ -47,7 +47,7 @@ export default function Hero6() {
             Discover
           </p>
 
-          <p className="mt-5 font-playfair text-4xl uppercase tracking-[0.12em] text-white sm:text-5xl lg:text-6xl">
+          <p className="mt-5 font-playfair text-4xl uppercase text-white sm:text-5xl lg:text-6xl">
             Curated Collection
           </p>
 
@@ -87,14 +87,14 @@ export default function Hero6() {
                 <div className="absolute inset-0 bg-linear-to-b from-primary/5 opacity-0 transition duration-500 group-hover:opacity-100" />
               </div>
 
-              <div className="absolute bottom-0 left-0 right-0 p-8 lg:p-10">
+              <div className="absolute bottom-0 left-0 right-0 p-5 lg:p-10">
                 <p className="text-xs uppercase tracking-[0.35em] text-primary">
                   {item.subtitle}
                 </p>
 
-                <h3 className="mt-3 font-playfair text-3xl uppercase tracking-[0.12em] text-white lg:text-4xl">
+                <p className="mt-3 font-playfair text-2xl uppercase text-white lg:text-4xl">
                   {item.title}
-                </h3>
+                </p>
 
                 <p className="mt-5 max-w-sm leading-7 text-secondary/80">
                   {item.description}
@@ -102,7 +102,7 @@ export default function Hero6() {
 
                 <Link
                   href={item.url}
-                  className="mt-8 inline-flex items-center gap-3 border border-primary/25 bg-primary/10 px-6 py-3 text-xs font-semibold uppercase tracking-[0.25em] text-primary transition-all duration-300 hover:border-primary hover:bg-primary/15"
+                  className="mt-8 inline-flex items-center gap-3 border border-primary/25 bg-primary/10 px-6 py-3 text-xs font-semibold uppercase text-primary transition-all duration-300 hover:border-primary hover:bg-primary/15"
                 >
                   Explore Collection
                   <span className="inline-block h-px w-10 bg-primary transition-all duration-300 group-hover:w-16" />
