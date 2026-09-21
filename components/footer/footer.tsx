@@ -19,7 +19,7 @@ const Footer = () => {
                 alt="Baydoun Watches"
                 height={240}
                 width={240}
-                className="h-36 w-36 object-contain"
+                className="h-20 md:h-36 w-20 md:w-36 object-contain"
               />
             </div>
           </div>
