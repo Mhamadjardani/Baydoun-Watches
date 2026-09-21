@@ -56,7 +56,7 @@ const Hero2 = () => {
 
             <div className="flex gap-10 pt-4">
               <div>
-                <p className="font-playfair text-3xl md:text-4xl font-bold text-primary">
+                <p className="font-playfair text-3xl md:text-4xl font-bold text-neutral">
                   30+
                 </p>
                 <p className="text-xs uppercase text-neutral/60 mt-1">
@@ -65,7 +65,7 @@ const Hero2 = () => {
               </div>
 
               <div>
-                <p className="font-playfair text-3xl md:text-4xl font-bold text-primary">
+                <p className="font-playfair text-3xl md:text-4xl font-bold text-neutral">
                   100%
                 </p>
                 <p className="text-xs uppercase text-neutral/60 mt-1">
@@ -74,7 +74,7 @@ const Hero2 = () => {
               </div>
 
               <div>
-                <p className="font-playfair text-3xl md:text-4xl font-bold text-primary">
+                <p className="font-playfair text-3xl md:text-4xl font-bold text-neutral">
                   Swiss
                 </p>
                 <p className="text-xs uppercase text-neutral/60 mt-1">
