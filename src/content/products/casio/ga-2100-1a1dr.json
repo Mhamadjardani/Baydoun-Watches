@@ -2,6 +2,7 @@
   "title": "GA-2100-1A1DR",
   "sku": "GA-2100-1A1DR",
   "subCategory": "g-shock",
+  "description": "The G-Shock GA-2100-1A1 combines a sleek, minimalist design with legendary G-Shock durability. Featuring a lightweight Carbon Core Guard structure, shock resistance, and a versatile black-on-black finish, it’s built for everyday wear and active lifestyles.",
   "display": "Ana/Dig",
   "gender": "Men",
   "price": 150,
@@ -9,8 +10,47 @@
   "isVisible": true,
   "isFeatured": false,
   "isLimitedEdition": false,
-  "specifications": [],
-  "features": [],
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "51 g"
+    },
+    {
+      "label": "Dimensions ",
+      "value": "48.5 × 45.4 × 11.8 mm"
+    },
+    {
+      "label": "Gender ",
+      "value": "Men "
+    },
+    {
+      "label": "Color ",
+      "value": "Black "
+    },
+    {
+      "label": "Band Material ",
+      "value": "Resin "
+    },
+    {
+      "label": "Display Type",
+      "value": "Ana-Digi"
+    },
+    {
+      "label": "Water Resistance ",
+      "value": "200m "
+    }
+  ],
+  "features": [
+    "Double LED Light",
+    "World Time ",
+    "Countdown Timer",
+    "5 Daily Alarms",
+    "Hourly time signal",
+    "Hand shift feature",
+    "Full auto-calendar (to year 2099)",
+    "Button operation tone on/off",
+    "Approx. battery life: 3 years on SR726W "
+  ],
   "imageCount": 1,
   "arrivalDate": "2026-09-19",
   "createdAt": "2026-09-19"
