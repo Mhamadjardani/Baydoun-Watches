@@ -1,0 +1,42 @@
+{
+  "title": "Casio Men 3H Watch MTP-B190D-7BVDF",
+  "sku": "MTP-B190D-7BVDF",
+  "subCategory": "general",
+  "display": "Analog",
+  "gender": "Men",
+  "price": 105,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "97 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "41 × 31.5 × 8.1 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Silver, White "
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "50m"
+    },
+    {
+      "label": "Display Type",
+      "value": "Analog "
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
