@@ -1,0 +1,43 @@
+{
+  "title": "Casio Men 3H Watch MTP-E735L-8AVDF",
+  "sku": "MTP-E735L-8AVDF",
+  "subCategory": "general",
+  "description": "Go for bold, streamlined style with a classic, easy-read analog watch featuring a metal octagonal case.\nEnjoy handy functions like water resistance up to 50 meters and date-day display.",
+  "display": "Analog",
+  "gender": "Men",
+  "price": 105,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "110 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "44.5 × 37.5 × 8.4 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Silver, Black"
+    },
+    {
+      "label": "Band Material",
+      "value": "Genuine Leather "
+    },
+    {
+      "label": "Special Feature",
+      "value": "MTP"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "50m "
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
