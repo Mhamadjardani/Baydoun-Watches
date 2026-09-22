@@ -1,0 +1,42 @@
+{
+  "title": "Casio Men 3H Watch MTP-E735D-7AVDF",
+  "sku": "MTP-E735D-7AVDF",
+  "subCategory": "general",
+  "display": "Analog",
+  "gender": "Men",
+  "price": 105,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "110 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "44.5 × 37.5 × 8.4 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Black"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Special Feature",
+      "value": "MTP"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "50m "
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
