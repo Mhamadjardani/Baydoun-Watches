@@ -1,0 +1,47 @@
+{
+  "title": "Casio men 3H Watch MTS-115D-2A1V",
+  "sku": "MTS-115D-2A1V",
+  "subCategory": "general",
+  "display": "Analog",
+  "gender": "Men",
+  "price": 99,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "112 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "47.0 x 41.3 x 8.8 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Dark Blue, Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Display Type",
+      "value": "Analog"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "50m"
+    }
+  ],
+  "features": [
+    "Sapphire Crystal",
+    "Stainless-steel case and band",
+    "Date display",
+    "Accuracy Accuracy: ±20 seconds per month"
+  ],
+  "imageCount": 1,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
