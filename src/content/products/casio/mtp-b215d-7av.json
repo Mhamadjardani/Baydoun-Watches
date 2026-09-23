@@ -1,0 +1,45 @@
+{
+  "title": "Casio men 3H Watch MTP-B215D-7AV",
+  "sku": "MTP-B215D-7AV",
+  "subCategory": "general",
+  "display": "Analog",
+  "gender": "Men",
+  "price": 105,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "83 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "39.7 × 26 × 7.9 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Display Type",
+      "value": "Analog"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "50m"
+    }
+  ],
+  "features": [
+    "Stainless-steel case and band",
+    "Accuracy Accuracy: ±20 seconds per month"
+  ],
+  "imageCount": 1,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
