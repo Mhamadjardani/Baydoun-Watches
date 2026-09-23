@@ -1,20 +1,22 @@
 {
-  "title": "Casio men 3H Watch MTP-1239D-1ADF",
-  "sku": "MTP-1239D-1ADF",
+  "title": "Casio men 3H Watch MTS-115D-1AV",
+  "sku": "MTS-115D-1AV",
+  "subCategory": "general",
   "display": "Analog",
   "gender": "Men",
-  "price": 55,
+  "price": 99,
   "isNewArrival": false,
+  "isVisible": true,
   "isFeatured": false,
   "isLimitedEdition": false,
   "specifications": [
     {
       "label": "Weight",
-      "value": "95 g"
+      "value": "112 g"
     },
     {
       "label": "Dimensions",
-      "value": "42.6 × 38.5 × 9.2 mm"
+      "value": "47.0 x 41.3 x 8.8 mm"
     },
     {
       "label": "Color",
@@ -25,12 +27,12 @@
       "value": "Stainless Steel"
     },
     {
-      "label": "Special Feature",
-      "value": "LTP-MTP"
+      "label": "Display Type",
+      "value": "Analog"
     },
     {
       "label": "Water Resistance",
-      "value": "Yes"
+      "value": "50m"
     }
   ],
   "features": [
