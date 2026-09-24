@@ -1,0 +1,52 @@
+{
+  "title": "Casio Digital Men Watch WS-1800-1AVDF",
+  "sku": "WS-1800-1AVDF",
+  "subCategory": "general",
+  "description": "A multifunctional digital watch with wide, easy-read display — perfect for the sports scene.\n\nThe retro-style large graphic display makes the countdown timer easy to read at a glance. Water-resistant up to 100 meters, ten-year battery life, LED backlight, as well as handy features like stopwatch, alarm, and more.",
+  "display": "Digital",
+  "gender": "Men",
+  "price": 45,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "41 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "\t48.2 × 45 × 13.8 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Black"
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin"
+    },
+    {
+      "label": "Display type",
+      "value": "Digital "
+    },
+    {
+      "label": "Water Resistance",
+      "value": "100m"
+    }
+  ],
+  "features": [
+    "World time: World time 29 time zones (48 cities), city code display, daylight saving on/off",
+    "Timer: Measuring unit- 1 second Preset start times: 10, 12, 15, 20, 25, 30, 35, 40, 45 minutes",
+    "Timers Up to nine timers can be preset with separate starting times for timing of intervals.",
+    "Mute feature: Button operation tone on/off",
+    "12/24-hour format -Regular timekeeping: Hour, minute, second, pm, month, date, day",
+    "Full auto-calendar (to year 2099)",
+    "Light :LED backlight Afterglow",
+    "Alarm/hourly time signal"
+  ],
+  "imageCount": 1,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
