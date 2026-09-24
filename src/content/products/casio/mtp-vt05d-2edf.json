@@ -1,0 +1,45 @@
+{
+  "title": "Casio Men 3H Watch MTP-VT05D-2EDF",
+  "sku": "MTP-VT05D-2EDF",
+  "subCategory": "general",
+  "display": "Analog",
+  "gender": "Men",
+  "price": 58,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "80 g"
+    },
+    {
+      "label": "Dimensions ",
+      "value": "43 × 37 × 8.6 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Blue, Silver "
+    },
+    {
+      "label": "Band Material ",
+      "value": "Stainless Steel "
+    },
+    {
+      "label": "Display Type",
+      "value": "Analog "
+    },
+    {
+      "label": "Water Resistance",
+      "value": "yes"
+    }
+  ],
+  "features": [
+    "Regular timekeeping: Analog: 3 hands (hour, minute, second) Date display",
+    "Date Display "
+  ],
+  "imageCount": 1,
+  "arrivalDate": "2026-09-24",
+  "createdAt": "2026-09-24"
+}
