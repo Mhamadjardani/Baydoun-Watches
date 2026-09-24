@@ -1,0 +1,49 @@
+{
+  "title": "Casio Vintage Digital Unisex Watch A158WEM-3DF",
+  "sku": "A158WEM-3DF",
+  "subCategory": "vintage",
+  "description": "An updated take on a favorite classic — the ever-popular, easy-to-use A158 goes stylishly elegant with a fine-woven mesh band. Treated with a specialized pressing process that adds depth and dimension, the mesh band delivers a refined, vintage look and a totally comfortable fit for your wrist.\n\nChoose a dial in dark green or light gray. The silver-colored case and contrasting dial present an understated color scheme that adds a simple yet original touch to your style. These classic designs highlight the beauty of metal mesh for a refined and elegant presence all their own.",
+  "display": "Digital",
+  "gender": "Unisex",
+  "price": 82,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "52 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "36.8 x 33.2 x 8.5 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Blue, Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel Mesh "
+    },
+    {
+      "label": "Display Type",
+      "value": "Digital"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [
+    "LED light",
+    "Daily alarm",
+    "Hourly time signal",
+    "12/24-hour format",
+    "Approx. battery life: 7 years on CR2016"
+  ],
+  "imageCount": 3,
+  "arrivalDate": "2026-08-30",
+  "createdAt": "2026-08-30"
+}
