@@ -1,0 +1,47 @@
+{
+  "title": "Casio Men 3H Watch MTP-M305D-7A2VDF",
+  "sku": "MTP-M305D-7A2VDF",
+  "subCategory": "general",
+  "description": "To the moon and back — track the lunar phases with striking analog timepieces featuring multiple inset dials. These timepieces bring together stylish fashion and classic lunar design. Take your pick and stay on track whether you’re on or off the clock. Water resistance up to 50 meters frees you from worry when washing up or caught in the rain.",
+  "display": "Analog",
+  "gender": "Unisex",
+  "price": 148,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "116 g"
+    },
+    {
+      "label": "Dimensions ",
+      "value": "44.5 × 34 × 9.3 mm"
+    },
+    {
+      "label": "Color",
+      "value": "White, Silver "
+    },
+    {
+      "label": "Band Material ",
+      "value": "Stainless Steel "
+    },
+    {
+      "label": "Display Type",
+      "value": "Analog "
+    },
+    {
+      "label": "Water Resistance",
+      "value": "50m"
+    }
+  ],
+  "features": [
+    "Regular timekeeping: Analog: 3 hands (hour, minute, second) Date display",
+    "Date Display ",
+    "Moon Phase"
+  ],
+  "imageCount": 1,
+  "arrivalDate": "2026-09-24",
+  "createdAt": "2026-09-24"
+}
