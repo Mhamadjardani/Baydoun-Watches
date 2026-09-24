@@ -1,0 +1,49 @@
+{
+  "title": "Casio Digital Watch W-800HD-1AVDF",
+  "sku": "W-800HD-1AVDF",
+  "subCategory": "vintage",
+  "description": "Simplicity defined — a streamlined digital watch with large display to clearly show the time at a glance.\n\nComes equipped with 100-meter water resistance, a 10-year battery, LED backlight, and other handy functions.",
+  "display": "Digital",
+  "gender": "Unisex",
+  "price": 54,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "91 g"
+    },
+    {
+      "label": "Dimensions ",
+      "value": "44.2 × 36.8 × 13.4 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Silver"
+    },
+    {
+      "label": "Band Material ",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Display Type",
+      "value": "Digital"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "100m"
+    }
+  ],
+  "features": [
+    "World Time ",
+    "Multi function alarm  (with 1 snooze alarm)",
+    "Stop Watch ",
+    "Full auto-calendar (to year 2099)",
+    "Regular timekeeping: Hour, minute, second, pm, year, month, date, day"
+  ],
+  "imageCount": 1,
+  "arrivalDate": "2026-09-24",
+  "createdAt": "2026-09-24"
+}
