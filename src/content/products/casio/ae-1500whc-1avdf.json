@@ -1,0 +1,62 @@
+{
+  "title": "Casio Men Digital Watch AE-1500WHC-1AVDF",
+  "sku": "AE-1500WHC-1AVDF",
+  "subCategory": "general",
+  "description": "A multifunctional digital watch with wide, easy-read display — perfect for the sports scene.\n\nWater-resistant up to 100 meters, ten-year battery life, LED backlight, as well as handy features like stopwatch, alarm, and more.",
+  "display": "Digital",
+  "gender": "Men",
+  "price": 51,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "59 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "54.4 × 51.2 × 15.7 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Green"
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin"
+    },
+    {
+      "label": "Display Type",
+      "value": "Digital "
+    },
+    {
+      "label": "Water Resistance",
+      "value": "100m"
+    }
+  ],
+  "features": [
+    "10-year battery life",
+    "1/100-second stopwatch",
+    "Dual time",
+    "5 alarms",
+    "100-meter water resistance",
+    "LED backlight",
+    "Wide face",
+    "LED backlight afterglow Dual time 1/100-second stopwatch Measuring capacity: 23:59’59.99′ Measuring modes: Elapsed time, split time, 1st-2nd place times Countdown timer Measuring unit: 1 second Countdown range: 24 hours Countdown start time setting range: 1 minute to 24 hours (1-minute increments and 1-hour increments) Other: Auto-repeat 5 multi-function alarms (with 1 snooze alarm) Hourly time signal Full auto-calendar (to year 2099) 12/24-hour format Regular timekeeping: Hour, minute, second, pm, month, date, day Accuracy: ±30 seconds per month Approx. battery life: 10 years on CR2032 Additional Information Weight 57 g Dimensions 54.4 × 51.2 × 15.7 mm Gender Men Color Blue Band Material Resin Display Type Digital Water Resistance 100m",
+    "LED backlight afterglow",
+    "1/100-second stopwatch Measuring capacity: 23:59’59.99′ Measuring modes: Elapsed time, split time, 1st-2nd place times",
+    "Countdown timer Measuring unit: 1 second Countdown range: 24 hours Countdown start time setting range: 1 minute to 24 hours (1-minute increments and 1-hour increments) Other: Auto-repeat",
+    "5 multi-function alarms (with 1 snooze alarm)",
+    "Hourly time signal",
+    "Full auto-calendar (to year 2099)",
+    "12/24-hour format",
+    "Regular timekeeping: Hour, minute, second, pm, month, date, day",
+    "Accuracy: ±30 seconds per month",
+    "Approx. battery life: 10 years on CR2032"
+  ],
+  "imageCount": 1,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
