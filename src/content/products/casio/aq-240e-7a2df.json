@@ -1,0 +1,49 @@
+{
+  "title": "Casio Unisex Vintage Watch AQ-240E-7A2DF",
+  "sku": "AQ-240E-7A2DF",
+  "subCategory": "vintage",
+  "description": "The angular case is trimmed with subtly rounded contours, creating an elegant silhouette defined by smooth, flowing curves. The wide dial highlights textures and colors with quiet confidence.\nDesigned for everyday wear, the AQ-240 delivers understated character and a touch of color, making it an easy companion for both casual and refined styling.",
+  "display": "Ana/Dig",
+  "gender": "Unisex",
+  "price": 85,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "51 g"
+    },
+    {
+      "label": "Dimensions ",
+      "value": "40.9 × 35.8 × 8.1 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Silver"
+    },
+    {
+      "label": "Band Material ",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Display Type",
+      "value": "Ana-Digi"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "yes"
+    }
+  ],
+  "features": [
+    "World Time ",
+    "Alarm/hourly time signal",
+    "Auto-calendar (28 days for February)",
+    "Regular timekeeping: Analog: 2 hands (hour, minute)",
+    "Digital: Hour, minute, second, pm, month, date, day"
+  ],
+  "imageCount": 1,
+  "arrivalDate": "2026-09-24",
+  "createdAt": "2026-09-24"
+}
