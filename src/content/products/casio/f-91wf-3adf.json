@@ -1,0 +1,48 @@
+{
+  "title": "Casio Vintage Digital Men Watch F-91WF-3ADF",
+  "sku": "F-91WF-3ADF",
+  "subCategory": "vintage",
+  "description": "The longtime favorite, the slim and lightweight digital F-91, with a cloth band!\nLightweight and comfortable, the cloth band is made of recycled fibers, and is scratch- and stain-resistant, to take you seamlessly from everyday life to adventures in the great outdoors.",
+  "display": "Digital",
+  "gender": "Unisex",
+  "price": 52,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "21 g"
+    },
+    {
+      "label": "Dimensions ",
+      "value": "\t38.2 × 35.2 × 8.5 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Green "
+    },
+    {
+      "label": "Band Material ",
+      "value": "Cloth "
+    },
+    {
+      "label": "Display Type",
+      "value": "Digital "
+    },
+    {
+      "label": "Water Resistance",
+      "value": "yes"
+    }
+  ],
+  "features": [
+    "Stop Watch ",
+    "Alarm/hourly time signal",
+    "LED Light ",
+    "Other features 12/24-hour format Regular timekeeping: Hour, minute, second, pm, date, day"
+  ],
+  "imageCount": 2,
+  "arrivalDate": "2026-09-24",
+  "createdAt": "2026-09-24"
+}
