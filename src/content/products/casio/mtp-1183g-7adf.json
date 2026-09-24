@@ -1,0 +1,46 @@
+{
+  "title": "Casio Men 3H Watch MTP-1183G-7ADF",
+  "sku": "MTP-1183G-7ADF",
+  "subCategory": "general",
+  "display": "Analog",
+  "gender": "Men",
+  "price": 68,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "87 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "42 × 38.5 × 8.7 mm"
+    },
+    {
+      "label": "Color",
+      "value": "2-Tone Gold, Silver "
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Display Type",
+      "value": "Analog"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [
+    "Date display",
+    "Stainless steel band",
+    "Accuracy Accuracy: ±20 seconds per month"
+  ],
+  "imageCount": 1,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
