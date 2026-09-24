@@ -1,0 +1,51 @@
+{
+  "title": "Casio Unisex Vintage Watch AQ-230EL-1ADF",
+  "sku": "AQ-230EL-1ADF",
+  "subCategory": "vintage",
+  "description": "Indulge your love of vintage-inspired premium style with an analog-digital timepiece featuring a compact angular face.\n\nBased on the popular AQ-230, the watch delivers an elegant, refined look, as well as practical utility with water resistance for daily use, stopwatch, alarm, and other features. The classic embossed design of the band adds a timeless touch.\n\nEnjoy the sophistication that comes from thoughtful attention to small details, and the special charm offered by fresh color options.",
+  "display": "Ana/Dig",
+  "gender": "Unisex",
+  "price": 72,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "52 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "38.8 × 29.8 × 8.1 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Black, Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Genuine Leather"
+    },
+    {
+      "label": "Display Type ",
+      "value": "Ana-Digi"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [
+    "1/100-second stopwatch Measuring capacity: 59’59.99″ Measuring mode: Elapsed time",
+    "Daily alarm",
+    "Hourly time signal",
+    "Auto-calendar (28 days for February)",
+    "12/24-hour format",
+    "Regular timekeeping Analog: 2 hands (Hour, minute) Digital: Hour, minutes, seconds, pm, month, date, day",
+    "Accuracy: ?30 seconds per month"
+  ],
+  "imageCount": 3,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
