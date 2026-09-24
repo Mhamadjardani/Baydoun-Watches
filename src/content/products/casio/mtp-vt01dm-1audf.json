@@ -1,11 +1,13 @@
 {
   "title": "Casio Men 3H Watch MTP-VT01DM-1AUDF",
   "sku": "MTP-VT01DM-1AUDF",
+  "subCategory": "general",
+  "description": "Classic and compelling CASIO MTP-VT01DM-1AUDF analog watch with a sophisticated marble-inspired dial. Water resistance for daily use frees you from worry, even on rainy days.",
   "display": "Analog",
   "gender": "Men",
   "price": 60,
-  "description": "Classic and compelling CASIO MTP-VT01DM-1AUDF analog watch with a sophisticated marble-inspired dial. Water resistance for daily use frees you from worry, even on rainy days.",
   "isNewArrival": false,
+  "isVisible": true,
   "isFeatured": false,
   "isLimitedEdition": false,
   "specifications": [
@@ -26,8 +28,8 @@
       "value": "Stainless Steel"
     },
     {
-      "label": "Special Feature",
-      "value": "LTP-MTP"
+      "label": "Display Type",
+      "value": "Analog"
     },
     {
       "label": "Water Resistance",
