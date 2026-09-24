@@ -13,36 +13,34 @@
   "specifications": [
     {
       "label": "Weight",
-      "value": "21 g"
+      "value": "124 g"
     },
     {
       "label": "Dimensions ",
-      "value": "\t38.2 × 35.2 × 8.5 mm"
+      "value": "47.5 × 43.2 × 10.3 mm"
     },
     {
       "label": "Color",
-      "value": "Green "
+      "value": "Black, Silver "
     },
     {
       "label": "Band Material ",
-      "value": "Cloth "
+      "value": "Stainless Steel "
     },
     {
       "label": "Display Type",
-      "value": "Digital "
+      "value": "Analog "
     },
     {
       "label": "Water Resistance",
-      "value": "yes"
+      "value": "50m "
     }
   ],
   "features": [
-    "Stop Watch ",
-    "Alarm/hourly time signal",
-    "LED Light ",
-    "Other features 12/24-hour format Regular timekeeping: Hour, minute, second, pm, date, day"
+    "Regular timekeeping: Analog: 3 hands (hour, minute, second) Date display",
+    "Date Display "
   ],
-  "imageCount": 2,
+  "imageCount": 1,
   "arrivalDate": "2026-09-24",
   "createdAt": "2026-09-24"
 }
