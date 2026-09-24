@@ -1,0 +1,43 @@
+{
+  "title": "Casio men 3H Watch MTP-B195RG-2AVDF",
+  "sku": "MTP-B195RG-2AVDF",
+  "subCategory": "general",
+  "description": "Make a strong, sporty statement with detailed metal texture and sleek, angular lines.\n\nThe sharp, polished stainless-steel case complements every occasion, from business meetings to casual outings.\n\nNot just stylish, but practical, too — with 50-meter water resistance and handy date display.",
+  "display": "Analog",
+  "gender": "Men",
+  "price": 166,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "114 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "46.5 × 38 × 8.3 mm"
+    },
+    {
+      "label": "Color",
+      "value": "2-tone Rose Gold, Blue"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Display Type",
+      "value": "Analog "
+    },
+    {
+      "label": "Water Resistance",
+      "value": "50m"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
