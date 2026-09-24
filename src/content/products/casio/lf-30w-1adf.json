@@ -1,0 +1,53 @@
+{
+  "title": "Casio Unisex Digital Watch LF-30W-1ADF",
+  "sku": "LF-30W-1ADF",
+  "subCategory": "general",
+  "description": "Chart your own course with a unique digital watch featuring a world map.\nThe world map in the top right of the display synchronizes with the current time below so you can easily keep track of where you are on the journey.\nThe band is made of bio-based resin produced in part with renewable organic resources.\nThis singular watch is packed with reliable, handy features like LED light, stopwatch, alarm, timer, world time, and more, to keep you always on course.",
+  "display": "Digital",
+  "gender": "Unisex",
+  "price": 43,
+  "discount": 20,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight\t",
+      "value": "23 g"
+    },
+    {
+      "label": "Dimensions\t",
+      "value": "37.8 × 33.7 × 8.6 mm"
+    },
+    {
+      "label": "Color\t",
+      "value": " Black"
+    },
+    {
+      "label": "Band Material\t ",
+      "value": "Resin"
+    },
+    {
+      "label": "Display Type\t ",
+      "value": "Digital"
+    },
+    {
+      "label": "Water Resistance\t ",
+      "value": "Yes"
+    }
+  ],
+  "features": [
+    "World time:  Multi Time (4 different cities) World time 31 time zones (48 cities + coordinated universal time), daylight saving on/off, Home city/World time city swapping",
+    "Stopwatch:   1/100-second stopwatch Measuring capacity: 23:59’59.99” Measuring modes: Elapsed time, split time, 1st-2nd place times",
+    "Timer:  Countdown timer Measuring unit: 1/10 second Countdown range: 24 hours Countdown start time setting range: 1 second to 24 hours (1-second increments, 1-minute increments and 1-hour increments)",
+    "Alarm/hourly time signal:  5 daily alarms (One-time or daily)",
+    "Light LED: backlight Selectable illumination duration (1.5 seconds or 3 seconds), afterglow",
+    "Full auto-calendar (to year 2099)",
+    "Mute feature: Button operation tone on/off",
+    "Other features:  12/24-hour format Regular timekeeping: Digital: Hour, minute, second, pm, month, date, day"
+  ],
+  "imageCount": 1,
+  "arrivalDate": "2026-09-24",
+  "createdAt": "2026-09-24"
+}
