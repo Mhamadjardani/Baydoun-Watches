@@ -1,0 +1,50 @@
+{
+  "title": "Casio Men Digital Watch AMW-870A-2AVDF",
+  "sku": "AMW-870A-2AVDF",
+  "subCategory": "general",
+  "description": "The classic analog-digital combination all dressed up in beautifully gradated hues.\nFeaturing a gorgeous dial that adds stylish color to your wrist, as well as 50-meter water resistance and 10-year battery life, these watches deliver both style and functionality.",
+  "display": "Ana/Dig",
+  "gender": "Men",
+  "price": 120,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "96 g"
+    },
+    {
+      "label": "Dimensions ",
+      "value": "\t51.5 × 44 × 12.3 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Blue, Silver"
+    },
+    {
+      "label": "Band Material ",
+      "value": "Resin "
+    },
+    {
+      "label": "Display Type",
+      "value": "Ana-Digi"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "50m"
+    }
+  ],
+  "features": [
+    "World Time ",
+    "3 daily alarms (with 1 snooze alarm)",
+    "Stop Watch ",
+    "Timer",
+    "Regular timekeeping: Analog: 2 hands (hour, minute (hands move every 20 seconds))",
+    "Digital: Hour, minute, second, am/pm, month, date, day"
+  ],
+  "imageCount": 1,
+  "arrivalDate": "2026-09-24",
+  "createdAt": "2026-09-24"
+}
