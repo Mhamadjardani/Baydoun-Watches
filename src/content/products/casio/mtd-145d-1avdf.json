@@ -1,0 +1,48 @@
+{
+  "title": "Casio Men 3H Watch MTD-145D-1AVDF",
+  "sku": "MTD-145D-1AVDF",
+  "subCategory": "general",
+  "description": "Marine sports design.\n",
+  "display": "Analog",
+  "gender": "Men",
+  "price": 120,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "21 g"
+    },
+    {
+      "label": "Dimensions ",
+      "value": "\t38.2 × 35.2 × 8.5 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Green "
+    },
+    {
+      "label": "Band Material ",
+      "value": "Cloth "
+    },
+    {
+      "label": "Display Type",
+      "value": "Digital "
+    },
+    {
+      "label": "Water Resistance",
+      "value": "yes"
+    }
+  ],
+  "features": [
+    "Stop Watch ",
+    "Alarm/hourly time signal",
+    "LED Light ",
+    "Other features 12/24-hour format Regular timekeeping: Hour, minute, second, pm, date, day"
+  ],
+  "imageCount": 2,
+  "arrivalDate": "2026-09-24",
+  "createdAt": "2026-09-24"
+}
