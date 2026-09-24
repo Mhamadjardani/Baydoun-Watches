@@ -1,0 +1,49 @@
+{
+  "title": "Casio Unisex Vintage Watch AQ-240E-7ADF",
+  "sku": "AQ-240E-7ADF",
+  "subCategory": "vintage",
+  "description": "The analog-digital AQ-240 with dual display goes retro-modern. With a slightly rectangular face offset by a gently rounded case and soft metal curves, this watch exudes sophistication.\nThe digital LCD at the 6 o’clock position offers outstanding readability while maintaining a harmonious overall design, creating a timepiece that’s both functional and beautiful.",
+  "display": "Ana/Dig",
+  "gender": "Unisex",
+  "price": 85,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "51 g"
+    },
+    {
+      "label": "Dimensions ",
+      "value": "40.9 × 35.8 × 8.1 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Silver"
+    },
+    {
+      "label": "Band Material ",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Display Type",
+      "value": "Ana-Digi"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "yes"
+    }
+  ],
+  "features": [
+    "World Time ",
+    "Alarm/hourly time signal",
+    "Auto-calendar (28 days for February)",
+    "Regular timekeeping: Analog: 2 hands (hour, minute)",
+    "Digital: Hour, minute, second, pm, month, date, day"
+  ],
+  "imageCount": 2,
+  "arrivalDate": "2026-09-24",
+  "createdAt": "2026-09-24"
+}
