@@ -1,0 +1,50 @@
+{
+  "title": "Casio Men Digital Watch AMW-870D-1AVDF",
+  "sku": "AMW-870D-1AVDF",
+  "subCategory": "general",
+  "description": "10-YEAR BATTERY LIFE",
+  "display": "Ana/Dig",
+  "gender": "Men",
+  "price": 129,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "167 g"
+    },
+    {
+      "label": "Dimensions ",
+      "value": "\t51.5 × 44 × 12.3 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Black, Silver"
+    },
+    {
+      "label": "Band Material ",
+      "value": "Stainless Steel "
+    },
+    {
+      "label": "Display Type",
+      "value": "Ana-Digi"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "50m"
+    }
+  ],
+  "features": [
+    "World Time ",
+    "3 daily alarms (with 1 snooze alarm)",
+    "Stop Watch ",
+    "Timer",
+    "Regular timekeeping: Analog: 2 hands (hour, minute (hands move every 20 seconds))",
+    "Digital: Hour, minute, second, am/pm, month, date, day"
+  ],
+  "imageCount": 1,
+  "arrivalDate": "2026-09-24",
+  "createdAt": "2026-09-24"
+}
