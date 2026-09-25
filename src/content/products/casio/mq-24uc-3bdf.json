@@ -1,0 +1,47 @@
+{
+  "title": "Casio Unisex 3H Watch MQ-24UC-3BDF",
+  "sku": "MQ-24UC-3BDF",
+  "subCategory": "general",
+  "description": "Go classic casual, with a timepiece featuring basic hour, minute and second hands, a slim profile and a light, comfortable fit. In earthy matte colors, this fashion accessory has you covered for both style and practicality.",
+  "display": "Analog",
+  "gender": "Unisex",
+  "price": 26,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "20 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "38.8 × 34.9 × 7.8 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Green "
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin "
+    },
+    {
+      "label": "Special Feature",
+      "value": "Analog"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [
+    "Regular timekeeping",
+    "Approx. battery life: 3 years on SR626SW",
+    "Accuracy: ±20 seconds per month"
+  ],
+  "imageCount": 1,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
