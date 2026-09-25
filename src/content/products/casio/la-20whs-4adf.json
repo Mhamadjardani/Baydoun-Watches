@@ -1,0 +1,52 @@
+{
+  "title": "Casio Digital Unisex Watch LA-20WHS-4ADF",
+  "sku": "LA-20WHS-4ADF",
+  "subCategory": "general",
+  "display": "Digital",
+  "gender": "Unisex",
+  "price": 41,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "16 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "34.5 × 30.4 × 8.6 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Pink"
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin"
+    },
+    {
+      "label": "Display Type",
+      "value": "Digital "
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [
+    "LED light",
+    "1/100-second stopwatch Measuring capacity: 59’59.99″ Measuring modes: Elapsed time, split time, 1st-2nd place times",
+    "Daily alarm",
+    "Hourly time signal",
+    "Auto-calendar (auto calendar set at 28 days for February)",
+    "12/24-hour format",
+    "Regular timekeeping: Hour, minute, second, pm, date, day",
+    "Accuracy: ?30 seconds per month",
+    "Approx. battery life: 5 years on CR1616"
+  ],
+  "imageCount": 1,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
