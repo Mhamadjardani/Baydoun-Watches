@@ -1,0 +1,47 @@
+{
+  "title": "Casio Men 3H Watch MTP-B175-3BVDF",
+  "sku": "MTP-B175-3BVDF",
+  "subCategory": "general",
+  "description": "An exceptional analog design with the versatility to complement every occasion, from dressy formal events to casual outings. The black face and gray index marks come together in a chic, satisfying design. Water resistance up to 50 meters frees you from worry, even on rainy days.",
+  "display": "Analog",
+  "gender": "Men",
+  "price": 98,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "23 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "34.5 × 26.4 × 8.1 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Black, Green"
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin "
+    },
+    {
+      "label": "Display Type",
+      "value": "Analog"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "50m"
+    }
+  ],
+  "features": [
+    "Accuracy Accuracy: ±20 seconds per month",
+    "Approx. battery life: 3 years on SR626SW",
+    "Analog: 3 hands (hour, minute, second)"
+  ],
+  "imageCount": 1,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
