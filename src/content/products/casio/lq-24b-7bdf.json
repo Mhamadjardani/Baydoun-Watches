@@ -1,0 +1,47 @@
+{
+  "title": "Casio Unisex 3H Watch LQ-24B-7BDF",
+  "sku": "LQ-24B-7BDF",
+  "subCategory": "general",
+  "description": "An analog watch with the classic look of hour, minute, and seconds hands in a smaller, easy-to-wear size.\n\nThe hour and minute hands are colored to match the corresponding index marks, so it’s easy to tell time — making this an ideal first watch.\n\nThe band is made with bio-based resin, a material expected to help reduce environmental impact.",
+  "display": "Analog",
+  "gender": "Unisex",
+  "price": 40,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "17 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "36.1 × 31.5 × 7.8 mm"
+    },
+    {
+      "label": "Color",
+      "value": "White"
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin "
+    },
+    {
+      "label": "Special Feature",
+      "value": "Analog"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [
+    "Regular timekeeping",
+    "Approx. battery life: 3 years on SR626SW",
+    "Accuracy: ±20 seconds per month"
+  ],
+  "imageCount": 2,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
