@@ -1,0 +1,52 @@
+{
+  "title": "G-Shock G-Steel Solar Men Watch GST-B1000D-3ADR",
+  "sku": "GST-B1000D-3ADR",
+  "subCategory": "g-shock",
+  "description": "Tough, innovative, functional beauty — reimagined in sharp, minimalist style.\n\nThe GST-B1000D carries on the G-SHOCK heritage of tough construction and design rooted in functional beauty, reconstructing this legacy to achieve a polished, sleek expression.\n\nThe bezel goes logo-free for a clean, modern look, while three separate finishes — vertical hairline, circular hairline, and mirror polishing — create a rich and sophisticated textural appeal that changes as light is reflected at different angles. The mirror- and hairline-finished solid stainless-steel band is paired with a tri-fold clasp also crafted from solid stainless steel. This sharp, flat design takes you from business meetings to casual settings to outdoor activities with ease.",
+  "display": "Analog",
+  "gender": "Men",
+  "price": 580,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "118 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "46.9 × 44.2 × 11.6 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Green, Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel "
+    },
+    {
+      "label": "Special Feature\t ",
+      "value": "Bluetooth, Solar"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "200m"
+    }
+  ],
+  "features": [
+    "Stopwatch",
+    "Timer",
+    "Alarm/hourly time signal",
+    "Full auto-calendar (to year 2099)",
+    "Energy saving feature",
+    "Battery display/alert",
+    "Run time",
+    "Analog: 3 hands (hour, minute (hand moves every 10 seconds), second), 2 dials (24-hour, day)"
+  ],
+  "imageCount": 6,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
