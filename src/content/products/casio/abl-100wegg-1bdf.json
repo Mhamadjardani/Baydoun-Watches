@@ -1,0 +1,54 @@
+{
+  "title": "Casio Vintage Digital Unisex Metal Watch ABL-100WEGG-1BDF",
+  "sku": "ABL-100WEGG-1BDF",
+  "subCategory": "vintage",
+  "description": "Vintage fashion meets modern functionality, delivering retro styling with up-to-date features.\n\nA classic design with a look-back vibe, the simple case complements the multi-row metal bracelet band with lay-flat construction to ensure a comfortable fit.\n\nBut don’t let the vintage look fool you. The watch comes packed with super-useful technology to support your health-conscious lifestyle.\n\nThe built-in sensor detects body movements and automatically counts steps. Easily check the number of steps you took that day on the LCD screen. Smartphone pairing via Bluetooth® delivers automatic time correction and makes it easy to configure various watch functions from the app. Transfer step counts and other data tracked on the watch and view them on your phone. Use the life log data to manage your health each day.",
+  "display": "Digital",
+  "gender": "Unisex",
+  "price": 165,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "60 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "41.6 × 37.9 × 8.2 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Black"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Display Type",
+      "value": "Digital "
+    },
+    {
+      "label": "Water Resistance",
+      "value": "50m"
+    }
+  ],
+  "features": [
+    "Smartphone Link Feature: Mobile link (Wireless linking using Bluetooth®)",
+    "App Connectivity Feature: Auto time adjustment Easy watch setting Approximately 300 world time cities Life log data Time & place Phone finder",
+    "Stop Watch: 1 second (after 60 minutes) Measuring modes: Elapsed time, lap time, split time Recorded data: Up to 200 records (measurement start year, month, date, hour, minute, lap/split times)",
+    "Countdown timer",
+    "Light: LED backlight Selectable illumination duration (1.5 seconds or 3 seconds), afterglow LED: Amber",
+    "Regular timekeeping: Hour, minute, second, pm, year, month, date, day",
+    "Power Saving on/off",
+    "Low battery alert",
+    "5 daily alarms",
+    "Approx. battery life: 2 years on CR2016"
+  ],
+  "imageCount": 2,
+  "arrivalDate": "2026-08-30",
+  "createdAt": "2026-08-30"
+}
