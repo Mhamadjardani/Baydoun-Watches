@@ -1,10 +1,12 @@
 {
   "title": "Casio Men 3H Watch MTP-VD01D-1EVUDF",
   "sku": "MTP-VD01D-1EVUDF",
+  "subCategory": "general",
   "display": "Analog",
   "gender": "Unisex",
   "price": 55,
   "isNewArrival": false,
+  "isVisible": true,
   "isFeatured": false,
   "isLimitedEdition": false,
   "specifications": [
@@ -25,8 +27,8 @@
       "value": "Stainless Steel"
     },
     {
-      "label": "Special Feature",
-      "value": "LTP-MTP"
+      "label": "Display Type ",
+      "value": "Analog"
     },
     {
       "label": "Water Resistance",
