@@ -1,0 +1,47 @@
+{
+  "title": "Casio Men 3H Watch MTP-VD01D-6BVUDF",
+  "sku": "MTP-VD01D-6BVUDF",
+  "subCategory": "general",
+  "description": "Make a stylishly cool statement with a deliciously detailed finish and a gorgeous, colorful dial. The thick bezel adds a sporty touch to a metal analog watch designed around the classic hour, minute, and seconds hand look. Water resistance up to 50 meters frees you from worry when washing up or working with water.\n",
+  "display": "Analog",
+  "gender": "Men",
+  "price": 55,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "118 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "49 × 45 × 10.3 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Purple, Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Display Type",
+      "value": "Analog"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [
+    "50-meter water resistance",
+    "Date display",
+    "Stainless steel band"
+  ],
+  "imageCount": 1,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
