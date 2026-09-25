@@ -1,11 +1,13 @@
 {
   "title": "Casio Men 3H Watch MTP-VD01D-3E1VUDF",
   "sku": "MTP-VD01D-3E1VUDF",
+  "subCategory": "general",
+  "description": "Make a stylishly cool statement with a deliciously detailed finish and a gorgeous, colorful dial. The thick bezel adds a sporty touch to a metal analog watch designed around the classic hour, minute, and seconds hand look.",
   "display": "Analog",
   "gender": "Men",
   "price": 55,
-  "description": "Make a stylishly cool statement with a deliciously detailed finish and a gorgeous, colorful dial. The thick bezel adds a sporty touch to a metal analog watch designed around the classic hour, minute, and seconds hand look.",
   "isNewArrival": false,
+  "isVisible": true,
   "isFeatured": false,
   "isLimitedEdition": false,
   "specifications": [
@@ -26,8 +28,8 @@
       "value": "Stainless Steel"
     },
     {
-      "label": "Special Feature",
-      "value": "LTP-MTP"
+      "label": "Display Type",
+      "value": "Analog"
     },
     {
       "label": "Water Resistance",
