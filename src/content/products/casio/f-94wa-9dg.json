@@ -1,0 +1,38 @@
+{
+  "title": "Casio Vintage Digital Men Watch F-94WA-9DG",
+  "sku": " F-94WA-9DG",
+  "subCategory": "vintage",
+  "display": "Digital",
+  "gender": "Men",
+  "price": 25,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "21 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "38.2 × 35.2 × 8.5 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Black"
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
