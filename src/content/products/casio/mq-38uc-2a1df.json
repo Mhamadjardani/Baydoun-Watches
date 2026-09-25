@@ -1,0 +1,47 @@
+{
+  "title": "Casio 3H Men Watch MQ-38UC-2A1DF",
+  "sku": "MQ-38UC-2A1DF",
+  "subCategory": "general",
+  "description": "Streamline your style. Get a lightweight analog timepiece in a slim design with a compact watch face. In earthy matte colors, this fashion accessory has you covered for both style and practicality.",
+  "display": "Analog",
+  "gender": "Unisex",
+  "price": 26,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "19 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "37.2 × 26.5 × 8.1 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Black, Blue"
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin "
+    },
+    {
+      "label": "Special Feature",
+      "value": "Analog"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [
+    "Regular timekeeping",
+    "Approx. battery life: 3 years on SR626SW",
+    "Accuracy: ±20 seconds per month"
+  ],
+  "imageCount": 1,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
