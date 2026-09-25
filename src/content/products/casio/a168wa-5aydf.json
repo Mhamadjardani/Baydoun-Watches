@@ -1,0 +1,49 @@
+{
+  "title": "Casio Vintage Digital Unisex Metal Watch A168WA-5AYDF",
+  "sku": "A168WA-5AYDF",
+  "subCategory": "vintage",
+  "description": "1/100-second stopwatch Alarm Water resistant Stainless steel band Popular retro design",
+  "display": "Digital",
+  "gender": "Unisex",
+  "price": 50,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "50 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "38.6 × 36.3 × 9.6 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Brown, Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [
+    "Electro-luminescent backlight",
+    "1/100-second stopwatch Measuring capacity: 59’59.99″ Measuring modes: Elapsed time, split time, 1st-2nd place times",
+    "Daily alarm",
+    "Hourly time signal",
+    "Auto-calendar (28 days for February)",
+    "12/24-hour format",
+    "Regular timekeeping: Digital: Hour, minute, second, pm, date, day",
+    "Accuracy: ?30 seconds per month",
+    "Approx. battery life: 7 years on CR2016"
+  ],
+  "imageCount": 2,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
