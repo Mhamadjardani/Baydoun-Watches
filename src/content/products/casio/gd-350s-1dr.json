@@ -1,0 +1,51 @@
+{
+  "title": "G-Shock Casual Digital Men watch GD-350S-1DR",
+  "sku": "GD-350S-1DR",
+  "subCategory": "g-shock",
+  "description": "Don’t miss a beat with the GD-350 in G-SHOCK black, accented with bold touches of red.\n\nEasily keep track of time with a timer and alarm function that not only beeps and flashes when the time is up or the alarm is sounding, but vibrates as well. The back of the case is equipped with shock absorbers",
+  "display": "Digital",
+  "gender": "Men",
+  "price": 185,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "75 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "53.4 × 50.8 × 18 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Black "
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin"
+    },
+    {
+      "label": "Display Type",
+      "value": "Digital"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "200m"
+    }
+  ],
+  "features": [
+    "LED Light",
+    "World Time",
+    "Daily alarm",
+    "Timer",
+    "Hourly time signal",
+    "12/24-hour format",
+    "Battery display/alert"
+  ],
+  "imageCount": 1,
+  "arrivalDate": "2026-08-29",
+  "createdAt": "2026-08-29"
+}
