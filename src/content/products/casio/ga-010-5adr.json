@@ -1,0 +1,51 @@
+{
+  "title": "G-Shock Casual Men Watch GA-010-5ADR",
+  "sku": "GA-010-5ADR",
+  "subCategory": "g-shock",
+  "description": "Enjoy a life of fewer battery changes with a large-case G-SHOCK with a 10-year battery you won’t have to worry about for ages.\n\nThe analog-digital GA-010 delivers handy features like world time and stopwatch, as well as a high-brightness LED light, which can be easily accessed from the large button on front of the case, ensuring visibility even in the dark.\n\nMade with bio-based resin and equipped with a 10-year battery, this G-SHOCK is great if you want to reduce environmental impact.\n\nAvailable in a selection of black-based workstyle color schemes for a cool design that moves with ease from casual settings to work situations.",
+  "display": "Ana/Dig",
+  "gender": "Men",
+  "price": 170,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "56 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "54.9 x 51.9 x 16.1 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Beige"
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin"
+    },
+    {
+      "label": "Display Type",
+      "value": "Ana-Digi"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "200m"
+    }
+  ],
+  "features": [
+    "LED Light",
+    "World Time",
+    "Mute Feature",
+    "Daily alarm",
+    "Timer",
+    "Hourly time signal",
+    "12/24-hour format"
+  ],
+  "imageCount": 5,
+  "arrivalDate": "2026-08-30",
+  "createdAt": "2026-08-30"
+}
