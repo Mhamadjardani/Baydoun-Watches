@@ -1,0 +1,48 @@
+{
+  "title": "Casio men 3H Watch MDV-10C-1A2VDF",
+  "sku": "MDV-10C-1A2VDF",
+  "subCategory": "general",
+  "description": "Get out and adventure with a smaller, more compact take on the ever-popular MDV-107 design. This sporty timepiece adds a unidirectional rotating bezel to the classic hour, minute, and second hand design.",
+  "display": "Analog",
+  "gender": "Men",
+  "price": 126,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "56 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "42 × 38.5 × 10.4 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Black, Blue"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Special Feature",
+      "value": "Diver"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "50m"
+    }
+  ],
+  "features": [
+    "Accuracy: ?20 seconds per month",
+    "Analog: 3 hands (hour, minute, second)",
+    "Date display",
+    "200-meter water resistance"
+  ],
+  "imageCount": 1,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
