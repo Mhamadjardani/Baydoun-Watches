@@ -1,0 +1,52 @@
+{
+  "title": "G-Shock Casual Men Watch GM-2110D-8ADR",
+  "sku": "GM-2110D-8ADR",
+  "subCategory": "g-shock",
+  "description": "Check out the GM-2110D — the iconic analog-digital GA-2100, but with a stylish metal bezel and band update.\n\nMeticulously forged, cut, and polished, the uniform octagonal metal bezel anchors the same tough construction in a simple, no-fuss design.\n\nWith the case made of high-rigidity glass-fiber-reinforced fine resin, glossy metallic dial — in breezily sophisticated blue-green or luxuriously chic slate gray — and the metal band, this timepiece is up for anything, work or play.",
+  "display": "Ana/Dig",
+  "gender": "Men",
+  "price": 425,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "146 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "49.3 × 44.4 × 11.8 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Display Type",
+      "value": "Ana-Digi"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "200m"
+    }
+  ],
+  "features": [
+    "LED Light",
+    "Flash Alert Feature",
+    "5 Daily alarms",
+    "Timer",
+    "Hourly time signal",
+    "12/24-hour format",
+    "Mute feature",
+    "Other features: 12/24-hour format Hand shift feature (Hands move out of the way to provide an unobstructed view of digital display contents.) Regular timekeeping: Analog: 2 hands (hour, minute (hand moves every 20 seconds)), 1 dial (day) Digital: Hour, minute, second, pm, month, date"
+  ],
+  "imageCount": 6,
+  "arrivalDate": "2026-08-29",
+  "createdAt": "2026-08-29"
+}
