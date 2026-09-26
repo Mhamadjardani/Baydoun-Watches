@@ -1,0 +1,53 @@
+{
+  "title": "G-Shock Analogue-Digital Men watch GA-2100BM-7A5DR",
+  "sku": "GA-2100BM-7A5DR",
+  "subCategory": "g-shock",
+  "description": "The cool glossiness and translucency of the GA-2100BM. The GA-2100 with an octagonal bezel is paired with a vapor-plated face that gives it a metallic finish in the popular sky blue color. It is contrasted with a translucent band for a cool, confident look. This colorful timepiece is the perfect accessory for your casual street fashion.",
+  "display": "Ana/Dig",
+  "gender": "Men",
+  "price": 183,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "51 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "48.5 × 45.4 × 11.8 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Transparent"
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "200m"
+    }
+  ],
+  "features": [
+    "World time 31 time zones (48 cities + coordinated universal time), daylight saving on/off",
+    "1/100-second stopwatch Measuring capacity: 00’00”00~59’59”99 (for the first 60 minutes) 1:00’00~23:59’59 (after 60 minutes) Measuring unit: 1/100 second (for the first 60 minutes) 1 second (after 60 minutes) Measuring modes: Elapsed time, split time, 1st-2nd place times",
+    "Countdown timer Measuring unit: 1 second Countdown range: 24 hours Countdown start time setting range: 1 second to 24 hours (1-second increments, 1-minute increments and 1-hour increments)",
+    "5 daily alarms",
+    "Hourly time signal",
+    "Double LED light LED light for the face (Super illuminator, selectable illumination duration (1.5 seconds or 3 seconds), afterglow) LED backlight for the digital display (Super illuminator, selectable illumination duration (1.5 seconds or 3 seconds), afterglow)",
+    "LED:White",
+    "Full auto-calendar (to year 2099)",
+    "Button operation tone on/off",
+    "Accuracy: ±15 seconds per month",
+    "12/24-hour format",
+    "Hand shift feature (Hands move out of the way to provide an unobstructed view of digital display contents.)",
+    "Regular timekeeping: Analog: 2 hands (hour, minute (hand moves every 20 seconds)), 1 dial (day) Digital: Hour, minute, second, pm, month, date"
+  ],
+  "imageCount": 5,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
