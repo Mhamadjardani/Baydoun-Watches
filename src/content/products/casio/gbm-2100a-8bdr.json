@@ -47,9 +47,11 @@
     "Full auto-calendar (to year 2099)",
     "Button operation tone on/off",
     "Accuracy: ±15 seconds per month",
-    "12/24-hour format",
     "Hand shift feature (Hands move out of the way to provide an unobstructed view of digital display contents.)",
-    "Regular timekeeping: Analog: 2 hands (hour, minute (hand moves every 20 seconds)), 1 dial (day) Digital: Hour, minute, second, pm, month, date"
+    "Regular timekeeping: Analog: 2 hands (hour, minute (hand moves every 20 seconds)), 1 dial (day) Digital: Hour, minute, second, pm, month, date",
+    "Time adjustment",
+    "Energy saving feature",
+    "Run time"
   ],
   "imageCount": 4,
   "arrivalDate": "2026-07-04",
