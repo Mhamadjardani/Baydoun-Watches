@@ -1,0 +1,52 @@
+{
+  "title": "G-Shock Men Watch GA-V01-9ADR",
+  "sku": "GA-V01-9ADR",
+  "subCategory": "g-shock",
+  "description": "Everyone counts on G-SHOCK for unceasing evolution. But check out this comprehensive reinterpretation, representing the G-SHOCK approach to construction and design that powerfully conveys the brand’s unwavering commitment to toughness. The GA-V01 features an exterior with an organic form bringing together components with sharply defined edges, combined with a large, full-screen LCD topped by a metallic dial with openwork and employing the Shock Release Hand, among other features. With its strikingly innovative and original design concept, the GA-V01 exudes G-SHOCK toughness, restating the brand’s never-ending spirit of challenge and commitment to delivering strength.\n\nCasio has developed a magnetic holding structure, a design where the hands, which are vulnerable to impact, are not directly fixed to the shaft but are attached using magnetic force. This magnetic attachment allows the Shock Release Hand (minute hand) to absorb and dissipate impacts effectively. This new technology also makes it possible to create larger hands and offers more flexibility in styling. Note: Because the structure uses magnetic attachment, the minute hand may shake due to impact or vibration. Additionally, immediately after an impact or vibration, the minute hand may temporarily shift out of position, but it will return to the correct position within a few minutes.",
+  "display": "Ana/Dig",
+  "gender": "Men",
+  "price": 195,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "74 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "49.1 × 58.2 × 19.6 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Green"
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin"
+    },
+    {
+      "label": "Display Type",
+      "value": "Ana-Digi"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "200m"
+    }
+  ],
+  "features": [
+    "LED Light",
+    "Flash Alert Feature",
+    "5 Daily alarms",
+    "Timer",
+    "Hourly time signal",
+    "12/24-hour format",
+    "Mute feature",
+    "Other features: 12/24-hour format Hand shift feature (Hands move out of the way to provide an unobstructed view of digital display contents.) Regular timekeeping: Analog: 2 hands (hour, minute (hand moves every 20 seconds)), 1 dial (day) Digital: Hour, minute, second, pm, month, date"
+  ],
+  "imageCount": 3,
+  "arrivalDate": "2026-08-29",
+  "createdAt": "2026-08-29"
+}
