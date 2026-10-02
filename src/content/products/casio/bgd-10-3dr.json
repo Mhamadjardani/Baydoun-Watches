@@ -1,0 +1,51 @@
+{
+  "title": "Baby-G Unisex Digital Watch BGD-10-3DR",
+  "sku": "BGD-10-3DR",
+  "subCategory": "baby-g",
+  "description": "The square BABY-G look you love in a monochromatic color scheme you’ll adore — a whimsical digital watch to boost your active life and unique style. Press the Light button in Timekeeping Mode for a random series of pixel-art animations (s urfer, dancer, dolphin, blowfish, dog, cat) that add a bit of playful fun. More than just a charming fashion statement, the BGD-10 also delivers shock-resistant construction, 100-meter water resistance, and plenty of handy functions.",
+  "display": "Digital",
+  "gender": "Kids",
+  "price": 95,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "33 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "42.8 × 39 × 14.7 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Blue"
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin"
+    },
+    {
+      "label": "Age Group",
+      "value": "11+ Years"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "200m"
+    }
+  ],
+  "features": [
+    "World Time ",
+    "Stop Watch ",
+    "Timer ",
+    "5 daily alarms",
+    "Hourly time signal",
+    "LED:White",
+    "12/24-hour format"
+  ],
+  "imageCount": 2,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
