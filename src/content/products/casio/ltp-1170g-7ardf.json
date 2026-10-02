@@ -1,0 +1,42 @@
+{
+  "title": "Casio Women 3H Watch LTP-1170G-7ARDF",
+  "sku": "LTP-1170G-7ARDF",
+  "subCategory": "general",
+  "display": "Analog",
+  "gender": "Women",
+  "price": 52,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "47 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "30 × 25.5 × 8.4 mm"
+    },
+    {
+      "label": "Color",
+      "value": "2-Tone Gold"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Display Type",
+      "value": "Analog 3H"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-08-29",
+  "createdAt": "2026-08-29"
+}
