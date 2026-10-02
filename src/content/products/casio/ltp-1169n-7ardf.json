@@ -1,11 +1,13 @@
 {
   "title": "Casio women Watch LTP-1169N-7ARDF",
   "sku": "LTP-1169N-7ARDF",
+  "subCategory": "general",
+  "description": "The Casio LTP-1169G-7ARDF features a refined gold-tone finish with a classic analog dial. Its elegant design makes it a stylish choice for everyday wear.",
   "display": "Analog",
   "gender": "Women",
   "price": 64,
-  "description": "The Casio LTP-1169G-7ARDF features a refined gold-tone finish with a classic analog dial. Its elegant design makes it a stylish choice for everyday wear.",
   "isNewArrival": false,
+  "isVisible": true,
   "isFeatured": false,
   "isLimitedEdition": false,
   "specifications": [
@@ -35,7 +37,7 @@
     }
   ],
   "features": [],
-  "imageCount": 2,
+  "imageCount": 1,
   "arrivalDate": "2026-08-29",
   "createdAt": "2026-08-29"
 }
