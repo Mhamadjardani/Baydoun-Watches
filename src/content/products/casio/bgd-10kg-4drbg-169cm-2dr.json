@@ -1,0 +1,52 @@
+{
+  "title": "Baby-G Digital Watch BG-169CM-2DR",
+  "sku": "BGD-10KG-4DRBG-169CM-2DR",
+  "subCategory": "baby-g",
+  "description": "Why do ordinary camouflage when you can go camo in color? BABY-G takes the ever-popular street fashion camouflage to a whole new place.\n\nWe begin with the BG-169 with its charmingly compact round form and face protectors. Then we add a bezel and band dressed in colorful camouflage that cleverly conceals the brand’s iconic G-mark, bringing a playful touch to a typically utilitarian design.\n\nChoose your favorite of three bold and bright Y2K-style colors: pink, gray, or blue green.\n\nThis special design perfectly embodies the essence of street fashion with original camo and striking color. Add a unique touch to your style with a bold new look.",
+  "display": "Digital",
+  "gender": "Kids",
+  "price": 175,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "43 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "\t45.9 × 42.6 × 16.4 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Blue"
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin"
+    },
+    {
+      "label": "Age Group",
+      "value": "11+ Years"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "200m"
+    }
+  ],
+  "features": [
+    "World Time ",
+    "Stop Watch ",
+    "Timer ",
+    "5 daily alarms",
+    "Hourly time signal",
+    "LED:White",
+    "12/24-hour format",
+    "Mute feature Button operation tone on/off"
+  ],
+  "imageCount": 4,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
