@@ -1,0 +1,51 @@
+{
+  "title": "Baby-G Unisex Digital Watch BGA-280-1ADR",
+  "sku": "BGA-280-1ADR",
+  "subCategory": "baby-g",
+  "description": "The BGA-280 Series layers multiple parts to create innovative and colorful designs. The round cases of these models and the cute impression of their hefty forms are complemented by the sporty touch of the metallic hour markers.\nThe models in this series are available in a choice of three colors: black, coral pink, or white.\nThe black model has a cool look, while the coral pink model is BABY-G cute.\nThe face of the white model has a pastel tie-dye look, while the case combines white with grayish blue for a truly distinctive look.",
+  "display": "Digital",
+  "gender": "Kids",
+  "price": 140,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "42 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "47.4 × 43.4 × 14.8 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Black "
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin"
+    },
+    {
+      "label": "Age Group",
+      "value": "11+ Years"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "200m"
+    }
+  ],
+  "features": [
+    "World Time ",
+    "Stop Watch ",
+    "Timer ",
+    "5 daily alarms",
+    "Hourly time signal",
+    "LED:White",
+    "12/24-hour format"
+  ],
+  "imageCount": 2,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
