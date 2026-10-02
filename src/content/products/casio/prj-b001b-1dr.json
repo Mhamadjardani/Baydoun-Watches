@@ -1,0 +1,55 @@
+{
+  "title": "Pro Trek Bluetooth Solar Watch PRJ-B001B-1DR",
+  "sku": "PRJ-B001B-1DR",
+  "subCategory": "pro-trek",
+  "description": "Get off the beaten path and go beyond, with the lightest* PRO TREK yet, the perfect companion for long trails and ultralight hikes.\n\nThe PRJ-B001 takes it up a notch with the first rotary guard bezel in the PRO TREK line. Turn the rotating bezel to switch between two distinct styles. When set to present a stylish angular design that complements everyday fashion, the bezel covers the buttons, preventing accidental pressing of buttons while out walking or in town. Turn the bezel 45 degrees to the rounder look and uncover the buttons for easy access to functionality while out hiking or training.\n\nWe developed an entirely new style of band for this timepiece — the bungee cord cloth band inspired by outdoor gear. Combining a cloth band with a bungee cord delivers a more breathable, comfortable fit. Fasten the stretchy loop cord onto the hook to wear over heavy outerwear just as easily as on your bare wrist.\n\nKey resin components used in the case, band, and other parts are made with bio-based resin, a material expected to help reduce environmental impact.\n\nFar beyond just ease and style, this watch offers superior functionality, too, with Tough Solar charging and Bluetooth® to pair with a smartphone. Press a button on the watch to record date, time, and position on a map within the app, a useful way to log your activity.\n\nReminisce about the breathtaking places you’ve been, and take note of places you want to go again. The lightest PRO TREK yet charts your course to all-new ways of appreciating the great outdoors.",
+  "display": "Ana/Dig",
+  "gender": "Men",
+  "price": 225,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "37 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "50.3 × 46 × 13.6 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Black "
+    },
+    {
+      "label": "Band Material",
+      "value": "Cloth "
+    },
+    {
+      "label": "Special Feature",
+      "value": "Bluetooth, Solar"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "100m"
+    }
+  ],
+  "features": [
+    "World Time ",
+    "Stop Watch ",
+    "Timer ",
+    "5 daily alarms",
+    "Hourly time signal",
+    "LED:White",
+    "12/24-hour format",
+    "Energy saving feature",
+    "Battery display/alert",
+    "Power supply and battery life",
+    "Run time"
+  ],
+  "imageCount": 9,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
