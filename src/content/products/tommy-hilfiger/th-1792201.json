@@ -1,0 +1,49 @@
+{
+  "title": "TOMMY HILFIGER, OCEANIC   TH 1792201",
+  "sku": "TH 1792201",
+  "display": "Analog",
+  "gender": "Men",
+  "price": 100,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Movement",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "Band Material",
+      "value": "Rubber"
+    },
+    {
+      "label": "Band Color",
+      "value": "Black"
+    },
+    {
+      "label": "Dial Color",
+      "value": "Black "
+    },
+    {
+      "label": "Case Diameter",
+      "value": "42 MM"
+    },
+    {
+      "label": "Case Color",
+      "value": "Silver "
+    },
+    {
+      "label": "Bezel",
+      "value": "BLUE & RED ALUMINIUM"
+    },
+    {
+      "label": "Water Resistant",
+      "value": "3 ATM"
+    }
+  ],
+  "features": [],
+  "imageCount": 2,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
