@@ -1,0 +1,43 @@
+{
+  "title": "Casio women Watch LTP-VT03D-7BDF",
+  "sku": "LTP-VT03D-7BDF",
+  "subCategory": "general",
+  "description": "Appreciate the depth and dimension of a simply designed watch with a concave-shaped dial that hugs the wrist.\n\nThe streamlined, minimalist look is a great complement to everyday styling. Water resistance for daily use frees you from worry when out in the rain or washing up.",
+  "display": "Analog",
+  "gender": "Women",
+  "price": 59,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "64 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "\t40 × 34 × 7.9 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Display Type",
+      "value": "Analog 3H"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "Yes"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-08-29",
+  "createdAt": "2026-08-29"
+}
