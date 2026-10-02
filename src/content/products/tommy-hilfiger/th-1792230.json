@@ -1,0 +1,49 @@
+{
+  "title": "TOMMY HILFIGER, REMY  TH 1792230",
+  "sku": "TH 1792230",
+  "display": "Analog",
+  "gender": "Men",
+  "price": 150,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Movement",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "Band Material",
+      "value": "BRACELET"
+    },
+    {
+      "label": "Band Color",
+      "value": "Silver "
+    },
+    {
+      "label": "Dial Color",
+      "value": "Green"
+    },
+    {
+      "label": "Case Diameter",
+      "value": "36 MM"
+    },
+    {
+      "label": "Case Color",
+      "value": "Silver "
+    },
+    {
+      "label": "Bezel",
+      "value": "Green, Gold "
+    },
+    {
+      "label": "Water Resistant",
+      "value": "3 ATM"
+    }
+  ],
+  "features": [],
+  "imageCount": 2,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
