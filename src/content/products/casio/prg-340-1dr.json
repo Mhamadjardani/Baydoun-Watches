@@ -1,0 +1,54 @@
+{
+  "title": "Pro Trek Solar Watch PRG-340-1DR",
+  "sku": "PRG-340-1DR",
+  "subCategory": "pro-trek",
+  "description": "Get out into the great outdoors with a solar-powered PRO TREK featuring eco-friendly materials that care for the environment. The PRO TREK line of authentic outdoor gear for nature lovers introduces the PRG-340, a timepiece that incorporates environmentally friendly biomass plastics* while delivering the same comfortable fit for your wrist.\nThe case and urethane band are crafted from biomass plastics made with castor oil and the band from biomass plastics made with corn. The duplex LCD lays out separate layers for the compass graphics and the clock functions, enabling a larger compass display for better legibility and easier navigation in a design that is both functional and beautiful. The rotating bezel makes it simple to record compass readings, and the Tough Solar charging system keeps the advanced functionality on the go.\nGet out and explore with a gentler footprint!\n* Biomass plastics are polymers produced using chemical or biological synthesis of materials sourced from plant matter or other renewable organic substances and are widely thought to help reduce environmental impact and promote the shift to a circular economy.",
+  "display": "Digital",
+  "gender": "Men",
+  "price": 315,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "60 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "\t54.7 × 51.7 × 15.1 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Blue"
+    },
+    {
+      "label": "Band Material",
+      "value": "Rubber"
+    },
+    {
+      "label": "Age Group",
+      "value": "11+ Years"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "100m"
+    }
+  ],
+  "features": [
+    "World Time ",
+    "Stop Watch ",
+    "Timer ",
+    "5 daily alarms",
+    "Hourly time signal",
+    "LED:White",
+    "12/24-hour format",
+    "Energy saving feature",
+    "Battery display/alert",
+    "Power supply and battery life"
+  ],
+  "imageCount": 6,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
