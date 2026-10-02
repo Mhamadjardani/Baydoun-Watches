@@ -1,0 +1,59 @@
+{
+  "title": "Pro Trek Bluetooth Fishing Watch PRT-B70-1DR",
+  "sku": "PRT-B70-1DR",
+  "subCategory": "pro-trek",
+  "description": "An angler line PRT-B70 from PRO TREK that boasts a 20 bar water resistance. Equipped with optimal functions for fishing through the dedicated “CASIO WATCHES” application via Bluetooth® communication.\nEquipped with a fishing timer that displays times ideal for fishing and the likelihood of catching fish, and a function that automatically counts down to the start of fishing time slots. It also displays tidal graphs and sunrise/sunset times for 3,300 points along the world’s major coasts via a link to a dedicated app. It is also equipped with a fishing memo function that records fishing locations in the app based on smartphone location information.\nIt is also equipped with a quad sensor able to measure number of steps, direction, altitude/barometric pressure, and temperature. Enables on-app confirmation of calories burned while walking. Also allows customized settings, such as a setting to display only necessary functions, on the app. A fine resin case and soft, highly-elastic urethane band are used on the exterior to reduce the burden on the wrist. A wide dial and large, arrow-shaped hands are used to ensure visibility. Standard black is used as the base color to create a sporty design.",
+  "display": "Ana/Dig",
+  "gender": "Men",
+  "price": 315,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "73 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "\t57.5 × 50.8 × 16.8 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Black "
+    },
+    {
+      "label": "Band Material",
+      "value": "resin "
+    },
+    {
+      "label": "Special Feature",
+      "value": "Bluetooth"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "200m"
+    }
+  ],
+  "features": [
+    "Time adjustment",
+    "Power supply and battery life Approx. battery life: 2 years on CR2025",
+    "Sensor feature",
+    "World time",
+    "Moon data Moon data (moon age of the specific date)",
+    "Tide graph",
+    "Sunrise/sunset display Sunrise, sunset time display Sunrise time and sunset time for specific date",
+    "Stopwatch",
+    "Timer",
+    "Alarm/hourly time signal",
+    "Light\\",
+    "Light color",
+    "Calendar Full auto-calendar (to year 2099)",
+    "Mute feature Button operation tone on/off",
+    "Other features 12/24-hour format Fishing timer Hand shift feature (Hands move out of the way to provide an unobstructed view of digital display contents.) Regular timekeeping: Analog: 3 hands (hour, minute (hand moves every 10 seconds), second) Digital: Hour, minute, second, am/pm, month, date, day"
+  ],
+  "imageCount": 2,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
