@@ -1,0 +1,49 @@
+{
+  "title": "TOMMY HILFIGER, MORGAN TH 1710687",
+  "sku": "TH 1710687",
+  "display": "Analog",
+  "gender": "Men",
+  "price": 160,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Movement",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "Band Material",
+      "value": "Rubber"
+    },
+    {
+      "label": "Band Color",
+      "value": "Blue"
+    },
+    {
+      "label": "Dial Color",
+      "value": "Blue"
+    },
+    {
+      "label": "Case Diameter",
+      "value": "48 MM"
+    },
+    {
+      "label": "Case Color",
+      "value": "Silver"
+    },
+    {
+      "label": "Bezel",
+      "value": "Blue"
+    },
+    {
+      "label": "Water Resistant",
+      "value": "3 ATM"
+    }
+  ],
+  "features": [],
+  "imageCount": 2,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
