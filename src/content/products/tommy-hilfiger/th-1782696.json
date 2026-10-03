@@ -1,0 +1,49 @@
+{
+  "title": "TOMMY HILFIGER, SOPHIA TH 1782696",
+  "sku": "TH 1782696",
+  "display": "Analog",
+  "gender": "Women",
+  "price": 160,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Movement",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel "
+    },
+    {
+      "label": "Band Color",
+      "value": "Rose-Gold "
+    },
+    {
+      "label": "Dial Color",
+      "value": "Rose-Gold"
+    },
+    {
+      "label": "Case Diameter",
+      "value": "36 MM"
+    },
+    {
+      "label": "Case Color",
+      "value": "Rose-Gold"
+    },
+    {
+      "label": "Bezel",
+      "value": "Rose-Gold"
+    },
+    {
+      "label": "Water Resistant",
+      "value": "3 ATM"
+    }
+  ],
+  "features": [],
+  "imageCount": 3,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
