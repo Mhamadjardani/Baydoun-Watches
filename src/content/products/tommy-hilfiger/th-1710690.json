@@ -1,0 +1,49 @@
+{
+  "title": "TOMMY HILFIGER, MORGAN TH 1710690",
+  "sku": "TH 1710690",
+  "display": "Analog",
+  "gender": "Men",
+  "price": 200,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Movement",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "Band Material",
+      "value": "STAINLESS STEEL "
+    },
+    {
+      "label": "Band Color",
+      "value": "BLACK "
+    },
+    {
+      "label": "Dial Color",
+      "value": "BLACK"
+    },
+    {
+      "label": "Case Diameter",
+      "value": "48 MM"
+    },
+    {
+      "label": "Case Color",
+      "value": "BLACK "
+    },
+    {
+      "label": "Bezel",
+      "value": "BLACK "
+    },
+    {
+      "label": "Water Resistant",
+      "value": "3 ATM"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
