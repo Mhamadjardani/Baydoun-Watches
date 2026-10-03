@@ -1,0 +1,49 @@
+{
+  "title": "TOMMY HILFIGER, MORRISON TH 1791401",
+  "sku": "TH 1791401",
+  "display": "Analog",
+  "gender": "Men",
+  "price": 160,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Movement",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "Band Material",
+      "value": "Genuine Leather "
+    },
+    {
+      "label": "Band Color",
+      "value": "Black"
+    },
+    {
+      "label": "Dial Color",
+      "value": "Black "
+    },
+    {
+      "label": "Case Diameter",
+      "value": "44MM"
+    },
+    {
+      "label": "Case Color",
+      "value": "Silver "
+    },
+    {
+      "label": "Bezel",
+      "value": "Silver "
+    },
+    {
+      "label": "Water Resistant",
+      "value": "3 ATM"
+    }
+  ],
+  "features": [],
+  "imageCount": 4,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
