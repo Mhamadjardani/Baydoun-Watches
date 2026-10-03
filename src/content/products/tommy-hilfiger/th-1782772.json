@@ -19,11 +19,11 @@
     },
     {
       "label": "Band Color",
-      "value": "ROSE GOLD"
+      "value": "2-TONE ROSE GOLD"
     },
     {
       "label": "Dial Color",
-      "value": "TAUPE"
+      "value": "ROSE GOLD "
     },
     {
       "label": "Case Diameter",
@@ -31,7 +31,7 @@
     },
     {
       "label": "Case Color",
-      "value": "ROSE GOLD"
+      "value": "2-TONE ROSE GOLD"
     },
     {
       "label": "Bezel",
@@ -43,7 +43,7 @@
     }
   ],
   "features": [],
-  "imageCount": 2,
+  "imageCount": 4,
   "arrivalDate": "2026-07-04",
   "createdAt": "2026-07-04"
 }
