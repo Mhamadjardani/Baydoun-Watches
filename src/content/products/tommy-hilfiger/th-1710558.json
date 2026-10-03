@@ -1,0 +1,49 @@
+{
+  "title": "TOMMY HILFIGER, APOLLO TH 1710558",
+  "sku": "TH 1710558",
+  "display": "Analog",
+  "gender": "Men",
+  "price": 160,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Movement",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "Band Material",
+      "value": "Genuine Leather "
+    },
+    {
+      "label": "Band Color",
+      "value": "Blue"
+    },
+    {
+      "label": "Dial Color",
+      "value": "Blue"
+    },
+    {
+      "label": "Case Diameter",
+      "value": "41MM"
+    },
+    {
+      "label": "Case Color",
+      "value": "Blue"
+    },
+    {
+      "label": "Bezel",
+      "value": "Blue"
+    },
+    {
+      "label": "Water Resistant",
+      "value": "3 ATM"
+    }
+  ],
+  "features": [],
+  "imageCount": 4,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
