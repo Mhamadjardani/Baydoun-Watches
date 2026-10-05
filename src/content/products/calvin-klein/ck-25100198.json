@@ -1,0 +1,49 @@
+{
+  "title": "CALVIN KLEIN, LIGHT CK 25100198",
+  "sku": "CK 25100198",
+  "display": "Analog",
+  "gender": "Women",
+  "price": 175,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Movement",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "Band Material",
+      "value": "GOLD PLATED "
+    },
+    {
+      "label": "Band Color",
+      "value": "GOLD PLATED "
+    },
+    {
+      "label": "Dial Color",
+      "value": "AMBER GOLD "
+    },
+    {
+      "label": "Case Diameter",
+      "value": "16 MM"
+    },
+    {
+      "label": "Case Color",
+      "value": "GOLD PLATED"
+    },
+    {
+      "label": "Bezel",
+      "value": "GOLD PLATED "
+    },
+    {
+      "label": "Water Resistant",
+      "value": "3 ATM"
+    }
+  ],
+  "features": [],
+  "imageCount": 2,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
