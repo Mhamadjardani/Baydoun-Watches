@@ -1,0 +1,49 @@
+{
+  "title": "CALVIN KLEIN, CONTEMPORARY CK 25100200",
+  "sku": "CK 25100200",
+  "display": "Analog",
+  "gender": "Women",
+  "price": 143,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Movement",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "Band Material",
+      "value": "STAINLESS STEEL "
+    },
+    {
+      "label": "Band Color",
+      "value": "SILVER "
+    },
+    {
+      "label": "Dial Color",
+      "value": "SILVER"
+    },
+    {
+      "label": "Case Diameter",
+      "value": "18 MM"
+    },
+    {
+      "label": "Case Color",
+      "value": "SILVER "
+    },
+    {
+      "label": "Bezel",
+      "value": "SILVER "
+    },
+    {
+      "label": "Water Resistant",
+      "value": "3 ATM"
+    }
+  ],
+  "features": [],
+  "imageCount": 2,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
