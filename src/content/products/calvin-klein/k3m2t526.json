@@ -1,0 +1,49 @@
+{
+  "title": "CALVIN KLEIN, MINIMAL PVD K3M2T526",
+  "sku": "K3M2T526",
+  "display": "Analog",
+  "gender": "Women",
+  "price": 180,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Movement",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "Band Material",
+      "value": "STAINLESS STEEL MESH "
+    },
+    {
+      "label": "Band Color",
+      "value": "GOLD PLATED"
+    },
+    {
+      "label": "Dial Color",
+      "value": "SILVER"
+    },
+    {
+      "label": "Case Diameter",
+      "value": "35 MM"
+    },
+    {
+      "label": "Case Color",
+      "value": "GOLD PLATED"
+    },
+    {
+      "label": "Bezel",
+      "value": "GOLD PLATED"
+    },
+    {
+      "label": "Water Resistant",
+      "value": "3 ATM"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
