@@ -1,0 +1,49 @@
+{
+  "title": "CALVIN KLEIN, MINIMAL K3M2212Z",
+  "sku": "K3M2212Z",
+  "display": "Analog",
+  "gender": "Women",
+  "price": 180,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Movement",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "Band Material",
+      "value": "STAINLESS STEEL MESH "
+    },
+    {
+      "label": "Band Color",
+      "value": "SILVER "
+    },
+    {
+      "label": "Dial Color",
+      "value": "SILVER"
+    },
+    {
+      "label": "Case Diameter",
+      "value": "35 MM"
+    },
+    {
+      "label": "Case Color",
+      "value": "SILVER "
+    },
+    {
+      "label": "Bezel",
+      "value": "SILVER "
+    },
+    {
+      "label": "Water Resistant",
+      "value": "3 ATM"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
