@@ -1,0 +1,49 @@
+{
+  "title": "CALVIN KLEIN, LIGHT CK 25100199",
+  "sku": "CK 25100199",
+  "display": "Analog",
+  "gender": "Women",
+  "price": 175,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Movement",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "Band Material",
+      "value": "STAINLESS STEEL "
+    },
+    {
+      "label": "Band Color",
+      "value": "2-TONE GOLD PLATED "
+    },
+    {
+      "label": "Dial Color",
+      "value": "WHITE "
+    },
+    {
+      "label": "Case Diameter",
+      "value": "16 MM"
+    },
+    {
+      "label": "Case Color",
+      "value": "SILVER "
+    },
+    {
+      "label": "Bezel",
+      "value": "SILVER "
+    },
+    {
+      "label": "Water Resistant",
+      "value": "3 ATM"
+    }
+  ],
+  "features": [],
+  "imageCount": 2,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
