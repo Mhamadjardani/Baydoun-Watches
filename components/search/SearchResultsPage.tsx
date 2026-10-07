@@ -6,7 +6,7 @@ import { Heart, Search } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import toast from "react-hot-toast";
 
 const formatPrice = (price: ProductCard["price"]) =>
@@ -51,6 +51,10 @@ const SearchResultsPage = ({ products }: { products: ProductCard[] }) => {
   const toggleWishlist = useCommerceStore((state) => state.toggleWishlist);
   const normalizedQuery = query.trim().toLowerCase();
   const pageSize = 12;
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, [page, normalizedQuery]);
 
   const results = useMemo(() => {
     if (!normalizedQuery) return [];
