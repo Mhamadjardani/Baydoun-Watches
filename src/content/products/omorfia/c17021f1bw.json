@@ -1,0 +1,50 @@
+{
+  "title": "OMORFIA CLUB C17021F1BW",
+  "sku": "C17021F1BW",
+  "subCategory": "omorfia-club",
+  "display": "Analog",
+  "gender": "Women",
+  "price": 74,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Movement",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "Band Material",
+      "value": "BRACELET"
+    },
+    {
+      "label": "Band Color",
+      "value": "SILVER"
+    },
+    {
+      "label": "Dial Color",
+      "value": "SILVER"
+    },
+    {
+      "label": "Case Diameter",
+      "value": "34 MM"
+    },
+    {
+      "label": "Case Color",
+      "value": "SILVER"
+    },
+    {
+      "label": "Bezel",
+      "value": "SILVER"
+    },
+    {
+      "label": "Water Resistant",
+      "value": "3 ATM"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
