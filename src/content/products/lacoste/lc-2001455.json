@@ -1,0 +1,49 @@
+{
+  "title": "Lacoste Parisienne LC 2001455",
+  "sku": "LC 2001455",
+  "display": "Analog",
+  "gender": "Women",
+  "price": 170,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Movement",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "Band Material",
+      "value": "GENUINE LATHER"
+    },
+    {
+      "label": "Band Color",
+      "value": "GREEN"
+    },
+    {
+      "label": "Dial Color",
+      "value": "DARK BLUE"
+    },
+    {
+      "label": "Case Diameter",
+      "value": "30 MM"
+    },
+    {
+      "label": "Case Color",
+      "value": "GOLD PLATED"
+    },
+    {
+      "label": "Bezel",
+      "value": "GOLD PLATED"
+    },
+    {
+      "label": "Water Resistant",
+      "value": "5 ATM"
+    }
+  ],
+  "features": [],
+  "imageCount": 5,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
