@@ -1,10 +1,11 @@
 {
-  "title": "Lacoste Finn LC 2011286",
-  "sku": "LC 2011286",
+  "title": "Lacoste Parisienne LC 2001454",
+  "sku": "LC 2001454",
   "display": "Analog",
-  "gender": "Men",
-  "price": 140,
+  "gender": "Women",
+  "price": 170,
   "isNewArrival": false,
+  "isVisible": true,
   "isFeatured": false,
   "isLimitedEdition": false,
   "specifications": [
