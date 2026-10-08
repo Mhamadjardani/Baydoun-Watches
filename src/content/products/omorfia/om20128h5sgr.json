@@ -1,0 +1,49 @@
+{
+  "title": "Omorfia Men's Watch OM20128H5SGR",
+  "sku": "OM20128H5SGR",
+  "display": "Analog",
+  "gender": "Men",
+  "price": 115,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Movement",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "Band Material",
+      "value": "RUBBER"
+    },
+    {
+      "label": "Band Color",
+      "value": "BLACK "
+    },
+    {
+      "label": "Dial Color",
+      "value": "GREEN"
+    },
+    {
+      "label": "Case Diameter",
+      "value": "44.5 MM"
+    },
+    {
+      "label": "Case Color",
+      "value": "BLACK"
+    },
+    {
+      "label": "Bezel",
+      "value": "BLACK"
+    },
+    {
+      "label": "Water Resistant",
+      "value": "3 ATM"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
