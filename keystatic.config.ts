@@ -176,6 +176,7 @@ export default config({
       "Vintage",
       "Baby-G",
       "Pro Trek",
+      "Wall Clock",
     ]),
     // dkny: brandCollection("DKNY", "dkny"),
     lacoste: brandCollection("Lacoste", "lacoste"),

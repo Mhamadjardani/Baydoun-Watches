@@ -5,7 +5,7 @@
 **Client:** Baydoun Watches
 
 ## What it is
-An online catalog and storefront for a watch retailer that carries several brands: Casio (G-Shock, Edifice, Vintage, Baby-G, Pro Trek), Calvin Klein, Tommy Hilfiger, Lacoste, Omorfia and Rovina. The store owner manages products without touching code.
+An online catalog and storefront for a watch retailer that carries several brands: Casio (G-Shock, Edifice, Vintage, Baby-G, Pro Trek, Wall Clock), Calvin Klein, Tommy Hilfiger, Lacoste, Omorfia and Rovina. The store owner manages products without touching code.
 
 ## Stack
 | Part | Tech |
