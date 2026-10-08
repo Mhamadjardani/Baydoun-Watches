@@ -1,9 +1,9 @@
 {
-  "title": "Omorfia Women's Watch OM539F1BW",
-  "sku": "OM539F1BW",
+  "title": "Omorfia Women's Watch OM10068F5BB",
+  "sku": "OM10068F5BB",
   "display": "Analog",
   "gender": "Women",
-  "price": 105,
+  "price": 95,
   "isNewArrival": false,
   "isVisible": true,
   "isFeatured": false,
@@ -19,11 +19,11 @@
     },
     {
       "label": "Band Color",
-      "value": "SILVER"
+      "value": "BLACK "
     },
     {
       "label": "Dial Color",
-      "value": "SILVER "
+      "value": "SILVER BLACK "
     },
     {
       "label": "Case Diameter",
@@ -31,11 +31,11 @@
     },
     {
       "label": "Case Color",
-      "value": "SILVER "
+      "value": "BLACK"
     },
     {
       "label": "Bezel",
-      "value": "SILVER "
+      "value": "BLACK "
     },
     {
       "label": "Water Resistant",
