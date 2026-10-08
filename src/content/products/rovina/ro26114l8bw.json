@@ -1,0 +1,50 @@
+{
+  "title": "Rovina Women's Watch RO26114L8BW",
+  "sku": "RO26114L8BW",
+  "display": "Analog",
+  "gender": "Women",
+  "price": 175,
+  "discount": 20,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Movement",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "Band Material",
+      "value": "BRACELET"
+    },
+    {
+      "label": "Band Color",
+      "value": "BLUE"
+    },
+    {
+      "label": "Dial Color",
+      "value": "SILVER "
+    },
+    {
+      "label": "Case Diameter",
+      "value": "36 MM"
+    },
+    {
+      "label": "Case Color",
+      "value": "BLUE"
+    },
+    {
+      "label": "Bezel",
+      "value": "BLUE"
+    },
+    {
+      "label": "Water Resistant",
+      "value": "3 ATM"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
