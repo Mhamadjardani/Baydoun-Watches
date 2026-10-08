@@ -1,0 +1,49 @@
+{
+  "title": "Omorfia Men's Watch OM10100H1BGR",
+  "sku": "OM10100H1BGR",
+  "display": "Analog",
+  "gender": "Women",
+  "price": 110,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Movement",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "Band Material",
+      "value": "BRACELET"
+    },
+    {
+      "label": "Band Color",
+      "value": "SILVER"
+    },
+    {
+      "label": "Dial Color",
+      "value": "GREEN"
+    },
+    {
+      "label": "Case Diameter",
+      "value": "38 MM"
+    },
+    {
+      "label": "Case Color",
+      "value": "SILVER"
+    },
+    {
+      "label": "Bezel",
+      "value": "SILVER"
+    },
+    {
+      "label": "Water Resistant",
+      "value": "3 ATM"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
