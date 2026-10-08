@@ -1,0 +1,50 @@
+{
+  "title": "OMORFIA CLUB C1C17025F3BY",
+  "sku": "C1C17025F3BY",
+  "subCategory": "omorfia-club",
+  "display": "Analog",
+  "gender": "Women",
+  "price": 84,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Movement",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "Band Material",
+      "value": "BRACELET"
+    },
+    {
+      "label": "Band Color",
+      "value": "GOLD PLATED"
+    },
+    {
+      "label": "Dial Color",
+      "value": "GOLD"
+    },
+    {
+      "label": "Case Diameter",
+      "value": "34 MM"
+    },
+    {
+      "label": "Case Color",
+      "value": "GOLD PLATED"
+    },
+    {
+      "label": "Bezel",
+      "value": "GOLD "
+    },
+    {
+      "label": "Water Resistant",
+      "value": "3 ATM"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
