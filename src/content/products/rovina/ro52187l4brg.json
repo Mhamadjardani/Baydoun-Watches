@@ -1,0 +1,50 @@
+{
+  "title": "Rovina Women's Watch RO52187L4BRg",
+  "sku": "RO52187L4BRg",
+  "display": "Analog",
+  "gender": "Women",
+  "price": 167,
+  "discount": 20,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Movement",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "Band Material",
+      "value": "BRACELET"
+    },
+    {
+      "label": "Band Color",
+      "value": "ROSE GOLD "
+    },
+    {
+      "label": "Dial Color",
+      "value": "ROSE GOLD"
+    },
+    {
+      "label": "Case Diameter",
+      "value": "36 MM"
+    },
+    {
+      "label": "Case Color",
+      "value": "ROSE GOLD"
+    },
+    {
+      "label": "Bezel",
+      "value": "ROSE GOLD "
+    },
+    {
+      "label": "Water Resistant",
+      "value": "3 ATM"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
