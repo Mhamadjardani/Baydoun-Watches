@@ -1,0 +1,49 @@
+{
+  "title": "Omorfia Men's Watch OM10102F3BW",
+  "sku": "OM10102F3BW",
+  "display": "Analog",
+  "gender": "Women",
+  "price": 125,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Movement",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "Band Material",
+      "value": "BRACELET"
+    },
+    {
+      "label": "Band Color",
+      "value": "GOLD PLATED"
+    },
+    {
+      "label": "Dial Color",
+      "value": "SILVER"
+    },
+    {
+      "label": "Case Diameter",
+      "value": "36 MM"
+    },
+    {
+      "label": "Case Color",
+      "value": "GOLD PLATED"
+    },
+    {
+      "label": "Bezel",
+      "value": "GOLD PLATED"
+    },
+    {
+      "label": "Water Resistant",
+      "value": "3 ATM"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
