@@ -179,7 +179,7 @@ export default config({
     ]),
     // dkny: brandCollection("DKNY", "dkny"),
     lacoste: brandCollection("Lacoste", "lacoste"),
-    omorfia: brandCollection("Omorfia", "omorfia"),
+    omorfia: brandCollection("Omorfia", "omorfia", ["Omorfia Club"]),
     rovina: brandCollection("Rovina", "rovina"),
     tommyHilfiger: brandCollection("Tommy Hilfiger", "tommy-hilfiger"),
   },

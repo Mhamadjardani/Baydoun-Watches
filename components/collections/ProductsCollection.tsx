@@ -1,6 +1,10 @@
 "use client";
 
-import { ProductCard } from "@/lib/type";
+import {
+  formatSubCategory,
+  normalizeSubCategory,
+  ProductCard,
+} from "@/lib/type";
 import { useCommerceStore } from "@/store/useCommerceStore";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown, Heart, SlidersHorizontal } from "lucide-react";
@@ -17,7 +21,7 @@ export type CollectionFilterState = Record<FilterKey, string[]>;
 const filters: { key: FilterKey; label: string }[] = [
   { key: "brand", label: "Brand" },
   // { key: "category", label: "Category" },
-  { key: "subCategory", label: "subCategory" },
+  { key: "subCategory", label: "Subcategory" },
   { key: "gender", label: "Gender" },
   { key: "display", label: "Display" },
 ];
@@ -47,15 +51,7 @@ const filterKeys = [
   "display",
 ] as const;
 
-const normalizeSubCategoryValue = (value?: string | null, brand?: string) => {
-  if (value && value.trim().length > 0) return value;
-
-  // Only fallback to "general" for the Casio brand. Other brands should
-  // return an empty string so they don't contribute a "general" option.
-  if (brand && brand.toLowerCase() === "casio") return "general";
-
-  return "";
-};
+const normalizeSubCategoryValue = normalizeSubCategory;
 
 const buildFiltersFromSearchParams = (searchParams: URLSearchParams) =>
   filterKeys.reduce<CollectionFilterState>(
@@ -106,10 +102,8 @@ const ProductsCollection = ({
 
         const nextOpen = new Set<FilterKey>([...currentFilters, ...keysFromUrl]);
 
-        // Ensure subCategory is open when casio is in the URL filters,
-        // otherwise remove it so it auto-closes when casio is deselected.
-        const casioInUrl = Boolean(urlFilters.brand && urlFilters.brand.includes("casio"));
-        if (casioInUrl) nextOpen.add("subCategory");
+        // Open subcategory filters whenever a brand filter is active.
+        if (urlFilters.brand.length > 0) nextOpen.add("subCategory");
         else nextOpen.delete("subCategory");
 
         return Array.from(nextOpen);
@@ -168,7 +162,7 @@ const ProductsCollection = ({
         const selectedValues = selectedFilters[key];
         const productValue =
           key === "subCategory"
-            ? normalizeSubCategoryValue(product.subCategory)
+            ? normalizeSubCategoryValue(product.subCategory, product.brand)
             : product[key];
 
         return (
@@ -223,10 +217,9 @@ const ProductsCollection = ({
 
       const nextFilters = { ...currentFilters, [key]: nextValues } as CollectionFilterState;
 
-      // If casio was selected for brand, auto-open subCategory accordion;
-      // if casio was deselected, auto-close subCategory.
+      // Open subcategories for any selected brand with subcategory products.
       if (key === "brand") {
-        if (nextValues.includes("casio")) {
+        if (nextValues.length > 0) {
           setOpenFilters((cur) => (cur.includes("subCategory") ? cur : [...cur, "subCategory"]));
         } else {
           setOpenFilters((cur) => cur.filter((k) => k !== "subCategory"));
@@ -435,9 +428,9 @@ const ProductsCollection = ({
 
                                       {/* Capitalized text label option */}
                                       <span className="text-sm sm:text-base tracking-wide font-medium">
-                                        {option &&
-                                          option.charAt(0).toUpperCase() +
-                                            option.slice(1)}
+                                        {filter.key === "subCategory"
+                                          ? formatSubCategory(option ?? "")
+                                          : option}
                                       </span>
                                     </div>
 

@@ -3,7 +3,7 @@
 import React, { useMemo, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { MenuIcon, menuIcons, menuItems, type MenuItem } from "./menuItem";
-import { ProductCard } from "@/lib/type";
+import { normalizeSubCategory, ProductCard } from "@/lib/type";
 import Image from "next/image";
 import { useCommerceStore } from "@/store/useCommerceStore";
 
@@ -59,7 +59,7 @@ const DesktopNavbar: React.FC<{
 
         const searchable = `
         ${product.title}
-        ${product.subCategory}
+        ${normalizeSubCategory(product.subCategory, product.brand)}
         ${product.brand}
         ${specifications}
       `.toLowerCase();

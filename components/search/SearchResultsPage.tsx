@@ -1,6 +1,6 @@
 "use client";
 
-import { ProductCard } from "@/lib/type";
+import { normalizeSubCategory, ProductCard } from "@/lib/type";
 import { useCommerceStore } from "@/store/useCommerceStore";
 import { Heart, Search } from "lucide-react";
 import Image from "next/image";
@@ -26,7 +26,7 @@ const matchesSearch = (product: ProductCard, query: string) => {
   const searchable = [
     product.title,
     product.brand,
-    product.subCategory,
+    normalizeSubCategory(product.subCategory, product.brand),
     product.sku,
     product.display,
     product.gender,

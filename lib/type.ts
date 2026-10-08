@@ -39,3 +39,18 @@ export type ProductCard = Omit<Product, "images"> & {
 export type ProductDetails = Product & {
   images: string[];
 };
+
+export const normalizeSubCategory = (
+  value?: string | null,
+  brand?: string,
+) => {
+  if (value && value.trim().length > 0) return value;
+  if (brand?.toLowerCase() === "casio") return "general";
+  return "";
+};
+
+export const formatSubCategory = (value: string) =>
+  value
+    .split("-")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");

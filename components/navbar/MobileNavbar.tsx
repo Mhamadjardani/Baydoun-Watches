@@ -1,6 +1,10 @@
 "use client";
 
-import { ProductCard } from "@/lib/type";
+import {
+  formatSubCategory,
+  normalizeSubCategory,
+  ProductCard,
+} from "@/lib/type";
 import { useCommerceStore } from "@/store/useCommerceStore";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
@@ -60,7 +64,7 @@ const MobileNavbar: React.FC<{
     return products
       .filter((product) => {
         const searchable =
-          `${product.title} ${product.subCategory} ${product.brand} `.toLowerCase();
+          `${product.title} ${normalizeSubCategory(product.subCategory, product.brand)} ${product.brand} `.toLowerCase();
         return searchable.includes(query);
       })
       .slice(0, 6);
@@ -141,9 +145,10 @@ const MobileNavbar: React.FC<{
   const brandSubcategories = useMemo(() => {
     const map: Record<string, string[]> = {};
     for (const p of products) {
-      if (!p.subCategory) continue;
+      const subCategory = normalizeSubCategory(p.subCategory, p.brand);
+      if (!subCategory) continue;
       if (!map[p.brand]) map[p.brand] = [];
-      if (!map[p.brand].includes(p.subCategory)) map[p.brand].push(p.subCategory);
+      if (!map[p.brand].includes(subCategory)) map[p.brand].push(subCategory);
     }
     return map;
   }, [products]);
@@ -549,7 +554,7 @@ const MobileNavbar: React.FC<{
                                             }}
                                             className="w-full px-8 py-2 text-left text-sm text-secondary hover:bg-white/5"
                                           >
-                                            {sub}
+                                            {formatSubCategory(sub)}
                                           </button>
                                         ))}
                                       </motion.div>
