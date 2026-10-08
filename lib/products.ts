@@ -20,6 +20,10 @@ const BRANDS = [
 
 export type Brand = (typeof BRANDS)[number];
 
+export function isBrand(value: string): value is Brand {
+  return (BRANDS as readonly string[]).includes(value);
+}
+
 const brandToFolder: Record<Brand, string> = {
   calvinKlein: "calvin-klein",
   casio: "casio",

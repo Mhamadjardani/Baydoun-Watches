@@ -1,12 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 type Product = { slug: string; brand: string; title: string; imageCount: number; price: number; image: string };
 type Props = { products: Product[]; githubLogin: string; supabaseUrl: string; keystaticBasePath: string };
 const PAGE_SIZE = 24;
+// Returning to the tab only re-syncs if the last sync is older than this.
+const MIN_AUTO_SYNC_INTERVAL_MS = 60_000;
 
 function browserKeystaticToken() {
   const githubToken = document.cookie
@@ -89,7 +90,6 @@ function ImageSlot({ src, slot, title, busy, onSelect }: { src: string; slot: nu
 }
 
 export default function ProductImageAdmin({ products, githubLogin, supabaseUrl, keystaticBasePath }: Props) {
-  const router = useRouter();
   const [productData, setProductData] = useState(products);
   const [query, setQuery] = useState("");
   const [brand, setBrand] = useState("all");
@@ -99,44 +99,59 @@ export default function ProductImageAdmin({ products, githubLogin, supabaseUrl, 
   const [imageVersion, setImageVersion] = useState(1);
   const [confirmDelete, setConfirmDelete] = useState<{ brand: string; sku: string; slot: number } | null>(null);
   const [dialog, setDialog] = useState<{ title: string; body: string; kind: "success" | "error" } | null>(null);
+  const [syncing, setSyncing] = useState(false);
+  const [refreshRequest, setRefreshRequest] = useState(0);
+  const [syncStatus, setSyncStatus] = useState("Not synced yet");
+  const lastSyncAt = useRef(0);
+  const retryAfterUntil = useRef(0);
   const brands = useMemo(() => [...new Set(productData.map((product) => product.brand))].sort(), [productData]);
   const filtered = useMemo(() => { const normalized = query.trim().toLowerCase(); return productData.filter((product) => (brand === "all" || product.brand === brand) && (!normalized || product.slug.toLowerCase().includes(normalized) || product.title.toLowerCase().includes(normalized))); }, [brand, productData, query]);
   const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
   const currentPage = Math.min(page, totalPages);
   const visibleProducts = filtered.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
 
-  const visibleKey = visibleProducts.map((product) => `${product.brand}/${product.slug}`).join("|");
+  const visibleKey = visibleProducts.map((product) => `${product.brand}:${product.slug}`).join(",");
+
+  // One batched request for every visible product. Triggered on page/filter
+  // change, by the Refresh button, and when returning to the tab after 60s.
   useEffect(() => {
-    const syncVisibleProducts = async () => {
-      const latest = await Promise.all(visibleProducts.map(async (product) => {
+    const syncProducts = async () => {
+      if (!visibleKey || Date.now() < retryAfterUntil.current) return;
+      lastSyncAt.current = Date.now();
+      setSyncing(true);
+      try {
         const token = browserKeystaticToken();
-        const response = await fetch(`/api/admin/products?brand=${encodeURIComponent(product.brand)}&sku=${encodeURIComponent(product.slug)}`, { headers: token ? { "x-keystatic-access-token": token } : undefined, credentials: "include", cache: "no-store" });
-        return response.ok ? (await response.json() as Product) : null;
-      }));
-      const updates = new Map(latest.filter((product): product is Product => product !== null).map((product) => [`${product.brand}/${product.slug}`, product]));
-      if (updates.size) setProductData((current) => current.map((product) => updates.get(`${product.brand}/${product.slug}`) ?? product));
+        const response = await fetch(`/api/admin/products?items=${encodeURIComponent(visibleKey)}`, { headers: token ? { "x-keystatic-access-token": token } : undefined, credentials: "include", cache: "no-store" });
+        if (response.status === 429) {
+          const retryAfter = Number(response.headers.get("Retry-After")) || 60;
+          retryAfterUntil.current = Date.now() + retryAfter * 1000;
+          setSyncStatus(`GitHub is busy, retry in ${retryAfter}s`);
+          return;
+        }
+        if (response.status === 401) { setSyncStatus("Sign in to Keystatic to sync"); return; }
+        if (!response.ok) { setSyncStatus("Sync failed"); return; }
+        const { products: latest } = await response.json() as { products: Product[] };
+        const updates = new Map(latest.map((product) => [`${product.brand}/${product.slug}`, product]));
+        if (updates.size) setProductData((current) => current.map((product) => updates.get(`${product.brand}/${product.slug}`) ?? product));
+        setSyncStatus(`Synced ${new Date().toLocaleTimeString()}`);
+      } catch {
+        setSyncStatus("Sync failed");
+      } finally {
+        setSyncing(false);
+      }
     };
 
-    // Run once on mount
-    void syncVisibleProducts();
-
-    // Instead of polling every 10s, sync when the page regains focus, becomes visible, or is shown from bfcache.
-    const handleFocus = () => { void syncVisibleProducts(); };
-    const handleVisibility = () => { if (document.visibilityState === "visible") void syncVisibleProducts(); };
-    const handlePageShow = () => { void syncVisibleProducts(); };
-
-    window.addEventListener("focus", handleFocus);
+    // Debounced so typing in the search box doesn't fire a request per keystroke.
+    const timer = window.setTimeout(() => void syncProducts(), refreshRequest ? 0 : 600);
+    const handleVisibility = () => {
+      if (document.visibilityState === "visible" && Date.now() - lastSyncAt.current >= MIN_AUTO_SYNC_INTERVAL_MS) void syncProducts();
+    };
     document.addEventListener("visibilitychange", handleVisibility);
-    window.addEventListener("pageshow", handlePageShow);
-
     return () => {
-      window.removeEventListener("focus", handleFocus);
+      window.clearTimeout(timer);
       document.removeEventListener("visibilitychange", handleVisibility);
-      window.removeEventListener("pageshow", handlePageShow);
     };
-  // visibleKey intentionally controls the sync target without restarting on each object refresh.
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [visibleKey]);
+  }, [visibleKey, refreshRequest]);
   useEffect(() => { const unlockScroll = () => { document.body.style.overflow = ""; document.documentElement.style.overflow = ""; }; unlockScroll(); window.addEventListener("pageshow", unlockScroll); return () => { window.removeEventListener("pageshow", unlockScroll); unlockScroll(); }; }, []);
 
   function requestHeaders() {
@@ -164,7 +179,6 @@ export default function ProductImageAdmin({ products, githubLogin, supabaseUrl, 
       }
       setImageVersion((value) => value + 1);
       setDialog({ title: "Image saved", body: `${slot}.webp was replaced successfully. JPG/PNG uploads are automatically converted to WebP.`, kind: "success" });
-      router.refresh();
     } catch (error) {
       setDialog({ title: "Upload failed", body: error instanceof Error ? error.message : "Upload failed", kind: "error" });
     } finally {
@@ -182,15 +196,15 @@ export default function ProductImageAdmin({ products, githubLogin, supabaseUrl, 
     const { brand: brandName, sku, slot } = confirmDelete;
     setConfirmDelete(null);
     const key = `${brandName}/${sku}/${slot}`; setBusy(key); setMessage("");
-    try { const response = await fetch(`/api/admin/product-images?brand=${encodeURIComponent(brandName)}&sku=${encodeURIComponent(sku)}&slot=${slot}`, { method: "DELETE", credentials: "include", headers: requestHeaders() }); const data = await response.json(); if (!response.ok) { if (response.status === 401) throw new Error("Your Keystatic session was not received. Sign in again in Keystatic, then return here."); throw new Error(data.error ?? "Delete failed"); } setImageVersion((value) => value + 1); setDialog({ title: "Image deleted", body: `${slot}.webp was deleted and Image Count was updated.`, kind: "success" }); router.refresh(); } catch (error) { setDialog({ title: "Delete failed", body: error instanceof Error ? error.message : "Delete failed", kind: "error" }); } finally { setBusy(null); }
+    try { const response = await fetch(`/api/admin/product-images?brand=${encodeURIComponent(brandName)}&sku=${encodeURIComponent(sku)}&slot=${slot}`, { method: "DELETE", credentials: "include", headers: requestHeaders() }); const data = await response.json(); if (!response.ok) { if (response.status === 401) throw new Error("Your Keystatic session was not received. Sign in again in Keystatic, then return here."); throw new Error(data.error ?? "Delete failed"); } setProductData((current) => current.map((product) => product.brand === brandName && product.slug === sku ? { ...product, imageCount: data.imageCount } : product)); setImageVersion((value) => value + 1); setDialog({ title: "Image deleted", body: `${slot}.webp was deleted and Image Count was updated.`, kind: "success" }); } catch (error) { setDialog({ title: "Delete failed", body: error instanceof Error ? error.message : "Delete failed", kind: "error" }); } finally { setBusy(null); }
   }
 
   return (
     <main className="h-screen overflow-y-auto overscroll-contain bg-[#131313] px-4 py-6 text-white sm:px-6 lg:px-8">
       <div className="mx-auto max-w-[1500px]">
         <header className="mb-7 rounded-2xl border border-[#e8d49a]/20 bg-[#1a1a1a] p-5 shadow-2xl shadow-black/20 sm:p-7">
-          <div className="flex flex-wrap items-start justify-between gap-5"><div><div className="mb-3 flex items-center gap-3"><span className="h-2 w-2 rounded-full bg-[#e8d49a] shadow-[0_0_12px_#e8d49a]" /><p className="text-xs font-semibold uppercase tracking-wide text-[#e8d49a]">Baydoun Watches · Studio</p></div><h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">Product image library</h1><p className="mt-2 max-w-2xl text-sm leading-6 text-white/55">Replace numbered product images without renaming them. Missing images appear as upload-ready slots, and the library refreshes after Keystatic edits.</p></div><Link className="rounded-xl border border-[#e8d49a]/40 px-4 py-2.5 text-sm font-medium text-[#e8d49a] transition hover:bg-[#e8d49a] hover:text-[#131313]" href="/keystatic/">Open Keystatic ↗</Link></div>
-          <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 border-t border-white/10 pt-4 text-xs text-white/45"><span>Session: <strong className="font-medium text-white/75">{githubLogin}</strong></span><span>{products.length} products</span><span>Auto-refresh: 10 seconds</span></div>
+          <div className="flex flex-wrap items-start justify-between gap-5"><div><div className="mb-3 flex items-center gap-3"><span className="h-2 w-2 rounded-full bg-[#e8d49a] shadow-[0_0_12px_#e8d49a]" /><p className="text-xs font-semibold uppercase tracking-wide text-[#e8d49a]">Baydoun Watches · Studio</p></div><h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">Product image library</h1><p className="mt-2 max-w-2xl text-sm leading-6 text-white/55">Replace numbered product images without renaming them. Missing images appear as upload-ready slots. Press Refresh after editing products in Keystatic.</p></div><Link className="rounded-xl border border-[#e8d49a]/40 px-4 py-2.5 text-sm font-medium text-[#e8d49a] transition hover:bg-[#e8d49a] hover:text-[#131313]" href="/keystatic/">Open Keystatic ↗</Link></div>
+          <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 border-t border-white/10 pt-4 text-xs text-white/45"><span>Session: <strong className="font-medium text-white/75">{githubLogin}</strong></span><span>{products.length} products</span><span>{syncing ? "Syncing…" : syncStatus}</span><button className="text-[#e8d49a] transition hover:text-white disabled:opacity-40" disabled={syncing} onClick={() => setRefreshRequest((value) => value + 1)} type="button">Refresh</button></div>
         </header>
         <section className="mb-6 flex flex-wrap items-center gap-3 rounded-xl border border-white/10 bg-[#1a1a1a] p-3"><input className="min-w-64 flex-1 rounded-lg border border-white/10 bg-[#0d0d0d] px-3 py-2.5 text-sm text-white outline-none placeholder:text-white/30 focus:border-[#e8d49a]" onChange={(event) => setQuery(event.target.value)} placeholder="Search by SKU or product name…" value={query} /><select className="rounded-lg border border-white/10 bg-[#0d0d0d] px-3 py-2.5 text-sm text-white outline-none focus:border-[#e8d49a]" onChange={(event) => setBrand(event.target.value)} value={brand}><option value="all">All brands</option>{brands.map((name) => <option key={name} value={name}>{name}</option>)}</select><span className="px-2 text-xs text-white/45">Showing {visibleProducts.length} of {filtered.length}</span></section>
         {message && <div className="mb-5 rounded-xl border border-[#e8d49a]/30 bg-[#e8d49a]/10 px-4 py-3 text-sm text-[#e8d49a]">{message}</div>}

@@ -1,9 +1,6 @@
 import { NextResponse } from "next/server";
 
-import {
-  getKeystaticGitHubAccessToken,
-  getKeystaticGitHubUser,
-} from "../../../../lib/adminAuth";
+import { getAdminUser } from "../../../../lib/adminAuth";
 import {
   PRODUCT_BRANDS,
   PRODUCT_BUCKET,
@@ -11,7 +8,11 @@ import {
   productImagePath,
   getProductStorage,
 } from "../../../../lib/productAdmin";
-import { readGitHubProduct, updateGitHubProductImageCount } from "../../../../lib/githubContent";
+import {
+  GitHubRateLimitError,
+  readGitHubProduct,
+  updateGitHubProductImageCount,
+} from "../../../../lib/githubContent";
 
 export const runtime = "nodejs";
 
@@ -20,9 +21,8 @@ function badRequest(message: string) {
 }
 
 async function requireAdmin(request: Request) {
-  const user = await getKeystaticGitHubUser(request);
-  const token = await getKeystaticGitHubAccessToken(request);
-  if (!user || !token) {
+  const user = await getAdminUser(request);
+  if (!user) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
   return null;
@@ -57,11 +57,8 @@ export async function POST(request: Request) {
     console.log('[product-images] formData received');
     const file = formData.get("file");
 
-    // Accept File/Blob-like objects: check for arrayBuffer() method instead of `instanceof`
-    if (!file || typeof (file as any).arrayBuffer !== "function") return badRequest("An image file is required");
-    const type = (file as any).type ?? "";
-    const name = (file as any).name ?? "";
-    const size = (file as any).size ?? 0;
+    if (!file || typeof file === "string") return badRequest("An image file is required");
+    const { type, name, size } = file;
 
     if (!type.startsWith("image/") && !name.toLowerCase().match(/\.(png|jpg|jpeg|webp)$/i)) {
       return badRequest("Only image files are supported");
@@ -71,7 +68,7 @@ export async function POST(request: Request) {
     }
 
     const path = productImagePath(params.brand, params.sku, params.slot);
-    const arrayBuffer = await (file as Blob).arrayBuffer();
+    const arrayBuffer = await file.arrayBuffer();
     const result = await getProductStorage().storage.from(PRODUCT_BUCKET).upload(
       path,
       Buffer.from(arrayBuffer),
@@ -95,24 +92,33 @@ export async function DELETE(request: Request) {
   const params = parseImageParams(request);
   if ("error" in params && params.error) return badRequest(params.error);
 
-  const path = productImagePath(params.brand, params.sku, params.slot);
-  const result = await getProductStorage().storage.from(PRODUCT_BUCKET).remove([path]);
-
-  if (result.error) {
-    return NextResponse.json({ error: result.error.message }, { status: 502 });
-  }
-
   try {
+    // Validate against GitHub before touching storage, so a rejected delete
+    // never leaves an image removed with a stale Image Count.
     const current = await readGitHubProduct(params.brand, params.sku);
-    const currentCount = Number(current?.product.imageCount ?? 1);
-    if (currentCount <= 1) throw new Error("A product must keep at least one image slot");
-    await updateGitHubProductImageCount(params.brand, params.sku, currentCount - 1);
+    if (!current) return NextResponse.json({ error: "Product not found in GitHub" }, { status: 404 });
+    const currentCount = Number(current.product.imageCount ?? 1);
+    if (currentCount <= 1) return badRequest("A product must keep at least one image slot");
+    if (params.slot !== currentCount) return badRequest(`Only the last image (${currentCount}.webp) can be deleted`);
+
+    const path = productImagePath(params.brand, params.sku, params.slot);
+    const result = await getProductStorage().storage.from(PRODUCT_BUCKET).remove([path]);
+    if (result.error) {
+      return NextResponse.json({ error: result.error.message }, { status: 502 });
+    }
+
+    await updateGitHubProductImageCount(params.brand, params.sku, currentCount - 1, current);
+    return NextResponse.json({ path, imageCount: currentCount - 1 });
   } catch (error) {
+    if (error instanceof GitHubRateLimitError) {
+      return NextResponse.json(
+        { error: error.message, retryAfter: error.retryAfterSeconds },
+        { status: 429, headers: { "Retry-After": String(error.retryAfterSeconds) } },
+      );
+    }
     return NextResponse.json(
       { error: error instanceof Error ? error.message : "Image count update failed" },
       { status: 502 },
     );
   }
-
-  return NextResponse.json({ path, imageCountUpdated: true });
 }
