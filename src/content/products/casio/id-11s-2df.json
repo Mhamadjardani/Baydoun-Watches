@@ -1,0 +1,35 @@
+{
+  "title": "Casio Wall Clock ID-11S-2DF",
+  "sku": "ID-11S-2DF",
+  "subCategory": "wall-clock",
+  "display": "Analog",
+  "gender": "Unisex",
+  "price": 72,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "COLOR",
+      "value": "BLUE, SILVER "
+    },
+    {
+      "label": "CASE MATERIAL ",
+      "value": "RESIN"
+    },
+    {
+      "label": "DISPLAY TYPE ",
+      "value": "ANALOG"
+    }
+  ],
+  "features": [
+    "Calendar: Full auto-calendar (to year 2099)",
+    "Sensor Feature: Thermometer Measuring range: -19.9 to 49.9 °C (-3.8 to 121.8 °F) Measuring unit: 0.1°C",
+    "Accuracy: ±60 seconds per month",
+    "Power supply and battery life:"
+  ],
+  "imageCount": 1,
+  "arrivalDate": "2026-10-09",
+  "createdAt": "2026-10-09"
+}
