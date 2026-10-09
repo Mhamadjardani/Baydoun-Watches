@@ -1,0 +1,50 @@
+{
+  "title": "Omorfia Women's Watch OM3014H1BW",
+  "sku": "OM3014H1BW",
+  "subCategory": "general",
+  "display": "Analog",
+  "gender": "Men",
+  "price": 110,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Movement",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "Band Material",
+      "value": "BRACELET"
+    },
+    {
+      "label": "Band Color",
+      "value": "SILVER"
+    },
+    {
+      "label": "Dial Color",
+      "value": "SILVER"
+    },
+    {
+      "label": "Case Diameter",
+      "value": "40 MM"
+    },
+    {
+      "label": "Case Color",
+      "value": "SILVER"
+    },
+    {
+      "label": "Bezel",
+      "value": "SILVER"
+    },
+    {
+      "label": "Water Resistant",
+      "value": "3 ATM"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
