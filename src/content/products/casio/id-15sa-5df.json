@@ -1,0 +1,36 @@
+{
+  "title": "Casio Desktop Clock ID-15SA-5DF",
+  "sku": "ID-15SA-5DF",
+  "subCategory": "wall-clock",
+  "display": "Analog",
+  "gender": "Unisex",
+  "price": 108,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "COLOR",
+      "value": "BLACK"
+    },
+    {
+      "label": "CASE MATERIAL ",
+      "value": "RESIN"
+    },
+    {
+      "label": "DISPLAY TYPE ",
+      "value": "DIGITAL "
+    }
+  ],
+  "features": [
+    "Hang it on the wall or put it on a table or desk.",
+    "Hang it on the wall or put it on a table or desk.",
+    "Measuring range: -50 to 70℃ (-58 to 158℉) Temperature sensor precision: ±2℃ (±4℉) in range of 0 to 40℃ (32 to 104℉) *Changeover between Clesius (℃) and Fahrenheit (℉)",
+    "Beeper sound alarm",
+    "Auto-calendar (to year 2039)"
+  ],
+  "imageCount": 1,
+  "arrivalDate": "2026-10-09",
+  "createdAt": "2026-10-09"
+}
