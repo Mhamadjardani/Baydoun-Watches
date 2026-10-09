@@ -3,7 +3,7 @@
 import React, { useMemo, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { MenuIcon, menuIcons, menuItems, type MenuItem } from "./menuItem";
-import { normalizeSubCategory, ProductCard } from "@/lib/type";
+import { getSearchableProductText, ProductCard } from "@/lib/type";
 import Image from "next/image";
 import { useCommerceStore } from "@/store/useCommerceStore";
 
@@ -52,20 +52,7 @@ const DesktopNavbar: React.FC<{
     if (!query) return [];
 
     return products
-      .filter((product) => {
-        const specifications = product.specifications
-          .map((spec) => `${spec.label} ${spec.value}`)
-          .join(" ");
-
-        const searchable = `
-        ${product.title}
-        ${normalizeSubCategory(product.subCategory, product.brand)}
-        ${product.brand}
-        ${specifications}
-      `.toLowerCase();
-
-        return searchable.includes(query);
-      })
+      .filter((product) => getSearchableProductText(product).includes(query))
       .slice(0, 6);
   }, [products, searchValue]);
 

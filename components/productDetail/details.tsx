@@ -3,7 +3,7 @@
 import type { ProductCard, ProductDetails } from "@/lib/type";
 import { useCommerceStore } from "@/store/useCommerceStore";
 import { motion } from "framer-motion";
-import { Check, Heart, ShieldCheck, ShoppingBag } from "lucide-react";
+import { Check, Heart, Share2, ShieldCheck, ShoppingBag } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
@@ -45,6 +45,58 @@ const ProductDetails = ({
     );
   const cartQuantity =
     cartItems.find((item) => item.productSlug === product.slug)?.quantity ?? 0;
+
+  const handleShare = async () => {
+    const shareData = {
+      title: product.title,
+      text: `Check out ${product.title} by ${product.brand} at Baydoun Watches.`,
+      url: window.location.href,
+    };
+
+    const copyProductUrl = async () => {
+      if (navigator.clipboard) {
+        try {
+          await navigator.clipboard.writeText(shareData.url);
+          return;
+        } catch {
+          // Fall through to the legacy copy method for restricted contexts.
+        }
+      }
+
+      const input = document.createElement("textarea");
+      input.value = shareData.url;
+      input.setAttribute("readonly", "");
+      input.style.position = "fixed";
+      input.style.opacity = "0";
+      document.body.appendChild(input);
+      input.select();
+
+      const copied = document.execCommand("copy");
+      input.remove();
+
+      if (!copied) {
+        throw new Error("Copy failed");
+      }
+    };
+
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+        return;
+      } catch (error) {
+        if (error instanceof DOMException && error.name === "AbortError") {
+          return;
+        }
+      }
+    }
+
+    try {
+      await copyProductUrl();
+      toast.success("Product link copied");
+    } catch {
+      toast.error("Unable to share this product");
+    }
+  };
 
   const markImageFailed = (image: string) => {
     setFailedImages((currentFailedImages) => {
@@ -315,6 +367,14 @@ const ProductDetails = ({
             >
               <Heart size={19} fill={isWishlisted ? "currentColor" : "none"} />
               {isWishlisted ? "Wishlisted" : "Add to wishlist"}
+            </button>
+            <button
+              type="button"
+              onClick={() => void handleShare()}
+              className="inline-flex h-13 flex-1 cursor-pointer items-center justify-center gap-3 border border-white/15 bg-white/5 px-6 py-2 text-sm font-bold uppercase tracking-widest text-white transition duration-300 hover:border-primary/60 hover:bg-primary/10 hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary/30"
+            >
+              <Share2 size={19} />
+              Share
             </button>
           </div>
         </motion.div>

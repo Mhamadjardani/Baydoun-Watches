@@ -1,6 +1,6 @@
 "use client";
 
-import { normalizeSubCategory, ProductCard } from "@/lib/type";
+import { getSearchableProductText, ProductCard } from "@/lib/type";
 import { useCommerceStore } from "@/store/useCommerceStore";
 import { Heart, Search } from "lucide-react";
 import Image from "next/image";
@@ -17,28 +17,7 @@ const formatPrice = (price: ProductCard["price"]) =>
   }).format(price);
 
 const matchesSearch = (product: ProductCard, query: string) => {
-  const specifications = product.specifications
-    .map((spec) => `${spec.label} ${spec.value}`)
-    .join(" ");
-
-  const features = product.features.join(" ");
-
-  const searchable = [
-    product.title,
-    product.brand,
-    normalizeSubCategory(product.subCategory, product.brand),
-    product.sku,
-    product.display,
-    product.gender,
-    product.description,
-    specifications,
-    features,
-  ]
-    .filter(Boolean)
-    .join(" ")
-    .toLowerCase();
-
-  return searchable.includes(query.toLowerCase());
+  return getSearchableProductText(product).includes(query.toLowerCase());
 };
 
 const SearchResultsPage = ({ products }: { products: ProductCard[] }) => {

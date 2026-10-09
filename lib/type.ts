@@ -49,6 +49,27 @@ export const normalizeSubCategory = (
   return "";
 };
 
+export const getSearchableProductText = (product: Product) => {
+  const specifications = product.specifications.map(
+    (specification) => `${specification.label} ${specification.value}`,
+  );
+
+  return [
+    product.title,
+    normalizeSubCategory(product.subCategory, product.brand),
+    product.brand,
+    product.sku,
+    product.display,
+    product.gender,
+    product.description,
+    ...specifications,
+    ...product.features,
+  ]
+    .filter(Boolean)
+    .join(" ")
+    .toLowerCase();
+};
+
 export const formatSubCategory = (value: string) =>
   value
     .split("-")

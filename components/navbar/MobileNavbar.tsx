@@ -2,6 +2,7 @@
 
 import {
   formatSubCategory,
+  getSearchableProductText,
   normalizeSubCategory,
   ProductCard,
 } from "@/lib/type";
@@ -62,11 +63,7 @@ const MobileNavbar: React.FC<{
     if (!query) return [];
 
     return products
-      .filter((product) => {
-        const searchable =
-          `${product.title} ${normalizeSubCategory(product.subCategory, product.brand)} ${product.brand} `.toLowerCase();
-        return searchable.includes(query);
-      })
+      .filter((product) => getSearchableProductText(product).includes(query))
       .slice(0, 6);
   }, [products, searchValue]);
   
