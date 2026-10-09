@@ -1,0 +1,32 @@
+{
+  "title": "Casio Wall Clock IQ-06-1DF",
+  "sku": "IQ-06-1DF",
+  "subCategory": "wall-clock",
+  "display": "Analog",
+  "gender": "Unisex",
+  "price": 27,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "COLOR",
+      "value": "BLACK"
+    },
+    {
+      "label": "CASE MATERIAL ",
+      "value": "RESIN"
+    },
+    {
+      "label": "DISPLAY TYPE ",
+      "value": "ANALOG"
+    }
+  ],
+  "features": [
+    "Clock Features  Accuracy: ±30 seconds per month Power supply and battery life: Approximate battery life: 12 months on LR6"
+  ],
+  "imageCount": 1,
+  "arrivalDate": "2026-10-09",
+  "createdAt": "2026-10-09"
+}
