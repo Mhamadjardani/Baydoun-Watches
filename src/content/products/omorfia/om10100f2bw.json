@@ -1,0 +1,50 @@
+{
+  "title": "Omorfia Women's Watch OM10100F2BW",
+  "sku": "OM10100F2BW",
+  "subCategory": "general",
+  "display": "Analog",
+  "gender": "Women",
+  "price": 121,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Movement",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "Band Material",
+      "value": "BRACELET"
+    },
+    {
+      "label": "Band Color",
+      "value": "2-TONE GOLD"
+    },
+    {
+      "label": "Dial Color",
+      "value": "SILVER "
+    },
+    {
+      "label": "Case Diameter",
+      "value": "32 MM"
+    },
+    {
+      "label": "Case Color",
+      "value": "2-TONE GOLD "
+    },
+    {
+      "label": "Bezel",
+      "value": "GOLD "
+    },
+    {
+      "label": "Water Resistant",
+      "value": "3 ATM"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
