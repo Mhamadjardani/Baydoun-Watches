@@ -1,0 +1,35 @@
+{
+  "title": "Casio Wall Clock ID-15S-5DF",
+  "sku": "ID-15S-5DF",
+  "subCategory": "wall-clock",
+  "display": "Analog",
+  "gender": "Unisex",
+  "price": 84,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "COLOR",
+      "value": "SILVER, WOOD"
+    },
+    {
+      "label": "CASE MATERIAL ",
+      "value": "RESIN"
+    },
+    {
+      "label": "DISPLAY TYPE ",
+      "value": "ANALOG"
+    }
+  ],
+  "features": [
+    "Calendar: Full auto-calendar",
+    "Sensor Feature: Thermometer",
+    " Accuracy: ±60 seconds per month",
+    "Power supply and battery life: Approximate battery life: 12 months on R6P X 2"
+  ],
+  "imageCount": 1,
+  "arrivalDate": "2026-10-09",
+  "createdAt": "2026-10-09"
+}
