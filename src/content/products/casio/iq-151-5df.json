@@ -1,0 +1,30 @@
+{
+  "title": "Casio Wall Clock IQ-151-5DF",
+  "sku": "IQ-151-5DF",
+  "subCategory": "wall-clock",
+  "display": "Analog",
+  "gender": "Unisex",
+  "price": 29,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "COLOR",
+      "value": "BROWN "
+    },
+    {
+      "label": "CASE MATERIAL ",
+      "value": "RESIN"
+    },
+    {
+      "label": "DISPLAY TYPE ",
+      "value": "ANALOG"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-10-09",
+  "createdAt": "2026-10-09"
+}
