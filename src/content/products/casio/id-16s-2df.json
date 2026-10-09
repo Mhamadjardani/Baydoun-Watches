@@ -1,0 +1,34 @@
+{
+  "title": "Casio Wall Clock ID-16S-2DF",
+  "sku": "ID-16S-2DF",
+  "subCategory": "wall-clock",
+  "display": "Analog",
+  "gender": "Unisex",
+  "price": 92,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "COLOR",
+      "value": "BLACK, BLUE "
+    },
+    {
+      "label": "CASE MATERIAL ",
+      "value": "RESIN"
+    },
+    {
+      "label": "DISPLAY TYPE ",
+      "value": "DIGITAL "
+    }
+  ],
+  "features": [
+    "Calendar: Full auto-calendar",
+    " Accuracy: ±60 seconds per month",
+    "Power supply and battery life: Approximate battery life: 12 months on R6P X 2"
+  ],
+  "imageCount": 1,
+  "arrivalDate": "2026-10-09",
+  "createdAt": "2026-10-09"
+}
