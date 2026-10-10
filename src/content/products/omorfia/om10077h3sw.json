@@ -1,0 +1,46 @@
+{
+  "title": "Omorfia Men's Watch OM10077H3SW",
+  "sku": "OM10077H3SW",
+  "subCategory": "general",
+  "display": "Analog",
+  "gender": "Men",
+  "price": 80,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Movement",
+      "value": "DIGITAL"
+    },
+    {
+      "label": "Band Material",
+      "value": "GENUINE LEATHER"
+    },
+    {
+      "label": "Band Color",
+      "value": "BROWN"
+    },
+    {
+      "label": "Dial Color",
+      "value": "WHITE"
+    },
+    {
+      "label": "Case Color",
+      "value": "GOLD "
+    },
+    {
+      "label": "Bezel",
+      "value": "GOLD STAINLESS STEEL"
+    },
+    {
+      "label": "Water Resistant",
+      "value": "3 ATM"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
