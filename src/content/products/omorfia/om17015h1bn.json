@@ -1,0 +1,50 @@
+{
+  "title": "Omorfia Men's Watch OM17015H1BN",
+  "sku": "OM17015H1BN",
+  "subCategory": "general",
+  "display": "Digital",
+  "gender": "Men",
+  "price": 155,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Movement",
+      "value": "DIGITAL"
+    },
+    {
+      "label": "Band Material",
+      "value": "BRACELET"
+    },
+    {
+      "label": "Band Color",
+      "value": "SILVER STAINLESS STEEL"
+    },
+    {
+      "label": "Dial Color",
+      "value": "BLUE"
+    },
+    {
+      "label": "Case Diameter",
+      "value": "45 MM"
+    },
+    {
+      "label": "Case Color",
+      "value": "SILVER STAINLESS STEEL"
+    },
+    {
+      "label": "Bezel",
+      "value": "SILVER STAINLESS STEEL"
+    },
+    {
+      "label": "Water Resistant",
+      "value": "5 ATM"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
