@@ -1,0 +1,46 @@
+{
+  "title": "Omorfia Women's Watch OM20139 F1BW",
+  "sku": "OM14010F1BN",
+  "subCategory": "general",
+  "display": "Analog",
+  "gender": "Women",
+  "price": 125,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Movement",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "Band Material",
+      "value": "STAINLESS STEEL "
+    },
+    {
+      "label": "Band Color",
+      "value": "SILVER STAINLESS STEEL"
+    },
+    {
+      "label": "Dial Color",
+      "value": "SILVER "
+    },
+    {
+      "label": "Case Color",
+      "value": "SILVER STAINLESS STEEL"
+    },
+    {
+      "label": "Bezel",
+      "value": "SILVER STAINLESS STEEL"
+    },
+    {
+      "label": "Water Resistant",
+      "value": "3 ATM"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
