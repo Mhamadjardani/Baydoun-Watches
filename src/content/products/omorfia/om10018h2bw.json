@@ -1,10 +1,12 @@
 {
   "title": "Omorfia Men's Watch OM10018H2BW",
   "sku": "OM10018H2BW",
+  "subCategory": "general",
   "display": "Digital",
   "gender": "Men",
   "price": 105,
   "isNewArrival": false,
+  "isVisible": false,
   "isFeatured": false,
   "isLimitedEdition": false,
   "specifications": [
