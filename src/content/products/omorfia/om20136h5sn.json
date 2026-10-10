@@ -1,0 +1,50 @@
+{
+  "title": "Omorfia Men's Watch OM20136H5SN",
+  "sku": "OM20136H5SN",
+  "subCategory": "general",
+  "display": "Analog",
+  "gender": "Men",
+  "price": 174,
+  "isNewArrival": false,
+  "isVisible": false,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Movement",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "Band Material",
+      "value": "RUBBER"
+    },
+    {
+      "label": "Band Color",
+      "value": "BLUE"
+    },
+    {
+      "label": "Dial Color",
+      "value": "BLUE"
+    },
+    {
+      "label": "Case Diameter",
+      "value": "42 MM"
+    },
+    {
+      "label": "Case Color",
+      "value": "BLACK"
+    },
+    {
+      "label": "Bezel",
+      "value": "BLACK"
+    },
+    {
+      "label": "Water Resistant",
+      "value": "3 ATM"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
