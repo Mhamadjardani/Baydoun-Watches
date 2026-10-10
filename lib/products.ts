@@ -1,6 +1,7 @@
 // src/lib/products.ts
 import { readFile, readdir } from "node:fs/promises";
 import path from "node:path";
+import { cache } from "react";
 import { createReader } from "@keystatic/core/reader";
 import keystaticConfig from "../keystatic.config";
 import type { Product, ProductCard } from "./type";
@@ -67,75 +68,52 @@ function normalizeProductFromFile(
 }
 
 // ── Fetch all products across every brand ─────────────────────────────────────
-export async function getAllProducts() {
-  const grouped = await Promise.all(
-    BRANDS.map(async (brand) => {
-      const items = await reader.collections[brand].all();
+export const getAllProducts = cache(async function getAllProducts() {
+  // Keystatic's collection reader reads every entry with Promise.all(). The
+  // serverless file descriptor limit is lower than the size of the catalog,
+  // so use the bounded file loader for catalog-wide reads.
+  return getAllProductsFromFiles();
+});
 
-      if (items.length === 0) {
-        const fallback = await getAllProductsFromFiles();
-        return fallback.filter((item) => item.brand === brand);
-      }
+const FILE_READ_CONCURRENCY = 32;
 
-      // Respect the optional `isVisible` flag: treat missing as visible
-      const visible = items.filter((item) => item.entry.isVisible !== false);
+async function readProductFilesForBrand(brand: Brand): Promise<ProductCard[]> {
+  const folder = path.join(process.cwd(), "src", "content", "products", brandToFolder[brand]);
+  const files = (await readdir(folder, { withFileTypes: true }))
+    .filter((file) => file.isFile() && file.name.endsWith(".json"));
+  const products: ProductCard[] = [];
 
-      return visible.map((item) => ({
-        slug: item.slug,
-        brand,
-        ...item.entry,
-        image: getProductCoverImage(brand, item.slug),
-      }));
-    }),
-  );
+  for (let start = 0; start < files.length; start += FILE_READ_CONCURRENCY) {
+    const batch = files.slice(start, start + FILE_READ_CONCURRENCY);
+    const loaded = await Promise.all(
+      batch.map(async (file) => {
+        const slug = file.name.slice(0, -5);
+        const entry = JSON.parse(
+          await readFile(path.join(folder, file.name), "utf8"),
+        ) as Record<string, unknown>;
+        return entry.isVisible === false ? null : normalizeProductFromFile(brand, slug, entry);
+      }),
+    );
+    products.push(...loaded.filter((product): product is ProductCard => product !== null));
+  }
 
-  return grouped.flat();
+  return products;
 }
 
 // Cloud storage does not populate Keystatic's local reader at runtime. The
 // checked-in JSON files still provide a reliable initial catalog for admin;
 // the admin client then refreshes visible products from Cloud.
 export async function getAllProductsFromFiles(): Promise<ProductCard[]> {
-  const grouped = await Promise.all(
-    BRANDS.map(async (brand) => {
-      const folder = path.join(process.cwd(), "src", "content", "products", brandToFolder[brand]);
-      const files = await readdir(folder, { withFileTypes: true });
-      return Promise.all(
-        files
-          .filter((file) => file.isFile() && file.name.endsWith(".json"))
-          .map(async (file) => {
-            const slug = file.name.slice(0, -5);
-            const entry = JSON.parse(await readFile(path.join(folder, file.name), "utf8")) as Record<string, unknown>;
-            return normalizeProductFromFile(brand, slug, entry);
-          }),
-      );
-    }),
-  );
+  const grouped = await Promise.all(BRANDS.map(readProductFilesForBrand));
 
   return grouped.flat();
 }
 
 // ── Fetch all products for one brand ──────────────────────────────────────────
 export async function getProductsByBrand(brand: Brand) {
-  const items = await reader.collections[brand].all();
-
-  if (items.length === 0) {
-    const fallback = await getAllProductsFromFiles();
-    return fallback
-      .filter((item) => item.brand === brand)
-      .map((item) => ({
-        ...item,
-        images: getProductImages(brand, item.slug, item.imageCount),
-      }));
-  }
-
-  const visible = items.filter((item) => item.entry.isVisible !== false);
-
-  return visible.map((item) => ({
-    slug: item.slug,
-    brand,
-    ...item.entry,
-    images: getProductImages(brand, item.slug, item.entry.imageCount),
+  return (await readProductFilesForBrand(brand)).map((item) => ({
+    ...item,
+    images: getProductImages(brand, item.slug, item.imageCount),
   }));
 }
 
@@ -184,20 +162,8 @@ export async function getProduct(brand: Brand, slug: string) {
 
 // ── For generateStaticParams on /products/[brand]/[slug] ──────────────────────
 export async function getAllProductParams() {
-  const pairs = await Promise.all(
-    BRANDS.map(async (brand) => {
-      const items = await reader.collections[brand].all();
-      if (items.length === 0) {
-        const fallback = await getAllProductsFromFiles();
-        return fallback
-          .filter((item) => item.brand === brand)
-          .map((item) => ({ brand, slug: item.slug }));
-      }
-      const visible = items.filter((item) => item.entry.isVisible !== false);
-      return visible.map((item) => ({ brand, slug: item.slug }));
-    }),
-  );
-  return pairs.flat();
+  const products = await getAllProductsFromFiles();
+  return products.map(({ brand, slug }) => ({ brand, slug }));
 }
 
 // ── For generateStaticParams on /products/[brand] ─────────────────────────────
