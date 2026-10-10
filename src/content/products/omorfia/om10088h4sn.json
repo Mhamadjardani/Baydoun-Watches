@@ -1,10 +1,12 @@
 {
   "title": "Omorfia Watch OM10088H4SN",
   "sku": "OM10088H4SN",
+  "subCategory": "general",
   "display": "Analog",
-  "gender": "Unisex",
+  "gender": "Men",
   "price": 95,
   "isNewArrival": false,
+  "isVisible": true,
   "isFeatured": false,
   "isLimitedEdition": false,
   "specifications": [
