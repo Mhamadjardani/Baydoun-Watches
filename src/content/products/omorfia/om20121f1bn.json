@@ -1,0 +1,46 @@
+{
+  "title": "Omorfia Women's Watch OM20121F1BN",
+  "sku": "OM20121F1BN",
+  "subCategory": "general",
+  "display": "Analog",
+  "gender": "Women",
+  "price": 75,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Movement",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "Band Material",
+      "value": "STAINLESS STEEL MESH"
+    },
+    {
+      "label": "Band Color",
+      "value": "SILVER "
+    },
+    {
+      "label": "Dial Color",
+      "value": "BLUE"
+    },
+    {
+      "label": "Case Color",
+      "value": "SILVER "
+    },
+    {
+      "label": "Bezel",
+      "value": "SILVER"
+    },
+    {
+      "label": "Water Resistant",
+      "value": "3 ATM"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
