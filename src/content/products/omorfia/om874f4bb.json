@@ -1,0 +1,46 @@
+{
+  "title": "Omorfia Women's Watch OM874F4BB",
+  "sku": "OM874F4BB",
+  "subCategory": "general",
+  "display": "Analog",
+  "gender": "Women",
+  "price": 105,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Movement",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "Band Material",
+      "value": "STAINLESS STEEL"
+    },
+    {
+      "label": "Band Color",
+      "value": "BLACK"
+    },
+    {
+      "label": "Dial Color",
+      "value": "BLACK "
+    },
+    {
+      "label": "Case Color",
+      "value": "ROSE GOLD "
+    },
+    {
+      "label": "Bezel",
+      "value": "ROSE GOLD "
+    },
+    {
+      "label": "Water Resistant",
+      "value": "3 ATM"
+    }
+  ],
+  "features": [],
+  "imageCount": 1,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
