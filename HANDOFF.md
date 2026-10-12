@@ -7,8 +7,8 @@ Baydoun Watches: Next.js 16 storefront (~1,000 watches) with WhatsApp checkout
 Product images live in the **Supabase Storage** bucket `products` (`<brand>/<sku>/<slot>.webp`), managed at
 `/admin/products`. Supabase is already used server-side via the service role (`lib/productAdmin.ts`);
 `lib/supabase.ts` is an old commented-out client.
-Git: branch `main`. **Uncommitted:** ROADMAP.md, this file, and the out-of-stock feature (see Decisions).
-`AGENTS.md` also shows as modified: `next dev` rewrites its Next.js block automatically, so commit it.
+Git: branch `main`. Out-of-stock feature + ROADMAP.md + this file committed and pushed 2026-10-12 (`b288e31`).
+`next dev` rewrites the Next.js block in `AGENTS.md` automatically. If it shows as modified, commit it.
 
 ## Run it
 - `npm run dev` → http://localhost:3000. `npm run build`, `npm run lint`.
