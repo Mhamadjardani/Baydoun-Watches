@@ -5,6 +5,10 @@ import {
   normalizeSubCategory,
   ProductCard,
 } from "@/lib/type";
+import OutOfStockBadge, {
+  inStockFirst,
+  outOfStockImageClass,
+} from "@/components/OutOfStockBadge";
 import { useCommerceStore } from "@/store/useCommerceStore";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown, Heart, SlidersHorizontal } from "lucide-react";
@@ -180,8 +184,12 @@ const ProductsCollection = ({
       return product.price;
     };
 
-    // 2. Perform the sort based on the calculated effective prices
+    // 2. Perform the sort based on the calculated effective prices.
+    // Out-of-stock watches always go last, whatever the sort.
     return [...matchesFilters].sort((firstProduct, secondProduct) => {
+      const stockOrder = inStockFirst(firstProduct, secondProduct);
+      if (stockOrder !== 0) return stockOrder;
+
       if (sortBy === "price-low" || sortBy === "price-high") {
         const priceA = getEffectivePrice(firstProduct);
         const priceB = getEffectivePrice(secondProduct);
@@ -552,7 +560,7 @@ const ProductsCollection = ({
                           alt={product.title}
                           fill
                           sizes="(max-width:640px)100vw,(max-width:1280px)50vw,33vw"
-                          className="object-contain p-3 transition-transform duration-1000 ease-out group-hover:scale-105"
+                          className={`object-contain p-3 transition-transform duration-1000 ease-out group-hover:scale-105 ${outOfStockImageClass(product)}`}
                           onError={() => markImageFailed(product.image)}
                         />
 
@@ -564,6 +572,8 @@ const ProductsCollection = ({
                         </div>
 
                         <div className="absolute left-3 top-3 z-20 flex flex-col gap-2">
+                          {product.isOutOfStock && <OutOfStockBadge />}
+
                           {product.isFeatured && (
                             <span className="rounded-full bg-black/50 px-3 py-1 text-[10px] uppercase tracking-wide text-white backdrop-blur">
                               Featured

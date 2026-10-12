@@ -3,7 +3,14 @@
 import type { ProductCard, ProductDetails } from "@/lib/type";
 import { useCommerceStore } from "@/store/useCommerceStore";
 import { motion } from "framer-motion";
-import { Check, Heart, Share2, ShieldCheck, ShoppingBag } from "lucide-react";
+import {
+  Check,
+  CircleOff,
+  Heart,
+  Share2,
+  ShieldCheck,
+  ShoppingBag,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
@@ -43,6 +50,10 @@ const ProductDetails = ({
         item.productSlug === product.slug &&
         item.productBrand === product.brand,
     );
+  // "You may also like": same brand, only watches that can be ordered.
+  const relatedProducts = products.filter(
+    (prod) => prod.brand == product.brand && !prod.isOutOfStock,
+  );
   const cartQuantity =
     cartItems.find((item) => item.productSlug === product.slug)?.quantity ?? 0;
 
@@ -267,12 +278,17 @@ const ProductDetails = ({
                   </p>
                 )}
               </div>
-              <div className="inline-flex items-center gap-2 text-sm uppercase tracking-widest text-secondary">
-                <ShieldCheck size={18} className="text-primary" />
-                {/* {product.stock > 0
-                  ? `${product.stock} in stock`
-                  : "Out of stock"} */}
-              </div>
+              {product.isOutOfStock ? (
+                <div className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-red-400">
+                  <CircleOff size={18} />
+                  Out of stock
+                </div>
+              ) : (
+                <div className="inline-flex items-center gap-2 text-sm uppercase tracking-widest text-secondary">
+                  <ShieldCheck size={18} className="text-primary" />
+                  In stock
+                </div>
+              )}
             </div>
           </div>
 
@@ -337,20 +353,22 @@ const ProductDetails = ({
           <div className="flex flex-col gap-3 border-t border-white/10 pt-6 sm:flex-row">
             <button
               type="button"
+              disabled={product.isOutOfStock}
               onClick={() => {
-                // if (product.stock > 0) {
+                if (product.isOutOfStock) return;
                 addToCart(product.brand, product.slug);
                 toast.success(`${product.title} added to cart`, {
                   icon: "🛒",
                 });
-                // }
               }}
-              className={`inline-flex h-13 flex-1 items-center justify-center gap-3 bg-primary cursor-pointer px-6 py-2 text-sm font-bold uppercase tracking-widest text-neutral transition duration-300 hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-primary/40`}
+              className={`inline-flex h-13 flex-1 items-center justify-center gap-3 bg-primary cursor-pointer px-6 py-2 text-sm font-bold uppercase tracking-widest text-neutral transition duration-300 hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-primary/40 disabled:cursor-not-allowed disabled:bg-white/10 disabled:text-white/40`}
             >
               <ShoppingBag size={19} />
-              {hasHydrated && cartQuantity > 0
-                ? `In cart (${cartQuantity})`
-                : "Add to cart"}
+              {product.isOutOfStock
+                ? "Out of stock"
+                : hasHydrated && cartQuantity > 0
+                  ? `In cart (${cartQuantity})`
+                  : "Add to cart"}
             </button>
             <button
               type="button"
@@ -380,7 +398,7 @@ const ProductDetails = ({
         </motion.div>
       </div>
 
-      {products.filter((prod) => prod.brand == product.brand).length > 0 && (
+      {relatedProducts.length > 0 && (
         <section className="space-y-5 border-t border-white/10 pt-8">
           <div className="flex items-end justify-between gap-4">
             <div>
@@ -401,10 +419,7 @@ const ProductDetails = ({
             className="flex flex-nowrap gap-4 overflow-x-auto pb-3 no-scrollbar"
             style={{ scrollBehavior: "auto" }}
           >
-            {[
-              ...products.filter((prod) => prod.brand == product.brand),
-              ...products.filter((prod) => prod.brand == product.brand),
-            ].map((product, index) => (
+            {[...relatedProducts, ...relatedProducts].map((product, index) => (
               <Link
                 key={`${product.slug}-recommended-${index}`}
                 href={`/collections/${product.brand}/${product.slug}`}

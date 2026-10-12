@@ -207,6 +207,9 @@ const DesktopNavbar: React.FC<{
                               </span>
                               <span className="block text-[10px] uppercase tracking-wide text-secondary/80">
                                 {product.brand}
+                                {product.isOutOfStock && (
+                                  <span className="text-red-400"> · Out of stock</span>
+                                )}
                               </span>
                             </div>
                           </div>

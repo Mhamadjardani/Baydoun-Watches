@@ -20,11 +20,11 @@ const Hero2 = ({ products }: { products: ProductCard[] }) => {
   };
 
   const [featuredRandom, setFeaturedRandom] = useState<ProductCard[]>(() =>
-    products.filter((p) => p.isFeatured).slice(0, 4)
+    products.filter((p) => p.isFeatured && !p.isOutOfStock).slice(0, 4)
   );
 
   useEffect(() => {
-    const items = [...products.filter((p) => p.isFeatured)];
+    const items = [...products.filter((p) => p.isFeatured && !p.isOutOfStock)];
     for (let i = items.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [items[i], items[j]] = [items[j], items[i]];

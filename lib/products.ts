@@ -54,6 +54,7 @@ function normalizeProductFromFile(
     isNewArrival: Boolean(entry.isNewArrival ?? false),
     isFeatured: Boolean(entry.isFeatured ?? false),
     isLimitedEdition: Boolean(entry.isLimitedEdition ?? false),
+    isOutOfStock: entry.isOutOfStock === true,
     specifications: Array.isArray(entry.specifications)
       ? (entry.specifications as Product["specifications"])
       : [],

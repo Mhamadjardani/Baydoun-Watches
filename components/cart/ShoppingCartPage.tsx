@@ -2,7 +2,15 @@
 
 import { ProductCard } from "@/lib/type";
 import { useCommerceStore } from "@/store/useCommerceStore";
-import { ArrowRight, Minus, Plus, ShoppingBag, X } from "lucide-react";
+import { outOfStockImageClass } from "@/components/OutOfStockBadge";
+import {
+  ArrowRight,
+  CircleOff,
+  Minus,
+  Plus,
+  ShoppingBag,
+  X,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -66,8 +74,17 @@ const ShoppingCartPage = ({ products }: { products: ProductCard[] }) => {
     [cartItems, products], // Added products to dependencies
   );
 
+  // Items marked out of stock after being added stay visible in the bag with a
+  // warning, but are left out of the totals and the WhatsApp order.
+  const orderableProducts = cartProducts.filter(
+    (item) => !item.product.isOutOfStock,
+  );
+  const unavailableProducts = cartProducts.filter(
+    (item) => item.product.isOutOfStock,
+  );
+
   // subtotal now correctly utilizes the discounted or original price
-  const subtotal = cartProducts.reduce(
+  const subtotal = orderableProducts.reduce(
     (total, item) => total + item.currentPrice * item.quantity,
     0,
   );
@@ -89,7 +106,7 @@ const ShoppingCartPage = ({ products }: { products: ProductCard[] }) => {
 • City: ${formData.city}
 `;
 
-    const items = cartProducts
+    const items = orderableProducts
       .map((item, index) => {
         // Determine if we should display the discount breakdown in text
         const hasDiscount = item.product.discount && item.product.discount > 0;
@@ -132,7 +149,9 @@ const ShoppingCartPage = ({ products }: { products: ProductCard[] }) => {
       cartProducts.map((item) => item.product.brand.toLowerCase()),
     );
 
-    const sameBrandProducts = products
+    const inStockProducts = products.filter((product) => !product.isOutOfStock);
+
+    const sameBrandProducts = inStockProducts
       .filter((product) => {
         const key = makeKey(product.brand, product.slug);
 
@@ -142,7 +161,7 @@ const ShoppingCartPage = ({ products }: { products: ProductCard[] }) => {
       })
       .slice(0, 8);
 
-    const fallbackProducts = products.filter((product) => {
+    const fallbackProducts = inStockProducts.filter((product) => {
       const key = makeKey(product.brand, product.slug);
       return !cartKeys.has(key);
     });
@@ -152,7 +171,7 @@ const ShoppingCartPage = ({ products }: { products: ProductCard[] }) => {
         ? sameBrandProducts
         : fallbackProducts.length > 0
           ? fallbackProducts
-          : products;
+          : inStockProducts;
 
     return recommendationPool.slice(0, 6);
   }, [cartProducts, products]);
@@ -217,7 +236,7 @@ const ShoppingCartPage = ({ products }: { products: ProductCard[] }) => {
       lastName: "",
       mobileNumber: "",
     });
-    cartProducts.map((product) =>
+    orderableProducts.forEach((product) =>
       removeFromCart(product.product.brand, product.product.slug),
     );
 
@@ -280,6 +299,28 @@ const ShoppingCartPage = ({ products }: { products: ProductCard[] }) => {
         ) : (
           <div className="grid gap-8 lg:grid-cols-[minmax(0,3fr)_minmax(320px,1fr)]">
             <div className="space-y-4">
+              {unavailableProducts.length > 0 && (
+                <div className="flex flex-col gap-3 border border-red-500/30 bg-red-950/30 px-4 py-3 text-sm text-red-300 sm:flex-row sm:items-center sm:justify-between">
+                  <p className="inline-flex items-center gap-2">
+                    <CircleOff size={16} className="shrink-0" />
+                    {unavailableProducts.length === 1
+                      ? "1 item in your bag is out of stock and won't be included in your order."
+                      : `${unavailableProducts.length} items in your bag are out of stock and won't be included in your order.`}
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      unavailableProducts.forEach(({ product }) =>
+                        removeFromCart(product.brand, product.slug),
+                      )
+                    }
+                    className="w-fit shrink-0 cursor-pointer border border-red-400/40 px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-red-300 transition hover:bg-red-500/10"
+                  >
+                    Remove {unavailableProducts.length === 1 ? "it" : "them"}
+                  </button>
+                </div>
+              )}
+
               {cartProducts.map(({ product, quantity }, index) => (
                 <article
                   key={product.slug + index}
@@ -294,7 +335,7 @@ const ShoppingCartPage = ({ products }: { products: ProductCard[] }) => {
                       alt={product.title}
                       fill
                       sizes="160px"
-                      className="object-cover transition duration-500 hover:scale-105"
+                      className={`object-cover transition duration-500 hover:scale-105 ${outOfStockImageClass(product)}`}
                       onError={() => markImageFailed(product.image)}
                     />
                   </Link>
@@ -315,33 +356,40 @@ const ShoppingCartPage = ({ products }: { products: ProductCard[] }) => {
                       </p>
                     </div>
 
-                    <div className="flex w-fit items-center border border-white/10 bg-neutral">
-                      <button
-                        type="button"
-                        aria-label={`Decrease ${product.title} quantity`}
-                        onClick={() =>
-                          setCartQuantity(
-                            product.brand,
-                            product.slug,
-                            quantity - 1,
-                          )
-                        }
-                        className="flex h-10 w-10 cursor-pointer items-center justify-center text-primary transition hover:bg-white/10"
-                      >
-                        <Minus size={16} />
-                      </button>
-                      <span className="flex h-10 min-w-12 items-center justify-center border-x border-white/10 px-3 text-sm font-bold text-white">
-                        {quantity}
-                      </span>
-                      <button
-                        type="button"
-                        aria-label={`Increase ${product.title} quantity`}
-                        onClick={() => addToCart(product.brand, product.slug)}
-                        className="flex h-10 w-10 cursor-pointer items-center justify-center text-primary transition hover:bg-white/10"
-                      >
-                        <Plus size={16} />
-                      </button>
-                    </div>
+                    {product.isOutOfStock ? (
+                      <p className="inline-flex w-fit items-center gap-2 border border-red-500/30 bg-red-950/30 px-3 py-2 text-xs font-bold uppercase tracking-widest text-red-300">
+                        <CircleOff size={14} />
+                        Out of stock
+                      </p>
+                    ) : (
+                      <div className="flex w-fit items-center border border-white/10 bg-neutral">
+                        <button
+                          type="button"
+                          aria-label={`Decrease ${product.title} quantity`}
+                          onClick={() =>
+                            setCartQuantity(
+                              product.brand,
+                              product.slug,
+                              quantity - 1,
+                            )
+                          }
+                          className="flex h-10 w-10 cursor-pointer items-center justify-center text-primary transition hover:bg-white/10"
+                        >
+                          <Minus size={16} />
+                        </button>
+                        <span className="flex h-10 min-w-12 items-center justify-center border-x border-white/10 px-3 text-sm font-bold text-white">
+                          {quantity}
+                        </span>
+                        <button
+                          type="button"
+                          aria-label={`Increase ${product.title} quantity`}
+                          onClick={() => addToCart(product.brand, product.slug)}
+                          className="flex h-10 w-10 cursor-pointer items-center justify-center text-primary transition hover:bg-white/10"
+                        >
+                          <Plus size={16} />
+                        </button>
+                      </div>
+                    )}
                   </div>
 
                   <div className="flex items-end justify-between gap-4 sm:flex-col sm:items-end">
@@ -355,7 +403,9 @@ const ShoppingCartPage = ({ products }: { products: ProductCard[] }) => {
                     >
                       <X size={18} />
                     </button>
-                    <div className="ml-auto mt-2 border border-primary/20 bg-primary/10 px-2 py-1 text-right sm:mt-auto">
+                    <div
+                      className={`ml-auto mt-2 border border-primary/20 bg-primary/10 px-2 py-1 text-right sm:mt-auto ${product.isOutOfStock ? "opacity-40" : ""}`}
+                    >
                       <div>
                         {product.discount && product.discount > 0 ? (
                           <div className="flex items-center gap-2 mt-1">
@@ -426,8 +476,9 @@ const ShoppingCartPage = ({ products }: { products: ProductCard[] }) => {
 
               <button
                 type="button"
+                disabled={orderableProducts.length === 0}
                 onClick={() => setShowCheckout(!showCheckout)}
-                className="inline-flex w-full cursor-pointer items-center justify-center gap-3 bg-primary px-6 py-4 text-sm font-bold uppercase tracking-widest text-neutral transition hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-primary/40"
+                className="inline-flex w-full cursor-pointer items-center justify-center gap-3 bg-primary px-6 py-4 text-sm font-bold uppercase tracking-widest text-neutral transition hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-primary/40 disabled:cursor-not-allowed disabled:bg-white/10 disabled:text-white/40"
               >
                 {showCheckout ? "Hide checkout" : "Proceed to checkout"}
                 <ArrowRight size={18} />
@@ -436,7 +487,7 @@ const ShoppingCartPage = ({ products }: { products: ProductCard[] }) => {
           </div>
         )}
 
-        {showCheckout && cartProducts.length > 0 && (
+        {showCheckout && orderableProducts.length > 0 && (
           <section className="border-t border-white/10 pt-10">
             <div className="space-y-6">
               <div className="flex flex-col gap-2">

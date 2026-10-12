@@ -279,6 +279,9 @@ const MobileNavbar: React.FC<{
                               </span>
                               <span className="block text-xs uppercase tracking-wide text-secondary/80">
                                 {product.brand}
+                                {product.isOutOfStock && (
+                                  <span className="text-red-400"> · Out of stock</span>
+                                )}
                               </span>
                             </div>
                           </div>
@@ -401,6 +404,9 @@ const MobileNavbar: React.FC<{
                                       </span>
                                       <span className="block text-xs uppercase tracking-wide text-secondary/80">
                                         {product.brand}
+                                        {product.isOutOfStock && (
+                                          <span className="text-red-400"> · Out of stock</span>
+                                        )}
                                       </span>
                                     </div>
                                   </div>

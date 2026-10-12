@@ -1,5 +1,8 @@
 "use client";
 
+import OutOfStockBadge, {
+  outOfStockImageClass,
+} from "@/components/OutOfStockBadge";
 import { ProductCard } from "@/lib/type";
 import { useCommerceStore } from "@/store/useCommerceStore";
 import { ArrowRight, Heart, X } from "lucide-react";
@@ -138,7 +141,7 @@ const WishlistPage = ({ products }: { products: ProductCard[] }) => {
                         alt={product.title}
                         fill
                         sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
-                        className="rounded-[20px] object-contain bg-[linear-gradient(145deg,#f8efe0_0%,#e4d7b5_100%)] p-3 transition duration-700 ease-out group-hover:scale-105"
+                        className={`rounded-[20px] object-contain bg-[linear-gradient(145deg,#f8efe0_0%,#e4d7b5_100%)] p-3 transition duration-700 ease-out group-hover:scale-105 ${outOfStockImageClass(product)}`}
                         onError={() => markImageFailed(product.image)}
                       />
                       <div className="absolute inset-0 rounded-3xl bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.16),transparent_60%)]" />
@@ -146,6 +149,9 @@ const WishlistPage = ({ products }: { products: ProductCard[] }) => {
 
                       {/* Status Badges Container */}
                       <div className="absolute left-4 top-4 z-10 flex flex-col gap-2">
+                        {product.isOutOfStock && (
+                          <OutOfStockBadge variant="tag" />
+                        )}
                         {product.isFeatured && (
                           <span className="hidden sm:inline-block border border-primary/30 bg-neutral/70 px-3 py-1 text-xs uppercase tracking-widest text-white backdrop-blur">
                             Featured

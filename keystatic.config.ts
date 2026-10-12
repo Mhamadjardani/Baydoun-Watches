@@ -88,10 +88,12 @@ function brandCollection(
         label: "Discount %",
         validation: { isRequired: false },
       }),
-      // stock: fields.number({
-      //   label: "Stock",
-      //   validation: { isRequired: true },
-      // }),
+      isOutOfStock: fields.checkbox({
+        label: "Out of stock",
+        description:
+          "Keeps the product listed but disables ordering. Untick when it is back.",
+        defaultValue: false,
+      }),
 
       // ── Flags ────────────────────────────────────────────────────────────────
       isNewArrival: fields.checkbox({
