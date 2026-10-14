@@ -3,8 +3,10 @@
   "sku": "CK 25100043",
   "display": "Analog",
   "gender": "Women",
-  "price": 0,
+  "price": 220,
+  "isOutOfStock": false,
   "isNewArrival": false,
+  "isVisible": true,
   "isFeatured": false,
   "isLimitedEdition": false,
   "specifications": [
