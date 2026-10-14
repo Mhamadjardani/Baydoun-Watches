@@ -19,7 +19,7 @@ import { useEffect, useMemo, useState, useRef } from "react";
 import toast from "react-hot-toast";
 
 type FilterKey = "brand" | "subCategory" | "gender" | "display";
-type SortKey = "featured" | "price-low" | "price-high";
+type SortKey = "new-arrivals" | "featured" | "price-low" | "price-high";
 export type CollectionFilterState = Record<FilterKey, string[]>;
 
 const filters: { key: FilterKey; label: string }[] = [
@@ -88,7 +88,7 @@ const ProductsCollection = ({
   ]);
   const [selectedFilters, setSelectedFilters] =
     useState<CollectionFilterState>(urlFilters);
-  const [sortBy, setSortBy] = useState<SortKey>("featured");
+  const [sortBy, setSortBy] = useState<SortKey>("new-arrivals");
   const [page, setPage] = useState(1);
   const [failedImages, setFailedImages] = useState<Set<string>>(new Set());
   const wishlistItems = useCommerceStore((state) => state.wishlistItems);
@@ -197,7 +197,13 @@ const ProductsCollection = ({
         return sortBy === "price-low" ? priceA - priceB : priceB - priceA;
       }
 
-      // Default sorting fallback: Featured items first
+      // New arrivals are the default priority; featured items break ties.
+      if (sortBy === "new-arrivals") {
+        const newArrivalOrder =
+          Number(secondProduct.isNewArrival) - Number(firstProduct.isNewArrival);
+        if (newArrivalOrder !== 0) return newArrivalOrder;
+      }
+
       return Number(secondProduct.isFeatured) - Number(firstProduct.isFeatured);
     });
   }, [selectedFilters, sortBy, products]);
@@ -482,6 +488,7 @@ const ProductsCollection = ({
                   }}
                   className="h-11 min-w-54 border border-primary/20 bg-neutral px-4 text-sm font-semibold uppercase tracking-widest text-primary outline-none transition focus:border-primary/60"
                 >
+                  <option value="new-arrivals">New arrivals first</option>
                   <option value="featured">Featured items</option>
                   <option value="price-low">Low price</option>
                   <option value="price-high">High price</option>
