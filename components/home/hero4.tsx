@@ -1,6 +1,6 @@
 "use client";
 
-import { ProductCard } from "@/lib/type";
+import { normalizeSubCategory, ProductCard } from "@/lib/type";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -31,9 +31,9 @@ const Hero4 = ({ products }: { products: ProductCard[] }) => {
               new Date(b.createdAt ?? Date()).getTime() -
               new Date(a.createdAt ?? Date()).getTime(),
           )
-          .map((p) => [p.subCategory, p]),
+          .map((p) => [normalizeSubCategory(p.subCategory, p.brand), p]),
       ).values(),
-    ).slice(0, 4);
+    );
 
   const [casioSubcategories, setCasioSubcategories] = useState<ProductCard[]>(
     initialCasio,
@@ -44,7 +44,7 @@ const Hero4 = ({ products }: { products: ProductCard[] }) => {
     const bySub = new Map<string, ProductCard[]>();
     for (const p of products) {
       if (p.brand !== "casio") continue;
-      const key = p.subCategory || "";
+      const key = normalizeSubCategory(p.subCategory, p.brand);
       const arr = bySub.get(key) ?? [];
       arr.push(p);
       bySub.set(key, arr);
@@ -56,7 +56,6 @@ const Hero4 = ({ products }: { products: ProductCard[] }) => {
       // pick random product for this subcategory
       const idx = Math.floor(Math.random() * arr.length);
       chosen.push(arr[idx]);
-      if (chosen.length >= 4) break;
     }
 
     const t = setTimeout(() => setCasioSubcategories(chosen), 0);
@@ -122,7 +121,9 @@ const Hero4 = ({ products }: { products: ProductCard[] }) => {
               }}
               onClick={() => {
                 router.push(
-                  `/collections?brand=casio&subCategory=${product.subCategory}`,
+                  `/collections?brand=casio&subCategory=${encodeURIComponent(
+                    normalizeSubCategory(product.subCategory, product.brand),
+                  )}`,
                 );
               }}
             >
@@ -140,15 +141,16 @@ const Hero4 = ({ products }: { products: ProductCard[] }) => {
               <div className="flex flex-1 flex-col justify-between p-4 md:p-6 text-left">
                 <div className="space-y-2">
                   <p className="font-playfair mt-3 line-clamp-2 text-sm font-bold uppercase tracking-wide text-white sm:text-base md:text-lg">
-                    {(product.subCategory &&
-                      product.subCategory
-                        .split("-")
-                        .map(
-                          (word) =>
-                            word.charAt(0).toUpperCase() + word.slice(1),
-                        )
-                        .join(" ")) ||
-                      ""}
+                    {normalizeSubCategory(
+                      product.subCategory,
+                      product.brand,
+                    )
+                      .split("-")
+                      .map(
+                        (word) =>
+                          word.charAt(0).toUpperCase() + word.slice(1),
+                      )
+                      .join(" ")}
                   </p>
                 </div>
               </div>
