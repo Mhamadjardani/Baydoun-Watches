@@ -1,0 +1,44 @@
+{
+  "title": "Edifice Watch EFV-570D-1AVUDF",
+  "sku": "EFV-570D-1AVUDF",
+  "subCategory": "edifice",
+  "display": "Analog",
+  "gender": "Men",
+  "price": 165,
+  "isOutOfStock": false,
+  "isNewArrival": true,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "141 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "48.5 × 43.8 × 11.6 mm"
+    },
+    {
+      "label": "Color",
+      "value": "SILVER, BLACK"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "100m"
+    }
+  ],
+  "features": [
+    "1-second stopwatch Measuring capacity: 9’59 Measuring modes: Elapsed time, split time, 1st-2nd place times",
+    "Accuracy: ±20 seconds per month",
+    "Regular timekeeping: Analog: 3 hands (hour, minute, second), 3 dials (stopwatch minutes, stopwatch seconds, 24-hour)",
+    "Date display."
+  ],
+  "imageCount": 2,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
