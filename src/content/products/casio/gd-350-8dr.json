@@ -1,0 +1,53 @@
+{
+  "title": "G-Shock Casual Men Watch GD-350-8DR",
+  "sku": "GD-350-8DR",
+  "subCategory": "g-shock",
+  "display": "Digital",
+  "gender": "Men",
+  "price": 185,
+  "isOutOfStock": false,
+  "isNewArrival": true,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "75 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "53.4 × 50.8 × 18 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Black"
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin"
+    },
+    {
+      "label": "Display Type",
+      "value": "Digital"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "200m"
+    }
+  ],
+  "features": [
+    "LED Light",
+    "World Time",
+    "Daily alarm",
+    "Timer",
+    "Hourly time signal",
+    "12/24-hour format",
+    "Mute feature Button operation tone on/off",
+    "Battery display/alert Low battery alert",
+    "Flash alert feature Flash alert Flashes with buzzer that sounds for alarms, hourly time signal, countdown timer (time up)"
+  ],
+  "imageCount": 2,
+  "arrivalDate": "2026-08-30",
+  "createdAt": "2026-08-30"
+}
