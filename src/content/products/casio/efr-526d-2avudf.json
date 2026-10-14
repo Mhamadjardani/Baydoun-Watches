@@ -1,0 +1,45 @@
+{
+  "title": "Edifice Watch EFR-526D-2AVUDF",
+  "sku": "EFR-526D-2AVUDF",
+  "subCategory": "edifice",
+  "display": "Analog",
+  "gender": "Men",
+  "price": 165,
+  "isOutOfStock": false,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": " Weight\t",
+      "value": "149 g"
+    },
+    {
+      "label": "Dimensions\t",
+      "value": "48.5 × 43.8 × 11.6 mm"
+    },
+    {
+      "label": "Color",
+      "value": "BLUE, SILVER "
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Display Type\t ",
+      "value": "Chronograph"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "100m"
+    }
+  ],
+  "features": [
+    "Regular timekeeping: Analog: 3 hands (hour, minute, stopwatch seconds), 3 dials (timekeeping second, stopwatch hours, stopwatch minutes) Day and date display"
+  ],
+  "imageCount": 2,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
