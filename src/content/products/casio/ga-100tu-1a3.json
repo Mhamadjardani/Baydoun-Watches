@@ -1,0 +1,52 @@
+{
+  "title": "G-Shock Casual Men Watch GA-100TU-1A3",
+  "sku": "GA-100TU-1A3",
+  "subCategory": "g-shock",
+  "description": "Pairing a black watch face with a band in beige or olive green, the two-tone utility color line evokes the functional look of a great piece of kit.",
+  "display": "Ana/Dig",
+  "gender": "Men",
+  "price": 180,
+  "isOutOfStock": false,
+  "isNewArrival": true,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "72 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "55 × 51.2 × 16.9 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Beige, BLACK "
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin"
+    },
+    {
+      "label": "Display Type",
+      "value": "Ana-Digi"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "200m"
+    }
+  ],
+  "features": [
+    "LED Light",
+    "World Time",
+    "Mute Feature",
+    "Daily alarm",
+    "Timer",
+    "Hourly time signal",
+    "12/24-hour format"
+  ],
+  "imageCount": 2,
+  "arrivalDate": "2026-08-30",
+  "createdAt": "2026-08-30"
+}
