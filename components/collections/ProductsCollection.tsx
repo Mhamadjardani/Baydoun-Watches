@@ -574,6 +574,12 @@ const ProductsCollection = ({
                         <div className="absolute left-3 top-3 z-20 flex flex-col gap-2">
                           {product.isOutOfStock && <OutOfStockBadge />}
 
+                          {product.isNewArrival && (
+                            <span className="border border-primary/30 bg-neutral/70 px-3 py-1 text-[10px] uppercase tracking-wide text-primary backdrop-blur">
+                              New arrival
+                            </span>
+                          )}
+
                           {product.isFeatured && (
                             <span className="rounded-full bg-black/50 px-3 py-1 text-[10px] uppercase tracking-wide text-white backdrop-blur">
                               Featured
