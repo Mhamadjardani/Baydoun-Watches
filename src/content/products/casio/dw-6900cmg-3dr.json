@@ -1,0 +1,52 @@
+{
+  "title": "G-Shock Casual Men Watch DW-6900CMG-3DR",
+  "sku": "DW-6900CMG-3DR",
+  "subCategory": "g-shock",
+  "description": "Why do ordinary camouflage when you can go camo gold. The Bold Camo line takes G-SHOCK street fashion camouflage to a whole new place.\nIntroducing the DW-6900CMG-3, part of the extensive lineup of street fashion, sporty, world culture-inspired designs for the classic 6900 silhouette.\n\nThe bezel and band are MAP printed with one-of-a-kind G-SHOCK camouflage cleverly concealing the brand’s iconic G-mark.\nThese special camo and gold designs perfectly embody the essence of street fashion with original camo and the dazzling sparkle of gold color. Add a unique touch to your style with a bold new look.",
+  "display": "Ana/Dig",
+  "gender": "Men",
+  "price": 165,
+  "isOutOfStock": false,
+  "isNewArrival": true,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "67 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "\t53.2 × 50 × 18.7 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Camouflage"
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin"
+    },
+    {
+      "label": "Display Type",
+      "value": "Ana-Digi"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "200m"
+    }
+  ],
+  "features": [
+    "LED Light",
+    "World Time",
+    "Mute Feature",
+    "Daily alarm",
+    "Timer",
+    "Hourly time signal",
+    "12/24-hour format"
+  ],
+  "imageCount": 4,
+  "arrivalDate": "2026-08-30",
+  "createdAt": "2026-08-30"
+}
