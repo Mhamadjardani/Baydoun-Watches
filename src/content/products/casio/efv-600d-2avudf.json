@@ -1,0 +1,50 @@
+{
+  "title": "Edifice Watch EFV-600D-2AVUDF",
+  "sku": "EFV-600D-2AVUDF",
+  "subCategory": "edifice",
+  "description": "A mid-size standard EDIFICE chronograph. The gradient color on the dial was inspired by the night sky during night races. Use of green coloring on the second hand and the inset dial hand creates a highly visible design.",
+  "display": "Analog",
+  "gender": "Men",
+  "price": 165,
+  "isOutOfStock": false,
+  "isNewArrival": true,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "135 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "49 × 43.8 × 11.1 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Silver"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel"
+    },
+    {
+      "label": "Display Type\t",
+      "value": " Chronograph"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "100m"
+    }
+  ],
+  "features": [
+    "1/10-second stopwatch Measuring capacity: 59’59.9” Measuring modes: Elapsed time, split time, 1st-2nd place times",
+    "Date display",
+    "Regular timekeeping Analog: 3 hands (hour, minute, second), 3 dials (stopwatch 1/10 seconds, stopwatch minutes, stopwatch seconds)",
+    "Accuracy: ?20 seconds per month",
+    "Approx. battery life: 3 years on SR920SW."
+  ],
+  "imageCount": 1,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
