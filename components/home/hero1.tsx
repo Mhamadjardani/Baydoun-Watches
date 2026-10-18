@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 
 // 1. Define the structural content for each individual slide
@@ -106,6 +106,7 @@ const features = [
 
 const Hero1 = () => {
   const [currentIdx, setCurrentIdx] = useState(0);
+  const pointerStart = useRef<{ x: number; y: number } | null>(null);
 
   // 2. Cycle through slides every 3 seconds
   useEffect(() => {
@@ -118,8 +119,49 @@ const Hero1 = () => {
 
   const currentSlide = slides[currentIdx];
 
+  const showNextSlide = () => {
+    setCurrentIdx((prevIdx) => (prevIdx + 1) % slides.length);
+  };
+
+  const showPreviousSlide = () => {
+    setCurrentIdx((prevIdx) => (prevIdx - 1 + slides.length) % slides.length);
+  };
+
+  const handlePointerDown = (event: React.PointerEvent<HTMLElement>) => {
+    event.currentTarget.setPointerCapture(event.pointerId);
+    pointerStart.current = { x: event.clientX, y: event.clientY };
+  };
+
+  const handlePointerUp = (event: React.PointerEvent<HTMLElement>) => {
+    if (!pointerStart.current) return;
+
+    const deltaX = event.clientX - pointerStart.current.x;
+    const deltaY = event.clientY - pointerStart.current.y;
+    pointerStart.current = null;
+    event.currentTarget.releasePointerCapture(event.pointerId);
+
+    // Only treat a deliberate horizontal gesture as a slide change so that
+    // normal vertical page scrolling still works on touch devices.
+    if (Math.abs(deltaX) < 50 || Math.abs(deltaX) <= Math.abs(deltaY)) return;
+
+    if (deltaX < 0) {
+      showNextSlide();
+    } else {
+      showPreviousSlide();
+    }
+  };
+
+  const handlePointerCancel = () => {
+    pointerStart.current = null;
+  };
+
   return (
-    <section className="relative min-h-screen overflow-hidden bg-background">
+    <section
+      className="relative min-h-screen touch-pan-y overflow-hidden bg-background"
+      onPointerDown={handlePointerDown}
+      onPointerUp={handlePointerUp}
+      onPointerCancel={handlePointerCancel}
+    >
       {/* 3. Sliding Background Images */}
       <div className="absolute inset-0">
         <AnimatePresence mode="wait">
