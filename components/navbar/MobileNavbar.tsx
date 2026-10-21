@@ -234,17 +234,17 @@ const MobileNavbar: React.FC<{
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2, ease: "easeInOut" }}
           >
-            <div className="relative">
+            <form
+              className="relative"
+              onSubmit={(event) => {
+                event.preventDefault();
+                onSearchSubmit();
+              }}
+            >
               <input
                 type="text"
                 value={searchValue}
                 onChange={(event) => setSearchValue(event.target.value)}
-                onKeyDown={(event) => {
-                  if (event.key === "Enter") {
-                    event.preventDefault();
-                    onSearchSubmit();
-                  }
-                }}
                 placeholder="Search our collection"
                 className="h-11 w-full rounded-full border border-primary/20 bg-white/10 px-4 text-sm text-primary placeholder:text-primary/60 focus:outline-none focus:ring-2 focus:ring-primary/20"
               />
@@ -311,7 +311,7 @@ const MobileNavbar: React.FC<{
                   )}
                 </div>
               )}
-            </div>
+            </form>
           </motion.div>
         )}
       </AnimatePresence>
@@ -359,17 +359,17 @@ const MobileNavbar: React.FC<{
               </div>
 
               <div className="border-b border-primary/10 px-4 py-4">
-                <div className="relative">
+                <form
+                  className="relative"
+                  onSubmit={(event) => {
+                    event.preventDefault();
+                    onSearchSubmit();
+                  }}
+                >
                   <input
                     type="text"
                     value={searchValue}
                     onChange={(event) => setSearchValue(event.target.value)}
-                    onKeyDown={(event) => {
-                      if (event.key === "Enter") {
-                        event.preventDefault();
-                        onSearchSubmit();
-                      }
-                    }}
                     placeholder="Search our collection"
                     className="h-11 w-full rounded-full border border-primary/20 bg-white/10 px-4 text-sm text-primary placeholder:text-primary/60 focus:outline-none focus:ring-2 focus:ring-primary/20"
                   />
@@ -436,7 +436,7 @@ const MobileNavbar: React.FC<{
                       )}
                     </div>
                   )}
-                </div>
+                </form>
               </div>
 
               <nav className="flex flex-1 flex-col py-3">

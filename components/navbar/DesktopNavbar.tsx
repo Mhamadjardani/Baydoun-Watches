@@ -157,18 +157,18 @@ const DesktopNavbar: React.FC<{
             >
               {menuIcons[0].icon}
             </button>
-            <div className="relative flex flex-1">
+            <form
+              className="relative flex flex-1"
+              onSubmit={(event) => {
+                event.preventDefault();
+                onSearchSubmit();
+              }}
+            >
               <input
                 id="desktop-search-input"
                 type="text"
                 value={searchValue}
                 onChange={(event) => setSearchValue(event.target.value)}
-                onKeyDown={(event) => {
-                  if (event.key === "Enter") {
-                    event.preventDefault();
-                    onSearchSubmit();
-                  }
-                }}
                 placeholder="Search our collection"
                 className={`ml-3 min-w-0 flex-1 bg-transparent text-sm text-primary placeholder:text-primary/60 focus:outline-none transition-all duration-500 ease-in-out ${
                   isSearch ? "opacity-100" : "opacity-0"
@@ -239,7 +239,7 @@ const DesktopNavbar: React.FC<{
                   )}
                 </div>
               )}
-            </div>
+            </form>
           </div>
 
           <div className="flex items-center gap-2">
