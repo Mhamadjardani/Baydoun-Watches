@@ -1,5 +1,6 @@
 "use client";
 
+import PageHeader from "@/components/showroom/PageHeader";
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -21,216 +22,213 @@ const fadeUp: Variants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.7,
-      ease: "easeOut" as const,
+      duration: 0.8,
+      ease: [0.2, 0.9, 0.1, 1],
     },
   },
 };
 
+const label = "font-jost text-[11px] tracking-[0.3em] text-gold-deep";
+const field =
+  "mt-2 w-full rounded-xl border border-ink/15 bg-paper px-4 py-3 font-jost text-sm text-ink outline-none transition-colors placeholder:text-ink/35 focus:border-gold";
+const card =
+  "rounded-[1.5rem] border border-gold/25 bg-paper p-6 transition-colors duration-500 hover:border-gold sm:p-8";
+
 const Contact: React.FC = () => {
   return (
-    <main className="min-h-screen bg-light-neutral px-6 py-24 text-white sm:px-10 lg:px-24">
-      <section className="mx-auto max-w-screen-2xl">
-        {/* HEADER */}
-        <motion.header
-          initial="hidden"
-          animate="show"
-          variants={container}
-          className="mx-auto max-w-3xl text-center"
-        >
-          <motion.h1
-            variants={fadeUp}
-            className="text-4xl font-black uppercase text-primary font-playfair md:text-5xl"
-          >
-            Get in touch
-          </motion.h1>
+    <main className="min-h-screen overflow-x-clip bg-paper px-6 pb-24 pt-32 text-ink sm:px-10 xl:px-16">
+      <div className="mx-auto max-w-[1500px]">
+        <PageHeader
+          eyebrow="Visit or message us"
+          title={["We'd love", "to help"]}
+          caption="Send us a note, message us on WhatsApp, or pass by the shop in El Malla. We're happy to help you choose, check a size or set a watch aside."
+        />
 
-          <motion.p
-            variants={fadeUp}
-            className="mt-4 text-sm text-secondary/90"
-          >
-            Send us a message or visit our boutique — we’re here to assist you
-            with every detail of your experience.
-          </motion.p>
-        </motion.header>
-
-        {/* GRID */}
-        <div className="mt-12 grid gap-8 md:grid-cols-3 md:items-start">
+        <div className="mt-14 grid gap-6 lg:grid-cols-5 lg:items-start lg:gap-8">
           {/* FORM */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="md:col-span-1"
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.2, ease: [0.2, 0.9, 0.1, 1] }}
+            className="rounded-[1.5rem] border border-gold/25 bg-[#f7f6f2] p-6 sm:p-10 lg:col-span-2"
           >
-            <motion.div
-              whileHover={{ y: -6 }}
-              className="rounded-[1.25rem] border border-white/10 bg-white/4 p-6 shadow-[0_20px_80px_rgba(0,0,0,0.45)] backdrop-blur-md"
+            <h2 className="font-serif text-4xl font-light">Send a message</h2>
+            <span className="mt-5 block h-px w-14 bg-gold" aria-hidden="true" />
+
+            <motion.form
+              variants={container}
+              initial="hidden"
+              animate="show"
+              className="mt-8 flex flex-col gap-5"
+              onSubmit={(e) => {
+                e.preventDefault();
+
+                const formData = new FormData(e.currentTarget);
+
+                const fullName = formData.get("fullName");
+                const email = formData.get("email");
+                const subject = formData.get("subject");
+                const message = formData.get("message");
+
+                const mailto = `mailto:baydoun.est08@gmail.com?subject=${encodeURIComponent(
+                  subject as string,
+                )}&body=${encodeURIComponent(
+                  `Name: ${fullName}\nEmail: ${email}\n\nMessage:\n${message}`,
+                )}`;
+
+                window.location.href = mailto;
+              }}
             >
-              <p className="text-lg font-semibold uppercase text-primary">
-                Send a message
-              </p>
-
-              <motion.form
-                variants={container}
-                initial="hidden"
-                animate="show"
-                className="mt-6 flex flex-col gap-4"
-                onSubmit={(e) => {
-                  e.preventDefault();
-
-                  const formData = new FormData(e.currentTarget);
-
-                  const fullName = formData.get("fullName");
-                  const email = formData.get("email");
-                  const subject = formData.get("subject");
-                  const message = formData.get("message");
-
-                  const mailto = `mailto:baydoun.est08@gmail.com?subject=${encodeURIComponent(
-                    subject as string,
-                  )}&body=${encodeURIComponent(
-                    `Name: ${fullName}\nEmail: ${email}\n\nMessage:\n${message}`,
-                  )}`;
-
-                  window.location.href = mailto;
-                }}
-              >
-                {[
-                  { label: "Full name", name: "fullName", type: "text" },
-                  { label: "Email", name: "email", type: "email" },
-                  { label: "Subject", name: "subject", type: "text" },
-                ].map((field) => (
-                  <motion.div key={field.name} variants={fadeUp}>
-                    <label className="text-xs uppercase text-secondary/80">
-                      {field.label}
-                    </label>
-                    <input
-                      required
-                      type={field.type}
-                      name={field.name}
-                      placeholder={field.label}
-                      className="mt-2 w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:border-primary/50 focus:outline-none focus:ring-1 focus:ring-primary/30"
-                    />
-                  </motion.div>
-                ))}
-
-                <motion.div variants={fadeUp}>
-                  <label className="text-xs uppercase text-secondary/80">
-                    Message
+              {[
+                { label: "Full name", name: "fullName", type: "text" },
+                { label: "Email", name: "email", type: "email" },
+                { label: "Subject", name: "subject", type: "text" },
+              ].map((f) => (
+                <motion.div key={f.name} variants={fadeUp}>
+                  <label htmlFor={`contact-${f.name}`} className={label}>
+                    {f.label.toUpperCase()}
                   </label>
-                  <textarea
+                  <input
+                    id={`contact-${f.name}`}
                     required
-                    name="message"
-                    rows={6}
-                    placeholder="Write your message..."
-                    className="mt-2 w-full resize-none rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:border-primary/50 focus:outline-none focus:ring-1 focus:ring-primary/30"
+                    type={f.type}
+                    name={f.name}
+                    placeholder={f.label}
+                    className={field}
                   />
                 </motion.div>
+              ))}
 
-                <motion.button
-                  variants={fadeUp}
-                  whileTap={{ scale: 0.98 }}
-                  whileHover={{ scale: 1.02 }}
+              <motion.div variants={fadeUp}>
+                <label htmlFor="contact-message" className={label}>
+                  MESSAGE
+                </label>
+                <textarea
+                  id="contact-message"
+                  required
+                  name="message"
+                  rows={6}
+                  placeholder="Write your message..."
+                  className={`${field} resize-none`}
+                />
+              </motion.div>
+
+              <motion.div variants={fadeUp}>
+                <button
                   type="submit"
-                  className="cursor-pointer mt-2 inline-flex w-full items-center justify-center gap-3 rounded-full bg-primary px-6 py-3 text-sm font-bold uppercase text-neutral transition hover:bg-secondary"
+                  className="group relative mt-2 inline-flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full bg-ink px-8 py-4 font-jost text-sm tracking-[0.14em] text-paper"
                 >
-                  Send message
-                </motion.button>
-              </motion.form>
-            </motion.div>
+                  <span className="absolute inset-0 origin-left scale-x-0 bg-gold transition-transform duration-500 ease-[cubic-bezier(0.65,0,0.35,1)] group-hover:scale-x-100" />
+                  <span className="relative transition-colors group-hover:text-ink">Send message</span>
+                </button>
+              </motion.div>
+            </motion.form>
           </motion.div>
 
-          {/* RIGHT SIDE */}
+          {/* DETAILS */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-            className="md:col-span-2 flex flex-col gap-8"
+            variants={container}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="grid gap-6 sm:grid-cols-2 lg:col-span-3"
           >
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-              {/* INFO CARD */}
-              <motion.div
-                whileHover={{ y: -6 }}
-                className="rounded-2xl border border-white/6 bg-white/3 p-6"
+            {/* MAP */}
+            <motion.div variants={fadeUp} className="sm:col-span-2">
+              <Link
+                href="https://www.google.com/maps/search/?api=1&query=Baydoun+Est."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group grid overflow-hidden rounded-[1.5rem] border border-gold/25 bg-paper transition-colors duration-500 hover:border-gold sm:grid-cols-2"
               >
-                <p className="text-sm font-semibold uppercase text-secondary/80">
-                  Our location
-                </p>
-                <p className="mt-3 text-sm text-white/80">
-                  Beirut, El Malla
-                  <br />
-                  Algeria Street, Facing Croissant Saab
-                </p>
-
-                <p className="mt-4 text-sm font-semibold uppercase text-secondary/80">
-                  Phone
-                </p>
-                <Link
-                  href={`https://wa.me/96171346754`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Contact on WhatsApp"
-                  className="mt-2 text-sm text-white/80 hover:underline hover:text-primary"
-                >
-                  +961 71 346 754
-                </Link>
-
-                <p className="mt-4 text-sm font-semibold uppercase text-secondary/80">
-                  Opening hours
-                </p>
-                <div className="mt-2 text-sm text-white/80 space-y-1">
-                  <p>Monday–Saturday: 09:00 – 19:00</p>
-                  <p>Sunday: Closed</p>
+                <div className="relative aspect-16/10 w-full overflow-hidden bg-[#f6f5f1] sm:aspect-auto sm:min-h-64">
+                  <Image
+                    src="/contact.png"
+                    alt="Location on map"
+                    loading="eager"
+                    fill
+                    sizes="(max-width: 640px) 100vw, 30vw"
+                    className="object-cover transition-transform duration-[1.4s] ease-[cubic-bezier(0.2,0.9,0.1,1)] group-hover:scale-105"
+                  />
                 </div>
-              </motion.div>
-
-              {/* IMAGE */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                className="order-first sm:order-last"
-              >
-                <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  className="rounded-2xl overflow-hidden border border-white/6 bg-white/4"
-                >
-                  <Link
-                    href="https://www.google.com/maps/search/?api=1&query=Baydoun+Est."
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <div className="relative aspect-16/10 w-full cursor-pointer overflow-hidden rounded-2xl">
-                      <Image
-                        src="/contact.png"
-                        alt="Location on map"
-                        fill
-                        className="object-cover transition hover:scale-105"
-                      />
-                      <div className="absolute bottom-3 left-3 rounded-full bg-black/60 px-3 py-1 text-xs text-white">
-                        Open in Google Maps
-                      </div>
-                    </div>
-                  </Link>
-                </motion.div>
-              </motion.div>
-            </div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="text-sm text-white/70"
-            >
-              <p>
-                Prefer to speak with a specialist? Call us or visit the boutique
-                during opening hours — we’re happy to arrange private viewings
-                and consultations.
-              </p>
+                <div className="flex flex-col justify-center p-6 sm:p-8">
+                  <p className={label}>OUR LOCATION</p>
+                  <p className="mt-4 font-serif text-3xl font-light leading-tight">
+                    Beirut, El Malla
+                  </p>
+                  <p className="mt-2 font-jost text-sm leading-relaxed text-ink/60">
+                    Algeria Street, Facing Croissant Saab
+                  </p>
+                  <span className="mt-6 inline-flex items-center gap-3 font-jost text-xs tracking-[0.14em] text-ink/70 transition-colors group-hover:text-ink">
+                    Open in Google Maps
+                    <span className="h-px w-8 bg-gold transition-all duration-500 group-hover:w-14" aria-hidden="true" />
+                  </span>
+                </div>
+              </Link>
             </motion.div>
+
+            {/* WHATSAPP / PHONE */}
+            <motion.div variants={fadeUp} className={card}>
+              <p className={label}>PHONE &amp; WHATSAPP</p>
+              <Link
+                href={`https://wa.me/96171346754`}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Contact on WhatsApp"
+                className="group mt-4 block"
+              >
+                <span className="block font-serif text-3xl font-light transition-colors group-hover:text-gold-deep">
+                  +961 71 346 754
+                </span>
+                <span className="mt-4 inline-flex items-center gap-3 font-jost text-xs tracking-[0.14em] text-ink/70">
+                  Message us on WhatsApp
+                  <span className="h-px w-8 bg-gold transition-all duration-500 group-hover:w-14" aria-hidden="true" />
+                </span>
+              </Link>
+            </motion.div>
+
+            {/* EMAIL */}
+            <motion.div variants={fadeUp} className={card}>
+              <p className={label}>EMAIL</p>
+              <a href="mailto:baydoun.est08@gmail.com" className="group mt-4 block">
+                <span className="block break-all font-serif text-2xl font-light transition-colors group-hover:text-gold-deep sm:text-[1.7rem]">
+                  baydoun.est08@gmail.com
+                </span>
+                <span className="mt-4 inline-flex items-center gap-3 font-jost text-xs tracking-[0.14em] text-ink/70">
+                  Write to us
+                  <span className="h-px w-8 bg-gold transition-all duration-500 group-hover:w-14" aria-hidden="true" />
+                </span>
+              </a>
+            </motion.div>
+
+            {/* HOURS */}
+            <motion.div
+              variants={fadeUp}
+              className="rounded-[1.5rem] bg-ink p-6 text-paper sm:col-span-2 sm:p-8"
+            >
+              <p className="font-jost text-[11px] tracking-[0.3em] text-gold">OPENING HOURS</p>
+              <div className="mt-5 grid gap-4 font-jost sm:grid-cols-2">
+                <div className="border-t border-gold/25 pt-4">
+                  <p className="font-serif text-3xl font-light">Monday–Saturday</p>
+                  <p className="mt-1 text-sm text-paper/60">09:00 – 19:00</p>
+                </div>
+                <div className="border-t border-gold/25 pt-4">
+                  <p className="font-serif text-3xl font-light">Sunday</p>
+                  <p className="mt-1 text-sm text-paper/60">Closed</p>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.p
+              variants={fadeUp}
+              className="font-jost text-sm leading-relaxed text-ink/60 sm:col-span-2"
+            >
+              Prefer to speak with someone? Call us or visit the shop during
+              opening hours. We&apos;re happy to show you any watch in person.
+            </motion.p>
           </motion.div>
         </div>
-      </section>
+      </div>
     </main>
   );
 };

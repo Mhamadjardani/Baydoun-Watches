@@ -167,14 +167,16 @@ const MobileNavbar: React.FC<{
   };
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-primary/10 backdrop-blur transition-all duration-500 ease-in-out">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-gold/25 bg-paper/90 backdrop-blur-md transition-all duration-500 ease-in-out">
       <div className="mx-auto flex max-w-screen-2xl items-center justify-between gap-3 px-4 py-3">
         <button
           type="button"
           onClick={handleLogoClick}
-          className="min-w-0 text-left text-lg uppercase tracking-wide text-primary font-playfair"
+          aria-label="Baydoun Watches, home"
+          className="flex min-w-0 flex-col items-start leading-none"
         >
-          baydoun watches
+          <span className="font-serif text-xl font-medium tracking-[0.28em] text-gold-deep">BAYDOUN</span>
+          <span className="mt-1 font-jost text-[9px] tracking-[0.5em] text-ink/50">WATCHES</span>
         </button>
 
         <div className="flex shrink-0 items-center gap-2">
@@ -192,20 +194,20 @@ const MobileNavbar: React.FC<{
                     ? setIsSearch((prev) => !prev)
                     : handleIconClick(icon)
                 }
-                className={`relative flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border text-primary transition duration-300 ease-in-out focus:outline-none ${
+                className={`relative flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border text-ink transition duration-300 ease-in-out focus:outline-none ${
                   index === 0 && isSearch
-                    ? "border-primary/30 bg-primary/10"
-                    : "border-white/10 bg-white/5 hover:bg-white/15"
+                    ? "border-gold/30 bg-gold/10"
+                    : "border-gold/20 bg-paper hover:bg-gold/10"
                 }`}
               >
                 {icon.icon}
                 {isCart && cartProducts.length > 0 && (
-                  <div className="absolute -top-1 -right-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-primary px-1 text-[10px] font-bold text-background animate-in fade-in zoom-in duration-200">
+                  <div className="absolute -top-1 -right-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-gold px-1 text-[10px] font-bold text-ink animate-in fade-in zoom-in duration-200">
                     {cartProducts.length}
                   </div>
                 )}
                 {isWish && wishlistProducts.length > 0 && (
-                  <div className="absolute -top-1 -right-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-primary px-1 text-[10px] font-bold text-background animate-in fade-in zoom-in duration-200">
+                  <div className="absolute -top-1 -right-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-gold px-1 text-[10px] font-bold text-ink animate-in fade-in zoom-in duration-200">
                     {wishlistProducts.length}
                   </div>
                 )}
@@ -218,7 +220,7 @@ const MobileNavbar: React.FC<{
             aria-label={openMenu ? "Close menu" : "Open menu"}
             aria-expanded={openMenu}
             onClick={() => setOpenMenu(!openMenu)}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-primary transition duration-300 ease-in-out hover:bg-white/15 focus:outline-none"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-gold/20 bg-paper text-ink transition duration-300 ease-in-out hover:bg-gold/10 focus:outline-none"
           >
             {openMenu ? <X size={22} /> : <Menu size={22} />}
           </button>
@@ -246,10 +248,10 @@ const MobileNavbar: React.FC<{
                 value={searchValue}
                 onChange={(event) => setSearchValue(event.target.value)}
                 placeholder="Search our collection"
-                className="h-11 w-full rounded-full border border-primary/20 bg-white/10 px-4 text-sm text-primary placeholder:text-primary/60 focus:outline-none focus:ring-2 focus:ring-primary/20"
+                className="h-11 w-full rounded-full border border-gold/20 bg-paper px-4 text-sm text-ink placeholder:text-ink/40 focus:outline-none focus:ring-2 focus:ring-gold/30"
               />
               {searchValue.trim() && (
-                <div className="absolute inset-x-0 top-full z-50 mt-2 overflow-hidden rounded-3xl border border-white/10 bg-neutral/95 shadow-[0_20px_80px_rgba(0,0,0,0.45)] backdrop-blur-xl">
+                <div className="absolute inset-x-0 top-full z-50 mt-2 overflow-hidden rounded-3xl border border-gold/20 bg-paper/95 shadow-[0_20px_80px_rgba(0,0,0,0.45)] backdrop-blur-xl">
                   {searchResults.length > 0 ? (
                     <>
                       {searchResults.map((product) => (
@@ -257,7 +259,7 @@ const MobileNavbar: React.FC<{
                           key={`${product.slug}-${product.title}`}
                           type="button"
                           onClick={() => onSearchSelect(product)}
-                          className="w-full px-4 py-3 text-left text-sm text-white transition hover:bg-white/5"
+                          className="w-full px-4 py-3 text-left text-sm text-ink transition hover:bg-gold/10"
                         >
                           <div className="flex items-center gap-3">
                             <div className="shrink-0">
@@ -274,10 +276,10 @@ const MobileNavbar: React.FC<{
                             </div>
 
                             <div className="min-w-0">
-                              <span className="block font-semibold text-white truncate">
+                              <span className="block font-semibold text-ink truncate">
                                 {product.title}
                               </span>
-                              <span className="block text-xs uppercase tracking-wide text-secondary/80">
+                              <span className="block text-xs uppercase tracking-wide text-ink/55">
                                 {product.brand}
                                 {product.isOutOfStock && (
                                   <span className="text-red-400"> · Out of stock</span>
@@ -290,20 +292,20 @@ const MobileNavbar: React.FC<{
                       <button
                         type="button"
                         onClick={onSearchSubmit}
-                        className="w-full border-t border-white/10 px-4 py-3 text-left text-xs font-bold uppercase tracking-wide text-primary transition hover:bg-primary/10"
+                        className="w-full border-t border-gold/20 px-4 py-3 text-left text-xs font-bold uppercase tracking-wide text-ink transition hover:bg-gold/10"
                       >
                         See all results for &quot;{searchValue.trim()}&quot;
                       </button>
                     </>
                   ) : (
                     <>
-                      <div className="px-4 py-3 text-sm text-secondary">
+                      <div className="px-4 py-3 text-sm text-ink/60">
                         No watches found. Try another term.
                       </div>
                       <button
                         type="button"
                         onClick={onSearchSubmit}
-                        className="w-full border-t border-white/10 px-4 py-3 text-left text-xs font-bold uppercase tracking-wide text-primary transition hover:bg-primary/10"
+                        className="w-full border-t border-gold/20 px-4 py-3 text-left text-xs font-bold uppercase tracking-wide text-ink transition hover:bg-gold/10"
                       >
                         Search all for &quot;{searchValue.trim()}&quot;
                       </button>
@@ -331,19 +333,21 @@ const MobileNavbar: React.FC<{
             />
             <motion.aside
               aria-label="Mobile navigation"
-              className="fixed right-0 top-0 z-50 flex h-dvh w-full max-w-90 flex-col bg-neutral shadow-2xl"
+              className="fixed right-0 top-0 z-50 flex h-dvh w-full max-w-90 flex-col bg-paper shadow-2xl"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ duration: 0.28, ease: "easeInOut" }}
             >
-              <div className="flex h-20 items-center justify-between border-b border-primary/10 px-4 py-3">
+              <div className="flex h-20 items-center justify-between border-b border-gold/10 px-4 py-3">
                 <button
                   type="button"
                   onClick={handleLogoClick}
-                  className="text-left text-xl uppercase tracking-wide text-primary font-playfair"
+                  aria-label="Baydoun Watches, home"
+                  className="flex flex-col items-start leading-none"
                 >
-                  baydoun watches
+                  <span className="font-serif text-xl font-medium tracking-[0.28em] text-gold-deep">BAYDOUN</span>
+          <span className="mt-1 font-jost text-[9px] tracking-[0.5em] text-ink/50">WATCHES</span>
                 </button>
 
                 <div className="flex items-center gap-2">
@@ -351,14 +355,14 @@ const MobileNavbar: React.FC<{
                     type="button"
                     aria-label="Close menu"
                     onClick={() => setOpenMenu(false)}
-                    className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-primary"
+                    className="flex h-10 w-10 items-center justify-center rounded-full border border-gold/20 bg-paper text-ink"
                   >
                     <X size={24} />
                   </button>
                 </div>
               </div>
 
-              <div className="border-b border-primary/10 px-4 py-4">
+              <div className="border-b border-gold/10 px-4 py-4">
                 <form
                   className="relative"
                   onSubmit={(event) => {
@@ -371,10 +375,10 @@ const MobileNavbar: React.FC<{
                     value={searchValue}
                     onChange={(event) => setSearchValue(event.target.value)}
                     placeholder="Search our collection"
-                    className="h-11 w-full rounded-full border border-primary/20 bg-white/10 px-4 text-sm text-primary placeholder:text-primary/60 focus:outline-none focus:ring-2 focus:ring-primary/20"
+                    className="h-11 w-full rounded-full border border-gold/20 bg-paper px-4 text-sm text-ink placeholder:text-ink/40 focus:outline-none focus:ring-2 focus:ring-gold/30"
                   />
                   {searchValue.trim() && (
-                    <div className="absolute inset-x-0 top-full z-50 mt-2 overflow-hidden rounded-3xl border border-white/10 bg-neutral/95 shadow-[0_20px_80px_rgba(0,0,0,0.45)] backdrop-blur-xl">
+                    <div className="absolute inset-x-0 top-full z-50 mt-2 overflow-hidden rounded-3xl border border-gold/20 bg-paper/95 shadow-[0_20px_80px_rgba(0,0,0,0.45)] backdrop-blur-xl">
                       {searchResults.length > 0 ? (
                         <>
                               {searchResults.map((product) => (
@@ -382,7 +386,7 @@ const MobileNavbar: React.FC<{
                                   key={`${product.slug}-${product.title}`}
                                   type="button"
                                   onClick={() => onSearchSelect(product)}
-                                  className="w-full px-4 py-3 text-left text-sm text-white transition hover:bg-white/5"
+                                  className="w-full px-4 py-3 text-left text-sm text-ink transition hover:bg-gold/10"
                                 >
                                   <div className="flex items-center gap-3">
                                       <div className="shrink-0">
@@ -399,10 +403,10 @@ const MobileNavbar: React.FC<{
                                     </div>
 
                                     <div className="min-w-0">
-                                      <span className="block font-semibold text-white truncate">
+                                      <span className="block font-semibold text-ink truncate">
                                         {product.title}
                                       </span>
-                                      <span className="block text-xs uppercase tracking-wide text-secondary/80">
+                                      <span className="block text-xs uppercase tracking-wide text-ink/55">
                                         {product.brand}
                                         {product.isOutOfStock && (
                                           <span className="text-red-400"> · Out of stock</span>
@@ -415,20 +419,20 @@ const MobileNavbar: React.FC<{
                           <button
                             type="button"
                             onClick={onSearchSubmit}
-                            className="w-full border-t border-white/10 px-4 py-3 text-left text-xs font-bold uppercase tracking-wide text-primary transition hover:bg-primary/10"
+                            className="w-full border-t border-gold/20 px-4 py-3 text-left text-xs font-bold uppercase tracking-wide text-ink transition hover:bg-gold/10"
                           >
                             See all results for &quot;{searchValue.trim()}&quot;
                           </button>
                         </>
                       ) : (
                         <>
-                          <div className="px-4 py-3 text-sm text-secondary">
+                          <div className="px-4 py-3 text-sm text-ink/60">
                             No watches found. Try another term.
                           </div>
                           <button
                             type="button"
                             onClick={onSearchSubmit}
-                            className="w-full border-t border-white/10 px-4 py-3 text-left text-xs font-bold uppercase tracking-wide text-primary transition hover:bg-primary/10"
+                            className="w-full border-t border-gold/20 px-4 py-3 text-left text-xs font-bold uppercase tracking-wide text-ink transition hover:bg-gold/10"
                           >
                             Search all for &quot;{searchValue.trim()}&quot;
                           </button>
@@ -456,7 +460,7 @@ const MobileNavbar: React.FC<{
                         >
                           <button
                             type="button"
-                            className="text-left text-sm font-semibold uppercase tracking-wide text-primary"
+                            className="text-left font-jost text-sm uppercase tracking-[0.18em] text-ink"
                             onClick={() => {
                               setOpenMenu(false);
                               router.push("/collections");
@@ -473,7 +477,7 @@ const MobileNavbar: React.FC<{
                           >
                             <ChevronDown
                               className={`transition-transform duration-200 ${
-                                openCollection ? "rotate-180 text-primary" : "text-white/40"
+                                openCollection ? "rotate-180 text-ink" : "text-ink/40"
                               }`}
                             />
                           </button>
@@ -509,7 +513,7 @@ const MobileNavbar: React.FC<{
                                         );
                                       }
                                     }}
-                                    className="w-full px-8 py-3 flex items-center justify-between text-left text-sm font-medium uppercase tracking-wide text-white/90 hover:bg-white/5 cursor-pointer"
+                                    className="w-full px-8 py-3 flex items-center justify-between text-left font-jost text-sm uppercase tracking-[0.14em] text-ink/80 hover:bg-gold/10 cursor-pointer"
                                   >
                                     <span>{b.name}</span>
                                     {brandSubcategories[b.key] ? (
@@ -555,7 +559,7 @@ const MobileNavbar: React.FC<{
                                                 )}`,
                                               );
                                             }}
-                                            className="w-full px-8 py-2 text-left text-sm text-secondary hover:bg-white/5"
+                                            className="w-full px-8 py-2 text-left text-sm text-ink/60 hover:bg-gold/10"
                                           >
                                             {formatSubCategory(sub)}
                                           </button>
@@ -576,7 +580,7 @@ const MobileNavbar: React.FC<{
                     <motion.button
                       key={`${item.label}-${index}`}
                       type="button"
-                      className="w-full px-6 py-4 text-left text-sm font-semibold uppercase tracking-wide text-primary transition-colors duration-300 hover:bg-white/10"
+                      className="w-full px-6 py-4 text-left font-jost text-sm uppercase tracking-[0.18em] text-ink transition-colors duration-300 hover:bg-gold/10"
                       onClick={() => handleMenuItemClick(item)}
                       initial={{ opacity: 0, x: 24 }}
                       animate={{ opacity: 1, x: 0 }}
@@ -592,7 +596,7 @@ const MobileNavbar: React.FC<{
                 })}
               </nav>
 
-              <div className="flex items-center gap-2 border-t border-primary/10 px-4 py-4">
+              <div className="flex items-center gap-2 border-t border-gold/10 px-4 py-4">
                 {menuIcons.slice(1).map((icon, index) => {
                   const isCart = "href" in icon && icon.href === "/cart";
                   const isWish = "href" in icon && icon.href === "/wishlist";
@@ -603,17 +607,17 @@ const MobileNavbar: React.FC<{
                       type="button"
                       aria-label="Open shortcut"
                       onClick={() => handleIconClick(icon)}
-                      className="relative flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border border-white/10 bg-white/5 text-primary transition duration-300 ease-in-out hover:bg-white/15 focus:outline-none"
+                      className="relative flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border border-gold/20 bg-paper text-ink transition duration-300 ease-in-out hover:bg-gold/10 focus:outline-none"
                     >
                       {icon.icon}
 
                       {isCart && cartProducts.length > 0 && (
-                        <div className="absolute -top-1 -right-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-primary px-1 text-[10px] font-bold text-background animate-in fade-in zoom-in duration-200">
+                        <div className="absolute -top-1 -right-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-gold px-1 text-[10px] font-bold text-ink animate-in fade-in zoom-in duration-200">
                           {cartProducts.length}
                         </div>
                       )}
                       {isWish && wishlistProducts.length > 0 && (
-                        <div className="absolute -top-1 -right-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-primary px-1 text-[10px] font-bold text-background animate-in fade-in zoom-in duration-200">
+                        <div className="absolute -top-1 -right-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-gold px-1 text-[10px] font-bold text-ink animate-in fade-in zoom-in duration-200">
                           {wishlistProducts.length}
                         </div>
                       )}

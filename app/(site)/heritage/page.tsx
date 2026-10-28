@@ -5,7 +5,7 @@ import Hero4 from "@/components/heritage/hero4";
 
 const Page = () => {
   return (
-    <div className="bg-light-neutral space-y-10 overflow-hidden">
+    <div className="overflow-x-clip bg-paper">
       <Hero1 />
       <Hero2 />
       <Hero3 />

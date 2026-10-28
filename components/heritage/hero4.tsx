@@ -1,40 +1,48 @@
 "use client";
 
+import RevealHeading from "@/components/motion/RevealHeading";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
+/** Last page of the story: an invitation to browse or come by the shop. */
 const Hero4 = () => {
   return (
-    <section className="bg-light-neutral text-white py-16">
-      <div className="max-w-5xl mx-auto px-6 md:px-12 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
+    <section className="bg-paper px-6 py-24 text-ink sm:px-10 md:py-32 xl:px-16">
+      <div className="mx-auto max-w-4xl text-center">
+        <p className="font-jost text-[11px] tracking-[0.3em] text-gold-deep">THE NEXT CHAPTER</p>
+        <div className="mt-5">
+          <RevealHeading lines={["Come and find", "your watch"]} align="center" className="text-5xl sm:text-7xl" />
+        </div>
+
+        <motion.p
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.9, delay: 0.2, ease: [0.2, 0.9, 0.1, 1] }}
+          className="mx-auto mt-8 max-w-xl font-jost text-base leading-relaxed text-ink/65 sm:text-lg"
         >
-          <p className="uppercase text-primary text-xs mb-6">
-            Exclusive Collection
-          </p>
+          Browse the collection online, or visit us in El Malla and try a few
+          on. Either way, we&apos;ll help you find the one.
+        </motion.p>
 
-          <h2 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-            Begin Your Journey
-          </h2>
-
-          <div className="w-24 h-px bg-primary mx-auto my-10" />
-
-          <p className="max-w-2xl mx-auto text-white/70 text-base md:text-lg leading-relaxed">
-            Discover our current collection of horological masterpieces,
-            meticulously crafted to embody precision, heritage, and enduring
-            elegance. For those seeking something truly unique, our dedicated
-            concierges are available to discuss bespoke commissions.
-          </p>
-
-          <button className="cursor-pointer px-8 py-4 mt-10 bg-primary text-neutral uppercase tracking-wider text-sm font-medium hover:opacity-90 transition">
-            <Link href="/collections" className="flex items-center gap-2">
-              View Collection
-            </Link>
-          </button>
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.9, delay: 0.35, ease: [0.2, 0.9, 0.1, 1] }}
+          className="mt-12 flex flex-col items-center justify-center gap-8 sm:flex-row sm:gap-10"
+        >
+          <Link
+            href="/collections"
+            className="group relative overflow-hidden rounded-full bg-ink px-8 py-4 font-jost text-sm tracking-[0.14em] text-paper"
+          >
+            <span className="absolute inset-0 origin-left scale-x-0 bg-gold transition-transform duration-500 ease-[cubic-bezier(0.65,0,0.35,1)] group-hover:scale-x-100" />
+            <span className="relative transition-colors group-hover:text-ink">View the collection</span>
+          </Link>
+          <Link href="/contact" className="group inline-flex items-center gap-3 font-jost text-sm tracking-[0.14em] text-ink">
+            Visit the shop
+            <span className="h-px w-8 bg-gold transition-all duration-500 group-hover:w-14" aria-hidden="true" />
+          </Link>
         </motion.div>
       </div>
     </section>

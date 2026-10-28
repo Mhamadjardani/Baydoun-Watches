@@ -15,6 +15,75 @@
   --color-neutral: #0a0a0a;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* White + gold system, taken from the logo (gold on white). */
+  --color-gold: #d4ab62;
+  --color-gold-deep: #94702f; /* gold dark enough for small text on white */
+  --color-ink: #1c1a17;
+  --color-paper: #ffffff;
+  --font-serif: var(--font-cormorant), Georgia, serif;
+  --font-jost: var(--font-jost), ui-sans-serif, sans-serif;
+}
+
+/* Gold light passing across text, like light on a polished case */
+@keyframes gold-sheen {
+  from {
+    background-position: 150% 0;
+  }
+  to {
+    background-position: -50% 0;
+  }
+}
+
+.gold-sheen {
+  background-image: linear-gradient(
+    100deg,
+    #94702f 0%,
+    #d4ab62 35%,
+    #f6e3b4 50%,
+    #d4ab62 65%,
+    #94702f 100%
+  );
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gold-sheen 6s ease-in-out infinite;
+}
+
+/* A band of light crossing the logo (the element is masked to the logo shape) */
+.gold-sweep {
+  background-image: linear-gradient(
+    105deg,
+    transparent 35%,
+    rgba(255, 246, 220, 0.95) 50%,
+    transparent 65%
+  );
+  background-size: 300% 100%;
+  background-repeat: no-repeat;
+  animation: gold-sheen 5s ease-in-out 2s infinite both;
+}
+
+@keyframes scroll-cue {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(200%);
+  }
+}
+
+.scroll-cue {
+  animation: scroll-cue 1.8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gold-sheen,
+  .gold-sweep,
+  .scroll-cue {
+    animation: none;
+    background-position: 50% 0;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
