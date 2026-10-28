@@ -8,9 +8,9 @@ export default async function SearchPage() {
   return (
     <Suspense
       fallback={
-        <main className="min-h-screen bg-light-neutral px-4 py-24 text-white sm:px-8 lg:px-16">
-          <section className="mx-auto max-w-screen-2xl border border-white/10 bg-white/3 px-6 py-16 text-center">
-            <p className="text-sm uppercase tracking-widest text-secondary">
+        <main className="min-h-screen bg-paper px-6 pb-24 pt-32 text-ink sm:px-10 xl:px-16">
+          <section className="mx-auto max-w-screen-2xl px-6 py-16 text-center">
+            <p className="font-jost text-sm tracking-[0.3em] text-gold-deep">
               Loading collection
             </p>
           </section>

@@ -1,8 +1,18 @@
 "use client";
 
+import RevealHeading from "@/components/motion/RevealHeading";
+import PageHeader from "@/components/showroom/PageHeader";
+import { BRAND_LABELS } from "@/lib/showcase";
 import { ProductCard } from "@/lib/type";
+import { useGSAP } from "@gsap/react";
+import { motion } from "framer-motion";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import Link from "next/link";
+import { useRef } from "react";
+
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 type DirectoryKey =
   // "category" |
@@ -25,9 +35,18 @@ const buildGroups = (key: DirectoryKey, products: ProductCard[]) =>
     };
   });
 
+const WRISTS = [
+  { title: "For him", image: "/him.webp", href: "/collections?gender=Men" },
+  { title: "For her", image: "/her.webp", href: "/collections?gender=Women" },
+  { title: "For the little ones", image: "/kids.webp", href: "/collections?gender=Kids" },
+];
+
+const brandName = (value: string) =>
+  BRAND_LABELS[value as ProductCard["brand"]] ?? value;
+
 const DirectoryCard = ({
   group,
-  label,
+  index,
 }: {
   group: {
     value: string;
@@ -36,53 +55,46 @@ const DirectoryCard = ({
     href: string;
     image: string;
   };
-  label: string;
+  index: number;
 }) => (
-  <Link
-    href={group.href}
-    className="group relative block aspect-[4/3] overflow-hidden rounded-3xl border border-white/10 bg-linear-to-br from-neutral-950 via-neutral-900 to-black transition-all duration-500 hover:-translate-y-1 hover:border-primary/30 hover:shadow-2xl"
+  <motion.li
+    initial={{ opacity: 0, y: 24 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, margin: "-8% 0px" }}
+    transition={{ duration: 0.8, delay: (index % 4) * 0.08, ease: [0.2, 0.9, 0.1, 1] }}
   >
-    {/* Count badge */}
-    <div className="absolute right-3 top-3 z-20 rounded-full bg-black/60 px-3 py-1 text-[11px] font-medium text-white backdrop-blur">
-      {group.count} {group.count === 1 ? "Item" : "Items"}
-    </div>
-
-    {/* CENTER LOGO WRAPPER (FIXED FOR MOBILE) */}
-    <div className="absolute inset-0 flex items-center justify-center p-3 sm:p-5 md:p-6">
-      <div
-        className="
-        w-full max-w-[85%]
-        h-30 sm:h-35 md:h-40
-        rounded-2xl bg-white
-        flex items-center justify-center
-        shadow-[0_20px_60px_rgba(0,0,0,0.5)]
-        transition-all duration-500
-        group-hover:scale-[1.03]
-      "
-      >
+    <Link
+      href={group.href}
+      className="group flex h-full flex-col rounded-[1.5rem] border border-gold/25 bg-paper p-4 transition-colors duration-500 hover:border-gold sm:p-6"
+    >
+      <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-2xl bg-[#f6f5f1]">
         {group.image && (
-          <div className="relative w-[85%] h-[70%]">
+          <div className="relative h-[55%] w-[75%] transition-transform duration-700 ease-[cubic-bezier(0.2,0.9,0.1,1)] group-hover:scale-105">
             <Image
               src={group.image}
-              alt={group.value}
+              alt={brandName(group.value)}
               fill
-              sizes="(max-width:640px) 180px, 260px"
-              className="object-contain"
+              sizes="(max-width:640px) 160px, 260px"
+              className="object-contain opacity-60 mix-blend-multiply grayscale transition duration-500 group-hover:opacity-100 group-hover:grayscale-0"
               priority
             />
           </div>
         )}
       </div>
-    </div>
-
-    {/* Bottom fade for depth */}
-    <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent" />
-
-    {/* Bottom label hint (optional but helps UX) */}
-    <div className="absolute bottom-3 left-4 z-20 text-xs tracking-wide text-white/60">
-      Tap to explore
-    </div>
-  </Link>
+      <div className="mt-5 flex flex-wrap items-end justify-between gap-x-3 gap-y-1">
+        <h3 className="font-serif text-2xl font-light leading-tight sm:text-3xl">
+          {brandName(group.value)}
+        </h3>
+        <span className="font-jost text-[11px] tracking-[0.2em] text-gold-deep">
+          {group.count} {group.count === 1 ? "PIECE" : "PIECES"}
+        </span>
+      </div>
+      <span className="mt-4 inline-flex items-center gap-3 font-jost text-xs tracking-[0.14em] text-ink/60 transition-colors group-hover:text-ink">
+        Explore
+        <span className="h-px w-8 bg-gold transition-all duration-500 group-hover:w-14" aria-hidden="true" />
+      </span>
+    </Link>
+  </motion.li>
 );
 
 /* ---------------- PAGE ---------------- */
@@ -90,64 +102,110 @@ const DirectoryCard = ({
 const CategoriesPage = ({ products }: { products: ProductCard[] }) => {
   // const categoryGroups = buildGroups("category", products);
   const brandGroups = buildGroups("brand", products);
+  const ref = useRef<HTMLElement>(null);
+
+  useGSAP(
+    () => {
+      const mm = gsap.matchMedia();
+      mm.add("(prefers-reduced-motion: no-preference)", () => {
+        gsap.utils.toArray<HTMLElement>("[data-arch]").forEach((arch, i) => {
+          gsap.fromTo(
+            arch,
+            { clipPath: "inset(100% 0% 0% 0% round 999px 999px 0 0)" },
+            {
+              clipPath: "inset(0% 0% 0% 0% round 999px 999px 0 0)",
+              duration: 1.4,
+              delay: i * 0.12,
+              ease: "power3.inOut",
+              scrollTrigger: { trigger: arch, start: "top 88%" },
+            },
+          );
+          gsap.fromTo(
+            arch.querySelector("[data-drift]"),
+            { yPercent: -8 },
+            { yPercent: 8, ease: "none", scrollTrigger: { trigger: arch, start: "top bottom", end: "bottom top", scrub: true } },
+          );
+        });
+      });
+      return () => mm.revert();
+    },
+    { scope: ref },
+  );
 
   return (
-    <main className="min-h-screen bg-light-neutral px-4 py-24 text-white sm:px-8 lg:px-16">
-      <section className="mx-auto flex max-w-screen-2xl flex-col gap-12">
-        {/* HEADER */}
-        <div className="flex flex-col gap-4 border-b border-white/10 pb-8">
-          <p className="text-xs uppercase text-primary">
-            Browse by selection
-          </p>
+    <main ref={ref} className="min-h-screen overflow-x-clip bg-paper px-6 pb-24 pt-32 text-ink sm:px-10 xl:px-16">
+      <div className="mx-auto max-w-[1500px]">
+        <PageHeader
+          eyebrow="Browse"
+          title={["Find your way in"]}
+          caption="Start with a house you already love, or with the wrist you are choosing for. Every path leads straight to the pieces in store."
+          aside={
+            <Link href="/collections" className="group inline-flex items-center gap-3 font-jost text-sm tracking-[0.14em] text-ink">
+              View every watch
+              <span className="h-px w-8 bg-gold transition-all duration-500 group-hover:w-14" aria-hidden="true" />
+            </Link>
+          }
+        />
 
-          <div className="max-w-3xl space-y-4">
-            <p className="font-playfair text-4xl md:text-6xl font-black uppercase tracking-widest text-white">
-              Categories
-            </p>
-
-            <p className="text-sm md:text-base leading-7 tracking-wide text-secondary">
-              Move through the collection by watch category or brand, then land
-              directly on a filtered product view.
-            </p>
-          </div>
-        </div>
+        {/* BRANDS */}
+        <section className="pt-16 md:pt-20">
+          <RevealHeading lines={["By brand"]} className="text-5xl sm:text-6xl" />
+          <ul className="mt-12 grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-3">
+            {brandGroups.map((group, i) => (
+              <DirectoryCard key={group.value} group={group} index={i} />
+            ))}
+          </ul>
+        </section>
 
         {/* CATEGORY SECTION (kept commented as requested) */}
         {/*
-        <div className="space-y-6">
-          <div className="flex items-end justify-between gap-4">
-            <p className="text-xs uppercase tracking-wide text-primary">
-              Categories
-            </p>
-            <Link
-              href="/collections"
-              className="hidden text-xs font-bold uppercase tracking-widest text-primary transition hover:text-secondary sm:inline"
-            >
-              View all
-            </Link>
-          </div>
-
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {categoryGroups.map((group) => (
-              <DirectoryCard key={group.value} group={group} label="Category" />
+        <section className="pt-20">
+          <RevealHeading lines={["By category"]} className="text-5xl sm:text-6xl" />
+          <ul className="mt-12 grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-3">
+            {categoryGroups.map((group, i) => (
+              <DirectoryCard key={group.value} group={group} index={i} />
             ))}
-          </div>
-        </div>
+          </ul>
+        </section>
         */}
 
-        {/* BRAND SECTION (NEW CLEAN STYLE) */}
-        <div className="space-y-6 border-t border-white/10 pt-10">
-          {/* <p className="text-xs uppercase tracking-wide text-primary">
-            Brands
-          </p> */}
-
-          <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-3 xl:grid-cols-4">
-            {brandGroups.map((group) => (
-              <DirectoryCard key={group.value} group={group} label="Brand" />
+        {/* WRISTS */}
+        <section className="mt-24 rounded-[2rem] bg-[#f7f6f2] px-5 py-16 sm:px-10 md:mt-32 md:py-20">
+          <RevealHeading lines={["By wrist"]} align="center" className="text-5xl sm:text-6xl" />
+          <ul className="mt-14 grid grid-cols-1 gap-10 sm:grid-cols-3 sm:gap-6 lg:gap-10">
+            {WRISTS.map((wrist, i) => (
+              <motion.li
+                key={wrist.title}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-8% 0px" }}
+                transition={{ duration: 0.9, delay: i * 0.1, ease: [0.2, 0.9, 0.1, 1] }}
+              >
+                <Link href={wrist.href} className="group mx-auto block max-w-xs text-center">
+                  <div className="relative aspect-[3/4] overflow-hidden rounded-t-full border border-gold/30 p-2 transition-colors duration-500 group-hover:border-gold">
+                    <div data-arch className="relative h-full w-full overflow-hidden rounded-t-full">
+                      <div data-drift className="absolute inset-[-10%_0]">
+                        <Image
+                          src={wrist.image}
+                          alt=""
+                          fill
+                          sizes="(max-width: 640px) 80vw, 25vw"
+                          className="object-cover transition-transform duration-[1.4s] ease-[cubic-bezier(0.2,0.9,0.1,1)] group-hover:scale-110"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <h3 className="mt-6 font-serif text-3xl font-light">{wrist.title}</h3>
+                  <span className="mt-3 inline-flex items-center gap-3 font-jost text-xs tracking-[0.14em] text-gold-deep">
+                    Explore
+                    <span className="h-px w-6 bg-gold transition-all duration-500 group-hover:w-12" aria-hidden="true" />
+                  </span>
+                </Link>
+              </motion.li>
             ))}
-          </div>
-        </div>
-      </section>
+          </ul>
+        </section>
+      </div>
     </main>
   );
 };

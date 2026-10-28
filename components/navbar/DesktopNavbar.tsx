@@ -103,15 +103,17 @@ const DesktopNavbar: React.FC<{
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-500 ease-in-out border-primary/10 backdrop-blur`}
+      className="fixed inset-x-0 top-0 z-50 border-b border-gold/25 bg-paper/90 backdrop-blur-md transition-all duration-500 ease-in-out"
     >
       <div className="mx-auto flex max-w-screen-2xl items-center justify-between gap-6 px-6 py-4">
         <button
           type="button"
           onClick={handleLogoClick}
-          className="cursor-pointer text-2xl uppercase tracking-wide text-secondary font-playfair"
+          aria-label="Baydoun Watches, home"
+          className="flex cursor-pointer flex-col items-center leading-none"
         >
-          baydoun watches
+          <span className="font-serif text-[26px] font-medium tracking-[0.32em] text-gold-deep">BAYDOUN</span>
+          <span className="mt-1 font-jost text-[10px] tracking-[0.55em] text-ink/50">WATCHES</span>
         </button>
 
         <nav className="items-center gap-6 flex flex-wrap">
@@ -120,11 +122,11 @@ const DesktopNavbar: React.FC<{
               key={`${item.label}-${index}`}
               type="button"
               onClick={() => handleMenuItemClick(item)}
-              className={`group relative cursor-pointer text-xs lg:text-sm uppercase tracking-wide transition focus:outline-none ${pathname === item.href && "text-primary"} hover:text-primary`}
+              className={`group relative cursor-pointer font-jost text-xs uppercase tracking-[0.18em] transition-colors lg:text-[13px] ${pathname === item.href ? "text-ink" : "text-ink/65"} hover:text-ink`}
             >
               <span className="pointer-events-none">{item.label}</span>
               <span
-                className={`absolute inset-x-0 -bottom-1 h-0.5 scale-x-0 rounded-full bg-primary transition-transform duration-300 ease-in-out ${pathname === item.href && "scale-x-100"} group-hover:scale-x-100`}
+                className={`absolute inset-x-0 -bottom-2 h-px origin-left scale-x-0 bg-gold transition-transform duration-500 ease-[cubic-bezier(0.65,0,0.35,1)] ${pathname === item.href && "scale-x-100"} group-hover:scale-x-100`}
               />
             </button>
           ))}
@@ -135,10 +137,10 @@ const DesktopNavbar: React.FC<{
             onClick={() => {
               if (!isSearch) setIsSearch(true);
             }}
-            className={`flex cursor-pointer items-center ${isSearch ? "overflow-visible" : "overflow-hidden"} rounded-full border border-primary/20 bg-white/10 transition-all duration-500 ease-in-out ${
+            className={`flex cursor-pointer items-center ${isSearch ? "overflow-visible" : "overflow-hidden"} rounded-full border border-gold/20 bg-paper transition-all duration-500 ease-in-out ${
               isSearch
                 ? "max-w-75 px-3 py-2 shadow-[0_0_0_1px_rgba(201,168,76,0.18)]"
-                : "max-w-13 px-3.5 py-0.5 transition duration-300 ease-in-out hover:-translate-y-0.5 hover:bg-white/15"
+                : "max-w-13 px-3.5 py-0.5 transition duration-300 ease-in-out hover:-translate-y-0.5 hover:bg-gold/10"
             }`}
           >
             <button
@@ -153,7 +155,7 @@ const DesktopNavbar: React.FC<{
                     0,
                   );
               }}
-              className={`flex cursor-pointer h-10 w-10 items-center justify-center rounded-full ${isSearch && "border bg-neutral/10 hover:bg-primary/10"} border-primary/20 text-primary transition focus:outline-none`}
+              className={`flex cursor-pointer h-10 w-10 items-center justify-center rounded-full ${isSearch && "border bg-gold/10 hover:bg-gold/10"} border-gold/20 text-ink transition focus:outline-none`}
             >
               {menuIcons[0].icon}
             </button>
@@ -170,14 +172,14 @@ const DesktopNavbar: React.FC<{
                 value={searchValue}
                 onChange={(event) => setSearchValue(event.target.value)}
                 placeholder="Search our collection"
-                className={`ml-3 min-w-0 flex-1 bg-transparent text-sm text-primary placeholder:text-primary/60 focus:outline-none transition-all duration-500 ease-in-out ${
+                className={`ml-3 min-w-0 flex-1 bg-transparent text-sm text-ink placeholder:text-ink/40 focus:outline-none transition-all duration-500 ease-in-out ${
                   isSearch ? "opacity-100" : "opacity-0"
                 }`}
                 style={{ pointerEvents: isSearch ? "auto" : "none" }}
               />
 
               {isSearch && searchValue.trim() && (
-                <div className="absolute left-1/2 top-full z-50 mt-2 w-130 max-w-[90vw] -translate-x-1/2 max-h-80 overflow-y-auto rounded-3xl border border-white/10 bg-neutral/95 shadow-[0_20px_80px_rgba(0,0,0,0.45)] backdrop-blur-xl">
+                <div className="absolute left-1/2 top-full z-50 mt-2 w-130 max-w-[90vw] -translate-x-1/2 max-h-80 overflow-y-auto rounded-3xl border border-gold/20 bg-paper/95 shadow-[0_20px_80px_rgba(0,0,0,0.45)] backdrop-blur-xl">
                   {searchResults.length > 0 ? (
                     <>
                       {searchResults.map((product, index) => (
@@ -185,7 +187,7 @@ const DesktopNavbar: React.FC<{
                           key={product.slug + index}
                           type="button"
                           onClick={() => onSearchSelect(product)}
-                          className="w-full px-4 py-2.5 text-left text-xs text-white transition hover:bg-white/5"
+                          className="w-full px-4 py-2.5 text-left text-xs text-ink transition hover:bg-gold/10"
                         >
                           <div className="flex items-center gap-3">
                             <div className="shrink-0">
@@ -202,10 +204,10 @@ const DesktopNavbar: React.FC<{
                             </div>
 
                             <div className="min-w-0">
-                              <span className="block font-semibold text-sm text-white truncate">
+                              <span className="block font-semibold text-sm text-ink truncate">
                                 {product.title}
                               </span>
-                              <span className="block text-[10px] uppercase tracking-wide text-secondary/80">
+                              <span className="block text-[10px] uppercase tracking-wide text-ink/55">
                                 {product.brand}
                                 {product.isOutOfStock && (
                                   <span className="text-red-400"> · Out of stock</span>
@@ -218,20 +220,20 @@ const DesktopNavbar: React.FC<{
                       <button
                         type="button"
                         onClick={onSearchSubmit}
-                        className="w-full border-t border-white/10 px-4 py-3 text-left text-xs font-bold uppercase tracking-wide text-primary transition hover:bg-primary/10"
+                        className="w-full border-t border-gold/20 px-4 py-3 text-left text-xs font-bold uppercase tracking-wide text-ink transition hover:bg-gold/10"
                       >
                         See all results for &quot;{searchValue.trim()}&quot;
                       </button>
                     </>
                   ) : (
                     <>
-                      <div className="px-4 py-3 text-sm text-secondary">
+                      <div className="px-4 py-3 text-sm text-ink/60">
                         No watches found. Try another term.
                       </div>
                       <button
                         type="button"
                         onClick={onSearchSubmit}
-                        className="w-full border-t border-white/10 px-4 py-3 text-left text-xs font-bold uppercase tracking-wide text-primary transition hover:bg-primary/10"
+                        className="w-full border-t border-gold/20 px-4 py-3 text-left text-xs font-bold uppercase tracking-wide text-ink transition hover:bg-gold/10"
                       >
                         Search all for &quot;{searchValue.trim()}&quot;
                       </button>
@@ -255,17 +257,17 @@ const DesktopNavbar: React.FC<{
                   onClick={() => {
                     if ("href" in icon) handleMenuItemClick(icon);
                   }}
-                  className="relative flex cursor-pointer h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-primary transition duration-300 ease-in-out hover:-translate-y-0.5 hover:bg-white/15 focus:outline-none"
+                  className="relative flex cursor-pointer h-12 w-12 items-center justify-center rounded-full border border-gold/20 bg-paper text-ink transition duration-300 ease-in-out hover:-translate-y-0.5 hover:bg-gold/10 focus:outline-none"
                 >
                   {icon.icon}
 
                   {isCart && cartProducts.length > 0 && (
-                    <div className="absolute -top-1 -right-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-primary px-1 text-[10px] font-bold text-background animate-in fade-in zoom-in duration-200">
+                    <div className="absolute -top-1 -right-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-gold px-1 text-[10px] font-bold text-ink animate-in fade-in zoom-in duration-200">
                       {cartProducts.length}
                     </div>
                   )}
                   {isWish && wishlistProducts.length > 0 && (
-                    <div className="absolute -top-1 -right-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-primary px-1 text-[10px] font-bold text-background animate-in fade-in zoom-in duration-200">
+                    <div className="absolute -top-1 -right-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-gold px-1 text-[10px] font-bold text-ink animate-in fade-in zoom-in duration-200">
                       {wishlistProducts.length}
                     </div>
                   )}
