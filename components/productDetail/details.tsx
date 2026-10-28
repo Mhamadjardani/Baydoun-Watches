@@ -10,6 +10,7 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import toast from "react-hot-toast";
+import WatchImage from "@/components/showroom/WatchImage";
 
 // The same 3D pedestal as the homepage spotlight; three.js loads in the browser only.
 const StageScene = dynamic(() => import("@/components/home/StageScene"), { ssr: false });
@@ -162,17 +163,11 @@ const ProductDetails = ({
               aria-hidden="true"
               className="pointer-events-none absolute left-1/2 top-0 h-[75%] w-[46%] -translate-x-1/2 bg-[linear-gradient(180deg,rgba(212,171,98,0.16),rgba(212,171,98,0))] [clip-path:polygon(40%_0,60%_0,100%_100%,0_100%)]"
             />
-            <p
-              aria-hidden="true"
-              className="pointer-events-none absolute inset-x-0 top-[10%] text-center font-serif text-[clamp(3.5rem,9vw,9rem)] font-light leading-none text-transparent [-webkit-text-stroke:1px_rgba(148,112,47,0.3)]"
-            >
-              {brandLabel}
-            </p>
 
             <StageScene stageRef={stageRef} pulse={activeIndex} />
 
-            {/* The blend sits on this outer layer; the animated wrappers inside are their own stacking contexts. */}
-            <div className="absolute inset-x-0 top-0 mix-blend-multiply" style={{ height: "var(--plinth-y)", perspective: 1100 }}>
+            {/* The watch sits above the light and the 3D stage, in its true colours. */}
+            <div className="absolute inset-x-0 top-0 z-10" style={{ height: "var(--plinth-y)", perspective: 1100 }}>
               <AnimatePresence mode="popLayout" initial={false}>
                 <motion.div
                   key={activeDisplayImage}
@@ -188,12 +183,13 @@ const ProductDetails = ({
                       animate={{ y: [0, -10, 0] }}
                       transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                     >
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
+                      <WatchImage
                         src={activeDisplayImage}
                         alt={product.title}
-                        onError={() => markImageFailed(activeImage)}
-                        className={`h-full w-full object-contain object-bottom brightness-[1.04] contrast-[1.06] ${
+                        loading="eager"
+                        whileLoading="hide"
+                        onMissing={() => markImageFailed(activeImage)}
+                        className={`h-full w-full object-contain object-bottom ${
                           product.isOutOfStock ? "opacity-60 grayscale" : ""
                         }`}
                       />
@@ -219,16 +215,11 @@ const ProductDetails = ({
                     index === activeIndex ? "ring-1 ring-gold ring-offset-4" : "opacity-60 hover:opacity-100"
                   }`}
                 >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                  <WatchImage
                     src={image}
                     alt=""
-                    // Server-rendered images can fail before React listens; catch those on mount.
-                    ref={(el) => {
-                      if (el?.complete && el.naturalWidth === 0) markImageFailed(image);
-                    }}
-                    onError={() => markImageFailed(image)}
-                    className="h-full w-full object-contain p-2 mix-blend-multiply"
+                    onMissing={() => markImageFailed(image)}
+                    className="h-full w-full object-contain p-2"
                   />
                 </button>
                 ),
@@ -247,7 +238,7 @@ const ProductDetails = ({
               {product.isNewArrival && <span className="rounded-full border border-gold/40 px-3 py-1 text-[11px] tracking-[0.12em] text-gold-deep">New</span>}
               {product.isLimitedEdition && <span className="rounded-full border border-gold/40 px-3 py-1 text-[11px] tracking-[0.12em] text-gold-deep">Limited</span>}
             </motion.div>
-            <h1 className="mt-4 overflow-hidden font-serif text-4xl font-light leading-[1.05] sm:text-6xl">
+            <h1 className="mt-4 overflow-hidden font-serif text-3xl font-light leading-[1.05] sm:text-5xl">
               <motion.span className="block" initial={{ y: "100%" }} animate={{ y: "0%" }} transition={{ duration: 1.1, delay: 0.1, ease }}>
                 {product.title}
               </motion.span>

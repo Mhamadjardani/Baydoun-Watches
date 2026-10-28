@@ -30,7 +30,7 @@ export default function PageHeader({
           {eyebrow.toUpperCase()}
         </motion.p>
         <div className="mt-4">
-          <RevealHeading as="h1" lines={title} className="text-5xl sm:text-7xl" />
+          <RevealHeading as="h1" lines={title} className="text-4xl sm:text-6xl" />
         </div>
         {caption && (
           <motion.p

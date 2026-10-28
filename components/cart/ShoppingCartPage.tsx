@@ -10,6 +10,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { CircleOff, Minus, Plus, X } from "lucide-react";
 import Link from "next/link";
 import { useMemo, useState } from "react";
+import WatchImage from "@/components/showroom/WatchImage";
 
 const formatPrice = (price: number) =>
   new Intl.NumberFormat("en-US", {
@@ -330,13 +331,11 @@ const ShoppingCartPage = ({ products }: { products: ProductCard[] }) => {
                           href={href}
                           className="relative block aspect-square overflow-hidden rounded-2xl bg-[#f6f5f1]"
                         >
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img
+                          <WatchImage
                             src={getImage(product) || "/baydoun-logo.webp"}
                             alt={product.title}
-                            loading="lazy"
-                            onError={() => markImageFailed(product.image)}
-                            className={`absolute inset-0 h-full w-full object-contain p-2 mix-blend-multiply transition-transform duration-700 hover:scale-105 ${outOfStockImageClass(product)}`}
+                            onMissing={() => markImageFailed(product.image)}
+                            className={`absolute inset-0 h-full w-full object-contain p-2 transition-transform duration-700 hover:scale-105 ${outOfStockImageClass(product)}`}
                           />
                         </Link>
 

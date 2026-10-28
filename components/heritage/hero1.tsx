@@ -57,7 +57,7 @@ const Hero1 = () => {
             OUR STORY · EST. 1987
           </motion.p>
           <div className="mt-5">
-            <RevealHeading as="h1" lines={["Baydoun", "Watches"]} className="text-6xl sm:text-8xl" />
+            <RevealHeading as="h1" lines={["Baydoun", "Watches"]} className="text-5xl sm:text-7xl" />
           </div>
           <motion.p
             initial={{ opacity: 0, y: 12 }}

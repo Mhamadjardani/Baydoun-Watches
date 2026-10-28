@@ -6,6 +6,7 @@ import { createReader } from "@keystatic/core/reader";
 import keystaticConfig from "../keystatic.config";
 import type { Product, ProductCard } from "./type";
 import { getProductCoverImage, getProductImages } from "./productImages";
+import { withLaunchPromo } from "./promo";
 
 const reader = createReader(process.cwd(), keystaticConfig);
 
@@ -75,6 +76,17 @@ export const getAllProducts = cache(async function getAllProducts() {
   // so use the bounded file loader for catalog-wide reads.
   return getAllProductsFromFiles();
 });
+
+// ── Storefront reads: same data with the launch offer applied ─────────────────
+// Admin keeps using getAllProducts so the offer is never saved into a product.
+export const getShopProducts = cache(async function getShopProducts() {
+  return (await getAllProducts()).map(withLaunchPromo);
+});
+
+export async function getShopProduct(brand: Brand, slug: string) {
+  const product = await getProduct(brand, slug);
+  return product ? withLaunchPromo({ ...product, discount: product.discount ?? null }) : null;
+}
 
 const FILE_READ_CONCURRENCY = 32;
 

@@ -4,9 +4,7 @@ import { BRAND_LABELS, finalPrice, formatPrice } from "@/lib/showcase";
 import type { ProductCard } from "@/lib/type";
 import { Heart, X } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
-
-const FALLBACK_IMAGE = "/baydoun-logo.webp";
+import WatchImage from "@/components/showroom/WatchImage";
 
 /**
  * One watch in the showroom: a soft lacquer tile where the photo floats (its
@@ -25,7 +23,6 @@ export default function WatchCard({
   /** Wishlist page: the button removes instead of toggling a heart. */
   removeMode?: boolean;
 }) {
-  const [failed, setFailed] = useState(false);
   const sale = (product.discount ?? 0) > 0;
   const href = `/collections/${product.brand}/${product.slug}`;
   const badge = product.isOutOfStock
@@ -70,23 +67,17 @@ export default function WatchCard({
             aria-hidden="true"
             className="absolute inset-x-[18%] bottom-[7%] h-6 scale-75 rounded-[50%] border border-gold opacity-0 transition-all duration-700 ease-[cubic-bezier(0.2,0.9,0.1,1)] group-hover:scale-100 group-hover:opacity-100"
           />
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={failed ? FALLBACK_IMAGE : product.image}
+          {/* The watch sits above the glow and the ring, in its true colours */}
+          <WatchImage
+            src={product.image}
             alt={product.title}
-            loading="lazy"
-            onError={() => setFailed(true)}
-            // Server-rendered images can fail before React listens; catch those on mount.
-            ref={(el) => {
-              if (!failed && el?.complete && el.naturalWidth === 0) setFailed(true);
-            }}
-            className={`absolute inset-0 h-full w-full object-contain p-5 mix-blend-multiply brightness-[1.04] contrast-[1.06] transition-transform duration-700 ease-[cubic-bezier(0.2,0.9,0.1,1)] group-hover:-translate-y-2 group-hover:scale-[1.06] ${
+            className={`absolute inset-0 z-10 h-full w-full object-contain p-5 transition-transform duration-700 ease-[cubic-bezier(0.2,0.9,0.1,1)] group-hover:-translate-y-2 group-hover:scale-[1.06] ${
               product.isOutOfStock ? "opacity-50 grayscale" : ""
             }`}
           />
           {badge && (
             <span
-              className={`absolute left-3 top-3 rounded-full px-3 py-1 font-jost text-[11px] tracking-[0.12em] ${
+              className={`absolute left-3 top-3 z-10 rounded-full px-3 py-1 font-jost text-[11px] tracking-[0.12em] ${
                 product.isOutOfStock ? "bg-ink text-paper" : "border border-gold/40 bg-paper text-gold-deep"
               }`}
             >

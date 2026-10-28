@@ -32,7 +32,7 @@ const Hero3 = () => {
       <div className="mx-auto max-w-7xl">
         <p className="text-center font-jost text-[11px] tracking-[0.3em] text-gold">WHAT WE STAND FOR</p>
         <div className="mt-5">
-          <RevealHeading lines={["Three promises,", "kept since 1987"]} align="center" className="text-5xl text-paper sm:text-6xl" />
+          <RevealHeading lines={["Three promises,", "kept since 1987"]} align="center" className="text-4xl text-paper sm:text-5xl" />
         </div>
 
         <ul className="mt-16 grid border-t border-gold/25 lg:grid-cols-3">

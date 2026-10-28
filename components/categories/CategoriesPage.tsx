@@ -149,7 +149,7 @@ const CategoriesPage = ({ products }: { products: ProductCard[] }) => {
 
         {/* BRANDS */}
         <section className="pt-16 md:pt-20">
-          <RevealHeading lines={["By brand"]} className="text-5xl sm:text-6xl" />
+          <RevealHeading lines={["By brand"]} className="text-4xl sm:text-5xl" />
           <ul className="mt-12 grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-3">
             {brandGroups.map((group, i) => (
               <DirectoryCard key={group.value} group={group} index={i} />
@@ -160,7 +160,7 @@ const CategoriesPage = ({ products }: { products: ProductCard[] }) => {
         {/* CATEGORY SECTION (kept commented as requested) */}
         {/*
         <section className="pt-20">
-          <RevealHeading lines={["By category"]} className="text-5xl sm:text-6xl" />
+          <RevealHeading lines={["By category"]} className="text-4xl sm:text-5xl" />
           <ul className="mt-12 grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-3">
             {categoryGroups.map((group, i) => (
               <DirectoryCard key={group.value} group={group} index={i} />
@@ -171,7 +171,7 @@ const CategoriesPage = ({ products }: { products: ProductCard[] }) => {
 
         {/* WRISTS */}
         <section className="mt-24 rounded-[2rem] bg-[#f7f6f2] px-5 py-16 sm:px-10 md:mt-32 md:py-20">
-          <RevealHeading lines={["By wrist"]} align="center" className="text-5xl sm:text-6xl" />
+          <RevealHeading lines={["By wrist"]} align="center" className="text-4xl sm:text-5xl" />
           <ul className="mt-14 grid grid-cols-1 gap-10 sm:grid-cols-3 sm:gap-6 lg:gap-10">
             {WRISTS.map((wrist, i) => (
               <motion.li

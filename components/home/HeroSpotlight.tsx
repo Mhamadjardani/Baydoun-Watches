@@ -1,6 +1,9 @@
 "use client";
 
 import { useShowcase, useShowcaseReady } from "@/components/home/ShowcasePool";
+import WatchImage from "@/components/showroom/WatchImage";
+import { prepareCutout } from "@/lib/cutout";
+import { LAUNCH_PROMO, launchPromoActive } from "@/lib/promo";
 import { BRAND_LABELS, formatPrice } from "@/lib/showcase";
 import { AnimatePresence, motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -16,8 +19,8 @@ const SLIDE_MS = 4800;
 
 /**
  * Opening of the home page, "The Spotlight": real catalogue watches take turns
- * on a turning 3D pedestal in a beam of gold dust. Each one swings in, the
- * brand name rises behind it, and its price tag links straight to it.
+ * on a turning 3D pedestal in a beam of gold dust. Each one swings in on top
+ * of the light (true colours, no blending) and its price tag links to it.
  */
 const HeroSpotlight = () => {
   const watches = useShowcase("hero");
@@ -47,11 +50,10 @@ const HeroSpotlight = () => {
     return () => clearTimeout(id);
   }, [ready, paused, count, index, go]);
 
-  // Warm the next photo so it is ready when it takes the stage.
+  // Cut out the next photo ahead of time so it is ready when it takes the stage.
   useEffect(() => {
     if (!count) return;
-    const next = new Image();
-    next.src = watches[(index + 1) % count].image;
+    prepareCutout(watches[(index + 1) % count].image);
   }, [index, count, watches]);
 
   // The watch leans toward the pointer.
@@ -96,7 +98,18 @@ const HeroSpotlight = () => {
           >
             BEIRUT, SINCE 1987
           </motion.p>
-          <h1 className="mt-5 font-serif font-light leading-[0.92] text-[clamp(3.4rem,7.4vw,8rem)]">
+          {launchPromoActive && (
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.5, ease }}
+              className="mt-4 flex w-fit items-center gap-3 rounded-full border border-gold bg-gold/10 py-1.5 pl-1.5 pr-4 font-jost text-xs tracking-[0.14em] text-ink"
+            >
+              <span className="rounded-full bg-gold px-3 py-1 font-medium text-ink">-{LAUNCH_PROMO.percent}%</span>
+              {LAUNCH_PROMO.label.toUpperCase()} · ON EVERY WATCH
+            </motion.p>
+          )}
+          <h1 className="mt-5 font-serif font-light leading-[0.92] text-[clamp(2.8rem,6vw,6.25rem)]">
             {["Wear", "the moment."].map((line, i) => (
               <span key={line} className="block overflow-hidden pb-[0.07em]">
                 <motion.span
@@ -161,30 +174,11 @@ const HeroSpotlight = () => {
             className="pointer-events-none absolute left-1/2 top-0 h-[75%] w-[46%] -translate-x-1/2 bg-[linear-gradient(180deg,rgba(212,171,98,0.18),rgba(212,171,98,0))] [clip-path:polygon(40%_0,60%_0,100%_100%,0_100%)]"
           />
 
-          {/* Giant brand name behind the watch */}
-          <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-[12%] flex justify-center overflow-hidden">
-            <AnimatePresence mode="popLayout" initial={false}>
-              {current && (
-                <motion.p
-                  key={brand + index}
-                  className="whitespace-nowrap font-serif text-[clamp(4rem,11vw,11rem)] font-light leading-none text-transparent [-webkit-text-stroke:1px_rgba(148,112,47,0.35)]"
-                  initial={{ y: "60%", opacity: 0 }}
-                  animate={{ y: "0%", opacity: 1 }}
-                  exit={{ y: "-40%", opacity: 0 }}
-                  transition={{ duration: 0.9, ease }}
-                >
-                  {brand}
-                </motion.p>
-              )}
-            </AnimatePresence>
-          </div>
 
           {ready && <StageScene stageRef={stageRef} pulse={index} />}
 
-          {/* The watch, standing on the pedestal */}
-          {/* The blend sits on this outer layer: the animated wrappers inside form their own
-              stacking contexts, so a blend on the <img> would only see its own white box. */}
-          <div className="absolute inset-x-0 top-0 mix-blend-multiply" style={{ height: "var(--plinth-y)", perspective: 1100 }}>
+          {/* The watch, standing on the pedestal, above the light and the gold dust */}
+          <div className="absolute inset-x-0 top-0 z-10" style={{ height: "var(--plinth-y)", perspective: 1100 }}>
             <AnimatePresence mode="popLayout" initial={false} custom={direction}>
               {current && (
                 <motion.div
@@ -203,11 +197,12 @@ const HeroSpotlight = () => {
                       transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                     >
                       <Link href={current.href} aria-label={`View ${current.title}`} className="block h-full w-full">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
+                        <WatchImage
                           src={current.image}
                           alt={current.title}
-                          className="h-full w-full object-contain object-bottom brightness-[1.04] contrast-[1.06]"
+                          loading="eager"
+                          whileLoading="hide"
+                          className="h-full w-full object-contain object-bottom"
                         />
                       </Link>
                     </motion.div>

@@ -69,7 +69,7 @@ const ForWhom = () => {
   return (
   <section ref={ref} className="bg-paper px-6 py-24 text-ink sm:px-10 md:py-32">
     <div className="mx-auto max-w-7xl">
-      <RevealHeading lines={["A watch for", "every wrist"]} align="center" className="text-5xl sm:text-7xl" />
+      <RevealHeading lines={["A watch for", "every wrist"]} align="center" className="text-4xl sm:text-6xl" />
       <ul className="mt-16 grid gap-10 md:grid-cols-3 md:gap-8">
         {PANELS.map((panel, i) => (
           <motion.li

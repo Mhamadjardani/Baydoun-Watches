@@ -84,9 +84,9 @@ const BrandMarquee = () => {
 
   return (
     <section ref={ref} aria-label="Brands and lines" className="overflow-hidden border-y border-gold/25 bg-paper py-12 text-ink sm:py-16">
-      <Row items={BRANDS} size="text-5xl sm:text-7xl" />
+      <Row items={BRANDS} size="text-3xl sm:text-5xl" />
       <div className="mt-4 text-ink/45">
-        <Row items={LINES} reverse size="text-3xl italic sm:text-5xl" />
+        <Row items={LINES} reverse size="text-xl italic sm:text-3xl" />
       </div>
     </section>
   );

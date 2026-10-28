@@ -8,6 +8,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
 import { useRef } from "react";
+import WatchImage from "@/components/showroom/WatchImage";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -79,7 +80,7 @@ const SpotlightTrack = () => {
     <section ref={sectionRef} className="relative overflow-hidden bg-paper text-ink">
       <div className="flex min-h-[100svh] flex-col justify-center py-20 md:pb-8 md:pt-24">
         <div className="mx-auto flex w-full max-w-[1500px] flex-wrap items-end justify-between gap-6 px-6 sm:px-10 xl:px-16">
-          <RevealHeading lines={["In the spotlight"]} className="text-5xl sm:text-7xl" />
+          <RevealHeading lines={["In the spotlight"]} className="text-4xl sm:text-6xl" />
           <p className="max-w-xs font-jost text-ink/60">New arrivals and favourites from every brand, picked fresh on every visit.</p>
         </div>
 
@@ -107,12 +108,11 @@ const SpotlightTrack = () => {
                     style={{ opacity: "var(--focus)", transform: "scale(calc(0.7 + var(--focus) * 0.3))" }}
                   />
                   <div aria-hidden="true" className="absolute inset-x-[18%] bottom-[8%] h-3 rounded-[50%] bg-ink/10 blur-md" />
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                  {/* The watch sits above the light and the ring, in its true colours */}
+                  <WatchImage
                     src={watch.image}
                     alt={watch.title}
-                    loading="lazy"
-                    className="absolute inset-0 h-full w-full object-contain p-6 mix-blend-multiply brightness-[1.04] contrast-[1.06] transition-transform duration-700 ease-[cubic-bezier(0.2,0.9,0.1,1)] group-hover:-translate-y-3 group-hover:rotate-[-4deg]"
+                    className="absolute inset-0 z-10 h-full w-full object-contain p-6 transition-transform duration-700 ease-[cubic-bezier(0.2,0.9,0.1,1)] group-hover:-translate-y-3 group-hover:rotate-[-4deg]"
                     style={{ transform: "translateY(calc(var(--focus) * -14px)) scale(calc(0.9 + var(--focus) * 0.14))" }}
                   />
                   {watch.badge && (

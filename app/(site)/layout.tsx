@@ -1,6 +1,6 @@
 import Footer from "@/components/footer/footer";
 import Navbar from "@/components/navbar/Navbar";
-import { getAllProducts } from "@/lib/products";
+import { getShopProducts } from "@/lib/products";
 import { Toaster } from "react-hot-toast";
 import FloatingButtons from "@/components/floatingButtons";
 import SmoothScroll from "@/components/motion/SmoothScroll";
@@ -10,7 +10,7 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const products = await getAllProducts();
+  const products = await getShopProducts();
 
   return (
     <SmoothScroll>

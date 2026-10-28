@@ -22,7 +22,7 @@ const PROMISES = [
 const Promises = () => (
   <section className="bg-ink px-6 py-24 text-paper sm:px-10 md:py-32">
     <div className="mx-auto max-w-7xl">
-      <RevealHeading lines={["Why Beirut buys", "its watches here"]} align="center" className="text-5xl text-paper sm:text-6xl" />
+      <RevealHeading lines={["Why Beirut buys", "its watches here"]} align="center" className="text-4xl text-paper sm:text-5xl" />
       <ul className="mt-16 grid border-t border-gold/25 sm:grid-cols-2 lg:grid-cols-3">
         {PROMISES.map(({ icon: Icon, title, copy }, i) => (
           <motion.li

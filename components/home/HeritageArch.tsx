@@ -58,7 +58,7 @@ const HeritageArch = () => {
         <div>
           <p className="font-jost text-xs tracking-[0.35em] text-gold-deep">OUR HERITAGE</p>
           <div className="mt-5">
-            <RevealHeading lines={["A Beirut address", "for fine watches"]} className="text-5xl sm:text-6xl" />
+            <RevealHeading lines={["A Beirut address", "for fine watches"]} className="text-4xl sm:text-5xl" />
           </div>
           <p className="mt-8 max-w-lg font-jost leading-relaxed text-ink/70">
             Baydoun Watches has been at the centre of Beirut for decades, offering a curated selection of

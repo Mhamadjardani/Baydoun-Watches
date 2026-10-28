@@ -1,8 +1,8 @@
 import WishlistPage from "@/components/wishlist/WishlistPage";
-import { getAllProducts } from "@/lib/products";
+import { getShopProducts } from "@/lib/products";
 
 export default async function WishlistRoute() {
-  const products = await getAllProducts();
+  const products = await getShopProducts();
 
   return <WishlistPage products={products} />;
 }

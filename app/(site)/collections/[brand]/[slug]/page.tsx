@@ -1,5 +1,5 @@
 import ProductDetails from "@/components/productDetail/details";
-import { getAllProducts, getProduct, isBrand, type Brand } from "@/lib/products";
+import { getShopProducts, getShopProduct, isBrand, type Brand } from "@/lib/products";
 import { notFound } from "next/navigation";
 
 // Render each product page on its first visit, then serve it statically until
@@ -17,8 +17,8 @@ export default async function ProductPage({
   const { brand, slug } = await params;
   if (!isBrand(brand)) notFound();
 
-  const product = await getProduct(brand, slug);
-  const products = await getAllProducts();
+  const product = await getShopProduct(brand, slug);
+  const products = await getShopProducts();
 
   if (!product) notFound();
 

@@ -1,4 +1,4 @@
-**Last updated:** 2026-10-28 (homepage approved by the user; ALL inner pages restyled to the showroom design; uncommitted)
+**Last updated:** 2026-10-28 (launch day: 15% launch offer + watches cut out above all effects + smaller titles; on local `main`, NOT yet committed/pushed)
 
 ## What it is
 Baydoun Watches: Next.js 16 (App Router, React 19, Tailwind 4, zustand) storefront, ~1,015 watches, WhatsApp checkout
@@ -6,7 +6,7 @@ Baydoun Watches: Next.js 16 (App Router, React 19, Tailwind 4, zustand) storefro
 (GitHub storage, repo `Mhamadjardani/Baydoun-Watches`, branch `main`). Product images are in the **Supabase Storage**
 bucket `products` and managed at `/admin/products`.
 Catalog on 2026-10-27: casio 806, omorfia 80 (2 hidden), tommy-hilfiger 49, calvin-klein 34, rovina 27, lacoste 19. 0 out of stock.
-Git: **branch `redesign/white-gold`** committed as `7fa294a` and pushed to origin (2026-10-28). Not merged into `main`; the live site is unchanged. Since the last handoff (`b288e31`) the user committed: the `isNewArrival` badge and
+Git: **branch `redesign/white-gold`** committed as `7fa294a` and pushed to origin (2026-10-28). MERGED into `main` via PR #1 (merge commit `6382e63`, 2026-10-28); production now runs the redesign. The old design is tagged `pre-redesign` (= `836259d`); to roll back, use the Revert button on PR #1 or `git revert -m 1 6382e63`. Since the last handoff (`b288e31`) the user committed: the `isNewArrival` badge and
 the "New arrivals first" default sort in collections (`2e4bebb`), Casio subcategory links that use `normalizeSubCategory`
 in `home/hero4.tsx` (`07b12fb`), swipe gestures on the home slider `home/hero1.tsx` (`42e4b13`), and navbar search
 wrapped in a `<form>` (`836259d`). Most other commits are Keystatic content edits ("Update src/content/products/...").
@@ -95,6 +95,43 @@ wrapped in a `<form>` (`836259d`). Most other commits are Keystatic content edit
   plus `.gold-sheen`, `.gold-sweep`, `.scroll-cue` animations. Only watch images that already exist may be used.
 - The user asked about GSAP, Lenis and React Bits. They're fine to use as libraries (they were removed with the discard). No skills for them are installed.
 
+## Launch offer (15% off everything) — HOW TO TURN IT OFF
+Added 2026-10-28 (launch day) at the client's request. It does NOT touch product data.
+- **Where:** `lib/promo.ts` → `LAUNCH_PROMO = { percent: 15, label: "Launch offer" }`.
+  `withLaunchPromo()` sets `discount = 15` on every product **and overrides any saved discount** (client asked:
+  "remove any existing discount and just keep the 15%"). The JSON files, Keystatic and `/admin/products` keep the
+  real saved discounts untouched.
+- **How it is applied:** `lib/products.ts` has storefront-only loaders `getShopProducts()` / `getShopProduct()` that
+  wrap `getAllProducts()` / `getProduct()` with `withLaunchPromo`. Every `app/(site)/**` page and `app/(site)/layout.tsx`
+  use the shop loaders. Admin (`app/admin/products/page.tsx`) still uses `getAllProducts()` on purpose, so the 15%
+  can never be saved into a product.
+- Because `discount` is set, everything follows automatically: WatchCard badges/strikethrough, product page, cart
+  totals, the WhatsApp order text ("15% OFF"), sorting by price, and `/sales` (which lists every watch while the offer runs).
+- Hero pill "-15% LAUNCH OFFER · ON EVERY WATCH" in `components/home/HeroSpotlight.tsx`, shown only when
+  `launchPromoActive` is true.
+- **To END the offer:** set `percent: 0` in `lib/promo.ts`, then commit + push to `main` (Vercel redeploys). The
+  pages are prerendered, so nothing changes until that deploy. With 0: the hero pill disappears and the products'
+  own saved discounts come back (they were never deleted). Nothing else to undo.
+- To fully remove the feature instead: delete `lib/promo.ts`, rename `getShopProducts`/`getShopProduct` usages back
+  to `getAllProducts`/`getProduct`, remove the two shop loaders from `lib/products.ts` and the pill in HeroSpotlight.
+- To change the percentage or wording: edit `percent` / `label` in `lib/promo.ts`.
+
+## Watches drawn above every effect (cutout)
+Client comment 2026-10-28: the gold glow/spotlight/gold dust tinted the watches (they used `mix-blend-multiply`).
+- Photos have opaque white backgrounds (checked: corner pixels 255,255,255). `lib/cutout.ts` loads the photo with
+  `crossOrigin="anonymous"` (Supabase sends `Access-Control-Allow-Origin: *`), flood-fills near-white pixels
+  connected to the border into transparency (min channel ≥ 236, chroma ≤ 14, downscaled to ≤900px), and caches an
+  object URL per photo. One photo is processed at a time; `prepareCutout(src)` pre-warms (the hero warms the next watch).
+- `components/showroom/WatchImage.tsx` renders it: no blend, no brightness/contrast filters, logo fallback on a missing
+  photo (`onMissing` callback). While processing: `whileLoading="blend"` (multiply, for tiles) or `"hide"` (3D stage).
+- Used in: HeroSpotlight (watch layer `z-10`, above the StageScene canvas), product page stage + thumbnails,
+  SpotlightTrack, CasioLines, WatchCard (all grids), cart lines. Glows/rings stay behind the watch.
+- Verified in Chrome: `elementFromPoint` across the watch returns the watch on home + product page; no blend/filter
+  on the watch or its parents (the swing-in has a <1s blur only while it enters; out-of-stock is greyscale on purpose).
+- Also on 2026-10-28: removed the giant outlined brand name behind the watch (home hero AND product page), made the
+  brands/lines marquee smaller (`text-3xl sm:text-5xl` / `text-xl sm:text-3xl`), and scaled titles down one step
+  (sections `text-4xl sm:text-6xl`, hero h1 `clamp(2.8rem,6vw,6.25rem)`, product title `text-3xl sm:text-5xl`).
+
 ## Things that bit us
 - WebFetch on JS-rendered pricing pages returns only the title → use Claude in Chrome.
 - Don't quote pricing/limits from memory → **verify on the official site.**
@@ -144,12 +181,14 @@ wrapped in a `<form>` (`836259d`). Most other commits are Keystatic content edit
     recommendations grid; logic unchanged; "Apartment, floor" is still required), Wishlist, Categories (brand cards
     in 3 columns + "By wrist" arches), Contact (form + map/phone/email/hours cards), and Heritage (4-part story).
     False claims were removed: "Swiss Precision", the Geneva/anglage values, "30+ years", "four decades".
-- **Next / open:** committed + pushed (`7fa294a`). The checkout apartment/floor field is now optional. To go live: open a PR
-  `redesign/white-gold` → `main` (https://github.com/Mhamadjardani/Baydoun-Watches/pull/new/redesign/white-gold) and merge when the user says.
+- **Done:** merged into `main` via https://github.com/Mhamadjardani/Baydoun-Watches/pull/1 (merge commit `6382e63`) and deployed.
+  The checkout apartment/floor field is optional. Rollback: tag `pre-redesign`, or revert the merge commit.
+  Open (optional): quiet the pre-existing Turbopack warning at `lib/products.ts:93` (file pattern matches 10150 files).
   The admin and Keystatic pages were not restyled, by design.
 - Skills: the `ui-animation-skills:*` plugin (GSAP + three.js skills) is installed. Use `threejs-*` and `gsap-*` for this work.
-- Claude in Chrome was "not connected" on 2026-10-28, so Playwright was used as the fallback (minimal screenshots).
-- **Next:** the user reviews the 3D hero. Then restyle the inner pages in white + gold.
+- Claude in Chrome works again (connected later on 2026-10-28); prefer it over Playwright.
+- **Next:** commit + push the launch-day changes (cutout, launch offer, smaller titles) to `main` when the user says.
+  After launch, end the 15% offer as described in "Launch offer" above.
 - Heritage copy conflict (EST. 1987 vs "30+" vs "four decades") is still unresolved.
 - Email/promo plan: ROADMAP.md Phases 0–7. It's blocked on the client.
 

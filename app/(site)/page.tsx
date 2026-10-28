@@ -7,7 +7,7 @@ import HeritageArch from "@/components/home/HeritageArch";
 import Promises from "@/components/home/Promises";
 import { ShowcasePool } from "@/components/home/ShowcasePool";
 import SpotlightTrack from "@/components/home/SpotlightTrack";
-import { getAllProducts } from "@/lib/products";
+import { getShopProducts } from "@/lib/products";
 import { pickAcrossBrands, toShowcase } from "@/lib/showcase";
 import { formatSubCategory, normalizeSubCategory, type ProductCard } from "@/lib/type";
 
@@ -40,7 +40,7 @@ function casioLines(products: ProductCard[]): CasioLine[] {
 export default async function Home() {
   // Everything below comes from the live catalogue at build time; a watch removed
   // in Keystatic drops out on the next deploy. Hidden and out-of-stock pieces never appear.
-  const products = await getAllProducts();
+  const products = await getShopProducts();
   // Wristwatches only: wall clocks stay in the catalogue but not in the showroom.
   const pool = pickAcrossBrands(
     products,

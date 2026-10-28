@@ -53,7 +53,7 @@ const HelpChoose = () => {
       />
       <div className="relative mx-auto grid max-w-7xl items-end gap-12 lg:grid-cols-[1.2fr_1fr]">
         <div>
-          <RevealHeading lines={["Not sure which one?", "We'll help you choose."]} className="text-5xl text-paper sm:text-7xl" />
+          <RevealHeading lines={["Not sure which one?", "We'll help you choose."]} className="text-4xl text-paper sm:text-6xl" />
           <p className="mt-8 max-w-lg font-jost text-lg leading-relaxed text-paper/65">
             Tell us who it&apos;s for and your budget. We&apos;ll send you a few watches we love, or welcome you at the counter
             to try them on.

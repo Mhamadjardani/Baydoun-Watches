@@ -1,9 +1,9 @@
 import SearchResultsPage from "@/components/search/SearchResultsPage";
-import { getAllProducts } from "@/lib/products";
+import { getShopProducts } from "@/lib/products";
 import { Suspense } from "react";
 
 export default async function SearchPage() {
-  const products = await getAllProducts();
+  const products = await getShopProducts();
 
   return (
     <Suspense

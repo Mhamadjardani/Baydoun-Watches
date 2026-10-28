@@ -71,7 +71,7 @@ const Hero2 = () => {
           <div>
             <p className="font-jost text-[11px] tracking-[0.3em] text-gold-deep">THE SHOP</p>
             <div className="mt-5">
-              <RevealHeading lines={["A Beirut address", "since 1987"]} className="text-5xl sm:text-6xl" />
+              <RevealHeading lines={["A Beirut address", "since 1987"]} className="text-4xl sm:text-5xl" />
             </div>
 
             <motion.div

@@ -4,6 +4,7 @@ import RevealHeading from "@/components/motion/RevealHeading";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import WatchImage from "@/components/showroom/WatchImage";
 
 export type CasioLine = {
   key: string;
@@ -14,7 +15,6 @@ export type CasioLine = {
 };
 
 function LineCard({ line, index, wide }: { line: CasioLine; index: number; wide: boolean }) {
-  const [failed, setFailed] = useState(false);
   const [pick, setPick] = useState(line.options[0]);
   useEffect(() => {
     const t = setTimeout(() => setPick(line.options[Math.floor(Math.random() * line.options.length)]), 0);
@@ -37,13 +37,10 @@ function LineCard({ line, index, wide }: { line: CasioLine; index: number; wide:
           <span className="text-xs text-ink/45">{line.count} pieces</span>
         </div>
         <div className="relative mt-4 h-56 sm:h-64">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={failed ? "/baydoun-logo.webp" : pick.image}
+          <WatchImage
+            src={pick.image}
             alt={pick.title}
-            loading="lazy"
-            onError={() => setFailed(true)}
-            className="absolute inset-0 h-full w-full object-contain mix-blend-multiply brightness-[1.04] contrast-[1.05] transition-transform duration-[900ms] ease-[cubic-bezier(0.2,0.9,0.1,1)] group-hover:rotate-[8deg] group-hover:scale-110"
+            className="absolute inset-0 h-full w-full object-contain transition-transform duration-[900ms] ease-[cubic-bezier(0.2,0.9,0.1,1)] group-hover:rotate-[8deg] group-hover:scale-110"
           />
         </div>
         <span className="mt-4 inline-flex items-center gap-3 font-jost text-xs tracking-[0.14em] text-gold-deep">
@@ -60,7 +57,7 @@ const CasioLines = ({ lines, total }: { lines: CasioLine[]; total: number }) => 
   <section className="bg-[#f7f6f2] px-6 py-24 text-ink sm:px-10 md:py-32">
     <div className="mx-auto max-w-7xl">
       <div className="flex flex-wrap items-end justify-between gap-8">
-        <RevealHeading lines={["The world", "of Casio"]} className="text-5xl sm:text-7xl" />
+        <RevealHeading lines={["The world", "of Casio"]} className="text-4xl sm:text-6xl" />
         <p className="max-w-sm font-jost text-ink/60">
           {total} Casio watches, from the vintage A158 to the toughest G-Shock. Choose a line to start.
         </p>

@@ -11,7 +11,7 @@ const Hero4 = () => {
       <div className="mx-auto max-w-4xl text-center">
         <p className="font-jost text-[11px] tracking-[0.3em] text-gold-deep">THE NEXT CHAPTER</p>
         <div className="mt-5">
-          <RevealHeading lines={["Come and find", "your watch"]} align="center" className="text-5xl sm:text-7xl" />
+          <RevealHeading lines={["Come and find", "your watch"]} align="center" className="text-4xl sm:text-6xl" />
         </div>
 
         <motion.p

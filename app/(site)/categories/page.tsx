@@ -1,8 +1,8 @@
 import CategoriesPage from "@/components/categories/CategoriesPage";
-import { getAllProducts } from "@/lib/products";
+import { getShopProducts } from "@/lib/products";
 
 export default async function Page() {
-  const products = await getAllProducts();
+  const products = await getShopProducts();
 
   return <CategoriesPage products={products} />;
 }

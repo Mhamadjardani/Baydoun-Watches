@@ -1,9 +1,9 @@
 import ProductsCollection from "@/components/collections/ProductsCollection";
-import { getAllProducts } from "@/lib/products";
+import { getShopProducts } from "@/lib/products";
 import { Suspense } from "react";
 
 export default async function CollectionsPage() {
-  const products = await getAllProducts();
+  const products = await getShopProducts();
 
   return (
     <Suspense
