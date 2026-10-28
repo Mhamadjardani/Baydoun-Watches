@@ -6,7 +6,7 @@ Baydoun Watches: Next.js 16 (App Router, React 19, Tailwind 4, zustand) storefro
 (GitHub storage, repo `Mhamadjardani/Baydoun-Watches`, branch `main`). Product images are in the **Supabase Storage**
 bucket `products` and managed at `/admin/products`.
 Catalog on 2026-10-27: casio 806, omorfia 80 (2 hidden), tommy-hilfiger 49, calvin-klein 34, rovina 27, lacoste 19. 0 out of stock.
-Git: **branch `redesign/white-gold`** (from `main` @ `836259d`), all uncommitted. Since the last handoff (`b288e31`) the user committed: the `isNewArrival` badge and
+Git: **branch `redesign/white-gold`** committed as `7fa294a` and pushed to origin (2026-10-28). Not merged into `main`; the live site is unchanged. Since the last handoff (`b288e31`) the user committed: the `isNewArrival` badge and
 the "New arrivals first" default sort in collections (`2e4bebb`), Casio subcategory links that use `normalizeSubCategory`
 in `home/hero4.tsx` (`07b12fb`), swipe gestures on the home slider `home/hero1.tsx` (`42e4b13`), and navbar search
 wrapped in a `<form>` (`836259d`). Most other commits are Keystatic content edits ("Update src/content/products/...").
@@ -144,8 +144,9 @@ wrapped in a `<form>` (`836259d`). Most other commits are Keystatic content edit
     recommendations grid; logic unchanged; "Apartment, floor" is still required), Wishlist, Categories (brand cards
     in 3 columns + "By wrist" arches), Contact (form + map/phone/email/hours cards), and Heritage (4-part story).
     False claims were removed: "Swiss Precision", the Geneva/anglage values, "30+ years", "four decades".
-- **Next / open:** the user reviews the inner pages. Commit when the user asks (everything is still uncommitted on
-  `redesign/white-gold`). The admin and Keystatic pages were not restyled, by design.
+- **Next / open:** committed + pushed (`7fa294a`). The checkout apartment/floor field is now optional. To go live: open a PR
+  `redesign/white-gold` → `main` (https://github.com/Mhamadjardani/Baydoun-Watches/pull/new/redesign/white-gold) and merge when the user says.
+  The admin and Keystatic pages were not restyled, by design.
 - Skills: the `ui-animation-skills:*` plugin (GSAP + three.js skills) is installed. Use `threejs-*` and `gsap-*` for this work.
 - Claude in Chrome was "not connected" on 2026-10-28, so Playwright was used as the fallback (minimal screenshots).
 - **Next:** the user reviews the 3D hero. Then restyle the inner pages in white + gold.
