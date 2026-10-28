@@ -71,7 +71,7 @@ const Hero2 = () => {
           <div>
             <p className="font-jost text-[11px] tracking-[0.3em] text-gold-deep">THE SHOP</p>
             <div className="mt-5">
-              <RevealHeading lines={["A Beirut address", "since 1987"]} className="text-4xl sm:text-5xl" />
+              <RevealHeading lines={["A trusted address", "since 1987"]} className="text-4xl sm:text-5xl" />
             </div>
 
             <motion.div
@@ -82,9 +82,9 @@ const Hero2 = () => {
               className="mt-8 max-w-lg space-y-5 font-jost leading-relaxed text-ink/70"
             >
               <p>
-                Since 1987, Baydoun Watches has been at the centre of Beirut,
-                offering a curated selection of quality watches, bracelets and
-                wallets. Our experience has made us a trusted address for
+                Since 1987, Baydoun Watches has offered a curated selection of
+                quality watches, bracelets and wallets, from our shop in Beirut
+                to customers all over Lebanon. Our experience has made us a trusted address for
                 first-time buyers and long-time collectors alike.
               </p>
               <p>

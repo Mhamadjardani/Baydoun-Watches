@@ -65,7 +65,7 @@ const Hero1 = () => {
             transition={{ duration: 1, delay: 0.5, ease: [0.2, 0.9, 0.1, 1] }}
             className="mt-8 max-w-md font-jost text-base leading-relaxed text-ink/65 sm:text-lg"
           >
-            A watch shop in the heart of Beirut since 1987. This is a short
+            A watch shop since 1987, delivering across Lebanon. This is a short
             story about the place, the people behind the counter, and the
             promise we make with every watch.
           </motion.p>

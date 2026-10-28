@@ -21,7 +21,7 @@ const Footer = () => {
               className="h-auto w-36"
             />
             <p className="mt-5 max-w-xs font-serif text-xl font-light italic text-paper/80">
-              Watches, bracelets and wallets in the heart of Beirut.
+              Watches, bracelets and wallets, delivered across Lebanon.
             </p>
           </div>
 
@@ -78,7 +78,7 @@ const Footer = () => {
         </div>
 
         <p className="mt-16 border-t border-paper/10 pt-6 text-xs text-paper/40">
-          © {new Date().getFullYear()} Baydoun Watches, Beirut
+          © {new Date().getFullYear()} Baydoun Watches, Lebanon
         </p>
       </div>
     </footer>

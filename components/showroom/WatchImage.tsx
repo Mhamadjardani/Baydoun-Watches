@@ -54,6 +54,7 @@ export default function WatchImage({
       src={shown}
       alt={alt}
       loading={loading}
+      draggable={false}
       crossOrigin={failed ? undefined : "anonymous"}
       onLoad={() => setLoaded(true)}
       onError={() => {

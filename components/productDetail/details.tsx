@@ -11,6 +11,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import toast from "react-hot-toast";
 import WatchImage from "@/components/showroom/WatchImage";
+import { useSwipe } from "@/components/motion/useSwipe";
 
 // The same 3D pedestal as the homepage spotlight; three.js loads in the browser only.
 const StageScene = dynamic(() => import("@/components/home/StageScene"), { ssr: false });
@@ -38,6 +39,14 @@ const ProductDetails = ({
   const activeImage = images[activeIndex] ?? fallbackImage;
   const activeDisplayImage = failedImages.has(activeImage) ? fallbackImage : activeImage;
   const brandLabel = BRAND_LABELS[product.brand] ?? product.brand;
+
+  // Swipe (or drag) the stage to the next/previous photo, skipping missing ones.
+  const { style: swipeStyle, ...swipe } = useSwipe((step) => {
+    const shown = images.map((_, i) => i).filter((i) => !failedImages.has(images[i]));
+    if (shown.length < 2) return;
+    const at = Math.max(0, shown.indexOf(activeIndex));
+    setActiveIndex(shown[(at + step + shown.length) % shown.length]);
+  });
   const sale = (product.discount ?? 0) > 0;
   const isWishlisted =
     hasHydrated &&
@@ -153,7 +162,8 @@ const ProductDetails = ({
           <div
             ref={stageRef}
             className="relative h-[56svh] min-h-[360px] lg:h-[calc(100%-6rem)]"
-            style={{ ["--plinth-y" as string]: "70%" }}
+            {...swipe}
+            style={{ ...swipeStyle, ["--plinth-y" as string]: "70%" }}
           >
             <div
               aria-hidden="true"
@@ -270,7 +280,7 @@ const ProductDetails = ({
             ) : (
               <span className="inline-flex items-center gap-2 text-sm text-ink/70">
                 <ShieldCheck size={18} className="text-gold-deep" />
-                In stock, authentic and ready in Beirut
+                In stock, authentic, delivered across Lebanon
               </span>
             )}
           </motion.div>

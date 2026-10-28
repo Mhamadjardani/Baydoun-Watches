@@ -1,6 +1,7 @@
 "use client";
 
 import { useShowcase, useShowcaseReady } from "@/components/home/ShowcasePool";
+import { useSwipe } from "@/components/motion/useSwipe";
 import WatchImage from "@/components/showroom/WatchImage";
 import { prepareCutout } from "@/lib/cutout";
 import { LAUNCH_PROMO, launchPromoActive } from "@/lib/promo";
@@ -56,6 +57,9 @@ const HeroSpotlight = () => {
     prepareCutout(watches[(index + 1) % count].image);
   }, [index, count, watches]);
 
+  // Swipe (or drag) the stage to change watch.
+  const { style: swipeStyle, ...swipe } = useSwipe(go);
+
   // The watch leans toward the pointer.
   const px = useMotionValue(0);
   const py = useMotionValue(0);
@@ -96,7 +100,7 @@ const HeroSpotlight = () => {
             transition={{ duration: 1.6, ease }}
             className="font-jost text-[11px] text-gold-deep sm:text-xs"
           >
-            BEIRUT, SINCE 1987
+            SINCE 1987 · DELIVERED ACROSS LEBANON
           </motion.p>
           {launchPromoActive && (
             <motion.p
@@ -137,7 +141,7 @@ const HeroSpotlight = () => {
             className="mt-7 max-w-md font-jost text-base leading-relaxed text-ink/65 sm:text-lg"
           >
             Iconic watches from Casio, Tommy Hilfiger, Calvin Klein, Lacoste, Omorfia and Rovina,
-            handpicked in the heart of Beirut since 1987.
+            chosen with care since 1987 and delivered to your door anywhere in Lebanon.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 14 }}
@@ -162,7 +166,8 @@ const HeroSpotlight = () => {
           className="relative order-1 h-[52svh] min-h-[340px] origin-bottom will-change-transform lg:order-2 lg:h-[86svh]"
           onPointerEnter={() => setPaused(true)}
           onPointerLeave={() => setPaused(false)}
-          style={{ ["--plinth-y" as string]: "70%", ["--plinth-w" as string]: "240px" }}
+          {...swipe}
+          style={{ ...swipeStyle, ["--plinth-y" as string]: "70%", ["--plinth-w" as string]: "240px" }}
         >
           {/* Warm spotlight from above */}
           <div

@@ -132,6 +132,16 @@ Client comment 2026-10-28: the gold glow/spotlight/gold dust tinted the watches 
   brands/lines marquee smaller (`text-3xl sm:text-5xl` / `text-xl sm:text-3xl`), and scaled titles down one step
   (sections `text-4xl sm:text-6xl`, hero h1 `clamp(2.8rem,6vw,6.25rem)`, product title `text-3xl sm:text-5xl`).
 
+## Swipe + "Lebanon" copy (2026-10-29)
+- Swipe/drag between photos: `components/motion/useSwipe.ts` (pointer events, 45px threshold, `touch-action: pan-y` so
+  the page still scrolls, swallows the click that ends a swipe). Used on the home hero stage (next/previous watch) and
+  the product page stage (next/previous photo, skipping missing ones). Arrows and thumbnails still work.
+- Client: "Beirut" lines made customers think the shop only serves Beirut; it delivers across all of Lebanon. Rewrote:
+  hero eyebrow "SINCE 1987 · DELIVERED ACROSS LEBANON" + caption, HeritageArch ("A trusted name in fine watches"),
+  Promises ("Why Lebanon buys its watches here"; delivery "anywhere in Lebanon, within 48 hours in Beirut and
+  surrounding areas"), HelpChoose open status, product page stock line, footer, heritage hero1/hero2.
+  Kept on purpose: the shop address on Contact ("Beirut, El Malla"), the cart city placeholder, Asia/Beirut hours.
+
 ## Things that bit us
 - WebFetch on JS-rendered pricing pages returns only the title → use Claude in Chrome.
 - Don't quote pricing/limits from memory → **verify on the official site.**

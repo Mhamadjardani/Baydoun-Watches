@@ -70,7 +70,7 @@ const HelpChoose = () => {
           {open !== null && (
             <p className="inline-flex items-center gap-2 text-sm text-paper/75">
               <span className={`h-2 w-2 rounded-full ${open ? "animate-pulse bg-[#3ddc84]" : "bg-gold"}`} />
-              {open ? "Open now in Beirut, until 19:00" : "Closed now. Message us and we'll reply when we open at 09:00"}
+              {open ? "The shop is open now, until 19:00" : "Closed now. Message us and we'll reply when we open at 09:00"}
             </p>
           )}
           <Link
