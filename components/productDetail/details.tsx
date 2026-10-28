@@ -56,6 +56,7 @@ const ProductDetails = ({
     (prod) => prod.brand == product.brand && !prod.isOutOfStock && prod.slug !== product.slug,
   );
   const cartQuantity = cartItems.find((item) => item.productSlug === product.slug)?.quantity ?? 0;
+  const inBag = hasHydrated && cartQuantity > 0 && !product.isOutOfStock;
 
   const handleShare = async () => {
     const shareData = {
@@ -299,13 +300,20 @@ const ProductDetails = ({
                 addToCart(product.brand, product.slug);
                 toast.success(`${product.title} added to your bag`);
               }}
-              className="group relative flex h-14 flex-1 cursor-pointer items-center justify-center gap-3 overflow-hidden rounded-full bg-ink px-6 text-sm tracking-[0.14em] text-paper disabled:cursor-not-allowed disabled:opacity-40"
+              aria-label={
+                product.isOutOfStock
+                  ? "Out of stock"
+                  : inBag
+                    ? `In your bag (${cartQuantity}). Add another ${product.title}`
+                    : `Add ${product.title} to bag`
+              }
+              // Same pill as Save and Share; it fills gold once the watch is in the bag, like Saved.
+              className={`flex h-14 flex-1 cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-full border px-6 text-sm tracking-[0.14em] transition-colors disabled:cursor-not-allowed disabled:opacity-40 ${
+                inBag ? "border-gold bg-gold text-ink" : "border-ink/20 enabled:hover:border-gold"
+              }`}
             >
-              <span className="absolute inset-0 origin-left scale-x-0 bg-gold transition-transform duration-500 ease-[cubic-bezier(0.65,0,0.35,1)] group-enabled:group-hover:scale-x-100" />
-              <span className="relative flex items-center gap-3 transition-colors group-enabled:group-hover:text-ink">
-                <ShoppingBag size={18} />
-                {product.isOutOfStock ? "Out of stock" : hasHydrated && cartQuantity > 0 ? `In your bag (${cartQuantity}), add another` : "Add to bag"}
-              </span>
+              <ShoppingBag size={18} />
+              {product.isOutOfStock ? "Out of stock" : inBag ? `In your bag (${cartQuantity})` : "Add to bag"}
             </button>
             <button
               type="button"
