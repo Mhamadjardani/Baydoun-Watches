@@ -1,0 +1,51 @@
+{
+  "title": "G-Shock Casual Men Watch GM-2100B-3ADR",
+  "sku": "GM-2100B-3ADR",
+  "subCategory": "g-shock",
+  "description": "Go sleek, sharp and bold with a G-SHOCK standard-bearer in a metal-clad octagonal take on the original iconic design.\nForged in stainless steel with rounded hairline finish, the strong bezel says super style all the way. The dial is treated with vapor deposition finish for a meticulously detailed metallic look that suits a classic metal G-SHOCK timepiece. Incremental variations in the detailed square dot texturing on the wristband take casual urethane materials up a notch. ",
+  "display": "Ana/Dig",
+  "gender": "Men",
+  "price": 290,
+  "isOutOfStock": false,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "73 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "49.3 × 44.4 × 11.8 mm"
+    },
+    {
+      "label": "Color",
+      "value": "GREEN"
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin"
+    },
+    {
+      "label": "Display Type",
+      "value": "Digital"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "200m"
+    }
+  ],
+  "features": [
+    "LED Light",
+    "Flash Alert Feature",
+    "Daily alarm",
+    "Timer",
+    "Hourly time signal",
+    "12/24-hour format"
+  ],
+  "imageCount": 3,
+  "arrivalDate": "2026-08-29",
+  "createdAt": "2026-08-29"
+}
