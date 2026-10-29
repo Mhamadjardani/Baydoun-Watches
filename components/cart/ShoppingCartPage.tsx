@@ -95,48 +95,64 @@ const ShoppingCartPage = ({ products }: { products: ProductCard[] }) => {
   const shipping = subtotal > 0 ? shippingEstimate : 0;
   const total = subtotal + shipping;
 
+  // The order the customer sends to the shop on WhatsApp. WhatsApp formatting:
+  // *bold*, ~strikethrough~. Each item links to its product page, and WhatsApp
+  // previews the first link with the watch photo (see generateMetadata on the
+  // product page); the shop can tap any link to see that watch.
   const buildWhatsAppMessage = () => {
-    const customerInfo = `
-🧾 *New Order Request*
+    const orderDate = new Intl.DateTimeFormat("en-GB", {
+      dateStyle: "medium",
+      timeStyle: "short",
+      timeZone: "Asia/Beirut",
+    }).format(new Date());
+    const pieces = orderableProducts.reduce((count, item) => count + item.quantity, 0);
+    const address = [formData.address, formData.apartment, formData.city]
+      .map((part) => part.trim())
+      .filter(Boolean)
+      .join(", ");
 
-👤 *Customer Details*
-• Name: ${formData.firstName} ${formData.lastName}
-• Email: ${formData.email}
-• Phone: ${formData.mobileNumber}
+    const items = orderableProducts.map((item, index) => {
+      const { product } = item;
+      const brand = BRAND_LABELS[product.brand] ?? product.brand;
+      const hasDiscount = (product.discount ?? 0) > 0;
+      const unitPrice = hasDiscount
+        ? `${formatPrice(item.currentPrice)} ~${formatPrice(product.price)}~ (-${product.discount}%)`
+        : formatPrice(product.price);
+      const link = `${window.location.origin}/collections/${product.brand}/${product.slug}`;
 
-📍 *Delivery Address*
-• Address: ${formData.address}
-• Apartment: ${formData.apartment || "-"}
-• City: ${formData.city}
-`;
+      return [
+        `${index + 1}. *${product.title}*`,
+        `Brand: ${brand}${product.sku ? ` | Ref: ${product.sku}` : ""}`,
+        `Quantity: ${item.quantity} x ${unitPrice}`,
+        `Line total: ${formatPrice(item.currentPrice * item.quantity)}`,
+        link,
+      ].join("\n");
+    });
 
-    const items = orderableProducts
-      .map((item, index) => {
-        // Determine if we should display the discount breakdown in text
-        const hasDiscount = item.product.discount && item.product.discount > 0;
-        const priceDisplay = hasDiscount
-          ? `~~$${item.product.price}~~ *$${item.currentPrice.toFixed(2)}* (${item.product.discount}% OFF)`
-          : `$${item.product.price}`;
+    const message = [
+      "*New order, Baydoun Watches*",
+      orderDate,
+      "",
+      "*Customer*",
+      `Name: ${formData.firstName.trim()} ${formData.lastName.trim()}`,
+      `Phone: ${formData.mobileNumber.trim()}`,
+      ...(formData.email.trim() ? [`Email: ${formData.email.trim()}`] : []),
+      "",
+      "*Delivery address*",
+      address,
+      "",
+      `*Order (${pieces} ${pieces === 1 ? "piece" : "pieces"})*`,
+      items.join("\n\n"),
+      "",
+      "*Summary*",
+      `Subtotal: ${formatPrice(subtotal)}`,
+      `Delivery: ${formatPrice(shipping)}`,
+      `*Total: ${formatPrice(total)}*`,
+      "",
+      "Please confirm availability and the delivery time. Thank you.",
+    ].join("\n");
 
-        return `
-🛒 *Item ${index + 1}*
-• Product: ${item.product.title}
-• Brand: ${item.product.brand}
-• SKU: ${item.product.sku}
-• Qty: ${item.quantity}
-• Price: ${priceDisplay}
-`;
-      })
-      .join("\n");
-
-    const summary = `
-💰 *Order Summary*
-• Subtotal: $${subtotal.toFixed(2)}
-• Shipping: $${shipping.toFixed(2)}
-• *Total Price: $${total.toFixed(2)}*
-`;
-
-    return encodeURIComponent(`${customerInfo}\n${items}\n${summary}`);
+    return encodeURIComponent(message);
   };
 
   const makeKey = (brand: string, slug: string) =>
