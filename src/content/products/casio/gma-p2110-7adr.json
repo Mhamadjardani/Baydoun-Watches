@@ -1,12 +1,14 @@
 {
   "title": "G-Shock Casual Women Watch GMA-P2110-7ADR",
   "sku": "GMA-P2110-7ADR",
+  "subCategory": "g-shock",
+  "description": "The G-Shock GMA-P2110-7ADR features a compact, sporty design with a bold red finish. Its shock-resistant construction makes it a reliable choice for everyday wear.",
   "display": "Ana/Dig",
   "gender": "Women",
   "price": 205,
-  "subCategory": "g-shock",
-  "description": "The G-Shock GMA-P2110-7ADR features a compact, sporty design with a bold red finish. Its shock-resistant construction makes it a reliable choice for everyday wear.",
+  "isOutOfStock": false,
   "isNewArrival": false,
+  "isVisible": true,
   "isFeatured": false,
   "isLimitedEdition": false,
   "specifications": [
@@ -44,7 +46,7 @@
     "Hourly time signal",
     "12/24-hour format"
   ],
-  "imageCount": 1,
+  "imageCount": 3,
   "arrivalDate": "2026-08-30",
   "createdAt": "2026-08-30"
 }
