@@ -1,12 +1,14 @@
 {
   "title": "G-Shock Casual Men Watch GA-010GB-1A9DR",
   "sku": "GA-010GB-1A9DR",
+  "subCategory": "g-shock",
+  "description": "The G-Shock GA-010GB-1A9DR features a bold, rugged design with a durable resin band and a striking gold-tone finish. Its sporty style makes it a versatile choice for everyday and active wear.",
   "display": "Analog",
   "gender": "Men",
   "price": 175,
-  "subCategory": "g-shock",
-  "description": "The G-Shock GA-010GB-1A9DR features a bold, rugged design with a durable resin band and a striking gold-tone finish. Its sporty style makes it a versatile choice for everyday and active wear.",
+  "isOutOfStock": false,
   "isNewArrival": false,
+  "isVisible": true,
   "isFeatured": false,
   "isLimitedEdition": false,
   "specifications": [
@@ -44,7 +46,7 @@
     "Hourly time signal",
     "12/24-hour format"
   ],
-  "imageCount": 1,
+  "imageCount": 2,
   "arrivalDate": "2026-08-29",
   "createdAt": "2026-08-29"
 }
