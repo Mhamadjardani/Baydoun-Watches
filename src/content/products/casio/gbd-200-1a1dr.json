@@ -1,11 +1,13 @@
 {
   "title": "G-Shock Bluetooth Digital Men watch GBD-200-1A1DR",
   "sku": "GBD-200-1A1DR",
+  "subCategory": "g-shock",
   "display": "Digital",
   "gender": "Men",
   "price": 225,
-  "subCategory": "g-shock",
+  "isOutOfStock": false,
   "isNewArrival": false,
+  "isVisible": true,
   "isFeatured": false,
   "isLimitedEdition": false,
   "specifications": [
@@ -53,7 +55,7 @@
     "Memory in Pixel (MIP) LCD",
     "Life Log Data Daily data display (step count), Monthly data display (running distance) Training Data (Up to 100 runs, up to 140 lap times per run) Elapsed time, distance, pace, calories burned"
   ],
-  "imageCount": 2,
+  "imageCount": 7,
   "arrivalDate": "2026-07-04",
   "createdAt": "2026-07-04"
 }
