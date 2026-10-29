@@ -1,12 +1,14 @@
 {
   "title": "G-Shock Casual Men Watch GM-5600M-1DR",
   "sku": "GM-5600M-1DR",
+  "subCategory": "g-shock",
+  "description": "The G-Shock GM-5600M-1DR features a classic square case with a bold metal bezel. Its durable, shock-resistant design makes it ideal for everyday wear.",
   "display": "Digital",
   "gender": "Men",
   "price": 290,
-  "subCategory": "g-shock",
-  "description": "The G-Shock GM-5600M-1DR features a classic square case with a bold metal bezel. Its durable, shock-resistant design makes it ideal for everyday wear.",
+  "isOutOfStock": false,
   "isNewArrival": false,
+  "isVisible": true,
   "isFeatured": false,
   "isLimitedEdition": false,
   "specifications": [
@@ -43,7 +45,7 @@
     "Hourly time signal",
     "12/24-hour format"
   ],
-  "imageCount": 1,
+  "imageCount": 8,
   "arrivalDate": "2026-08-29",
   "createdAt": "2026-08-29"
 }
