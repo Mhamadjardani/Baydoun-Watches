@@ -1,12 +1,14 @@
 {
   "title": "G-Shock Casual Men Watch GA-110RRB-4ADR",
   "sku": "GA-110RRB-4ADR",
+  "subCategory": "g-shock",
+  "description": "The G-Shock GA-110RRB-4ADR features a bold red design with a distinctive analog-digital display. Its rugged construction and shock resistance make it ideal for active everyday wear.",
   "display": "Ana/Dig",
   "gender": "Men",
   "price": 205,
-  "subCategory": "g-shock",
-  "description": "The G-Shock GA-110RRB-4ADR features a bold red design with a distinctive analog-digital display. Its rugged construction and shock resistance make it ideal for active everyday wear.",
+  "isOutOfStock": false,
   "isNewArrival": false,
+  "isVisible": true,
   "isFeatured": false,
   "isLimitedEdition": false,
   "specifications": [
@@ -43,7 +45,7 @@
     "Hourly time signal",
     "12/24-hour format"
   ],
-  "imageCount": 1,
+  "imageCount": 5,
   "arrivalDate": "2026-08-30",
   "createdAt": "2026-08-30"
 }
