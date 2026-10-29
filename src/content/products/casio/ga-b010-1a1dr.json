@@ -1,12 +1,14 @@
 {
   "title": "G-Shock Casual Men Watch GA-B010-1A1DR",
   "sku": "GA-B010-1A1DR",
+  "subCategory": "g-shock",
+  "description": "The G-Shock GA-B010-1A1DR features a rugged design with a bold analog-digital display. Its durable construction and shock resistance make it a reliable choice for active everyday wear.",
   "display": "Ana/Dig",
   "gender": "Men",
   "price": 235,
-  "subCategory": "g-shock",
-  "description": "The G-Shock GA-B010-1A1DR features a rugged design with a bold analog-digital display. Its durable construction and shock resistance make it a reliable choice for active everyday wear.",
+  "isOutOfStock": false,
   "isNewArrival": false,
+  "isVisible": true,
   "isFeatured": false,
   "isLimitedEdition": false,
   "specifications": [
@@ -44,7 +46,7 @@
     "Hourly time signal",
     "12/24-hour format"
   ],
-  "imageCount": 1,
+  "imageCount": 6,
   "arrivalDate": "2026-08-30",
   "createdAt": "2026-08-30"
 }
