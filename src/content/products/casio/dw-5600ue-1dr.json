@@ -1,12 +1,14 @@
 {
   "title": "G-Shock Casual Men Watch DW-5600UE-1DR",
   "sku": "DW-5600UE-1DR",
+  "subCategory": "g-shock",
+  "description": "The G-Shock DW-5600UE-1DR is a classic digital watch that combines a timeless design with G-Shock’s signature durability. Its compact square case, clear digital display, and shock-resistant construction make it a dependable choice for everyday wear.",
   "display": "Digital",
   "gender": "Men",
   "price": 135,
-  "subCategory": "g-shock",
-  "description": "The G-Shock DW-5600UE-1DR is a classic digital watch that combines a timeless design with G-Shock’s signature durability. Its compact square case, clear digital display, and shock-resistant construction make it a dependable choice for everyday wear.",
+  "isOutOfStock": false,
   "isNewArrival": false,
+  "isVisible": true,
   "isFeatured": false,
   "isLimitedEdition": false,
   "specifications": [
@@ -39,7 +41,7 @@
     "Hourly time signal",
     "12/24-hour format"
   ],
-  "imageCount": 1,
+  "imageCount": 8,
   "arrivalDate": "2026-08-30",
   "createdAt": "2026-08-30"
 }
