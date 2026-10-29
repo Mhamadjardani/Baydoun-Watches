@@ -1,12 +1,14 @@
 {
   "title": "G-Shock Casual Men Watch GM-2100BM-1ADR",
   "sku": "GM-2100BM-1ADR",
+  "subCategory": "g-shock",
+  "description": "The G-Shock GM-2100BM-1ADR combines a sleek metal design with a bold octagonal case. Its durable build and shock resistance make it perfect for everyday wear.",
   "display": "Digital",
   "gender": "Men",
   "price": 290,
-  "subCategory": "g-shock",
-  "description": "The G-Shock GM-2100BM-1ADR combines a sleek metal design with a bold octagonal case. Its durable build and shock resistance make it perfect for everyday wear.",
+  "isOutOfStock": false,
   "isNewArrival": false,
+  "isVisible": true,
   "isFeatured": false,
   "isLimitedEdition": false,
   "specifications": [
@@ -43,7 +45,7 @@
     "Hourly time signal",
     "12/24-hour format"
   ],
-  "imageCount": 1,
+  "imageCount": 7,
   "arrivalDate": "2026-08-29",
   "createdAt": "2026-08-29"
 }
