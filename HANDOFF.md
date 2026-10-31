@@ -142,6 +142,17 @@ Client comment 2026-10-28: the gold glow/spotlight/gold dust tinted the watches 
   surrounding areas"), HelpChoose open status, product page stock line, footer, heritage hero1/hero2.
   Kept on purpose: the shop address on Contact ("Beirut, El Malla"), the cart city placeholder, Asia/Beirut hours.
 
+## Fonts are self-hosted (2026-10-31)
+- A production build failed on Vercel (Keystatic price edit `2a15c1f`, casio g-8900s-1 $180→$185) with
+  "next/font/google queries have exactly one entry" while building the Cormorant Garamond Google font
+  (9s build from a restored build cache). Same code built fine locally. The site kept serving the previous deploy.
+- Fix: no more `next/font/google`. `app/layout.tsx` loads every font with `next/font/local` from `/fonts`:
+  `Geist/Geist-Variable.woff2`, `Geist/GeistMono-Variable.woff2` (from npm `geist@1.9.0`),
+  `Cormorant_Garamond/cormorant-garamond-latin-wght-normal.woff2` and `Jost/jost-latin-wght-normal.woff2`
+  (from `@fontsource-variable/*@5.3.0`), OFL licences next to them. Latin, normal style only (same as before,
+  the Google setup loaded no italics). Checked side by side with the live site: identical.
+- If a Vercel build fails again for no code reason: Deployment → Redeploy with "Use existing Build Cache" unticked.
+
 ## Things that bit us
 - WebFetch on JS-rendered pricing pages returns only the title → use Claude in Chrome.
 - Don't quote pricing/limits from memory → **verify on the official site.**

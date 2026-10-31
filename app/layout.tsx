@@ -1,30 +1,35 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Geist, Geist_Mono, Jost } from "next/font/google";
 import localFont from "next/font/local";
 import ScrollReset from "../components/ScrollReset";
 import "./globals.css";
 
-const geistSans = Geist({
+// All fonts are stored in /fonts (latin, variable weight) instead of next/font/google,
+// so builds never depend on downloading from Google Fonts. A failed download there
+// broke a production build on 2026-10-31.
+const geistSans = localFont({
+  src: "../fonts/Geist/Geist-Variable.woff2",
   variable: "--font-geist-sans",
-  subsets: ["latin"],
+  weight: "100 900",
 });
 
-const geistMono = Geist_Mono({
+const geistMono = localFont({
+  src: "../fonts/Geist/GeistMono-Variable.woff2",
   variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: "100 900",
 });
 
 // Logo-matched pair: a classical roman serif like "BAYDOUN", a light geometric sans like "WATCHES".
-const cormorant = Cormorant_Garamond({
+const cormorant = localFont({
+  src: "../fonts/Cormorant_Garamond/cormorant-garamond-latin-wght-normal.woff2",
   variable: "--font-cormorant",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
+  weight: "300 700",
   display: "swap",
 });
 
-const jost = Jost({
+const jost = localFont({
+  src: "../fonts/Jost/jost-latin-wght-normal.woff2",
   variable: "--font-jost",
-  subsets: ["latin"],
+  weight: "100 900",
   display: "swap",
 });
 
