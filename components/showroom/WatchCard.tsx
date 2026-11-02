@@ -57,7 +57,7 @@ export default function WatchCard({
         </button>
       )}
 
-      <Link href={href} className="block">
+      <Link prefetch={false} href={href} className="block">
         <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem] bg-[#f6f5f1]">
           <div
             aria-hidden="true"

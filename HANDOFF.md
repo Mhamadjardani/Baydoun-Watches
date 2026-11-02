@@ -153,6 +153,19 @@ Client comment 2026-10-28: the gold glow/spotlight/gold dust tinted the watches 
   the Google setup loaded no italics). Checked side by side with the live site: identical.
 - If a Vercel build fails again for no code reason: Deployment → Redeploy with "Use existing Build Cache" unticked.
 
+## Vercel limit: Fast Origin Transfer (2026-11-02)
+- Vercel email: Hobby team hit 100% of Fast Origin Transfer (10.17 / 10 GB, rolling 30 days, about 300-600 MB/day, 1.8 GB on
+  Oct 29); account to be paused 2026-11-03 unless upgraded. Hobby is also "non-commercial, personal use only" per Vercel's
+  docs, and this is a shop, so Pro is the compliant plan whatever the usage.
+- Cause: pages were huge. The site layout embedded the whole catalogue for the navbar (1.2 MB on every page), product pages
+  also rendered every same-brand watch twice in "More from {brand}" (4 MB per page), and every visible `<Link>` prefetched.
+- Fix (product page 4 MB → 94 KB, home 1.36 MB → 0.16 MB, About 1.24 MB → 0.04 MB):
+  `app/catalog.json/route.ts` (force-static full catalogue) + `lib/useCatalog.ts`, used by Navbar and SearchResultsPage;
+  `getShopListings()` in `lib/products.ts` (no description/specs/features) for cart, categories, collections, sales, wishlist;
+  product page gets 12 related watches only (`RELATED_COUNT`); all storefront `<Link>`s have `prefetch={false}`;
+  Sales shows 24 + "Show more". New storefront links should keep `prefetch={false}`.
+- Still ~0.6 MB: collections, categories, cart, wishlist (they embed the trimmed list). Cart and wishlist could use useCatalog.
+
 ## Things that bit us
 - WebFetch on JS-rendered pricing pages returns only the title → use Claude in Chrome.
 - Don't quote pricing/limits from memory → **verify on the official site.**

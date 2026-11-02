@@ -65,7 +65,7 @@ const HeritageArch = () => {
             and wallets, with honest advice for first-time buyers and collectors alike, and delivery to
             every corner of Lebanon.
           </p>
-          <Link
+          <Link prefetch={false}
             href="/heritage"
             className="group relative mt-10 inline-flex overflow-hidden rounded-full border border-ink px-8 py-3.5 font-jost text-sm tracking-[0.14em]"
           >

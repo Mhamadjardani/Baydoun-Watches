@@ -1,8 +1,8 @@
 import SalesPage from "@/components/sales/SalesPage";
-import { getShopProducts } from "@/lib/products";
+import { getShopListings } from "@/lib/products";
 
 export default async function Page() {
-  const products = await getShopProducts();
+  const products = await getShopListings();
   const discounted = products.filter((p) => p.discount && p.discount > 0);
 
   return <SalesPage products={discounted} />;

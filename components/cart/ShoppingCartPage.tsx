@@ -283,7 +283,7 @@ const ShoppingCartPage = ({ products }: { products: ProductCard[] }) => {
               Add a watch from the collection and it will wait here for you,
               even if you close the page.
             </p>
-            <Link
+            <Link prefetch={false}
               href="/collections"
               className="group relative mt-10 overflow-hidden rounded-full bg-ink px-8 py-4 font-jost text-sm tracking-[0.14em] text-paper"
             >
@@ -343,7 +343,7 @@ const ShoppingCartPage = ({ products }: { products: ProductCard[] }) => {
                         transition={{ duration: 0.7, delay: index * 0.06, ease }}
                         className="relative grid grid-cols-[88px_minmax(0,1fr)] gap-4 border-b border-gold/25 py-6 sm:grid-cols-[128px_minmax(0,1fr)_auto] sm:gap-6"
                       >
-                        <Link
+                        <Link prefetch={false}
                           href={href}
                           className="relative block aspect-square overflow-hidden rounded-2xl bg-[#f6f5f1]"
                         >
@@ -362,7 +362,7 @@ const ShoppingCartPage = ({ products }: { products: ProductCard[] }) => {
                                 BRAND_LABELS[product.brand] ?? product.brand
                               ).toUpperCase()}
                             </p>
-                            <Link
+                            <Link prefetch={false}
                               href={href}
                               className="mt-1 block text-base leading-snug text-ink transition-colors hover:text-gold-deep sm:text-lg"
                             >
@@ -504,7 +504,7 @@ const ShoppingCartPage = ({ products }: { products: ProductCard[] }) => {
                 </span>
               </button>
 
-              <Link
+              <Link prefetch={false}
                 href="/collections"
                 className="group mt-5 inline-flex items-center gap-3 font-jost text-sm tracking-[0.14em] text-ink"
               >
@@ -694,7 +694,7 @@ const ShoppingCartPage = ({ products }: { products: ProductCard[] }) => {
                   Pairs well with your bag
                 </h2>
               </div>
-              <Link
+              <Link prefetch={false}
                 href="/collections"
                 className="group inline-flex items-center gap-3 font-jost text-sm tracking-[0.14em] text-ink"
               >

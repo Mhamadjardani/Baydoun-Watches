@@ -12,7 +12,7 @@ export default function FloatingButtons() {
   return (
     <div className="fixed bottom-6 right-6 z-9999 flex flex-col gap-3">
       {/* WhatsApp */}
-      <Link
+      <Link prefetch={false}
         href={`https://wa.me/${whatsappNumber}`}
         target="_blank"
         rel="noopener noreferrer"
@@ -23,7 +23,7 @@ export default function FloatingButtons() {
       </Link>
 
       {/* Location */}
-      <Link
+      <Link prefetch={false}
         href={mapsUrl}
         target="_blank"
         rel="noopener noreferrer"

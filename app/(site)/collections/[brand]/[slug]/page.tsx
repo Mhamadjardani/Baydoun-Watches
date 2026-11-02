@@ -1,8 +1,10 @@
 import ProductDetails from "@/components/productDetail/details";
-import { getShopProducts, getShopProduct, isBrand, type Brand } from "@/lib/products";
+import { getShopListings, getShopProduct, isBrand, type Brand } from "@/lib/products";
 import { BRAND_LABELS, finalPrice, formatPrice } from "@/lib/showcase";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+
+const RELATED_COUNT = 12;
 
 type Params = { params: Promise<{ brand: Brand; slug: string }> };
 
@@ -37,9 +39,13 @@ export default async function ProductPage({ params }: Params) {
   if (!isBrand(brand)) notFound();
 
   const product = await getShopProduct(brand, slug);
-  const products = await getShopProducts();
 
   if (!product) notFound();
 
-  return <ProductDetails products={products} product={product} />;
+  // Only what the "More from {brand}" row shows; the whole catalogue made each page 4 MB.
+  const related = (await getShopListings())
+    .filter((p) => p.brand === brand && p.slug !== slug && !p.isOutOfStock)
+    .slice(0, RELATED_COUNT);
+
+  return <ProductDetails products={related} product={product} />;
 }

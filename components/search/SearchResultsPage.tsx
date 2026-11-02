@@ -4,6 +4,7 @@ import { inStockFirst } from "@/components/OutOfStockBadge";
 import PageHeader from "@/components/showroom/PageHeader";
 import WatchCard from "@/components/showroom/WatchCard";
 import { getSearchableProductText, ProductCard } from "@/lib/type";
+import { useCatalog } from "@/lib/useCatalog";
 import { useCommerceStore } from "@/store/useCommerceStore";
 import { motion } from "framer-motion";
 import { Search } from "lucide-react";
@@ -16,7 +17,8 @@ const matchesSearch = (product: ProductCard, query: string) => {
   return getSearchableProductText(product).includes(query.toLowerCase());
 };
 
-const SearchResultsPage = ({ products }: { products: ProductCard[] }) => {
+const SearchResultsPage = () => {
+  const products = useCatalog();
   const searchParams = useSearchParams();
   const query = searchParams.get("query") || "";
   const [page, setPage] = useState(1);
@@ -86,7 +88,11 @@ const SearchResultsPage = ({ products }: { products: ProductCard[] }) => {
           }
         />
 
-        {!normalizedQuery ? (
+        {normalizedQuery && products.length === 0 ? (
+          <p className="py-16 text-center font-jost text-sm tracking-[0.3em] text-gold-deep">
+            Searching the collection
+          </p>
+        ) : !normalizedQuery ? (
           <div className="py-24 text-center">
             <p className="font-serif text-4xl font-light">What are you looking for?</p>
             <p className="mx-auto mt-4 max-w-md font-jost text-ink/60">
@@ -157,7 +163,7 @@ const SearchResultsPage = ({ products }: { products: ProductCard[] }) => {
             <p className="mx-auto mt-4 max-w-md font-jost text-ink/60">
               Try a brand like Casio, a model number, or a broader word such as “chronograph”.
             </p>
-            <Link
+            <Link prefetch={false}
               href="/collections"
               className="group relative mt-8 inline-flex overflow-hidden rounded-full bg-ink px-8 py-4 font-jost text-sm tracking-[0.14em] text-paper"
             >

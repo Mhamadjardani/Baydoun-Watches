@@ -32,14 +32,14 @@ const Hero4 = () => {
           transition={{ duration: 0.9, delay: 0.35, ease: [0.2, 0.9, 0.1, 1] }}
           className="mt-12 flex flex-col items-center justify-center gap-8 sm:flex-row sm:gap-10"
         >
-          <Link
+          <Link prefetch={false}
             href="/collections"
             className="group relative overflow-hidden rounded-full bg-ink px-8 py-4 font-jost text-sm tracking-[0.14em] text-paper"
           >
             <span className="absolute inset-0 origin-left scale-x-0 bg-gold transition-transform duration-500 ease-[cubic-bezier(0.65,0,0.35,1)] group-hover:scale-x-100" />
             <span className="relative transition-colors group-hover:text-ink">View the collection</span>
           </Link>
-          <Link href="/contact" className="group inline-flex items-center gap-3 font-jost text-sm tracking-[0.14em] text-ink">
+          <Link prefetch={false} href="/contact" className="group inline-flex items-center gap-3 font-jost text-sm tracking-[0.14em] text-ink">
             Visit the shop
             <span className="h-px w-8 bg-gold transition-all duration-500 group-hover:w-14" aria-hidden="true" />
           </Link>

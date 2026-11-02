@@ -149,11 +149,11 @@ const HeroSpotlight = () => {
             transition={{ duration: 1.1, delay: 1.1, ease }}
             className="mt-9 flex flex-wrap items-center gap-5 font-jost"
           >
-            <Link href="/collections" className="group relative overflow-hidden rounded-full bg-ink px-8 py-4 text-sm tracking-[0.14em] text-paper">
+            <Link prefetch={false} href="/collections" className="group relative overflow-hidden rounded-full bg-ink px-8 py-4 text-sm tracking-[0.14em] text-paper">
               <span className="absolute inset-0 origin-left scale-x-0 bg-gold transition-transform duration-500 ease-[cubic-bezier(0.65,0,0.35,1)] group-hover:scale-x-100" />
               <span className="relative transition-colors group-hover:text-ink">Discover the collection</span>
             </Link>
-            <Link href="/collections" className="group inline-flex items-center gap-3 py-4 text-sm tracking-[0.14em] text-ink">
+            <Link prefetch={false} href="/collections" className="group inline-flex items-center gap-3 py-4 text-sm tracking-[0.14em] text-ink">
               New arrivals
               <span className="h-px w-8 bg-gold transition-all duration-500 group-hover:w-14" aria-hidden="true" />
             </Link>
@@ -201,7 +201,7 @@ const HeroSpotlight = () => {
                       animate={{ y: [0, -10, 0] }}
                       transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                     >
-                      <Link href={current.href} aria-label={`View ${current.title}`} className="block h-full w-full">
+                      <Link prefetch={false} href={current.href} aria-label={`View ${current.title}`} className="block h-full w-full">
                         <WatchImage
                           src={current.image}
                           alt={current.title}
@@ -238,7 +238,7 @@ const HeroSpotlight = () => {
                         <span className="text-xs text-ink/40 line-through">{formatPrice(current.originalPrice)}</span>
                       )}
                     </p>
-                    <Link href={current.href} className="group inline-flex items-center gap-2 text-xs tracking-[0.16em] text-ink">
+                    <Link prefetch={false} href={current.href} className="group inline-flex items-center gap-2 text-xs tracking-[0.16em] text-ink">
                       VIEW
                       <span className="h-px w-5 bg-gold transition-all duration-300 group-hover:w-9" aria-hidden="true" />
                     </Link>
@@ -256,7 +256,7 @@ const HeroSpotlight = () => {
               </button>
               {/* Phones: the price card would cover the pedestal, so brand and price sit here */}
               {current && (
-                <Link href={current.href} className="flex min-w-0 items-baseline gap-2 sm:hidden">
+                <Link prefetch={false} href={current.href} className="flex min-w-0 items-baseline gap-2 sm:hidden">
                   <span className="truncate text-[11px] tracking-[0.18em] text-gold-deep">{brand.toUpperCase()}</span>
                   <span className="font-serif text-xl text-ink">{formatPrice(current.price)}</span>
                 </Link>

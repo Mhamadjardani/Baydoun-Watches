@@ -73,7 +73,7 @@ const HelpChoose = () => {
               {open ? "The shop is open now, until 19:00" : "Closed now. Message us and we'll reply when we open at 09:00"}
             </p>
           )}
-          <Link
+          <Link prefetch={false}
             href={WHATSAPP}
             target="_blank"
             rel="noopener noreferrer"
@@ -85,7 +85,7 @@ const HelpChoose = () => {
             </span>
             <span className="relative h-px w-8 bg-ink transition-all duration-500 group-hover:w-14" aria-hidden="true" />
           </Link>
-          <Link
+          <Link prefetch={false}
             href={MAPS}
             target="_blank"
             rel="noopener noreferrer"

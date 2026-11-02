@@ -28,7 +28,7 @@ function LineCard({ line, index, wide }: { line: CasioLine; index: number; wide:
       viewport={{ once: true, margin: "-8% 0px" }}
       transition={{ duration: 0.9, delay: (index % 4) * 0.08, ease: [0.2, 0.9, 0.1, 1] }}
     >
-      <Link
+      <Link prefetch={false}
         href={`/collections?brand=casio&subCategory=${encodeURIComponent(line.key)}`}
         className="group relative block overflow-hidden rounded-[1.25rem] border border-gold/20 bg-paper p-6 transition-colors duration-500 hover:border-gold"
       >

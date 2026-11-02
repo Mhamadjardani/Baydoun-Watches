@@ -87,7 +87,7 @@ const SpotlightTrack = () => {
         <div data-row className="no-scrollbar mt-10 snap-x snap-mandatory overflow-x-auto md:snap-none md:overflow-visible">
           <div ref={trackRef} className="flex w-max gap-6 px-6 sm:px-10 md:gap-10 xl:px-16">
             {watches.map((watch) => (
-              <Link
+              <Link prefetch={false}
                 key={watch.href}
                 href={watch.href}
                 data-card
@@ -132,7 +132,7 @@ const SpotlightTrack = () => {
               </Link>
             ))}
             {/* Closing card */}
-            <Link
+            <Link prefetch={false}
               href="/collections"
               className="group flex w-[72vw] shrink-0 snap-center flex-col items-center justify-center rounded-[2rem] border border-gold/40 sm:w-[44vw] md:w-[28vw] lg:w-[21vw]"
             >

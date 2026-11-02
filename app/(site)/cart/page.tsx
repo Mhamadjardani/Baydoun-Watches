@@ -1,8 +1,8 @@
 import ShoppingCartPage from "@/components/cart/ShoppingCartPage";
-import { getShopProducts } from "@/lib/products";
+import { getShopListings } from "@/lib/products";
 
 export default async function CartPage() {
-  const products = await getShopProducts();
+  const products = await getShopListings();
 
   return <ShoppingCartPage products={products} />;
 }

@@ -28,22 +28,22 @@ const Footer = () => {
           <div className="space-y-4 text-sm">
             <h2 className={headingClass}>EXPLORE</h2>
             <nav className="flex flex-col gap-2.5">
-              <Link href="/collections" className={linkClass}>Collection</Link>
-              <Link href="/sales" className={linkClass}>Sales</Link>
-              <Link href="/heritage" className={linkClass}>About us</Link>
-              <Link href="/categories" className={linkClass}>Categories</Link>
-              <Link href="/contact" className={linkClass}>Contact us</Link>
+              <Link prefetch={false} href="/collections" className={linkClass}>Collection</Link>
+              <Link prefetch={false} href="/sales" className={linkClass}>Sales</Link>
+              <Link prefetch={false} href="/heritage" className={linkClass}>About us</Link>
+              <Link prefetch={false} href="/categories" className={linkClass}>Categories</Link>
+              <Link prefetch={false} href="/contact" className={linkClass}>Contact us</Link>
             </nav>
           </div>
 
           <div className="space-y-4 text-sm">
             <h2 className={headingClass}>CONTACT</h2>
             <address className="flex flex-col gap-2.5 not-italic">
-              <Link href="mailto:baydoun.est08@gmail.com" className={`${linkClass} break-all`}>
+              <Link prefetch={false} href="mailto:baydoun.est08@gmail.com" className={`${linkClass} break-all`}>
                 baydoun.est08@gmail.com
               </Link>
-              <Link href="tel:+96171346754" className={linkClass}>+961 71 346 754</Link>
-              <Link href="tel:+9611346754" className={linkClass}>+961 1 346 754</Link>
+              <Link prefetch={false} href="tel:+96171346754" className={linkClass}>+961 71 346 754</Link>
+              <Link prefetch={false} href="tel:+9611346754" className={linkClass}>+961 1 346 754</Link>
               <p className="text-paper/50">
                 Monday to Saturday
                 <br />
@@ -55,7 +55,7 @@ const Footer = () => {
           <div className="space-y-4 text-sm">
             <h2 className={headingClass}>FOLLOW US</h2>
             <div className="flex items-center gap-3">
-              <Link
+              <Link prefetch={false}
                 href="https://www.instagram.com/baydoun_est?stkn=MnY4ZDhlZTAwM2Rk"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -64,7 +64,7 @@ const Footer = () => {
               >
                 <BsInstagram size={18} />
               </Link>
-              <Link
+              <Link prefetch={false}
                 href="https://www.facebook.com/share/19YyzjCim9/?mibextid=wwXI"
                 target="_blank"
                 rel="noopener noreferrer"

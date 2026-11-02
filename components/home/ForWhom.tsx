@@ -79,7 +79,7 @@ const ForWhom = () => {
             viewport={{ once: true, margin: "-8% 0px" }}
             transition={{ duration: 1, delay: i * 0.12, ease: [0.2, 0.9, 0.1, 1] }}
           >
-            <Link href={panel.href} className="group block text-center">
+            <Link prefetch={false} href={panel.href} className="group block text-center">
               <div className="relative aspect-[3/4] overflow-hidden rounded-t-full border border-gold/30 p-2 transition-colors duration-500 group-hover:border-gold">
                 <div data-arch className="relative h-full w-full overflow-hidden rounded-t-full">
                   <div data-drift className="absolute inset-[-12%_0]">

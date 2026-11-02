@@ -243,7 +243,7 @@ const ProductDetails = ({
         <div className="flex flex-col gap-8 pt-2 font-jost lg:pt-16">
           <div>
             <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease }} className="flex flex-wrap items-center gap-3">
-              <Link href={`/collections?brand=${product.brand}`} className="text-xs tracking-[0.3em] text-gold-deep hover:text-ink">
+              <Link prefetch={false} href={`/collections?brand=${product.brand}`} className="text-xs tracking-[0.3em] text-gold-deep hover:text-ink">
                 {brandLabel.toUpperCase()}
               </Link>
               {product.isNewArrival && <span className="rounded-full border border-gold/40 px-3 py-1 text-[11px] tracking-[0.12em] text-gold-deep">New</span>}
@@ -389,7 +389,7 @@ const ProductDetails = ({
         <section className="mx-auto mt-24 max-w-[1500px] px-6 sm:px-10 xl:px-16">
           <div className="flex flex-wrap items-end justify-between gap-4 border-b border-gold/25 pb-6">
             <h2 className="font-serif text-4xl font-light sm:text-5xl">More from {brandLabel}</h2>
-            <Link href={`/collections?brand=${product.brand}`} className="group inline-flex items-center gap-3 font-jost text-sm tracking-[0.14em]">
+            <Link prefetch={false} href={`/collections?brand=${product.brand}`} className="group inline-flex items-center gap-3 font-jost text-sm tracking-[0.14em]">
               View all
               <span className="h-px w-8 bg-gold transition-all duration-500 group-hover:w-14" aria-hidden="true" />
             </Link>

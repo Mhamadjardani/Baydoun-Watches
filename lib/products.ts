@@ -83,6 +83,17 @@ export const getShopProducts = cache(async function getShopProducts() {
   return (await getAllProducts()).map(withLaunchPromo);
 });
 
+// For pages that list watches: without the long text they never show, so the
+// catalogue does not bloat their HTML. Search uses the full /catalog.json instead.
+export const getShopListings = cache(async function getShopListings(): Promise<ProductCard[]> {
+  return (await getShopProducts()).map((product) => ({
+    ...product,
+    description: "",
+    specifications: [],
+    features: [],
+  }));
+});
+
 export async function getShopProduct(brand: Brand, slug: string) {
   const product = await getProduct(brand, slug);
   return product ? withLaunchPromo({ ...product, discount: product.discount ?? null }) : null;

@@ -1,10 +1,7 @@
 import SearchResultsPage from "@/components/search/SearchResultsPage";
-import { getShopProducts } from "@/lib/products";
 import { Suspense } from "react";
 
-export default async function SearchPage() {
-  const products = await getShopProducts();
-
+export default function SearchPage() {
   return (
     <Suspense
       fallback={
@@ -17,7 +14,7 @@ export default async function SearchPage() {
         </main>
       }
     >
-      <SearchResultsPage products={products} />
+      <SearchResultsPage />
     </Suspense>
   );
 }

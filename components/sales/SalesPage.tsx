@@ -7,8 +7,10 @@ import { ProductCard } from "@/lib/type";
 import { useCommerceStore } from "@/store/useCommerceStore";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import toast from "react-hot-toast";
+
+const PAGE_SIZE = 24;
 
 const SalesPage = ({ products }: { products: ProductCard[] }) => {
   const wishlistItems = useCommerceStore((state) => state.wishlistItems);
@@ -24,6 +26,7 @@ const SalesPage = ({ products }: { products: ProductCard[] }) => {
     [products],
   );
   const bestSaving = salesProducts.reduce((max, p) => Math.max(max, p.discount ?? 0), 0);
+  const [visible, setVisible] = useState(PAGE_SIZE);
 
   return (
     <main className="min-h-screen bg-paper px-6 pb-24 pt-32 text-ink sm:px-10 xl:px-16">
@@ -51,7 +54,7 @@ const SalesPage = ({ products }: { products: ProductCard[] }) => {
           <div className="py-24 text-center">
             <p className="font-serif text-4xl font-light">No watches on sale right now.</p>
             <p className="mx-auto mt-4 max-w-md font-jost text-ink/60">Check back soon, or explore the full collection.</p>
-            <Link
+            <Link prefetch={false}
               href="/collections"
               className="group relative mt-8 inline-flex overflow-hidden rounded-full bg-ink px-8 py-4 font-jost text-sm tracking-[0.14em] text-paper"
             >
@@ -61,7 +64,7 @@ const SalesPage = ({ products }: { products: ProductCard[] }) => {
           </div>
         ) : (
           <ul className="mt-12 grid grid-cols-2 gap-x-4 gap-y-12 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4">
-            {salesProducts.map((product, index) => {
+            {salesProducts.slice(0, visible).map((product, index) => {
               const wishlisted =
                 hasHydrated &&
                 wishlistItems.some((item) => item.productSlug === product.slug && item.productBrand === product.brand);
@@ -85,6 +88,18 @@ const SalesPage = ({ products }: { products: ProductCard[] }) => {
               );
             })}
           </ul>
+        )}
+
+        {visible < salesProducts.length && (
+          <div className="mt-14 text-center">
+            <button
+              type="button"
+              onClick={() => setVisible((count) => count + PAGE_SIZE)}
+              className="h-14 cursor-pointer rounded-full border border-ink/20 px-10 font-jost text-sm tracking-[0.14em] transition-colors hover:border-gold"
+            >
+              Show more ({salesProducts.length - visible})
+            </button>
+          </div>
         )}
       </div>
     </main>

@@ -77,7 +77,7 @@ const WishlistPage = ({ products }: { products: ProductCard[] }) => {
               Tap the heart on any watch in the collection and it will be kept
               here for you.
             </p>
-            <Link
+            <Link prefetch={false}
               href="/collections"
               className="group relative mt-10 overflow-hidden rounded-full bg-ink px-8 py-4 font-jost text-sm tracking-[0.14em] text-paper"
             >

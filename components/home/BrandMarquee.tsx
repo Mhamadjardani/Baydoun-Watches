@@ -31,7 +31,7 @@ function Row({ items, reverse, size }: { items: typeof BRANDS; reverse?: boolean
   return (
     <div className="flex w-max" data-row={reverse ? "reverse" : "forward"}>
       {loop.map((item, i) => (
-        <Link
+        <Link prefetch={false}
           key={`${item.label}-${i}`}
           href={item.href}
           tabIndex={i < items.length ? 0 : -1}

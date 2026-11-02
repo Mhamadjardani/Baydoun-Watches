@@ -135,7 +135,7 @@ const Contact: React.FC = () => {
           >
             {/* MAP */}
             <motion.div variants={fadeUp} className="sm:col-span-2">
-              <Link
+              <Link prefetch={false}
                 href="https://www.google.com/maps/search/?api=1&query=Baydoun+Est."
                 target="_blank"
                 rel="noopener noreferrer"
@@ -170,7 +170,7 @@ const Contact: React.FC = () => {
             {/* WHATSAPP / PHONE */}
             <motion.div variants={fadeUp} className={card}>
               <p className={label}>PHONE &amp; WHATSAPP</p>
-              <Link
+              <Link prefetch={false}
                 href={`https://wa.me/96171346754`}
                 target="_blank"
                 rel="noopener noreferrer"

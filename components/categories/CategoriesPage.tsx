@@ -63,7 +63,7 @@ const DirectoryCard = ({
     viewport={{ once: true, margin: "-8% 0px" }}
     transition={{ duration: 0.8, delay: (index % 4) * 0.08, ease: [0.2, 0.9, 0.1, 1] }}
   >
-    <Link
+    <Link prefetch={false}
       href={group.href}
       className="group flex h-full flex-col rounded-[1.5rem] border border-gold/25 bg-paper p-4 transition-colors duration-500 hover:border-gold sm:p-6"
     >
@@ -140,7 +140,7 @@ const CategoriesPage = ({ products }: { products: ProductCard[] }) => {
           title={["Find your way in"]}
           caption="Start with a house you already love, or with the wrist you are choosing for. Every path leads straight to the pieces in store."
           aside={
-            <Link href="/collections" className="group inline-flex items-center gap-3 font-jost text-sm tracking-[0.14em] text-ink">
+            <Link prefetch={false} href="/collections" className="group inline-flex items-center gap-3 font-jost text-sm tracking-[0.14em] text-ink">
               View every watch
               <span className="h-px w-8 bg-gold transition-all duration-500 group-hover:w-14" aria-hidden="true" />
             </Link>
@@ -181,7 +181,7 @@ const CategoriesPage = ({ products }: { products: ProductCard[] }) => {
                 viewport={{ once: true, margin: "-8% 0px" }}
                 transition={{ duration: 0.9, delay: i * 0.1, ease: [0.2, 0.9, 0.1, 1] }}
               >
-                <Link href={wrist.href} className="group mx-auto block max-w-xs text-center">
+                <Link prefetch={false} href={wrist.href} className="group mx-auto block max-w-xs text-center">
                   <div className="relative aspect-[3/4] overflow-hidden rounded-t-full border border-gold/30 p-2 transition-colors duration-500 group-hover:border-gold">
                     <div data-arch className="relative h-full w-full overflow-hidden rounded-t-full">
                       <div data-drift className="absolute inset-[-10%_0]">
