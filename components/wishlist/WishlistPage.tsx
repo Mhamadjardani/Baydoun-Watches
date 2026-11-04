@@ -3,6 +3,7 @@
 import PageHeader from "@/components/showroom/PageHeader";
 import WatchCard from "@/components/showroom/WatchCard";
 import { ProductCard } from "@/lib/type";
+import { useCatalogState } from "@/lib/useCatalog";
 import { useCommerceStore } from "@/store/useCommerceStore";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
@@ -11,7 +12,9 @@ import toast from "react-hot-toast";
 
 const ease = [0.2, 0.9, 0.1, 1] as const;
 
-const WishlistPage = ({ products }: { products: ProductCard[] }) => {
+const WishlistPage = () => {
+  // Shared with the navbar's request, so the page itself stays small.
+  const { products, ready: catalogReady } = useCatalogState();
   const wishlistItems = useCommerceStore((state) => state.wishlistItems);
   const hasHydrated = useCommerceStore((state) => state.hasHydrated);
   const removeFromWishlist = useCommerceStore(
@@ -32,7 +35,7 @@ const WishlistPage = ({ products }: { products: ProductCard[] }) => {
     [wishlistItems, products],
   );
 
-  if (!hasHydrated) {
+  if (!hasHydrated || !catalogReady) {
     return (
       <main className="min-h-screen bg-paper px-6 pb-24 pt-32 text-ink sm:px-10 xl:px-16">
         <div className="mx-auto max-w-[1500px] py-24 text-center">

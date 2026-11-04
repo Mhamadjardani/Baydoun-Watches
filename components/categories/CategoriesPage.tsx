@@ -14,11 +14,14 @@ import { useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
+// Only what the brand cards use, so the page does not carry the whole catalogue.
+export type DirectoryProduct = Pick<ProductCard, "brand" | "isFeatured">;
+
 type DirectoryKey =
   // "category" |
   "brand";
 
-const buildGroups = (key: DirectoryKey, products: ProductCard[]) =>
+const buildGroups = (key: DirectoryKey, products: DirectoryProduct[]) =>
   Array.from(new Set(products.map((product) => product[key]))).map((value) => {
     const groupProducts = products.filter((product) => product[key] === value);
 
@@ -51,7 +54,7 @@ const DirectoryCard = ({
   group: {
     value: string;
     count: number;
-    product: ProductCard;
+    product: DirectoryProduct;
     href: string;
     image: string;
   };
@@ -99,7 +102,7 @@ const DirectoryCard = ({
 
 /* ---------------- PAGE ---------------- */
 
-const CategoriesPage = ({ products }: { products: ProductCard[] }) => {
+const CategoriesPage = ({ products }: { products: DirectoryProduct[] }) => {
   // const categoryGroups = buildGroups("category", products);
   const brandGroups = buildGroups("brand", products);
   const ref = useRef<HTMLElement>(null);

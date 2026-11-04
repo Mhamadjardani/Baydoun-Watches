@@ -14,19 +14,30 @@ function loadCatalog() {
   return catalog;
 }
 
-/** The full catalogue (see app/catalog.json), empty until it has loaded. */
-export function useCatalog() {
-  const [products, setProducts] = useState<ProductCard[]>([]);
+/**
+ * The full catalogue (see app/catalog.json) and whether it has loaded. Every
+ * page's navbar already asks for it, so other components share that request.
+ */
+export function useCatalogState() {
+  const [state, setState] = useState<{ products: ProductCard[]; ready: boolean }>({
+    products: [],
+    ready: false,
+  });
 
   useEffect(() => {
     let alive = true;
-    loadCatalog().then((loaded) => {
-      if (alive) setProducts(loaded);
+    loadCatalog().then((products) => {
+      if (alive) setState({ products, ready: true });
     });
     return () => {
       alive = false;
     };
   }, []);
 
-  return products;
+  return state;
+}
+
+/** The full catalogue, empty until it has loaded. */
+export function useCatalog() {
+  return useCatalogState().products;
 }

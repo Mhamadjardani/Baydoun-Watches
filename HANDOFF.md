@@ -164,7 +164,11 @@ Client comment 2026-10-28: the gold glow/spotlight/gold dust tinted the watches 
   `getShopListings()` in `lib/products.ts` (no description/specs/features) for cart, categories, collections, sales, wishlist;
   product page gets 12 related watches only (`RELATED_COUNT`); all storefront `<Link>`s have `prefetch={false}`;
   Sales shows 24 + "Show more". New storefront links should keep `prefetch={false}`.
-- Still ~0.6 MB: collections, categories, cart, wishlist (they embed the trimmed list). Cart and wishlist could use useCatalog.
+- 2026-11-04: cart and wishlist now use `useCatalogState()` (shared with the navbar request; they wait for `ready`) and
+  embed nothing (~26 KB). Categories gets only `{brand, isFeatured}` per watch (~85 KB). Still ~0.6 MB: collections, sales.
+- 2026-11-04: Next.js 16.3.8 → 16.4.5 (`2c08043`) for critical advisories (RCE in image optimizer with SVGs and in
+  `use cache`, Server Actions DoS) and sharp 0.35.5. Two moderate advisories left inside @keystatic/core (npm's "fix" is a
+  downgrade; ignored). Team is on Vercel **Pro** since 2026-11-03 (Hobby forbids commercial use).
 
 ## Things that bit us
 - WebFetch on JS-rendered pricing pages returns only the title → use Claude in Chrome.

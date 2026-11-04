@@ -6,6 +6,7 @@ import { outOfStockImageClass } from "@/components/OutOfStockBadge";
 import PageHeader from "@/components/showroom/PageHeader";
 import WatchCard from "@/components/showroom/WatchCard";
 import { BRAND_LABELS } from "@/lib/showcase";
+import { useCatalogState } from "@/lib/useCatalog";
 import { AnimatePresence, motion } from "framer-motion";
 import { CircleOff, Minus, Plus, X } from "lucide-react";
 import Link from "next/link";
@@ -28,7 +29,9 @@ const labelClass =
 const inputClass =
   "w-full rounded-xl border border-ink/15 bg-paper px-4 py-3 font-jost text-sm text-ink outline-none transition-colors placeholder:text-ink/35 focus:border-gold";
 
-const ShoppingCartPage = ({ products }: { products: ProductCard[] }) => {
+const ShoppingCartPage = () => {
+  // Shared with the navbar's request, so the page itself stays small.
+  const { products, ready: catalogReady } = useCatalogState();
   const cartItems = useCommerceStore((state) => state.cartItems);
   const hasHydrated = useCommerceStore((state) => state.hasHydrated);
   const addToCart = useCommerceStore((state) => state.addToCart);
@@ -236,7 +239,7 @@ const ShoppingCartPage = ({ products }: { products: ProductCard[] }) => {
     window.open(url, "_blank");
   };
 
-  if (!hasHydrated) {
+  if (!hasHydrated || !catalogReady) {
     return (
       <main className="min-h-screen bg-paper px-6 pb-24 pt-32 text-ink sm:px-10 xl:px-16">
         <div className="mx-auto max-w-[1500px] py-24 text-center">

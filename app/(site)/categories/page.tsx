@@ -4,5 +4,7 @@ import { getShopListings } from "@/lib/products";
 export default async function Page() {
   const products = await getShopListings();
 
-  return <CategoriesPage products={products} />;
+  return (
+    <CategoriesPage products={products.map(({ brand, isFeatured }) => ({ brand, isFeatured }))} />
+  );
 }
