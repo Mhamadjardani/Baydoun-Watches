@@ -1,0 +1,54 @@
+{
+  "title": "G-Shock Men Watch GMC-2500D-1A2DR",
+  "sku": "GMC-2500D-1A2DR",
+  "subCategory": "g-shock",
+  "description": "Immerse yourself in a minimalist beauty that embodies the essence of what it means to read time. Introducing GMC-2500 — a reinterpretation of practicality and readability in a contemporary analog design that advances the toughness and functional beauty of the DW-5000C, the very first G-SHOCK.\n\nWe’ve set aside digital technology to explore the human mechanics of intuitively, unambiguously sensing the time at a glance. This design reinterpretation sets a whole new standard for timepieces, bringing fresh value to engaging with the time our watches bring to life.\n\nThe analog “two-eye” design features a dedicated small seconds subdial and a mode-function date wheel, with the tail of the small seconds hand adorned with the Shock Resist mark telling the story of G-SHOCK origins. The highly intuitive three-cell date window in a color that matches the dial minimizes contrast and focuses attention on the time for the easy readability at the core of intuitive time-reading. Well-proportioned watch hands in a parallel-line design echo the shape of the raised bar indexes and watch case, creating a cohesive, understated look and feel.\n\nWith the magnetic holding structure, vulnerable watch hands are not directly fixed to the shaft, but instead attached using magnetic force, enabling the Shock Release Hand (minute hand) to effectively absorb and dissipate impact.*\n\nUse the seconds-hand sleep function to stop the small seconds subdial hand at any time, reducing power consumption and extending battery life.\n\nIntegrating this functional layout into the distinctive G-SHOCK octagonal form, this next-generation iconic design is one you’ll never forget.\n\n* Because the structure uses magnetic attachment, the minute hand may shake due to impact or vibration. Additionally, immediately after an impact or vibration, the minute hand may temporarily shift out of position, but it will return to the correct position within a few minutes.\n\nChoose your favorite color of brass dial — black, silver, or gold. Depending on the color, the dial is treated to either a sunray or honing finish, creating a look that is stylishly subtle, yet still dynamic. The textured resin band adds a sporty contrast to the refined metal head.\n\n",
+  "display": "Analog",
+  "gender": "Men",
+  "price": 445,
+  "discount": 15,
+  "isOutOfStock": false,
+  "isNewArrival": true,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "138 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "46.7 × 43.8 × 12.9 mm"
+    },
+    {
+      "label": "Gender",
+      "value": "Men"
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin"
+    },
+    {
+      "label": "DISPLAY TYPE",
+      "value": "Analog"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "200m"
+    },
+    {
+      "label": "Color",
+      "value": "Silver, Blue"
+    }
+  ],
+  "features": [
+    "Stopwatch  1-second stopwatch Measuring capacity: 29’59 (30 minutes) Measuring mode: Elapsed time",
+    "LED light Afterglow",
+    "Full auto-calendar (to year 2099)",
+    "Regular timekeeping: Analog: 2 hands (hour, minute (hand moves every 20 seconds)), 1 dial (second)  Date display  Hand shift feature (Hands move out of the way to provide an unobstructed view of indial)  Second hand sleep function"
+  ],
+  "imageCount": 7,
+  "arrivalDate": "2026-11-06",
+  "createdAt": "2026-11-06"
+}
