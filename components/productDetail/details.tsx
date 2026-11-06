@@ -249,7 +249,8 @@ const ProductDetails = ({
               {product.isNewArrival && <span className="rounded-full border border-gold/40 px-3 py-1 text-[11px] tracking-[0.12em] text-gold-deep">New</span>}
               {product.isLimitedEdition && <span className="rounded-full border border-gold/40 px-3 py-1 text-[11px] tracking-[0.12em] text-gold-deep">Limited</span>}
             </motion.div>
-            <h1 className="mt-4 overflow-hidden font-serif text-3xl font-light leading-[1.05] sm:text-5xl">
+            {/* Jost semibold: clearer than the light serif, and model numbers like A158WEM-3DF read cleanly. */}
+            <h1 className="mt-4 overflow-hidden pb-1 font-jost text-2xl font-semibold leading-tight tracking-tight sm:text-4xl">
               <motion.span className="block" initial={{ y: "100%" }} animate={{ y: "0%" }} transition={{ duration: 1.1, delay: 0.1, ease }}>
                 {product.title}
               </motion.span>
