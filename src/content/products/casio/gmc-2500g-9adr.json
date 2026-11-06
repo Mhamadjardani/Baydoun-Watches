@@ -10,7 +10,7 @@
   "isOutOfStock": false,
   "isNewArrival": true,
   "isVisible": true,
-  "isFeatured": false,
+  "isFeatured": true,
   "isLimitedEdition": false,
   "specifications": [
     {
