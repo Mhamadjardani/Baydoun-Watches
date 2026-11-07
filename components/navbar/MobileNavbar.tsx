@@ -180,7 +180,7 @@ const MobileNavbar: React.FC<{
         </button>
 
         <div className="flex shrink-0 items-center gap-2">
-          {menuIcons.map((icon, index) => {
+          {menuIcons.slice(1).map((icon, index) => {
             const isCart = "href" in icon && icon.href === "/cart";
             const isWish = "href" in icon && icon.href === "/wishlist";
 
@@ -188,17 +188,9 @@ const MobileNavbar: React.FC<{
               <button
                 key={`mobile-icon-${index}`}
                 type="button"
-                aria-label={index === 0 ? "Search" : "Open shortcut"}
-                onClick={() =>
-                  index === 0
-                    ? setIsSearch((prev) => !prev)
-                    : handleIconClick(icon)
-                }
-                className={`relative flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border text-ink transition duration-300 ease-in-out focus:outline-none ${
-                  index === 0 && isSearch
-                    ? "border-gold/30 bg-gold/10"
-                    : "border-gold/20 bg-paper hover:bg-gold/10"
-                }`}
+                aria-label="Open shortcut"
+                onClick={() => handleIconClick(icon)}
+                className="relative flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-gold/20 bg-paper text-ink transition duration-300 ease-in-out hover:bg-gold/10 focus:outline-none"
               >
                 {icon.icon}
                 {isCart && cartProducts.length > 0 && (
@@ -227,31 +219,33 @@ const MobileNavbar: React.FC<{
         </div>
       </div>
 
-      <AnimatePresence>
-        {isSearch && (
-          <motion.div
-            className="px-4 pb-3"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.2, ease: "easeInOut" }}
-          >
+      {/* Always open. Results show while the field (or a result) has focus. */}
+      <div className="px-4 pb-3">
             <form
               className="relative"
               onSubmit={(event) => {
                 event.preventDefault();
                 onSearchSubmit();
               }}
+              onFocus={() => setIsSearch(true)}
+              onBlur={(event) => {
+                if (!event.currentTarget.contains(event.relatedTarget)) setIsSearch(false);
+              }}
             >
+              <span className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-ink/50 [&_svg]:h-4.5 [&_svg]:w-4.5">
+                {menuIcons[0].icon}
+              </span>
               <input
-                type="text"
+                type="search"
                 value={searchValue}
                 onChange={(event) => setSearchValue(event.target.value)}
                 placeholder="Search our collection"
-                className="h-11 w-full rounded-full border border-gold/20 bg-paper px-4 text-sm text-ink placeholder:text-ink/40 focus:outline-none focus:ring-2 focus:ring-gold/30"
+                aria-label="Search our collection"
+                enterKeyHint="search"
+                className="h-10 w-full rounded-full border border-gold/20 bg-paper pl-10 pr-4 font-jost text-base text-ink placeholder:text-ink/40 focus:border-gold/60 focus:outline-none"
               />
-              {searchValue.trim() && (
-                <div className="absolute inset-x-0 top-full z-50 mt-2 overflow-hidden rounded-3xl border border-gold/20 bg-paper/95 shadow-[0_20px_80px_rgba(0,0,0,0.45)] backdrop-blur-xl">
+              {isSearch && searchValue.trim() && (
+                <div className="absolute inset-x-0 top-full z-50 mt-2 overflow-hidden rounded-3xl font-jost border border-gold/20 bg-paper/95 shadow-[0_20px_80px_rgba(0,0,0,0.45)] backdrop-blur-xl">
                   {searchResults.length > 0 ? (
                     <>
                       {searchResults.map((product) => (
@@ -263,7 +257,7 @@ const MobileNavbar: React.FC<{
                         >
                           <div className="flex items-center gap-3">
                             <div className="shrink-0">
-                              <div className="relative h-12 w-12 overflow-hidden rounded-md bg-[#0b0b0b]">
+                              <div className="relative h-12 w-12 overflow-hidden rounded-md bg-[#f6f5f1]">
                                 <Image
                                   src={getProductImage(product)}
                                   alt={product.title}
@@ -314,9 +308,7 @@ const MobileNavbar: React.FC<{
                 </div>
               )}
             </form>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      </div>
 
       <AnimatePresence>
         {openMenu && (
@@ -378,7 +370,7 @@ const MobileNavbar: React.FC<{
                     className="h-11 w-full rounded-full border border-gold/20 bg-paper px-4 text-sm text-ink placeholder:text-ink/40 focus:outline-none focus:ring-2 focus:ring-gold/30"
                   />
                   {searchValue.trim() && (
-                    <div className="absolute inset-x-0 top-full z-50 mt-2 overflow-hidden rounded-3xl border border-gold/20 bg-paper/95 shadow-[0_20px_80px_rgba(0,0,0,0.45)] backdrop-blur-xl">
+                    <div className="absolute inset-x-0 top-full z-50 mt-2 overflow-hidden rounded-3xl font-jost border border-gold/20 bg-paper/95 shadow-[0_20px_80px_rgba(0,0,0,0.45)] backdrop-blur-xl">
                       {searchResults.length > 0 ? (
                         <>
                               {searchResults.map((product) => (
@@ -390,7 +382,7 @@ const MobileNavbar: React.FC<{
                                 >
                                   <div className="flex items-center gap-3">
                                       <div className="shrink-0">
-                                      <div className="relative h-12 w-12 overflow-hidden rounded-md bg-[#0b0b0b]">
+                                      <div className="relative h-12 w-12 overflow-hidden rounded-md bg-[#f6f5f1]">
                                         <Image
                                           src={getProductImage(product)}
                                           alt={product.title}

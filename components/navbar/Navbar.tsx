@@ -36,7 +36,8 @@ const Navbar = () => {
     };
 
     const handleResize = () => {
-      if (mounted) setIsSmallScreen(window.innerWidth < 660);
+      // The full desktop bar (links + always-open search) needs about 1150px; below that use the compact bar.
+      if (mounted) setIsSmallScreen(window.innerWidth < 1200);
     };
 
     handleScroll();

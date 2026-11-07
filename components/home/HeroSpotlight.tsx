@@ -91,7 +91,7 @@ const HeroSpotlight = () => {
         py.set((e.clientY / window.innerHeight) * 2 - 1);
       }}
     >
-      <div className="mx-auto grid min-h-[100svh] max-w-[1500px] grid-rows-[auto_1fr] gap-2 px-6 pb-10 pt-24 sm:px-10 lg:grid-cols-[0.85fr_1.15fr] lg:grid-rows-1 lg:items-center lg:gap-6 lg:pb-0 lg:pt-20 xl:px-16">
+      <div className="mx-auto grid min-h-[100svh] max-w-[1500px] grid-rows-[auto_1fr] gap-2 px-6 pb-10 pt-32 sm:px-10 lg:grid-cols-[0.85fr_1.15fr] lg:grid-rows-1 lg:items-center lg:gap-6 lg:pb-0 xl:pt-20 xl:px-16">
         {/* ── Headline ─────────────────────────────────────────── */}
         <div className="relative z-20 order-2 lg:order-1">
           <motion.p

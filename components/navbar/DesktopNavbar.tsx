@@ -133,53 +133,41 @@ const DesktopNavbar: React.FC<{
         </nav>
 
         <div className="flex items-center gap-3">
-          <div
-            onClick={() => {
-              if (!isSearch) setIsSearch(true);
+          {/* Always open. Results show while the field (or a result) has focus. */}
+          <form
+            className="relative flex w-56 items-center rounded-full border border-gold/20 bg-paper py-1 pl-1 pr-3 transition-colors focus-within:border-gold/60 2xl:w-72"
+            onSubmit={(event) => {
+              event.preventDefault();
+              onSearchSubmit();
             }}
-            className={`flex cursor-pointer items-center ${isSearch ? "overflow-visible" : "overflow-hidden"} rounded-full border border-gold/20 bg-paper transition-all duration-500 ease-in-out ${
-              isSearch
-                ? "max-w-75 px-3 py-2 shadow-[0_0_0_1px_rgba(201,168,76,0.18)]"
-                : "max-w-13 px-3.5 py-0.5 transition duration-300 ease-in-out hover:-translate-y-0.5 hover:bg-gold/10"
-            }`}
+            onFocus={() => setIsSearch(true)}
+            onBlur={(event) => {
+              if (!event.currentTarget.contains(event.relatedTarget)) setIsSearch(false);
+            }}
+            onKeyDown={(event) => {
+              if (event.key === "Escape") (event.target as HTMLElement).blur();
+            }}
           >
             <button
-              type="button"
-              title="search for items"
-              onClick={() => {
-                setIsSearch((prev) => !prev);
-                if (!isSearch)
-                  setTimeout(
-                    () =>
-                      document.getElementById("desktop-search-input")?.focus(),
-                    0,
-                  );
-              }}
-              className={`flex cursor-pointer h-10 w-10 items-center justify-center rounded-full ${isSearch && "border bg-gold/10 hover:bg-gold/10"} border-gold/20 text-ink transition focus:outline-none`}
+              type="submit"
+              title="Search"
+              aria-label="Search"
+              className="flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center rounded-full text-ink transition hover:bg-gold/10 focus:outline-none"
             >
               {menuIcons[0].icon}
             </button>
-            <form
-              className="relative flex flex-1"
-              onSubmit={(event) => {
-                event.preventDefault();
-                onSearchSubmit();
-              }}
-            >
-              <input
-                id="desktop-search-input"
-                type="text"
-                value={searchValue}
-                onChange={(event) => setSearchValue(event.target.value)}
-                placeholder="Search our collection"
-                className={`ml-3 min-w-0 flex-1 bg-transparent text-sm text-ink placeholder:text-ink/40 focus:outline-none transition-all duration-500 ease-in-out ${
-                  isSearch ? "opacity-100" : "opacity-0"
-                }`}
-                style={{ pointerEvents: isSearch ? "auto" : "none" }}
-              />
+            <input
+              id="desktop-search-input"
+              type="search"
+              value={searchValue}
+              onChange={(event) => setSearchValue(event.target.value)}
+              placeholder="Search our collection"
+              aria-label="Search our collection"
+              className="ml-1 min-w-0 flex-1 bg-transparent font-jost text-sm text-ink placeholder:text-ink/40 focus:outline-none"
+            />
 
               {isSearch && searchValue.trim() && (
-                <div className="absolute left-1/2 top-full z-50 mt-2 w-130 max-w-[90vw] -translate-x-1/2 max-h-80 overflow-y-auto rounded-3xl border border-gold/20 bg-paper/95 shadow-[0_20px_80px_rgba(0,0,0,0.45)] backdrop-blur-xl">
+                <div className="absolute right-0 top-full z-50 mt-2 w-130 max-w-[90vw] max-h-80 overflow-y-auto rounded-3xl font-jost border border-gold/20 bg-paper/95 shadow-[0_20px_80px_rgba(0,0,0,0.45)] backdrop-blur-xl">
                   {searchResults.length > 0 ? (
                     <>
                       {searchResults.map((product, index) => (
@@ -191,7 +179,7 @@ const DesktopNavbar: React.FC<{
                         >
                           <div className="flex items-center gap-3">
                             <div className="shrink-0">
-                              <div className="relative h-10 w-10 overflow-hidden rounded-md bg-[#0b0b0b]">
+                              <div className="relative h-10 w-10 overflow-hidden rounded-md bg-[#f6f5f1]">
                                 <Image
                                   src={getProductImage(product)}
                                   alt={product.title}
@@ -241,8 +229,7 @@ const DesktopNavbar: React.FC<{
                   )}
                 </div>
               )}
-            </form>
-          </div>
+          </form>
 
           <div className="flex items-center gap-2">
             {menuIcons.slice(1).map((icon, index) => {

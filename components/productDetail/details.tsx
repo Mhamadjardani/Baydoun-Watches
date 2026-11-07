@@ -150,7 +150,7 @@ const ProductDetails = ({
 
   return (
     <main
-      className="min-h-screen bg-paper pb-24 pt-24 text-ink"
+      className="min-h-screen bg-paper pb-24 pt-32 text-ink xl:pt-24"
       onPointerMove={(e) => {
         if (e.pointerType !== "mouse") return;
         px.set((e.clientX / window.innerWidth) * 2 - 1);
@@ -159,7 +159,7 @@ const ProductDetails = ({
     >
       <div className="mx-auto grid max-w-[1500px] gap-10 px-6 sm:px-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 xl:px-16">
         {/* ── The stage ─────────────────────────────────────────── */}
-        <div className="lg:sticky lg:top-24 lg:h-[calc(100svh-7rem)]">
+        <div className="min-w-0 lg:sticky lg:top-24 lg:h-[calc(100svh-7rem)]">
           <div
             ref={stageRef}
             className="relative h-[56svh] min-h-[360px] lg:h-[calc(100%-6rem)]"
@@ -212,7 +212,8 @@ const ProductDetails = ({
           </div>
 
           {images.length > 1 && (
-            <div className="mt-4 flex justify-center gap-3">
+            // Scrolls sideways when there are more photos than fit, instead of widening the page.
+            <div className="mx-auto mt-3 flex w-fit max-w-full gap-2 overflow-x-auto p-2 [scrollbar-width:none] sm:gap-3 [&::-webkit-scrollbar]:hidden">
               {images.map((image, index) =>
                 // A listed photo that doesn't exist in storage is left out rather than shown broken.
                 failedImages.has(image) ? null : (
@@ -222,7 +223,7 @@ const ProductDetails = ({
                   onClick={() => setActiveIndex(index)}
                   aria-label={`View image ${index + 1} of ${product.title}`}
                   aria-pressed={index === activeIndex}
-                  className={`relative h-18 w-18 cursor-pointer overflow-hidden rounded-full bg-[#f6f5f1] transition-all duration-300 ${
+                  className={`relative h-14 w-14 shrink-0 cursor-pointer overflow-hidden rounded-full sm:h-18 sm:w-18 bg-[#f6f5f1] transition-all duration-300 ${
                     index === activeIndex ? "ring-1 ring-gold ring-offset-4" : "opacity-60 hover:opacity-100"
                   }`}
                 >
@@ -240,7 +241,7 @@ const ProductDetails = ({
         </div>
 
         {/* ── Details ───────────────────────────────────────────── */}
-        <div className="flex flex-col gap-8 pt-2 font-jost lg:pt-16">
+        <div className="flex min-w-0 flex-col gap-8 pt-2 font-jost lg:pt-16">
           <div>
             <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease }} className="flex flex-wrap items-center gap-3">
               <Link prefetch={false} href={`/collections?brand=${product.brand}`} className="text-xs tracking-[0.3em] text-gold-deep hover:text-ink">
@@ -291,7 +292,7 @@ const ProductDetails = ({
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.4, ease }}
-            className="flex flex-col gap-3 sm:flex-row"
+            className="grid grid-cols-2 gap-3 sm:flex sm:flex-row"
           >
             <button
               type="button"
@@ -309,7 +310,7 @@ const ProductDetails = ({
                     : `Add ${product.title} to bag`
               }
               // Same pill as Save and Share; it fills gold once the watch is in the bag, like Saved.
-              className={`flex h-14 flex-1 cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-full border px-6 text-sm tracking-[0.14em] transition-colors disabled:cursor-not-allowed disabled:opacity-40 ${
+              className={`col-span-2 flex h-14 cursor-pointer sm:flex-1 items-center justify-center gap-2 whitespace-nowrap rounded-full border px-6 text-sm tracking-[0.14em] transition-colors disabled:cursor-not-allowed disabled:opacity-40 ${
                 inBag ? "border-gold bg-gold text-ink" : "border-ink/20 enabled:hover:border-gold"
               }`}
             >
