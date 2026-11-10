@@ -6,11 +6,10 @@
   "display": "Analog",
   "gender": "Men",
   "price": 180,
-  "discount": null,
   "isOutOfStock": true,
   "isNewArrival": true,
   "isVisible": true,
-  "isFeatured": false,
+  "isFeatured": true,
   "isLimitedEdition": false,
   "specifications": [
     {
