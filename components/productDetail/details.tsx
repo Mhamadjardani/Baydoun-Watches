@@ -256,11 +256,6 @@ const ProductDetails = ({
                 {product.title}
               </motion.span>
             </h1>
-            {product.description && (
-              <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.4 }} className="mt-6 max-w-xl leading-relaxed text-ink/65">
-                {product.description}
-              </motion.p>
-            )}
           </div>
 
           <motion.div
@@ -287,6 +282,13 @@ const ProductDetails = ({
               </span>
             )}
           </motion.div>
+
+          {/* Description under the price, so the price sits right below the title. */}
+          {product.description && (
+            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.4 }} className="max-w-xl leading-relaxed text-ink/65">
+              {product.description}
+            </motion.p>
+          )}
 
           <motion.div
             initial={{ opacity: 0, y: 12 }}
