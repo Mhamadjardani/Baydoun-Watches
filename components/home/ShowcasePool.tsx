@@ -8,8 +8,13 @@ import { createContext, useContext, useEffect, useState } from "react";
  * stable order (so the first paint matches), then each visit shuffles it once
  * and every section takes its own slice, so sections never repeat a watch and
  * no two visits look the same.
+ *
+ * The hero shows the watches marked "featured" in Keystatic (shuffled per visit);
+ * if none are featured it falls back to its slice of the pool.
  */
-const PoolContext = createContext<{ order: ShowcaseWatch[]; shuffled: boolean }>({ order: [], shuffled: false });
+type PoolState = { order: ShowcaseWatch[]; featured: ShowcaseWatch[]; shuffled: boolean };
+
+const PoolContext = createContext<PoolState>({ order: [], featured: [], shuffled: false });
 
 function shuffle<T>(items: T[]) {
   const copy = [...items];
@@ -20,12 +25,20 @@ function shuffle<T>(items: T[]) {
   return copy;
 }
 
-export function ShowcasePool({ pool, children }: { pool: ShowcaseWatch[]; children: React.ReactNode }) {
-  const [state, setState] = useState({ order: pool, shuffled: false });
+export function ShowcasePool({
+  pool,
+  featured = [],
+  children,
+}: {
+  pool: ShowcaseWatch[];
+  featured?: ShowcaseWatch[];
+  children: React.ReactNode;
+}) {
+  const [state, setState] = useState<PoolState>({ order: pool, featured, shuffled: false });
   useEffect(() => {
-    const t = setTimeout(() => setState({ order: shuffle(pool), shuffled: true }), 0);
+    const t = setTimeout(() => setState({ order: shuffle(pool), featured: shuffle(featured), shuffled: true }), 0);
     return () => clearTimeout(t);
-  }, [pool]);
+  }, [pool, featured]);
   return <PoolContext.Provider value={state}>{children}</PoolContext.Provider>;
 }
 
@@ -33,9 +46,12 @@ export function ShowcasePool({ pool, children }: { pool: ShowcaseWatch[]; childr
 const SLOTS = { hero: [0, 12], spotlight: [12, 26] } as const;
 
 export function useShowcase(section: keyof typeof SLOTS, count?: number, filter?: (w: ShowcaseWatch) => boolean) {
-  const { order } = useContext(PoolContext);
+  const { order, featured } = useContext(PoolContext);
+  // Featured watches belong to the hero, so other sections skip them.
+  const inHero = new Set(featured.map((w) => w.href));
+  const rest = featured.length ? order.filter((w) => !inHero.has(w.href)) : order;
   const [start, end] = SLOTS[section];
-  const slice = order.slice(start, end);
+  const slice = section === "hero" && featured.length ? featured : rest.slice(start, end);
   const picked = filter ? slice.filter(filter) : slice;
   return count ? picked.slice(0, count) : picked;
 }

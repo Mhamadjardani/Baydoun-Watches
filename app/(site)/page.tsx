@@ -13,6 +13,8 @@ import { formatSubCategory, normalizeSubCategory, type ProductCard } from "@/lib
 
 /** Size of the shared pool; each visit shuffles it and every section takes its own slice. */
 const POOL_SIZE = 120;
+/** Most featured watches the hero cycles through. */
+const FEATURED_MAX = 20;
 
 const CASIO_LINE_NAMES: Record<string, string> = {
   "g-shock": "G-Shock",
@@ -42,17 +44,19 @@ export default async function Home() {
   // in Keystatic drops out on the next deploy. Hidden and out-of-stock pieces never appear.
   const products = await getShopProducts();
   // Wristwatches only: wall clocks stay in the catalogue but not in the showroom.
-  const pool = pickAcrossBrands(
-    products,
-    POOL_SIZE,
-    (p) => normalizeSubCategory(p.subCategory, p.brand) !== "wall-clock",
-  ).map(toShowcase);
+  const isWristwatch = (p: ProductCard) => normalizeSubCategory(p.subCategory, p.brand) !== "wall-clock";
+  const pool = pickAcrossBrands(products, POOL_SIZE, isWristwatch).map(toShowcase);
+  // The hero shows the watches marked "featured" in Keystatic (in stock only).
+  const featured = products
+    .filter((p) => p.isFeatured && !p.isOutOfStock && isWristwatch(p))
+    .slice(0, FEATURED_MAX)
+    .map(toShowcase);
 
   const counts: Partial<Record<ProductCard["brand"], number>> = {};
   for (const p of products) counts[p.brand] = (counts[p.brand] ?? 0) + 1;
 
   return (
-    <ShowcasePool pool={pool}>
+    <ShowcasePool pool={pool} featured={featured}>
       <div className="bg-paper">
         <HeroSpotlight />
         <BrandMarquee />
