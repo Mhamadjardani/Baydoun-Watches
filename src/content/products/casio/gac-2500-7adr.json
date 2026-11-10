@@ -6,7 +6,7 @@
   "display": "Analog",
   "gender": "Men",
   "price": 180,
-  "isOutOfStock": true,
+  "isOutOfStock": false,
   "isNewArrival": true,
   "isVisible": true,
   "isFeatured": true,
