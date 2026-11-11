@@ -95,6 +95,18 @@ wrapped in a `<form>` (`836259d`). Most other commits are Keystatic content edit
   plus `.gold-sheen`, `.gold-sweep`, `.scroll-cue` animations. Only watch images that already exist may be used.
 - The user asked about GSAP, Lenis and React Bits. They're fine to use as libraries (they were removed with the discard). No skills for them are installed.
 
+## Discounts are per product now (2026-11-11)
+- The site-wide override is OFF (`lib/promo.ts` → `percent: 0`). The hero badge now comes from `describeOffer()` in
+  `lib/promo.ts`, computed at build from in-stock products' own discounts: "ON EVERY WATCH" (100%), "ON ALMOST EVERY
+  WATCH" (80%+), "ON SELECTED WATCHES" (fewer), hidden when none; "UP TO -X%" if the discounts differ. Every product
+  JSON got `"discount": 15` (inserted after `"price"`; 1,035 files, only that line changed). The client removes or
+  changes it per watch in Keystatic ("Discount %"), or in /admin/products.
+- These 13 had their own discount before and were set to 15 (old value in brackets; restore from git history if wanted):
+  calvin-klein/ck-25100002 (30), casio/lf-30w-1adf, lf-30w-2adf, lf-30w-3adf, lf-30w-8adf (20 each),
+  rovina/ro18103g4sb (10), rovina/ro22149l4sb, ro22180l1bw, ro26114l8bw, ro26116g1bw, ro52187l4brg, ro52188l4bn,
+  ro8107l5bb (20 each).
+- To end the 15% on everything later: set each product's discount to empty/0 (or ask for a bulk script).
+
 ## Launch offer (15% off everything) — HOW TO TURN IT OFF
 Added 2026-10-28 (launch day) at the client's request. It does NOT touch product data.
 - **Where:** `lib/promo.ts` → `LAUNCH_PROMO = { percent: 15, label: "Launch offer" }`.

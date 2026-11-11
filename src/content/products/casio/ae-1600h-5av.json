@@ -4,6 +4,7 @@
   "display": "Digital",
   "gender": "Men",
   "price": 56,
+  "discount": 15,
   "subCategory": "vintage",
   "description": "The Casio AE-1600H is a versatile digital watch that combines sporty style with practical functionality. Its durable case and comfortable resin band give it a rugged and reliable look, making it perfect for everyday wear.",
   "isNewArrival": false,

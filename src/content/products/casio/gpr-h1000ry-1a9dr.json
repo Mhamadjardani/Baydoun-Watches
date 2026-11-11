@@ -4,6 +4,7 @@
   "display": "Digital",
   "gender": "Men",
   "price": 915,
+  "discount": 15,
   "subCategory": "g-shock",
   "description": "The G-Shock GPR-H1000RY-1A9DR is a rugged outdoor watch built for extreme adventures. Its durable construction and advanced digital features make it ideal for active lifestyles.",
   "isNewArrival": false,

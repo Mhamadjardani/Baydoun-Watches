@@ -5,6 +5,7 @@
   "display": "Digital",
   "gender": "Unisex",
   "price": 44,
+  "discount": 15,
   "isNewArrival": false,
   "isVisible": true,
   "isFeatured": false,

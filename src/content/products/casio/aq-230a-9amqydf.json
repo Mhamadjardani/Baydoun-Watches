@@ -4,6 +4,7 @@
   "display": "Ana/Dig",
   "gender": "Unisex",
   "price": 64,
+  "discount": 15,
   "subCategory": "vintage",
   "isNewArrival": false,
   "isFeatured": false,

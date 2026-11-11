@@ -5,6 +5,7 @@
   "display": "Analog",
   "gender": "Men",
   "price": 58,
+  "discount": 15,
   "isNewArrival": false,
   "isVisible": true,
   "isFeatured": false,

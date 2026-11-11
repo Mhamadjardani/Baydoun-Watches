@@ -6,6 +6,7 @@
   "display": "Ana/Dig",
   "gender": "Men",
   "price": 170,
+  "discount": 15,
   "isOutOfStock": false,
   "isNewArrival": false,
   "isVisible": true,

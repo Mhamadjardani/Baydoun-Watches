@@ -6,6 +6,7 @@
   "display": "Digital",
   "gender": "Kids",
   "price": 175,
+  "discount": 15,
   "isNewArrival": false,
   "isVisible": true,
   "isFeatured": false,

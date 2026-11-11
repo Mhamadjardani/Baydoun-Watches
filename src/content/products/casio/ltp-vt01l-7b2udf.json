@@ -4,6 +4,7 @@
   "display": "Analog",
   "gender": "Women",
   "price": 50,
+  "discount": 15,
   "description": "The Casio LTP-VT01GL-7B2UDF features a sophisticated gold-tone finish with a clean, elegant dial. Its refined design makes it a versatile choice for everyday wear.",
   "isNewArrival": false,
   "isFeatured": false,

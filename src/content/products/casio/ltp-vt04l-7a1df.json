@@ -4,6 +4,7 @@
   "display": "Analog",
   "gender": "Women",
   "price": 55,
+  "discount": 15,
   "description": "The Casio LTP-VT04L-7A1DF features a sleek leather strap with a clean, elegant dial. Its refined design makes it a versatile choice for everyday wear.",
   "isNewArrival": false,
   "isFeatured": false,

@@ -4,6 +4,7 @@
   "display": "Analog",
   "gender": "Women",
   "price": 78,
+  "discount": 15,
   "description": "The Casio LTP-1234DS-4ADF features a stylish silver-tone design with a distinctive pink dial. Its elegant look makes it a versatile choice for everyday wear.",
   "isNewArrival": false,
   "isFeatured": false,

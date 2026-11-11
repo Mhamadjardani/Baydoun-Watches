@@ -6,6 +6,7 @@
   "display": "Digital",
   "gender": "Men",
   "price": 245,
+  "discount": 15,
   "isOutOfStock": false,
   "isNewArrival": false,
   "isVisible": true,

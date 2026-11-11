@@ -4,6 +4,7 @@
   "display": "Analog",
   "gender": "Men",
   "price": 33,
+  "discount": 15,
   "description": "The Casio MTP-V001GL-9BUDF features a sophisticated gold-tone finish with a clean, elegant dial. Its classic design makes it a versatile choice for everyday wear.",
   "isNewArrival": false,
   "isFeatured": false,

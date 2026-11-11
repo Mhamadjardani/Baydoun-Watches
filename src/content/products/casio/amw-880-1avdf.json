@@ -4,6 +4,7 @@
   "display": "Ana/Dig",
   "gender": "Men",
   "price": 123,
+  "discount": 15,
   "description": "50-meter water resistance 10-year battery life Telememo 30 World time LED light",
   "isNewArrival": false,
   "isFeatured": false,

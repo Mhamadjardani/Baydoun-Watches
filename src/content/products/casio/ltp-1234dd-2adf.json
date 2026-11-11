@@ -4,6 +4,7 @@
   "display": "Analog",
   "gender": "Women",
   "price": 67,
+  "discount": 15,
   "description": "The Casio LTP-1234DD-2ADF features a sleek silver-tone design with a clean, modern dial. Its elegant style makes it a versatile choice for everyday wear.",
   "isNewArrival": false,
   "isFeatured": false,

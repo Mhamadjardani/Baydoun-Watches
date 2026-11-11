@@ -4,6 +4,7 @@
   "display": "Digital",
   "gender": "Women",
   "price": 54,
+  "discount": 15,
   "subCategory": "vintage",
   "isNewArrival": false,
   "isFeatured": false,

@@ -4,6 +4,7 @@
   "display": "Digital",
   "gender": "Kids",
   "price": 42,
+  "discount": 15,
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,

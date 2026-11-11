@@ -4,6 +4,7 @@
   "display": "Analog",
   "gender": "Men",
   "price": 245,
+  "discount": 15,
   "subCategory": "edifice",
   "isNewArrival": false,
   "isFeatured": false,

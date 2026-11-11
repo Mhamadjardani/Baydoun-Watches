@@ -4,6 +4,7 @@
   "display": "Ana/Dig",
   "gender": "Men",
   "price": 330,
+  "discount": 15,
   "subCategory": "g-shock",
   "isNewArrival": false,
   "isFeatured": false,

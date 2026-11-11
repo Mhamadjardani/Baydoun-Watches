@@ -4,6 +4,7 @@
   "display": "Digital",
   "gender": "Men",
   "price": 26,
+  "discount": 15,
   "subCategory": "vintage",
   "isNewArrival": false,
   "isFeatured": false,

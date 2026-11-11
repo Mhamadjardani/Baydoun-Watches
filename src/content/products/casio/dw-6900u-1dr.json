@@ -4,6 +4,7 @@
   "display": "Digital",
   "gender": "Men",
   "price": 145,
+  "discount": 15,
   "subCategory": "g-shock",
   "description": "The G-Shock DW-6900U-1DR combines a bold design with reliable durability. Its shock-resistant build and practical digital display make it ideal for everyday wear.",
   "isNewArrival": false,

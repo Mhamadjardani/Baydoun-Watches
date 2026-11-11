@@ -6,6 +6,7 @@
   "display": "Analog",
   "gender": "Unisex",
   "price": 148,
+  "discount": 15,
   "isNewArrival": false,
   "isVisible": true,
   "isFeatured": false,

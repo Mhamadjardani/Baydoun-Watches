@@ -4,6 +4,7 @@
   "display": "Digital",
   "gender": "Men",
   "price": 150,
+  "discount": 15,
   "subCategory": "g-shock",
   "description": "The G-Shock DW-5610UU-8DR is a rugged digital watch with a distinctive monochromatic design. Its shock-resistant construction, bold square case, and practical digital display make it a reliable choice for everyday wear and active lifestyles.",
   "isNewArrival": false,

@@ -4,6 +4,7 @@
   "display": "Analog",
   "gender": "Women",
   "price": 35,
+  "discount": 15,
   "description": "The Casio LTP-V001D-1BUDF features a classic silver-tone design with a clean blue dial. Its simple, timeless style makes it perfect for everyday wear.",
   "isNewArrival": false,
   "isFeatured": false,

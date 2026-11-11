@@ -4,6 +4,7 @@
   "display": "Analog",
   "gender": "Men",
   "price": 55,
+  "discount": 15,
   "description": "The Casio MTP-VT03L-7BDF features a sleek leather strap with a clean, elegant dial. Its refined design makes it a versatile choice for everyday wear.",
   "isNewArrival": false,
   "isFeatured": false,

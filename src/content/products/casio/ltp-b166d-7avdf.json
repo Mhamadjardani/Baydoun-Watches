@@ -4,6 +4,7 @@
   "display": "Analog",
   "gender": "Women",
   "price": 110,
+  "discount": 15,
   "description": "The Casio LTP-B166D-7AVDF features a sleek silver-tone design with a refined blue dial. Its modern, elegant style makes it a versatile choice for everyday wear.",
   "isNewArrival": false,
   "isFeatured": false,

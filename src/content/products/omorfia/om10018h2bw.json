@@ -5,6 +5,7 @@
   "display": "Digital",
   "gender": "Men",
   "price": 105,
+  "discount": 15,
   "isNewArrival": false,
   "isVisible": false,
   "isFeatured": false,

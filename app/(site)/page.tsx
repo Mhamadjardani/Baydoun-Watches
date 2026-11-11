@@ -8,6 +8,7 @@ import Promises from "@/components/home/Promises";
 import { ShowcasePool } from "@/components/home/ShowcasePool";
 import SpotlightTrack from "@/components/home/SpotlightTrack";
 import { getShopProducts } from "@/lib/products";
+import { describeOffer } from "@/lib/promo";
 import { pickAcrossBrands, toShowcase } from "@/lib/showcase";
 import { formatSubCategory, normalizeSubCategory, type ProductCard } from "@/lib/type";
 
@@ -58,7 +59,7 @@ export default async function Home() {
   return (
     <ShowcasePool pool={pool} featured={featured}>
       <div className="bg-paper">
-        <HeroSpotlight />
+        <HeroSpotlight offer={describeOffer(products)} />
         <BrandMarquee />
         <SpotlightTrack />
         <ForWhom />

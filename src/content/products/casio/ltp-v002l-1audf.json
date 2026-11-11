@@ -4,6 +4,7 @@
   "display": "Analog",
   "gender": "Women",
   "price": 35,
+  "discount": 15,
   "description": "The Casio LTP-V002L-1AUDF features a classic black dial with a comfortable leather-style band. Its simple and elegant design makes it ideal for everyday wear.",
   "isNewArrival": false,
   "isFeatured": false,

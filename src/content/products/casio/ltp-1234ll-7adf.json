@@ -4,6 +4,7 @@
   "display": "Analog",
   "gender": "Women",
   "price": 66,
+  "discount": 15,
   "description": "The Casio LTP-1234LL-7ADF features a sleek design with a clean, classic dial and a leather-style band. Its elegant look makes it a versatile choice for everyday wear.",
   "isNewArrival": false,
   "isFeatured": false,

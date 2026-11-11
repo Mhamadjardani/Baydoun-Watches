@@ -4,7 +4,7 @@ import { useShowcase, useShowcaseReady } from "@/components/home/ShowcasePool";
 import { useSwipe } from "@/components/motion/useSwipe";
 import WatchImage from "@/components/showroom/WatchImage";
 import { prepareCutout } from "@/lib/cutout";
-import { LAUNCH_PROMO, launchPromoActive } from "@/lib/promo";
+import type { OfferBadge } from "@/lib/promo";
 import { BRAND_LABELS, formatPrice } from "@/lib/showcase";
 import { AnimatePresence, motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -23,7 +23,7 @@ const SLIDE_MS = 4800;
  * on a turning 3D pedestal in a beam of gold dust. Each one swings in on top
  * of the light (true colours, no blending) and its price tag links to it.
  */
-const HeroSpotlight = () => {
+const HeroSpotlight = ({ offer }: { offer?: OfferBadge | null }) => {
   const watches = useShowcase("hero");
   const ready = useShowcaseReady();
   const [index, setIndex] = useState(0);
@@ -102,15 +102,15 @@ const HeroSpotlight = () => {
           >
             SINCE 1987 · DELIVERED ACROSS LEBANON
           </motion.p>
-          {launchPromoActive && (
+          {offer && (
             <motion.p
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.5, ease }}
               className="mt-4 flex w-fit items-center gap-3 rounded-full border border-gold bg-gold/10 py-1.5 pl-1.5 pr-4 font-jost text-xs tracking-[0.14em] text-ink"
             >
-              <span className="rounded-full bg-gold px-3 py-1 font-medium text-ink">-{LAUNCH_PROMO.percent}%</span>
-              {LAUNCH_PROMO.label.toUpperCase()} · ON EVERY WATCH
+              <span className="whitespace-nowrap rounded-full bg-gold px-3 py-1 font-medium text-ink">{offer.badge}</span>
+              {offer.text}
             </motion.p>
           )}
           <h1 className="mt-5 font-serif font-light leading-[0.92] text-[clamp(2.8rem,6vw,6.25rem)]">

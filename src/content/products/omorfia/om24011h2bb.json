@@ -4,6 +4,7 @@
   "display": "Digital",
   "gender": "Men",
   "price": 185,
+  "discount": 15,
   "isNewArrival": false,
   "isFeatured": false,
   "isLimitedEdition": false,

@@ -4,6 +4,7 @@
   "display": "Analog",
   "gender": "Women",
   "price": 220,
+  "discount": 15,
   "isOutOfStock": false,
   "isNewArrival": false,
   "isVisible": true,

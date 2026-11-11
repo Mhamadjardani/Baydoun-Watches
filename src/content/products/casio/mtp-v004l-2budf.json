@@ -4,6 +4,7 @@
   "display": "Analog",
   "gender": "Men",
   "price": 37,
+  "discount": 15,
   "description": "Date display His-and hers pairs",
   "isNewArrival": false,
   "isFeatured": false,
