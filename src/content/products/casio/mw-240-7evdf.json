@@ -1,0 +1,47 @@
+{
+  "title": "Casio 3H Unisex Watch MW-240-7EVDF",
+  "sku": "MW-240-7EVDF",
+  "subCategory": "general",
+  "display": "Analog",
+  "gender": "Unisex",
+  "price": 26,
+  "isOutOfStock": false,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "35 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "48 × 43.6 × 10.3 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Black, WHITE"
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin "
+    },
+    {
+      "label": "Special Feature",
+      "value": "Analog"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "50m"
+    }
+  ],
+  "features": [
+    "Regular timekeeping",
+    "Approx. battery life: 3 years on SR626SW",
+    "Accuracy: ±20 seconds per month"
+  ],
+  "imageCount": 1,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
