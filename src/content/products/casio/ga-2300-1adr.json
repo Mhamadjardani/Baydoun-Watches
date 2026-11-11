@@ -1,0 +1,54 @@
+{
+  "title": "G-Shock Casual Men watch GA-2300-1ADR",
+  "sku": "GA-2300-1ADR",
+  "subCategory": "g-shock",
+  "description": "A compact G-SHOCK in a boldly straight-forward design that moves style into the future. The tough digital-analog combination GA-2300 goes smaller and slimmer to meet today’s needs, delivering just what you require from a watch in a minimalist design with a futuristic sensibility. With a case measuring just 45.4 mm in diameter and 11.6 mm slim, this G-SHOCK is significantly smaller than past models. Choose the GA-2300 in classic black or white, or go with the GA-2300-4A in vibrant pink with matching LCD. Effortlessly stylish, the GA-2300 holds the key to all-new possibilities with G-SHOCK.",
+  "display": "Ana/Dig",
+  "gender": "Men",
+  "price": 184,
+  "isOutOfStock": false,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Weight",
+      "value": "49 g"
+    },
+    {
+      "label": "Dimensions",
+      "value": "45.4 × 42.1 × 11.6 mm"
+    },
+    {
+      "label": "Color",
+      "value": "Black "
+    },
+    {
+      "label": "Band Material",
+      "value": "Resin"
+    },
+    {
+      "label": "Display Type",
+      "value": "Ana-Digi"
+    },
+    {
+      "label": "Water Resistance",
+      "value": "200m"
+    }
+  ],
+  "features": [
+    "LED Light",
+    "Flash Alert Feature",
+    "5 Daily alarms",
+    "Timer",
+    "Hourly time signal",
+    "12/24-hour format",
+    "Mute feature",
+    "WORLD TIME ",
+    "12/24-hour format Hand shift feature (Hands move out of the way to provide an unobstructed view of digital display contents.) Regular timekeeping: Analog: 2 hands (hour, minute (hand moves every 20 seconds)), 1 dial (day) Digital: Hour, minute, second, pm, month, date"
+  ],
+  "imageCount": 4,
+  "arrivalDate": "2026-08-29",
+  "createdAt": "2026-08-29"
+}
