@@ -1,0 +1,51 @@
+{
+  "title": "TOMMY HILFIGER, JOY TH 1710686",
+  "sku": "TH 1710686",
+  "display": "Analog",
+  "gender": "Men",
+  "price": 159,
+  "discount": 15,
+  "isOutOfStock": false,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Movement",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "Band Material",
+      "value": "Stainless Steel "
+    },
+    {
+      "label": "Band Color",
+      "value": "SiIver "
+    },
+    {
+      "label": "Dial Color",
+      "value": "Green"
+    },
+    {
+      "label": "Case Diameter",
+      "value": "44 MM"
+    },
+    {
+      "label": "Case Color",
+      "value": "Silver "
+    },
+    {
+      "label": "Bezel",
+      "value": "Silver "
+    },
+    {
+      "label": "Water Resistant",
+      "value": "3 ATM"
+    }
+  ],
+  "features": [],
+  "imageCount": 4,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
