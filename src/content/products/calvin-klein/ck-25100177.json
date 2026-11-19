@@ -1,0 +1,51 @@
+{
+  "title": "Calvin Klein SOPHISTICATED SQUARE, CK 25100177",
+  "sku": " CK 25100177",
+  "display": "Analog",
+  "gender": "Women",
+  "price": 205,
+  "discount": 15,
+  "isOutOfStock": false,
+  "isNewArrival": true,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Movement",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "Band Material",
+      "value": "BRACELET"
+    },
+    {
+      "label": "Band Color",
+      "value": "Silver"
+    },
+    {
+      "label": "Dial Color",
+      "value": "Silver"
+    },
+    {
+      "label": "Case Diameter",
+      "value": "20"
+    },
+    {
+      "label": "Case Color",
+      "value": "Silver"
+    },
+    {
+      "label": "Bezel",
+      "value": "Silver"
+    },
+    {
+      "label": "Water Resistant",
+      "value": "3 ATM"
+    }
+  ],
+  "features": [],
+  "imageCount": 2,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
