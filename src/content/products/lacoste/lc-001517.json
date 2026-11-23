@@ -1,0 +1,51 @@
+{
+  "title": "LACOSTE Parisienne LC 2001517",
+  "sku": "LC 001517",
+  "display": "Analog",
+  "gender": "Women",
+  "price": 170,
+  "discount": 15,
+  "isOutOfStock": false,
+  "isNewArrival": true,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Movement",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "Band Material",
+      "value": "STAINLESS STEEL "
+    },
+    {
+      "label": "Band Color",
+      "value": "GOLD PLATED"
+    },
+    {
+      "label": "Dial Color",
+      "value": "BURGUNDY "
+    },
+    {
+      "label": "Case Diameter",
+      "value": "27 MM"
+    },
+    {
+      "label": "Case Color",
+      "value": "GOLD PLATED"
+    },
+    {
+      "label": "Bezel",
+      "value": "GOLD PLATED"
+    },
+    {
+      "label": "Water Resistant",
+      "value": "5 ATM"
+    }
+  ],
+  "features": [],
+  "imageCount": 4,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
