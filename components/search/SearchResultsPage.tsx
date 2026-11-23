@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 import { Search } from "lucide-react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import toast from "react-hot-toast";
 
 const matchesSearch = (product: ProductCard, query: string) => {
@@ -21,14 +21,27 @@ const SearchResultsPage = () => {
   const products = useCatalog();
   const searchParams = useSearchParams();
   const query = searchParams.get("query") || "";
-  const [page, setPage] = useState(1);
+  // The page number lives in the URL (?query=..&page=2), so Back returns to the same page.
+  const page = Math.max(1, Number(searchParams.get("page")) || 1);
+  const setPage = (nextPage: number) => {
+    const params = new URLSearchParams(searchParams.toString());
+    if (nextPage > 1) params.set("page", String(nextPage));
+    else params.delete("page");
+    window.history.replaceState(null, "", `?${params.toString()}`);
+  };
   const wishlistItems = useCommerceStore((state) => state.wishlistItems);
   const hasHydrated = useCommerceStore((state) => state.hasHydrated);
   const toggleWishlist = useCommerceStore((state) => state.toggleWishlist);
   const normalizedQuery = query.trim().toLowerCase();
   const pageSize = 12;
 
+  // Scroll to the top only when the user changes page or searches again, not when
+  // the page is first shown (e.g. coming Back from a watch), so the position is kept.
+  const shownView = useRef(`${page}|${normalizedQuery}`);
   useEffect(() => {
+    const view = `${page}|${normalizedQuery}`;
+    if (shownView.current === view) return;
+    shownView.current = view;
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, [page, normalizedQuery]);
 

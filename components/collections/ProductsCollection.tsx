@@ -18,6 +18,8 @@ import toast from "react-hot-toast";
 
 type FilterKey = "brand" | "subCategory" | "gender" | "display";
 type SortKey = "new-arrivals" | "featured" | "price-low" | "price-high";
+const sortKeys: SortKey[] = ["new-arrivals", "featured", "price-low", "price-high"];
+const DEFAULT_SORT: SortKey = "new-arrivals";
 export type CollectionFilterState = Record<FilterKey, string[]>;
 
 const filters: { key: FilterKey; label: string }[] = [
@@ -66,29 +68,43 @@ const ProductsCollection = ({
 }) => {
   const searchParams = useSearchParams();
   const searchParamsString = searchParams.toString();
-  const urlFilters = useMemo(
-    () =>
-      searchParamsString
-        ? buildFiltersFromSearchParams(new URLSearchParams(searchParamsString))
-        : initialFilters,
-    [initialFilters, searchParamsString],
-  );
+  // Filters, sort and page live in the URL (?brand=casio&sort=price-low&page=3), so the
+  // browser's Back button returns to exactly this view. Changes replace the current
+  // history entry, so Back does not step through every filter click.
+  const urlFilters = useMemo(() => {
+    const params = new URLSearchParams(searchParamsString);
+    return filterKeys.some((key) => params.has(key)) ? buildFiltersFromSearchParams(params) : initialFilters;
+  }, [initialFilters, searchParamsString]);
+  const selectedFilters = urlFilters;
+  const sortBy = useMemo<SortKey>(() => {
+    const value = new URLSearchParams(searchParamsString).get("sort") as SortKey | null;
+    return value && sortKeys.includes(value) ? value : DEFAULT_SORT;
+  }, [searchParamsString]);
+  const requestedPage = Math.max(1, Number(new URLSearchParams(searchParamsString).get("page")) || 1);
+
+  const writeUrl = (next: { filters?: CollectionFilterState; sort?: SortKey; page?: number }) => {
+    const nextFilters = next.filters ?? selectedFilters;
+    const nextSort = next.sort ?? sortBy;
+    const nextPage = next.page ?? requestedPage;
+    const params = new URLSearchParams();
+    for (const key of filterKeys) for (const value of nextFilters[key]) params.append(key, value);
+    if (nextSort !== DEFAULT_SORT) params.set("sort", nextSort);
+    if (nextPage > 1) params.set("page", String(nextPage));
+    const query = params.toString();
+    window.history.replaceState(null, "", query ? `?${query}` : window.location.pathname);
+  };
+  const setPage = (nextPage: number) => writeUrl({ page: nextPage });
   const [openFilters, setOpenFilters] = useState<FilterKey[]>([
     "brand",
     // "category",
   ]);
-  const [selectedFilters, setSelectedFilters] =
-    useState<CollectionFilterState>(urlFilters);
-  const [sortBy, setSortBy] = useState<SortKey>("new-arrivals");
-  const [page, setPage] = useState(1);
   const wishlistItems = useCommerceStore((state) => state.wishlistItems);
   const hasHydrated = useCommerceStore((state) => state.hasHydrated);
   const toggleWishlist = useCommerceStore((state) => state.toggleWishlist);
 
   useEffect(() => {
-    // Defer state updates to avoid synchronous setState inside effect
+    // Open the filter groups that are in use (deferred to avoid setState inside the effect).
     const id = setTimeout(() => {
-      setSelectedFilters(urlFilters);
       setOpenFilters((currentFilters) => {
         const keysFromUrl = filters
           .filter(({ key }) => urlFilters[key].length > 0)
@@ -102,7 +118,6 @@ const ProductsCollection = ({
 
         return Array.from(nextOpen);
       });
-      setPage(1);
     }, 0);
     return () => clearTimeout(id);
   }, [urlFilters]);
@@ -199,6 +214,7 @@ const ProductsCollection = ({
   }, [selectedFilters, sortBy, products]);
 
   const totalPages = Math.max(1, Math.ceil(filteredProducts.length / pageSize));
+  const page = Math.min(requestedPage, totalPages);
   const pageProducts = filteredProducts.slice(
     (page - 1) * pageSize,
     page * pageSize,
@@ -213,32 +229,25 @@ const ProductsCollection = ({
   };
 
   const toggleFilterValue = (key: FilterKey, value: string) => {
-    setSelectedFilters((currentFilters) => {
-      const currentValues = currentFilters[key];
-      const nextValues = currentValues.includes(value)
-        ? currentValues.filter((currentValue) => currentValue !== value)
-        : [...currentValues, value];
+    const currentValues = selectedFilters[key];
+    const nextValues = currentValues.includes(value)
+      ? currentValues.filter((currentValue) => currentValue !== value)
+      : [...currentValues, value];
 
-      const nextFilters = { ...currentFilters, [key]: nextValues } as CollectionFilterState;
-
-      // Open subcategories for any selected brand with subcategory products.
-      if (key === "brand") {
-        if (nextValues.length > 0) {
-          setOpenFilters((cur) => (cur.includes("subCategory") ? cur : [...cur, "subCategory"]));
-        } else {
-          setOpenFilters((cur) => cur.filter((k) => k !== "subCategory"));
-        }
+    // Open subcategories for any selected brand with subcategory products.
+    if (key === "brand") {
+      if (nextValues.length > 0) {
+        setOpenFilters((cur) => (cur.includes("subCategory") ? cur : [...cur, "subCategory"]));
+      } else {
+        setOpenFilters((cur) => cur.filter((k) => k !== "subCategory"));
       }
+    }
 
-      return nextFilters;
-    });
-
-    setPage(1);
+    writeUrl({ filters: { ...selectedFilters, [key]: nextValues } as CollectionFilterState, page: 1 });
   };
 
   const clearFilters = () => {
-    setSelectedFilters(emptyFilters);
-    setPage(1);
+    writeUrl({ filters: emptyFilters, page: 1 });
   };
 
 
@@ -425,8 +434,7 @@ const ProductsCollection = ({
                 <select
                   value={sortBy}
                   onChange={(event) => {
-                    setSortBy(event.target.value as SortKey);
-                    setPage(1);
+                    writeUrl({ sort: event.target.value as SortKey, page: 1 });
                   }}
                   className="cursor-pointer rounded-full border border-ink/15 bg-paper px-4 py-2.5 text-sm text-ink outline-none transition-colors hover:border-gold focus:border-gold"
                 >

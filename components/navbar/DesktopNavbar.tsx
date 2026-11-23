@@ -6,6 +6,7 @@ import { MenuIcon, menuIcons, menuItems, type MenuItem } from "./menuItem";
 import { getSearchableProductText, ProductCard } from "@/lib/type";
 import Image from "next/image";
 import { useCommerceStore } from "@/store/useCommerceStore";
+import { BRAND_LABELS, finalPrice, formatPrice } from "@/lib/showcase";
 
 const DesktopNavbar: React.FC<{
   products: ProductCard[];
@@ -191,17 +192,23 @@ const DesktopNavbar: React.FC<{
                               </div>
                             </div>
 
-                            <div className="min-w-0">
+                            <div className="min-w-0 flex-1">
                               <span className="block font-semibold text-sm text-ink truncate">
                                 {product.title}
                               </span>
                               <span className="block text-[10px] uppercase tracking-wide text-ink/55">
-                                {product.brand}
+                                {BRAND_LABELS[product.brand] ?? product.brand}
                                 {product.isOutOfStock && (
                                   <span className="text-red-400"> · Out of stock</span>
                                 )}
                               </span>
                             </div>
+                            <span className="shrink-0 text-right leading-tight">
+                              <span className="block font-serif text-base text-ink">{formatPrice(finalPrice(product))}</span>
+                              {(product.discount ?? 0) > 0 && (
+                                <span className="block text-[11px] text-ink/40 line-through">{formatPrice(product.price)}</span>
+                              )}
+                            </span>
                           </div>
                         </button>
                       ))}
