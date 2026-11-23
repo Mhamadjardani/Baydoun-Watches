@@ -1,0 +1,51 @@
+{
+  "title": "LACOSTE PETITE Parisienne LC 2001540",
+  "sku": "LC 2001540",
+  "display": "Analog",
+  "gender": "Women",
+  "price": 160,
+  "discount": 15,
+  "isOutOfStock": false,
+  "isNewArrival": true,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Movement",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "Band Material",
+      "value": "STAINLESS STEEL "
+    },
+    {
+      "label": "Band Color",
+      "value": "GOLD PLATED"
+    },
+    {
+      "label": "Dial Color",
+      "value": "Mother-of-pearl"
+    },
+    {
+      "label": "Case Diameter",
+      "value": "17 MM"
+    },
+    {
+      "label": "Case Color",
+      "value": "GOLD PLATED"
+    },
+    {
+      "label": "Bezel",
+      "value": "GOLD PLATED"
+    },
+    {
+      "label": "Water Resistant",
+      "value": "5 ATM"
+    }
+  ],
+  "features": [],
+  "imageCount": 4,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
