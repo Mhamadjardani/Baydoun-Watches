@@ -1,0 +1,51 @@
+{
+  "title": "Calvin Klein CK Real CK 25200600",
+  "sku": "CK 25200600",
+  "display": "Analog",
+  "gender": "Men",
+  "price": 166,
+  "discount": 15,
+  "isOutOfStock": false,
+  "isNewArrival": true,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Movement",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "Band Material",
+      "value": "BRACELETE"
+    },
+    {
+      "label": "Band Color",
+      "value": "BLACK "
+    },
+    {
+      "label": "Dial Color",
+      "value": "SILVER "
+    },
+    {
+      "label": "Case Diameter",
+      "value": "40 MM"
+    },
+    {
+      "label": "Case Color",
+      "value": "BLACK "
+    },
+    {
+      "label": "Bezel",
+      "value": "BLACK "
+    },
+    {
+      "label": "Water Resistant",
+      "value": "3 ATM"
+    }
+  ],
+  "features": [],
+  "imageCount": 4,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
