@@ -1,0 +1,51 @@
+{
+  "title": "LACOSTE.12.12 Xmas LC 2001516",
+  "sku": "LC 2001516",
+  "display": "Analog",
+  "gender": "Women",
+  "price": 136,
+  "discount": 15,
+  "isOutOfStock": false,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Movement",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "Band Material",
+      "value": "RUBBER"
+    },
+    {
+      "label": "Band Color",
+      "value": "BURGUNDY "
+    },
+    {
+      "label": "Dial Color",
+      "value": "BURGUNDY"
+    },
+    {
+      "label": "Case Diameter",
+      "value": "36 MM"
+    },
+    {
+      "label": "Case Color",
+      "value": "BURGUNDY ALUMINUM"
+    },
+    {
+      "label": "Bezel",
+      "value": "BURGUNDY ALUMINUM"
+    },
+    {
+      "label": "Water Resistant",
+      "value": "5 ATM"
+    }
+  ],
+  "features": [],
+  "imageCount": 4,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
