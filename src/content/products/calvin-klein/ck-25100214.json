@@ -21,23 +21,23 @@
     },
     {
       "label": "Band Color",
-      "value": "BLACK "
+      "value": "GOLD PLATED"
     },
     {
       "label": "Dial Color",
-      "value": "BLACK "
+      "value": "GOLD "
     },
     {
       "label": "Case Diameter",
-      "value": "43 MM"
+      "value": "28 MM"
     },
     {
       "label": "Case Color",
-      "value": "STAINLESS STEEL "
+      "value": "GOLD STAINLESS STEEL "
     },
     {
       "label": "Bezel",
-      "value": "BLACK "
+      "value": "GOLD STAINLESS STEEL "
     },
     {
       "label": "Water Resistant",
@@ -45,7 +45,7 @@
     }
   ],
   "features": [],
-  "imageCount": 4,
+  "imageCount": 5,
   "arrivalDate": "2026-07-04",
   "createdAt": "2026-07-04"
 }
