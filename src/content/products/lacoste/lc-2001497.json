@@ -1,0 +1,51 @@
+{
+  "title": "LACOSTE Atena LC 2001497",
+  "sku": "LC 2001497",
+  "display": "Analog",
+  "gender": "Women",
+  "price": 140,
+  "discount": 15,
+  "isOutOfStock": false,
+  "isNewArrival": false,
+  "isVisible": true,
+  "isFeatured": false,
+  "isLimitedEdition": false,
+  "specifications": [
+    {
+      "label": "Movement",
+      "value": "QUARTZ"
+    },
+    {
+      "label": "Band Material",
+      "value": "MESH "
+    },
+    {
+      "label": "Band Color",
+      "value": "STAINLESS STEEL "
+    },
+    {
+      "label": "Dial Color",
+      "value": "LIGHT BLUE"
+    },
+    {
+      "label": "Case Diameter",
+      "value": "34 MM"
+    },
+    {
+      "label": "Case Color",
+      "value": "STAINLESS STEEL "
+    },
+    {
+      "label": "Bezel",
+      "value": "STAINLESS STEEL "
+    },
+    {
+      "label": "Water Resistant",
+      "value": "5 ATM"
+    }
+  ],
+  "features": [],
+  "imageCount": 3,
+  "arrivalDate": "2026-07-04",
+  "createdAt": "2026-07-04"
+}
