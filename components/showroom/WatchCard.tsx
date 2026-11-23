@@ -90,7 +90,7 @@ export default function WatchCard({
           <p className="text-[11px] tracking-[0.18em] text-gold-deep">{(BRAND_LABELS[product.brand] ?? product.brand).toUpperCase()}</p>
           <h3 className="mt-1.5 line-clamp-2 text-sm leading-snug text-ink/80 transition-colors group-hover:text-ink">{product.title}</h3>
           <p className="mt-2 flex items-baseline gap-2">
-            <span className="font-serif text-2xl text-ink">{formatPrice(finalPrice(product))}</span>
+            <span className="font-jost font-medium tabular-nums text-2xl text-ink">{formatPrice(finalPrice(product))}</span>
             {sale && <span className="text-xs text-ink/40 line-through">{formatPrice(product.price)}</span>}
           </p>
           <span className="mt-3 block h-px w-0 bg-gold transition-all duration-500 group-hover:w-14" aria-hidden="true" />

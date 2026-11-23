@@ -265,7 +265,7 @@ const ProductDetails = ({
             className="flex flex-wrap items-end justify-between gap-4 border-y border-gold/25 py-6"
           >
             <p className="flex items-baseline gap-3">
-              <span className="font-serif text-5xl">{formatPrice(finalPrice(product))}</span>
+              <span className="font-jost text-4xl font-medium tabular-nums">{formatPrice(finalPrice(product))}</span>
               {sale && (
                 <>
                   <span className="text-lg text-ink/40 line-through">{formatPrice(product.price)}</span>

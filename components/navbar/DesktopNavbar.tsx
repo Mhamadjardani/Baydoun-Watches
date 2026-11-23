@@ -204,7 +204,7 @@ const DesktopNavbar: React.FC<{
                               </span>
                             </div>
                             <span className="shrink-0 text-right leading-tight">
-                              <span className="block font-serif text-base text-ink">{formatPrice(finalPrice(product))}</span>
+                              <span className="block font-jost font-medium tabular-nums text-base text-ink">{formatPrice(finalPrice(product))}</span>
                               {(product.discount ?? 0) > 0 && (
                                 <span className="block text-[11px] text-ink/40 line-through">{formatPrice(product.price)}</span>
                               )}

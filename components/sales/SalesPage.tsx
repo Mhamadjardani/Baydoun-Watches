@@ -44,7 +44,7 @@ const SalesPage = ({ products }: { products: ProductCard[] }) => {
                 className="grid h-32 w-32 place-items-center rounded-full border border-gold bg-[#f6f5f1] text-center"
               >
                 <span className="font-jost text-[10px] tracking-[0.3em] text-gold-deep">UP TO</span>
-                <span className="-mt-3 font-serif text-5xl font-light">-{bestSaving}%</span>
+                <span className="-mt-3 font-jost font-medium tabular-nums text-5xl">-{bestSaving}%</span>
               </motion.div>
             ) : undefined
           }

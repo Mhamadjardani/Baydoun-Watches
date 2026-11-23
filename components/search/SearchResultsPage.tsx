@@ -95,7 +95,7 @@ const SearchResultsPage = () => {
           aside={
             <div className="inline-flex items-center gap-3 rounded-full border border-gold/40 px-5 py-3 font-jost text-sm text-ink/70">
               <Search size={16} className="text-gold-deep" />
-              <span className="font-serif text-xl text-ink">{results.length}</span>
+              <span className="font-jost font-medium tabular-nums text-xl text-ink">{results.length}</span>
               results
             </div>
           }

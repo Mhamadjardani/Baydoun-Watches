@@ -263,7 +263,7 @@ const ShoppingCartPage = () => {
           aside={
             cartProducts.length > 0 ? (
               <p className="font-jost text-sm text-ink/60">
-                <span className="font-serif text-3xl text-ink">
+                <span className="font-jost font-medium tabular-nums text-3xl text-ink">
                   {itemCount}
                 </span>{" "}
                 {itemCount === 1 ? "piece" : "pieces"} in your bag
@@ -377,7 +377,7 @@ const ShoppingCartPage = () => {
                           <p
                             className={`flex items-baseline gap-2 sm:hidden ${product.isOutOfStock ? "opacity-40" : ""}`}
                           >
-                            <span className="font-serif text-2xl">
+                            <span className="font-jost font-medium tabular-nums text-2xl">
                               {formatPrice(lineTotal)}
                             </span>
                             {hasDiscount && (
@@ -431,7 +431,7 @@ const ShoppingCartPage = () => {
                         <div
                           className={`hidden flex-col items-end justify-end font-jost sm:flex ${product.isOutOfStock ? "opacity-40" : ""}`}
                         >
-                          <span className="font-serif text-2xl">
+                          <span className="font-jost font-medium tabular-nums text-2xl">
                             {formatPrice(lineTotal)}
                           </span>
                           {hasDiscount && (
@@ -473,13 +473,13 @@ const ShoppingCartPage = () => {
               <dl className="mt-6 space-y-3 border-y border-gold/25 py-5 text-sm">
                 <div className="flex items-baseline justify-between gap-4">
                   <dt className="text-ink/60">Subtotal</dt>
-                  <dd className="font-serif text-xl">
+                  <dd className="font-jost font-medium tabular-nums text-xl">
                     {formatPrice(subtotal)}
                   </dd>
                 </div>
                 <div className="flex items-baseline justify-between gap-4">
                   <dt className="text-ink/60">Estimated delivery</dt>
-                  <dd className="font-serif text-xl">
+                  <dd className="font-jost font-medium tabular-nums text-xl">
                     {formatPrice(shipping)}
                   </dd>
                 </div>
@@ -489,7 +489,7 @@ const ShoppingCartPage = () => {
                 <span className="text-[11px] tracking-[0.18em] text-gold-deep">
                   TOTAL
                 </span>
-                <span className="font-serif text-4xl">
+                <span className="font-jost font-medium tabular-nums text-4xl">
                   {formatPrice(total)}
                 </span>
               </div>
@@ -667,7 +667,7 @@ const ShoppingCartPage = () => {
                 <div className="flex flex-col gap-4 md:col-span-2 md:flex-row md:items-center md:justify-between">
                   <p className="font-jost text-sm text-ink/60">
                     Total to confirm:{" "}
-                    <span className="font-serif text-2xl text-ink">
+                    <span className="font-jost font-medium tabular-nums text-2xl text-ink">
                       {formatPrice(total)}
                     </span>
                   </p>

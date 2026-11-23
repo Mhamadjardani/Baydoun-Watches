@@ -125,7 +125,7 @@ const SpotlightTrack = () => {
                   <p className="text-xs tracking-[0.18em] text-gold-deep">{BRAND_LABELS[watch.brand].toUpperCase()}</p>
                   <p className="mt-1 line-clamp-1 text-sm text-ink/75">{watch.title}</p>
                   <p className="mt-1 flex items-baseline gap-2">
-                    <span className="font-serif text-2xl">{formatPrice(watch.price)}</span>
+                    <span className="font-jost font-medium tabular-nums text-2xl">{formatPrice(watch.price)}</span>
                     {watch.originalPrice && <span className="text-xs text-ink/40 line-through">{formatPrice(watch.originalPrice)}</span>}
                   </p>
                 </div>

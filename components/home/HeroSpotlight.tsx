@@ -233,7 +233,7 @@ const HeroSpotlight = ({ offer }: { offer?: OfferBadge | null }) => {
                   <p className="mt-1 line-clamp-1 text-sm text-ink/80">{current.title}</p>
                   <div className="mt-2 flex items-center justify-between gap-3">
                     <p className="flex items-baseline gap-2">
-                      <span className="font-serif text-2xl text-ink">{formatPrice(current.price)}</span>
+                      <span className="font-jost font-medium tabular-nums text-2xl text-ink">{formatPrice(current.price)}</span>
                       {current.originalPrice && (
                         <span className="text-xs text-ink/40 line-through">{formatPrice(current.originalPrice)}</span>
                       )}
@@ -258,7 +258,7 @@ const HeroSpotlight = ({ offer }: { offer?: OfferBadge | null }) => {
               {current && (
                 <Link prefetch={false} href={current.href} className="flex min-w-0 items-baseline gap-2 sm:hidden">
                   <span className="truncate text-[11px] tracking-[0.18em] text-gold-deep">{brand.toUpperCase()}</span>
-                  <span className="font-serif text-xl text-ink">{formatPrice(current.price)}</span>
+                  <span className="font-jost font-medium tabular-nums text-xl text-ink">{formatPrice(current.price)}</span>
                 </Link>
               )}
               <span className="relative h-px flex-1 bg-ink/10">
