@@ -29,7 +29,8 @@ export type Product = {
     | "lacoste"
     | "omorfia"
     | "rovina"
-    | "tommyHilfiger";
+    | "tommyHilfiger"
+    | "accessories";
 };
 
 export type ProductCard = Omit<Product, "images"> & {

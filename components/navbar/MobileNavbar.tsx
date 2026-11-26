@@ -125,6 +125,7 @@ const MobileNavbar: React.FC<{
       omorfia: "Omorfia",
       rovina: "Rovina",
       tommyHilfiger: "Tommy Hilfiger",
+      accessories: "Accessories",
     };
 
     const seen = new Set<string>();

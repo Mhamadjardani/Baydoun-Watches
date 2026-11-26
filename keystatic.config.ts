@@ -6,10 +6,21 @@ function brandCollection(
   label: string,
   folder: string,
   subcategories?: string[],
+  // Accessories (watch boxes…) have no display type or gender, and default to
+  // their first subcategory instead of "General".
+  options: { watch?: boolean; defaultSubCategory?: string } = {},
 ) {
+  const { watch = true, defaultSubCategory = "general" } = options;
+  const toSlug = (name: string) =>
+    name
+      .trim()
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-");
   return collection({
     label,
-    slugField: "sku",
+    // Watches are identified by their SKU. Accessories often have none, so their
+    // product name gives the file name and web address, and the SKU is optional.
+    slugField: watch ? "sku" : "title",
 
     // e.g. src/content/products/casio/royale-ae1200.json
     path: `src/content/products/${folder}/*`,
@@ -25,22 +36,24 @@ function brandCollection(
 
     schema: {
       // ── Identity ────────────────────────────────────────────────────────────
-      title: fields.text({
-        label: "Product Name",
-      }),
+      title: watch
+        ? fields.text({ label: "Product Name" })
+        : fields.slug({
+            name: { label: "Product Name" },
+            slug: { label: "Web address", generate: toSlug },
+          }),
 
       // category: fields.text({ label: "Category" }),
 
-      sku: fields.slug({
-        name: { label: "SKU" },
-        slug: {
-          generate: (name) =>
-            name
-              .trim()
-              .toLowerCase()
-              .replace(/[^a-z0-9]+/g, "-"),
-        },
-      }),
+      sku: watch
+        ? fields.slug({
+            name: { label: "SKU" },
+            slug: { generate: toSlug },
+          })
+        : fields.text({
+            label: "Reference / SKU (optional)",
+            description: "Leave empty if the item has no code.",
+          }),
 
       subCategory: subcategories
         ? fields.select({
@@ -52,32 +65,36 @@ function brandCollection(
                 value: s.toLowerCase().replace(/\s+/g, "-"),
               })),
             ],
-            defaultValue: "general",
+            defaultValue: defaultSubCategory,
           })
         : fields.empty(),
 
       // ── Details ─────────────────────────────────────────────────────────────
       description: fields.text({ label: "Description", multiline: true }),
-      display: fields.select({
-        label: "Display Type",
-        options: [
-          { label: "Analog", value: "Analog" },
-          { label: "Digital", value: "Digital" },
-          { label: "Ana/Dig", value: "Ana/Dig" },
-        ],
-        defaultValue: "Analog",
-      }),
+      display: watch
+        ? fields.select({
+            label: "Display Type",
+            options: [
+              { label: "Analog", value: "Analog" },
+              { label: "Digital", value: "Digital" },
+              { label: "Ana/Dig", value: "Ana/Dig" },
+            ],
+            defaultValue: "Analog",
+          })
+        : fields.empty(),
 
-      gender: fields.select({
-        label: "Gender",
-        options: [
-          { label: "Men", value: "Men" },
-          { label: "Women", value: "Women" },
-          { label: "Kids", value: "Kids" },
-          { label: "Unisex", value: "Unisex" },
-        ],
-        defaultValue: "Men",
-      }),
+      gender: watch
+        ? fields.select({
+            label: "Gender",
+            options: [
+              { label: "Men", value: "Men" },
+              { label: "Women", value: "Women" },
+              { label: "Kids", value: "Kids" },
+              { label: "Unisex", value: "Unisex" },
+            ],
+            defaultValue: "Men",
+          })
+        : fields.empty(),
 
       // ── Pricing & inventory ──────────────────────────────────────────────────
       price: fields.number({
@@ -185,5 +202,9 @@ export default config({
     omorfia: brandCollection("Omorfia", "omorfia", ["Omorfia Club"]),
     rovina: brandCollection("Rovina", "rovina"),
     tommyHilfiger: brandCollection("Tommy Hilfiger", "tommy-hilfiger"),
+    accessories: brandCollection("Accessories", "accessories", ["Watch Box"], {
+      watch: false,
+      defaultSubCategory: "watch-box",
+    }),
   },
 });

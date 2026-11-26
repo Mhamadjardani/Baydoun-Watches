@@ -18,6 +18,7 @@ const BRANDS = [
   "omorfia",
   "rovina",
   "tommyHilfiger",
+  "accessories",
 ] as const;
 
 export type Brand = (typeof BRANDS)[number];
@@ -34,6 +35,7 @@ const brandToFolder: Record<Brand, string> = {
   omorfia: "omorfia",
   rovina: "rovina",
   tommyHilfiger: "tommy-hilfiger",
+  accessories: "accessories",
 };
 
 function normalizeProductFromFile(
@@ -141,6 +143,10 @@ export async function getProductsByBrand(brand: Brand) {
   }));
 }
 
+// Keystatic slug fields can come back as { name, slug }; the site needs the text.
+const fieldText = (value: string | { name: string; slug: string } | null | undefined) =>
+  typeof value === "string" ? value : (value?.name ?? "");
+
 // ── Fetch a single product ─────────────────────────────────────────────────────
 export async function getProduct(brand: Brand, slug: string) {
   const entry = await reader.collections[brand].read(slug);
@@ -180,6 +186,11 @@ export async function getProduct(brand: Brand, slug: string) {
     slug,
     brand,
     ...entry,
+    // Accessories use the name as their identity and have no display type or gender.
+    title: fieldText(entry.title),
+    sku: fieldText(entry.sku),
+    display: entry.display ?? "",
+    gender: entry.gender ?? "Unisex",
     images: getProductImages(brand, slug, entry.imageCount),
   };
 }

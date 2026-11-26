@@ -21,6 +21,7 @@ export const BRAND_LABELS: Record<ProductCard["brand"], string> = {
   omorfia: "Omorfia",
   rovina: "Rovina",
   tommyHilfiger: "Tommy Hilfiger",
+  accessories: "Accessories",
 };
 
 export const finalPrice = (p: Pick<ProductCard, "price" | "discount">) =>

@@ -5,6 +5,6 @@ export default async function Page() {
   const products = await getShopListings();
 
   return (
-    <CategoriesPage products={products.map(({ brand, isFeatured }) => ({ brand, isFeatured }))} />
+    <CategoriesPage products={products.map(({ brand, isFeatured, image }) => ({ brand, isFeatured, image }))} />
   );
 }

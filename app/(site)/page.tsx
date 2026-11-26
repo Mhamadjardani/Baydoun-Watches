@@ -45,7 +45,8 @@ export default async function Home() {
   // in Keystatic drops out on the next deploy. Hidden and out-of-stock pieces never appear.
   const products = await getShopProducts();
   // Wristwatches only: wall clocks stay in the catalogue but not in the showroom.
-  const isWristwatch = (p: ProductCard) => normalizeSubCategory(p.subCategory, p.brand) !== "wall-clock";
+  const isWristwatch = (p: ProductCard) =>
+    p.brand !== "accessories" && normalizeSubCategory(p.subCategory, p.brand) !== "wall-clock";
   const pool = pickAcrossBrands(products, POOL_SIZE, isWristwatch).map(toShowcase);
   // The hero shows the watches marked "featured" in Keystatic (in stock only).
   const featured = products

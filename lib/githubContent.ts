@@ -35,6 +35,7 @@ const PRODUCT_FOLDERS: Record<string, string> = {
   omorfia: "omorfia",
   rovina: "rovina",
   tommyHilfiger: "tommy-hilfiger",
+  accessories: "accessories",
 };
 
 type ProductData = Record<string, unknown>;

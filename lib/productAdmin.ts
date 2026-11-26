@@ -21,6 +21,7 @@ export const PRODUCT_BRANDS = new Set([
   "omorfia",
   "rovina",
   "tommyHilfiger",
+  "accessories",
 ]);
 
 export function isSafeProductPathPart(value: string) {

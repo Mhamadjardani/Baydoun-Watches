@@ -15,7 +15,7 @@ import { useRef } from "react";
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 // Only what the brand cards use, so the page does not carry the whole catalogue.
-export type DirectoryProduct = Pick<ProductCard, "brand" | "isFeatured">;
+export type DirectoryProduct = Pick<ProductCard, "brand" | "isFeatured" | "image">;
 
 type DirectoryKey =
   // "category" |
@@ -33,8 +33,13 @@ const buildGroups = (key: DirectoryKey, products: DirectoryProduct[]) =>
       count: groupProducts.length,
       product: featuredProduct,
       href: `/collections?${key}=${encodeURIComponent(value)}`,
+      // Brands show their logo; Accessories has none, so it shows one of its products.
       image:
-        value == "omorfia" ? `/brands/${value}.webp` : `/brands/${value}.png`,
+        value === "accessories"
+          ? featuredProduct.image
+          : value == "omorfia"
+            ? `/brands/${value}.webp`
+            : `/brands/${value}.png`,
     };
   });
 
@@ -46,6 +51,10 @@ const WRISTS = [
 
 const brandName = (value: string) =>
   BRAND_LABELS[value as ProductCard["brand"]] ?? value;
+
+const showLogoInstead = (img: HTMLImageElement) => {
+  if (!img.src.endsWith("/baydoun-logo.webp")) img.src = "/baydoun-logo.webp";
+};
 
 const DirectoryCard = ({
   group,
@@ -78,6 +87,12 @@ const DirectoryCard = ({
               alt={brandName(group.value)}
               fill
               sizes="(max-width:640px) 160px, 260px"
+              // A product photo (Accessories) may be missing: show the logo instead.
+              onError={(e) => showLogoInstead(e.currentTarget)}
+              // Server-rendered images can fail before React listens; check on mount too.
+              ref={(img) => {
+                if (img?.complete && img.naturalWidth === 0) showLogoInstead(img);
+              }}
               className="object-contain opacity-60 mix-blend-multiply grayscale transition duration-500 group-hover:opacity-100 group-hover:grayscale-0"
               priority
             />

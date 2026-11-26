@@ -182,6 +182,19 @@ Client comment 2026-10-28: the gold glow/spotlight/gold dust tinted the watches 
   `use cache`, Server Actions DoS) and sharp 0.35.5. Two moderate advisories left inside @keystatic/core (npm's "fix" is a
   downgrade; ignored). Team is on Vercel **Pro** since 2026-11-03 (Hobby forbids commercial use).
 
+## Accessories category (2026-11-26)
+- New Keystatic collection `accessories` (folder `src/content/products/accessories/`, kept by `.gitkeep`) with
+  subcategory "Watch Box" (value `watch-box`, the default; "General" also offered). `brandCollection()` takes
+  `{ watch: false }` so accessories have no Display Type / Gender fields (site defaults: display "", gender "Unisex").
+- Accessories are identified by their product NAME (`slugField: "title"`, a `fields.slug` named "Product Name" whose
+  "Web address" becomes the file name/URL/photo folder). SKU is an optional text field ("Reference / SKU (optional)");
+  empty SKUs hide the item page Reference row and the WhatsApp "Ref". `fieldText()` in `lib/products.ts` turns
+  Keystatic's `{ name, slug }` values into text. Watches are unchanged (slugField "sku").
+- Wired like a brand: `lib/type.ts` union, `lib/products.ts` BRANDS + folder, `lib/githubContent.ts`, `lib/productAdmin.ts`
+  (photo uploads), `lib/showcase.ts` BRAND_LABELS, MobileNavbar order. Product images: Supabase `products/accessories/<sku>/n.webp`.
+- Homepage watch sections exclude accessories (`isWristwatch` in `app/(site)/page.tsx`). Item page shows "Category:
+  Accessories". Categories card shows a product photo (no logo for accessories), falling back to the Baydoun logo.
+
 ## Things that bit us
 - WebFetch on JS-rendered pricing pages returns only the title → use Claude in Chrome.
 - Don't quote pricing/limits from memory → **verify on the official site.**

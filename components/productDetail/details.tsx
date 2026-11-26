@@ -142,7 +142,7 @@ const ProductDetails = ({
   const rotateX = useSpring(useTransform(py, [-1, 1], [9, -9]), { stiffness: 80, damping: 14 });
 
   const details = [
-    { label: "Brand", value: brandLabel },
+    { label: product.brand === "accessories" ? "Category" : "Brand", value: brandLabel },
     { label: "For", value: product.gender },
     { label: "Display", value: product.display },
     { label: "Reference", value: product.sku },
