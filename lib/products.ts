@@ -105,8 +105,13 @@ const FILE_READ_CONCURRENCY = 32;
 
 async function readProductFilesForBrand(brand: Brand): Promise<ProductCard[]> {
   const folder = path.join(process.cwd(), "src", "content", "products", brandToFolder[brand]);
-  const files = (await readdir(folder, { withFileTypes: true }))
-    .filter((file) => file.isFile() && file.name.endsWith(".json"));
+  // A brand with no products yet (e.g. a new category) has no folder in the server
+  // bundle, because Vercel only packs the product files. Treat it as empty.
+  const entries = await readdir(folder, { withFileTypes: true }).catch((error: NodeJS.ErrnoException) => {
+    if (error.code === "ENOENT") return [];
+    throw error;
+  });
+  const files = entries.filter((file) => file.isFile() && file.name.endsWith(".json"));
   const products: ProductCard[] = [];
 
   for (let start = 0; start < files.length; start += FILE_READ_CONCURRENCY) {
